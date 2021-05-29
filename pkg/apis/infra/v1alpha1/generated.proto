@@ -896,7 +896,6 @@ message LicenseSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
   optional string secretName = 2;
 
   // Owner is the account owning this license
@@ -1639,7 +1638,7 @@ message VirtualBucketSpec {
   // ConnectionName specify the api connections of this bucket cloud provider.
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:default:=""
   optional string connectionName = 2;
 
   // User provided description

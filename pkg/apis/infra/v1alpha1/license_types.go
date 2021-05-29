@@ -82,7 +82,6 @@ type LicenseSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
 	SecretName *string `json:"secretName" protobuf:"bytes,2,opt,name=secretName"`
 	// Owner is the account owning this license
 	// +kubebuilder:validation:Optional

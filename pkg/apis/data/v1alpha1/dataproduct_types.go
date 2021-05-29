@@ -119,13 +119,11 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Optional
 	LabName *string `json:"labName" protobuf:"bytes,7,opt,name=labName"`
 	// ServingSiteName is the serving site where predictors of this product are deployed
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName" protobuf:"bytes,8,opt,name=servingSiteName"`

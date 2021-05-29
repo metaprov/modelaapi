@@ -65,7 +65,6 @@ spec:
                 default: ""
                 description: The key in the bucket for storing all the predictor artifacts.
                 maxLength: 512
-                minLength: 1
                 type: string
               autoscale:
                 default: false

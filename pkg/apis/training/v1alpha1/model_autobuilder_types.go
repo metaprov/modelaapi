@@ -89,14 +89,12 @@ type ModelAutobuilderList struct {
 // ModelAutobuilderSpec define the desired state of the ModelAutobuilder resource.
 type ModelAutobuilderSpec struct {
 	// DataProductName is the name of the data product
-	// +kubebuilder:validation:MaxLength=253
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DataProductName *string `json:"dataProductName,omitempty" protobuf:"bytes,1,opt,name=dataProductName"`
 	// DataProductVersionName is a reference to data product version
 	// +kubebuilder:validation:MaxLength=253
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DataProductVersionName *string `json:"dataProductVersionName,omitempty" protobuf:"bytes,2,opt,name=dataProductVersionName"`

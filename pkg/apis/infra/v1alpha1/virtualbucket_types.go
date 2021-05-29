@@ -60,7 +60,7 @@ type VirtualBucketSpec struct {
 	// ConnectionName specify the api connections of this bucket cloud provider.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=64
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512

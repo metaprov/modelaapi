@@ -63,10 +63,10 @@ spec:
             description: VirtualBucketSpec defines the desired state of Bucket
             properties:
               connectionName:
+                default: ""
                 description: ConnectionName specify the api connections of this bucket
                   cloud provider.
                 maxLength: 64
-                minLength: 1
                 type: string
               description:
                 default: ""

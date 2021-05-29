@@ -406,7 +406,6 @@ message PredictionSpec {
   // PredictorName refer to the predictor which would predict the dataset of this prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Required
   optional string predictorName = 2;
 
@@ -564,7 +563,6 @@ message PredictorSpec {
   // The key in the bucket for storing all the predictor artifacts.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Optional
   optional string artifactsFolder = 14;
 

@@ -67,9 +67,9 @@ spec:
             description: LabelSpec contain the desired state of a Label
             properties:
               labelPipelineName:
+                default: ""
                 description: LabelPipelineName specifies the name of LabelingPipeline
                 maxLength: 64
-                minLength: 1
                 type: string
               owner:
                 default: no-one

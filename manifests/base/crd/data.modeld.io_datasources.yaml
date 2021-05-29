@@ -358,7 +358,6 @@ spec:
                           type: integer
                         name:
                           description: FileName specify the name of the attribute
-                            required
                           maxLength: 63
                           minLength: 1
                           type: string

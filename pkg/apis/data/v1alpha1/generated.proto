@@ -53,7 +53,6 @@ message Column {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  // required
   optional string name = 1;
 
   // FileName specify the name of the feature, if this attribute comes from a feature
@@ -616,14 +615,12 @@ message DataProductSpec {
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Optional
   optional string labName = 7;
 
   // ServingSiteName is the serving site where predictors of this product are deployed
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string servingSiteName = 8;
@@ -953,7 +950,7 @@ message DatasetSpec {
   // DataSourceName is the name of the data source which created this dataset. For example flat file
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:default:=""
   optional string datasourceName = 3;
 
   // User provided description
@@ -1301,7 +1298,6 @@ message FeaturePipelineRunSpec {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:MinLength=1
   optional string featurePipelineName = 3;
 
   // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
@@ -1807,7 +1803,7 @@ message LabelingPipelineRunSpec {
 
   // LabelPipelineName specifies the name of LabelingPipeline
   // +kubebuilder:validation:MaxLength=64
-  // +kubebuilder:validation:MinLength=1
+  // +kubebuilder:default:=""
   optional string labelPipelineName = 3;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.

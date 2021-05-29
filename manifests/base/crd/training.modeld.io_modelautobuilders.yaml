@@ -97,15 +97,13 @@ spec:
                 type: boolean
               dataProductName:
                 description: DataProductName is the name of the data product
-                maxLength: 253
-                minLength: 1
+                maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               dataProductVersionName:
                 description: DataProductVersionName is a reference to data product
                   version
                 maxLength: 253
-                minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               dataSourceSpec:
@@ -414,7 +412,6 @@ spec:
                               type: integer
                             name:
                               description: FileName specify the name of the attribute
-                                required
                               maxLength: 63
                               minLength: 1
                               type: string

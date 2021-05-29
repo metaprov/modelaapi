@@ -77,10 +77,10 @@ spec:
                 format: int64
                 type: integer
               datasourceName:
+                default: ""
                 description: DataSourceName is the name of the data source which created
                   this dataset. For example flat file
                 maxLength: 63
-                minLength: 1
                 type: string
               description:
                 default: ""

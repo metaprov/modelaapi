@@ -130,7 +130,6 @@ spec:
                 default: ""
                 description: The secret containing the license token
                 maxLength: 63
-                minLength: 1
                 type: string
               tenantRef:
                 description: Reference to the tenant owning this license Default to

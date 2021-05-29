@@ -81,7 +81,7 @@ type LabelingPipelineRunSpec struct {
 	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
 	// LabelPipelineName specifies the name of LabelingPipeline
 	// +kubebuilder:validation:MaxLength=64
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:default:=""
 	LabelPipelineName *string `json:"labelPipelineName" protobuf:"bytes,3,opt,name=labelPipelineName"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline.
 	// +kubebuilder:default:="default-workload-class"

@@ -124,7 +124,6 @@ spec:
                 description: PredictorName refer to the predictor which would predict
                   the dataset of this prediction.
                 maxLength: 63
-                minLength: 1
                 type: string
               tests:
                 description: Tests is the list of metrics that we need to measure

@@ -102,7 +102,7 @@ type DatasetSpec struct {
 	// DataSourceName is the name of the data source which created this dataset. For example flat file
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:default:=""
 	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,3,opt,name=datasourceName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=512

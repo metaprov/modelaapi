@@ -119,7 +119,6 @@ spec:
                 description: DatasetName refer to the dataset object for which the
                   study is for.
                 maxLength: 63
-                minLength: 1
                 type: string
               dnn:
                 description: Dnn is a specification of the DNN estimator specification.
@@ -687,7 +686,6 @@ spec:
                 description: StudyName reference the study for this model. IF empty,
                   the model is stand alone
                 maxLength: 63
-                minLength: 1
                 type: string
               task:
                 description: Task is the machine learning task (regression, classification).
@@ -1005,7 +1003,6 @@ spec:
                 default: latest
                 description: VersionName is the product version name for this model
                 maxLength: 63
-                minLength: 1
                 type: string
             required:
             - datasetName

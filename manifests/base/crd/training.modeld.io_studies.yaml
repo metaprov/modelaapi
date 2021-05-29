@@ -276,10 +276,10 @@ spec:
                   model image, at the end of training.
                 type: boolean
               modelVersion:
+                default: ""
                 description: ModelVersion is the semver version of the resulting model.
                   Note that multiplie models can have the same version
                 maxLength: 63
-                minLength: 1
                 type: string
               objective:
                 description: Objective is the objective defined how the study controller
@@ -1132,9 +1132,9 @@ spec:
                     type: string
                 type: object
               versionName:
+                default: ""
                 description: VersionName is the data product version of the study
                 maxLength: 63
-                minLength: 1
                 type: string
             required:
             - datasetName

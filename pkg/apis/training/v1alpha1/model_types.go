@@ -140,7 +140,6 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
 	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
 	// ModelVersion is a semver version of a model
 	// +kubebuilder:validation:Required
@@ -148,11 +147,9 @@ type ModelSpec struct {
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
 	StudyName *string `json:"studyName" protobuf:"bytes,4,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:MaxLength=63
 	DatasetName *string `json:"datasetName" protobuf:"bytes,5,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).

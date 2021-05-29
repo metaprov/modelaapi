@@ -69,7 +69,6 @@ spec:
               featurePipelineName:
                 description: FileName specify the name of the attribute
                 maxLength: 64
-                minLength: 1
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               owner:

@@ -146,7 +146,6 @@ type PredictorSpec struct {
 	// The key in the bucket for storing all the predictor artifacts.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
-	// +kubebuilder:validation:MinLength=1
 	// +kubebuilder:validation:Optional
 	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,14,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions

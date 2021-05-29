@@ -204,7 +204,6 @@ type Column struct {
 	// FileName specify the name of the attribute
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
-	// required
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 	// FileName specify the name of the feature, if this attribute comes from a feature
 	// +kubebuilder:default:=""

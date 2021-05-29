@@ -278,13 +278,13 @@ type ModelSearchSpec struct {
 type StudySpec struct {
 	// VersionName is the data product version of the study
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// ModelVersion is the semver version of the resulting model.
 	// Note that multiplie models can have the same version
 	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:MinLength=1
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ModelVersion *string `json:"modelVersion" protobuf:"bytes,2,opt,name=modelVersion"`
 	// Description is user provided description
