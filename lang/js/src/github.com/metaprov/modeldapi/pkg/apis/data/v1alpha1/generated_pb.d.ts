@@ -1291,6 +1291,11 @@ export class DataSourceSpec extends jspb.Message {
   getDatasettype(): string;
   setDatasettype(value: string): DataSourceSpec;
 
+  getSample(): SampleSpec | undefined;
+  setSample(value?: SampleSpec): DataSourceSpec;
+  hasSample(): boolean;
+  clearSample(): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1312,6 +1317,7 @@ export namespace DataSourceSpec {
     api?: ApiSpec.AsObject,
     owner: string,
     datasettype: string,
+    sample?: SampleSpec.AsObject,
   }
 }
 
@@ -1484,6 +1490,11 @@ export class DatasetSpec extends jspb.Message {
   getType(): string;
   setType(value: string): DatasetSpec;
 
+  getSample(): SampleSpec | undefined;
+  setSample(value?: SampleSpec): DatasetSpec;
+  hasSample(): boolean;
+  clearSample(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1508,6 +1519,7 @@ export namespace DatasetSpec {
     workloadclassname: string,
     activedeadlineseconds: number,
     type: string,
+    sample?: SampleSpec.AsObject,
   }
 }
 
@@ -3413,32 +3425,6 @@ export namespace RecipeRunStatus {
   }
 }
 
-export class RecipeSampleSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): RecipeSampleSpec;
-
-  getRows(): number;
-  setRows(value: number): RecipeSampleSpec;
-
-  getFilter(): string;
-  setFilter(value: string): RecipeSampleSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RecipeSampleSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: RecipeSampleSpec): RecipeSampleSpec.AsObject;
-  static serializeBinaryToWriter(message: RecipeSampleSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RecipeSampleSpec;
-  static deserializeBinaryFromReader(message: RecipeSampleSpec, reader: jspb.BinaryReader): RecipeSampleSpec;
-}
-
-export namespace RecipeSampleSpec {
-  export type AsObject = {
-    type: string,
-    rows: number,
-    filter: string,
-  }
-}
-
 export class RecipeSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): RecipeSpec;
@@ -3464,8 +3450,8 @@ export class RecipeSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): RecipeSpec;
 
-  getSample(): RecipeSampleSpec | undefined;
-  setSample(value?: RecipeSampleSpec): RecipeSpec;
+  getSample(): SampleSpec | undefined;
+  setSample(value?: SampleSpec): RecipeSpec;
   hasSample(): boolean;
   clearSample(): RecipeSpec;
 
@@ -3494,7 +3480,7 @@ export namespace RecipeSpec {
     input?: RecipeInputSpec.AsObject,
     stepsList: Array<RecipeStep.AsObject>,
     output?: RecipeOutputSpec.AsObject,
-    sample?: RecipeSampleSpec.AsObject,
+    sample?: SampleSpec.AsObject,
     observedgeneration: number,
     workloadclassname: string,
     activedeadlineseconds: number,
@@ -3564,6 +3550,40 @@ export namespace RecipeStepParam {
   export type AsObject = {
     name: string,
     value: string,
+  }
+}
+
+export class SampleSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): SampleSpec;
+
+  getType(): string;
+  setType(value: string): SampleSpec;
+
+  getRows(): number;
+  setRows(value: number): SampleSpec;
+
+  getPercent(): number;
+  setPercent(value: number): SampleSpec;
+
+  getFilter(): string;
+  setFilter(value: string): SampleSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SampleSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SampleSpec): SampleSpec.AsObject;
+  static serializeBinaryToWriter(message: SampleSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SampleSpec;
+  static deserializeBinaryFromReader(message: SampleSpec, reader: jspb.BinaryReader): SampleSpec;
+}
+
+export namespace SampleSpec {
+  export type AsObject = {
+    enabled: boolean,
+    type: string,
+    rows: number,
+    percent: number,
+    filter: string,
   }
 }
 

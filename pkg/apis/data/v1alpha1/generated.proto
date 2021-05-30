@@ -864,6 +864,9 @@ message DataSourceSpec {
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
   optional string datasetType = 17;
+
+  // Sample spec defines how many rows to use for analysis for datasets from this datasource.
+  optional SampleSpec sample = 18;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
@@ -1004,6 +1007,10 @@ message DatasetSpec {
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
   optional string type = 17;
+
+  // Sample spec defines how many rows to use for analysis
+  // +kubebuilder:validation:Optional
+  optional SampleSpec sample = 18;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -2092,25 +2099,6 @@ message RecipeRunStatus {
   repeated RecipeCondition conditions = 5;
 }
 
-message RecipeSampleSpec {
-  // Type is the sampling type
-  // Default is random
-  // +kubebuilder:default:="random"
-  // +kubebuilder:validation:Optional
-  optional string type = 1;
-
-  // Rows is the number of rows. Default is 500
-  // +kubebuilder:default:=500
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 rows = 2;
-
-  // Filter formula. Valid only if the sample is a filter.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string filter = 3;
-}
-
 // RecipeSpec defines the desired state of a dataset
 message RecipeSpec {
   // Owner is the owner of the recipe
@@ -2141,7 +2129,7 @@ message RecipeSpec {
 
   // Sample specify the sampling paramters when viewing the recipe
   // +kubebuilder:validation:Optional
-  optional RecipeSampleSpec sample = 7;
+  optional SampleSpec sample = 7;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -2177,6 +2165,37 @@ message RecipeStepParam {
   optional string name = 1;
 
   optional string value = 2;
+}
+
+// The sample spec define how to sample a dataset for analysis
+message SampleSpec {
+  // Enabled specify if the sample is enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Type is the sampling type
+  // Default is random
+  // +kubebuilder:default:="random"
+  // +kubebuilder:validation:Optional
+  optional string type = 2;
+
+  // Rows is the number of rows. Default is 500
+  // +kubebuilder:default:=500
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int32 rows = 3;
+
+  // Pct is the percent of rows to use for analysis.
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int32 percent = 4;
+
+  // Filter formula. Valid only if the sample is a filter.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string filter = 5;
 }
 
 message Schema {

@@ -142,6 +142,16 @@ spec:
                 description: Sample specify the sampling paramters when viewing the
                   recipe
                 properties:
+                  enabled:
+                    default: false
+                    description: Enabled specify if the sample is enabled
+                    type: boolean
+                  percent:
+                    default: 100
+                    description: Pct is the percent of rows to use for analysis.
+                    format: int32
+                    minimum: 0
+                    type: integer
                   rows:
                     default: 500
                     description: Rows is the number of rows. Default is 500
