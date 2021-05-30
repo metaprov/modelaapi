@@ -400,6 +400,8 @@ type DataSourceSpec struct {
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
 	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,17,opt,name=datasetType"`
+	// Sample spec defines how many rows to use for analysis for datasets from this datasource.
+	SampleSpec *SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

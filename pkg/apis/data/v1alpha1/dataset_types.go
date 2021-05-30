@@ -148,6 +148,9 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
 	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,17,opt,name=type"`
+	// Sample spec defines how many rows to use for analysis
+	// +kubebuilder:validation:Optional
+	SampleSpec *SampleSpec `json:"sample,omitempty" protobuf:"bytes,17,opt,name=sample"`
 }
 
 // DatasetStatus defines the observed state of Dataset

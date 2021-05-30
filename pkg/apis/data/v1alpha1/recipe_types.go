@@ -78,7 +78,7 @@ type RecipeSpec struct {
 	Output RecipeOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Sample specify the sampling paramters when viewing the recipe
 	// +kubebuilder:validation:Optional
-	Sample *RecipeSampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
+	Sample *SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
@@ -396,27 +396,37 @@ const (
 type SamplingType string
 
 const (
-	Head    SamplingType = "header"
+	Header  SamplingType = "header"
 	Random  SamplingType = "random"
 	Filter  SamplingType = "filter"
 	Anomaly SamplingType = "anomaly"
 )
 
-type RecipeSampleSpec struct {
+// The sample spec define how to sample a dataset for analysis
+type SampleSpec struct {
+	// Enabled specify if the sample is enabled
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	//Type is the sampling type
 	//Default is random
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
-	Type SamplingType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Type SamplingType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Rows is the number of rows. Default is 500
 	// +kubebuilder:default:=500
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Rows *int32 `json:"rows,omitempty" protobuf:"varint,2,opt,name=rows"`
+	Rows *int32 `json:"rows,omitempty" protobuf:"varint,3,opt,name=rows"`
+	// Pct is the percent of rows to use for analysis.
+	// +kubebuilder:default:=100
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Optional
+	Pct *int32 `json:"percent,omitempty" protobuf:"varint,4,opt,name=percent"`
 	// Filter formula. Valid only if the sample is a filter.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Filter *string `json:"string,omitempty" protobuf:"bytes,3,opt,name=filter"`
+	Filter *string `json:"string,omitempty" protobuf:"bytes,5,opt,name=filter"`
 }
 
 // RecipeInputSpec specify the input for a recipe

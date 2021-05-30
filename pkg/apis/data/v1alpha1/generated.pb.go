@@ -2614,15 +2614,15 @@ func (m *RecipeRunStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_RecipeRunStatus proto.InternalMessageInfo
 
-func (m *RecipeSampleSpec) Reset()      { *m = RecipeSampleSpec{} }
-func (*RecipeSampleSpec) ProtoMessage() {}
-func (*RecipeSampleSpec) Descriptor() ([]byte, []int) {
+func (m *SampleSpec) Reset()      { *m = SampleSpec{} }
+func (*SampleSpec) ProtoMessage() {}
+func (*SampleSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{92}
 }
-func (m *RecipeSampleSpec) XXX_Unmarshal(b []byte) error {
+func (m *SampleSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *RecipeSampleSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *SampleSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -2630,13 +2630,13 @@ func (m *RecipeSampleSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 	}
 	return b[:n], nil
 }
-func (m *RecipeSampleSpec) XXX_Merge(src proto.Message) {
+func (m *SampleSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_RecipeSampleSpec.Merge(m, src)
 }
-func (m *RecipeSampleSpec) XXX_Size() int {
+func (m *SampleSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *RecipeSampleSpec) XXX_DiscardUnknown() {
+func (m *SampleSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_RecipeSampleSpec.DiscardUnknown(m)
 }
 
@@ -3046,7 +3046,7 @@ func init() {
 	proto.RegisterType((*RecipeRunList)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunList")
 	proto.RegisterType((*RecipeRunSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunSpec")
 	proto.RegisterType((*RecipeRunStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunStatus")
-	proto.RegisterType((*RecipeSampleSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSampleSpec")
+	proto.RegisterType((*SampleSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec")
 	proto.RegisterType((*RecipeSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec")
 	proto.RegisterType((*RecipeStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeStatus")
 	proto.RegisterType((*RecipeStep)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeStep")
@@ -9285,7 +9285,7 @@ func (m *RecipeRunStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *RecipeSampleSpec) Marshal() (dAtA []byte, err error) {
+func (m *SampleSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -9295,12 +9295,12 @@ func (m *RecipeSampleSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *RecipeSampleSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *SampleSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *RecipeSampleSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *SampleSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -12017,7 +12017,7 @@ func (m *RecipeRunStatus) Size() (n int) {
 	return n
 }
 
-func (m *RecipeSampleSpec) Size() (n int) {
+func (m *SampleSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -13735,11 +13735,11 @@ func (this *RecipeRunStatus) String() string {
 	}, "")
 	return s
 }
-func (this *RecipeSampleSpec) String() string {
+func (this *SampleSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&RecipeSampleSpec{`,
+	s := strings.Join([]string{`&SampleSpec{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Rows:` + valueToStringGenerated(this.Rows) + `,`,
 		`Filter:` + valueToStringGenerated(this.Filter) + `,`,
@@ -13763,7 +13763,7 @@ func (this *RecipeSpec) String() string {
 		`Input:` + strings.Replace(strings.Replace(this.Input.String(), "RecipeInputSpec", "RecipeInputSpec", 1), `&`, ``, 1) + `,`,
 		`Steps:` + repeatedStringForSteps + `,`,
 		`Output:` + strings.Replace(strings.Replace(this.Output.String(), "RecipeOutputSpec", "RecipeOutputSpec", 1), `&`, ``, 1) + `,`,
-		`Sample:` + strings.Replace(this.Sample.String(), "RecipeSampleSpec", "RecipeSampleSpec", 1) + `,`,
+		`Sample:` + strings.Replace(this.Sample.String(), "SampleSpec", "SampleSpec", 1) + `,`,
 		`ObservedGeneration:` + fmt.Sprintf("%v", this.ObservedGeneration) + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`ActiveDeadlineSeconds:` + valueToStringGenerated(this.ActiveDeadlineSeconds) + `,`,
@@ -32196,7 +32196,7 @@ func (m *RecipeRunStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *RecipeSampleSpec) Unmarshal(dAtA []byte) error {
+func (m *SampleSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -32219,10 +32219,10 @@ func (m *RecipeSampleSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: RecipeSampleSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: SampleSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RecipeSampleSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: SampleSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -32592,7 +32592,7 @@ func (m *RecipeSpec) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Sample == nil {
-				m.Sample = &RecipeSampleSpec{}
+				m.Sample = &SampleSpec{}
 			}
 			if err := m.Sample.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
