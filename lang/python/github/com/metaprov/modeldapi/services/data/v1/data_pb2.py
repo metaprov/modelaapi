@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modeldapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2
 from k8s.io.api.core.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z.github.com/metaprov/modeldapi/services/data/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9github.com/metaprov/modeldapi/services/data/v1/data.proto\x12.github.com.metaprov.modeldapi.services.data.v1\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xfd\x03\n\x11\x44sReadFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12]\n\x06secret\x18\x06 \x03(\x0b\x32M.github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x83\x04\n\x14\x44sReadFeatureRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x06 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xcf\x04\n\x12\x44sWriteFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x07\x63ontent\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd0\x02\n\x12\x44sReadAudioRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x89\x04\n\x17\x44sReadTextCorpusRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x05 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd8\x04\n\x17\x44sReadFromStoreResponse\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12M\n\x06result\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x06 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x18\x44sRunDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"j\n\x19\x44sRunDataPipelineResponse\x12M\n\x06result\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\xc7\x06\n\x12\x44sRunRecipeRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12R\n\treciperun\x18\t \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"c\n\x13\x44sRunRecipeResponse\x12L\n\x06result\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x87\x06\n\x1c\x44sCreateRecipeProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"l\n\x1d\x44sCreateRecipeProfileResponse\x12K\n\x06result\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\x14\n\x12\x44\x61taSourceResponse\"\x11\n\x0f\x44\x61tasetResponse\"\xbb\x05\n\x1d\x44sCreateDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12i\n\x06secret\x18\x07 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x80\x01\n\x1e\x44sCreateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xd7\x06\n\x1b\x44sCreateModelProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12g\n\x06secret\x18\n \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateModelProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xc5\x07\n%DsCreateForecastPartitionFilesRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12q\n\x06secret\x18\n \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry\x12X\n\tforecasts\x18\x0b \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"}\n&DsCreateForecastPartitionFilesResponse\x12S\n\npartitions\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.data.v1.PartitionValues\"/\n\x0fPartitionValues\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\"\xd5\x06\n\x1a\x44sMergeForecastFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\n \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"*\n\x1b\x44sMergeForecastFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xd8\x06\n\x1b\x44sCreateStudyProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12O\n\x06models\x18\x08 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12g\n\x06secret\x18\t \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateStudyProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xb1\x05\n\x18\x44sValidateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x07 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x19\x44sValidateDatasetResponse\x12\x0e\n\x06\x65rrors\x18\x01 \x03(\t\"\xef\x04\n\x18\x44sGenerateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x06 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"(\n\x19\x44sGenerateDatasetResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\xfb\x05\n\x15\x44sSplitDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x08 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc8\x05\n\x1c\x44sSplitDatasetToRungsRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry\x12\r\n\x05rungs\x18\x08 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1f\n\x1d\x44sSplitDatasetToRungsResponse\"\x18\n\x16\x44sSplitDatasetResponse\"\xe1\x05\n\x1c\x44sCreateColumnProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry\x12\x12\n\ncolumnType\x18\x08 \x01(\t\x12\x12\n\ncolumnName\x18\t \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"s\n\x1d\x44sCreateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modeldapi.services.common.v1.Plot\"\xbe\x05\n\x17\x44sDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x07 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.SecretEntry\x12\r\n\x05quick\x18\x08 \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"m\n\x18\x44sDatasetProfileResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xb5\x03\n\x14\x44sInferSchemaRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x04 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.SecretEntry\x12\x0b\n\x03key\x18\x05 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"j\n\x15\x44sInferSchemaResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xbd\x03\n\x15\x44sGetTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12X\n\ndatasource\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x61\n\x06secret\x18\x04 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.SecretEntry\x12\x0b\n\x03key\x18\x05 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"h\n\x16\x44sGetTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\xf3\x02\n\x1d\x44sGetMisclassTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry\x12\x0b\n\x03key\x18\x04 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x1e\x44sGetMisclassTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\xa3\x07\n\x18\x43reateModelReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xac\x07\n\x1b\x43reateForecastReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12Q\n\x08\x66orecast\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12g\n\x06secret\x18\x08 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xe1\x04\n\x1a\x43reateSummaryReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x08 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"#\n\x14\x43reateReportResponse\x12\x0b\n\x03pdf\x18\x01 \x01(\x0c\"\x87\x06\n\x1a\x43reateDatasetReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\x07 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.SecretEntry\x12P\n\x06report\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa8\x07\n\x18\x43reateStudyReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12S\n\x06models\x18\x06 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\t \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.SecretEntry\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xed\x04\n\x0f\x41skModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x11\n\tstudyName\x18\x03 \x01(\t\x12\x16\n\x0estudyNamespace\x18\x04 \x01(\t\x12V\n\tstudySpec\x18\x05 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec\x12\x16\n\x0e\x64\x61tasourceName\x18\x06 \x01(\t\x12\x1b\n\x13\x64\x61tasourceNamespace\x18\x07 \x01(\t\x12\\\n\x0e\x64\x61tasourceSpec\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x13\n\x0b\x64\x61tasetName\x18\t \x01(\t\x12\x18\n\x10\x64\x61tasetNamespace\x18\n \x01(\t\x12V\n\x0b\x64\x61tasetSpec\x18\x0b \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec\x12\x0e\n\x06\x62udget\x18\x0c \x01(\x05\"e\n\x10\x41skModelResponse\x12Q\n\x04spec\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec\"b\n\x10TellModelRequest\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x13\n\x11TellModelResponse\"\x13\n\x11\x44sShutdownRequest\"\x14\n\x12\x44sShutdownResponse\"\xa1\x05\n\x10\x43\x61lcDriftRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\\\n\x06secret\x18\x07 \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa1\x01\n\x11\x43\x61lcDriftResponse\x12]\n\x06result\x18\x01 \x03(\x0b\x32M.github.com.metaprov.modeldapi.services.data.v1.CalcDriftResponse.ResultEntry\x1a-\n\x0bResultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"\x9f\x05\n\x0f\x43\x61lcSkewRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12[\n\x06secret\x18\x07 \x03(\x0b\x32K.github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x9f\x01\n\x10\x43\x61lcSkewResponse\x12\\\n\x06result\x18\x01 \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.data.v1.CalcSkewResponse.ResultEntry\x1a-\n\x0bResultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\xb7\'\n\x0b\x44\x61taService\x12\x98\x01\n\x08ReadFile\x12\x41.github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9e\x01\n\x0bReadFeature\x12\x44.github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9a\x01\n\tReadAudio\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fRunDataPipeline\x12H.github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineResponse\"\x00\x12\x96\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest\x1a\x43.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeResponse\"\x00\x12\x9a\x01\n\tWriteFile\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fValidateDataset\x12H.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse\"\x00\x12\xa8\x01\n\x0fGenerateDataset\x12H.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetResponse\"\x00\x12\x9f\x01\n\x0cSplitDataset\x12\x45.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest\x1a\x46.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse\"\x00\x12\xb4\x01\n\x13\x43reateColumnProfile\x12L.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileResponse\"\x00\x12\x9c\x01\n\x0bInferSchema\x12\x44.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest\x1a\x45.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaResponse\"\x00\x12\x9f\x01\n\x0cGetTableView\x12\x45.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest\x1a\x46.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewResponse\"\x00\x12\xb7\x01\n\x14GetMisclassTableView\x12M.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest\x1aN.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewResponse\"\x00\x12\xb4\x01\n\x13SplitDatasetToRungs\x12L.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsResponse\"\x00\x12\xb7\x01\n\x14\x43reateDatasetProfile\x12M.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest\x1aN.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateModelProfile\x12K.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest\x1aL.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateStudyProfile\x12K.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest\x1aL.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileResponse\"\x00\x12\xb4\x01\n\x13\x43reateRecipeProfile\x12L.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileResponse\"\x00\x12\xa5\x01\n\x11\x43reateModelReport\x12H.github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa5\x01\n\x11\x43reateStudyReport\x12H.github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateDatasetReport\x12J.github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xab\x01\n\x14\x43reateForecastReport\x12K.github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateSummaryReport\x12J.github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\x8f\x01\n\x08\x41skModel\x12?.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse\"\x00\x12\x92\x01\n\tTellModel\x12@.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modeldapi.services.data.v1.TellModelResponse\"\x00\x12\xc8\x01\n\x15PartitionForecastFile\x12U.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest\x1aV.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesResponse\"\x00\x12\xae\x01\n\x11MergeForecastFile\x12J.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest\x1aK.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileResponse\"\x00\x12\x92\x01\n\tCalcDrift\x12@.github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest\x1a\x41.github.com.metaprov.modeldapi.services.data.v1.CalcDriftResponse\"\x00\x12\x8f\x01\n\x08\x43\x61lcSkew\x12?.github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest\x1a@.github.com.metaprov.modeldapi.services.data.v1.CalcSkewResponse\"\x00\x12\x93\x01\n\x08ShutDown\x12\x41.github.com.metaprov.modeldapi.services.data.v1.DsShutdownRequest\x1a\x42.github.com.metaprov.modeldapi.services.data.v1.DsShutdownResponse\"\x00\x42\x30Z.github.com/metaprov/modeldapi/services/data/v1b\x06proto3'
+  serialized_pb=b'\n9github.com/metaprov/modeldapi/services/data/v1/data.proto\x12.github.com.metaprov.modeldapi.services.data.v1\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\x1a\"k8s.io/api/core/v1/generated.proto\"\xfd\x03\n\x11\x44sReadFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12]\n\x06secret\x18\x06 \x03(\x0b\x32M.github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x83\x04\n\x14\x44sReadFeatureRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x06 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xcf\x04\n\x12\x44sWriteFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x07\x63ontent\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd0\x02\n\x12\x44sReadAudioRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12^\n\x06secret\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x89\x04\n\x17\x44sReadTextCorpusRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x05 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xd8\x04\n\x17\x44sReadFromStoreResponse\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12M\n\x06result\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x04 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x06 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x18\x44sRunDataPipelineRequest\x12T\n\x08pipeline\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline\"j\n\x19\x44sRunDataPipelineResponse\x12M\n\x06result\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\xc7\x06\n\x12\x44sRunRecipeRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12^\n\x06secret\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x12R\n\treciperun\x18\t \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"c\n\x13\x44sRunRecipeResponse\x12L\n\x06result\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\"\x87\x06\n\x1c\x44sCreateRecipeProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry\x12L\n\x06recipe\x18\x08 \x01(\x0b\x32<.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"l\n\x1d\x44sCreateRecipeProfileResponse\x12K\n\x06result\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\x14\n\x12\x44\x61taSourceResponse\"\x11\n\x0f\x44\x61tasetResponse\"\xbb\x05\n\x1d\x44sCreateDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12i\n\x06secret\x18\x07 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x80\x01\n\x1e\x44sCreateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xd7\x06\n\x1b\x44sCreateModelProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12g\n\x06secret\x18\n \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateModelProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xc5\x07\n%DsCreateForecastPartitionFilesRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12q\n\x06secret\x18\n \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry\x12X\n\tforecasts\x18\x0b \x03(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"}\n&DsCreateForecastPartitionFilesResponse\x12S\n\npartitions\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modeldapi.services.data.v1.PartitionValues\"/\n\x0fPartitionValues\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\"\xd5\x06\n\x1a\x44sMergeForecastFileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\n \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"*\n\x1b\x44sMergeForecastFileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xd8\x06\n\x1b\x44sCreateStudyProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12O\n\x06models\x18\x08 \x03(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12g\n\x06secret\x18\t \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x1c\x44sCreateStudyProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\"\xb1\x05\n\x18\x44sValidateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x07 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"+\n\x19\x44sValidateDatasetResponse\x12\x0e\n\x06\x65rrors\x18\x01 \x03(\t\"\xef\x04\n\x18\x44sGenerateDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x64\n\x06secret\x18\x06 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"(\n\x19\x44sGenerateDatasetResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\xfb\x05\n\x15\x44sSplitDatasetRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x08 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xc8\x05\n\x1c\x44sSplitDatasetToRungsRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\x06\x62ucket\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\ndatasource\x18\x04 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry\x12\r\n\x05rungs\x18\x08 \x01(\x05\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x1f\n\x1d\x44sSplitDatasetToRungsResponse\"\x18\n\x16\x44sSplitDatasetResponse\"\xe1\x05\n\x1c\x44sCreateColumnProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry\x12\x12\n\ncolumnType\x18\x08 \x01(\t\x12\x12\n\ncolumnName\x18\t \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"s\n\x1d\x44sCreateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modeldapi.services.common.v1.Plot\"\xbe\x05\n\x17\x44sDatasetProfileRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x05 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x06 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x63\n\x06secret\x18\x07 \x03(\x0b\x32S.github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.SecretEntry\x12\r\n\x05quick\x18\x08 \x01(\x08\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"m\n\x18\x44sDatasetProfileResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xb5\x03\n\x14\x44sInferSchemaRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12T\n\x06\x62ucket\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x03 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12`\n\x06secret\x18\x04 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.SecretEntry\x12\x0b\n\x03key\x18\x05 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"j\n\x15\x44sInferSchemaResponse\x12Q\n\x07profile\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\xbd\x03\n\x15\x44sGetTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12X\n\ndatasource\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x61\n\x06secret\x18\x04 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.SecretEntry\x12\x0b\n\x03key\x18\x05 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"h\n\x16\x44sGetTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\xf3\x02\n\x1d\x44sGetMisclassTableViewRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x03 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry\x12\x0b\n\x03key\x18\x04 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"p\n\x1e\x44sGetMisclassTableViewResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"\xa3\x07\n\x18\x43reateModelReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\x08 \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xac\x07\n\x1b\x43reateForecastReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12Q\n\x08\x66orecast\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12g\n\x06secret\x18\x08 \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xe1\x04\n\x1a\x43reateSummaryReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12U\n\nconnection\x18\x07 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x66\n\x06secret\x18\x08 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.SecretEntry\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"#\n\x14\x43reateReportResponse\x12\x0b\n\x03pdf\x18\x01 \x01(\x0c\"\x87\x06\n\x1a\x43reateDatasetReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12U\n\nconnection\x18\x05 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\x06 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x66\n\x06secret\x18\x07 \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.SecretEntry\x12P\n\x06report\x18\x08 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa8\x07\n\x18\x43reateStudyReportRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05study\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12S\n\x06models\x18\x06 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x64\n\x06secret\x18\t \x03(\x0b\x32T.github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.SecretEntry\x12P\n\x06report\x18\n \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xed\x04\n\x0f\x41skModelRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x11\n\tstudyName\x18\x03 \x01(\t\x12\x16\n\x0estudyNamespace\x18\x04 \x01(\t\x12V\n\tstudySpec\x18\x05 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec\x12\x16\n\x0e\x64\x61tasourceName\x18\x06 \x01(\t\x12\x1b\n\x13\x64\x61tasourceNamespace\x18\x07 \x01(\t\x12\\\n\x0e\x64\x61tasourceSpec\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec\x12\x13\n\x0b\x64\x61tasetName\x18\t \x01(\t\x12\x18\n\x10\x64\x61tasetNamespace\x18\n \x01(\t\x12V\n\x0b\x64\x61tasetSpec\x18\x0b \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec\x12\x0e\n\x06\x62udget\x18\x0c \x01(\x05\"e\n\x10\x41skModelResponse\x12Q\n\x04spec\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec\"b\n\x10TellModelRequest\x12N\n\x05model\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\"\x13\n\x11TellModelResponse\"\x13\n\x11\x44sShutdownRequest\"\x14\n\x12\x44sShutdownResponse\"\x9a\x07\n\x10\x43\x61lcDriftRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12W\n\tpredictor\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\\\n\x06secret\x18\n \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\xa1\x01\n\x11\x43\x61lcDriftResponse\x12]\n\x06result\x18\x01 \x03(\x0b\x32M.github.com.metaprov.modeldapi.services.data.v1.CalcDriftResponse.ResultEntry\x1a-\n\x0bResultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"\x98\x07\n\x0f\x43\x61lcSkewRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\x07version\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12T\n\ndatasource\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12N\n\x05study\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12N\n\x05model\x18\x06 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12W\n\tpredictor\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor\x12U\n\nconnection\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12T\n\x06\x62ucket\x18\t \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12[\n\x06secret\x18\n \x03(\x0b\x32K.github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x9f\x01\n\x10\x43\x61lcSkewResponse\x12\\\n\x06result\x18\x01 \x03(\x0b\x32L.github.com.metaprov.modeldapi.services.data.v1.CalcSkewResponse.ResultEntry\x1a-\n\x0bResultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\xb7\'\n\x0b\x44\x61taService\x12\x98\x01\n\x08ReadFile\x12\x41.github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9e\x01\n\x0bReadFeature\x12\x44.github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\x9a\x01\n\tReadAudio\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fRunDataPipeline\x12H.github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineResponse\"\x00\x12\x96\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest\x1a\x43.github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeResponse\"\x00\x12\x9a\x01\n\tWriteFile\x12\x42.github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest\x1aG.github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse\"\x00\x12\xa8\x01\n\x0fValidateDataset\x12H.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse\"\x00\x12\xa8\x01\n\x0fGenerateDataset\x12H.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest\x1aI.github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetResponse\"\x00\x12\x9f\x01\n\x0cSplitDataset\x12\x45.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest\x1a\x46.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse\"\x00\x12\xb4\x01\n\x13\x43reateColumnProfile\x12L.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileResponse\"\x00\x12\x9c\x01\n\x0bInferSchema\x12\x44.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest\x1a\x45.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaResponse\"\x00\x12\x9f\x01\n\x0cGetTableView\x12\x45.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest\x1a\x46.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewResponse\"\x00\x12\xb7\x01\n\x14GetMisclassTableView\x12M.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest\x1aN.github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewResponse\"\x00\x12\xb4\x01\n\x13SplitDatasetToRungs\x12L.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsResponse\"\x00\x12\xb7\x01\n\x14\x43reateDatasetProfile\x12M.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest\x1aN.github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateModelProfile\x12K.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest\x1aL.github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileResponse\"\x00\x12\xb1\x01\n\x12\x43reateStudyProfile\x12K.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest\x1aL.github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileResponse\"\x00\x12\xb4\x01\n\x13\x43reateRecipeProfile\x12L.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest\x1aM.github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileResponse\"\x00\x12\xa5\x01\n\x11\x43reateModelReport\x12H.github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa5\x01\n\x11\x43reateStudyReport\x12H.github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateDatasetReport\x12J.github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xab\x01\n\x14\x43reateForecastReport\x12K.github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\xa9\x01\n\x13\x43reateSummaryReport\x12J.github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest\x1a\x44.github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse\"\x00\x12\x8f\x01\n\x08\x41skModel\x12?.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest\x1a@.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse\"\x00\x12\x92\x01\n\tTellModel\x12@.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest\x1a\x41.github.com.metaprov.modeldapi.services.data.v1.TellModelResponse\"\x00\x12\xc8\x01\n\x15PartitionForecastFile\x12U.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest\x1aV.github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesResponse\"\x00\x12\xae\x01\n\x11MergeForecastFile\x12J.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest\x1aK.github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileResponse\"\x00\x12\x92\x01\n\tCalcDrift\x12@.github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest\x1a\x41.github.com.metaprov.modeldapi.services.data.v1.CalcDriftResponse\"\x00\x12\x8f\x01\n\x08\x43\x61lcSkew\x12?.github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest\x1a@.github.com.metaprov.modeldapi.services.data.v1.CalcSkewResponse\"\x00\x12\x93\x01\n\x08ShutDown\x12\x41.github.com.metaprov.modeldapi.services.data.v1.DsShutdownRequest\x1a\x42.github.com.metaprov.modeldapi.services.data.v1.DsShutdownResponse\"\x00\x42\x30Z.github.com/metaprov/modeldapi/services/data/v1b\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -65,8 +66,8 @@ _DSREADFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSREADFILEREQUEST = _descriptor.Descriptor(
@@ -124,8 +125,8 @@ _DSREADFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=424,
-  serialized_end=933,
+  serialized_start=499,
+  serialized_end=1008,
 )
 
 
@@ -163,8 +164,8 @@ _DSREADFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSREADFEATUREREQUEST = _descriptor.Descriptor(
@@ -222,8 +223,8 @@ _DSREADFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=936,
-  serialized_end=1451,
+  serialized_start=1011,
+  serialized_end=1526,
 )
 
 
@@ -261,8 +262,8 @@ _DSWRITEFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSWRITEFILEREQUEST = _descriptor.Descriptor(
@@ -327,8 +328,8 @@ _DSWRITEFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1454,
-  serialized_end=2045,
+  serialized_start=1529,
+  serialized_end=2120,
 )
 
 
@@ -366,8 +367,8 @@ _DSREADAUDIOREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSREADAUDIOREQUEST = _descriptor.Descriptor(
@@ -411,8 +412,8 @@ _DSREADAUDIOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2048,
-  serialized_end=2384,
+  serialized_start=2123,
+  serialized_end=2459,
 )
 
 
@@ -450,8 +451,8 @@ _DSREADTEXTCORPUSREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSREADTEXTCORPUSREQUEST = _descriptor.Descriptor(
@@ -509,8 +510,8 @@ _DSREADTEXTCORPUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2387,
-  serialized_end=2908,
+  serialized_start=2462,
+  serialized_end=2983,
 )
 
 
@@ -548,8 +549,8 @@ _DSREADFROMSTORERESPONSE_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSREADFROMSTORERESPONSE = _descriptor.Descriptor(
@@ -614,8 +615,8 @@ _DSREADFROMSTORERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2911,
-  serialized_end=3511,
+  serialized_start=2986,
+  serialized_end=3586,
 )
 
 
@@ -646,8 +647,8 @@ _DSRUNDATAPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3513,
-  serialized_end=3625,
+  serialized_start=3588,
+  serialized_end=3700,
 )
 
 
@@ -678,8 +679,8 @@ _DSRUNDATAPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3627,
-  serialized_end=3733,
+  serialized_start=3702,
+  serialized_end=3808,
 )
 
 
@@ -717,8 +718,8 @@ _DSRUNRECIPEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSRUNRECIPEREQUEST = _descriptor.Descriptor(
@@ -804,8 +805,8 @@ _DSRUNRECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3736,
-  serialized_end=4575,
+  serialized_start=3811,
+  serialized_end=4650,
 )
 
 
@@ -836,8 +837,8 @@ _DSRUNRECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4577,
-  serialized_end=4676,
+  serialized_start=4652,
+  serialized_end=4751,
 )
 
 
@@ -875,8 +876,8 @@ _DSCREATERECIPEPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATERECIPEPROFILEREQUEST = _descriptor.Descriptor(
@@ -955,8 +956,8 @@ _DSCREATERECIPEPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4679,
-  serialized_end=5454,
+  serialized_start=4754,
+  serialized_end=5529,
 )
 
 
@@ -987,8 +988,8 @@ _DSCREATERECIPEPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5456,
-  serialized_end=5564,
+  serialized_start=5531,
+  serialized_end=5639,
 )
 
 
@@ -1012,8 +1013,8 @@ _DATASOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5566,
-  serialized_end=5586,
+  serialized_start=5641,
+  serialized_end=5661,
 )
 
 
@@ -1037,8 +1038,8 @@ _DATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5588,
-  serialized_end=5605,
+  serialized_start=5663,
+  serialized_end=5680,
 )
 
 
@@ -1076,8 +1077,8 @@ _DSCREATEDATASETPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATEDATASETPROFILEREQUEST = _descriptor.Descriptor(
@@ -1149,8 +1150,8 @@ _DSCREATEDATASETPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5608,
-  serialized_end=6307,
+  serialized_start=5683,
+  serialized_end=6382,
 )
 
 
@@ -1188,8 +1189,8 @@ _DSCREATEDATASETPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6310,
-  serialized_end=6438,
+  serialized_start=6385,
+  serialized_end=6513,
 )
 
 
@@ -1227,8 +1228,8 @@ _DSCREATEMODELPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATEMODELPROFILEREQUEST = _descriptor.Descriptor(
@@ -1314,8 +1315,8 @@ _DSCREATEMODELPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6441,
-  serialized_end=7296,
+  serialized_start=6516,
+  serialized_end=7371,
 )
 
 
@@ -1346,8 +1347,8 @@ _DSCREATEMODELPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7298,
-  serialized_end=7341,
+  serialized_start=7373,
+  serialized_end=7416,
 )
 
 
@@ -1385,8 +1386,8 @@ _DSCREATEFORECASTPARTITIONFILESREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATEFORECASTPARTITIONFILESREQUEST = _descriptor.Descriptor(
@@ -1479,8 +1480,8 @@ _DSCREATEFORECASTPARTITIONFILESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7344,
-  serialized_end=8309,
+  serialized_start=7419,
+  serialized_end=8384,
 )
 
 
@@ -1511,8 +1512,8 @@ _DSCREATEFORECASTPARTITIONFILESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8311,
-  serialized_end=8436,
+  serialized_start=8386,
+  serialized_end=8511,
 )
 
 
@@ -1550,8 +1551,8 @@ _PARTITIONVALUES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8438,
-  serialized_end=8485,
+  serialized_start=8513,
+  serialized_end=8560,
 )
 
 
@@ -1589,8 +1590,8 @@ _DSMERGEFORECASTFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSMERGEFORECASTFILEREQUEST = _descriptor.Descriptor(
@@ -1676,8 +1677,8 @@ _DSMERGEFORECASTFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8488,
-  serialized_end=9341,
+  serialized_start=8563,
+  serialized_end=9416,
 )
 
 
@@ -1708,8 +1709,8 @@ _DSMERGEFORECASTFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9343,
-  serialized_end=9385,
+  serialized_start=9418,
+  serialized_end=9460,
 )
 
 
@@ -1747,8 +1748,8 @@ _DSCREATESTUDYPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATESTUDYPROFILEREQUEST = _descriptor.Descriptor(
@@ -1834,8 +1835,8 @@ _DSCREATESTUDYPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9388,
-  serialized_end=10244,
+  serialized_start=9463,
+  serialized_end=10319,
 )
 
 
@@ -1866,8 +1867,8 @@ _DSCREATESTUDYPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10246,
-  serialized_end=10289,
+  serialized_start=10321,
+  serialized_end=10364,
 )
 
 
@@ -1905,8 +1906,8 @@ _DSVALIDATEDATASETREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSVALIDATEDATASETREQUEST = _descriptor.Descriptor(
@@ -1978,8 +1979,8 @@ _DSVALIDATEDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10292,
-  serialized_end=10981,
+  serialized_start=10367,
+  serialized_end=11056,
 )
 
 
@@ -2010,8 +2011,8 @@ _DSVALIDATEDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10983,
-  serialized_end=11026,
+  serialized_start=11058,
+  serialized_end=11101,
 )
 
 
@@ -2049,8 +2050,8 @@ _DSGENERATEDATASETREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSGENERATEDATASETREQUEST = _descriptor.Descriptor(
@@ -2122,8 +2123,8 @@ _DSGENERATEDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11029,
-  serialized_end=11652,
+  serialized_start=11104,
+  serialized_end=11727,
 )
 
 
@@ -2154,8 +2155,8 @@ _DSGENERATEDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11654,
-  serialized_end=11694,
+  serialized_start=11729,
+  serialized_end=11769,
 )
 
 
@@ -2193,8 +2194,8 @@ _DSSPLITDATASETREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSSPLITDATASETREQUEST = _descriptor.Descriptor(
@@ -2273,8 +2274,8 @@ _DSSPLITDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11697,
-  serialized_end=12460,
+  serialized_start=11772,
+  serialized_end=12535,
 )
 
 
@@ -2312,8 +2313,8 @@ _DSSPLITDATASETTORUNGSREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSSPLITDATASETTORUNGSREQUEST = _descriptor.Descriptor(
@@ -2392,8 +2393,8 @@ _DSSPLITDATASETTORUNGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12463,
-  serialized_end=13175,
+  serialized_start=12538,
+  serialized_end=13250,
 )
 
 
@@ -2417,8 +2418,8 @@ _DSSPLITDATASETTORUNGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13177,
-  serialized_end=13208,
+  serialized_start=13252,
+  serialized_end=13283,
 )
 
 
@@ -2442,8 +2443,8 @@ _DSSPLITDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13210,
-  serialized_end=13234,
+  serialized_start=13285,
+  serialized_end=13309,
 )
 
 
@@ -2481,8 +2482,8 @@ _DSCREATECOLUMNPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSCREATECOLUMNPROFILEREQUEST = _descriptor.Descriptor(
@@ -2568,8 +2569,8 @@ _DSCREATECOLUMNPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13237,
-  serialized_end=13974,
+  serialized_start=13312,
+  serialized_end=14049,
 )
 
 
@@ -2607,8 +2608,8 @@ _DSCREATECOLUMNPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13976,
-  serialized_end=14091,
+  serialized_start=14051,
+  serialized_end=14166,
 )
 
 
@@ -2646,8 +2647,8 @@ _DSDATASETPROFILEREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSDATASETPROFILEREQUEST = _descriptor.Descriptor(
@@ -2726,8 +2727,8 @@ _DSDATASETPROFILEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14094,
-  serialized_end=14796,
+  serialized_start=14169,
+  serialized_end=14871,
 )
 
 
@@ -2758,8 +2759,8 @@ _DSDATASETPROFILERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14798,
-  serialized_end=14907,
+  serialized_start=14873,
+  serialized_end=14982,
 )
 
 
@@ -2797,8 +2798,8 @@ _DSINFERSCHEMAREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSINFERSCHEMAREQUEST = _descriptor.Descriptor(
@@ -2856,8 +2857,8 @@ _DSINFERSCHEMAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14910,
-  serialized_end=15347,
+  serialized_start=14985,
+  serialized_end=15422,
 )
 
 
@@ -2888,8 +2889,8 @@ _DSINFERSCHEMARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15349,
-  serialized_end=15455,
+  serialized_start=15424,
+  serialized_end=15530,
 )
 
 
@@ -2927,8 +2928,8 @@ _DSGETTABLEVIEWREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSGETTABLEVIEWREQUEST = _descriptor.Descriptor(
@@ -2986,8 +2987,8 @@ _DSGETTABLEVIEWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15458,
-  serialized_end=15903,
+  serialized_start=15533,
+  serialized_end=15978,
 )
 
 
@@ -3018,8 +3019,8 @@ _DSGETTABLEVIEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15905,
-  serialized_end=16009,
+  serialized_start=15980,
+  serialized_end=16084,
 )
 
 
@@ -3057,8 +3058,8 @@ _DSGETMISCLASSTABLEVIEWREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _DSGETMISCLASSTABLEVIEWREQUEST = _descriptor.Descriptor(
@@ -3109,8 +3110,8 @@ _DSGETMISCLASSTABLEVIEWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16012,
-  serialized_end=16383,
+  serialized_start=16087,
+  serialized_end=16458,
 )
 
 
@@ -3141,8 +3142,8 @@ _DSGETMISCLASSTABLEVIEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16385,
-  serialized_end=16497,
+  serialized_start=16460,
+  serialized_end=16572,
 )
 
 
@@ -3180,8 +3181,8 @@ _CREATEMODELREPORTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CREATEMODELREPORTREQUEST = _descriptor.Descriptor(
@@ -3274,8 +3275,8 @@ _CREATEMODELREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16500,
-  serialized_end=17431,
+  serialized_start=16575,
+  serialized_end=17506,
 )
 
 
@@ -3313,8 +3314,8 @@ _CREATEFORECASTREPORTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CREATEFORECASTREPORTREQUEST = _descriptor.Descriptor(
@@ -3407,8 +3408,8 @@ _CREATEFORECASTREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17434,
-  serialized_end=18374,
+  serialized_start=17509,
+  serialized_end=18449,
 )
 
 
@@ -3446,8 +3447,8 @@ _CREATESUMMARYREPORTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CREATESUMMARYREPORTREQUEST = _descriptor.Descriptor(
@@ -3512,8 +3513,8 @@ _CREATESUMMARYREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18377,
-  serialized_end=18986,
+  serialized_start=18452,
+  serialized_end=19061,
 )
 
 
@@ -3544,8 +3545,8 @@ _CREATEREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18988,
-  serialized_end=19023,
+  serialized_start=19063,
+  serialized_end=19098,
 )
 
 
@@ -3583,8 +3584,8 @@ _CREATEDATASETREPORTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CREATEDATASETREPORTREQUEST = _descriptor.Descriptor(
@@ -3663,8 +3664,8 @@ _CREATEDATASETREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19026,
-  serialized_end=19801,
+  serialized_start=19101,
+  serialized_end=19876,
 )
 
 
@@ -3702,8 +3703,8 @@ _CREATESTUDYREPORTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CREATESTUDYREPORTREQUEST = _descriptor.Descriptor(
@@ -3796,8 +3797,8 @@ _CREATESTUDYREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19804,
-  serialized_end=20740,
+  serialized_start=19879,
+  serialized_end=20815,
 )
 
 
@@ -3905,8 +3906,8 @@ _ASKMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20743,
-  serialized_end=21364,
+  serialized_start=20818,
+  serialized_end=21439,
 )
 
 
@@ -3937,8 +3938,8 @@ _ASKMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21366,
-  serialized_end=21467,
+  serialized_start=21441,
+  serialized_end=21542,
 )
 
 
@@ -3969,8 +3970,8 @@ _TELLMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21469,
-  serialized_end=21567,
+  serialized_start=21544,
+  serialized_end=21642,
 )
 
 
@@ -3994,8 +3995,8 @@ _TELLMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21569,
-  serialized_end=21588,
+  serialized_start=21644,
+  serialized_end=21663,
 )
 
 
@@ -4019,8 +4020,8 @@ _DSSHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21590,
-  serialized_end=21609,
+  serialized_start=21665,
+  serialized_end=21684,
 )
 
 
@@ -4044,8 +4045,8 @@ _DSSHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21611,
-  serialized_end=21631,
+  serialized_start=21686,
+  serialized_end=21706,
 )
 
 
@@ -4083,8 +4084,8 @@ _CALCDRIFTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CALCDRIFTREQUEST = _descriptor.Descriptor(
@@ -4124,22 +4125,43 @@ _CALCDRIFTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.connection', index=4,
+      name='study', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.study', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.bucket', index=5,
+      name='model', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.model', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.secret', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='predictor', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.predictor', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connection', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.connection', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.bucket', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcDriftRequest.secret', index=9,
+      number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -4156,8 +4178,8 @@ _CALCDRIFTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21634,
-  serialized_end=22307,
+  serialized_start=21709,
+  serialized_end=22631,
 )
 
 
@@ -4195,8 +4217,8 @@ _CALCDRIFTRESPONSE_RESULTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22426,
-  serialized_end=22471,
+  serialized_start=22750,
+  serialized_end=22795,
 )
 
 _CALCDRIFTRESPONSE = _descriptor.Descriptor(
@@ -4226,8 +4248,8 @@ _CALCDRIFTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22310,
-  serialized_end=22471,
+  serialized_start=22634,
+  serialized_end=22795,
 )
 
 
@@ -4265,8 +4287,8 @@ _CALCSKEWREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=933,
+  serialized_start=963,
+  serialized_end=1008,
 )
 
 _CALCSKEWREQUEST = _descriptor.Descriptor(
@@ -4306,22 +4328,43 @@ _CALCSKEWREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.connection', index=4,
+      name='study', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.study', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.bucket', index=5,
+      name='model', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.model', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.secret', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='predictor', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.predictor', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connection', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.connection', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.bucket', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret', full_name='github.com.metaprov.modeldapi.services.data.v1.CalcSkewRequest.secret', index=9,
+      number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -4338,8 +4381,8 @@ _CALCSKEWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22474,
-  serialized_end=23145,
+  serialized_start=22798,
+  serialized_end=23718,
 )
 
 
@@ -4377,8 +4420,8 @@ _CALCSKEWRESPONSE_RESULTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22426,
-  serialized_end=22471,
+  serialized_start=22750,
+  serialized_end=22795,
 )
 
 _CALCSKEWRESPONSE = _descriptor.Descriptor(
@@ -4408,8 +4451,8 @@ _CALCSKEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23148,
-  serialized_end=23307,
+  serialized_start=23721,
+  serialized_end=23880,
 )
 
 _DSREADFILEREQUEST_SECRETENTRY.containing_type = _DSREADFILEREQUEST
@@ -4650,6 +4693,9 @@ _CALCDRIFTREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_me
 _CALCDRIFTREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _CALCDRIFTREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _CALCDRIFTREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
+_CALCDRIFTREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_CALCDRIFTREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_CALCDRIFTREQUEST.fields_by_name['predictor'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
 _CALCDRIFTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _CALCDRIFTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
 _CALCDRIFTREQUEST.fields_by_name['secret'].message_type = _CALCDRIFTREQUEST_SECRETENTRY
@@ -4660,6 +4706,9 @@ _CALCSKEWREQUEST.fields_by_name['product'].message_type = github_dot_com_dot_met
 _CALCSKEWREQUEST.fields_by_name['version'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
 _CALCSKEWREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
 _CALCSKEWREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
+_CALCSKEWREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_CALCSKEWREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_CALCSKEWREQUEST.fields_by_name['predictor'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
 _CALCSKEWREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _CALCSKEWREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
 _CALCSKEWREQUEST.fields_by_name['secret'].message_type = _CALCSKEWREQUEST_SECRETENTRY
@@ -5428,8 +5477,8 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=23310,
-  serialized_end=28357,
+  serialized_start=23883,
+  serialized_end=28930,
   methods=[
   _descriptor.MethodDescriptor(
     name='ReadFile',

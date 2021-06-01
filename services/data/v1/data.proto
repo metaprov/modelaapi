@@ -5,6 +5,7 @@ package github.com.metaprov.modeldapi.services.data.v1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
 import "k8s.io/api/core/v1/generated.proto";
@@ -447,9 +448,12 @@ message CalcDriftRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset     = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection  = 5;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 6;
-    map<string,bytes>     secret     = 7;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study              study = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model              model = 6;  
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor         predictor = 7;  
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection  = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 9;
+    map<string,bytes>     secret     = 10;
 }
 message CalcDriftResponse {
     map<string,float> result = 1; // drift result for each feature
@@ -460,9 +464,12 @@ message CalcSkewRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version = 2;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset     = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection  = 5;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 6;
-    map<string,bytes>     secret     = 7;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study              study = 5;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model              model = 6;  
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor         predictor = 7;  
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection  = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket   = 9;
+    map<string,bytes>     secret     = 10;
 }
 
 message CalcSkewResponse {
