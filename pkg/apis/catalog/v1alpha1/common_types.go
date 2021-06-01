@@ -73,6 +73,8 @@ const (
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
 	CompileTask           TaskName = "compile-model"
 	GenerateDataset       TaskName = "generate-dataset"
+	CalcSkewTask          TaskName = "calc-skew"
+	CalcDriftTask         TaskName = "calc-drift"
 )
 
 // ApiKeyName is the secret or in env variable
