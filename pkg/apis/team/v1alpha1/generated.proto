@@ -36,6 +36,11 @@ message Comment {
 
   // PostedAt is the time when the comment was posted
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time postedAt = 5;
+
+  // Sent indicate if the comment was sent to the notifier.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool sent = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -88,6 +93,11 @@ message ConversationSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
+
+  // The notifier is used for alerts about new msgs in the conversation
+  // +kubebuilder:default:="default-slack-notifier"
+  // +kubebuilder:validation:Optional
+  optional string notifierName = 4;
 }
 
 // ConversationStatus is the current status of the conversation

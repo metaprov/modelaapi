@@ -141,8 +141,17 @@ spec:
                       default: ""
                       description: If this comment is a reply to an id
                       type: string
+                    sent:
+                      default: false
+                      description: Sent indicate if the comment was sent to the notifier.
+                      type: boolean
                   type: object
                 type: array
+              notifierName:
+                default: default-slack-notifier
+                description: The notifier is used for alerts about new msgs in the
+                  conversation
+                type: string
               owner:
                 default: no-one
                 description: The owner account name

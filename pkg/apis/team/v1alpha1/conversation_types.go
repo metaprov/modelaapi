@@ -35,6 +35,10 @@ type Comment struct {
 	Content *string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
 	// PostedAt is the time when the comment was posted
 	PostedAt *metav1.Time `json:"postedAt,omitempty" protobuf:"bytes,5,opt,name=postedAt"`
+	// Sent indicate if the comment was sent to the notifier.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Sent *bool `json:"sent,omitempty" protobuf:"bytes,6,opt,name=sent"`
 }
 
 // ConversationCondition describes the state of the conversation
@@ -80,6 +84,10 @@ type ConversationSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
+	// The notifier is used for alerts about new msgs in the conversation
+	// +kubebuilder:default:="default-slack-notifier"
+	// +kubebuilder:validation:Optional
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 }
 
 //ConversationStatus is the current status of the conversation

@@ -455,7 +455,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.toObject = fu
     authorref: (f = msg.getAuthorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     replyto: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     content: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    postedat: (f = msg.getPostedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    postedat: (f = msg.getPostedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    sent: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -513,6 +514,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.deserializeBi
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setPostedat(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSent(value);
       break;
     default:
       reader.skipField();
@@ -578,6 +583,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.serializeBina
       5,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -762,6 +774,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.cle
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.hasPostedat = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool sent = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.getSent = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.setSent = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.clearSent = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.prototype.hasSent = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -1614,7 +1662,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.toOb
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment.toObject, includeInstance),
-    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1665,6 +1714,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.dese
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotifiername(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1714,6 +1767,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.seri
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1828,6 +1888,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string notifierName = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prototype.getNotifiername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prototype.setNotifiername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prototype.clearNotifiername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec.prototype.hasNotifiername = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

@@ -26,6 +26,9 @@ export class Comment extends jspb.Message {
   hasPostedat(): boolean;
   clearPostedat(): Comment;
 
+  getSent(): boolean;
+  setSent(value: boolean): Comment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Comment.AsObject;
   static toObject(includeInstance: boolean, msg: Comment): Comment.AsObject;
@@ -41,6 +44,7 @@ export namespace Comment {
     replyto: string,
     content: string,
     postedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    sent: boolean,
   }
 }
 
@@ -152,6 +156,9 @@ export class ConversationSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ConversationSpec;
 
+  getNotifiername(): string;
+  setNotifiername(value: string): ConversationSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConversationSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ConversationSpec): ConversationSpec.AsObject;
@@ -165,6 +172,7 @@ export namespace ConversationSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     messagesList: Array<Comment.AsObject>,
     owner: string,
+    notifiername: string,
   }
 }
 
