@@ -218,6 +218,14 @@ message Column {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double sigma = 32;
+
+  // Skew treshold is the treshold for skew detection.
+  // +kubebuilder:validation:Optional
+  optional double skewThreshold = 33;
+
+  // Drift treshold is the treshold for drift detection.
+  // +kubebuilder:validation:Optional
+  optional double driftThreshold = 34;
 }
 
 // Hold the statistical parameters about a single attribute

@@ -274,6 +274,9 @@ spec:
                           description: Description is a description of the feature
                           maxLength: 63
                           type: string
+                        driftThreshold:
+                          description: Drift treshold is the treshold for drift detection.
+                          type: number
                         enum:
                           description: Enum
                           items:
@@ -416,6 +419,9 @@ spec:
                         sigma:
                           default: 0
                           description: Sigma is the standard deviation of the distribution
+                          type: number
+                        skewThreshold:
+                          description: Skew treshold is the treshold for skew detection.
                           type: number
                         timeColumn:
                           default: false

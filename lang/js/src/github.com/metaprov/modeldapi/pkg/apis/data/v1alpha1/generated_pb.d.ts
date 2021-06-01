@@ -182,6 +182,12 @@ export class Column extends jspb.Message {
   getSigma(): number;
   setSigma(value: number): Column;
 
+  getSkewthreshold(): number;
+  setSkewthreshold(value: number): Column;
+
+  getDriftthreshold(): number;
+  setDriftthreshold(value: number): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -224,6 +230,8 @@ export namespace Column {
     log: boolean,
     mu: number,
     sigma: number,
+    skewthreshold: number,
+    driftthreshold: number,
   }
 }
 
