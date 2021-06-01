@@ -245,10 +245,9 @@ type PredictorStatus struct {
 	// Prev model spec stores the prev working model, The field is used in case of a roll back
 	//+kubebuilder:validation:Optional
 	PrevModelSpec *catalog.ModelDeploymentSpec `json:"prevModel,omitempty" protobuf:"bytes,9,opt,name=prevModel"`
-	// ActualDrift records the last check for drift per column
-	ActualDrift map[string]float32 `json:"actualDrift,omitempty" protobuf:"bytes,10,opt,name=actualDrift"`
-	// ActualSkew records the last check for drift per column
-	ActualSkew map[string]float32 `json:"actualSkew,omitempty" protobuf:"bytes,11,opt,name=actualSkew"`
+	// Monitor status holds the status of the last monitor action.
+	//+kubebuilder:validation:Optional
+	MonitorStatus MonitorStatus `json:"monitorStatus,omitempty" protobuf:"bytes,10,opt,name=monitorStatus"`
 }
 
 type PredictorHealth struct {
@@ -376,4 +375,13 @@ type MonitorSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
+}
+
+type MonitorStatus struct {
+	// Last time the condition transitioned from one status to another.
+	LastTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,1,opt,name=lastTransitionTime"`
+	// ActualDrift records the last check for drift per column
+	ActualDrift map[string]float32 `json:"actualDrift,omitempty" protobuf:"bytes,2,opt,name=actualDrift"`
+	// ActualSkew records the last check for drift per column
+	ActualSkew map[string]float32 `json:"actualSkew,omitempty" protobuf:"bytes,3,opt,name=actualSkew"`
 }

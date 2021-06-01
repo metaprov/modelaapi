@@ -280,6 +280,17 @@ message MonitorSpec {
   optional string notifierName = 7;
 }
 
+message MonitorStatus {
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 1;
+
+  // ActualDrift records the last check for drift per column
+  map<string, float> actualDrift = 2;
+
+  // ActualSkew records the last check for drift per column
+  map<string, float> actualSkew = 3;
+}
+
 message OnlineChannelSpec {
   // Service port specify the predictor port.
   // Default: 8080
@@ -659,11 +670,9 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec prevModel = 9;
 
-  // ActualDrift records the last check for drift per column
-  map<string, float> actualDrift = 10;
-
-  // ActualSkew records the last check for drift per column
-  map<string, float> actualSkew = 11;
+  // Monitor status holds the status of the last monitor action.
+  // +kubebuilder:validation:Optional
+  optional MonitorStatus monitorStatus = 10;
 }
 
 message ProgressiveSpec {

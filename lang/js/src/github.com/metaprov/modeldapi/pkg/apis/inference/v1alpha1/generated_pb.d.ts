@@ -492,6 +492,34 @@ export namespace MonitorSpec {
   }
 }
 
+export class MonitorStatus extends jspb.Message {
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): MonitorStatus;
+
+  getActualdriftMap(): jspb.Map<string, number>;
+  clearActualdriftMap(): MonitorStatus;
+
+  getActualskewMap(): jspb.Map<string, number>;
+  clearActualskewMap(): MonitorStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MonitorStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: MonitorStatus): MonitorStatus.AsObject;
+  static serializeBinaryToWriter(message: MonitorStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MonitorStatus;
+  static deserializeBinaryFromReader(message: MonitorStatus, reader: jspb.BinaryReader): MonitorStatus;
+}
+
+export namespace MonitorStatus {
+  export type AsObject = {
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    actualdriftMap: Array<[string, number]>,
+    actualskewMap: Array<[string, number]>,
+  }
+}
+
 export class OnlineChannelSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): OnlineChannelSpec;
@@ -1116,11 +1144,10 @@ export class PredictorStatus extends jspb.Message {
   hasPrevmodel(): boolean;
   clearPrevmodel(): PredictorStatus;
 
-  getActualdriftMap(): jspb.Map<string, number>;
-  clearActualdriftMap(): PredictorStatus;
-
-  getActualskewMap(): jspb.Map<string, number>;
-  clearActualskewMap(): PredictorStatus;
+  getMonitorstatus(): MonitorStatus | undefined;
+  setMonitorstatus(value?: MonitorStatus): PredictorStatus;
+  hasMonitorstatus(): boolean;
+  clearMonitorstatus(): PredictorStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorStatus.AsObject;
@@ -1141,8 +1168,7 @@ export namespace PredictorStatus {
     observedgeneration: number,
     statusesList: Array<ChannelStatus.AsObject>,
     prevmodel?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
-    actualdriftMap: Array<[string, number]>,
-    actualskewMap: Array<[string, number]>,
+    monitorstatus?: MonitorStatus.AsObject,
   }
 }
 

@@ -7128,16 +7128,6 @@ spec:
             description: PredictorStatus contain the current state of the Predictor
               resource
             properties:
-              actualDrift:
-                additionalProperties:
-                  type: number
-                description: ActualDrift records the last check for drift per column
-                type: object
-              actualSkew:
-                additionalProperties:
-                  type: number
-                description: ActualSkew records the last check for drift per column
-                type: object
               conditions:
                 items:
                   description: PredictorCondition describes the state of a prediction
@@ -7262,6 +7252,26 @@ spec:
               monitorLastScore:
                 description: What was the last score
                 type: number
+              monitorStatus:
+                description: Monitor status holds the status of the last monitor action.
+                properties:
+                  actualDrift:
+                    additionalProperties:
+                      type: number
+                    description: ActualDrift records the last check for drift per
+                      column
+                    type: object
+                  actualSkew:
+                    additionalProperties:
+                      type: number
+                    description: ActualSkew records the last check for drift per column
+                    type: object
+                  lastTransitionTime:
+                    description: Last time the condition transitioned from one status
+                      to another.
+                    format: date-time
+                    type: string
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
