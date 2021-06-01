@@ -245,6 +245,10 @@ type PredictorStatus struct {
 	// Prev model spec stores the prev working model, The field is used in case of a roll back
 	//+kubebuilder:validation:Optional
 	PrevModelSpec *catalog.ModelDeploymentSpec `json:"prevModel,omitempty" protobuf:"bytes,9,opt,name=prevModel"`
+	// ActualDrift records the last check for drift per column
+	ActualDrift map[string]float32 `json:"actualDrift,omitempty" protobuf:"bytes,10,opt,name=actualDrift"`
+	// ActualSkew records the last check for drift per column
+	ActualSkew map[string]float32 `json:"actualSkew,omitempty" protobuf:"bytes,11,opt,name=actualSkew"`
 }
 
 type PredictorHealth struct {

@@ -10471,7 +10471,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     observedgeneration: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     statusesList: jspb.Message.toObjectList(msg.getStatusesList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.toObject, includeInstance),
-    prevmodel: (f = msg.getPrevmodel()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f)
+    prevmodel: (f = msg.getPrevmodel()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
+    actualdriftMap: (f = msg.getActualdriftMap()) ? f.toObject(includeInstance, undefined) : [],
+    actualskewMap: (f = msg.getActualskewMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -10549,6 +10551,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.deserializeBinaryFromReader);
       msg.setPrevmodel(value);
+      break;
+    case 10:
+      var value = msg.getActualdriftMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
+      break;
+    case 11:
+      var value = msg.getActualskewMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
       break;
     default:
       reader.skipField();
@@ -10647,6 +10661,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.serializeBinaryToWriter
     );
+  }
+  f = message.getActualdriftMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  }
+  f = message.getActualskewMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -10982,6 +11004,50 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasPrevmodel = function() {
   return jspb.Message.getField(this, 9) != null;
 };
+
+
+/**
+ * map<string, float> actualDrift = 10;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getActualdriftMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearActualdriftMap = function() {
+  this.getActualdriftMap().clear();
+  return this;};
+
+
+/**
+ * map<string, float> actualSkew = 11;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getActualskewMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearActualskewMap = function() {
+  this.getActualskewMap().clear();
+  return this;};
 
 
 

@@ -7128,6 +7128,16 @@ spec:
             description: PredictorStatus contain the current state of the Predictor
               resource
             properties:
+              actualDrift:
+                additionalProperties:
+                  type: number
+                description: ActualDrift records the last check for drift per column
+                type: object
+              actualSkew:
+                additionalProperties:
+                  type: number
+                description: ActualSkew records the last check for drift per column
+                type: object
               conditions:
                 items:
                   description: PredictorCondition describes the state of a prediction

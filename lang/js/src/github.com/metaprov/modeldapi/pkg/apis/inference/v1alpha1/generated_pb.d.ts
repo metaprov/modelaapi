@@ -1116,6 +1116,12 @@ export class PredictorStatus extends jspb.Message {
   hasPrevmodel(): boolean;
   clearPrevmodel(): PredictorStatus;
 
+  getActualdriftMap(): jspb.Map<string, number>;
+  clearActualdriftMap(): PredictorStatus;
+
+  getActualskewMap(): jspb.Map<string, number>;
+  clearActualskewMap(): PredictorStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorStatus): PredictorStatus.AsObject;
@@ -1135,6 +1141,8 @@ export namespace PredictorStatus {
     observedgeneration: number,
     statusesList: Array<ChannelStatus.AsObject>,
     prevmodel?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
+    actualdriftMap: Array<[string, number]>,
+    actualskewMap: Array<[string, number]>,
   }
 }
 

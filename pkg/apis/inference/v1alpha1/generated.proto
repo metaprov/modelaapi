@@ -658,6 +658,12 @@ message PredictorStatus {
   // Prev model spec stores the prev working model, The field is used in case of a roll back
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec prevModel = 9;
+
+  // ActualDrift records the last check for drift per column
+  map<string, float> actualDrift = 10;
+
+  // ActualSkew records the last check for drift per column
+  map<string, float> actualSkew = 11;
 }
 
 message ProgressiveSpec {
