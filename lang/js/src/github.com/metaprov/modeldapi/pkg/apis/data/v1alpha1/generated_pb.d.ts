@@ -785,6 +785,28 @@ export namespace DataPipelineStatus {
   }
 }
 
+export class DataProblem extends jspb.Message {
+  getColumn(): string;
+  setColumn(value: string): DataProblem;
+
+  getError(): string;
+  setError(value: string): DataProblem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataProblem.AsObject;
+  static toObject(includeInstance: boolean, msg: DataProblem): DataProblem.AsObject;
+  static serializeBinaryToWriter(message: DataProblem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataProblem;
+  static deserializeBinaryFromReader(message: DataProblem, reader: jspb.BinaryReader): DataProblem;
+}
+
+export namespace DataProblem {
+  export type AsObject = {
+    column: string,
+    error: string,
+  }
+}
+
 export class DataProduct extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DataProduct;
@@ -1594,6 +1616,11 @@ export class DatasetStatus extends jspb.Message {
   clearConditionsList(): DatasetStatus;
   addConditions(value?: DatasetCondition, index?: number): DatasetCondition;
 
+  getDataproblemsList(): Array<DataProblem>;
+  setDataproblemsList(value: Array<DataProblem>): DatasetStatus;
+  clearDataproblemsList(): DatasetStatus;
+  addDataproblems(value?: DataProblem, index?: number): DataProblem;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetStatus.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetStatus): DatasetStatus.AsObject;
@@ -1612,6 +1639,7 @@ export namespace DatasetStatus {
     sigs?: Signatures.AsObject,
     observedgeneration: number,
     conditionsList: Array<DatasetCondition.AsObject>,
+    dataproblemsList: Array<DataProblem.AsObject>,
   }
 }
 

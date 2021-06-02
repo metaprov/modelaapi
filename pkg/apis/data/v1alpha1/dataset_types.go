@@ -175,10 +175,13 @@ type DatasetStatus struct {
 	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,6,opt,name=sigs"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
 	// Represents the latest available observations of a dataset state.
 	//+kubebuilder:validation:Optional
 	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
+	// List of data problems, as reported by the validation process
+	//+kubebuilder:validation:Optional
+	Problems []DataProblem `json:"dataProblems,omitempty" protobuf:"bytes,9,rep,name=dataProblems"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -289,4 +292,9 @@ type Signatures struct {
 	Test string `json:"test" protobuf:"bytes,5,opt,name=test"`
 	// Pointer to the validation
 	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
+}
+
+type DataProblem struct {
+	Column string `json:"column" protobuf:"bytes,1,opt,name=column"`
+	Error  string `json:"error" protobuf:"bytes,2,opt,name=error"`
 }

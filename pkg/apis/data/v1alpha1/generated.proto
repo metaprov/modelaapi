@@ -548,6 +548,12 @@ message DataPipelineStatus {
   repeated DataPipelineCondition conditions = 1;
 }
 
+message DataProblem {
+  optional string column = 1;
+
+  optional string error = 2;
+}
+
 // DataProduct represent a single data product in the system
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -1068,11 +1074,15 @@ message DatasetStatus {
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 9;
+  optional int64 observedGeneration = 7;
 
   // Represents the latest available observations of a dataset state.
   // +kubebuilder:validation:Optional
   repeated DatasetCondition conditions = 8;
+
+  // List of data problems, as reported by the validation process
+  // +kubebuilder:validation:Optional
+  repeated DataProblem dataProblems = 9;
 }
 
 // DatasetTemplate is  used to generate new datasets

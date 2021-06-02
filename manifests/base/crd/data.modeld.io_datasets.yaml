@@ -221,6 +221,20 @@ spec:
                   - type
                   type: object
                 type: array
+              dataProblems:
+                description: List of data problems, as reported by the validation
+                  process
+                items:
+                  properties:
+                    column:
+                      type: string
+                    error:
+                      type: string
+                  required:
+                  - column
+                  - error
+                  type: object
+                type: array
               imbalanced:
                 description: Based on the actual data, treat this dataset as imbalanced.
                 type: boolean
