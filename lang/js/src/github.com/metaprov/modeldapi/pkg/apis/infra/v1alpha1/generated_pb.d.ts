@@ -2871,6 +2871,174 @@ export namespace SqliteSpec {
   }
 }
 
+export class TaskCard extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): TaskCard;
+  hasMetadata(): boolean;
+  clearMetadata(): TaskCard;
+
+  getSpec(): TaskCardSpec | undefined;
+  setSpec(value?: TaskCardSpec): TaskCard;
+  hasSpec(): boolean;
+  clearSpec(): TaskCard;
+
+  getStatus(): TaskCardStatus | undefined;
+  setStatus(value?: TaskCardStatus): TaskCard;
+  hasStatus(): boolean;
+  clearStatus(): TaskCard;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskCard.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskCard): TaskCard.AsObject;
+  static serializeBinaryToWriter(message: TaskCard, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskCard;
+  static deserializeBinaryFromReader(message: TaskCard, reader: jspb.BinaryReader): TaskCard;
+}
+
+export namespace TaskCard {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: TaskCardSpec.AsObject,
+    status?: TaskCardStatus.AsObject,
+  }
+}
+
+export class TaskCardCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): TaskCardCondition;
+
+  getStatus(): string;
+  setStatus(value: string): TaskCardCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskCardCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): TaskCardCondition;
+
+  getReason(): string;
+  setReason(value: string): TaskCardCondition;
+
+  getMessage(): string;
+  setMessage(value: string): TaskCardCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskCardCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskCardCondition): TaskCardCondition.AsObject;
+  static serializeBinaryToWriter(message: TaskCardCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskCardCondition;
+  static deserializeBinaryFromReader(message: TaskCardCondition, reader: jspb.BinaryReader): TaskCardCondition;
+}
+
+export namespace TaskCardCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class TaskCardList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): TaskCardList;
+  hasMetadata(): boolean;
+  clearMetadata(): TaskCardList;
+
+  getItemsList(): Array<TaskCard>;
+  setItemsList(value: Array<TaskCard>): TaskCardList;
+  clearItemsList(): TaskCardList;
+  addItems(value?: TaskCard, index?: number): TaskCard;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskCardList.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskCardList): TaskCardList.AsObject;
+  static serializeBinaryToWriter(message: TaskCardList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskCardList;
+  static deserializeBinaryFromReader(message: TaskCardList, reader: jspb.BinaryReader): TaskCardList;
+}
+
+export namespace TaskCardList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<TaskCard.AsObject>,
+  }
+}
+
+export class TaskCardSpec extends jspb.Message {
+  getSubject(): string;
+  setSubject(value: string): TaskCardSpec;
+
+  getDescription(): string;
+  setDescription(value: string): TaskCardSpec;
+
+  getLevel(): string;
+  setLevel(value: string): TaskCardSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TaskCardSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): TaskCardSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): TaskCardSpec;
+
+  getOwner(): string;
+  setOwner(value: string): TaskCardSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskCardSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskCardSpec): TaskCardSpec.AsObject;
+  static serializeBinaryToWriter(message: TaskCardSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskCardSpec;
+  static deserializeBinaryFromReader(message: TaskCardSpec, reader: jspb.BinaryReader): TaskCardSpec;
+}
+
+export namespace TaskCardSpec {
+  export type AsObject = {
+    subject: string,
+    description: string,
+    level: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    owner: string,
+  }
+}
+
+export class TaskCardStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): TaskCardStatus;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskCardStatus;
+  hasAt(): boolean;
+  clearAt(): TaskCardStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): TaskCardStatus;
+
+  getConditionsList(): Array<TaskCardCondition>;
+  setConditionsList(value: Array<TaskCardCondition>): TaskCardStatus;
+  clearConditionsList(): TaskCardStatus;
+  addConditions(value?: TaskCardCondition, index?: number): TaskCardCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TaskCardStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: TaskCardStatus): TaskCardStatus.AsObject;
+  static serializeBinaryToWriter(message: TaskCardStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TaskCardStatus;
+  static deserializeBinaryFromReader(message: TaskCardStatus, reader: jspb.BinaryReader): TaskCardStatus;
+}
+
+export namespace TaskCardStatus {
+  export type AsObject = {
+    phase: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    conditionsList: Array<TaskCardCondition.AsObject>,
+  }
+}
+
 export class Tenant extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Tenant;

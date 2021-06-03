@@ -1513,6 +1513,96 @@ message SqliteSpec {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=taskcards,singular=taskcard,categories={infra,modeld}
+message TaskCard {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional TaskCardSpec spec = 2;
+
+  optional TaskCardStatus status = 3;
+}
+
+// TaskCardCondition describes the state of the license at a certain point.
+message TaskCardCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// TaskCardList is a list of TaskCards
+message TaskCardList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated TaskCard items = 2;
+}
+
+// TaskCardSpec defines the desired state of TaskCard
+message TaskCardSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string subject = 1;
+
+  // User provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // Scopes is the list of scopes for this token.
+  optional string level = 3;
+
+  // The subject entity
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Required
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 5;
+
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 6;
+}
+
+// TaskCardStatus is the observed state of a TaskCard
+message TaskCardStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // The time when the alert was fired
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
+  // +optional
+  repeated TaskCardCondition conditions = 4;
+}
+
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Default Lab",type="string",JSONPath=".spec.defaultLabRef.Name",description=""
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""

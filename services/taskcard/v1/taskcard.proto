@@ -1,0 +1,145 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/taskcard/v1";
+
+package github.com.metaprov.modeldapi.services.taskcard.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListTaskCardsRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListTaskCardsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardList items = 1;   
+}
+
+message TaskCardResponse {}
+
+message CreateTaskCardRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard  item = 1;
+    string password = 2;    
+}
+
+message CreateTaskCardResponse {
+
+}
+
+message UpdateTaskCardRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 1;
+}
+
+message UpdateTaskCardResponse {
+
+}
+
+message GetTaskCardRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetTaskCardResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetTaskCardNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetTaskCardNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteTaskCardRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteTaskCardResponse {}
+
+
+message TaskCardCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message TaskCardLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message TaskCardLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+message TaskCardGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message TaskCardLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+service TaskCardService {
+    rpc ListTaskCards(ListTaskCardsRequest) returns (ListTaskCardsResponse) {
+        option (google.api.http).get = "/v1/taskcards";
+    }
+    rpc CreateTaskCard(CreateTaskCardRequest) returns (CreateTaskCardResponse) {
+        option (google.api.http) = {
+			post: "/v1/taskcards"
+			body: "taskcard"
+		};
+    }
+    rpc GetTaskCard(GetTaskCardRequest) returns (GetTaskCardResponse) {
+        option (google.api.http).get = "/v1/{namespace}/taskcards/{name}";
+    }
+    rpc UpdateTaskCard(UpdateTaskCardRequest) returns (UpdateTaskCardResponse) {
+        option (google.api.http) = {
+			put: "/v1/{taskcard.metadata.namespace}/taskcards//{taskcard.metadata.name}"
+			body: "taskcard"
+		};
+    }
+
+    rpc DeleteTaskCard(DeleteTaskCardRequest) returns (DeleteTaskCardResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/taskcards/{name}";
+    }
+
+}

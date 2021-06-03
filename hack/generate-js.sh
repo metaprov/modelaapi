@@ -38,6 +38,7 @@ protoc \
     github.com/metaprov/modeldapi/services/commit/v1/commit.proto \
     github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto \
     github.com/metaprov/modeldapi/services/alert/v1/alert.proto \
+    github.com/metaprov/modeldapi/services/taskcard/v1/taskcard.proto \
     github.com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem.proto \
     github.com/metaprov/modeldapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto \
