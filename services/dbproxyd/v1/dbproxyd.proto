@@ -78,6 +78,40 @@ message DeleteAlertRequest {
 
 
 //////////////////////////////////////////////////////
+/// TaskCard
+//////////////////////////////////////////////////////
+
+message ListTaskCardsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListTaskCardsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard items = 1;
+    string next_page_token = 2;
+}
+
+message GetTaskCardRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateTaskCardRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 1;
+}
+
+message UpdateTaskCardRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 2;
+}
+
+message DeleteTaskCardRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+//////////////////////////////////////////////////////
 /// Commits
 //////////////////////////////////////////////////////
 

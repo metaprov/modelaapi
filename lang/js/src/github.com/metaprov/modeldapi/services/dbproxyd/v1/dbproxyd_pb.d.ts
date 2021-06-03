@@ -277,6 +277,140 @@ export namespace DeleteAlertRequest {
   }
 }
 
+export class ListTaskCardsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListTaskCardsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListTaskCardsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListTaskCardsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTaskCardsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTaskCardsRequest): ListTaskCardsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListTaskCardsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTaskCardsRequest;
+  static deserializeBinaryFromReader(message: ListTaskCardsRequest, reader: jspb.BinaryReader): ListTaskCardsRequest;
+}
+
+export namespace ListTaskCardsRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListTaskCardsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>): ListTaskCardsResponse;
+  clearItemsList(): ListTaskCardsResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard, index?: number): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListTaskCardsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTaskCardsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTaskCardsResponse): ListTaskCardsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListTaskCardsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTaskCardsResponse;
+  static deserializeBinaryFromReader(message: ListTaskCardsResponse, reader: jspb.BinaryReader): ListTaskCardsResponse;
+}
+
+export namespace ListTaskCardsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class GetTaskCardRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetTaskCardRequest;
+
+  getName(): string;
+  setName(value: string): GetTaskCardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTaskCardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTaskCardRequest): GetTaskCardRequest.AsObject;
+  static serializeBinaryToWriter(message: GetTaskCardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTaskCardRequest;
+  static deserializeBinaryFromReader(message: GetTaskCardRequest, reader: jspb.BinaryReader): GetTaskCardRequest;
+}
+
+export namespace GetTaskCardRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateTaskCardRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): CreateTaskCardRequest;
+  hasItem(): boolean;
+  clearItem(): CreateTaskCardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateTaskCardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTaskCardRequest): CreateTaskCardRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateTaskCardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTaskCardRequest;
+  static deserializeBinaryFromReader(message: CreateTaskCardRequest, reader: jspb.BinaryReader): CreateTaskCardRequest;
+}
+
+export namespace CreateTaskCardRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+  }
+}
+
+export class UpdateTaskCardRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): UpdateTaskCardRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateTaskCardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateTaskCardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateTaskCardRequest): UpdateTaskCardRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateTaskCardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateTaskCardRequest;
+  static deserializeBinaryFromReader(message: UpdateTaskCardRequest, reader: jspb.BinaryReader): UpdateTaskCardRequest;
+}
+
+export namespace UpdateTaskCardRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+  }
+}
+
+export class DeleteTaskCardRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteTaskCardRequest;
+
+  getName(): string;
+  setName(value: string): DeleteTaskCardRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteTaskCardRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteTaskCardRequest): DeleteTaskCardRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteTaskCardRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteTaskCardRequest;
+  static deserializeBinaryFromReader(message: DeleteTaskCardRequest, reader: jspb.BinaryReader): DeleteTaskCardRequest;
+}
+
+export namespace DeleteTaskCardRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
 export class ListCommitsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListCommitsRequest;
