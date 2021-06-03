@@ -6,6 +6,89 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type MultiDatasetAssertionName string
+
+const (
+	MultiDatasetAssertionNameSameNuberOfRows   MultiDatasetAssertionName = "same-number-of-rows"
+	MultiDatasetAssertionNameOuterJoinEmpty    MultiDatasetAssertionName = "outer-join-empty"
+	MultiDatasetAssertionNameOuterJoinNotEmpty MultiDatasetAssertionName = "outer-join-not-empty"
+	MultiDatasetAssertionNameInnerJoinEmpty    MultiDatasetAssertionName = "inner-join-empty"
+	MultiDatasetAssertionNameInnerJoinNotEmpty MultiDatasetAssertionName = "inner-join-not-empty"
+	MultiDatasetAssertionNameLeftJoinEmpty     MultiDatasetAssertionName = "left-join-empty"
+	MultiDatasetAssertionNameLeftJoinNotEmpty  MultiDatasetAssertionName = "left-join-not-empty"
+	MultiDatasetAssertionNameRightJoinEmpty    MultiDatasetAssertionName = "right-join-empty"
+	MultiDatasetAssertionNameRightJoinNotEmpty MultiDatasetAssertionName = "right-join-not-empty"
+)
+
+type MultiDatasetAssertion struct {
+	Type         MultiDatasetAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	LeftDataset  string                    `json:"leftDataset,omitempty" protobuf:"bytes,2,opt,name=leftDataset"`
+	RightDataset string                    `json:"rightDataset,omitempty" protobuf:"bytes,3,opt,name=rightDataset"`
+}
+
+type DatasetAssertionName string
+
+const (
+	DatasetAssertionNameColumnsCountEqual DatasetAssertionName = "columns-count-equal"
+	DatasetAssertionNameColumnsNameInSet  DatasetAssertionName = "columns-in-set"
+	DatasetAssertionNameRowsBetween       DatasetAssertionName = "columns-in-set"
+	DatasetAssertionNameNotEmpty          DatasetAssertionName = "dataset-not-empty"
+	DatasetAssertionNameEmpty             DatasetAssertionName = "dataset-empty"
+)
+
+type DatasetAssertion struct {
+	Type      DatasetAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Min       float32              `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	Max       float32              `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	ValueSet  []string             `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
+	StrictMin bool                 `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
+	StrictMax bool                 `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+}
+
+type MultiColumnAssertionName string
+
+type MultiColumnAssertion struct {
+	Type      MultiColumnAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Min       int32                    `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	Max       int32                    `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	ValueSet  []string                 `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
+	StrictMin bool                     `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
+	StrictMax bool                     `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+}
+
+type ColumnAssertionName string
+
+const (
+	ColumnAssertionNameColumnValueUnique  ColumnAssertionName = "unique-values-between"
+	ColumnAssertionNameColumnHaveValues   ColumnAssertionName = "have-values"
+	ColumnAssertionNameColumnHasNoValue   ColumnAssertionName = "has-no-values"
+	ColumnAssertionNameColumnHaveNulls    ColumnAssertionName = "have-nulls"
+	ColumnAssertionNameColumnHasNoNull    ColumnAssertionName = "has-no-nulls"
+	ColumnAssertionNameColumnOfType       ColumnAssertionName = "of-type"
+	ColumnAssertionNameInSet              ColumnAssertionName = "in-set"
+	ColumnAssertionNameIncreasing         ColumnAssertionName = "increasing"
+	ColumnAssertionNameDecreasing         ColumnAssertionName = "decreasing"
+	ColumnAssertionNameLengthBetween      ColumnAssertionName = "value-length-between"
+	ColumnAssertionNameMatchRegex         ColumnAssertionName = "value-match-regex"
+	ColumnAssertionNameIsDate             ColumnAssertionName = "is-date"
+	ColumnAssertionNameIsJson             ColumnAssertionName = "is-json"
+	ColumnAssertionDistincValuesBetween   ColumnAssertionName = "distinct-values-between"
+	ColumnAssertionMeanBetween            ColumnAssertionName = "mean-between"
+	ColumnAssertionMaxBetween             ColumnAssertionName = "max-between"
+	ColumnAssertionStddevBetween          ColumnAssertionName = "stddev-between"
+	ColumnAssertionChiSquarePValueBetween ColumnAssertionName = "chi-square-p=value-between"
+	ColumnAssertionPairCramersBetween     ColumnAssertionName = "pair-cramers-between"
+)
+
+type ColumnAssertion struct {
+	Type      ColumnAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Min       float32             `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	Max       float32             `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	ValueSet  []string            `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
+	StrictMin bool                `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
+	StrictMax bool                `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+}
+
 // Condition on the dataset
 type DataSourceConditionType string
 
@@ -182,12 +265,29 @@ type FlatFileSpec struct {
 	Strict *bool `json:"strict,omitempty" protobuf:"bytes,14,opt,name=strict"`
 }
 
+type ValidationSpec struct {
+	// MultiDatasetAssertions contains assertions for multi datasets
+	// +kubebuilder:validation:Optional
+	MultiDatasetAssertions []MultiDatasetAssertion `json:"multiDatasetAssertions,omitempty" protobuf:"bytes,1,opt,name=multiDatasetAssertions"`
+	// DatasetAssertions contains assertions for datasets
+	// +kubebuilder:validation:Optional
+	DatasetAssertions []DatasetAssertion `json:"datasetAssertions,omitempty" protobuf:"bytes,2,opt,name=datasetAssertions"`
+	// MultiColumnAssertions defines assertions for combined columns from the dataset
+	// +kubebuilder:validation:Optional
+	MultiColumnAssertions []MultiColumnAssertion `json:"multiColumnAssertions,omitempty" protobuf:"bytes,3,opt,name=multiColumnAssertions"`
+	// MultiColumnAssertions defines assertions for combined columns from the dataset
+	// +kubebuilder:validation:Optional
+	ColumnAssertions []ColumnAssertion `json:"columnAssertions,omitempty" protobuf:"bytes,4,opt,name=columnAssertions"`
+}
+
 type Schema struct {
 	// Time series schema. Set time series specific parameters.
 	// +kubebuilder:validation:Optional
 	TimeSeriesSchema *TimeSeriesSchema `json:"tsSchema,omitempty" protobuf:"bytes,1,rep,name=tsSchema"`
 	// Columns
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	// Validation spec define the validation to perform on new datasets
+	Validation ValidationSpec `json:"validationSpec,omitempty" protobuf:"bytes,3,rep,name=validationSpec"`
 }
 
 type TimeSeriesSchema struct {

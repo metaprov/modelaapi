@@ -228,6 +228,20 @@ message Column {
   optional double driftThreshold = 34;
 }
 
+message ColumnAssertion {
+  optional string type = 1;
+
+  optional float min = 2;
+
+  optional float max = 3;
+
+  repeated string valueSet = 4;
+
+  optional bool strictMin = 5;
+
+  optional bool strictMax = 6;
+}
+
 // Hold the statistical parameters about a single attribute
 message ColumnStatistics {
   // FileName is the name of the column
@@ -918,6 +932,20 @@ message Dataset {
 
   // +optional
   optional DatasetStatus status = 3;
+}
+
+message DatasetAssertion {
+  optional string type = 1;
+
+  optional float min = 2;
+
+  optional float max = 3;
+
+  repeated string valueSet = 4;
+
+  optional bool strictMin = 5;
+
+  optional bool strictMax = 6;
 }
 
 // DatasetCondition describes the state of a dataset at a certain point.
@@ -1934,6 +1962,28 @@ message MaterializationSpec {
   optional int32 backfill = 6;
 }
 
+message MultiColumnAssertion {
+  optional string type = 1;
+
+  optional int32 min = 2;
+
+  optional int32 max = 3;
+
+  repeated string valueSet = 4;
+
+  optional bool strictMin = 5;
+
+  optional bool strictMax = 6;
+}
+
+message MultiDatasetAssertion {
+  optional string type = 1;
+
+  optional string leftDataset = 2;
+
+  optional string rightDataset = 3;
+}
+
 // Recipe represents a single batch of data
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -2223,6 +2273,9 @@ message Schema {
 
   // Columns
   repeated Column columns = 2;
+
+  // Validation spec define the validation to perform on new datasets
+  optional ValidationSpec validationSpec = 3;
 }
 
 // Semver is used when generating model version
@@ -2302,5 +2355,23 @@ message TimeSeriesSchema {
   // required
   // default is US
   optional string country = 2;
+}
+
+message ValidationSpec {
+  // MultiDatasetAssertions contains assertions for multi datasets
+  // +kubebuilder:validation:Optional
+  repeated MultiDatasetAssertion multiDatasetAssertions = 1;
+
+  // DatasetAssertions contains assertions for datasets
+  // +kubebuilder:validation:Optional
+  repeated DatasetAssertion datasetAssertions = 2;
+
+  // MultiColumnAssertions defines assertions for combined columns from the dataset
+  // +kubebuilder:validation:Optional
+  repeated MultiColumnAssertion multiColumnAssertions = 3;
+
+  // MultiColumnAssertions defines assertions for combined columns from the dataset
+  // +kubebuilder:validation:Optional
+  repeated ColumnAssertion columnAssertions = 4;
 }
 

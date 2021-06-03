@@ -546,6 +546,89 @@ spec:
                             - year
                             type: string
                         type: object
+                      validationSpec:
+                        description: Validation spec define the validation to perform
+                          on new datasets
+                        properties:
+                          columnAssertions:
+                            description: MultiColumnAssertions defines assertions
+                              for combined columns from the dataset
+                            items:
+                              properties:
+                                max:
+                                  type: number
+                                min:
+                                  type: number
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                type:
+                                  type: string
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          datasetAssertions:
+                            description: DatasetAssertions contains assertions for
+                              datasets
+                            items:
+                              properties:
+                                max:
+                                  type: number
+                                min:
+                                  type: number
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                type:
+                                  type: string
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          multiColumnAssertions:
+                            description: MultiColumnAssertions defines assertions
+                              for combined columns from the dataset
+                            items:
+                              properties:
+                                max:
+                                  format: int32
+                                  type: integer
+                                min:
+                                  format: int32
+                                  type: integer
+                                strictMax:
+                                  type: boolean
+                                strictMin:
+                                  type: boolean
+                                type:
+                                  type: string
+                                valueSet:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            type: array
+                          multiDatasetAssertions:
+                            description: MultiDatasetAssertions contains assertions
+                              for multi datasets
+                            items:
+                              properties:
+                                leftDataset:
+                                  type: string
+                                rightDataset:
+                                  type: string
+                                type:
+                                  type: string
+                              type: object
+                            type: array
+                        type: object
                     type: object
                   stream:
                     description: Stream define the specification of the stream
