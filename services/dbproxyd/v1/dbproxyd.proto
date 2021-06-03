@@ -1523,7 +1523,12 @@ service DatabaseProxyService {
     rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
     rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {}
 
-
+    rpc ListTaskCards(ListTaskCardsRequest) returns (ListTaskCardsResponse) {}
+    rpc GetTaskCard(GetTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) {}
+    rpc CreateTaskCard(CreateTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) { }
+    rpc UpdateTaskCard(UpdateTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) {}
+    rpc DeleteTaskCard(DeleteTaskCardRequest) returns (google.protobuf.Empty) {}
+    
     // commits
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}
     rpc GetCommit(GetCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) {}

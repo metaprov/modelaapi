@@ -441,6 +441,206 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAlert);
   }
 
+  methodInfoListTaskCards = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse.deserializeBinary
+  );
+
+  listTaskCards(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse>;
+
+  listTaskCards(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse>;
+
+  listTaskCards(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
+        request,
+        metadata || {},
+        this.methodInfoListTaskCards,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
+    request,
+    metadata || {},
+    this.methodInfoListTaskCards);
+  }
+
+  methodInfoGetTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+  );
+
+  getTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  getTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  getTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
+        request,
+        metadata || {},
+        this.methodInfoGetTaskCard,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
+    request,
+    metadata || {},
+    this.methodInfoGetTaskCard);
+  }
+
+  methodInfoCreateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+  );
+
+  createTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  createTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  createTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
+        request,
+        metadata || {},
+        this.methodInfoCreateTaskCard,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
+    request,
+    metadata || {},
+    this.methodInfoCreateTaskCard);
+  }
+
+  methodInfoUpdateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+  );
+
+  updateTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  updateTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+
+  updateTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
+        request,
+        metadata || {},
+        this.methodInfoUpdateTaskCard,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
+    request,
+    metadata || {},
+    this.methodInfoUpdateTaskCard);
+  }
+
+  methodInfoDeleteTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteTaskCard(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
+        request,
+        metadata || {},
+        this.methodInfoDeleteTaskCard,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
+    request,
+    metadata || {},
+    this.methodInfoDeleteTaskCard);
+  }
+
   methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse,
     (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest) => {
