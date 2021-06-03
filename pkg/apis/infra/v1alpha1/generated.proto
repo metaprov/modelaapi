@@ -1567,9 +1567,6 @@ message TaskCardSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // Scopes is the list of scopes for this token.
-  optional string level = 3;
-
   // The subject entity
   optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 

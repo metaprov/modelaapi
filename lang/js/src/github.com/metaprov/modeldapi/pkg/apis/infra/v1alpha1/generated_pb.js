@@ -29437,7 +29437,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.toObjec
   var f, obj = {
     subject: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    level: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
@@ -29484,10 +29483,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.deseria
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLevel(value);
       break;
     case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
@@ -29542,13 +29537,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.seriali
   if (f != null) {
     writer.writeString(
       2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
       f
     );
   }
@@ -29646,42 +29634,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string level = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getLevel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setLevel = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearLevel = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasLevel = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

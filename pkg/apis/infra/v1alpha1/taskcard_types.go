@@ -64,15 +64,6 @@ type TaskCardList struct {
 	Items           []TaskCard `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-type TaskCardLevel string
-
-const (
-	Normal  TaskCardLevel = "normal"
-	Warning TaskCardLevel = "warning "
-	Error   TaskCardLevel = "error"
-	Failure TaskCardLevel = "failure"
-)
-
 // TaskCardSpec defines the desired state of TaskCard
 type TaskCardSpec struct {
 	// +kubebuilder:default:=""
@@ -82,8 +73,6 @@ type TaskCardSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Message *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// Scopes is the list of scopes for this token.
-	Level *TaskCardLevel `json:"level,omitempty" protobuf:"bytes,3,opt,name=level"`
 	// The subject entity
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
 	// +kubebuilder:default:=""

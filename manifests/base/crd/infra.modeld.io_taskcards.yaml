@@ -103,9 +103,6 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              level:
-                description: Scopes is the list of scopes for this token.
-                type: string
               notifierName:
                 default: ""
                 description: NotifierName is the name of the notifier used to fire

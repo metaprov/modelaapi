@@ -2890,11 +2890,6 @@ func (in *TaskCardSpec) DeepCopyInto(out *TaskCardSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Level != nil {
-		in, out := &in.Level, &out.Level
-		*out = new(TaskCardLevel)
-		**out = **in
-	}
 	out.EntityRef = in.EntityRef
 	if in.NotifierName != nil {
 		in, out := &in.NotifierName, &out.NotifierName

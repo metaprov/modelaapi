@@ -2972,9 +2972,6 @@ export class TaskCardSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): TaskCardSpec;
 
-  getLevel(): string;
-  setLevel(value: string): TaskCardSpec;
-
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TaskCardSpec;
   hasEntityref(): boolean;
@@ -2998,7 +2995,6 @@ export namespace TaskCardSpec {
   export type AsObject = {
     subject: string,
     description: string,
-    level: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
     owner: string,
