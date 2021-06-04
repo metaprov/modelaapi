@@ -1931,7 +1931,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4845,7 +4845,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasD
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.repeatedFields_ = [4];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.repeatedFields_ = [5];
 
 
 
@@ -4879,11 +4879,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    strictmin: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4925,22 +4926,26 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.deser
       msg.setType(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setMin(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readFloat());
-      msg.setMax(value);
+      msg.setMin(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMax(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addValueset(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmin(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmax(value);
       break;
@@ -4980,9 +4985,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeString(
       2,
       f
     );
@@ -4994,16 +4999,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.seria
       f
     );
   }
-  f = message.getValuesetList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeFloat(
       4,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeBool(
+  f = message.getValuesetList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       5,
       f
     );
@@ -5012,6 +5017,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.seria
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -5055,19 +5067,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
 
 
 /**
- * optional float min = 2;
- * @return {number}
+ * optional string column = 2;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMin = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -5076,7 +5088,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -5085,16 +5097,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional float max = 3;
+ * optional float min = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -5103,7 +5115,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMax = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -5112,7 +5124,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -5121,17 +5133,53 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated string valueSet = 4;
+ * optional float max = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string valueSet = 5;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getValuesetList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
@@ -5140,7 +5188,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setValuesetList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
@@ -5150,7 +5198,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.addValueset = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
@@ -5164,46 +5212,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
 
 
 /**
- * optional bool strictMin = 5;
+ * optional bool strictMin = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getStrictmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmin = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmin = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmin = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional bool strictMax = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -5212,7 +5224,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -5221,7 +5233,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -5230,8 +5242,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool strictMax = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getStrictmax = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmax = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmax = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmax = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -32199,7 +32247,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.repeatedFields_ = [4];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.repeatedFields_ = [2,5];
 
 
 
@@ -32233,11 +32281,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    min: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    max: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    strictmin: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    columnsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32279,22 +32328,26 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
       msg.setType(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMin(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addColumns(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMax(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMin(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMax(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addValueset(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmin(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmax(value);
       break;
@@ -32334,30 +32387,30 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeFloat(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeFloat(
+      4,
       f
     );
   }
   f = message.getValuesetList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      4,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeBool(
       5,
       f
     );
@@ -32366,6 +32419,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -32409,11 +32469,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 
 
 /**
- * optional int32 min = 2;
+ * repeated string columns = 2;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getColumnsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setColumnsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.addColumns = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * optional float min = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
@@ -32422,42 +32519,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setMin = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMin = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMin = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 max = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getMax = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -32466,7 +32527,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -32475,17 +32536,53 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated string valueSet = 4;
+ * optional float max = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string valueSet = 5;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getValuesetList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
@@ -32494,7 +32591,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setValuesetList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
@@ -32504,7 +32601,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.addValueset = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
@@ -32518,46 +32615,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 
 
 /**
- * optional bool strictMin = 5;
+ * optional bool strictMin = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getStrictmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmin = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmin = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmin = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional bool strictMax = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -32566,7 +32627,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -32575,7 +32636,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -32584,11 +32645,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
+/**
+ * optional bool strictMax = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getStrictmax = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmax = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmax = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmax = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.repeatedFields_ = [2];
 
 
 
@@ -32622,8 +32726,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    leftdataset: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    rightdataset: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    datasetsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32666,11 +32769,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLeftdataset(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRightdataset(value);
+      msg.addDatasets(value);
       break;
     default:
       reader.skipField();
@@ -32708,17 +32807,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
+  f = message.getDatasetsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
       f
     );
   }
@@ -32762,74 +32854,39 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
 
 
 /**
- * optional string leftDataset = 2;
- * @return {string}
+ * repeated string datasets = 2;
+ * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.getLeftdataset = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.getDatasetsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.setDatasetsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.setLeftdataset = function(value) {
-  return jspb.Message.setField(this, 2, value);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.addDatasets = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.clearLeftdataset = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.hasLeftdataset = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string rightDataset = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.getRightdataset = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.setRightdataset = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.clearRightdataset = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.hasRightdataset = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.clearDatasetsList = function() {
+  return this.setDatasetsList([]);
 };
 
 
