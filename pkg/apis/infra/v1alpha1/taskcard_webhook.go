@@ -78,9 +78,10 @@ func (alert *TaskCard) ValidateDelete() error {
 	return nil
 }
 
-func (alert *TaskCard) MarkSent() {
-	alert.CreateOrUpdateCond(TaskCardCondition{
-		Type:   TaskCardSent,
+func (task *TaskCard) MarkDone() {
+	task.CreateOrUpdateCond(TaskCardCondition{
+		Type:   TaskCardDone,
 		Status: corev1.ConditionTrue,
 	})
+	task.Status.Phase = TaskCardPhaseDone
 }

@@ -84,7 +84,7 @@ func (alert *TaskCard) GetCond(t TaskCardConditionType) TaskCardCondition {
 }
 
 func (alert *TaskCard) IsReady() bool {
-	return alert.GetCond(TaskCardSent).Status == v1.ConditionTrue
+	return alert.GetCond(TaskCardDone).Status == v1.ConditionTrue
 }
 
 func (alert *TaskCard) RootUri() string {
