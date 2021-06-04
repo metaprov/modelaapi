@@ -2966,11 +2966,8 @@ export namespace TaskCardList {
 }
 
 export class TaskCardSpec extends jspb.Message {
-  getSubject(): string;
-  setSubject(value: string): TaskCardSpec;
-
-  getDescription(): string;
-  setDescription(value: string): TaskCardSpec;
+  getTask(): string;
+  setTask(value: string): TaskCardSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TaskCardSpec;
@@ -2980,8 +2977,21 @@ export class TaskCardSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): TaskCardSpec;
 
-  getOwner(): string;
-  setOwner(value: string): TaskCardSpec;
+  getAssignedto(): string;
+  setAssignedto(value: string): TaskCardSpec;
+
+  getFlagged(): boolean;
+  setFlagged(value: boolean): TaskCardSpec;
+
+  getReminder(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReminder(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskCardSpec;
+  hasReminder(): boolean;
+  clearReminder(): TaskCardSpec;
+
+  getDuedate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDuedate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskCardSpec;
+  hasDuedate(): boolean;
+  clearDuedate(): TaskCardSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TaskCardSpec.AsObject;
@@ -2993,22 +3003,19 @@ export class TaskCardSpec extends jspb.Message {
 
 export namespace TaskCardSpec {
   export type AsObject = {
-    subject: string,
-    description: string,
+    task: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
-    owner: string,
+    assignedto: string,
+    flagged: boolean,
+    reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
 export class TaskCardStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): TaskCardStatus;
-
-  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TaskCardStatus;
-  hasAt(): boolean;
-  clearAt(): TaskCardStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TaskCardStatus;
@@ -3029,7 +3036,6 @@ export class TaskCardStatus extends jspb.Message {
 export namespace TaskCardStatus {
   export type AsObject = {
     phase: string,
-    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<TaskCardCondition.AsObject>,
   }

@@ -29435,11 +29435,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    subject: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    task: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    notifiername: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    assignedto: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    flagged: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    duedate: (f = msg.getDuedate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -29478,24 +29480,34 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.deseria
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubject(value);
+      msg.setTask(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setEntityref(value);
       break;
-    case 5:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
+      msg.setAssignedto(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFlagged(value);
+      break;
+    case 6:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setReminder(value);
+      break;
+    case 7:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setDuedate(value);
       break;
     default:
       reader.skipField();
@@ -29533,43 +29545,59 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.seriali
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getEntityref();
   if (f != null) {
     writer.writeMessage(
-      4,
+      2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
       5,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = message.getReminder();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       6,
-      f
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getDuedate();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string subject = 1;
+ * optional string task = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getTask = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -29578,7 +29606,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setSubject = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setTask = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -29587,7 +29615,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearTask = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -29596,54 +29624,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasTask = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string description = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+ * optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getEntityref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -29652,7 +29644,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -29670,16 +29662,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasEntityref = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string notifierName = 5;
+ * optional string notifierName = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -29688,7 +29680,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -29697,7 +29689,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -29706,16 +29698,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string owner = 6;
+ * optional string assignedTo = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getAssignedto = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -29723,8 +29715,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 6, value);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setAssignedto = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -29732,8 +29724,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 6, undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearAssignedto = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -29741,8 +29733,118 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasAssignedto = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool flagged = 5;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getFlagged = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setFlagged = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearFlagged = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasFlagged = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 6;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getReminder = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setReminder = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearReminder = function() {
+  return this.setReminder(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasReminder = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 7;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.getDuedate = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.setDuedate = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.clearDuedate = function() {
+  return this.setDuedate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototype.hasDuedate = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -29786,7 +29888,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition.toObject, includeInstance)
@@ -29829,11 +29930,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.deser
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setPhase(value);
-      break;
-    case 2:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setAt(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -29878,14 +29974,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.seria
     writer.writeString(
       1,
       f
-    );
-  }
-  f = message.getAt();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
@@ -29939,43 +30027,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.hasPhase = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.getAt = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.setAt = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.clearAt = function() {
-  return this.setAt(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.hasAt = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 

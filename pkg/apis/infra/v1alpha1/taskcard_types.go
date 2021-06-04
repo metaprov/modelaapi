@@ -10,9 +10,7 @@ type TaskCardPhase string
 
 const (
 	TaskCardPhasePending TaskCardPhase = "Pending"
-	TaskCardPhaseSending TaskCardPhase = "Sending"
-	TaskCardPhaseSent    TaskCardPhase = "Sent"
-	TaskCardPhaseFailed  TaskCardPhase = "Failed"
+	TaskCardPhaseDone    TaskCardPhase = "Done"
 )
 
 // TaskCard condition
@@ -20,7 +18,7 @@ type TaskCardConditionType string
 
 /// TaskCard Condition
 const (
-	TaskCardSent  TaskCardConditionType = "Sent"
+	TaskCardDone  TaskCardConditionType = "Done"
 	TaskCardSaved TaskCardConditionType = "Saved"
 )
 
@@ -41,7 +39,6 @@ type TaskCardCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
-// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
@@ -68,20 +65,25 @@ type TaskCardList struct {
 type TaskCardSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Subject *string `json:"subject,omitempty" protobuf:"bytes,1,opt,name=subject"`
-	// User provided description
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Message *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// The subject entity
-	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
+	Task *string `json:"task,omitempty" protobuf:"bytes,1,opt,name=task"`
+	// The modeld entity that the task refer to.
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Required
 	// NotifierName is the name of the notifier used to fire the alert.
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
+	// Assigned to is the user name assigned to this task
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,4,opt,name=assignedTo"`
+	// Flagged donete that task was flagged
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Flagged *bool `json:"flagged,omitempty" protobuf:"bytes,5,opt,name=flagged"`
+	// Reminder is the time to send a reminder
+	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,6,opt,name=reminder"`
+	// Flagged donete that task was flagged
+	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,7,opt,name=dueDate"`
 }
 
 // TaskCardStatus is the observed state of a TaskCard
@@ -89,9 +91,6 @@ type TaskCardStatus struct {
 	// Phase is the phase of the model
 	// +kubebuilder:validation:Optional
 	Phase TaskCardPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
-	// The time when the alert was fired
-	// +kubebuilder:validation:Optional
-	At metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`

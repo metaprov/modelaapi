@@ -1514,7 +1514,6 @@ message SqliteSpec {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
-// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
@@ -1560,24 +1559,31 @@ message TaskCardList {
 message TaskCardSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string subject = 1;
+  optional string task = 1;
 
-  // User provided description
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 2;
-
-  // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+  // The modeld entity that the task refer to.
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 5;
+  optional string notifierName = 3;
 
+  // Assigned to is the user name assigned to this task
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6;
+  optional string assignedTo = 4;
+
+  // Flagged donete that task was flagged
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool flagged = 5;
+
+  // Reminder is the time to send a reminder
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 6;
+
+  // Flagged donete that task was flagged
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 7;
 }
 
 // TaskCardStatus is the observed state of a TaskCard
@@ -1585,10 +1591,6 @@ message TaskCardStatus {
   // Phase is the phase of the model
   // +kubebuilder:validation:Optional
   optional string phase = 1;
-
-  // The time when the alert was fired
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
