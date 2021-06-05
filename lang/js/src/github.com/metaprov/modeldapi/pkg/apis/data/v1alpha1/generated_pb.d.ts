@@ -239,6 +239,9 @@ export class ColumnAssertion extends jspb.Message {
   getType(): string;
   setType(value: string): ColumnAssertion;
 
+  getColumn(): string;
+  setColumn(value: string): ColumnAssertion;
+
   getMin(): number;
   setMin(value: number): ColumnAssertion;
 
@@ -267,6 +270,7 @@ export class ColumnAssertion extends jspb.Message {
 export namespace ColumnAssertion {
   export type AsObject = {
     type: string,
+    column: string,
     min: number,
     max: number,
     valuesetList: Array<string>,
@@ -3201,6 +3205,11 @@ export class MultiColumnAssertion extends jspb.Message {
   getType(): string;
   setType(value: string): MultiColumnAssertion;
 
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): MultiColumnAssertion;
+  clearColumnsList(): MultiColumnAssertion;
+  addColumns(value: string, index?: number): MultiColumnAssertion;
+
   getMin(): number;
   setMin(value: number): MultiColumnAssertion;
 
@@ -3229,6 +3238,7 @@ export class MultiColumnAssertion extends jspb.Message {
 export namespace MultiColumnAssertion {
   export type AsObject = {
     type: string,
+    columnsList: Array<string>,
     min: number,
     max: number,
     valuesetList: Array<string>,
@@ -3241,11 +3251,10 @@ export class MultiDatasetAssertion extends jspb.Message {
   getType(): string;
   setType(value: string): MultiDatasetAssertion;
 
-  getLeftdataset(): string;
-  setLeftdataset(value: string): MultiDatasetAssertion;
-
-  getRightdataset(): string;
-  setRightdataset(value: string): MultiDatasetAssertion;
+  getDatasetsList(): Array<string>;
+  setDatasetsList(value: Array<string>): MultiDatasetAssertion;
+  clearDatasetsList(): MultiDatasetAssertion;
+  addDatasets(value: string, index?: number): MultiDatasetAssertion;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiDatasetAssertion.AsObject;
@@ -3258,8 +3267,7 @@ export class MultiDatasetAssertion extends jspb.Message {
 export namespace MultiDatasetAssertion {
   export type AsObject = {
     type: string,
-    leftdataset: string,
-    rightdataset: string,
+    datasetsList: Array<string>,
   }
 }
 

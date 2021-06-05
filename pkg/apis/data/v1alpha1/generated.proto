@@ -231,15 +231,17 @@ message Column {
 message ColumnAssertion {
   optional string type = 1;
 
-  optional float min = 2;
+  optional string column = 2;
 
-  optional float max = 3;
+  optional float min = 3;
 
-  repeated string valueSet = 4;
+  optional float max = 4;
 
-  optional bool strictMin = 5;
+  repeated string valueSet = 5;
 
-  optional bool strictMax = 6;
+  optional bool strictMin = 6;
+
+  optional bool strictMax = 7;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -1965,23 +1967,23 @@ message MaterializationSpec {
 message MultiColumnAssertion {
   optional string type = 1;
 
-  optional int32 min = 2;
+  repeated string columns = 2;
 
-  optional int32 max = 3;
+  optional float min = 3;
 
-  repeated string valueSet = 4;
+  optional float max = 4;
 
-  optional bool strictMin = 5;
+  repeated string valueSet = 5;
 
-  optional bool strictMax = 6;
+  optional bool strictMin = 6;
+
+  optional bool strictMax = 7;
 }
 
 message MultiDatasetAssertion {
   optional string type = 1;
 
-  optional string leftDataset = 2;
-
-  optional string rightDataset = 3;
+  repeated string datasets = 2;
 }
 
 // Recipe represents a single batch of data

@@ -21,9 +21,8 @@ const (
 )
 
 type MultiDatasetAssertion struct {
-	Type         MultiDatasetAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	LeftDataset  string                    `json:"leftDataset,omitempty" protobuf:"bytes,2,opt,name=leftDataset"`
-	RightDataset string                    `json:"rightDataset,omitempty" protobuf:"bytes,3,opt,name=rightDataset"`
+	Type     MultiDatasetAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Datasets []string                  `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
 }
 
 type DatasetAssertionName string
@@ -40,7 +39,7 @@ type DatasetAssertion struct {
 	Type      DatasetAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	Min       float32              `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
 	Max       float32              `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	ValueSet  []string             `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
+	ValueSet  []string             `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
 	StrictMin bool                 `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
 	StrictMax bool                 `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
 }
@@ -49,11 +48,12 @@ type MultiColumnAssertionName string
 
 type MultiColumnAssertion struct {
 	Type      MultiColumnAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Min       int32                    `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
-	Max       int32                    `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	ValueSet  []string                 `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
-	StrictMin bool                     `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
-	StrictMax bool                     `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+	Columns   []string                 `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	Min       float32                  `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	Max       float32                  `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	ValueSet  []string                 `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
+	StrictMin bool                     `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	StrictMax bool                     `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
 }
 
 type ColumnAssertionName string
@@ -82,11 +82,12 @@ const (
 
 type ColumnAssertion struct {
 	Type      ColumnAssertionName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Min       float32             `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
-	Max       float32             `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	ValueSet  []string            `json:"valueSet,omitempty" protobuf:"bytes,4,opt,name=valueSet"`
-	StrictMin bool                `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
-	StrictMax bool                `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+	Column    string              `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
+	Min       float32             `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	Max       float32             `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	ValueSet  []string            `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
+	StrictMin bool                `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	StrictMax bool                `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
 }
 
 // Condition on the dataset

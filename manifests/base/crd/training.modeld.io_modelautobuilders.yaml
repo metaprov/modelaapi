@@ -555,6 +555,8 @@ spec:
                               for combined columns from the dataset
                             items:
                               properties:
+                                column:
+                                  type: string
                                 max:
                                   type: number
                                 min:
@@ -597,12 +599,14 @@ spec:
                               for combined columns from the dataset
                             items:
                               properties:
+                                columns:
+                                  items:
+                                    type: string
+                                  type: array
                                 max:
-                                  format: int32
-                                  type: integer
+                                  type: number
                                 min:
-                                  format: int32
-                                  type: integer
+                                  type: number
                                 strictMax:
                                   type: boolean
                                 strictMin:
@@ -620,10 +624,10 @@ spec:
                               for multi datasets
                             items:
                               properties:
-                                leftDataset:
-                                  type: string
-                                rightDataset:
-                                  type: string
+                                datasets:
+                                  items:
+                                    type: string
+                                  type: array
                                 type:
                                   type: string
                               type: object
