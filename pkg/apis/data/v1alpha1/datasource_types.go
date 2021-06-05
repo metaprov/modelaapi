@@ -9,7 +9,7 @@ import (
 type MultiDatasetAssertionName string
 
 const (
-	MultiDatasetAssertionNameSameNuberOfRows   MultiDatasetAssertionName = "same-number-of-rows"
+	MultiDatasetAssertionNameSameNumberOfRows  MultiDatasetAssertionName = "same-number-of-rows"
 	MultiDatasetAssertionNameOuterJoinEmpty    MultiDatasetAssertionName = "outer-join-empty"
 	MultiDatasetAssertionNameOuterJoinNotEmpty MultiDatasetAssertionName = "outer-join-not-empty"
 	MultiDatasetAssertionNameInnerJoinEmpty    MultiDatasetAssertionName = "inner-join-empty"
@@ -31,7 +31,7 @@ type DatasetAssertionName string
 const (
 	DatasetAssertionNameColumnsCountEqual DatasetAssertionName = "columns-count-equal"
 	DatasetAssertionNameColumnsNameInSet  DatasetAssertionName = "columns-in-set"
-	DatasetAssertionNameRowsBetween       DatasetAssertionName = "columns-in-set"
+	DatasetAssertionNameRowCountBetween   DatasetAssertionName = "row-count-between"
 	DatasetAssertionNameNotEmpty          DatasetAssertionName = "dataset-not-empty"
 	DatasetAssertionNameEmpty             DatasetAssertionName = "dataset-empty"
 )
