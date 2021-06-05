@@ -28,11 +28,12 @@ type MultiDatasetAssertion struct {
 type DatasetAssertionName string
 
 const (
-	DatasetAssertionNameColumnsCountEqual DatasetAssertionName = "columns-count-equal"
-	DatasetAssertionNameColumnsNameInSet  DatasetAssertionName = "columns-in-set"
-	DatasetAssertionNameRowCountBetween   DatasetAssertionName = "row-count-between"
-	DatasetAssertionNameNotEmpty          DatasetAssertionName = "dataset-not-empty"
-	DatasetAssertionNameEmpty             DatasetAssertionName = "dataset-empty"
+	DatasetAssertionNameColumnsCountEqual    DatasetAssertionName = "columns-count-equal"
+	DatasetAssertionNameColumnsNameInSet     DatasetAssertionName = "columns-in-set"
+	DatasetAssertionNameColumnsInOrderedList DatasetAssertionName = "columns-in-ordered-list"
+	DatasetAssertionNameRowCountBetween      DatasetAssertionName = "row-count-between"
+	DatasetAssertionNameNotEmpty             DatasetAssertionName = "dataset-not-empty"
+	DatasetAssertionNameEmpty                DatasetAssertionName = "dataset-empty"
 )
 
 type DatasetAssertion struct {
@@ -59,25 +60,35 @@ type MultiColumnAssertion struct {
 type ColumnAssertionName string
 
 const (
-	ColumnAssertionNameColumnValueUnique  ColumnAssertionName = "unique-values-between"
-	ColumnAssertionNameColumnHaveValues   ColumnAssertionName = "have-values"
-	ColumnAssertionNameColumnHasNoValue   ColumnAssertionName = "has-no-values"
-	ColumnAssertionNameColumnHaveNulls    ColumnAssertionName = "have-nulls"
-	ColumnAssertionNameColumnHasNoNull    ColumnAssertionName = "has-no-nulls"
-	ColumnAssertionNameColumnOfType       ColumnAssertionName = "of-type"
-	ColumnAssertionNameInSet              ColumnAssertionName = "in-set"
-	ColumnAssertionNameIncreasing         ColumnAssertionName = "increasing"
-	ColumnAssertionNameDecreasing         ColumnAssertionName = "decreasing"
-	ColumnAssertionNameLengthBetween      ColumnAssertionName = "value-length-between"
-	ColumnAssertionNameMatchRegex         ColumnAssertionName = "value-match-regex"
-	ColumnAssertionNameIsDate             ColumnAssertionName = "is-date"
-	ColumnAssertionNameIsJson             ColumnAssertionName = "is-json"
-	ColumnAssertionDistincValuesBetween   ColumnAssertionName = "distinct-values-between"
-	ColumnAssertionMeanBetween            ColumnAssertionName = "mean-between"
-	ColumnAssertionMaxBetween             ColumnAssertionName = "max-between"
-	ColumnAssertionStddevBetween          ColumnAssertionName = "stddev-between"
-	ColumnAssertionChiSquarePValueBetween ColumnAssertionName = "chi-square-p=value-between"
-	ColumnAssertionPairCramersBetween     ColumnAssertionName = "pair-cramers-between"
+	ColumnAssertionNameColumnExist      ColumnAssertionName = "column-exist"
+	ColumnAssertionNameColumnHaveValues ColumnAssertionName = "have-values"
+	ColumnAssertionNameColumnHasNoValue ColumnAssertionName = "has-no-values"
+	ColumnAssertionNameColumnHaveNulls  ColumnAssertionName = "have-nulls"
+	ColumnAssertionNameColumnHasNoNull  ColumnAssertionName = "has-no-nulls"
+	ColumnAssertionNameColumnOfType     ColumnAssertionName = "of-type"
+	ColumnAssertionNameInSet            ColumnAssertionName = "values-in-set"
+	ColumnAssertionNameIncreasing       ColumnAssertionName = "increasing"
+	ColumnAssertionNameDecreasing       ColumnAssertionName = "decreasing"
+	ColumnAssertionNameLengthBetween    ColumnAssertionName = "value-length-between"
+	ColumnAssertionNameMatchRegex       ColumnAssertionName = "value-match-regex"
+	ColumnAssertionNameIsDate           ColumnAssertionName = "is-date"
+	ColumnAssertionNameIsJson           ColumnAssertionName = "is-json"
+	ColumnAssertionInDomain             ColumnAssertionName = "in-domain"
+	// Count
+	ColumnAssertionNameUniqueValueCountBetween ColumnAssertionName = "unique-value-count-between"
+	ColumnAssertionNameOutlierValueUnique      ColumnAssertionName = "outlier-value-count-between"
+	ColumnAssertionNameValidValueUnique        ColumnAssertionName = "valid-values-count-between"
+	ColumnAssertionNameMismatchValue           ColumnAssertionName = "mismatch-values-between"
+	// Stat
+	ColumnAssertionNameMinBetween           ColumnAssertionName = "min-between"
+	ColumnAssertionNameLowerQuartileBetween ColumnAssertionName = "lower-quartile-between"
+	ColumnAssertionNameMedianBetween        ColumnAssertionName = "median-between"
+	ColumnAssertionNameAvgBetween           ColumnAssertionName = "average-between"
+	ColumnAssertionNameUpperQuartileBetween ColumnAssertionName = "upper-quartile-between"
+	ColumnAssertionNameMaxBetween           ColumnAssertionName = "max-between"
+	ColumnAssertionStddevBetween            ColumnAssertionName = "stddev-between"
+	ColumnAssertionChiSquarePValueBetween   ColumnAssertionName = "chi-square-p=value-between"
+	ColumnAssertionPairCramersBetween       ColumnAssertionName = "pair-cramers-between"
 )
 
 type ColumnAssertion struct {

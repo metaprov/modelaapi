@@ -295,6 +295,8 @@ type Signatures struct {
 }
 
 type DataProblem struct {
-	Column string `json:"column" protobuf:"bytes,1,opt,name=column"`
-	Error  string `json:"error" protobuf:"bytes,2,opt,name=error"`
+	AssertionName string `json:"assertionName" protobuf:"bytes,1,opt,name=assertionName"`
+	Column        string `json:"column" protobuf:"bytes,2,opt,name=column"`
+	Error         string `json:"error" protobuf:"bytes,3,opt,name=error"`
+	Passed        bool   `json:"passed" protobuf:"bytes,4,opt,name=passed"`
 }
