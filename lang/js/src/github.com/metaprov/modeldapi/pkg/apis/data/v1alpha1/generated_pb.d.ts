@@ -830,11 +830,17 @@ export namespace DataPipelineStatus {
 }
 
 export class DataProblem extends jspb.Message {
+  getAssertionname(): string;
+  setAssertionname(value: string): DataProblem;
+
   getColumn(): string;
   setColumn(value: string): DataProblem;
 
   getError(): string;
   setError(value: string): DataProblem;
+
+  getPassed(): boolean;
+  setPassed(value: boolean): DataProblem;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProblem.AsObject;
@@ -846,8 +852,10 @@ export class DataProblem extends jspb.Message {
 
 export namespace DataProblem {
   export type AsObject = {
+    assertionname: string,
     column: string,
     error: string,
+    passed: boolean,
   }
 }
 

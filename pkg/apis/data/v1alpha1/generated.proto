@@ -565,9 +565,13 @@ message DataPipelineStatus {
 }
 
 message DataProblem {
-  optional string column = 1;
+  optional string assertionName = 1;
 
-  optional string error = 2;
+  optional string column = 2;
+
+  optional string error = 3;
+
+  optional bool passed = 4;
 }
 
 // DataProduct represent a single data product in the system

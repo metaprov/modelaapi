@@ -226,13 +226,19 @@ spec:
                   process
                 items:
                   properties:
+                    assertionName:
+                      type: string
                     column:
                       type: string
                     error:
                       type: string
+                    passed:
+                      type: boolean
                   required:
+                  - assertionName
                   - column
                   - error
+                  - passed
                   type: object
                 type: array
               imbalanced:

@@ -10471,8 +10471,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    column: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    error: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    assertionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    error: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    passed: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10511,11 +10513,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.deseriali
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setColumn(value);
+      msg.setAssertionname(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPassed(value);
       break;
     default:
       reader.skipField();
@@ -10560,14 +10570,28 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.serialize
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string column = 1;
+ * optional string assertionName = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getColumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getAssertionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -10576,7 +10600,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setColumn = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setAssertionname = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -10585,7 +10609,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearColumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearAssertionname = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -10594,16 +10618,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasColumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasAssertionname = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string error = 2;
+ * optional string column = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getError = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -10612,7 +10636,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setError = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -10621,7 +10645,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearError = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -10630,8 +10654,80 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasError = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string error = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setError = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearError = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasError = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool passed = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.getPassed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.setPassed = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.clearPassed = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProblem.prototype.hasPassed = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
