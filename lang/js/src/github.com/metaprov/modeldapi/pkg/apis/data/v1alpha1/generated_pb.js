@@ -29,8 +29,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Ag
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.CompilerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec', null, global);
@@ -61,13 +61,13 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Da
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatistics', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetTemplate', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList', null, global);
@@ -109,8 +109,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.La
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec', null, global);
@@ -229,16 +229,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion';
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -250,16 +250,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics';
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -901,27 +901,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetCondition = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1037,6 +1016,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetTemplate.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetTemplate';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1909,16 +1909,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion';
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1930,16 +1930,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion';
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -4840,450 +4840,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasD
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.repeatedFields_ = [5];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion;
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setColumn(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setMin(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setMax(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addValueset(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmin(value);
-      break;
-    case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmax(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeFloat(
-      3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeFloat(
-      4,
-      f
-    );
-  }
-  f = message.getValuesetList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      5,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeBool(
-      7,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string column = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getColumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setColumn = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearColumn = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasColumn = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional float min = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMin = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMin = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMin = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional float max = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getMax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setMax = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearMax = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasMax = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * repeated string valueSet = 5;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getValuesetList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setValuesetList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.addValueset = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearValuesetList = function() {
-  return this.setValuesetList([]);
-};
-
-
-/**
- * optional bool strictMin = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getStrictmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmin = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmin = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmin = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional bool strictMax = 7;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.getStrictmax = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.setStrictmax = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.clearStrictmax = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.prototype.hasStrictmax = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -6580,6 +6136,450 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIndexofpeculiarity = function() {
   return jspb.Message.getField(this, 27) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.repeatedFields_ = [5];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMin(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMax(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addValueset(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmin(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmax(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeFloat(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeFloat(
+      4,
+      f
+    );
+  }
+  f = message.getValuesetList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string type = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearType = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasType = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string column = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setColumn = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearColumn = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasColumn = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional float min = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMin = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setMin = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearMin = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional float max = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string valueSet = 5;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getValuesetList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setValuesetList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.addValueset = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearValuesetList = function() {
+  return this.setValuesetList([]);
+};
+
+
+/**
+ * optional bool strictMin = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getStrictmin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setStrictmin = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearStrictmin = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasStrictmin = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool strictMax = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getStrictmax = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setStrictmax = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearStrictmax = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasStrictmax = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -16119,402 +16119,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset.prototype.has
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.repeatedFields_ = [4];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    strictmin: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion;
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setMin(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setMax(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addValueset(value);
-      break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmin(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStrictmax(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeFloat(
-      2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeFloat(
-      3,
-      f
-    );
-  }
-  f = message.getValuesetList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeBool(
-      5,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional float min = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setMin = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearMin = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.hasMin = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional float max = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getMax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setMax = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearMax = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.hasMax = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated string valueSet = 4;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getValuesetList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setValuesetList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.addValueset = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearValuesetList = function() {
-  return this.setValuesetList([]);
-};
-
-
-/**
- * optional bool strictMin = 5;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getStrictmin = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setStrictmin = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearStrictmin = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.hasStrictmin = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional bool strictMax = 6;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.getStrictmax = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.setStrictmax = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.clearStrictmax = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.prototype.hasStrictmax = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -18955,6 +18559,402 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetTemplate.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetTemplate.prototype.hasSpec = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    strictmin: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMin(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMax(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addValueset(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmin(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictmax(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeFloat(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeFloat(
+      3,
+      f
+    );
+  }
+  f = message.getValuesetList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string type = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearType = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasType = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional float min = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMin = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setMin = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearMin = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional float max = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated string valueSet = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getValuesetList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setValuesetList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.addValueset = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearValuesetList = function() {
+  return this.setValuesetList([]);
+};
+
+
+/**
+ * optional bool strictMin = 5;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getStrictmin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setStrictmin = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearStrictmin = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasStrictmin = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool strictMax = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getStrictmax = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setStrictmax = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearStrictmax = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasStrictmax = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -32343,7 +32343,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.repeatedFields_ = [2,5];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.repeatedFields_ = [2,5];
 
 
 
@@ -32360,8 +32360,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.toObject(opt_includeInstance, this);
 };
 
 
@@ -32370,11 +32370,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     columnsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
@@ -32396,23 +32396,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion;
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -32460,9 +32460,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -32470,11 +32470,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} message
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -32532,25 +32532,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setType = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -32559,7 +32559,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -32568,16 +32568,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * repeated string columns = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getColumnsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getColumnsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setColumnsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setColumnsList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -32585,18 +32585,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.addColumns = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.addColumns = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearColumnsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearColumnsList = function() {
   return this.setColumnsList([]);
 };
 
@@ -32605,25 +32605,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * optional float min = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getMin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setMin = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setMin = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearMin = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -32632,7 +32632,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasMin = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -32641,25 +32641,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * optional float max = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setMax = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setMax = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearMax = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -32668,7 +32668,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasMax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasMax = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -32677,16 +32677,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * repeated string valueSet = 5;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getValuesetList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getValuesetList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setValuesetList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setValuesetList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -32694,18 +32694,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.addValueset = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.addValueset = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearValuesetList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearValuesetList = function() {
   return this.setValuesetList([]);
 };
 
@@ -32714,25 +32714,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * optional bool strictMin = 6;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getStrictmin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getStrictmin = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmin = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setStrictmin = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearStrictmin = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -32741,7 +32741,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmin = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasStrictmin = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -32750,25 +32750,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * optional bool strictMax = 7;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.getStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getStrictmax = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.setStrictmax = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setStrictmax = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.clearStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearStrictmax = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -32777,7 +32777,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.prototype.hasStrictmax = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -32788,7 +32788,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.repeatedFields_ = [2];
 
 
 
@@ -32805,8 +32805,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject(opt_includeInstance, this);
 };
 
 
@@ -32815,11 +32815,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     datasetsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
@@ -32836,23 +32836,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion;
-  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -32880,9 +32880,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -32890,11 +32890,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} message
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -32917,25 +32917,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
  * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.getType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.setType = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.clearType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -32944,7 +32944,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.hasType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -32953,16 +32953,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
  * repeated string datasets = 2;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.getDatasetsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getDatasetsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.setDatasetsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setDatasetsList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -32970,18 +32970,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.addDatasets = function(value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.addDatasets = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.prototype.clearDatasetsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearDatasetsList = function() {
   return this.setDatasetsList([]);
 };
 
@@ -39236,13 +39236,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     multidatasetassertionsList: jspb.Message.toObjectList(msg.getMultidatasetassertionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject, includeInstance),
     datasetassertionsList: jspb.Message.toObjectList(msg.getDatasetassertionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject, includeInstance),
     multicolumnassertionsList: jspb.Message.toObjectList(msg.getMulticolumnassertionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.toObject, includeInstance),
+    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.toObject, includeInstance),
     columnassertionsList: jspb.Message.toObjectList(msg.getColumnassertionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -39280,23 +39280,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader);
       msg.addMultidatasetassertions(value);
       break;
     case 2:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader);
       msg.addDatasetassertions(value);
       break;
     case 3:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.deserializeBinaryFromReader);
       msg.addMulticolumnassertions(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader);
       msg.addColumnassertions(value);
       break;
     default:
@@ -39333,7 +39333,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter
     );
   }
   f = message.getDatasetassertionsList();
@@ -39341,7 +39341,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter
     );
   }
   f = message.getMulticolumnassertionsList();
@@ -39349,7 +39349,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.serializeBinaryToWriter
     );
   }
   f = message.getColumnassertionsList();
@@ -39357,24 +39357,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
     writer.writeRepeatedMessage(
       4,
       f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion.serializeBinaryToWriter
+      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated MultiDatasetAssertion multiDatasetAssertions = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion>}
+ * repeated MultiDatasetValidation multiDatasetAssertions = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMultidatasetassertionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMultidatasetassertionsList = function(value) {
@@ -39383,12 +39383,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMultidatasetassertions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, opt_index);
 };
 
 
@@ -39402,17 +39402,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated DatasetAssertion datasetAssertions = 2;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion>}
+ * repeated DatasetValidation datasetAssertions = 2;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getDatasetassertionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion, 2));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation, 2));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setDatasetassertionsList = function(value) {
@@ -39421,12 +39421,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addDatasetassertions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation, opt_index);
 };
 
 
@@ -39440,17 +39440,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated MultiColumnAssertion multiColumnAssertions = 3;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion>}
+ * repeated MultiColumnValidation multiColumnAssertions = 3;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMulticolumnassertionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion, 3));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation, 3));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMulticolumnassertionsList = function(value) {
@@ -39459,12 +39459,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMulticolumnassertions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation, opt_index);
 };
 
 
@@ -39478,17 +39478,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * repeated ColumnAssertion columnAssertions = 4;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion>}
+ * repeated ColumnValidation columnAssertions = 4;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getColumnassertionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion, 4));
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation, 4));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion>} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setColumnassertionsList = function(value) {
@@ -39497,12 +39497,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addColumnassertions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation, opt_index);
 };
 
 

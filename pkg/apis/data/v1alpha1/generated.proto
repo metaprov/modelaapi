@@ -228,22 +228,6 @@ message Column {
   optional double driftThreshold = 34;
 }
 
-message ColumnAssertion {
-  optional string type = 1;
-
-  optional string column = 2;
-
-  optional float min = 3;
-
-  optional float max = 4;
-
-  repeated string valueSet = 5;
-
-  optional bool strictMin = 6;
-
-  optional bool strictMax = 7;
-}
-
 // Hold the statistical parameters about a single attribute
 message ColumnStatistics {
   // FileName is the name of the column
@@ -326,6 +310,22 @@ message ColumnStatistics {
 
   // Used for text attributes
   optional double indexOfPeculiarity = 27;
+}
+
+message ColumnValidation {
+  optional string type = 1;
+
+  optional string column = 2;
+
+  optional float min = 3;
+
+  optional float max = 4;
+
+  repeated string valueSet = 5;
+
+  optional bool strictMin = 6;
+
+  optional bool strictMax = 7;
 }
 
 message CompilerSpec {
@@ -940,20 +940,6 @@ message Dataset {
   optional DatasetStatus status = 3;
 }
 
-message DatasetAssertion {
-  optional string type = 1;
-
-  optional float min = 2;
-
-  optional float max = 3;
-
-  repeated string valueSet = 4;
-
-  optional bool strictMin = 5;
-
-  optional bool strictMax = 6;
-}
-
 // DatasetCondition describes the state of a dataset at a certain point.
 message DatasetCondition {
   optional string type = 1;
@@ -1127,6 +1113,20 @@ message DatasetTemplate {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional DatasetSpec spec = 2;
+}
+
+message DatasetValidation {
+  optional string type = 1;
+
+  optional float min = 2;
+
+  optional float max = 3;
+
+  repeated string valueSet = 4;
+
+  optional bool strictMin = 5;
+
+  optional bool strictMax = 6;
 }
 
 message Entity {
@@ -1968,7 +1968,7 @@ message MaterializationSpec {
   optional int32 backfill = 6;
 }
 
-message MultiColumnAssertion {
+message MultiColumnValidation {
   optional string type = 1;
 
   repeated string columns = 2;
@@ -1984,7 +1984,7 @@ message MultiColumnAssertion {
   optional bool strictMax = 7;
 }
 
-message MultiDatasetAssertion {
+message MultiDatasetValidation {
   optional string type = 1;
 
   repeated string datasets = 2;
@@ -2366,18 +2366,18 @@ message TimeSeriesSchema {
 message ValidationSpec {
   // MultiDatasetAssertions contains assertions for multi datasets
   // +kubebuilder:validation:Optional
-  repeated MultiDatasetAssertion multiDatasetAssertions = 1;
+  repeated MultiDatasetValidation multiDatasetAssertions = 1;
 
   // DatasetAssertions contains assertions for datasets
   // +kubebuilder:validation:Optional
-  repeated DatasetAssertion datasetAssertions = 2;
+  repeated DatasetValidation datasetAssertions = 2;
 
   // MultiColumnAssertions defines assertions for combined columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated MultiColumnAssertion multiColumnAssertions = 3;
+  repeated MultiColumnValidation multiColumnAssertions = 3;
 
   // MultiColumnAssertions defines assertions for combined columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated ColumnAssertion columnAssertions = 4;
+  repeated ColumnValidation columnAssertions = 4;
 }
 
