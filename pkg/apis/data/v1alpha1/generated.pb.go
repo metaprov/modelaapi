@@ -150,15 +150,15 @@ func (m *Column) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Column proto.InternalMessageInfo
 
-func (m *ColumnAssertion) Reset()      { *m = ColumnAssertion{} }
-func (*ColumnAssertion) ProtoMessage() {}
-func (*ColumnAssertion) Descriptor() ([]byte, []int) {
+func (m *ColumnValidation) Reset()      { *m = ColumnValidation{} }
+func (*ColumnValidation) ProtoMessage() {}
+func (*ColumnValidation) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{4}
 }
-func (m *ColumnAssertion) XXX_Unmarshal(b []byte) error {
+func (m *ColumnValidation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *ColumnAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *ColumnValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -166,13 +166,13 @@ func (m *ColumnAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, err
 	}
 	return b[:n], nil
 }
-func (m *ColumnAssertion) XXX_Merge(src proto.Message) {
+func (m *ColumnValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ColumnAssertion.Merge(m, src)
 }
-func (m *ColumnAssertion) XXX_Size() int {
+func (m *ColumnValidation) XXX_Size() int {
 	return m.Size()
 }
-func (m *ColumnAssertion) XXX_DiscardUnknown() {
+func (m *ColumnValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_ColumnAssertion.DiscardUnknown(m)
 }
 
@@ -1046,15 +1046,15 @@ func (m *Dataset) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Dataset proto.InternalMessageInfo
 
-func (m *DatasetAssertion) Reset()      { *m = DatasetAssertion{} }
-func (*DatasetAssertion) ProtoMessage() {}
-func (*DatasetAssertion) Descriptor() ([]byte, []int) {
+func (m *DatasetValidation) Reset()      { *m = DatasetValidation{} }
+func (*DatasetValidation) ProtoMessage() {}
+func (*DatasetValidation) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{36}
 }
-func (m *DatasetAssertion) XXX_Unmarshal(b []byte) error {
+func (m *DatasetValidation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *DatasetAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *DatasetValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -1062,13 +1062,13 @@ func (m *DatasetAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 	}
 	return b[:n], nil
 }
-func (m *DatasetAssertion) XXX_Merge(src proto.Message) {
+func (m *DatasetValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DatasetAssertion.Merge(m, src)
 }
-func (m *DatasetAssertion) XXX_Size() int {
+func (m *DatasetValidation) XXX_Size() int {
 	return m.Size()
 }
-func (m *DatasetAssertion) XXX_DiscardUnknown() {
+func (m *DatasetValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_DatasetAssertion.DiscardUnknown(m)
 }
 
@@ -2390,15 +2390,15 @@ func (m *MaterializationSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MaterializationSpec proto.InternalMessageInfo
 
-func (m *MultiColumnAssertion) Reset()      { *m = MultiColumnAssertion{} }
-func (*MultiColumnAssertion) ProtoMessage() {}
-func (*MultiColumnAssertion) Descriptor() ([]byte, []int) {
+func (m *MultiColumnValidation) Reset()      { *m = MultiColumnValidation{} }
+func (*MultiColumnValidation) ProtoMessage() {}
+func (*MultiColumnValidation) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{84}
 }
-func (m *MultiColumnAssertion) XXX_Unmarshal(b []byte) error {
+func (m *MultiColumnValidation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *MultiColumnAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *MultiColumnValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -2406,27 +2406,27 @@ func (m *MultiColumnAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte
 	}
 	return b[:n], nil
 }
-func (m *MultiColumnAssertion) XXX_Merge(src proto.Message) {
+func (m *MultiColumnValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MultiColumnAssertion.Merge(m, src)
 }
-func (m *MultiColumnAssertion) XXX_Size() int {
+func (m *MultiColumnValidation) XXX_Size() int {
 	return m.Size()
 }
-func (m *MultiColumnAssertion) XXX_DiscardUnknown() {
+func (m *MultiColumnValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_MultiColumnAssertion.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_MultiColumnAssertion proto.InternalMessageInfo
 
-func (m *MultiDatasetAssertion) Reset()      { *m = MultiDatasetAssertion{} }
-func (*MultiDatasetAssertion) ProtoMessage() {}
-func (*MultiDatasetAssertion) Descriptor() ([]byte, []int) {
+func (m *MultiDatasetValidation) Reset()      { *m = MultiDatasetValidation{} }
+func (*MultiDatasetValidation) ProtoMessage() {}
+func (*MultiDatasetValidation) Descriptor() ([]byte, []int) {
 	return fileDescriptor_42dbc13d08a8c8d6, []int{85}
 }
-func (m *MultiDatasetAssertion) XXX_Unmarshal(b []byte) error {
+func (m *MultiDatasetValidation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *MultiDatasetAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *MultiDatasetValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -2434,13 +2434,13 @@ func (m *MultiDatasetAssertion) XXX_Marshal(b []byte, deterministic bool) ([]byt
 	}
 	return b[:n], nil
 }
-func (m *MultiDatasetAssertion) XXX_Merge(src proto.Message) {
+func (m *MultiDatasetValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_MultiDatasetAssertion.Merge(m, src)
 }
-func (m *MultiDatasetAssertion) XXX_Size() int {
+func (m *MultiDatasetValidation) XXX_Size() int {
 	return m.Size()
 }
-func (m *MultiDatasetAssertion) XXX_DiscardUnknown() {
+func (m *MultiDatasetValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_MultiDatasetAssertion.DiscardUnknown(m)
 }
 
@@ -3123,7 +3123,7 @@ func init() {
 	proto.RegisterType((*ApiSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec")
 	proto.RegisterType((*Attachment)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment")
 	proto.RegisterType((*Column)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column")
-	proto.RegisterType((*ColumnAssertion)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnAssertion")
+	proto.RegisterType((*ColumnValidation)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation")
 	proto.RegisterType((*ColumnStatistics)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnStatistics")
 	proto.RegisterType((*CompilerSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.CompilerSpec")
 	proto.RegisterType((*DataLocation)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation")
@@ -3156,7 +3156,7 @@ func init() {
 	proto.RegisterType((*DataSourceSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec")
 	proto.RegisterType((*DataSourceStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus")
 	proto.RegisterType((*Dataset)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset")
-	proto.RegisterType((*DatasetAssertion)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetAssertion")
+	proto.RegisterType((*DatasetValidation)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation")
 	proto.RegisterType((*DatasetCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetCondition")
 	proto.RegisterType((*DatasetList)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList")
 	proto.RegisterType((*DatasetSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec")
@@ -3206,8 +3206,8 @@ func init() {
 	proto.RegisterMapType((map[string]string)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.DatasetSelectorEntry")
 	proto.RegisterType((*LabelingPipelineStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus")
 	proto.RegisterType((*MaterializationSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MaterializationSpec")
-	proto.RegisterType((*MultiColumnAssertion)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnAssertion")
-	proto.RegisterType((*MultiDatasetAssertion)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetAssertion")
+	proto.RegisterType((*MultiColumnValidation)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation")
+	proto.RegisterType((*MultiDatasetValidation)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation")
 	proto.RegisterType((*Recipe)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe")
 	proto.RegisterType((*RecipeCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeCondition")
 	proto.RegisterType((*RecipeInputSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeInputSpec")
@@ -4128,7 +4128,7 @@ func (m *Column) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ColumnAssertion) Marshal() (dAtA []byte, err error) {
+func (m *ColumnValidation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -4138,12 +4138,12 @@ func (m *ColumnAssertion) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ColumnAssertion) MarshalTo(dAtA []byte) (int, error) {
+func (m *ColumnValidation) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ColumnAssertion) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *ColumnValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -6203,7 +6203,7 @@ func (m *Dataset) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *DatasetAssertion) Marshal() (dAtA []byte, err error) {
+func (m *DatasetValidation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -6213,12 +6213,12 @@ func (m *DatasetAssertion) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *DatasetAssertion) MarshalTo(dAtA []byte) (int, error) {
+func (m *DatasetValidation) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *DatasetAssertion) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *DatasetValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -9139,7 +9139,7 @@ func (m *MaterializationSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *MultiColumnAssertion) Marshal() (dAtA []byte, err error) {
+func (m *MultiColumnValidation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -9149,12 +9149,12 @@ func (m *MultiColumnAssertion) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *MultiColumnAssertion) MarshalTo(dAtA []byte) (int, error) {
+func (m *MultiColumnValidation) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *MultiColumnAssertion) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *MultiColumnValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -9209,7 +9209,7 @@ func (m *MultiColumnAssertion) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *MultiDatasetAssertion) Marshal() (dAtA []byte, err error) {
+func (m *MultiDatasetValidation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -9219,12 +9219,12 @@ func (m *MultiDatasetAssertion) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *MultiDatasetAssertion) MarshalTo(dAtA []byte) (int, error) {
+func (m *MultiDatasetValidation) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *MultiDatasetAssertion) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *MultiDatasetValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -10663,7 +10663,7 @@ func (m *Column) Size() (n int) {
 	return n
 }
 
-func (m *ColumnAssertion) Size() (n int) {
+func (m *ColumnValidation) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -11410,7 +11410,7 @@ func (m *Dataset) Size() (n int) {
 	return n
 }
 
-func (m *DatasetAssertion) Size() (n int) {
+func (m *DatasetValidation) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -12519,7 +12519,7 @@ func (m *MaterializationSpec) Size() (n int) {
 	return n
 }
 
-func (m *MultiColumnAssertion) Size() (n int) {
+func (m *MultiColumnValidation) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -12546,7 +12546,7 @@ func (m *MultiColumnAssertion) Size() (n int) {
 	return n
 }
 
-func (m *MultiDatasetAssertion) Size() (n int) {
+func (m *MultiDatasetValidation) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -13141,11 +13141,11 @@ func (this *Column) String() string {
 	}, "")
 	return s
 }
-func (this *ColumnAssertion) String() string {
+func (this *ColumnValidation) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ColumnAssertion{`,
+	s := strings.Join([]string{`&ColumnValidation{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Column:` + fmt.Sprintf("%v", this.Column) + `,`,
 		`Min:` + fmt.Sprintf("%v", this.Min) + `,`,
@@ -13671,11 +13671,11 @@ func (this *Dataset) String() string {
 	}, "")
 	return s
 }
-func (this *DatasetAssertion) String() string {
+func (this *DatasetValidation) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&DatasetAssertion{`,
+	s := strings.Join([]string{`&DatasetValidation{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Min:` + fmt.Sprintf("%v", this.Min) + `,`,
 		`Max:` + fmt.Sprintf("%v", this.Max) + `,`,
@@ -14443,11 +14443,11 @@ func (this *MaterializationSpec) String() string {
 	}, "")
 	return s
 }
-func (this *MultiColumnAssertion) String() string {
+func (this *MultiColumnValidation) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&MultiColumnAssertion{`,
+	s := strings.Join([]string{`&MultiColumnValidation{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Columns:` + fmt.Sprintf("%v", this.Columns) + `,`,
 		`Min:` + fmt.Sprintf("%v", this.Min) + `,`,
@@ -14459,11 +14459,11 @@ func (this *MultiColumnAssertion) String() string {
 	}, "")
 	return s
 }
-func (this *MultiDatasetAssertion) String() string {
+func (this *MultiDatasetValidation) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&MultiDatasetAssertion{`,
+	s := strings.Join([]string{`&MultiDatasetValidation{`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`Datasets:` + fmt.Sprintf("%v", this.Datasets) + `,`,
 		`}`,
@@ -14794,24 +14794,24 @@ func (this *ValidationSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForMultiDatasetAssertions := "[]MultiDatasetAssertion{"
+	repeatedStringForMultiDatasetAssertions := "[]MultiDatasetValidation{"
 	for _, f := range this.MultiDatasetAssertions {
-		repeatedStringForMultiDatasetAssertions += strings.Replace(strings.Replace(f.String(), "MultiDatasetAssertion", "MultiDatasetAssertion", 1), `&`, ``, 1) + ","
+		repeatedStringForMultiDatasetAssertions += strings.Replace(strings.Replace(f.String(), "MultiDatasetValidation", "MultiDatasetValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForMultiDatasetAssertions += "}"
-	repeatedStringForDatasetAssertions := "[]DatasetAssertion{"
+	repeatedStringForDatasetAssertions := "[]DatasetValidation{"
 	for _, f := range this.DatasetAssertions {
-		repeatedStringForDatasetAssertions += strings.Replace(strings.Replace(f.String(), "DatasetAssertion", "DatasetAssertion", 1), `&`, ``, 1) + ","
+		repeatedStringForDatasetAssertions += strings.Replace(strings.Replace(f.String(), "DatasetValidation", "DatasetValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForDatasetAssertions += "}"
-	repeatedStringForMultiColumnAssertions := "[]MultiColumnAssertion{"
+	repeatedStringForMultiColumnAssertions := "[]MultiColumnValidation{"
 	for _, f := range this.MultiColumnAssertions {
-		repeatedStringForMultiColumnAssertions += strings.Replace(strings.Replace(f.String(), "MultiColumnAssertion", "MultiColumnAssertion", 1), `&`, ``, 1) + ","
+		repeatedStringForMultiColumnAssertions += strings.Replace(strings.Replace(f.String(), "MultiColumnValidation", "MultiColumnValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForMultiColumnAssertions += "}"
-	repeatedStringForColumnAssertions := "[]ColumnAssertion{"
+	repeatedStringForColumnAssertions := "[]ColumnValidation{"
 	for _, f := range this.ColumnAssertions {
-		repeatedStringForColumnAssertions += strings.Replace(strings.Replace(f.String(), "ColumnAssertion", "ColumnAssertion", 1), `&`, ``, 1) + ","
+		repeatedStringForColumnAssertions += strings.Replace(strings.Replace(f.String(), "ColumnValidation", "ColumnValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForColumnAssertions += "}"
 	s := strings.Join([]string{`&ValidationSpec{`,
@@ -16048,7 +16048,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ColumnAssertion) Unmarshal(dAtA []byte) error {
+func (m *ColumnValidation) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -16071,10 +16071,10 @@ func (m *ColumnAssertion) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ColumnAssertion: wiretype end group for non-group")
+			return fmt.Errorf("proto: ColumnValidation: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ColumnAssertion: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ColumnValidation: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -16107,7 +16107,7 @@ func (m *ColumnAssertion) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = ColumnAssertionName(dAtA[iNdEx:postIndex])
+			m.Type = ColumnValidationName(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -22580,7 +22580,7 @@ func (m *Dataset) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *DatasetAssertion) Unmarshal(dAtA []byte) error {
+func (m *DatasetValidation) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -22603,10 +22603,10 @@ func (m *DatasetAssertion) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: DatasetAssertion: wiretype end group for non-group")
+			return fmt.Errorf("proto: DatasetValidation: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DatasetAssertion: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: DatasetValidation: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -22639,7 +22639,7 @@ func (m *DatasetAssertion) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = DatasetAssertionName(dAtA[iNdEx:postIndex])
+			m.Type = DatasetValidationName(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 5 {
@@ -31980,7 +31980,7 @@ func (m *MaterializationSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *MultiColumnAssertion) Unmarshal(dAtA []byte) error {
+func (m *MultiColumnValidation) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -32003,10 +32003,10 @@ func (m *MultiColumnAssertion) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: MultiColumnAssertion: wiretype end group for non-group")
+			return fmt.Errorf("proto: MultiColumnValidation: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MultiColumnAssertion: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: MultiColumnValidation: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -32039,7 +32039,7 @@ func (m *MultiColumnAssertion) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = MultiColumnAssertionName(dAtA[iNdEx:postIndex])
+			m.Type = MultiColumnValidationName(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -32191,7 +32191,7 @@ func (m *MultiColumnAssertion) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *MultiDatasetAssertion) Unmarshal(dAtA []byte) error {
+func (m *MultiDatasetValidation) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -32214,10 +32214,10 @@ func (m *MultiDatasetAssertion) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: MultiDatasetAssertion: wiretype end group for non-group")
+			return fmt.Errorf("proto: MultiDatasetValidation: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MultiDatasetAssertion: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: MultiDatasetValidation: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -32250,7 +32250,7 @@ func (m *MultiDatasetAssertion) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = MultiDatasetAssertionName(dAtA[iNdEx:postIndex])
+			m.Type = MultiDatasetValidationName(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -36039,7 +36039,7 @@ func (m *ValidationSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MultiDatasetAssertions = append(m.MultiDatasetAssertions, MultiDatasetAssertion{})
+			m.MultiDatasetAssertions = append(m.MultiDatasetAssertions, MultiDatasetValidation{})
 			if err := m.MultiDatasetAssertions[len(m.MultiDatasetAssertions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -36073,7 +36073,7 @@ func (m *ValidationSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DatasetAssertions = append(m.DatasetAssertions, DatasetAssertion{})
+			m.DatasetAssertions = append(m.DatasetAssertions, DatasetValidation{})
 			if err := m.DatasetAssertions[len(m.DatasetAssertions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -36107,7 +36107,7 @@ func (m *ValidationSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MultiColumnAssertions = append(m.MultiColumnAssertions, MultiColumnAssertion{})
+			m.MultiColumnAssertions = append(m.MultiColumnAssertions, MultiColumnValidation{})
 			if err := m.MultiColumnAssertions[len(m.MultiColumnAssertions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -36141,7 +36141,7 @@ func (m *ValidationSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ColumnAssertions = append(m.ColumnAssertions, ColumnAssertion{})
+			m.ColumnAssertions = append(m.ColumnAssertions, ColumnValidation{})
 			if err := m.ColumnAssertions[len(m.ColumnAssertions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
