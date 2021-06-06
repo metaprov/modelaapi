@@ -284,16 +284,16 @@ type FlatFileSpec struct {
 type ValidationSpec struct {
 	// MultiDatasetAssertions contains assertions for multi datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetAssertions []MultiDatasetValidation `json:"multiDatasetAssertions,omitempty" protobuf:"bytes,1,opt,name=multiDatasetAssertions"`
+	MultiDatasetValidations []MultiDatasetValidation `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,opt,name=multiDatasetValidations"`
 	// DatasetAssertions contains assertions for datasets
 	// +kubebuilder:validation:Optional
-	DatasetAssertions []DatasetValidation `json:"datasetAssertions,omitempty" protobuf:"bytes,2,opt,name=datasetAssertions"`
+	DatasetValidations []DatasetValidation `json:"datasetValidations,omitempty" protobuf:"bytes,2,opt,name=datasetValidations"`
 	// MultiColumnAssertions defines assertions for combined columns from the dataset
 	// +kubebuilder:validation:Optional
-	MultiColumnAssertions []MultiColumnValidation `json:"multiColumnAssertions,omitempty" protobuf:"bytes,3,opt,name=multiColumnAssertions"`
+	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,opt,name=multiColumnValidations"`
 	// MultiColumnAssertions defines assertions for combined columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnAssertions []ColumnValidation `json:"columnAssertions,omitempty" protobuf:"bytes,4,opt,name=columnAssertions"`
+	ColumnValidations []ColumnValidation `json:"columnValidations,omitempty" protobuf:"bytes,4,opt,name=columnValidations"`
 }
 
 type Schema struct {

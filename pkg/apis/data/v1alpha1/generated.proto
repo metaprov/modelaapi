@@ -2366,18 +2366,18 @@ message TimeSeriesSchema {
 message ValidationSpec {
   // MultiDatasetAssertions contains assertions for multi datasets
   // +kubebuilder:validation:Optional
-  repeated MultiDatasetValidation multiDatasetAssertions = 1;
+  repeated MultiDatasetValidation multiDatasetValidations = 1;
 
   // DatasetAssertions contains assertions for datasets
   // +kubebuilder:validation:Optional
-  repeated DatasetValidation datasetAssertions = 2;
+  repeated DatasetValidation datasetValidations = 2;
 
   // MultiColumnAssertions defines assertions for combined columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated MultiColumnValidation multiColumnAssertions = 3;
+  repeated MultiColumnValidation multiColumnValidations = 3;
 
   // MultiColumnAssertions defines assertions for combined columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated ColumnValidation columnAssertions = 4;
+  repeated ColumnValidation columnValidations = 4;
 }
 

@@ -550,7 +550,7 @@ spec:
                         description: Validation spec define the validation to perform
                           on new datasets
                         properties:
-                          columnAssertions:
+                          columnValidations:
                             description: MultiColumnAssertions defines assertions
                               for combined columns from the dataset
                             items:
@@ -573,7 +573,7 @@ spec:
                                   type: array
                               type: object
                             type: array
-                          datasetAssertions:
+                          datasetValidations:
                             description: DatasetAssertions contains assertions for
                               datasets
                             items:
@@ -594,7 +594,7 @@ spec:
                                   type: array
                               type: object
                             type: array
-                          multiColumnAssertions:
+                          multiColumnValidations:
                             description: MultiColumnAssertions defines assertions
                               for combined columns from the dataset
                             items:
@@ -619,7 +619,7 @@ spec:
                                   type: array
                               type: object
                             type: array
-                          multiDatasetAssertions:
+                          multiDatasetValidations:
                             description: MultiDatasetAssertions contains assertions
                               for multi datasets
                             items:

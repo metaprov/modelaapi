@@ -3976,25 +3976,25 @@ export namespace TimeSeriesSchema {
 }
 
 export class ValidationSpec extends jspb.Message {
-  getMultidatasetassertionsList(): Array<MultiDatasetValidation>;
-  setMultidatasetassertionsList(value: Array<MultiDatasetValidation>): ValidationSpec;
-  clearMultidatasetassertionsList(): ValidationSpec;
-  addMultidatasetassertions(value?: MultiDatasetValidation, index?: number): MultiDatasetValidation;
+  getMultidatasetvalidationsList(): Array<MultiDatasetValidation>;
+  setMultidatasetvalidationsList(value: Array<MultiDatasetValidation>): ValidationSpec;
+  clearMultidatasetvalidationsList(): ValidationSpec;
+  addMultidatasetvalidations(value?: MultiDatasetValidation, index?: number): MultiDatasetValidation;
 
-  getDatasetassertionsList(): Array<DatasetValidation>;
-  setDatasetassertionsList(value: Array<DatasetValidation>): ValidationSpec;
-  clearDatasetassertionsList(): ValidationSpec;
-  addDatasetassertions(value?: DatasetValidation, index?: number): DatasetValidation;
+  getDatasetvalidationsList(): Array<DatasetValidation>;
+  setDatasetvalidationsList(value: Array<DatasetValidation>): ValidationSpec;
+  clearDatasetvalidationsList(): ValidationSpec;
+  addDatasetvalidations(value?: DatasetValidation, index?: number): DatasetValidation;
 
-  getMulticolumnassertionsList(): Array<MultiColumnValidation>;
-  setMulticolumnassertionsList(value: Array<MultiColumnValidation>): ValidationSpec;
-  clearMulticolumnassertionsList(): ValidationSpec;
-  addMulticolumnassertions(value?: MultiColumnValidation, index?: number): MultiColumnValidation;
+  getMulticolumnvalidationsList(): Array<MultiColumnValidation>;
+  setMulticolumnvalidationsList(value: Array<MultiColumnValidation>): ValidationSpec;
+  clearMulticolumnvalidationsList(): ValidationSpec;
+  addMulticolumnvalidations(value?: MultiColumnValidation, index?: number): MultiColumnValidation;
 
-  getColumnassertionsList(): Array<ColumnValidation>;
-  setColumnassertionsList(value: Array<ColumnValidation>): ValidationSpec;
-  clearColumnassertionsList(): ValidationSpec;
-  addColumnassertions(value?: ColumnValidation, index?: number): ColumnValidation;
+  getColumnvalidationsList(): Array<ColumnValidation>;
+  setColumnvalidationsList(value: Array<ColumnValidation>): ValidationSpec;
+  clearColumnvalidationsList(): ValidationSpec;
+  addColumnvalidations(value?: ColumnValidation, index?: number): ColumnValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidationSpec.AsObject;
@@ -4006,10 +4006,10 @@ export class ValidationSpec extends jspb.Message {
 
 export namespace ValidationSpec {
   export type AsObject = {
-    multidatasetassertionsList: Array<MultiDatasetValidation.AsObject>,
-    datasetassertionsList: Array<DatasetValidation.AsObject>,
-    multicolumnassertionsList: Array<MultiColumnValidation.AsObject>,
-    columnassertionsList: Array<ColumnValidation.AsObject>,
+    multidatasetvalidationsList: Array<MultiDatasetValidation.AsObject>,
+    datasetvalidationsList: Array<DatasetValidation.AsObject>,
+    multicolumnvalidationsList: Array<MultiColumnValidation.AsObject>,
+    columnvalidationsList: Array<ColumnValidation.AsObject>,
   }
 }
 

@@ -39235,13 +39235,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    multidatasetassertionsList: jspb.Message.toObjectList(msg.getMultidatasetassertionsList(),
+    multidatasetvalidationsList: jspb.Message.toObjectList(msg.getMultidatasetvalidationsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject, includeInstance),
-    datasetassertionsList: jspb.Message.toObjectList(msg.getDatasetassertionsList(),
+    datasetvalidationsList: jspb.Message.toObjectList(msg.getDatasetvalidationsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.toObject, includeInstance),
-    multicolumnassertionsList: jspb.Message.toObjectList(msg.getMulticolumnassertionsList(),
+    multicolumnvalidationsList: jspb.Message.toObjectList(msg.getMulticolumnvalidationsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.toObject, includeInstance),
-    columnassertionsList: jspb.Message.toObjectList(msg.getColumnassertionsList(),
+    columnvalidationsList: jspb.Message.toObjectList(msg.getColumnvalidationsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.toObject, includeInstance)
   };
 
@@ -39282,22 +39282,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.deseri
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.deserializeBinaryFromReader);
-      msg.addMultidatasetassertions(value);
+      msg.addMultidatasetvalidations(value);
       break;
     case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.deserializeBinaryFromReader);
-      msg.addDatasetassertions(value);
+      msg.addDatasetvalidations(value);
       break;
     case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.deserializeBinaryFromReader);
-      msg.addMulticolumnassertions(value);
+      msg.addMulticolumnvalidations(value);
       break;
     case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.deserializeBinaryFromReader);
-      msg.addColumnassertions(value);
+      msg.addColumnvalidations(value);
       break;
     default:
       reader.skipField();
@@ -39328,7 +39328,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMultidatasetassertionsList();
+  f = message.getMultidatasetvalidationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -39336,7 +39336,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.serializeBinaryToWriter
     );
   }
-  f = message.getDatasetassertionsList();
+  f = message.getDatasetvalidationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -39344,7 +39344,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.serializeBinaryToWriter
     );
   }
-  f = message.getMulticolumnassertionsList();
+  f = message.getMulticolumnvalidationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
@@ -39352,7 +39352,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.serializeBinaryToWriter
     );
   }
-  f = message.getColumnassertionsList();
+  f = message.getColumnvalidationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -39364,10 +39364,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.serial
 
 
 /**
- * repeated MultiDatasetValidation multiDatasetAssertions = 1;
+ * repeated MultiDatasetValidation multiDatasetValidations = 1;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMultidatasetassertionsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMultidatasetvalidationsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, 1));
 };
@@ -39377,7 +39377,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMultidatasetassertionsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMultidatasetvalidationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -39387,7 +39387,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMultidatasetassertions = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMultidatasetvalidations = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation, opt_index);
 };
 
@@ -39396,16 +39396,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearMultidatasetassertionsList = function() {
-  return this.setMultidatasetassertionsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearMultidatasetvalidationsList = function() {
+  return this.setMultidatasetvalidationsList([]);
 };
 
 
 /**
- * repeated DatasetValidation datasetAssertions = 2;
+ * repeated DatasetValidation datasetValidations = 2;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getDatasetassertionsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getDatasetvalidationsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation, 2));
 };
@@ -39415,7 +39415,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setDatasetassertionsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setDatasetvalidationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -39425,7 +39425,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addDatasetassertions = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addDatasetvalidations = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation, opt_index);
 };
 
@@ -39434,16 +39434,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearDatasetassertionsList = function() {
-  return this.setDatasetassertionsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearDatasetvalidationsList = function() {
+  return this.setDatasetvalidationsList([]);
 };
 
 
 /**
- * repeated MultiColumnValidation multiColumnAssertions = 3;
+ * repeated MultiColumnValidation multiColumnValidations = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMulticolumnassertionsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getMulticolumnvalidationsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation, 3));
 };
@@ -39453,7 +39453,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMulticolumnassertionsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setMulticolumnvalidationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -39463,7 +39463,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMulticolumnassertions = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addMulticolumnvalidations = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation, opt_index);
 };
 
@@ -39472,16 +39472,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearMulticolumnassertionsList = function() {
-  return this.setMulticolumnassertionsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearMulticolumnvalidationsList = function() {
+  return this.setMulticolumnvalidationsList([]);
 };
 
 
 /**
- * repeated ColumnValidation columnAssertions = 4;
+ * repeated ColumnValidation columnValidations = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getColumnassertionsList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.getColumnvalidationsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation, 4));
 };
@@ -39491,7 +39491,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setColumnassertionsList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.setColumnvalidationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -39501,7 +39501,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addColumnassertions = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.addColumnvalidations = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation, opt_index);
 };
 
@@ -39510,8 +39510,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.protot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearColumnassertionsList = function() {
-  return this.setColumnassertionsList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.prototype.clearColumnvalidationsList = function() {
+  return this.setColumnvalidationsList([]);
 };
 
 
