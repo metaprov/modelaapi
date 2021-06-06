@@ -59,9 +59,9 @@ message CapacityStageSpec {
   // +kubebuilder:validation:Optional
   optional string servingSiteName = 2;
 
-  // Tests is the specification of tests to run in this stage
+  // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated Expectation tests = 3;
+  repeated ModelValidation validations = 3;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false
@@ -267,9 +267,9 @@ message DeploymentStageSpec {
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 3;
 
-  // Tests is the specification of tests to run in this stage
+  // Validations is the specification of tests to run in this stage
   // +kubebuilder:validation:Optional
-  repeated Expectation tests = 4;
+  repeated ModelValidation validations = 4;
 
   // A reference to the workload class that is used for running the test prediction
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
@@ -294,24 +294,6 @@ message EnsembleSpec {
   // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
   // +kubebuilder:validation:Optional
   repeated string base = 2;
-}
-
-message Expectation {
-  // DatasetName is the name of the test dataset.
-  // +kubebuilder:validation:Required
-  optional string datasetName = 1;
-
-  // Metric is the name of the metric
-  // +kubebuilder:validation:Required
-  optional string metric = 2;
-
-  // Op is the operator used during comparison
-  // +kubebuilder:validation:Required
-  optional string op = 3;
-
-  // Score is the expected score
-  // +kubebuilder:validation:Required
-  optional double score = 4;
 }
 
 message FeatureImportance {
@@ -874,7 +856,7 @@ message ModelPipelineRunStageStatus {
 
   // Results is the results of running the test datasets against the new model
   // +kubebuilder:validation:Optional
-  repeated ModelTestResult results = 9;
+  repeated ModelValidationResult results = 9;
 
   // Error record error.
   // +kubebuilder:validation:Optional
@@ -1409,8 +1391,26 @@ message ModelStatus {
   repeated ModelCondition conditions = 32;
 }
 
+message ModelValidation {
+  // DatasetName is the name of the test dataset.
+  // +kubebuilder:validation:Required
+  optional string datasetName = 1;
+
+  // Metric is the name of the metric
+  // +kubebuilder:validation:Required
+  optional string metric = 2;
+
+  // Op is the operator used during comparison
+  // +kubebuilder:validation:Required
+  optional string op = 3;
+
+  // Score is the expected score
+  // +kubebuilder:validation:Required
+  optional double score = 4;
+}
+
 // Model Test Result holds the results for a single metric on a single dataset
-message ModelTestResult {
+message ModelValidationResult {
   // The name of the dataset
   optional string datasetName = 1;
 
@@ -1736,9 +1736,9 @@ message ReleaseStageSpec {
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 5;
 
-  // Tests is the List of expectation run against the deployed model before moving production traffic to the model
+  // Validations is the List of expectation run against the deployed model before moving production traffic to the model
   // +kubebuilder:validation:Optional
-  repeated Expectation tests = 6;
+  repeated ModelValidation validations = 6;
 
   // A reference to the workload class that is used for running the release
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
@@ -2380,7 +2380,7 @@ message TrainingStageSpec {
   // If the model cannot pass this smoke test, the system will fail the pipeline
   // If the smoke is empty, the system does not perform the test
   // +kubebuilder:validation:Optional
-  optional Expectation smoke = 5;
+  optional ModelValidation smoke = 5;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=false
@@ -2405,9 +2405,9 @@ message UATStageSpec {
   // +kubebuilder:validation:Optional
   optional string servingSiteName = 2;
 
-  // Tests defines the machine learning test cases to run against the new trained model.
+  // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  repeated Expectation tests = 3;
+  repeated ModelValidation validations = 3;
 
   // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
   // +kubebuilder:default:=true

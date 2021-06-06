@@ -62,10 +62,10 @@ export class CapacityStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): CapacityStageSpec;
 
-  getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): CapacityStageSpec;
-  clearTestsList(): CapacityStageSpec;
-  addTests(value?: Expectation, index?: number): Expectation;
+  getValidationsList(): Array<ModelValidation>;
+  setValidationsList(value: Array<ModelValidation>): CapacityStageSpec;
+  clearValidationsList(): CapacityStageSpec;
+  addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
   getManualapproval(): boolean;
   setManualapproval(value: boolean): CapacityStageSpec;
@@ -85,7 +85,7 @@ export namespace CapacityStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    testsList: Array<Expectation.AsObject>,
+    validationsList: Array<ModelValidation.AsObject>,
     manualapproval: boolean,
     workloadclassname: string,
   }
@@ -353,10 +353,10 @@ export class DeploymentStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): DeploymentStageSpec;
 
-  getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): DeploymentStageSpec;
-  clearTestsList(): DeploymentStageSpec;
-  addTests(value?: Expectation, index?: number): Expectation;
+  getValidationsList(): Array<ModelValidation>;
+  setValidationsList(value: Array<ModelValidation>): DeploymentStageSpec;
+  clearValidationsList(): DeploymentStageSpec;
+  addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): DeploymentStageSpec;
@@ -374,7 +374,7 @@ export namespace DeploymentStageSpec {
     enabled: boolean,
     servingsitename: string,
     manualapproval: boolean,
-    testsList: Array<Expectation.AsObject>,
+    validationsList: Array<ModelValidation.AsObject>,
     workloadclassname: string,
   }
 }
@@ -432,36 +432,6 @@ export class EnsembleSpec extends jspb.Message {
 export namespace EnsembleSpec {
   export type AsObject = {
     baseList: Array<string>,
-  }
-}
-
-export class Expectation extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): Expectation;
-
-  getMetric(): string;
-  setMetric(value: string): Expectation;
-
-  getOp(): string;
-  setOp(value: string): Expectation;
-
-  getScore(): number;
-  setScore(value: number): Expectation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Expectation.AsObject;
-  static toObject(includeInstance: boolean, msg: Expectation): Expectation.AsObject;
-  static serializeBinaryToWriter(message: Expectation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Expectation;
-  static deserializeBinaryFromReader(message: Expectation, reader: jspb.BinaryReader): Expectation;
-}
-
-export namespace Expectation {
-  export type AsObject = {
-    datasetname: string,
-    metric: string,
-    op: string,
-    score: number,
   }
 }
 
@@ -1354,10 +1324,10 @@ export class ModelPipelineRunStageStatus extends jspb.Message {
   hasEndtime(): boolean;
   clearEndtime(): ModelPipelineRunStageStatus;
 
-  getResultsList(): Array<ModelTestResult>;
-  setResultsList(value: Array<ModelTestResult>): ModelPipelineRunStageStatus;
+  getResultsList(): Array<ModelValidationResult>;
+  setResultsList(value: Array<ModelValidationResult>): ModelPipelineRunStageStatus;
   clearResultsList(): ModelPipelineRunStageStatus;
-  addResults(value?: ModelTestResult, index?: number): ModelTestResult;
+  addResults(value?: ModelValidationResult, index?: number): ModelValidationResult;
 
   getError(): string;
   setError(value: string): ModelPipelineRunStageStatus;
@@ -1378,7 +1348,7 @@ export namespace ModelPipelineRunStageStatus {
     approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultsList: Array<ModelTestResult.AsObject>,
+    resultsList: Array<ModelValidationResult.AsObject>,
     error: string,
   }
 }
@@ -2027,39 +1997,69 @@ export namespace ModelStatus {
   }
 }
 
-export class ModelTestResult extends jspb.Message {
+export class ModelValidation extends jspb.Message {
   getDatasetname(): string;
-  setDatasetname(value: string): ModelTestResult;
+  setDatasetname(value: string): ModelValidation;
 
   getMetric(): string;
-  setMetric(value: string): ModelTestResult;
-
-  getExpected(): number;
-  setExpected(value: number): ModelTestResult;
+  setMetric(value: string): ModelValidation;
 
   getOp(): string;
-  setOp(value: string): ModelTestResult;
+  setOp(value: string): ModelValidation;
 
-  getValue(): number;
-  setValue(value: number): ModelTestResult;
-
-  getError(): string;
-  setError(value: string): ModelTestResult;
-
-  getDuration(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration | undefined;
-  setDuration(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration): ModelTestResult;
-  hasDuration(): boolean;
-  clearDuration(): ModelTestResult;
+  getScore(): number;
+  setScore(value: number): ModelValidation;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelTestResult.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelTestResult): ModelTestResult.AsObject;
-  static serializeBinaryToWriter(message: ModelTestResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelTestResult;
-  static deserializeBinaryFromReader(message: ModelTestResult, reader: jspb.BinaryReader): ModelTestResult;
+  toObject(includeInstance?: boolean): ModelValidation.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelValidation): ModelValidation.AsObject;
+  static serializeBinaryToWriter(message: ModelValidation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelValidation;
+  static deserializeBinaryFromReader(message: ModelValidation, reader: jspb.BinaryReader): ModelValidation;
 }
 
-export namespace ModelTestResult {
+export namespace ModelValidation {
+  export type AsObject = {
+    datasetname: string,
+    metric: string,
+    op: string,
+    score: number,
+  }
+}
+
+export class ModelValidationResult extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelValidationResult;
+
+  getMetric(): string;
+  setMetric(value: string): ModelValidationResult;
+
+  getExpected(): number;
+  setExpected(value: number): ModelValidationResult;
+
+  getOp(): string;
+  setOp(value: string): ModelValidationResult;
+
+  getValue(): number;
+  setValue(value: number): ModelValidationResult;
+
+  getError(): string;
+  setError(value: string): ModelValidationResult;
+
+  getDuration(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration | undefined;
+  setDuration(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration): ModelValidationResult;
+  hasDuration(): boolean;
+  clearDuration(): ModelValidationResult;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelValidationResult.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelValidationResult): ModelValidationResult.AsObject;
+  static serializeBinaryToWriter(message: ModelValidationResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelValidationResult;
+  static deserializeBinaryFromReader(message: ModelValidationResult, reader: jspb.BinaryReader): ModelValidationResult;
+}
+
+export namespace ModelValidationResult {
   export type AsObject = {
     datasetname: string,
     metric: string,
@@ -2589,10 +2589,10 @@ export class ReleaseStageSpec extends jspb.Message {
   getManualapproval(): boolean;
   setManualapproval(value: boolean): ReleaseStageSpec;
 
-  getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): ReleaseStageSpec;
-  clearTestsList(): ReleaseStageSpec;
-  addTests(value?: Expectation, index?: number): Expectation;
+  getValidationsList(): Array<ModelValidation>;
+  setValidationsList(value: Array<ModelValidation>): ReleaseStageSpec;
+  clearValidationsList(): ReleaseStageSpec;
+  addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): ReleaseStageSpec;
@@ -2612,7 +2612,7 @@ export namespace ReleaseStageSpec {
     predictorname: string,
     template?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
-    testsList: Array<Expectation.AsObject>,
+    validationsList: Array<ModelValidation.AsObject>,
     workloadclassname: string,
   }
 }
@@ -3424,8 +3424,8 @@ export class TrainingStageSpec extends jspb.Message {
   getStudytemplatename(): string;
   setStudytemplatename(value: string): TrainingStageSpec;
 
-  getSmoke(): Expectation | undefined;
-  setSmoke(value?: Expectation): TrainingStageSpec;
+  getSmoke(): ModelValidation | undefined;
+  setSmoke(value?: ModelValidation): TrainingStageSpec;
   hasSmoke(): boolean;
   clearSmoke(): TrainingStageSpec;
 
@@ -3446,7 +3446,7 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studytemplatename: string,
-    smoke?: Expectation.AsObject,
+    smoke?: ModelValidation.AsObject,
     manualapproval: boolean,
   }
 }
@@ -3472,10 +3472,10 @@ export class UATStageSpec extends jspb.Message {
   getServingsitename(): string;
   setServingsitename(value: string): UATStageSpec;
 
-  getTestsList(): Array<Expectation>;
-  setTestsList(value: Array<Expectation>): UATStageSpec;
-  clearTestsList(): UATStageSpec;
-  addTests(value?: Expectation, index?: number): Expectation;
+  getValidationsList(): Array<ModelValidation>;
+  setValidationsList(value: Array<ModelValidation>): UATStageSpec;
+  clearValidationsList(): UATStageSpec;
+  addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
   getManualapproval(): boolean;
   setManualapproval(value: boolean): UATStageSpec;
@@ -3495,7 +3495,7 @@ export namespace UATStageSpec {
   export type AsObject = {
     enabled: boolean,
     servingsitename: string,
-    testsList: Array<Expectation.AsObject>,
+    validationsList: Array<ModelValidation.AsObject>,
     manualapproval: boolean,
     workloadclassname: string,
   }

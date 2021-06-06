@@ -75,9 +75,9 @@ spec:
                       during the capacity stage If the serving site is empty or null,
                       the system will skip the capacity stage unit tests.
                     type: string
-                  tests:
-                    description: Tests is the specification of tests to run in this
-                      stage
+                  validations:
+                    description: Validations is the specification of tests to run
+                      in this stage
                     items:
                       properties:
                         datasetName:
@@ -191,9 +191,9 @@ spec:
                     description: ServingSiteName is the serving site for the release,
                       if empty, the system will use the default serving site name
                     type: string
-                  tests:
-                    description: Tests is the specification of tests to run in this
-                      stage
+                  validations:
+                    description: Validations is the specification of tests to run
+                      in this stage
                     items:
                       properties:
                         datasetName:
@@ -368,9 +368,9 @@ spec:
                           this model
                         type: string
                     type: object
-                  tests:
-                    description: Tests is the List of expectation run against the
-                      deployed model before moving production traffic to the model
+                  validations:
+                    description: Validations is the List of expectation run against
+                      the deployed model before moving production traffic to the model
                     items:
                       properties:
                         datasetName:
@@ -591,9 +591,9 @@ spec:
                       uat tests. If the serving site is empty, the system will skip
                       the uat stage
                     type: string
-                  tests:
-                    description: Tests defines the machine learning test cases to
-                      run against the new trained model.
+                  validations:
+                    description: Validations defines the machine learning test cases
+                      to run against the new trained model.
                     items:
                       properties:
                         datasetName:
