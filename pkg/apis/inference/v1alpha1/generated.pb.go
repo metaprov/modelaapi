@@ -4653,7 +4653,7 @@ func (this *PredictionSpec) String() string {
 		`DatasetName:` + valueToStringGenerated(this.DatasetName) + `,`,
 		`Input:` + strings.Replace(fmt.Sprintf("%v", this.Input), "DataLocation", "v1alpha11.DataLocation", 1) + `,`,
 		`Output:` + strings.Replace(fmt.Sprintf("%v", this.Output), "DataLocation", "v1alpha11.DataLocation", 1) + `,`,
-		`Tests:` + fmt.Sprintf("%v", this.Tests) + `,`,
+		`Validations:` + fmt.Sprintf("%v", this.Tests) + `,`,
 		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`ActiveDeadlineSeconds:` + valueToStringGenerated(this.ActiveDeadlineSeconds) + `,`,
@@ -9135,7 +9135,7 @@ func (m *PredictionSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tests", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Validations", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {

@@ -155,7 +155,7 @@ type TrainingStageSpec struct {
 	// If the model cannot pass this smoke test, the system will fail the pipeline
 	// If the smoke is empty, the system does not perform the test
 	// +kubebuilder:validation:Optional
-	Smoke *Expectation `json:"smoke,omitempty" protobuf:"bytes,5,opt,name=smoke"`
+	Smoke *ModelValidation `json:"smoke,omitempty" protobuf:"bytes,5,opt,name=smoke"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -173,9 +173,9 @@ type UATStageSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
-	// Tests defines the machine learning test cases to run against the new trained model.
+	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,rep,name=tests"`
+	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -197,9 +197,9 @@ type CapacityStageSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
-	// Tests is the specification of tests to run in this stage
+	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,3,rep,name=tests"`
+	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
 	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -225,9 +225,9 @@ type DeploymentStageSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
-	// Tests is the specification of tests to run in this stage
+	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,4,rep,name=tests"`
+	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,4,rep,name=validations"`
 	// A reference to the workload class that is used for running the test prediction
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
@@ -255,9 +255,9 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
-	// Tests is the List of expectation run against the deployed model before moving production traffic to the model
+	// Validations is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
-	Tests []Expectation `json:"tests,omitempty" protobuf:"bytes,6,rep,name=tests"`
+	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,6,rep,name=validations"`
 	// A reference to the workload class that is used for running the release
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
@@ -274,7 +274,7 @@ type ModelPipelineStatus struct {
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
-type Expectation struct {
+type ModelValidation struct {
 	// DatasetName is the name of the test dataset.
 	// +kubebuilder:validation:Required
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`

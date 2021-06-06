@@ -461,15 +461,15 @@ func (m *EnsembleSpec) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EnsembleSpec proto.InternalMessageInfo
 
-func (m *Expectation) Reset()      { *m = Expectation{} }
-func (*Expectation) ProtoMessage() {}
-func (*Expectation) Descriptor() ([]byte, []int) {
+func (m *ModelValidation) Reset()      { *m = ModelValidation{} }
+func (*ModelValidation) ProtoMessage() {}
+func (*ModelValidation) Descriptor() ([]byte, []int) {
 	return fileDescriptor_26c54310f0109c27, []int{15}
 }
-func (m *Expectation) XXX_Unmarshal(b []byte) error {
+func (m *ModelValidation) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *Expectation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *ModelValidation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -477,13 +477,13 @@ func (m *Expectation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) 
 	}
 	return b[:n], nil
 }
-func (m *Expectation) XXX_Merge(src proto.Message) {
+func (m *ModelValidation) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Expectation.Merge(m, src)
 }
-func (m *Expectation) XXX_Size() int {
+func (m *ModelValidation) XXX_Size() int {
 	return m.Size()
 }
-func (m *Expectation) XXX_DiscardUnknown() {
+func (m *ModelValidation) XXX_DiscardUnknown() {
 	xxx_messageInfo_Expectation.DiscardUnknown(m)
 }
 
@@ -1357,15 +1357,15 @@ func (m *ModelStatus) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ModelStatus proto.InternalMessageInfo
 
-func (m *ModelTestResult) Reset()      { *m = ModelTestResult{} }
-func (*ModelTestResult) ProtoMessage() {}
-func (*ModelTestResult) Descriptor() ([]byte, []int) {
+func (m *ModelValidationResult) Reset()      { *m = ModelValidationResult{} }
+func (*ModelValidationResult) ProtoMessage() {}
+func (*ModelValidationResult) Descriptor() ([]byte, []int) {
 	return fileDescriptor_26c54310f0109c27, []int{47}
 }
-func (m *ModelTestResult) XXX_Unmarshal(b []byte) error {
+func (m *ModelValidationResult) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *ModelTestResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *ModelValidationResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -1373,13 +1373,13 @@ func (m *ModelTestResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, err
 	}
 	return b[:n], nil
 }
-func (m *ModelTestResult) XXX_Merge(src proto.Message) {
+func (m *ModelValidationResult) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ModelTestResult.Merge(m, src)
 }
-func (m *ModelTestResult) XXX_Size() int {
+func (m *ModelValidationResult) XXX_Size() int {
 	return m.Size()
 }
-func (m *ModelTestResult) XXX_DiscardUnknown() {
+func (m *ModelValidationResult) XXX_DiscardUnknown() {
 	xxx_messageInfo_ModelTestResult.DiscardUnknown(m)
 }
 
@@ -2381,7 +2381,7 @@ func init() {
 	proto.RegisterType((*DimensionValue)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DimensionValue")
 	proto.RegisterType((*EnsembleRules)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.EnsembleRules")
 	proto.RegisterType((*EnsembleSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.EnsembleSpec")
-	proto.RegisterType((*Expectation)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Expectation")
+	proto.RegisterType((*ModelValidation)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation")
 	proto.RegisterType((*FeatureImportance)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.FeatureImportance")
 	proto.RegisterType((*ForecastObj)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj")
 	proto.RegisterType((*ForecastingSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec")
@@ -2415,7 +2415,7 @@ func init() {
 	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec")
 	proto.RegisterType((*ModelStatus)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus")
 	proto.RegisterMapType((map[string]string)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.PythonPackagesEntry")
-	proto.RegisterType((*ModelTestResult)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelTestResult")
+	proto.RegisterType((*ModelValidationResult)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult")
 	proto.RegisterType((*NNLayerParameter)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NNLayerParameter")
 	proto.RegisterType((*Notebook)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook")
 	proto.RegisterType((*NotebookCondition)(nil), "github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition")
@@ -3075,10 +3075,10 @@ func (m *CapacityStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x20
 	}
-	if len(m.Tests) > 0 {
-		for iNdEx := len(m.Tests) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Validations) > 0 {
+		for iNdEx := len(m.Validations) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Tests[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Validations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -3560,10 +3560,10 @@ func (m *DeploymentStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x2a
 	}
-	if len(m.Tests) > 0 {
-		for iNdEx := len(m.Tests) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Validations) > 0 {
+		for iNdEx := len(m.Validations) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Tests[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Validations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -3696,7 +3696,7 @@ func (m *EnsembleSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Expectation) Marshal() (dAtA []byte, err error) {
+func (m *ModelValidation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -3706,12 +3706,12 @@ func (m *Expectation) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *Expectation) MarshalTo(dAtA []byte) (int, error) {
+func (m *ModelValidation) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Expectation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *ModelValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -6500,7 +6500,7 @@ func (m *ModelStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ModelTestResult) Marshal() (dAtA []byte, err error) {
+func (m *ModelValidationResult) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -6510,12 +6510,12 @@ func (m *ModelTestResult) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ModelTestResult) MarshalTo(dAtA []byte) (int, error) {
+func (m *ModelValidationResult) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *ModelTestResult) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *ModelValidationResult) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -7441,10 +7441,10 @@ func (m *ReleaseStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x3a
 	}
-	if len(m.Tests) > 0 {
-		for iNdEx := len(m.Tests) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Validations) > 0 {
+		for iNdEx := len(m.Validations) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Tests[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Validations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -9000,10 +9000,10 @@ func (m *UATStageSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x20
 	}
-	if len(m.Tests) > 0 {
-		for iNdEx := len(m.Tests) - 1; iNdEx >= 0; iNdEx-- {
+	if len(m.Validations) > 0 {
+		for iNdEx := len(m.Validations) - 1; iNdEx >= 0; iNdEx-- {
 			{
-				size, err := m.Tests[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				size, err := m.Validations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
 				if err != nil {
 					return 0, err
 				}
@@ -9131,8 +9131,8 @@ func (m *CapacityStageSpec) Size() (n int) {
 		l = len(*m.ServingSiteName)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if len(m.Tests) > 0 {
-		for _, e := range m.Tests {
+	if len(m.Validations) > 0 {
+		for _, e := range m.Validations {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -9355,8 +9355,8 @@ func (m *DeploymentStageSpec) Size() (n int) {
 	if m.ManualApproval != nil {
 		n += 2
 	}
-	if len(m.Tests) > 0 {
-		for _, e := range m.Tests {
+	if len(m.Validations) > 0 {
+		for _, e := range m.Validations {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -9409,7 +9409,7 @@ func (m *EnsembleSpec) Size() (n int) {
 	return n
 }
 
-func (m *Expectation) Size() (n int) {
+func (m *ModelValidation) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -10456,7 +10456,7 @@ func (m *ModelStatus) Size() (n int) {
 	return n
 }
 
-func (m *ModelTestResult) Size() (n int) {
+func (m *ModelValidationResult) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -10841,8 +10841,8 @@ func (m *ReleaseStageSpec) Size() (n int) {
 	if m.ManualApproval != nil {
 		n += 2
 	}
-	if len(m.Tests) > 0 {
-		for _, e := range m.Tests {
+	if len(m.Validations) > 0 {
+		for _, e := range m.Validations {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -11413,8 +11413,8 @@ func (m *UATStageSpec) Size() (n int) {
 		l = len(*m.ServingSiteName)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	if len(m.Tests) > 0 {
-		for _, e := range m.Tests {
+	if len(m.Validations) > 0 {
+		for _, e := range m.Validations {
 			l = e.Size()
 			n += 1 + l + sovGenerated(uint64(l))
 		}
@@ -11480,15 +11480,15 @@ func (this *CapacityStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTests := "[]Expectation{"
-	for _, f := range this.Tests {
-		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "Expectation", "Expectation", 1), `&`, ``, 1) + ","
+	repeatedStringForTests := "[]ModelValidation{"
+	for _, f := range this.Validations {
+		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "ModelValidation", "ModelValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForTests += "}"
 	s := strings.Join([]string{`&CapacityStageSpec{`,
 		`Enabled:` + valueToStringGenerated(this.Enabled) + `,`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
-		`Tests:` + repeatedStringForTests + `,`,
+		`Validations:` + repeatedStringForTests + `,`,
 		`ManualApproval:` + valueToStringGenerated(this.ManualApproval) + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`}`,
@@ -11618,16 +11618,16 @@ func (this *DeploymentStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTests := "[]Expectation{"
-	for _, f := range this.Tests {
-		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "Expectation", "Expectation", 1), `&`, ``, 1) + ","
+	repeatedStringForTests := "[]ModelValidation{"
+	for _, f := range this.Validations {
+		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "ModelValidation", "ModelValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForTests += "}"
 	s := strings.Join([]string{`&DeploymentStageSpec{`,
 		`Enabled:` + valueToStringGenerated(this.Enabled) + `,`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
 		`ManualApproval:` + valueToStringGenerated(this.ManualApproval) + `,`,
-		`Tests:` + repeatedStringForTests + `,`,
+		`Validations:` + repeatedStringForTests + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`}`,
 	}, "")
@@ -11663,11 +11663,11 @@ func (this *EnsembleSpec) String() string {
 	}, "")
 	return s
 }
-func (this *Expectation) String() string {
+func (this *ModelValidation) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&Expectation{`,
+	s := strings.Join([]string{`&ModelValidation{`,
 		`DatasetName:` + valueToStringGenerated(this.DatasetName) + `,`,
 		`Metric:` + valueToStringGenerated(this.Metric) + `,`,
 		`Op:` + valueToStringGenerated(this.Op) + `,`,
@@ -12037,9 +12037,9 @@ func (this *ModelPipelineRunStageStatus) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForResults := "[]ModelTestResult{"
+	repeatedStringForResults := "[]ModelValidationResult{"
 	for _, f := range this.Results {
-		repeatedStringForResults += strings.Replace(strings.Replace(f.String(), "ModelTestResult", "ModelTestResult", 1), `&`, ``, 1) + ","
+		repeatedStringForResults += strings.Replace(strings.Replace(f.String(), "ModelValidationResult", "ModelValidationResult", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForResults += "}"
 	s := strings.Join([]string{`&ModelPipelineRunStageStatus{`,
@@ -12281,11 +12281,11 @@ func (this *ModelStatus) String() string {
 	}, "")
 	return s
 }
-func (this *ModelTestResult) String() string {
+func (this *ModelValidationResult) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ModelTestResult{`,
+	s := strings.Join([]string{`&ModelValidationResult{`,
 		`DatasetName:` + fmt.Sprintf("%v", this.DatasetName) + `,`,
 		`Metric:` + fmt.Sprintf("%v", this.Metric) + `,`,
 		`Expected:` + fmt.Sprintf("%v", this.Expected) + `,`,
@@ -12514,9 +12514,9 @@ func (this *ReleaseStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTests := "[]Expectation{"
-	for _, f := range this.Tests {
-		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "Expectation", "Expectation", 1), `&`, ``, 1) + ","
+	repeatedStringForTests := "[]ModelValidation{"
+	for _, f := range this.Validations {
+		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "ModelValidation", "ModelValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForTests += "}"
 	s := strings.Join([]string{`&ReleaseStageSpec{`,
@@ -12525,7 +12525,7 @@ func (this *ReleaseStageSpec) String() string {
 		`PredictorName:` + valueToStringGenerated(this.PredictorName) + `,`,
 		`Template:` + strings.Replace(fmt.Sprintf("%v", this.Template), "ModelDeploymentSpec", "v1alpha11.ModelDeploymentSpec", 1) + `,`,
 		`ManualApproval:` + valueToStringGenerated(this.ManualApproval) + `,`,
-		`Tests:` + repeatedStringForTests + `,`,
+		`Validations:` + repeatedStringForTests + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`}`,
 	}, "")
@@ -12826,7 +12826,7 @@ func (this *TrainingStageSpec) String() string {
 		`NotebookName:` + valueToStringGenerated(this.NotebookName) + `,`,
 		`LabName:` + valueToStringGenerated(this.LabName) + `,`,
 		`StudyTemplateName:` + valueToStringGenerated(this.StudyTemplateName) + `,`,
-		`Smoke:` + strings.Replace(this.Smoke.String(), "Expectation", "Expectation", 1) + `,`,
+		`Smoke:` + strings.Replace(this.Smoke.String(), "ModelValidation", "ModelValidation", 1) + `,`,
 		`ManualApproval:` + valueToStringGenerated(this.ManualApproval) + `,`,
 		`}`,
 	}, "")
@@ -12845,15 +12845,15 @@ func (this *UATStageSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTests := "[]Expectation{"
-	for _, f := range this.Tests {
-		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "Expectation", "Expectation", 1), `&`, ``, 1) + ","
+	repeatedStringForTests := "[]ModelValidation{"
+	for _, f := range this.Validations {
+		repeatedStringForTests += strings.Replace(strings.Replace(f.String(), "ModelValidation", "ModelValidation", 1), `&`, ``, 1) + ","
 	}
 	repeatedStringForTests += "}"
 	s := strings.Join([]string{`&UATStageSpec{`,
 		`Enabled:` + valueToStringGenerated(this.Enabled) + `,`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
-		`Tests:` + repeatedStringForTests + `,`,
+		`Validations:` + repeatedStringForTests + `,`,
 		`ManualApproval:` + valueToStringGenerated(this.ManualApproval) + `,`,
 		`WorkloadClassName:` + valueToStringGenerated(this.WorkloadClassName) + `,`,
 		`}`,
@@ -13175,7 +13175,7 @@ func (m *CapacityStageSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tests", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Validations", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -13202,8 +13202,8 @@ func (m *CapacityStageSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Tests = append(m.Tests, Expectation{})
-			if err := m.Tests[len(m.Tests)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Validations = append(m.Validations, ModelValidation{})
+			if err := m.Validations[len(m.Validations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14707,7 +14707,7 @@ func (m *DeploymentStageSpec) Unmarshal(dAtA []byte) error {
 			m.ManualApproval = &b
 		case 4:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tests", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Validations", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -14734,8 +14734,8 @@ func (m *DeploymentStageSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Tests = append(m.Tests, Expectation{})
-			if err := m.Tests[len(m.Tests)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Validations = append(m.Validations, ModelValidation{})
+			if err := m.Validations[len(m.Validations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -15053,7 +15053,7 @@ func (m *EnsembleSpec) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Expectation) Unmarshal(dAtA []byte) error {
+func (m *ModelValidation) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -15076,10 +15076,10 @@ func (m *Expectation) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Expectation: wiretype end group for non-group")
+			return fmt.Errorf("proto: ModelValidation: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Expectation: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ModelValidation: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -20223,7 +20223,7 @@ func (m *ModelPipelineRunStageStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Results = append(m.Results, ModelTestResult{})
+			m.Results = append(m.Results, ModelValidationResult{})
 			if err := m.Results[len(m.Results)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -24206,7 +24206,7 @@ func (m *ModelStatus) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ModelTestResult) Unmarshal(dAtA []byte) error {
+func (m *ModelValidationResult) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -24229,10 +24229,10 @@ func (m *ModelTestResult) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ModelTestResult: wiretype end group for non-group")
+			return fmt.Errorf("proto: ModelValidationResult: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ModelTestResult: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ModelValidationResult: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -27384,7 +27384,7 @@ func (m *ReleaseStageSpec) Unmarshal(dAtA []byte) error {
 			m.ManualApproval = &b
 		case 6:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tests", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Validations", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -27411,8 +27411,8 @@ func (m *ReleaseStageSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Tests = append(m.Tests, Expectation{})
-			if err := m.Tests[len(m.Tests)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Validations = append(m.Validations, ModelValidation{})
+			if err := m.Validations[len(m.Validations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -31987,7 +31987,7 @@ func (m *TrainingStageSpec) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Smoke == nil {
-				m.Smoke = &Expectation{}
+				m.Smoke = &ModelValidation{}
 			}
 			if err := m.Smoke.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -32176,7 +32176,7 @@ func (m *UATStageSpec) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tests", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Validations", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -32203,8 +32203,8 @@ func (m *UATStageSpec) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Tests = append(m.Tests, Expectation{})
-			if err := m.Tests[len(m.Tests)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Validations = append(m.Validations, ModelValidation{})
+			if err := m.Validations[len(m.Validations)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

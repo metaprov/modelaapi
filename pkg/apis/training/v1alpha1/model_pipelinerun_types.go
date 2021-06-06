@@ -140,7 +140,7 @@ const (
 )
 
 // Model Test Result holds the results for a single metric on a single dataset
-type ModelTestResult struct {
+type ModelValidationResult struct {
 	// The name of the dataset
 	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// Metric is the name of the metric measured
@@ -179,7 +179,7 @@ type ModelPipelineRunStageStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,8,opt,name=endTime"`
 	// Results is the results of running the test datasets against the new model
 	// +kubebuilder:validation:Optional
-	Results []ModelTestResult `json:"results,omitempty" protobuf:"bytes,9,rep,name=results"`
+	Results []ModelValidationResult `json:"results,omitempty" protobuf:"bytes,9,rep,name=results"`
 	// Error record error.
 	//+kubebuilder:validation:Optional
 	Error string `json:"error,omitempty" protobuf:"bytes,10,opt,name=error"`
