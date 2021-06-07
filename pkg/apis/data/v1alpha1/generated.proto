@@ -564,16 +564,6 @@ message DataPipelineStatus {
   repeated DataPipelineCondition conditions = 1;
 }
 
-message DataProblem {
-  optional string assertionName = 1;
-
-  optional string column = 2;
-
-  optional string error = 3;
-
-  optional bool passed = 4;
-}
-
 // DataProduct represent a single data product in the system
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -918,6 +908,16 @@ message DataSourceStatus {
   repeated DataSourceCondition conditions = 3;
 }
 
+message DataValidationResult {
+  optional string assertionName = 1;
+
+  optional string column = 2;
+
+  optional string error = 3;
+
+  optional bool passed = 4;
+}
+
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -1102,7 +1102,11 @@ message DatasetStatus {
 
   // List of data problems, as reported by the validation process
   // +kubebuilder:validation:Optional
-  repeated DataProblem dataProblems = 9;
+  repeated DataValidationResult validationResults = 9;
+
+  // Last time a study was done on the dataset.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
 }
 
 // DatasetTemplate is  used to generate new datasets

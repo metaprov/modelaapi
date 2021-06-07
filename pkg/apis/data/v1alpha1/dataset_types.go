@@ -181,7 +181,10 @@ type DatasetStatus struct {
 	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
 	// List of data problems, as reported by the validation process
 	//+kubebuilder:validation:Optional
-	Problems []DataProblem `json:"dataProblems,omitempty" protobuf:"bytes,9,rep,name=dataProblems"`
+	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`
+	// Last time a study was done on the dataset.
+	//+kubebuilder:validation:Optional
+	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,rep,name=lastStudyTime"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -294,7 +297,7 @@ type Signatures struct {
 	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
 }
 
-type DataProblem struct {
+type DataValidationResult struct {
 	AssertionName string `json:"assertionName" protobuf:"bytes,1,opt,name=assertionName"`
 	Column        string `json:"column" protobuf:"bytes,2,opt,name=column"`
 	Error         string `json:"error" protobuf:"bytes,3,opt,name=error"`

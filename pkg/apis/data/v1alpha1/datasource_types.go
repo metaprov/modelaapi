@@ -303,7 +303,7 @@ type Schema struct {
 	// Columns
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
 	// Validation spec define the validation to perform on new datasets
-	Validation ValidationSpec `json:"validationSpec,omitempty" protobuf:"bytes,3,rep,name=validationSpec"`
+	Validation *ValidationSpec `json:"validationSpec,omitempty" protobuf:"bytes,3,rep,name=validationSpec"`
 }
 
 type TimeSeriesSchema struct {
