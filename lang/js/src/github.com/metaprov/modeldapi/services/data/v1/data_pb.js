@@ -643,7 +643,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -9213,13 +9213,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.pr
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -9251,7 +9244,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.p
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    errorsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    result: (f = msg.getResult()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9289,8 +9282,9 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addErrors(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.deserializeBinaryFromReader);
+      msg.setResult(value);
       break;
     default:
       reader.skipField();
@@ -9321,50 +9315,51 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.p
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getErrorsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated string errors = 1;
- * @return {!Array<string>}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.getErrorsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, 1));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.setErrorsList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {string} value
- * @param {number=} opt_index
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.addErrors = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
 };
 
 
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse} returns this
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.clearErrorsList = function() {
-  return this.setErrorsList([]);
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

@@ -995,10 +995,10 @@ export namespace DsValidateDatasetRequest {
 }
 
 export class DsValidateDatasetResponse extends jspb.Message {
-  getErrorsList(): Array<string>;
-  setErrorsList(value: Array<string>): DsValidateDatasetResponse;
-  clearErrorsList(): DsValidateDatasetResponse;
-  addErrors(value: string, index?: number): DsValidateDatasetResponse;
+  getResult(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult | undefined;
+  setResult(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult): DsValidateDatasetResponse;
+  hasResult(): boolean;
+  clearResult(): DsValidateDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsValidateDatasetResponse.AsObject;
@@ -1010,7 +1010,7 @@ export class DsValidateDatasetResponse extends jspb.Message {
 
 export namespace DsValidateDatasetResponse {
   export type AsObject = {
-    errorsList: Array<string>,
+    result?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.AsObject,
   }
 }
 
