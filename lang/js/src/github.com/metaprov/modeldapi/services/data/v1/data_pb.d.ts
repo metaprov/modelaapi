@@ -995,10 +995,10 @@ export namespace DsValidateDatasetRequest {
 }
 
 export class DsValidateDatasetResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult | undefined;
-  setResult(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult): DsValidateDatasetResponse;
-  hasResult(): boolean;
-  clearResult(): DsValidateDatasetResponse;
+  getResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult>;
+  setResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult>): DsValidateDatasetResponse;
+  clearResultList(): DsValidateDatasetResponse;
+  addResult(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, index?: number): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsValidateDatasetResponse.AsObject;
@@ -1010,7 +1010,7 @@ export class DsValidateDatasetResponse extends jspb.Message {
 
 export namespace DsValidateDatasetResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.AsObject,
+    resultList: Array<github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.AsObject>,
   }
 }
 

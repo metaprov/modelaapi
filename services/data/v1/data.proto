@@ -233,7 +233,7 @@ message DsValidateDatasetRequest {
 }
 
 message DsValidateDatasetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;    
+    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;    
 }
 
 message DsGenerateDatasetRequest {

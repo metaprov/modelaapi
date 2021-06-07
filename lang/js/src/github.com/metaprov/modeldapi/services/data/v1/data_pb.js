@@ -643,7 +643,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -9213,6 +9213,13 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.pr
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -9244,7 +9251,8 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.p
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.toObject(includeInstance, f)
+    resultList: jspb.Message.toObjectList(msg.getResultList(),
+    github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -9284,7 +9292,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.d
     case 1:
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.deserializeBinaryFromReader);
-      msg.setResult(value);
+      msg.addResult(value);
       break;
     default:
       reader.skipField();
@@ -9315,9 +9323,9 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.p
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResult();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getResultList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult.serializeBinaryToWriter
@@ -9327,39 +9335,40 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.s
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult result = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult>}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.getResult = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, 1));
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.getResultList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataValidationResult, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult>} value
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.setResult = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.setResultList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.addResult = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.clearResult = function() {
-  return this.setResult(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.hasResult = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.prototype.clearResultList = function() {
+  return this.setResultList([]);
 };
 
 
