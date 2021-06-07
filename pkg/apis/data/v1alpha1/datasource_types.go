@@ -21,8 +21,10 @@ const (
 )
 
 type MultiDatasetValidation struct {
-	Type     MultiDatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Datasets []string                   `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
+	// +kubebuilder:validation:Optional
+	Type *MultiDatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
 }
 
 type DatasetValidationName string
@@ -37,12 +39,18 @@ const (
 )
 
 type DatasetValidation struct {
-	Type      DatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Min       float32               `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
-	Max       float32               `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	ValueSet  []string              `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
-	StrictMin bool                  `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
-	StrictMax bool                  `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+	// +kubebuilder:validation:Optional
+	Type *DatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Min *float32 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	// +kubebuilder:validation:Optional
+	Max *float32 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
 }
 
 const (
@@ -52,13 +60,20 @@ const (
 type MultiColumnValidationName string
 
 type MultiColumnValidation struct {
-	Type      MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Columns   []string                  `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
-	Min       float32                   `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
-	Max       float32                   `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
-	ValueSet  []string                  `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
-	StrictMin bool                      `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
-	StrictMax bool                      `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	// +kubebuilder:validation:Optional
+	Type *MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	// +kubebuilder:validation:Optional
+	Min *float32 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	// +kubebuilder:validation:Optional
+	Max *float32 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
 }
 
 type ColumnValidationName string
@@ -96,13 +111,20 @@ const (
 )
 
 type ColumnValidation struct {
-	Type      ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	Column    string               `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
-	Min       float32              `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
-	Max       float32              `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
-	ValueSet  []string             `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
-	StrictMin bool                 `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
-	StrictMax bool                 `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	// +kubebuilder:validation:Optional
+	Type *ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
+	// +kubebuilder:validation:Optional
+	Min *float32 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	// +kubebuilder:validation:Optional
+	Max *float32 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
 }
 
 // Condition on the dataset
