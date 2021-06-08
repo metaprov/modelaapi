@@ -1398,45 +1398,36 @@ message ModelValidation {
   // +kubebuilder:validation:Optional
   optional string prevModel = 2;
 
-  // training dataset location
+  // Labeled dataset used to test the model, when measuring a performance metric
   // +kubebuilder:validation:Optional
-  optional string trainingDataset = 3;
-
-  // Test prediction is a reference to the prediction set used to test a model in the pipeline
-  optional string testPrediction = 4;
+  optional string datasetName = 3;
 
   // +kubebuilder:validation:Optional
-  optional string currentPredictionSet = 5;
+  optional string driftFreq = 4;
 
   // +kubebuilder:validation:Optional
-  optional string prevPredictionSet = 6;
+  optional int32 driftInterval = 5;
 
   // +kubebuilder:validation:Optional
-  optional string driftFreq = 7;
+  optional string column = 6;
 
   // +kubebuilder:validation:Optional
-  optional int32 driftInterval = 8;
+  optional string metric = 7;
 
   // +kubebuilder:validation:Optional
-  optional string column = 9;
+  optional double min = 8;
 
   // +kubebuilder:validation:Optional
-  optional string metric = 10;
+  optional double max = 9;
 
   // +kubebuilder:validation:Optional
-  optional double min = 11;
+  optional double minPrecent = 10;
 
   // +kubebuilder:validation:Optional
-  optional double max = 12;
-
-  // +kubebuilder:validation:Optional
-  optional double minPrecent = 13;
-
-  // +kubebuilder:validation:Optional
-  optional double maxPrecent = 14;
+  optional double maxPrecent = 11;
 
   // Agg is used when we measured aggregate performance, for example median or average
-  optional string agg = 15;
+  optional string agg = 12;
 }
 
 message ModelValidationResult {

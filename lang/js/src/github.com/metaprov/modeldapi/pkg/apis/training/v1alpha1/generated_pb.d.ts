@@ -2003,17 +2003,8 @@ export class ModelValidation extends jspb.Message {
   getPrevmodel(): string;
   setPrevmodel(value: string): ModelValidation;
 
-  getTrainingdataset(): string;
-  setTrainingdataset(value: string): ModelValidation;
-
-  getTestprediction(): string;
-  setTestprediction(value: string): ModelValidation;
-
-  getCurrentpredictionset(): string;
-  setCurrentpredictionset(value: string): ModelValidation;
-
-  getPrevpredictionset(): string;
-  setPrevpredictionset(value: string): ModelValidation;
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelValidation;
 
   getDriftfreq(): string;
   setDriftfreq(value: string): ModelValidation;
@@ -2054,10 +2045,7 @@ export namespace ModelValidation {
   export type AsObject = {
     type: string,
     prevmodel: string,
-    trainingdataset: string,
-    testprediction: string,
-    currentpredictionset: string,
-    prevpredictionset: string,
+    datasetname: string,
     driftfreq: string,
     driftinterval: number,
     column: string,

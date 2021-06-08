@@ -320,7 +320,9 @@ spec:
                           type: string
                         column:
                           type: string
-                        currentPredictionSet:
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
                           type: string
                         driftFreq:
                           description: / The Horizon unit
@@ -394,21 +396,10 @@ spec:
                         prevModel:
                           description: PrevModel compare to model
                           type: string
-                        prevPredictionSet:
-                          type: string
-                        testPrediction:
-                          description: Test prediction is a reference to the prediction
-                            set used to test a model in the pipeline
-                          type: string
-                        trainingDataset:
-                          description: training dataset location
-                          type: string
                         type:
                           description: ModelValidationName is the name of one model
                             monitoring validation
                           type: string
-                      required:
-                      - testPrediction
                       type: object
                     type: array
                 type: object

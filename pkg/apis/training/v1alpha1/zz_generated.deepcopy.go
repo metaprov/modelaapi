@@ -1759,23 +1759,8 @@ func (in *ModelValidation) DeepCopyInto(out *ModelValidation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.TrainingDataset != nil {
-		in, out := &in.TrainingDataset, &out.TrainingDataset
-		*out = new(string)
-		**out = **in
-	}
-	if in.TestPrediction != nil {
-		in, out := &in.TestPrediction, &out.TestPrediction
-		*out = new(string)
-		**out = **in
-	}
-	if in.CurrentPredictionSet != nil {
-		in, out := &in.CurrentPredictionSet, &out.CurrentPredictionSet
-		*out = new(string)
-		**out = **in
-	}
-	if in.PrevPredictionSet != nil {
-		in, out := &in.PrevPredictionSet, &out.PrevPredictionSet
+	if in.DatasetName != nil {
+		in, out := &in.DatasetName, &out.DatasetName
 		*out = new(string)
 		**out = **in
 	}

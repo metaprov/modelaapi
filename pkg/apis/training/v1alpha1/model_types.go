@@ -47,33 +47,27 @@ type ModelValidation struct {
 	// PrevModel compare to model
 	// +kubebuilder:validation:Optional
 	PrevModel *string `json:"prevModel" protobuf:"bytes,2,opt,name=prevModel"`
-	// training dataset location
+	// Labeled dataset used to test the model, when measuring a performance metric
 	// +kubebuilder:validation:Optional
-	TrainingDataset *string `json:"trainingDataset" protobuf:"bytes,3,opt,name=trainingDataset"`
-	// Test prediction is a reference to the prediction set used to test a model in the pipeline
-	TestPrediction *string `json:"testPrediction" protobuf:"bytes,4,opt,name=testPrediction"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,3,opt,name=datasetName"`
 	// +kubebuilder:validation:Optional
-	CurrentPredictionSet *string `json:"currentPredictionSet" protobuf:"bytes,5,opt,name=currentPredictionSet"`
+	DriftFreq catalog.Freq `json:"driftFreq" protobuf:"bytes,4,opt,name=driftFreq"`
 	// +kubebuilder:validation:Optional
-	PrevPredictionSet *string `json:"prevPredictionSet" protobuf:"bytes,6,opt,name=prevPredictionSet"`
+	DriftInterval *int32 `json:"driftInterval" protobuf:"bytes,5,opt,name=driftInterval"`
 	// +kubebuilder:validation:Optional
-	DriftFreq catalog.Freq `json:"driftFreq" protobuf:"bytes,7,opt,name=driftFreq"`
+	Column *string `json:"column" protobuf:"bytes,6,opt,name=column"`
 	// +kubebuilder:validation:Optional
-	DriftInterval *int32 `json:"driftInterval" protobuf:"bytes,8,opt,name=driftInterval"`
+	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,7,opt,name=metric"`
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column" protobuf:"bytes,9,opt,name=column"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,8,opt,name=min"`
 	// +kubebuilder:validation:Optional
-	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,10,opt,name=metric"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,9,opt,name=max"`
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,11,opt,name=min"`
+	MinPrecent *float64 `json:"minPrecent,omitempty" protobuf:"bytes,10,opt,name=minPrecent"`
 	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,12,opt,name=max"`
-	// +kubebuilder:validation:Optional
-	MinPrecent *float64 `json:"minPrecent,omitempty" protobuf:"bytes,13,opt,name=minPrecent"`
-	// +kubebuilder:validation:Optional
-	MaxPrecent *float64 `json:"maxPrecent,omitempty" protobuf:"bytes,14,opt,name=maxPrecent"`
+	MaxPrecent *float64 `json:"maxPrecent,omitempty" protobuf:"bytes,11,opt,name=maxPrecent"`
 	// Agg is used when we measured aggregate performance, for example median or average
-	Agg *catalog.Aggregate `json:"agg,omitempty" protobuf:"bytes,15,opt,name=agg"`
+	Agg *catalog.Aggregate `json:"agg,omitempty" protobuf:"bytes,12,opt,name=agg"`
 }
 
 // ModelPhase is the current phase of a model
