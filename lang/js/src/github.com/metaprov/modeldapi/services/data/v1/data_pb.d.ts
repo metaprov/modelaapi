@@ -2066,64 +2066,64 @@ export namespace DsShutdownResponse {
   }
 }
 
-export class CalcDriftRequest extends jspb.Message {
+export class ValidateModelRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CalcDriftRequest;
+  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): ValidateModelRequest;
   hasProduct(): boolean;
-  clearProduct(): CalcDriftRequest;
+  clearProduct(): ValidateModelRequest;
 
   getVersion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CalcDriftRequest;
+  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): ValidateModelRequest;
   hasVersion(): boolean;
-  clearVersion(): CalcDriftRequest;
+  clearVersion(): ValidateModelRequest;
 
   getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CalcDriftRequest;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): ValidateModelRequest;
   hasDatasource(): boolean;
-  clearDatasource(): CalcDriftRequest;
+  clearDatasource(): ValidateModelRequest;
 
   getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CalcDriftRequest;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ValidateModelRequest;
   hasDataset(): boolean;
-  clearDataset(): CalcDriftRequest;
+  clearDataset(): ValidateModelRequest;
 
   getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): CalcDriftRequest;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): ValidateModelRequest;
   hasStudy(): boolean;
-  clearStudy(): CalcDriftRequest;
+  clearStudy(): ValidateModelRequest;
 
   getModel(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): CalcDriftRequest;
+  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): ValidateModelRequest;
   hasModel(): boolean;
-  clearModel(): CalcDriftRequest;
+  clearModel(): ValidateModelRequest;
 
   getPredictor(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setPredictor(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CalcDriftRequest;
+  setPredictor(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): ValidateModelRequest;
   hasPredictor(): boolean;
-  clearPredictor(): CalcDriftRequest;
+  clearPredictor(): ValidateModelRequest;
 
   getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CalcDriftRequest;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ValidateModelRequest;
   hasConnection(): boolean;
-  clearConnection(): CalcDriftRequest;
+  clearConnection(): ValidateModelRequest;
 
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CalcDriftRequest;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ValidateModelRequest;
   hasBucket(): boolean;
-  clearBucket(): CalcDriftRequest;
+  clearBucket(): ValidateModelRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CalcDriftRequest;
+  clearSecretMap(): ValidateModelRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CalcDriftRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CalcDriftRequest): CalcDriftRequest.AsObject;
-  static serializeBinaryToWriter(message: CalcDriftRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CalcDriftRequest;
-  static deserializeBinaryFromReader(message: CalcDriftRequest, reader: jspb.BinaryReader): CalcDriftRequest;
+  toObject(includeInstance?: boolean): ValidateModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateModelRequest): ValidateModelRequest.AsObject;
+  static serializeBinaryToWriter(message: ValidateModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateModelRequest;
+  static deserializeBinaryFromReader(message: ValidateModelRequest, reader: jspb.BinaryReader): ValidateModelRequest;
 }
 
-export namespace CalcDriftRequest {
+export namespace ValidateModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -2138,111 +2138,23 @@ export namespace CalcDriftRequest {
   }
 }
 
-export class CalcDriftResponse extends jspb.Message {
-  getResultMap(): jspb.Map<string, number>;
-  clearResultMap(): CalcDriftResponse;
+export class ValidateModelResponse extends jspb.Message {
+  getResultList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
+  setResultList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): ValidateModelResponse;
+  clearResultList(): ValidateModelResponse;
+  addResult(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CalcDriftResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CalcDriftResponse): CalcDriftResponse.AsObject;
-  static serializeBinaryToWriter(message: CalcDriftResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CalcDriftResponse;
-  static deserializeBinaryFromReader(message: CalcDriftResponse, reader: jspb.BinaryReader): CalcDriftResponse;
+  toObject(includeInstance?: boolean): ValidateModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidateModelResponse): ValidateModelResponse.AsObject;
+  static serializeBinaryToWriter(message: ValidateModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidateModelResponse;
+  static deserializeBinaryFromReader(message: ValidateModelResponse, reader: jspb.BinaryReader): ValidateModelResponse;
 }
 
-export namespace CalcDriftResponse {
+export namespace ValidateModelResponse {
   export type AsObject = {
-    resultMap: Array<[string, number]>,
-  }
-}
-
-export class CalcSkewRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CalcSkewRequest;
-  hasProduct(): boolean;
-  clearProduct(): CalcSkewRequest;
-
-  getVersion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CalcSkewRequest;
-  hasVersion(): boolean;
-  clearVersion(): CalcSkewRequest;
-
-  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CalcSkewRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): CalcSkewRequest;
-
-  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CalcSkewRequest;
-  hasDataset(): boolean;
-  clearDataset(): CalcSkewRequest;
-
-  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): CalcSkewRequest;
-  hasStudy(): boolean;
-  clearStudy(): CalcSkewRequest;
-
-  getModel(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): CalcSkewRequest;
-  hasModel(): boolean;
-  clearModel(): CalcSkewRequest;
-
-  getPredictor(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setPredictor(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CalcSkewRequest;
-  hasPredictor(): boolean;
-  clearPredictor(): CalcSkewRequest;
-
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CalcSkewRequest;
-  hasConnection(): boolean;
-  clearConnection(): CalcSkewRequest;
-
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CalcSkewRequest;
-  hasBucket(): boolean;
-  clearBucket(): CalcSkewRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): CalcSkewRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CalcSkewRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CalcSkewRequest): CalcSkewRequest.AsObject;
-  static serializeBinaryToWriter(message: CalcSkewRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CalcSkewRequest;
-  static deserializeBinaryFromReader(message: CalcSkewRequest, reader: jspb.BinaryReader): CalcSkewRequest;
-}
-
-export namespace CalcSkewRequest {
-  export type AsObject = {
-    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
-    predictor?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-  }
-}
-
-export class CalcSkewResponse extends jspb.Message {
-  getResultMap(): jspb.Map<string, number>;
-  clearResultMap(): CalcSkewResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CalcSkewResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CalcSkewResponse): CalcSkewResponse.AsObject;
-  static serializeBinaryToWriter(message: CalcSkewResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CalcSkewResponse;
-  static deserializeBinaryFromReader(message: CalcSkewResponse, reader: jspb.BinaryReader): CalcSkewResponse;
-}
-
-export namespace CalcSkewResponse {
-  export type AsObject = {
-    resultMap: Array<[string, number]>,
+    resultList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
   }
 }
 

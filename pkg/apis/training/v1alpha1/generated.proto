@@ -11,7 +11,6 @@ package github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -1392,45 +1391,68 @@ message ModelStatus {
 }
 
 message ModelValidation {
-  // DatasetName is the name of the test dataset.
-  // +kubebuilder:validation:Required
-  optional string datasetName = 1;
+  // +kubebuilder:validation:Optional
+  optional string type = 1;
 
-  // Metric is the name of the metric
-  // +kubebuilder:validation:Required
-  optional string metric = 2;
+  // PrevModel compare to model
+  // +kubebuilder:validation:Optional
+  optional string prevModel = 2;
 
-  // Op is the operator used during comparison
-  // +kubebuilder:validation:Required
-  optional string op = 3;
+  // training dataset location
+  // +kubebuilder:validation:Optional
+  optional string trainingDataset = 3;
 
-  // Score is the expected score
-  // +kubebuilder:validation:Required
-  optional double score = 4;
+  // Test prediction is a reference to the prediction set used to test a model in the pipeline
+  optional string testPrediction = 4;
+
+  // +kubebuilder:validation:Optional
+  optional string currentPredictionSet = 5;
+
+  // +kubebuilder:validation:Optional
+  optional string prevPredictionSet = 6;
+
+  // +kubebuilder:validation:Optional
+  optional string driftFreq = 7;
+
+  // +kubebuilder:validation:Optional
+  optional int32 driftInterval = 8;
+
+  // +kubebuilder:validation:Optional
+  optional string column = 9;
+
+  // +kubebuilder:validation:Optional
+  optional string metric = 10;
+
+  // +kubebuilder:validation:Optional
+  optional double min = 11;
+
+  // +kubebuilder:validation:Optional
+  optional double max = 12;
+
+  // +kubebuilder:validation:Optional
+  optional double minPrecent = 13;
+
+  // +kubebuilder:validation:Optional
+  optional double maxPrecent = 14;
+
+  // Agg is used when we measured aggregate performance, for example median or average
+  optional string agg = 15;
 }
 
-// Model Test Result holds the results for a single metric on a single dataset
 message ModelValidationResult {
-  // The name of the dataset
-  optional string datasetName = 1;
+  optional string type = 1;
 
-  // Metric is the name of the metric measured
-  optional string metric = 2;
+  optional string dataset = 2;
 
-  // Expected is the expected value for this expecation as defined by the test
-  optional double expected = 3;
+  optional string model = 3;
 
-  // The operation
-  optional string op = 4;
+  optional string column = 4;
 
-  // Value is the value of the metric
-  optional double value = 5;
+  optional string error = 5;
 
-  // Error is a name of any error that occurred during the test.
-  optional string error = 6;
+  optional bool passed = 6;
 
-  // Duration is the time that it took to run the test
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Duration duration = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 7;
 }
 
 message NNLayerParameter {

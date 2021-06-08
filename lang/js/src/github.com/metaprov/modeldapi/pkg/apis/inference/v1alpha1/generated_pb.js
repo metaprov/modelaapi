@@ -19,6 +19,8 @@ var github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb = requi
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 var k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb.js');
@@ -389,7 +391,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -410,7 +412,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4762,6 +4764,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.DriftCheckSpec.p
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4794,12 +4803,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    skew: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    drift: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    sampleprecent: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    samplelabelMap: (f = msg.getSamplelabelMap()) ? f.toObject(includeInstance, undefined) : [],
-    schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    notifiername: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    sampleprecent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -4841,30 +4849,21 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
       msg.setEnabled(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSkew(value);
-      break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDrift(value);
-      break;
-    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSampleprecent(value);
       break;
-    case 5:
-      var value = msg.getSamplelabelMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
-      break;
-    case 6:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setSchedule(value);
       break;
-    case 7:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.deserializeBinaryFromReader);
+      msg.addValidations(value);
       break;
     default:
       reader.skipField();
@@ -4902,43 +4901,33 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.seri
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       2,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       4,
       f
     );
   }
-  f = message.getSamplelabelMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeString(
-      7,
-      f
+  f = message.getValidationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.serializeBinaryToWriter
     );
   }
 };
@@ -4981,83 +4970,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 
 
 /**
- * optional bool skew = 2;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSkew = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSkew = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSkew = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasSkew = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional bool drift = 3;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getDrift = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setDrift = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearDrift = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasDrift = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 samplePrecent = 4;
+ * optional int32 samplePrecent = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSampleprecent = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -5066,7 +4983,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSampleprecent = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -5075,7 +4992,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSampleprecent = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -5084,38 +5001,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasSampleprecent = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * map<string, string> sampleLabel = 5;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSamplelabelMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSamplelabelMap = function() {
-  this.getSamplelabelMap().clear();
-  return this;};
-
-
-/**
- * optional string schedule = 6;
+ * optional string schedule = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -5124,7 +5019,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -5133,7 +5028,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -5142,16 +5037,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string notifierName = 7;
+ * optional string notifierName = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -5160,7 +5055,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -5169,7 +5064,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -5178,10 +5073,55 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
+/**
+ * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getValidationsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setValidationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.addValidations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearValidationsList = function() {
+  return this.setValidationsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.repeatedFields_ = [2];
 
 
 
@@ -5215,8 +5155,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.pr
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     lasttransitiontime: (f = msg.getLasttransitiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    actualdriftMap: (f = msg.getActualdriftMap()) ? f.toObject(includeInstance, undefined) : [],
-    actualskewMap: (f = msg.getActualskewMap()) ? f.toObject(includeInstance, undefined) : []
+    validationresultsList: jspb.Message.toObjectList(msg.getValidationresultsList(),
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5259,16 +5199,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.de
       msg.setLasttransitiontime(value);
       break;
     case 2:
-      var value = msg.getActualdriftMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
-      break;
-    case 3:
-      var value = msg.getActualskewMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.deserializeBinaryFromReader);
+      msg.addValidationresults(value);
       break;
     default:
       reader.skipField();
@@ -5307,13 +5240,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getActualdriftMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
-  }
-  f = message.getActualskewMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+  f = message.getValidationresultsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.serializeBinaryToWriter
+    );
   }
 };
 
@@ -5356,47 +5289,41 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.pr
 
 
 /**
- * map<string, float> actualDrift = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult validationResults = 2;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.getActualdriftMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.getValidationresultsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, 2));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.clearActualdriftMap = function() {
-  this.getActualdriftMap().clear();
-  return this;};
-
-
-/**
- * map<string, float> actualSkew = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.getActualskewMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.setValidationresultsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.addValidationresults = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.clearActualskewMap = function() {
-  this.getActualskewMap().clear();
-  return this;};
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.prototype.clearValidationresultsList = function() {
+  return this.setValidationresultsList([]);
+};
 
 
 
@@ -5431,9 +5358,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    port: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    accesstype: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    port: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    path: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    accesstype: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5470,15 +5397,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 5:
+    case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPort(value);
       break;
-    case 6:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPath(value);
       break;
-    case 7:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setAccesstype(value);
       break;
@@ -5511,24 +5438,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
     writer.writeInt32(
-      5,
+      1,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
-      6,
+      2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      7,
+      3,
       f
     );
   }
@@ -5536,11 +5463,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
 
 
 /**
- * optional int32 port = 5;
+ * optional int32 port = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.getPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -5549,7 +5476,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.setPort = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -5558,7 +5485,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.clearPort = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -5567,16 +5494,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.hasPort = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string path = 6;
+ * optional string path = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -5585,7 +5512,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.setPath = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -5594,7 +5521,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.clearPath = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -5603,16 +5530,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.hasPath = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string accessType = 7;
+ * optional string accessType = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.getAccesstype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -5621,7 +5548,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.setAccesstype = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -5630,7 +5557,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.clearAccesstype = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -5639,7 +5566,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.OnlineChannelSpec.prototype.hasAccesstype = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

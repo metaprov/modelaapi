@@ -273,30 +273,3 @@ type ModelPipelineStatus struct {
 	// +kubebuilder:validation:Optional
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
-
-type ModelValidation struct {
-	// DatasetName is the name of the test dataset.
-	// +kubebuilder:validation:Required
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Metric is the name of the metric
-	// +kubebuilder:validation:Required
-	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,2,opt,name=metric"`
-	// Op is the operator used during comparison
-	// +kubebuilder:validation:Required
-	Op *Op `json:"op,omitempty" protobuf:"bytes,3,opt,name=op"`
-	// Score is the expected score
-	// +kubebuilder:validation:Required
-	Score *float64 `json:"score,omitempty" protobuf:"bytes,4,opt,name=score"`
-}
-
-type Op string
-
-const (
-	LT Op = "lt"
-	EQ Op = "eq"
-	GT Op = "gt"
-	NE Op = "ne" // not equal
-	LE Op = "le" // less or equal
-	GE Op = "ge" // greater or equal
-
-)

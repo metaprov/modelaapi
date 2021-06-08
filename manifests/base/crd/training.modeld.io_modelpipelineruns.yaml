@@ -119,75 +119,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -255,75 +210,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -363,75 +273,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -472,75 +337,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -579,75 +399,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -691,75 +466,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -804,75 +534,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:
@@ -908,75 +593,30 @@ spec:
                     description: Results is the results of running the test datasets
                       against the new model
                     items:
-                      description: Model Test Result holds the results for a single
-                        metric on a single dataset
                       properties:
-                        datasetName:
-                          description: The name of the dataset
+                        at:
+                          format: date-time
                           type: string
-                        duration:
-                          description: Duration is the time that it took to run the
-                            test
+                        column:
+                          type: string
+                        dataset:
                           type: string
                         error:
-                          description: Error is a name of any error that occurred
-                            during the test.
                           type: string
-                        expected:
-                          description: Expected is the expected value for this expecation
-                            as defined by the test
-                          type: number
-                        op:
-                          description: The operation
+                        model:
                           type: string
-                        result:
-                          description: Metric is the name of the metric measured
-                          enum:
-                          - accuracy
-                          - average-precision
-                          - balanced-accuracy
-                          - brier-score-loss
-                          - f1
-                          - f1-macro
-                          - f1-micro
-                          - f1-weighted
-                          - log-loss
-                          - precision
-                          - precision-micro
-                          - precision-macro
-                          - precision-weighted
-                          - recall
-                          - recall-macro
-                          - recall-micro
-                          - recall-weighted
-                          - auc
-                          - fp
-                          - fn
-                          - tn
-                          - tp
-                          - explained_variance
-                          - mae
-                          - mse
-                          - msle
-                          - median-absolute-error
-                          - r2
-                          - adjusted-mutual-info-score
-                          - adjusted-rand-score
-                          - completeness-score
-                          - fowlkes-mallows-score
-                          - homogeneity-score
-                          - mutual-info-score
-                          - normalized-mutual-info-score
-                          - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
+                        passed:
+                          type: boolean
+                        type:
                           type: string
-                        value:
-                          description: Value is the value of the metric
-                          type: number
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
                       type: object
                     type: array
                   startTime:

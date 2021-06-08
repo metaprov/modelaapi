@@ -1307,3 +1307,33 @@ const (
 	DatasetTypeText    DatasetType = "text"
 	DatasetTypeVideo   DatasetType = "video"
 )
+
+// AccessType define how client reach the predictor
+// +kubebuilder:validation:Enum="cluster-port";"node-port";"load-balancer";"ingress";"mesh";"none"
+type AccessType string
+
+const (
+	// Use cluster port if the predictor is an internal micro service
+	ClusterPortAccessType AccessType = "cluster-port"
+	// Use node port if the predictor can be accessed from outside the cluster
+	NodePortAccessType AccessType = "node-port"
+	// Use load balancer if the predictor can be accessed from outside the cluster
+	LoadBalancerAccessType AccessType = "load-balancer"
+	// Use ingress if the predictor should register with an ingress.
+	IngressAccessType AccessType = "ingress"
+	// Use service mesh if the predictor should register with a service mesh
+	MeshAccessType AccessType = "mesh"
+	// Use none if the desired port is none
+	NoneAccessType AccessType = "none"
+)
+
+type Op string
+
+const (
+	LT Op = "lt"
+	EQ Op = "eq"
+	GT Op = "gt"
+	NE Op = "ne" // not equal
+	LE Op = "le" // less or equal
+	GE Op = "ge" // greater or equal
+)

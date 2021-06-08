@@ -2,7 +2,6 @@ import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -1998,17 +1997,50 @@ export namespace ModelStatus {
 }
 
 export class ModelValidation extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelValidation;
+  getType(): string;
+  setType(value: string): ModelValidation;
+
+  getPrevmodel(): string;
+  setPrevmodel(value: string): ModelValidation;
+
+  getTrainingdataset(): string;
+  setTrainingdataset(value: string): ModelValidation;
+
+  getTestprediction(): string;
+  setTestprediction(value: string): ModelValidation;
+
+  getCurrentpredictionset(): string;
+  setCurrentpredictionset(value: string): ModelValidation;
+
+  getPrevpredictionset(): string;
+  setPrevpredictionset(value: string): ModelValidation;
+
+  getDriftfreq(): string;
+  setDriftfreq(value: string): ModelValidation;
+
+  getDriftinterval(): number;
+  setDriftinterval(value: number): ModelValidation;
+
+  getColumn(): string;
+  setColumn(value: string): ModelValidation;
 
   getMetric(): string;
   setMetric(value: string): ModelValidation;
 
-  getOp(): string;
-  setOp(value: string): ModelValidation;
+  getMin(): number;
+  setMin(value: number): ModelValidation;
 
-  getScore(): number;
-  setScore(value: number): ModelValidation;
+  getMax(): number;
+  setMax(value: number): ModelValidation;
+
+  getMinprecent(): number;
+  setMinprecent(value: number): ModelValidation;
+
+  getMaxprecent(): number;
+  setMaxprecent(value: number): ModelValidation;
+
+  getAgg(): string;
+  setAgg(value: string): ModelValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelValidation.AsObject;
@@ -2020,36 +2052,47 @@ export class ModelValidation extends jspb.Message {
 
 export namespace ModelValidation {
   export type AsObject = {
-    datasetname: string,
+    type: string,
+    prevmodel: string,
+    trainingdataset: string,
+    testprediction: string,
+    currentpredictionset: string,
+    prevpredictionset: string,
+    driftfreq: string,
+    driftinterval: number,
+    column: string,
     metric: string,
-    op: string,
-    score: number,
+    min: number,
+    max: number,
+    minprecent: number,
+    maxprecent: number,
+    agg: string,
   }
 }
 
 export class ModelValidationResult extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): ModelValidationResult;
+  getType(): string;
+  setType(value: string): ModelValidationResult;
 
-  getMetric(): string;
-  setMetric(value: string): ModelValidationResult;
+  getDataset(): string;
+  setDataset(value: string): ModelValidationResult;
 
-  getExpected(): number;
-  setExpected(value: number): ModelValidationResult;
+  getModel(): string;
+  setModel(value: string): ModelValidationResult;
 
-  getOp(): string;
-  setOp(value: string): ModelValidationResult;
-
-  getValue(): number;
-  setValue(value: number): ModelValidationResult;
+  getColumn(): string;
+  setColumn(value: string): ModelValidationResult;
 
   getError(): string;
   setError(value: string): ModelValidationResult;
 
-  getDuration(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration | undefined;
-  setDuration(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration): ModelValidationResult;
-  hasDuration(): boolean;
-  clearDuration(): ModelValidationResult;
+  getPassed(): boolean;
+  setPassed(value: boolean): ModelValidationResult;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelValidationResult;
+  hasAt(): boolean;
+  clearAt(): ModelValidationResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelValidationResult.AsObject;
@@ -2061,13 +2104,13 @@ export class ModelValidationResult extends jspb.Message {
 
 export namespace ModelValidationResult {
   export type AsObject = {
-    datasetname: string,
-    metric: string,
-    expected: number,
-    op: string,
-    value: number,
+    type: string,
+    dataset: string,
+    model: string,
+    column: string,
     error: string,
-    duration?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.AsObject,
+    passed: boolean,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

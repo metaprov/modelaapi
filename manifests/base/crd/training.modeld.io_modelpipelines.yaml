@@ -80,11 +80,41 @@ spec:
                       in this stage
                     items:
                       properties:
-                        datasetName:
-                          description: DatasetName is the name of the test dataset.
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
                           type: string
+                        column:
+                          type: string
+                        currentPredictionSet:
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
                         metric:
-                          description: Metric is the name of the metric
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -128,12 +158,28 @@ spec:
                           - smape
                           - mdape
                           type: string
-                        op:
-                          description: Op is the operator used during comparison
-                          type: string
-                        score:
-                          description: Score is the expected score
+                        min:
                           type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        prevPredictionSet:
+                          type: string
+                        testPrediction:
+                          description: Test prediction is a reference to the prediction
+                            set used to test a model in the pipeline
+                          type: string
+                        trainingDataset:
+                          description: training dataset location
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      required:
+                      - testPrediction
                       type: object
                     type: array
                   workloadClassName:
@@ -196,11 +242,41 @@ spec:
                       in this stage
                     items:
                       properties:
-                        datasetName:
-                          description: DatasetName is the name of the test dataset.
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
                           type: string
+                        column:
+                          type: string
+                        currentPredictionSet:
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
                         metric:
-                          description: Metric is the name of the metric
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -244,12 +320,28 @@ spec:
                           - smape
                           - mdape
                           type: string
-                        op:
-                          description: Op is the operator used during comparison
-                          type: string
-                        score:
-                          description: Score is the expected score
+                        min:
                           type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        prevPredictionSet:
+                          type: string
+                        testPrediction:
+                          description: Test prediction is a reference to the prediction
+                            set used to test a model in the pipeline
+                          type: string
+                        trainingDataset:
+                          description: training dataset location
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      required:
+                      - testPrediction
                       type: object
                     type: array
                   workloadClassName:
@@ -373,11 +465,41 @@ spec:
                       the deployed model before moving production traffic to the model
                     items:
                       properties:
-                        datasetName:
-                          description: DatasetName is the name of the test dataset.
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
                           type: string
+                        column:
+                          type: string
+                        currentPredictionSet:
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
                         metric:
-                          description: Metric is the name of the metric
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -421,12 +543,28 @@ spec:
                           - smape
                           - mdape
                           type: string
-                        op:
-                          description: Op is the operator used during comparison
-                          type: string
-                        score:
-                          description: Score is the expected score
+                        min:
                           type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        prevPredictionSet:
+                          type: string
+                        testPrediction:
+                          description: Test prediction is a reference to the prediction
+                            set used to test a model in the pipeline
+                          type: string
+                        trainingDataset:
+                          description: training dataset location
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      required:
+                      - testPrediction
                       type: object
                     type: array
                   workloadClassName:
@@ -513,11 +651,41 @@ spec:
                       test, the system will fail the pipeline If the smoke is empty,
                       the system does not perform the test
                     properties:
-                      datasetName:
-                        description: DatasetName is the name of the test dataset.
+                      agg:
+                        description: Agg is used when we measured aggregate performance,
+                          for example median or average
+                        enum:
+                        - min
+                        - max
+                        - avg
+                        - median
                         type: string
+                      column:
+                        type: string
+                      currentPredictionSet:
+                        type: string
+                      driftFreq:
+                        description: / The Horizon unit
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      driftInterval:
+                        format: int32
+                        type: integer
+                      max:
+                        type: number
+                      maxPrecent:
+                        type: number
                       metric:
-                        description: Metric is the name of the metric
+                        description: Metric is the machine learning metric used to
+                          evaluate a model performance.
                         enum:
                         - accuracy
                         - average-precision
@@ -561,12 +729,28 @@ spec:
                         - smape
                         - mdape
                         type: string
-                      op:
-                        description: Op is the operator used during comparison
-                        type: string
-                      score:
-                        description: Score is the expected score
+                      min:
                         type: number
+                      minPrecent:
+                        type: number
+                      prevModel:
+                        description: PrevModel compare to model
+                        type: string
+                      prevPredictionSet:
+                        type: string
+                      testPrediction:
+                        description: Test prediction is a reference to the prediction
+                          set used to test a model in the pipeline
+                        type: string
+                      trainingDataset:
+                        description: training dataset location
+                        type: string
+                      type:
+                        description: ModelValidationName is the name of one model
+                          monitoring validation
+                        type: string
+                    required:
+                    - testPrediction
                     type: object
                   studyTemplateName:
                     description: StudyName is the name of a study template. The actual
@@ -596,11 +780,41 @@ spec:
                       to run against the new trained model.
                     items:
                       properties:
-                        datasetName:
-                          description: DatasetName is the name of the test dataset.
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
                           type: string
+                        column:
+                          type: string
+                        currentPredictionSet:
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
                         metric:
-                          description: Metric is the name of the metric
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -644,12 +858,28 @@ spec:
                           - smape
                           - mdape
                           type: string
-                        op:
-                          description: Op is the operator used during comparison
-                          type: string
-                        score:
-                          description: Score is the expected score
+                        min:
                           type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        prevPredictionSet:
+                          type: string
+                        testPrediction:
+                          description: Test prediction is a reference to the prediction
+                            set used to test a model in the pipeline
+                          type: string
+                        trainingDataset:
+                          description: training dataset location
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      required:
+                      - testPrediction
                       type: object
                     type: array
                   workloadClassName:

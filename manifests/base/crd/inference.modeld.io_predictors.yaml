@@ -287,10 +287,6 @@ spec:
               monitor:
                 description: Monitor spec specify the monitor for this predictor.
                 properties:
-                  drift:
-                    default: true
-                    description: Skew specify if we shold monitor drift
-                    type: boolean
                   enabled:
                     description: If true monitoring is enabled.
                     type: boolean
@@ -299,12 +295,6 @@ spec:
                     description: NotifierName is the name of notifer to alert in case
                       of
                     type: string
-                  sampleLabels:
-                    additionalProperties:
-                      type: string
-                    description: SampleLabels indicates the kubernetes labels to set
-                      on the sample dataset
-                    type: object
                   samplePrecent:
                     default: 0
                     description: How many rows to sample from the live data for
@@ -315,10 +305,112 @@ spec:
                     description: Schedule is a cron schedule to run the monitor. By
                       default the monitor run daily.
                     type: string
-                  skew:
-                    default: true
-                    description: Skew specify if we shold skew
-                    type: boolean
+                  validations:
+                    description: List of model validation
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        currentPredictionSet:
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        prevPredictionSet:
+                          type: string
+                        testPrediction:
+                          description: Test prediction is a reference to the prediction
+                            set used to test a model in the pipeline
+                          type: string
+                        trainingDataset:
+                          description: training dataset location
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      required:
+                      - testPrediction
+                      type: object
+                    type: array
                 type: object
               output:
                 description: set of output channels, the predictor will output the
@@ -7255,22 +7347,40 @@ spec:
               monitorStatus:
                 description: Monitor status holds the status of the last monitor action.
                 properties:
-                  actualDrift:
-                    additionalProperties:
-                      type: number
-                    description: ActualDrift records the last check for drift per
-                      column
-                    type: object
-                  actualSkew:
-                    additionalProperties:
-                      type: number
-                    description: ActualSkew records the last check for drift per column
-                    type: object
                   lastTransitionTime:
                     description: Last time the condition transitioned from one status
                       to another.
                     format: date-time
                     type: string
+                  validationResults:
+                    description: Validation results contains the latest result
+                    items:
+                      properties:
+                        at:
+                          format: date-time
+                          type: string
+                        column:
+                          type: string
+                        dataset:
+                          type: string
+                        error:
+                          type: string
+                        model:
+                          type: string
+                        passed:
+                          type: boolean
+                        type:
+                          type: string
+                      required:
+                      - at
+                      - column
+                      - dataset
+                      - error
+                      - model
+                      - passed
+                      - type
+                      type: object
+                    type: array
                 type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted

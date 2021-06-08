@@ -4,7 +4,6 @@ import (
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	datav1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	inferencev1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -139,7 +138,7 @@ type ModelAutobuilderSpec struct {
 	// Default: ClusterPort
 	// +kubebuilder:default:=cluster-port
 	// +kubebuilder:validation:Optional
-	AccessMethod *inferencev1.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
+	AccessMethod *catalog.AccessType `json:"accessMethod,omitempty" protobuf:"bytes,11,opt,name=accessMethod"`
 	// Specify if the predictor should autoscale.
 	// Default : false
 	// +kubebuilder:default:=false

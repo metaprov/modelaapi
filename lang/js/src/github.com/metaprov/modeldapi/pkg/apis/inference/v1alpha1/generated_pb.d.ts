@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -454,23 +455,19 @@ export class MonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): MonitorSpec;
 
-  getSkew(): boolean;
-  setSkew(value: boolean): MonitorSpec;
-
-  getDrift(): boolean;
-  setDrift(value: boolean): MonitorSpec;
-
   getSampleprecent(): number;
   setSampleprecent(value: number): MonitorSpec;
-
-  getSamplelabelMap(): jspb.Map<string, string>;
-  clearSamplelabelMap(): MonitorSpec;
 
   getSchedule(): string;
   setSchedule(value: string): MonitorSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): MonitorSpec;
+
+  getValidationsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
+  setValidationsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
+  clearValidationsList(): MonitorSpec;
+  addValidations(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
@@ -483,12 +480,10 @@ export class MonitorSpec extends jspb.Message {
 export namespace MonitorSpec {
   export type AsObject = {
     enabled: boolean,
-    skew: boolean,
-    drift: boolean,
     sampleprecent: number,
-    samplelabelMap: Array<[string, string]>,
     schedule: string,
     notifiername: string,
+    validationsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
   }
 }
 
@@ -498,11 +493,10 @@ export class MonitorStatus extends jspb.Message {
   hasLasttransitiontime(): boolean;
   clearLasttransitiontime(): MonitorStatus;
 
-  getActualdriftMap(): jspb.Map<string, number>;
-  clearActualdriftMap(): MonitorStatus;
-
-  getActualskewMap(): jspb.Map<string, number>;
-  clearActualskewMap(): MonitorStatus;
+  getValidationresultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
+  setValidationresultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): MonitorStatus;
+  clearValidationresultsList(): MonitorStatus;
+  addValidationresults(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorStatus.AsObject;
@@ -515,8 +509,7 @@ export class MonitorStatus extends jspb.Message {
 export namespace MonitorStatus {
   export type AsObject = {
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    actualdriftMap: Array<[string, number]>,
-    actualskewMap: Array<[string, number]>,
+    validationresultsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
   }
 }
 

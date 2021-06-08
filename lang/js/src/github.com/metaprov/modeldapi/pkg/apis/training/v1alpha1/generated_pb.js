@@ -19,8 +19,6 @@ var github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb = requi
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
-var github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb.js');
-goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 var k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb.js');
@@ -20622,10 +20620,21 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    metric: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    op: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    score: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    prevmodel: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    trainingdataset: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    testprediction: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    currentpredictionset: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    prevpredictionset: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    driftfreq: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    driftinterval: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    metric: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 12)) == null ? undefined : f,
+    minprecent: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
+    maxprecent: (f = jspb.Message.getOptionalFloatingPointField(msg, 14)) == null ? undefined : f,
+    agg: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20664,19 +20673,63 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.d
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
+      msg.setType(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMetric(value);
+      msg.setPrevmodel(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOp(value);
+      msg.setTrainingdataset(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTestprediction(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCurrentpredictionset(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrevpredictionset(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDriftfreq(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDriftinterval(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetric(value);
+      break;
+    case 11:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setScore(value);
+      msg.setMin(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMax(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMinprecent(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMaxprecent(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAgg(value);
       break;
     default:
       reader.skipField();
@@ -20728,10 +20781,87 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.s
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 11));
   if (f != null) {
     writer.writeDouble(
-      4,
+      11,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeDouble(
+      12,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeDouble(
+      13,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeDouble(
+      14,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -20739,10 +20869,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.s
 
 
 /**
- * optional string datasetName = 1;
+ * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -20751,7 +20881,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setDatasetname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -20760,7 +20890,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -20769,16 +20899,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string metric = 2;
+ * optional string prevModel = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getPrevmodel = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -20787,7 +20917,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMetric = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setPrevmodel = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -20796,7 +20926,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearPrevmodel = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -20805,16 +20935,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasPrevmodel = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string op = 3;
+ * optional string trainingDataset = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getTrainingdataset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -20823,7 +20953,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setOp = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setTrainingdataset = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -20832,7 +20962,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearTrainingdataset = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -20841,25 +20971,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasTrainingdataset = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional double score = 4;
- * @return {number}
+ * optional string testPrediction = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getScore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getTestprediction = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setScore = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setTestprediction = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -20868,7 +20998,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearScore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearTestprediction = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -20877,8 +21007,404 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasScore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasTestprediction = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string currentPredictionSet = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getCurrentpredictionset = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setCurrentpredictionset = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearCurrentpredictionset = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasCurrentpredictionset = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string prevPredictionSet = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getPrevpredictionset = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setPrevpredictionset = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearPrevpredictionset = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasPrevpredictionset = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string driftFreq = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getDriftfreq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setDriftfreq = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearDriftfreq = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasDriftfreq = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 driftInterval = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getDriftinterval = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setDriftinterval = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearDriftinterval = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasDriftinterval = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string column = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setColumn = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearColumn = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasColumn = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string metric = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMetric = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMetric = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMetric = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMetric = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional double min = 11;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMin = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMin = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMin = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional double max = 12;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional double minPrecent = 13;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMinprecent = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMinprecent = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMinprecent = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMinprecent = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional double maxPrecent = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMaxprecent = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMaxprecent = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMaxprecent = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMaxprecent = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional string agg = 15;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getAgg = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setAgg = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearAgg = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasAgg = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -20914,13 +21440,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    metric: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    expected: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    op: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    value: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
-    error: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    duration: (f = msg.getDuration()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.toObject(includeInstance, f)
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    dataset: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    model: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    error: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    passed: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    at: (f = msg.getAt()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20959,32 +21485,32 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
+      msg.setType(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMetric(value);
+      msg.setDataset(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setExpected(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModel(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOp(value);
+      msg.setColumn(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setValue(value);
-      break;
-    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPassed(value);
+      break;
     case 7:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.deserializeBinaryFromReader);
-      msg.setDuration(value);
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setAt(value);
       break;
     default:
       reader.skipField();
@@ -21029,9 +21555,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       3,
       f
     );
@@ -21043,36 +21569,36 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeString(
       5,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       6,
       f
     );
   }
-  f = message.getDuration();
+  f = message.getAt();
   if (f != null) {
     writer.writeMessage(
       7,
       f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration.serializeBinaryToWriter
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string datasetName = 1;
+ * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -21081,7 +21607,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setDatasetname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -21090,7 +21616,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -21099,16 +21625,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasDatasetname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string metric = 2;
+ * optional string dataset = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getDataset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -21117,7 +21643,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setMetric = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setDataset = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -21126,7 +21652,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearDataset = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -21135,25 +21661,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasMetric = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional double expected = 3;
- * @return {number}
+ * optional string model = 3;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getExpected = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getModel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setExpected = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setModel = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -21162,7 +21688,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearExpected = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearModel = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -21171,16 +21697,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasExpected = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasModel = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string op = 4;
+ * optional string column = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -21189,7 +21715,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setOp = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -21198,7 +21724,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -21207,53 +21733,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasOp = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional double value = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setValue = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearValue = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasValue = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string error = 6;
+ * optional string error = 5;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -21262,7 +21752,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setError = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -21271,7 +21761,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearError = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -21280,25 +21770,61 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasError = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool passed = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getPassed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setPassed = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearPassed = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasPassed = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Duration duration = 7;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Duration}
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 7;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getDuration = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Duration} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Duration, 7));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.getAt = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
 };
 
 
 /**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Duration|undefined} value
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setDuration = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.setAt = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -21307,8 +21833,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearDuration = function() {
-  return this.setDuration(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.clearAt = function() {
+  return this.setAt(undefined);
 };
 
 
@@ -21316,7 +21842,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasDuration = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult.prototype.hasAt = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

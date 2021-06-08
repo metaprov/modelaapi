@@ -1115,84 +1115,44 @@ export class DataServiceClient {
     this.methodInfoMergeForecastFile);
   }
 
-  methodInfoCalcDrift = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse,
-    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftRequest) => {
+  methodInfoValidateModel = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse.deserializeBinary
   );
 
-  calcDrift(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse>;
+  validateModel(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse>;
 
-  calcDrift(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftRequest,
+  validateModel(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse>;
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse>;
 
-  calcDrift(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftRequest,
+  validateModel(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcDriftResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.ValidateModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcDrift',
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel',
         request,
         metadata || {},
-        this.methodInfoCalcDrift,
+        this.methodInfoValidateModel,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcDrift',
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel',
     request,
     metadata || {},
-    this.methodInfoCalcDrift);
-  }
-
-  methodInfoCalcSkew = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse,
-    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse.deserializeBinary
-  );
-
-  calcSkew(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse>;
-
-  calcSkew(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse>;
-
-  calcSkew(
-    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.CalcSkewResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcSkew',
-        request,
-        metadata || {},
-        this.methodInfoCalcSkew,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcSkew',
-    request,
-    metadata || {},
-    this.methodInfoCalcSkew);
+    this.methodInfoValidateModel);
   }
 
   methodInfoShutDown = new grpcWeb.AbstractClientBase.MethodInfo(

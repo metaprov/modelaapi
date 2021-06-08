@@ -13,6 +13,7 @@ package v1alpha1
 import (
 	catalogv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	datav1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	trainingv1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
@@ -394,27 +395,10 @@ func (in *MonitorSpec) DeepCopyInto(out *MonitorSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Skew != nil {
-		in, out := &in.Skew, &out.Skew
-		*out = new(bool)
-		**out = **in
-	}
-	if in.Drift != nil {
-		in, out := &in.Drift, &out.Drift
-		*out = new(bool)
-		**out = **in
-	}
 	if in.SamplePrecent != nil {
 		in, out := &in.SamplePrecent, &out.SamplePrecent
 		*out = new(int32)
 		**out = **in
-	}
-	if in.SampleLabels != nil {
-		in, out := &in.SampleLabels, &out.SampleLabels
-		*out = make(map[string]string, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
-		}
 	}
 	if in.Schedule != nil {
 		in, out := &in.Schedule, &out.Schedule
@@ -425,6 +409,13 @@ func (in *MonitorSpec) DeepCopyInto(out *MonitorSpec) {
 		in, out := &in.NotiferName, &out.NotiferName
 		*out = new(string)
 		**out = **in
+	}
+	if in.Validations != nil {
+		in, out := &in.Validations, &out.Validations
+		*out = make([]trainingv1alpha1.ModelValidation, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 }
 
@@ -445,18 +436,11 @@ func (in *MonitorStatus) DeepCopyInto(out *MonitorStatus) {
 		in, out := &in.LastTime, &out.LastTime
 		*out = (*in).DeepCopy()
 	}
-	if in.ActualDrift != nil {
-		in, out := &in.ActualDrift, &out.ActualDrift
-		*out = make(map[string]float32, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
-		}
-	}
-	if in.ActualSkew != nil {
-		in, out := &in.ActualSkew, &out.ActualSkew
-		*out = make(map[string]float32, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
+	if in.ValidationResult != nil {
+		in, out := &in.ValidationResult, &out.ValidationResult
+		*out = make([]trainingv1alpha1.ModelValidationResult, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
 }
@@ -486,7 +470,7 @@ func (in *OnlineChannelSpec) DeepCopyInto(out *OnlineChannelSpec) {
 	}
 	if in.AccessType != nil {
 		in, out := &in.AccessType, &out.AccessType
-		*out = new(AccessType)
+		*out = new(catalogv1alpha1.AccessType)
 		**out = **in
 	}
 }

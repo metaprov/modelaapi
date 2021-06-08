@@ -2,27 +2,9 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	training "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-)
-
-// AccessType define how client reach the predictor
-// +kubebuilder:validation:Enum="cluster-port";"node-port";"load-balancer";"ingress";"mesh";"none"
-type AccessType string
-
-const (
-	// Use cluster port if the predictor is an internal micro service
-	ClusterPortAccessType AccessType = "cluster-port"
-	// Use node port if the predictor can be accessed from outside the cluster
-	NodePortAccessType AccessType = "node-port"
-	// Use load balancer if the predictor can be accessed from outside the cluster
-	LoadBalancerAccessType AccessType = "load-balancer"
-	// Use ingress if the predictor should register with an ingress.
-	IngressAccessType AccessType = "ingress"
-	// Use service mesh if the predictor should register with a service mesh
-	MeshAccessType AccessType = "mesh"
-	// Use none if the desired port is none
-	NoneAccessType AccessType = "none"
 )
 
 // +kubebuilder:validation:Enum="online";"batch";"streaming"
@@ -283,16 +265,16 @@ type OnlineChannelSpec struct {
 	// Default: 8080
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
-	Port *int32 `json:"port,omitempty" protobuf:"varint,5,opt,name=port"`
+	Port *int32 `json:"port,omitempty" protobuf:"varint,1,opt,name=port"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	Path *string `json:"path,omitempty" protobuf:"bytes,6,opt,name=path"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
 	// +kubebuilder:validation:Optional
-	AccessType *AccessType `json:"accessType,omitempty" protobuf:"bytes,7,opt,name=accessType"`
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,3,opt,name=accessType"`
 }
 
 type StreamingChannelSpec struct {
@@ -352,36 +334,25 @@ type ChannelStatus struct {
 type MonitorSpec struct {
 	// If true monitoring is enabled.
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-	// Skew specify if we shold skew
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Skew *bool `json:"skew,omitempty" protobuf:"bytes,2,opt,name=skew"`
-	// Skew specify if we shold monitor drift
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Drift *bool `json:"drift,omitempty" protobuf:"bytes,3,opt,name=drift"`
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,4,opt,name=samplePrecent"`
-	// SampleLabels indicates the kubernetes labels to set on the sample dataset
-	// +kubebuilder:validation:Optional
-	SampleLabels map[string]string `json:"sampleLabels,omitempty" protobuf:"bytes,5,opt,name=sampleLabel"`
+	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,2,opt,name=samplePrecent"`
 	// Schedule is a cron schedule to run the monitor. By default the monitor run daily.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// NotifierName is the name of notifer to alert in case of
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,7,opt,name=notifierName"`
+	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
+	// List of model validation
+	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
 }
 
 type MonitorStatus struct {
 	// Last time the condition transitioned from one status to another.
 	LastTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,1,opt,name=lastTransitionTime"`
-	// ActualDrift records the last check for drift per column
-	ActualDrift map[string]float32 `json:"actualDrift,omitempty" protobuf:"bytes,2,opt,name=actualDrift"`
-	// ActualSkew records the last check for drift per column
-	ActualSkew map[string]float32 `json:"actualSkew,omitempty" protobuf:"bytes,3,opt,name=actualSkew"`
+	// Validation results contains the latest result
+	ValidationResult []training.ModelValidationResult `json:"validationResults,omitempty" protobuf:"bytes,2,opt,name=validationResults"`
 }

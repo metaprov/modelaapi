@@ -1,7 +1,6 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -139,22 +138,14 @@ const (
 	StageStatusPhaseFailed    StageStatusPhase = "Failed"
 )
 
-// Model Test Result holds the results for a single metric on a single dataset
 type ModelValidationResult struct {
-	// The name of the dataset
-	DatasetName string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Metric is the name of the metric measured
-	Metric catalog.Metric `json:"result,omitempty" protobuf:"bytes,2,opt,name=metric"`
-	// Expected is the expected value for this expecation as defined by the test
-	Expected float64 `json:"expected,omitempty" protobuf:"bytes,3,opt,name=expected"`
-	// The operation
-	Op *Op `json:"op,omitempty" protobuf:"bytes,4,opt,name=op"`
-	// Value is the value of the metric
-	Value float64 `json:"value,omitempty" protobuf:"bytes,5,opt,name=value"`
-	// Error is a name of any error that occurred during the test.
-	Error *string `json:"error,omitempty" protobuf:"bytes,6,opt,name=error"`
-	// Duration is the time that it took to run the test
-	Duration *metav1.Duration `json:"duration,omitempty" protobuf:"bytes,7,opt,name=duration"`
+	Type        string       `json:"type" protobuf:"bytes,1,opt,name=type"`
+	DatasetName string       `json:"dataset" protobuf:"bytes,2,opt,name=dataset"`
+	Model       string       `json:"model" protobuf:"bytes,3,opt,name=model"`
+	Column      string       `json:"column" protobuf:"bytes,4,opt,name=column"`
+	Error       string       `json:"error" protobuf:"bytes,5,opt,name=error"`
+	Passed      bool         `json:"passed" protobuf:"bytes,6,opt,name=passed"`
+	At          *metav1.Time `json:"at" protobuf:"bytes,7,opt,name=at"`
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

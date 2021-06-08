@@ -7,6 +7,75 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// ModelValidationName is the name of one model monitoring validation
+type ModelValidationName string
+
+const (
+	// ModelTest measure the preformance of the model against test data
+	ModelTest ModelValidationName = "model-test"
+	// compare the prediction count in time T to time T-1
+	PredictionCountDrift ModelValidationName = "prediction-count-drift"
+	// compare the prediction latency in time T to time T-1
+	PredictionLatencyDrift ModelValidationName = "prediction-latency-drift"
+	// Compare latency in training to latency in serving
+	PredictionLatencySkew ModelValidationName = "prediction-latency-skew"
+	// Compare model preformance in training to latency in serving
+	ModelPrefSkew ModelValidationName = "model-pref-skew"
+	// Compare model preformance in training in time T to perofrmance in training in time T-1
+	ModelPrefDrift ModelValidationName = "model-pref-drift"
+	// Compare column distribution in training to latency in serving
+	CategoricalColumnSkew ModelValidationName = "cat-column-skew"
+	// Compare column distribution in serving in time T to latency in serving in time T-1
+	CategoricalColumnDrift ModelValidationName = "cat-column-drift"
+	// Compare column distribution in training to latency in serving
+	NumericalColumnSkew ModelValidationName = "numerical-column-skew"
+	// Compare column distribution in training to latency in training time time T-1
+	NumericalColumnDrift ModelValidationName = "numerical-column-drift"
+	// Compare missing values in training to latency in training time time T-1
+	MissingValueDrift ModelValidationName = "missing-values-drift"
+	// Compare missing value in training to latency in serving
+	MissingValueSkew ModelValidationName = "missing-values-skew"
+	// Compare column stat in training to column stat in serving
+	ColumnStatSkew ModelValidationName = "column-stat-skew"
+	// Compare column stat in serving in time T to column stat in servingt in time T-1
+	ColumnStatDrift ModelValidationName = "column-stat-drift"
+)
+
+type ModelValidation struct {
+	// +kubebuilder:validation:Optional
+	Type ModelValidationName `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelValidationName"`
+	// PrevModel compare to model
+	// +kubebuilder:validation:Optional
+	PrevModel *string `json:"prevModel" protobuf:"bytes,2,opt,name=prevModel"`
+	// training dataset location
+	// +kubebuilder:validation:Optional
+	TrainingDataset *string `json:"trainingDataset" protobuf:"bytes,3,opt,name=trainingDataset"`
+	// Test prediction is a reference to the prediction set used to test a model in the pipeline
+	TestPrediction *string `json:"testPrediction" protobuf:"bytes,4,opt,name=testPrediction"`
+	// +kubebuilder:validation:Optional
+	CurrentPredictionSet *string `json:"currentPredictionSet" protobuf:"bytes,5,opt,name=currentPredictionSet"`
+	// +kubebuilder:validation:Optional
+	PrevPredictionSet *string `json:"prevPredictionSet" protobuf:"bytes,6,opt,name=prevPredictionSet"`
+	// +kubebuilder:validation:Optional
+	DriftFreq catalog.Freq `json:"driftFreq" protobuf:"bytes,7,opt,name=driftFreq"`
+	// +kubebuilder:validation:Optional
+	DriftInterval *int32 `json:"driftInterval" protobuf:"bytes,8,opt,name=driftInterval"`
+	// +kubebuilder:validation:Optional
+	Column *string `json:"column" protobuf:"bytes,9,opt,name=column"`
+	// +kubebuilder:validation:Optional
+	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,10,opt,name=metric"`
+	// +kubebuilder:validation:Optional
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,11,opt,name=min"`
+	// +kubebuilder:validation:Optional
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,12,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	MinPrecent *float64 `json:"minPrecent,omitempty" protobuf:"bytes,13,opt,name=minPrecent"`
+	// +kubebuilder:validation:Optional
+	MaxPrecent *float64 `json:"maxPrecent,omitempty" protobuf:"bytes,14,opt,name=maxPrecent"`
+	// Agg is used when we measured aggregate performance, for example median or average
+	Agg *catalog.Aggregate `json:"agg,omitempty" protobuf:"bytes,15,opt,name=agg"`
+}
+
 // ModelPhase is the current phase of a model
 type ModelPhase string
 

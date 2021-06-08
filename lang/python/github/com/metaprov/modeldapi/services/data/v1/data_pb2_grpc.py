@@ -149,15 +149,10 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileResponse.FromString,
                 )
-        self.CalcDrift = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcDrift',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftResponse.FromString,
-                )
-        self.CalcSkew = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcSkew',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewResponse.FromString,
+        self.ValidateModel = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.FromString,
                 )
         self.ShutDown = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.data.v1.DataService/ShutDown',
@@ -353,15 +348,8 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CalcDrift(self, request, context):
+    def ValidateModel(self, request, context):
         """Check for data drift
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CalcSkew(self, request, context):
-        """Check skew for data service
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -511,15 +499,10 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsMergeForecastFileResponse.SerializeToString,
             ),
-            'CalcDrift': grpc.unary_unary_rpc_method_handler(
-                    servicer.CalcDrift,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftResponse.SerializeToString,
-            ),
-            'CalcSkew': grpc.unary_unary_rpc_method_handler(
-                    servicer.CalcSkew,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewResponse.SerializeToString,
+            'ValidateModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.SerializeToString,
             ),
             'ShutDown': grpc.unary_unary_rpc_method_handler(
                     servicer.ShutDown,
@@ -996,7 +979,7 @@ class DataService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CalcDrift(request,
+    def ValidateModel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1006,26 +989,9 @@ class DataService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcDrift',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcDriftResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CalcSkew(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/CalcSkew',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.CalcSkewResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.ValidateModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

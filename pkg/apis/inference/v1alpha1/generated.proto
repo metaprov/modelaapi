@@ -11,6 +11,7 @@ package github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -250,45 +251,31 @@ message MonitorSpec {
   // If true monitoring is enabled.
   optional bool enabled = 1;
 
-  // Skew specify if we shold skew
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool skew = 2;
-
-  // Skew specify if we shold monitor drift
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool drift = 3;
-
   // How many rows to sample from the live data for
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 samplePrecent = 4;
-
-  // SampleLabels indicates the kubernetes labels to set on the sample dataset
-  // +kubebuilder:validation:Optional
-  map<string, string> sampleLabel = 5;
+  optional int32 samplePrecent = 2;
 
   // Schedule is a cron schedule to run the monitor. By default the monitor run daily.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string schedule = 6;
+  optional string schedule = 3;
 
   // NotifierName is the name of notifer to alert in case of
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 7;
+  optional string notifierName = 4;
+
+  // List of model validation
+  repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
 }
 
 message MonitorStatus {
   // Last time the condition transitioned from one status to another.
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 1;
 
-  // ActualDrift records the last check for drift per column
-  map<string, float> actualDrift = 2;
-
-  // ActualSkew records the last check for drift per column
-  map<string, float> actualSkew = 3;
+  // Validation results contains the latest result
+  repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult validationResults = 2;
 }
 
 message OnlineChannelSpec {
@@ -296,18 +283,18 @@ message OnlineChannelSpec {
   // Default: 8080
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 5;
+  optional int32 port = 1;
 
   // This is the path relative to the ingress path
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string path = 6;
+  optional string path = 2;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort
   // +kubebuilder:validation:Optional
-  optional string accessType = 7;
+  optional string accessType = 3;
 }
 
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
