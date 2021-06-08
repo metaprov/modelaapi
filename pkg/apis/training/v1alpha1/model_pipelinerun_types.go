@@ -144,8 +144,9 @@ type ModelValidationResult struct {
 	Model       string       `json:"model" protobuf:"bytes,3,opt,name=model"`
 	Column      string       `json:"column" protobuf:"bytes,4,opt,name=column"`
 	Error       string       `json:"error" protobuf:"bytes,5,opt,name=error"`
-	Passed      bool         `json:"passed" protobuf:"bytes,6,opt,name=passed"`
-	At          *metav1.Time `json:"at" protobuf:"bytes,7,opt,name=at"`
+	ActualValue float64      `json:"actualValue" protobuf:"bytes,6,opt,name=actualValue"`
+	Passed      bool         `json:"passed" protobuf:"bytes,7,opt,name=passed"`
+	At          *metav1.Time `json:"at" protobuf:"bytes,8,opt,name=at"`
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

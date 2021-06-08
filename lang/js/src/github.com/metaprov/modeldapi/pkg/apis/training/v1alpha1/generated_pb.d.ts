@@ -2074,6 +2074,9 @@ export class ModelValidationResult extends jspb.Message {
   getError(): string;
   setError(value: string): ModelValidationResult;
 
+  getActualvalue(): number;
+  setActualvalue(value: number): ModelValidationResult;
+
   getPassed(): boolean;
   setPassed(value: boolean): ModelValidationResult;
 
@@ -2097,6 +2100,7 @@ export namespace ModelValidationResult {
     model: string,
     column: string,
     error: string,
+    actualvalue: number,
     passed: boolean,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }

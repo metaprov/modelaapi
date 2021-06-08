@@ -120,6 +120,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -136,6 +138,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -211,6 +214,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -227,6 +232,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -274,6 +280,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -290,6 +298,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -338,6 +347,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -354,6 +365,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -400,6 +412,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -416,6 +430,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -467,6 +482,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -483,6 +500,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -535,6 +553,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -551,6 +571,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
@@ -594,6 +615,8 @@ spec:
                       against the new model
                     items:
                       properties:
+                        actualValue:
+                          type: number
                         at:
                           format: date-time
                           type: string
@@ -610,6 +633,7 @@ spec:
                         type:
                           type: string
                       required:
+                      - actualValue
                       - at
                       - column
                       - dataset
