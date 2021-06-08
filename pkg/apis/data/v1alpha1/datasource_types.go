@@ -30,12 +30,12 @@ type MultiDatasetValidation struct {
 type DatasetValidationName string
 
 const (
-	DatasetAssertionNameColumnsCountEqual    DatasetValidationName = "columns-count-equal"
-	DatasetAssertionNameColumnsNameInSet     DatasetValidationName = "columns-in-set"
-	DatasetAssertionNameColumnsInOrderedList DatasetValidationName = "columns-in-ordered-list"
-	DatasetAssertionNameRowCountBetween      DatasetValidationName = "row-count-between"
-	DatasetAssertionNameNotEmpty             DatasetValidationName = "dataset-not-empty"
-	DatasetAssertionNameEmpty                DatasetValidationName = "dataset-empty"
+	DatasetValidationNameColumnsCountEqual    DatasetValidationName = "columns-count-equal"
+	DatasetValidationNameColumnsNameInSet     DatasetValidationName = "columns-in-set"
+	DatasetValidationNameColumnsInOrderedList DatasetValidationName = "columns-in-ordered-list"
+	DatasetValidationNameRowCountBetween      DatasetValidationName = "row-count-between"
+	DatasetValidationNameNameNotEmpty         DatasetValidationName = "dataset-not-empty"
+	DatasetValidationNameNameEmpty            DatasetValidationName = "dataset-empty"
 )
 
 type DatasetValidation struct {

@@ -15605,7 +15605,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assertionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     error: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     passed: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
@@ -15647,7 +15647,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAssertionname(value);
+      msg.setType(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -15722,10 +15722,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
 
 
 /**
- * optional string assertionName = 1;
+ * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.getAssertionname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -15734,7 +15734,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.setAssertionname = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -15743,7 +15743,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.clearAssertionname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -15752,7 +15752,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.hasAssertionname = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

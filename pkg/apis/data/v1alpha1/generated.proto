@@ -916,7 +916,7 @@ message DataSourceStatus {
 }
 
 message DataValidationResult {
-  optional string assertionName = 1;
+  optional string type = 1;
 
   optional string column = 2;
 

@@ -1402,8 +1402,8 @@ export namespace DataSourceStatus {
 }
 
 export class DataValidationResult extends jspb.Message {
-  getAssertionname(): string;
-  setAssertionname(value: string): DataValidationResult;
+  getType(): string;
+  setType(value: string): DataValidationResult;
 
   getColumn(): string;
   setColumn(value: string): DataValidationResult;
@@ -1424,7 +1424,7 @@ export class DataValidationResult extends jspb.Message {
 
 export namespace DataValidationResult {
   export type AsObject = {
-    assertionname: string,
+    type: string,
     column: string,
     error: string,
     passed: boolean,

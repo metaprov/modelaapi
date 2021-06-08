@@ -298,8 +298,8 @@ type Signatures struct {
 }
 
 type DataValidationResult struct {
-	AssertionName string `json:"assertionName" protobuf:"bytes,1,opt,name=assertionName"`
-	Column        string `json:"column" protobuf:"bytes,2,opt,name=column"`
-	Error         string `json:"error" protobuf:"bytes,3,opt,name=error"`
-	Passed        bool   `json:"passed" protobuf:"bytes,4,opt,name=passed"`
+	Type   string `json:"type" protobuf:"bytes,1,opt,name=type"`
+	Column string `json:"column" protobuf:"bytes,2,opt,name=column"`
+	Error  string `json:"error" protobuf:"bytes,3,opt,name=error"`
+	Passed bool   `json:"passed" protobuf:"bytes,4,opt,name=passed"`
 }

@@ -393,19 +393,19 @@ spec:
                   process
                 items:
                   properties:
-                    assertionName:
-                      type: string
                     column:
                       type: string
                     error:
                       type: string
                     passed:
                       type: boolean
+                    type:
+                      type: string
                   required:
-                  - assertionName
                   - column
                   - error
                   - passed
+                  - type
                   type: object
                 type: array
             type: object
