@@ -200,32 +200,37 @@ message Column {
   // PreservePrivacy is true if the column content should not be exposed due to privacy concerns
   optional bool preservePrivacy = 28;
 
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  // Protected means that this feature is important for ethical AI / Fairness
+  optional bool protected = 29;
+
   // The following attribute concern with syntatic data and validation
   // DefaultValueNum is the default value for numbers
-  optional double defaultValueNum = 29;
+  optional double defaultValueNum = 30;
 
   // Log if true, values from this column will be sampled on logaritmic scale
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool log = 30;
+  optional bool log = 31;
 
   // Mu is the mean of the normal distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double mu = 31;
+  optional double mu = 32;
 
   // Sigma is the standard deviation of the distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double sigma = 32;
+  optional double sigma = 33;
 
   // Skew treshold is the treshold for skew detection.
   // +kubebuilder:validation:Optional
-  optional double skewThreshold = 33;
+  optional double skewThreshold = 34;
 
   // Drift treshold is the treshold for drift detection.
   // +kubebuilder:validation:Optional
-  optional double driftThreshold = 34;
+  optional double driftThreshold = 35;
 }
 
 // Hold the statistical parameters about a single attribute

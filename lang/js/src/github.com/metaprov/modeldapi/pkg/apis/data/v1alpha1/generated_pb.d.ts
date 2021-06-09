@@ -170,6 +170,9 @@ export class Column extends jspb.Message {
   getPreserveprivacy(): boolean;
   setPreserveprivacy(value: boolean): Column;
 
+  getProtected(): boolean;
+  setProtected(value: boolean): Column;
+
   getDefaultvaluenum(): number;
   setDefaultvaluenum(value: number): Column;
 
@@ -226,6 +229,7 @@ export namespace Column {
     uniqueitems: boolean,
     timecolumn: boolean,
     preserveprivacy: boolean,
+    pb_protected: boolean,
     defaultvaluenum: number,
     log: boolean,
     mu: number,

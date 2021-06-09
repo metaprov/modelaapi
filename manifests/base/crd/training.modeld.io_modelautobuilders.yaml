@@ -468,6 +468,11 @@ spec:
                               description: PreservePrivacy is true if the column content
                                 should not be exposed due to privacy concerns
                               type: boolean
+                            protected:
+                              default: false
+                              description: Protected means that this feature is important
+                                for ethical AI / Fairness
+                              type: boolean
                             required:
                               default: false
                               description: Required

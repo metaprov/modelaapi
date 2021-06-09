@@ -213,6 +213,11 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.Protected != nil {
+		in, out := &in.Protected, &out.Protected
+		*out = new(bool)
+		**out = **in
+	}
 	if in.DefaultValueNum != nil {
 		in, out := &in.DefaultValueNum, &out.DefaultValueNum
 		*out = new(float64)
