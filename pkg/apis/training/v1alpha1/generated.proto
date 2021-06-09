@@ -1433,19 +1433,32 @@ message ModelValidation {
 message ModelValidationResult {
   optional string type = 1;
 
-  optional string dataset = 2;
+  // DatasetName is the name of the dataset used to perform the validation
+  optional string datasetName = 2;
 
-  optional string model = 3;
+  // ModelName is the name of the model under test
+  optional string modelName = 3;
 
+  // Column is the name of the feature.
   optional string column = 4;
 
+  // Error is a string.
   optional string error = 5;
 
-  optional double actualValue = 6;
+  // Metric is the measurment
+  optional string metric = 6;
 
-  optional bool passed = 7;
+  // Actual value is the actual value
+  optional double actualValue = 7;
 
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 8;
+  // Passed indicate if the result passed.
+  optional bool passed = 8;
+
+  // At is the time the validation was performed.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 9;
+
+  // The amount of time it took to compute this result
+  optional int32 durationInSec = 10;
 }
 
 message NNLayerParameter {

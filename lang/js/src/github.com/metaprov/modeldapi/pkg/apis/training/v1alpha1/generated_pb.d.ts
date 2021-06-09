@@ -2062,17 +2062,20 @@ export class ModelValidationResult extends jspb.Message {
   getType(): string;
   setType(value: string): ModelValidationResult;
 
-  getDataset(): string;
-  setDataset(value: string): ModelValidationResult;
+  getDatasetname(): string;
+  setDatasetname(value: string): ModelValidationResult;
 
-  getModel(): string;
-  setModel(value: string): ModelValidationResult;
+  getModelname(): string;
+  setModelname(value: string): ModelValidationResult;
 
   getColumn(): string;
   setColumn(value: string): ModelValidationResult;
 
   getError(): string;
   setError(value: string): ModelValidationResult;
+
+  getMetric(): string;
+  setMetric(value: string): ModelValidationResult;
 
   getActualvalue(): number;
   setActualvalue(value: number): ModelValidationResult;
@@ -2085,6 +2088,9 @@ export class ModelValidationResult extends jspb.Message {
   hasAt(): boolean;
   clearAt(): ModelValidationResult;
 
+  getDurationinsec(): number;
+  setDurationinsec(value: number): ModelValidationResult;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelValidationResult.AsObject;
   static toObject(includeInstance: boolean, msg: ModelValidationResult): ModelValidationResult.AsObject;
@@ -2096,13 +2102,15 @@ export class ModelValidationResult extends jspb.Message {
 export namespace ModelValidationResult {
   export type AsObject = {
     type: string,
-    dataset: string,
-    model: string,
+    datasetname: string,
+    modelname: string,
     column: string,
     error: string,
+    metric: string,
     actualvalue: number,
     passed: boolean,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    durationinsec: number,
   }
 }
 

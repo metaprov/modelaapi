@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -139,14 +140,25 @@ const (
 )
 
 type ModelValidationResult struct {
-	Type        string       `json:"type" protobuf:"bytes,1,opt,name=type"`
-	DatasetName string       `json:"dataset" protobuf:"bytes,2,opt,name=dataset"`
-	Model       string       `json:"model" protobuf:"bytes,3,opt,name=model"`
-	Column      string       `json:"column" protobuf:"bytes,4,opt,name=column"`
-	Error       string       `json:"error" protobuf:"bytes,5,opt,name=error"`
-	ActualValue float64      `json:"actualValue" protobuf:"bytes,6,opt,name=actualValue"`
-	Passed      bool         `json:"passed" protobuf:"bytes,7,opt,name=passed"`
-	At          *metav1.Time `json:"at" protobuf:"bytes,8,opt,name=at"`
+	Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
+	// DatasetName is the name of the dataset used to perform the validation
+	DatasetName string `json:"datasetName" protobuf:"bytes,2,opt,name=datasetName"`
+	// ModelName is the name of the model under test
+	ModelName string `json:"modelName" protobuf:"bytes,3,opt,name=modelName"`
+	// Column is the name of the feature.
+	Column string `json:"column" protobuf:"bytes,4,opt,name=column"`
+	// Error is a string.
+	Error string `json:"error" protobuf:"bytes,5,opt,name=error"`
+	// Metric is the measurment
+	Metric *catalog.Metric `json:"metric" protobuf:"bytes,6,opt,name=metric"`
+	// Actual value is the actual value
+	ActualValue *float64 `json:"actualValue" protobuf:"bytes,7,opt,name=actualValue"`
+	// Passed indicate if the result passed.
+	Passed bool `json:"passed" protobuf:"bytes,8,opt,name=passed"`
+	// At is the time the validation was performed.
+	At *metav1.Time `json:"at" protobuf:"bytes,9,opt,name=at"`
+	// The amount of time it took to compute this result
+	DurationInSec int32 `json:"durationInSec" protobuf:"bytes,10,opt,name=durationInSec"`
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

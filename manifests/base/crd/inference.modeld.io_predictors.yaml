@@ -7348,19 +7348,77 @@ spec:
                     items:
                       properties:
                         actualValue:
+                          description: Actual value is the actual value
                           type: number
                         at:
+                          description: At is the time the validation was performed.
                           format: date-time
                           type: string
                         column:
+                          description: Column is the name of the feature.
                           type: string
-                        dataset:
+                        datasetName:
+                          description: DatasetName is the name of the dataset used
+                            to perform the validation
                           type: string
+                        durationInSec:
+                          description: The amount of time it took to compute this
+                            result
+                          format: int32
+                          type: integer
                         error:
+                          description: Error is a string.
                           type: string
-                        model:
+                        metric:
+                          description: Metric is the measurment
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        modelName:
+                          description: ModelName is the name of the model under test
                           type: string
                         passed:
+                          description: Passed indicate if the result passed.
                           type: boolean
                         type:
                           type: string
@@ -7368,9 +7426,11 @@ spec:
                       - actualValue
                       - at
                       - column
-                      - dataset
+                      - datasetName
+                      - durationInSec
                       - error
-                      - model
+                      - metric
+                      - modelName
                       - passed
                       - type
                       type: object
