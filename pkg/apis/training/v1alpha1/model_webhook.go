@@ -187,3 +187,20 @@ func (dataset *Model) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	return allErrs
 }
+
+func (model *Model) validateDelete() error {
+	var allErrors field.ErrorList
+
+	path := field.NewPath("")
+
+	if model.Serving() {
+		err := field.Invalid(path.Child("rpc"), model, "can't delete serving model")
+		allErrors = append(allErrors, err)
+	}
+
+	if len(allErrors) == 0 {
+		return nil
+	}
+
+	return apierrors.NewInvalid(schema.GroupKind{}, model.Name, allErrors)
+}
