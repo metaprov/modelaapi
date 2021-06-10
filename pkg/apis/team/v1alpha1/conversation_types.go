@@ -34,6 +34,7 @@ type Comment struct {
 	// +kubebuilder:default:=""
 	Content *string `json:"content,omitempty" protobuf:"bytes,4,opt,name=content"`
 	// PostedAt is the time when the comment was posted
+	// +kubebuilder:validation:Optional
 	PostedAt *metav1.Time `json:"postedAt,omitempty" protobuf:"bytes,5,opt,name=postedAt"`
 	// Sent indicate if the comment was sent to the notifier.
 	// +kubebuilder:default:=false
@@ -92,9 +93,12 @@ type ConversationSpec struct {
 
 //ConversationStatus is the current status of the conversation
 type ConversationStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []ConversationCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []ConversationCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

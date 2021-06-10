@@ -35,6 +35,7 @@ message Comment {
   optional string content = 4;
 
   // PostedAt is the time when the comment was posted
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time postedAt = 5;
 
   // Sent indicate if the comment was sent to the notifier.
@@ -102,12 +103,16 @@ message ConversationSpec {
 
 // ConversationStatus is the current status of the conversation
 message ConversationStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
   // +optional
-  repeated ConversationCondition conditions = 2;
+  repeated ConversationCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true

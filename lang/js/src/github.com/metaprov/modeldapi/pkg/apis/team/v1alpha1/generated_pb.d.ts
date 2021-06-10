@@ -177,6 +177,11 @@ export namespace ConversationSpec {
 }
 
 export class ConversationStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConversationStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ConversationStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ConversationStatus;
 
@@ -195,6 +200,7 @@ export class ConversationStatus extends jspb.Message {
 
 export namespace ConversationStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<ConversationCondition.AsObject>,
   }
