@@ -16702,7 +16702,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.t
     resources: (f = msg.getResources()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingResourceRequest.toObject(includeInstance, f),
     allowlistList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
     votingensemble: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
-    stackingensemble: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
+    stackingensemble: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+    startat: (f = msg.getStartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16796,6 +16797,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.d
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStackingensemble(value);
+      break;
+    case 15:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setStartat(value);
       break;
     default:
       reader.skipField();
@@ -16924,6 +16930,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.s
     writer.writeBool(
       14,
       f
+    );
+  }
+  f = message.getStartat();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
@@ -17433,6 +17447,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasStackingensemble = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getStartat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 15));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setStartat = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearStartat = function() {
+  return this.setStartat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasStartat = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 

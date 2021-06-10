@@ -272,6 +272,9 @@ type ModelSearchSpec struct {
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
 	// +kubebuilder:default:=true
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
+	// Set the start time, by default this is set to the start time of the study
+	// +kubebuilder:validation:Optional
+	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
 }
 
 // StudySpec defines the desired state of the study

@@ -153,9 +153,6 @@ type DataProductSpec struct {
 	// KPIs is the product kpi. This is for information porpose
 	//+kubebuilder:validation:Optional
 	KPIs []KPI `json:"kpis,omitempty" protobuf:"bytes,15,rep,name=kpis"`
-	// Semver counter that is used when generating new models
-	//+kubebuilder:validation:Optional
-	CurrentModelVersion SemVer `json:"currentModelVersion,omitempty" protobuf:"bytes,16,opt,name=currentModelVersion"`
 	// OnCallAccountName is the name of the account on call.
 	//+kubebuilder:validation:Optional
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
@@ -169,12 +166,17 @@ type DataProductSpec struct {
 
 // DataProductStatus defines the observed state of DataProduct
 type DataProductStatus struct {
+	// LastModelVersion is used to automatically associate model version with final models.
+	LastModelVersion int32 `json:"lastModelVersion,omitempty" protobuf:"varint,1,opt,name=lastModelVersion"`
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	// The conditions of the product.
 	//+optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true
@@ -192,13 +194,6 @@ type KPI struct {
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Value is the desired value
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
-}
-
-// Semver is used when generating model version
-type SemVer struct {
-	Major *int32 `json:"major,omitempty" protobuf:"varint,1,opt,name=major"`
-	Minor *int32 `json:"minor,omitempty" protobuf:"varint,2,opt,name=minor"`
-	Patch *int32 `json:"patch,omitempty" protobuf:"varint,3,opt,name=patch"`
 }
 
 type Attachment struct {

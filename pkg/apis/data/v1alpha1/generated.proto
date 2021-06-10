@@ -693,10 +693,6 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   repeated KPI kpis = 15;
 
-  // Semver counter that is used when generating new models
-  // +kubebuilder:validation:Optional
-  optional SemVer currentModelVersion = 16;
-
   // OnCallAccountName is the name of the account on call.
   // +kubebuilder:validation:Optional
   optional string onCallAccountName = 17;
@@ -712,13 +708,20 @@ message DataProductSpec {
 
 // DataProductStatus defines the observed state of DataProduct
 message DataProductStatus {
+  // LastModelVersion is used to automatically associate model version with final models.
+  optional int32 lastModelVersion = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 2;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
   // The conditions of the product.
   // +optional
-  repeated DataProductCondition conditions = 2;
+  repeated DataProductCondition conditions = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -916,8 +919,12 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+
   // +optional
-  repeated DataSourceCondition conditions = 3;
+  repeated DataSourceCondition conditions = 4;
 }
 
 message DataValidationResult {
@@ -2253,9 +2260,13 @@ message RecipeSpec {
 
 // RecipeStatus defines the observed state of Recipe
 message RecipeStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
   // Represents the latest available observations of a dataset state.
   // +optional
-  repeated RecipeCondition conditions = 1;
+  repeated RecipeCondition conditions = 2;
 }
 
 // RecipeStep defines one step in the recipe
@@ -2313,15 +2324,6 @@ message Schema {
 
   // Validation spec define the validation to perform on new datasets
   optional ValidationSpec validationSpec = 3;
-}
-
-// Semver is used when generating model version
-message SemVer {
-  optional int32 major = 1;
-
-  optional int32 minor = 2;
-
-  optional int32 patch = 3;
 }
 
 // Signatures contains the sha256 signatures of the datasets

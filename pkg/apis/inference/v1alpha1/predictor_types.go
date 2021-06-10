@@ -210,7 +210,6 @@ type PredictorStatus struct {
 	// +kubebuilder:validation:Optional
 	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
 
-	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 	// When was the last check attempt
 	MonitorLastAttemptAt metav1.Timestamp `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
 	// What was the last score
@@ -230,6 +229,11 @@ type PredictorStatus struct {
 	// Monitor status holds the status of the last monitor action.
 	//+kubebuilder:validation:Optional
 	MonitorStatus MonitorStatus `json:"monitorStatus,omitempty" protobuf:"bytes,10,opt,name=monitorStatus"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+
+	Conditions []PredictorCondition `json:"conditions,omitempty" protobuf:"bytes,12,rep,name=conditions"`
 }
 
 type PredictorHealth struct {

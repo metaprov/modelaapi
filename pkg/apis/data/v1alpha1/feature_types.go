@@ -131,21 +131,21 @@ type FeatureStatus struct {
 	Distinct int32 `json:"distinc,omitempty" protobuf:"varint,18,opt,name=distinc"`
 	// Should this column be ignored, as specified by the user.
 	// This value is derived from the schema
-	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
+	Ignored bool `json:"ignored,omitempty" protobuf:"bytes,19,opt,name=ignored"`
 	// Is this column is nullable.
 	// This value is derived from the schema.
-	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
+	Nullable bool `json:"nullable,omitempty" protobuf:"bytes,20,opt,name=nullable"`
 	// This column has high cardinality and should be ignored.
 	// The value is set during the profile process.
-	HighCred bool `json:"highCred,omitempty" protobuf:"varint,21,opt,name=highCred"`
+	HighCred bool `json:"highCred,omitempty" protobuf:"bytes,21,opt,name=highCred"`
 	// This column has high corrolation with another feature and should be dropped.
 	// The value is set during the profile process.
-	HighCorr bool `json:"highCorr,omitempty" protobuf:"varint,22,opt,name=highCorr"`
+	HighCorr bool `json:"highCorr,omitempty" protobuf:"bytes,22,opt,name=highCorr"`
 	// Mark that this column is skewed and would require a power transform
 	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
 	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
+	Skew bool `json:"skew,omitempty" protobuf:"bytes,23,opt,name=skew"`
 	// Completeness is the ratio between non null to null
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
 	// The ratio between distinc to total

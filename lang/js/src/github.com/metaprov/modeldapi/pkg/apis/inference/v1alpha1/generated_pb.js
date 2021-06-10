@@ -10593,7 +10593,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.repeatedFields_ = [1,2,8];
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.repeatedFields_ = [1,8,12];
 
 
 
@@ -10628,8 +10628,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
   var f, obj = {
     modelstatusList: jspb.Message.toObjectList(msg.getModelstatusList(),
     github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.toObject, includeInstance),
-    conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance),
     monitorlastattemptat: (f = msg.getMonitorlastattemptat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.toObject(includeInstance, f),
     monitorlastscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     monitorlastlatency: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
@@ -10638,7 +10636,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     statusesList: jspb.Message.toObjectList(msg.getStatusesList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.ChannelStatus.toObject, includeInstance),
     prevmodel: (f = msg.getPrevmodel()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.toObject(includeInstance, f),
-    monitorstatus: (f = msg.getMonitorstatus()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.toObject(includeInstance, f)
+    monitorstatus: (f = msg.getMonitorstatus()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.toObject(includeInstance, f),
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
+    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -10680,11 +10681,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.deserializeBinaryFromReader);
       msg.addModelstatus(value);
       break;
-    case 2:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.deserializeBinaryFromReader);
-      msg.addConditions(value);
-      break;
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.deserializeBinaryFromReader);
@@ -10722,6 +10718,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.deserializeBinaryFromReader);
       msg.setMonitorstatus(value);
       break;
+    case 11:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 12:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.deserializeBinaryFromReader);
+      msg.addConditions(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10757,14 +10763,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       1,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.serializeBinaryToWriter
-    );
-  }
-  f = message.getConditionsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.serializeBinaryToWriter
     );
   }
   f = message.getMonitorlastattemptat();
@@ -10828,6 +10826,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.MonitorStatus.serializeBinaryToWriter
     );
   }
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getConditionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -10866,44 +10880,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearModelstatusList = function() {
   return this.setModelstatusList([]);
-};
-
-
-/**
- * repeated PredictorCondition conditions = 2;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition, 2));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearConditionsList = function() {
-  return this.setConditionsList([]);
 };
 
 
@@ -11198,6 +11174,81 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasMonitorstatus = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 11));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * repeated PredictorCondition conditions = 12;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getConditionsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setConditionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.addConditions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorCondition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearConditionsList = function() {
+  return this.setConditionsList([]);
 };
 
 

@@ -1653,6 +1653,11 @@ export class ModelSearchSpec extends jspb.Message {
   getStackingensemble(): boolean;
   setStackingensemble(value: boolean): ModelSearchSpec;
 
+  getStartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelSearchSpec;
+  hasStartat(): boolean;
+  clearStartat(): ModelSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSearchSpec): ModelSearchSpec.AsObject;
@@ -1677,6 +1682,7 @@ export namespace ModelSearchSpec {
     allowlistList: Array<string>,
     votingensemble: boolean,
     stackingensemble: boolean,
+    startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

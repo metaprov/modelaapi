@@ -107,19 +107,6 @@ spec:
                       type: string
                     type: array
                 type: object
-              currentModelVersion:
-                description: Semver counter that is used when generating new models
-                properties:
-                  major:
-                    format: int32
-                    type: integer
-                  minor:
-                    format: int32
-                    type: integer
-                  patch:
-                    format: int32
-                    type: integer
-                type: object
               dataLocation:
                 description: This folder contain the root location for all the artifacts
                   from the product.
@@ -354,6 +341,15 @@ spec:
                   - type
                   type: object
                 type: array
+              lastModelVersion:
+                description: LastModelVersion is used to automatically associate model
+                  version with final models.
+                format: int32
+                type: integer
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

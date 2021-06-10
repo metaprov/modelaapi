@@ -94,9 +94,13 @@ type RecipeSpec struct {
 
 // RecipeStatus defines the observed state of Recipe
 type RecipeStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+
 	// Represents the latest available observations of a dataset state.
 	//+optional
-	Conditions []RecipeCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []RecipeCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
 }
 
 //RecipeStep defines one step in the recipe

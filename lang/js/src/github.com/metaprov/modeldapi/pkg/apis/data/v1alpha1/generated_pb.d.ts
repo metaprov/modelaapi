@@ -982,11 +982,6 @@ export class DataProductSpec extends jspb.Message {
   clearKpisList(): DataProductSpec;
   addKpis(value?: KPI, index?: number): KPI;
 
-  getCurrentmodelversion(): SemVer | undefined;
-  setCurrentmodelversion(value?: SemVer): DataProductSpec;
-  hasCurrentmodelversion(): boolean;
-  clearCurrentmodelversion(): DataProductSpec;
-
   getOncallaccountname(): string;
   setOncallaccountname(value: string): DataProductSpec;
 
@@ -1024,7 +1019,6 @@ export namespace DataProductSpec {
     defaultworkloadclassname: string,
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
-    currentmodelversion?: SemVer.AsObject,
     oncallaccountname: string,
     attachmentsList: Array<Attachment.AsObject>,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
@@ -1032,8 +1026,16 @@ export namespace DataProductSpec {
 }
 
 export class DataProductStatus extends jspb.Message {
+  getLastmodelversion(): number;
+  setLastmodelversion(value: number): DataProductStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataProductStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): DataProductStatus;
 
   getConditionsList(): Array<DataProductCondition>;
   setConditionsList(value: Array<DataProductCondition>): DataProductStatus;
@@ -1050,7 +1052,9 @@ export class DataProductStatus extends jspb.Message {
 
 export namespace DataProductStatus {
   export type AsObject = {
+    lastmodelversion: number,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataProductCondition.AsObject>,
   }
 }
@@ -1384,6 +1388,11 @@ export class DataSourceStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataSourceStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): DataSourceStatus;
+
   getConditionsList(): Array<DataSourceCondition>;
   setConditionsList(value: Array<DataSourceCondition>): DataSourceStatus;
   clearConditionsList(): DataSourceStatus;
@@ -1401,6 +1410,7 @@ export namespace DataSourceStatus {
   export type AsObject = {
     cols: number,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataSourceCondition.AsObject>,
   }
 }
@@ -3696,6 +3706,11 @@ export namespace RecipeSpec {
 }
 
 export class RecipeStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): RecipeStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeStatus;
   clearConditionsList(): RecipeStatus;
@@ -3711,6 +3726,7 @@ export class RecipeStatus extends jspb.Message {
 
 export namespace RecipeStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }
@@ -3824,32 +3840,6 @@ export namespace Schema {
     tsschema?: TimeSeriesSchema.AsObject,
     columnsList: Array<Column.AsObject>,
     validationspec?: ValidationSpec.AsObject,
-  }
-}
-
-export class SemVer extends jspb.Message {
-  getMajor(): number;
-  setMajor(value: number): SemVer;
-
-  getMinor(): number;
-  setMinor(value: number): SemVer;
-
-  getPatch(): number;
-  setPatch(value: number): SemVer;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SemVer.AsObject;
-  static toObject(includeInstance: boolean, msg: SemVer): SemVer.AsObject;
-  static serializeBinaryToWriter(message: SemVer, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SemVer;
-  static deserializeBinaryFromReader(message: SemVer, reader: jspb.BinaryReader): SemVer;
-}
-
-export namespace SemVer {
-  export type AsObject = {
-    major: number,
-    minor: number,
-    patch: number,
   }
 }
 

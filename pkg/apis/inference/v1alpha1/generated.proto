@@ -632,8 +632,6 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus modelStatus = 1;
 
-  repeated PredictorCondition conditions = 2;
-
   // When was the last check attempt
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp monitorLastAttemptAt = 3;
 
@@ -660,6 +658,12 @@ message PredictorStatus {
   // Monitor status holds the status of the last monitor action.
   // +kubebuilder:validation:Optional
   optional MonitorStatus monitorStatus = 10;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+
+  repeated PredictorCondition conditions = 12;
 }
 
 message ProgressiveSpec {

@@ -1116,6 +1116,10 @@ message ModelSearchSpec {
   // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
   // +kubebuilder:default:=true
   optional bool stackingEnsemble = 14;
+
+  // Set the start time, by default this is set to the start time of the study
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
 }
 
 // ModelSpec defines the desired state of the Model resource

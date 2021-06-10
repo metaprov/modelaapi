@@ -1103,11 +1103,6 @@ export class PredictorStatus extends jspb.Message {
   clearModelstatusList(): PredictorStatus;
   addModelstatus(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
 
-  getConditionsList(): Array<PredictorCondition>;
-  setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
-  clearConditionsList(): PredictorStatus;
-  addConditions(value?: PredictorCondition, index?: number): PredictorCondition;
-
   getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
   setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): PredictorStatus;
   hasMonitorlastattemptat(): boolean;
@@ -1142,6 +1137,16 @@ export class PredictorStatus extends jspb.Message {
   hasMonitorstatus(): boolean;
   clearMonitorstatus(): PredictorStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): PredictorStatus;
+
+  getConditionsList(): Array<PredictorCondition>;
+  setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
+  clearConditionsList(): PredictorStatus;
+  addConditions(value?: PredictorCondition, index?: number): PredictorCondition;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorStatus): PredictorStatus.AsObject;
@@ -1153,7 +1158,6 @@ export class PredictorStatus extends jspb.Message {
 export namespace PredictorStatus {
   export type AsObject = {
     modelstatusList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
-    conditionsList: Array<PredictorCondition.AsObject>,
     monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
     monitorlastscore: number,
     monitorlastlatency: number,
@@ -1162,6 +1166,8 @@ export namespace PredictorStatus {
     statusesList: Array<ChannelStatus.AsObject>,
     prevmodel?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     monitorstatus?: MonitorStatus.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<PredictorCondition.AsObject>,
   }
 }
 
