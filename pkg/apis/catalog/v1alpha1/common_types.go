@@ -667,22 +667,6 @@ const (
 )
 
 //==============================================================================
-// Featureset selector
-//==============================================================================
-// +kubebuilder:validation:Enum="select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-treshold";"none";"auto"
-type FeatureSelector string
-
-const (
-	SelectPercentile    FeatureSelector = "select-percentile"
-	SelectKBest         FeatureSelector = "select-kbest"
-	SelectFpr           FeatureSelector = "select-fpr"
-	SelectFdr           FeatureSelector = "select-fdr"
-	VarianceThreshold   FeatureSelector = "variance-threshold"
-	NoneFeatureSelector FeatureSelector = "none"
-	AutoSelector        FeatureSelector = "auto"
-)
-
-//==============================================================================
 // Balancer
 //==============================================================================
 // +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto"
@@ -701,17 +685,25 @@ const (
 )
 
 //==============================================================================
-// Featureset reducer
+// Feature Engineering
 //==============================================================================
-// +kubebuilder:validation:Enum="pca";"kernel-pca";"fast-ica";"none";"auto"
-type DimReducer string
+// +kubebuilder:validation:Enum="rfe";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"pca";"polynomial-features";"rbf-sampler";"fast-ica";"nystroem";"none"; "auto"
+type FeatureEngineering string
 
 const (
-	Pca         DimReducer = "pca"
-	KernelPca   DimReducer = "kernel-pca"
-	FastIca     DimReducer = "fast-ica"
-	NoneReducer DimReducer = "none"
-	AutoReducer DimReducer = "auto"
+	RFE                    FeatureEngineering = "rfe"
+	SelectPercentile       FeatureEngineering = "select-percentile"
+	SelectKBest            FeatureEngineering = "select-kbest"
+	SelectFpr              FeatureEngineering = "select-fpr"
+	SelectFdr              FeatureEngineering = "select-fdr"
+	VarianceThreshold      FeatureEngineering = "variance-threshold"
+	PCA                    FeatureEngineering = "pca"
+	PolynomialFeatures     FeatureEngineering = "polynomial-features"
+	RBFSampler             FeatureEngineering = "rbf-sampler"
+	FastIca                FeatureEngineering = "fast-ica"
+	Nystroem               FeatureEngineering = "nystroem"
+	NoneFeatureEngineering FeatureEngineering = "none"
+	AutoFeatureEngineering FeatureEngineering = "auto"
 )
 
 // +kubebuilder:validation:Enum"tfidf";"count-vec";"hashing-vec";none";"auto"

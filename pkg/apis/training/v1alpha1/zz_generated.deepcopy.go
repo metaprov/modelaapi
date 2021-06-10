@@ -2261,14 +2261,14 @@ func (in *PreprocessingSpec) DeepCopyInto(out *PreprocessingSpec) {
 		*out = new(DateTimePipelineSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.Selector != nil {
-		in, out := &in.Selector, &out.Selector
-		*out = new(catalogv1alpha1.FeatureSelector)
+	if in.FeatureEngineering != nil {
+		in, out := &in.FeatureEngineering, &out.FeatureEngineering
+		*out = new(catalogv1alpha1.FeatureEngineering)
 		**out = **in
 	}
-	if in.Reducer != nil {
-		in, out := &in.Reducer, &out.Reducer
-		*out = new(catalogv1alpha1.DimReducer)
+	if in.Balancer != nil {
+		in, out := &in.Balancer, &out.Balancer
+		*out = new(catalogv1alpha1.Balancer)
 		**out = **in
 	}
 	if in.Imbalanced != nil {

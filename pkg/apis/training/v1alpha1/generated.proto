@@ -1727,11 +1727,11 @@ message PreprocessingSpec {
 
   // FeaturePipeline selector
   // +kubebuilder:validation:Optional
-  optional string featureSelector = 8;
+  optional string featureEngineering = 8;
 
-  // Dim reducer
+  // Balancer is used for imbalanced datasets to fix the imbalance.
   // +kubebuilder:validation:Optional
-  optional string reducer = 9;
+  optional string balancer = 9;
 
   // Imbalance flag instruct the designer to create an imbalanced pipeline. Default is false
   // +kubebuilder:validation:Optional

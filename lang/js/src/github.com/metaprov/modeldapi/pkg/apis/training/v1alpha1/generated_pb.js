@@ -25800,8 +25800,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
     audio: (f = msg.getAudio()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.AudioPipelineSpec.toObject(includeInstance, f),
     video: (f = msg.getVideo()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.VideoPipelineSpec.toObject(includeInstance, f),
     datetime: (f = msg.getDatetime()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DateTimePipelineSpec.toObject(includeInstance, f),
-    featureselector: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    reducer: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    featureengineering: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    balancer: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     imbalanced: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
@@ -25876,11 +25876,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFeatureselector(value);
+      msg.setFeatureengineering(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReducer(value);
+      msg.setBalancer(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -26255,10 +26255,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
 
 
 /**
- * optional string featureSelector = 8;
+ * optional string featureEngineering = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.getFeatureselector = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.getFeatureengineering = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -26267,7 +26267,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.setFeatureselector = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.setFeatureengineering = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -26276,7 +26276,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.clearFeatureselector = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.clearFeatureengineering = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -26285,16 +26285,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.hasFeatureselector = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.hasFeatureengineering = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string reducer = 9;
+ * optional string balancer = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.getReducer = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.getBalancer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -26303,7 +26303,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.setReducer = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.setBalancer = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -26312,7 +26312,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.clearReducer = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.clearBalancer = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -26321,7 +26321,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.hasReducer = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PreprocessingSpec.prototype.hasBalancer = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 

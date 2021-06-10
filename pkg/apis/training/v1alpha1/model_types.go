@@ -471,10 +471,10 @@ type PreprocessingSpec struct {
 	DataTime *DateTimePipelineSpec `json:"datatime,omitempty" protobuf:"bytes,7,opt,name=datetime"`
 	// FeaturePipeline selector
 	// +kubebuilder:validation:Optional
-	Selector *catalog.FeatureSelector `json:"featureSelector,omitempty" protobuf:"bytes,8,opt,name=featureSelector"`
-	// Dim reducer
+	FeatureEngineering *catalog.FeatureEngineering `json:"featureEngineering,omitempty" protobuf:"bytes,8,opt,name=featureEngineering"`
+	// Balancer is used for imbalanced datasets to fix the imbalance.
 	// +kubebuilder:validation:Optional
-	Reducer *catalog.DimReducer `json:"reducer,omitempty" protobuf:"bytes,9,opt,name=reducer"`
+	Balancer *catalog.Balancer `json:"balancer,omitempty" protobuf:"bytes,9,opt,name=balancer"`
 	// Imbalance flag instruct the designer to create an imbalanced pipeline. Default is false
 	// +kubebuilder:validation:Optional
 	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,10,opt,name=imbalanced"`

@@ -2582,11 +2582,11 @@ export class PreprocessingSpec extends jspb.Message {
   hasDatetime(): boolean;
   clearDatetime(): PreprocessingSpec;
 
-  getFeatureselector(): string;
-  setFeatureselector(value: string): PreprocessingSpec;
+  getFeatureengineering(): string;
+  setFeatureengineering(value: string): PreprocessingSpec;
 
-  getReducer(): string;
-  setReducer(value: string): PreprocessingSpec;
+  getBalancer(): string;
+  setBalancer(value: string): PreprocessingSpec;
 
   getImbalanced(): boolean;
   setImbalanced(value: boolean): PreprocessingSpec;
@@ -2608,8 +2608,8 @@ export namespace PreprocessingSpec {
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
     datetime?: DateTimePipelineSpec.AsObject,
-    featureselector: string,
-    reducer: string,
+    featureengineering: string,
+    balancer: string,
     imbalanced: boolean,
   }
 }

@@ -459,6 +459,20 @@ spec:
                         description: The date time imputer.
                         type: string
                     type: object
+                  balancer:
+                    description: Balancer is used for imbalanced datasets to fix the
+                      imbalance.
+                    enum:
+                    - adasyn
+                    - baseline-smote
+                    - kmean-smote
+                    - random-over-sampler
+                    - smote
+                    - smotenc
+                    - svmsmote
+                    - none
+                    - auto
+                    type: string
                   categorical:
                     description: One or more categorical pipelines.
                     properties:
@@ -532,14 +546,20 @@ spec:
                         - constant
                         type: string
                     type: object
-                  featureSelector:
+                  featureEngineering:
                     description: FeaturePipeline selector
                     enum:
+                    - rfe
                     - select-percentile
                     - select-kbest
                     - select-fpr
                     - select-fdr
-                    - variance-treshold
+                    - variance-threshold
+                    - pca
+                    - polynomial-features
+                    - rbf-sampler
+                    - fast-ica
+                    - nystroem
                     - none
                     - auto
                     type: string
@@ -599,15 +619,6 @@ spec:
                         - auto
                         type: string
                     type: object
-                  reducer:
-                    description: Dim reducer
-                    enum:
-                    - pca
-                    - kernel-pca
-                    - fast-ica
-                    - none
-                    - auto
-                    type: string
                   text:
                     description: Text specify the column transformation for text columns
                     properties:
