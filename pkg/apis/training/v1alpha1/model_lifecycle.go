@@ -628,6 +628,36 @@ func (model *Model) Aborted() bool {
 
 }
 
+// -------------------- Serving
+
+func (model *Model) MarkServing() {
+	model.Status.Phase = ModelPhaseServing
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelServing,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) Serving() bool {
+	cond := model.GetCond(ModelServing)
+	return cond.Status == v1.ConditionTrue
+}
+
+// -------------------- Maintaince
+
+func (model *Model) MarkMaintain() {
+	model.Status.Phase = ModelPhaseMaintaince
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelMaintaince,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) Maintain() bool {
+	cond := model.GetCond(ModelMaintaince)
+	return cond.Status == v1.ConditionTrue
+}
+
 // ------------------ Ready
 
 func (model *Model) MarkReady() {
