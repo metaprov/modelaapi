@@ -74,13 +74,9 @@ func (study *Study) Default() {
 	if study.Spec.Preprocessing.Text == nil {
 		study.Spec.Preprocessing.Text = &TextPipelineSpec{}
 	}
-	if study.Spec.Preprocessing.Selector == nil {
-		none := catalog.NoneFeatureSelector
-		study.Spec.Preprocessing.Selector = &none
-	}
-	if study.Spec.Preprocessing.Reducer == nil {
-		none := catalog.NoneReducer
-		study.Spec.Preprocessing.Reducer = &none
+	if study.Spec.Preprocessing.FeatureEngineering == nil {
+		none := catalog.NoneFeatureEngineering
+		study.Spec.Preprocessing.FeatureEngineering = &none
 	}
 
 	if study.Spec.Objective == nil {
