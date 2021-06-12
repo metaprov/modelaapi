@@ -75,11 +75,14 @@ type VirtualBucketSpec struct {
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 type VirtualBucketStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
 	// Provider is the name of the notifier provider. The name is derived from the connection
-	Provider string `json:"provider,omitempty" protobuf:"bytes,1,opt,name=provider"`
+	Provider string `json:"provider,omitempty" protobuf:"bytes,2,opt,name=provider"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	//+optional
-	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []VirtualBucketCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

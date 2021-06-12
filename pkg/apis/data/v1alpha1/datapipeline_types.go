@@ -67,10 +67,10 @@ type DataPipelineSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// DatasetSelector is used to select datasets for processing in the pipeline
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,rep,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,3,opt,name=datasetSelector"`
 	// RecipeOrder defines the list of recipes and the order they need to run
 	// +kubebuilder:validation:Optional
-	RecipeOrder []RecipePartSpec `json:"recipeOrder,omitempty" protobuf:"bytes,4,rep,name=recipeOrder"`
+	Recipes []RecipePartSpec `json:"recipes,omitempty" protobuf:"bytes,4,rep,name=recipes"`
 	// The output definition
 	// +kubebuilder:validation:Optional
 	Output DataOutputSpec `json:"output,omitempty" protobuf:"bytes,5,opt,name=output"`
@@ -96,8 +96,14 @@ type DataPipelineSpec struct {
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
 type DataPipelineStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
 	//+optional
-	Conditions []DataPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,1,rep,name=conditions"`
+	Conditions []DataPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }
 
 // DataOutputSpec is the definition of the out file.
@@ -108,22 +114,22 @@ type DataOutputSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,rep,name=datasetName"`
 	// Location of the generated data
 	// +kubebuilder:validation:Optional
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,rep,name=location"`
+	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Format is the format of the output data
 	// +kubebuilder:default:="csv"
 	// +kubebuilder:validation:Optional
-	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,rep,name=format"`
+	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 	//Action define how the new data will be created
 	// +kubebuilder:default:="create"
 	// +kubebuilder:validation:Optional
-	Action *OutputFileAction `json:"action,omitempty" protobuf:"bytes,4,rep,name=action"`
+	Action *OutputFileAction `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
 }
 
 type RecipePartSpec struct {
 	// RecipeName is the name of the recipe to run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,1,rep,name=recipeName"`
+	RecipeName *string `json:"recipeName,omitempty" protobuf:"bytes,1,opt,name=recipeName"`
 	// Dependents is the list of recipe that need to run after this recipe.
 	Dependents []string `json:"Dependents,omitempty" protobuf:"bytes,2,rep,name=Dependents"`
 }

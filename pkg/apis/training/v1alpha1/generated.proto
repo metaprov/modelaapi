@@ -1013,9 +1013,13 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // Condition is the list of the condition of the pipeline.
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineCondition conditions = 2;
+  repeated ModelPipelineCondition conditions = 3;
 }
 
 // model cv results

@@ -540,7 +540,7 @@ message DataPipelineSpec {
 
   // RecipeOrder defines the list of recipes and the order they need to run
   // +kubebuilder:validation:Optional
-  repeated RecipePartSpec recipeOrder = 4;
+  repeated RecipePartSpec recipes = 4;
 
   // The output definition
   // +kubebuilder:validation:Optional
@@ -572,8 +572,16 @@ message DataPipelineSpec {
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
 message DataPipelineStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+
   // +optional
-  repeated DataPipelineCondition conditions = 1;
+  repeated DataPipelineCondition conditions = 3;
 }
 
 // DataProduct represent a single data product in the system
@@ -921,7 +929,7 @@ message DataSourceStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
   // +optional
   repeated DataSourceCondition conditions = 4;
@@ -2317,13 +2325,13 @@ message SampleSpec {
 message Schema {
   // Time series schema. Set time series specific parameters.
   // +kubebuilder:validation:Optional
-  optional TimeSeriesSchema tsSchema = 1;
+  optional TimeSeriesSchema timeSeriesSchema = 1;
 
   // Columns
   repeated Column columns = 2;
 
   // Validation spec define the validation to perform on new datasets
-  optional ValidationSpec validationSpec = 3;
+  optional ValidationSpec validation = 3;
 }
 
 // Signatures contains the sha256 signatures of the datasets

@@ -761,10 +761,10 @@ export class DataPipelineSpec extends jspb.Message {
   getDatasetselectorMap(): jspb.Map<string, string>;
   clearDatasetselectorMap(): DataPipelineSpec;
 
-  getRecipeorderList(): Array<RecipePartSpec>;
-  setRecipeorderList(value: Array<RecipePartSpec>): DataPipelineSpec;
-  clearRecipeorderList(): DataPipelineSpec;
-  addRecipeorder(value?: RecipePartSpec, index?: number): RecipePartSpec;
+  getRecipesList(): Array<RecipePartSpec>;
+  setRecipesList(value: Array<RecipePartSpec>): DataPipelineSpec;
+  clearRecipesList(): DataPipelineSpec;
+  addRecipes(value?: RecipePartSpec, index?: number): RecipePartSpec;
 
   getOutput(): DataOutputSpec | undefined;
   setOutput(value?: DataOutputSpec): DataPipelineSpec;
@@ -803,7 +803,7 @@ export namespace DataPipelineSpec {
     versionname: string,
     description: string,
     datasetselectorMap: Array<[string, string]>,
-    recipeorderList: Array<RecipePartSpec.AsObject>,
+    recipesList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
@@ -814,6 +814,16 @@ export namespace DataPipelineSpec {
 }
 
 export class DataPipelineStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): DataPipelineStatus;
+
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): DataPipelineStatus;
+
   getConditionsList(): Array<DataPipelineCondition>;
   setConditionsList(value: Array<DataPipelineCondition>): DataPipelineStatus;
   clearConditionsList(): DataPipelineStatus;
@@ -829,6 +839,8 @@ export class DataPipelineStatus extends jspb.Message {
 
 export namespace DataPipelineStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataPipelineCondition.AsObject>,
   }
 }
@@ -3812,20 +3824,20 @@ export namespace SampleSpec {
 }
 
 export class Schema extends jspb.Message {
-  getTsschema(): TimeSeriesSchema | undefined;
-  setTsschema(value?: TimeSeriesSchema): Schema;
-  hasTsschema(): boolean;
-  clearTsschema(): Schema;
+  getTimeseriesschema(): TimeSeriesSchema | undefined;
+  setTimeseriesschema(value?: TimeSeriesSchema): Schema;
+  hasTimeseriesschema(): boolean;
+  clearTimeseriesschema(): Schema;
 
   getColumnsList(): Array<Column>;
   setColumnsList(value: Array<Column>): Schema;
   clearColumnsList(): Schema;
   addColumns(value?: Column, index?: number): Column;
 
-  getValidationspec(): ValidationSpec | undefined;
-  setValidationspec(value?: ValidationSpec): Schema;
-  hasValidationspec(): boolean;
-  clearValidationspec(): Schema;
+  getValidation(): ValidationSpec | undefined;
+  setValidation(value?: ValidationSpec): Schema;
+  hasValidation(): boolean;
+  clearValidation(): Schema;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Schema.AsObject;
@@ -3837,9 +3849,9 @@ export class Schema extends jspb.Message {
 
 export namespace Schema {
   export type AsObject = {
-    tsschema?: TimeSeriesSchema.AsObject,
+    timeseriesschema?: TimeSeriesSchema.AsObject,
     columnsList: Array<Column.AsObject>,
-    validationspec?: ValidationSpec.AsObject,
+    validation?: ValidationSpec.AsObject,
   }
 }
 

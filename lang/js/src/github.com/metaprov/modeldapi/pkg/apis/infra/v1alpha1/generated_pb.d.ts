@@ -202,6 +202,11 @@ export namespace AccountSpec {
 }
 
 export class AccountStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AccountStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): AccountStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AccountStatus;
 
@@ -220,6 +225,7 @@ export class AccountStatus extends jspb.Message {
 
 export namespace AccountStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<AccountCondition.AsObject>,
   }
@@ -1227,6 +1233,11 @@ export class ConnectionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ConnectionStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ConnectionStatus;
+
   getConditionsList(): Array<ConnectionCondition>;
   setConditionsList(value: Array<ConnectionCondition>): ConnectionStatus;
   clearConditionsList(): ConnectionStatus;
@@ -1243,6 +1254,7 @@ export class ConnectionStatus extends jspb.Message {
 export namespace ConnectionStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ConnectionCondition.AsObject>,
   }
 }
@@ -1585,6 +1597,11 @@ export class LabStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): LabStatus;
+
   getConditionsList(): Array<LabCondition>;
   setConditionsList(value: Array<LabCondition>): LabStatus;
   clearConditionsList(): LabStatus;
@@ -1601,6 +1618,7 @@ export class LabStatus extends jspb.Message {
 export namespace LabStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<LabCondition.AsObject>,
   }
 }
@@ -2288,6 +2306,11 @@ export class NotifierStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotifierStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotifierStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): NotifierStatus;
+
   getConditionsList(): Array<NotifierCondition>;
   setConditionsList(value: Array<NotifierCondition>): NotifierStatus;
   clearConditionsList(): NotifierStatus;
@@ -2305,6 +2328,7 @@ export namespace NotifierStatus {
   export type AsObject = {
     provider: string,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
 }
@@ -2713,6 +2737,11 @@ export class ServingSiteStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ServingSiteStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ServingSiteStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ServingSiteStatus;
+
   getConditionsList(): Array<ServingSiteCondition>;
   setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
@@ -2749,6 +2778,7 @@ export class ServingSiteStatus extends jspb.Message {
 export namespace ServingSiteStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ServingSiteCondition.AsObject>,
     activepredictors: number,
     inactivepredictors: number,
@@ -3320,6 +3350,11 @@ export namespace VirtualBucketSpec {
 }
 
 export class VirtualBucketStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualBucketStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): VirtualBucketStatus;
+
   getProvider(): string;
   setProvider(value: string): VirtualBucketStatus;
 
@@ -3341,6 +3376,7 @@ export class VirtualBucketStatus extends jspb.Message {
 
 export namespace VirtualBucketStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     provider: string,
     observedgeneration: number,
     conditionsList: Array<VirtualBucketCondition.AsObject>,

@@ -93,7 +93,7 @@ type NotebookSpec struct {
 	// +kubebuilder:validation:Optional
 	Vars []string `json:"vars,omitempty" protobuf:"bytes,7,rep,name=vars"`
 	// Location is the location of the notebook file
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,rep,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,8,opt,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional

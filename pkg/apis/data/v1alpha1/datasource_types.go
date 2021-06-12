@@ -321,11 +321,11 @@ type ValidationSpec struct {
 type Schema struct {
 	// Time series schema. Set time series specific parameters.
 	// +kubebuilder:validation:Optional
-	TimeSeriesSchema *TimeSeriesSchema `json:"tsSchema,omitempty" protobuf:"bytes,1,rep,name=tsSchema"`
+	TimeSeriesSchema *TimeSeriesSchema `json:"timeSeriesSchema,omitempty" protobuf:"bytes,1,opt,name=timeSeriesSchema"`
 	// Columns
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
 	// Validation spec define the validation to perform on new datasets
-	Validation *ValidationSpec `json:"validationSpec,omitempty" protobuf:"bytes,3,rep,name=validationSpec"`
+	Validation *ValidationSpec `json:"validation,omitempty" protobuf:"bytes,3,opt,name=validation"`
 }
 
 type TimeSeriesSchema struct {
@@ -525,21 +525,21 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
-	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,rep,name=schema"`
+	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
 	// The data source type.
 	Type *DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,rep,name=file"`
+	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,opt,name=file"`
 	// Table access specification if the data source is a table
 	// +kubebuilder:validation:Optional
-	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,7,rep,name=table"`
+	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,7,opt,name=table"`
 	// Stream define the specification of the stream
 	// +kubebuilder:validation:Optional
-	Stream *StreamSpec `json:"stream,omitempty" protobuf:"bytes,8,rep,name=stream"`
+	Stream *StreamSpec `json:"stream,omitempty" protobuf:"bytes,8,opt,name=stream"`
 	// Api define the specification of the api
 	// +kubebuilder:validation:Optional
-	Api *ApiSpec `json:"api,omitempty" protobuf:"bytes,9,rep,name=api"`
+	Api *ApiSpec `json:"api,omitempty" protobuf:"bytes,9,opt,name=api"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -563,7 +563,7 @@ type DataSourceStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	//+optional
 	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

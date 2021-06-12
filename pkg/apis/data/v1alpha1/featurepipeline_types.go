@@ -69,7 +69,7 @@ type FeaturePipelineSpec struct {
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// DatasetSelector is used to select datasets to process the features from.
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,2,rep,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,2,opt,name=datasetSelector"`
 	// Version name is the the product version for the feature.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

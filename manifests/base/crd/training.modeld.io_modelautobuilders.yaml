@@ -512,7 +512,7 @@ spec:
                           - name
                           type: object
                         type: array
-                      tsSchema:
+                      timeSeriesSchema:
                         description: Time series schema. Set time series specific
                           parameters.
                         properties:
@@ -551,7 +551,7 @@ spec:
                             - year
                             type: string
                         type: object
-                      validationSpec:
+                      validation:
                         description: Validation spec define the validation to perform
                           on new datasets
                         properties:

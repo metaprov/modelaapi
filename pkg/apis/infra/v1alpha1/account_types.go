@@ -137,10 +137,15 @@ type AccountSpec struct {
 
 // AccountStatus defines the actual state of the api object
 type AccountStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+
 	// Represents the latest available observations of a account state.
 	//+optional
-	Conditions []AccountCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []AccountCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

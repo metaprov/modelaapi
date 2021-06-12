@@ -38,7 +38,7 @@ type PublicDatasetSpec struct {
 	// The open ml id of the dataset
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""
-	OpenMLID *string `json:"openmlID,omitempty" protobuf:"bytes,4,rep,name=openmlID"`
+	OpenMLID *string `json:"openmlID,omitempty" protobuf:"bytes,4,opt,name=openmlID"`
 	// The URL to the actual data file or folder
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""

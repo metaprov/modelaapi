@@ -9761,7 +9761,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datasetselectorMap: (f = msg.getDatasetselectorMap()) ? f.toObject(includeInstance, undefined) : [],
-    recipeorderList: jspb.Message.toObjectList(msg.getRecipeorderList(),
+    recipesList: jspb.Message.toObjectList(msg.getRecipesList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec.toObject, includeInstance),
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
@@ -9822,7 +9822,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
     case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec.deserializeBinaryFromReader);
-      msg.addRecipeorder(value);
+      msg.addRecipes(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec;
@@ -9898,7 +9898,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getRecipeorderList();
+  f = message.getRecipesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -10049,10 +10049,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
 
 
 /**
- * repeated RecipePartSpec recipeOrder = 4;
+ * repeated RecipePartSpec recipes = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getRecipeorderList = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getRecipesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec, 4));
 };
@@ -10062,7 +10062,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec>} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setRecipeorderList = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setRecipesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -10072,7 +10072,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.addRecipeorder = function(opt_value, opt_index) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.addRecipes = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipePartSpec, opt_index);
 };
 
@@ -10081,8 +10081,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearRecipeorderList = function() {
-  return this.setRecipeorderList([]);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearRecipesList = function() {
+  return this.setRecipesList([]);
 };
 
 
@@ -10311,7 +10311,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.repeatedFields_ = [3];
 
 
 
@@ -10344,6 +10344,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition.toObject, includeInstance)
   };
@@ -10383,6 +10385,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.de
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastrun(value);
+      break;
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -10416,10 +10428,26 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastrun();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition.serializeBinaryToWriter
     );
@@ -10428,12 +10456,86 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.se
 
 
 /**
- * repeated DataPipelineCondition conditions = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.getLastrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.setLastrun = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.clearLastrun = function() {
+  return this.setLastrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.hasLastrun = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated DataPipelineCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition, 3));
 };
 
 
@@ -10442,7 +10544,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -10452,7 +10554,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineCondition, opt_index);
 };
 
 
@@ -15479,7 +15581,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.dese
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 11:
+    case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
@@ -15535,7 +15637,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.seri
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      11,
+      3,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -15624,12 +15726,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 11));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
 
 
@@ -15638,7 +15740,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -15656,7 +15758,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -37770,10 +37872,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.toOb
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tsschema: (f = msg.getTsschema()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toObject(includeInstance, f),
+    timeseriesschema: (f = msg.getTimeseriesschema()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.toObject(includeInstance, f),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.toObject, includeInstance),
-    validationspec: (f = msg.getValidationspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.toObject(includeInstance, f)
+    validation: (f = msg.getValidation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -37813,7 +37915,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.deserializeBin
     case 1:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema.deserializeBinaryFromReader);
-      msg.setTsschema(value);
+      msg.setTimeseriesschema(value);
       break;
     case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column;
@@ -37823,7 +37925,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.deserializeBin
     case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec.deserializeBinaryFromReader);
-      msg.setValidationspec(value);
+      msg.setValidation(value);
       break;
     default:
       reader.skipField();
@@ -37854,7 +37956,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.seri
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTsschema();
+  f = message.getTimeseriesschema();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -37870,7 +37972,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.serializeBinar
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.serializeBinaryToWriter
     );
   }
-  f = message.getValidationspec();
+  f = message.getValidation();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -37882,10 +37984,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.serializeBinar
 
 
 /**
- * optional TimeSeriesSchema tsSchema = 1;
+ * optional TimeSeriesSchema timeSeriesSchema = 1;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getTsschema = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getTimeseriesschema = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema, 1));
 };
@@ -37895,7 +37997,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getT
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TimeSeriesSchema|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setTsschema = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setTimeseriesschema = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -37904,8 +38006,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setT
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clearTsschema = function() {
-  return this.setTsschema(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clearTimeseriesschema = function() {
+  return this.setTimeseriesschema(undefined);
 };
 
 
@@ -37913,7 +38015,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.hasTsschema = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.hasTimeseriesschema = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -37957,10 +38059,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clea
 
 
 /**
- * optional ValidationSpec validationSpec = 3;
+ * optional ValidationSpec validation = 3;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getValidationspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getValidation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec, 3));
 };
@@ -37970,7 +38072,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.getV
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ValidationSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setValidationspec = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setValidation = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -37979,8 +38081,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.setV
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clearValidationspec = function() {
-  return this.setValidationspec(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clearValidation = function() {
+  return this.setValidation(undefined);
 };
 
 
@@ -37988,7 +38090,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.hasValidationspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.prototype.hasValidation = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

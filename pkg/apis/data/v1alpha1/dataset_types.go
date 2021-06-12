@@ -184,7 +184,7 @@ type DatasetStatus struct {
 	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`
 	// Last time a study was done on the dataset.
 	//+kubebuilder:validation:Optional
-	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,rep,name=lastStudyTime"`
+	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

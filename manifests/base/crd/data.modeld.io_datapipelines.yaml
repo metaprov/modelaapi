@@ -125,7 +125,7 @@ spec:
                 description: Owner of this data pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              recipeOrder:
+              recipes:
                 description: RecipeOrder defines the list of recipes and the order
                   they need to run
                 items:
@@ -236,6 +236,14 @@ spec:
                   - type
                   type: object
                 type: array
+              lastRun:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
             type: object
         required:
         - metadata

@@ -538,7 +538,7 @@ type TrainingSpec struct {
 	// Retry attempt is the number of training retry for this model,
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	Retry *int32 `json:"retry,omitempty" protobuf:"varint,7,rep,name=retry"`
+	Retry *int32 `json:"retry,omitempty" protobuf:"varint,7,opt,name=retry"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
 	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`

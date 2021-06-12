@@ -1554,6 +1554,11 @@ export class ModelPipelineStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelPipelineStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelPipelineStatus;
+
   getConditionsList(): Array<ModelPipelineCondition>;
   setConditionsList(value: Array<ModelPipelineCondition>): ModelPipelineStatus;
   clearConditionsList(): ModelPipelineStatus;
@@ -1570,6 +1575,7 @@ export class ModelPipelineStatus extends jspb.Message {
 export namespace ModelPipelineStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelPipelineCondition.AsObject>,
   }
 }
