@@ -369,6 +369,11 @@ spec:
                     description: The name of the time column
                     type: string
                 type: object
+              id:
+                description: ID is the generate id of the model. It is assigned to
+                  every model within the data product
+                format: int64
+                type: integer
               location:
                 description: Location is the location of the model artifacts (metadata,
                   reports and estimators).
@@ -383,7 +388,7 @@ spec:
                 - path
                 type: object
               modelVersion:
-                description: ModelVersion is a semver version of a model
+                description: ModelVersion composed of studyid-modelid.
                 type: string
               objective:
                 description: 'Objective is the metric by which the system compare
@@ -1017,6 +1022,7 @@ spec:
                 type: string
             required:
             - datasetName
+            - id
             - modelVersion
             - objective
             - studyName

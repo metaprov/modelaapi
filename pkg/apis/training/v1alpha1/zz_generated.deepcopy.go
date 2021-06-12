@@ -1541,6 +1541,11 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ID != nil {
+		in, out := &in.ID, &out.ID
+		*out = new(int64)
+		**out = **in
+	}
 	if in.ModelVersion != nil {
 		in, out := &in.ModelVersion, &out.ModelVersion
 		*out = new(string)
@@ -2621,9 +2626,9 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ModelVersion != nil {
-		in, out := &in.ModelVersion, &out.ModelVersion
-		*out = new(string)
+	if in.ID != nil {
+		in, out := &in.ID, &out.ID
+		*out = new(int64)
 		**out = **in
 	}
 	if in.Description != nil {
@@ -2773,6 +2778,11 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 	out.TrainDatasetLocation = in.TrainDatasetLocation
 	out.TestDatasetLocation = in.TestDatasetLocation
 	out.ValidationDataset = in.ValidationDataset
+	if in.LastModelID != nil {
+		in, out := &in.LastModelID, &out.LastModelID
+		*out = new(int64)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

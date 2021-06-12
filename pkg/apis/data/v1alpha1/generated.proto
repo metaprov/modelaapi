@@ -561,10 +561,6 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
 
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 9;
-
   // This is the default compiler spec
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
@@ -572,16 +568,20 @@ message DataPipelineSpec {
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
 message DataPipelineStatus {
-  // Last time the object was updated
+  // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
   // +optional
-  repeated DataPipelineCondition conditions = 3;
+  repeated DataPipelineCondition conditions = 4;
 }
 
 // DataProduct represent a single data product in the system
@@ -727,9 +727,12 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
+  // The last study id generated for this product.
+  optional int64 lastStudyID = 4;
+
   // The conditions of the product.
   // +optional
-  repeated DataProductCondition conditions = 4;
+  repeated DataProductCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2268,13 +2271,17 @@ message RecipeSpec {
 
 // RecipeStatus defines the observed state of Recipe
 message RecipeStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // Represents the latest available observations of a dataset state.
   // +optional
-  repeated RecipeCondition conditions = 2;
+  repeated RecipeCondition conditions = 3;
 }
 
 // RecipeStep defines one step in the recipe

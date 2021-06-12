@@ -284,12 +284,10 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// ModelVersion is the semver version of the resulting model.
+	// ID is the id of the study within the data product
 	// Note that multiplie models can have the same version
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ModelVersion *string `json:"modelVersion" protobuf:"bytes,2,opt,name=modelVersion"`
+	ID *int64 `json:"id" protobuf:"bytes,2,opt,name=id"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
@@ -455,9 +453,11 @@ type StudyStatus struct {
 	// ValidationDatasetLocation is the location of the dataset used for validation
 	// +kubebuilder:validation:Optional
 	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,28,opt,name=validationDataset"`
+	// the last model id generated for this study
+	LastModelID *int64 `json:"lastModelID,omitempty" protobuf:"varint,29,opt,name=lastModelID"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
-	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,29,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,30,rep,name=conditions"`
 }
 
 // model cv results

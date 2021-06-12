@@ -86,9 +86,6 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
-	//ObservedGeneration is the Last generation that was acted on
-	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,9,opt,name=observedGeneration"`
 	// This is the default compiler spec
 	//+kubebuilder:validation:Optional
 	DefaultCompilerSpec *catalog.CompilerSpec `json:"defaultCompilerSpec,omitempty" protobuf:"bytes,10,opt,name=defaultCompilerSpec"`
@@ -96,14 +93,17 @@ type DataPipelineSpec struct {
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
 type DataPipelineStatus struct {
+	//ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,2,opt,name=lastRun"`
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
 	//+optional
-	Conditions []DataPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []DataPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // DataOutputSpec is the definition of the out file.

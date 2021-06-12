@@ -174,9 +174,11 @@ type DataProductStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	// The last study id generated for this product.
+	LastStudyID *int64 `json:"lastStudyID,omitempty" protobuf:"bytes,4,opt,name=lastStudyID"`
 	// The conditions of the product.
 	//+optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

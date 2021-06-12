@@ -1139,127 +1139,131 @@ message ModelSpec {
   // +kubebuilder:validation:MaxLength=63
   optional string versionName = 2;
 
-  // ModelVersion is a semver version of a model
+  // ID is the generate id of the model. It is assigned to every model within the data product
   // +kubebuilder:validation:Required
-  optional string modelVersion = 3;
+  optional int64 id = 3;
+
+  // ModelVersion composed of studyid-modelid.
+  // +kubebuilder:validation:Required
+  optional string modelVersion = 4;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
-  optional string studyName = 4;
+  optional string studyName = 5;
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
-  optional string datasetName = 5;
+  optional string datasetName = 6;
 
   // Task is the machine learning task (regression, classification).
   // The task is generated from the study task
   // +kubebuilder:validation:Required
-  optional string task = 6;
+  optional string task = 7;
 
   // Objective is the metric by which the system compare models
   // Default: based on the task. classification is logloss. Regression is rmse
   // +kubebuilder:validation:Required
-  optional string objective = 7;
+  optional string objective = 8;
 
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
   // Default: All preprocessing will be created automatically
   // +kubebuilder:validation:Optional
-  optional PreprocessingSpec preprocessing = 8;
+  optional PreprocessingSpec preprocessing = 9;
 
   // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +kubebuilder:validation:Optional
-  optional ClassicalEstimatorSpec estimator = 9;
+  optional ClassicalEstimatorSpec estimator = 10;
 
   // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +kubebuilder:validation:Optional
-  optional DeepEstimatorSpec dnn = 10;
+  optional DeepEstimatorSpec dnn = 11;
 
   // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +kubebuilder:validation:Optional
-  optional ChatbotEstimatorSpec chatbot = 11;
+  optional ChatbotEstimatorSpec chatbot = 12;
 
   // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +kubebuilder:validation:Optional
-  optional TransformerEstimatorSpec transformer = 12;
+  optional TransformerEstimatorSpec transformer = 13;
 
   // If this is an ensemble model, specify the ensemble
   // Default: None
   // +kubebuilder:validation:Optional
-  optional EnsembleSpec ensemble = 13;
+  optional EnsembleSpec ensemble = 14;
 
   // TrainingSpec is the desired training settings
   // +kubebuilder:validation:Optional
-  optional TrainingSpec training = 14;
+  optional TrainingSpec training = 15;
 
   // Tested indicate if this model should be testedActual. Default is false.
   // The study controller will set this to true if a model is the best model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool tested = 15;
+  optional bool tested = 16;
 
   // Aborted indicate the desire to abort the model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 16;
+  optional bool aborted = 17;
 
   // Published is set when we want to wrap the model in a docker container
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool published = 17;
+  optional bool published = 18;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pushed = 18;
+  optional bool pushed = 19;
 
   // Reported is set when a report should be created for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reported = 19;
+  optional bool reported = 20;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 20;
+  optional bool paused = 21;
 
   // Profiled is set when we want to create model profile.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool profiled = 21;
+  optional bool profiled = 22;
 
   // Archived is true when the model should be archived
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool archived = 22;
+  optional bool archived = 23;
 
   // Forecasted is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecasted = 23;
+  optional bool forecasted = 24;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 24;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 25;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 25;
+  optional ForecastingSpec forecastingSpec = 26;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 26;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 27;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 27;
+  optional int64 activeDeadlineSeconds = 28;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 28;
+  optional string estimatorType = 29;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -1982,12 +1986,10 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // ModelVersion is the semver version of the resulting model.
+  // ID is the id of the study within the data product
   // Note that multiplie models can have the same version
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string modelVersion = 2;
+  optional int64 id = 2;
 
   // Description is user provided description
   // +kubebuilder:default:=""
@@ -2201,9 +2203,12 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 28;
 
+  // the last model id generated for this study
+  optional int64 lastModelID = 29;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
-  repeated StudyCondition conditions = 29;
+  repeated StudyCondition conditions = 30;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

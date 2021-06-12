@@ -1699,6 +1699,9 @@ export class ModelSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): ModelSpec;
 
+  getId(): number;
+  setId(value: number): ModelSpec;
+
   getModelversion(): string;
   setModelversion(value: string): ModelSpec;
 
@@ -1809,6 +1812,7 @@ export namespace ModelSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
+    id: number,
     modelversion: string,
     studyname: string,
     datasetname: string,
@@ -3000,8 +3004,8 @@ export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
 
-  getModelversion(): string;
-  setModelversion(value: string): StudySpec;
+  getId(): number;
+  setId(value: number): StudySpec;
 
   getDescription(): string;
   setDescription(value: string): StudySpec;
@@ -3093,7 +3097,7 @@ export class StudySpec extends jspb.Message {
 export namespace StudySpec {
   export type AsObject = {
     versionname: string,
-    modelversion: string,
+    id: number,
     description: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,
@@ -3218,6 +3222,9 @@ export class StudyStatus extends jspb.Message {
   hasValidationdataset(): boolean;
   clearValidationdataset(): StudyStatus;
 
+  getLastmodelid(): number;
+  setLastmodelid(value: number): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3260,6 +3267,7 @@ export namespace StudyStatus {
     traindataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    lastmodelid: number,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

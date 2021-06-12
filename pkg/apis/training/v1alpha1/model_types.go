@@ -204,103 +204,106 @@ type ModelSpec struct {
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
 	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
-	// ModelVersion is a semver version of a model
+	// ID is the generate id of the model. It is assigned to every model within the data product
 	// +kubebuilder:validation:Required
-	ModelVersion *string `json:"modelVersion" protobuf:"bytes,3,opt,name=modelVersion"`
+	ID *int64 `json:"id" protobuf:"varint,3,opt,name=id"`
+	// ModelVersion composed of studyid-modelid.
+	// +kubebuilder:validation:Required
+	ModelVersion *string `json:"modelVersion" protobuf:"bytes,4,opt,name=modelVersion"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	StudyName *string `json:"studyName" protobuf:"bytes,4,opt,name=studyName"`
+	StudyName *string `json:"studyName" protobuf:"bytes,5,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	DatasetName *string `json:"datasetName" protobuf:"bytes,5,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName" protobuf:"bytes,6,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
 	// +kubebuilder:validation:Required
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,6,opt,name=task"`
+	Task *catalog.MLTask `json:"task" protobuf:"bytes,7,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
 	// +kubebuilder:validation:Required
-	Objective *catalog.Metric `json:"objective" protobuf:"bytes,7,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective" protobuf:"bytes,8,opt,name=objective"`
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
-	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,8,opt,name=preprocessing"`
+	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,9,opt,name=preprocessing"`
 	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +kubebuilder:validation:Optional
-	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,9,opt,name=estimator"`
+	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
-	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,10,opt,name=dnn"`
+	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,11,opt,name=dnn"`
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
-	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,11,opt,name=chatbot"`
+	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,12,opt,name=chatbot"`
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
-	Transformer *TransformerEstimatorSpec `json:"transformer,omitempty" protobuf:"bytes,12,opt,name=transformer"`
+	Transformer *TransformerEstimatorSpec `json:"transformer,omitempty" protobuf:"bytes,13,opt,name=transformer"`
 
 	// If this is an ensemble model, specify the ensemble
 	// Default: None
 	// +kubebuilder:validation:Optional
-	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,13,opt,name=ensemble"`
+	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,14,opt,name=ensemble"`
 	// TrainingSpec is the desired training settings
 	// +kubebuilder:validation:Optional
-	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,14,opt,name=training"`
+	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,15,opt,name=training"`
 	// Tested indicate if this model should be testedActual. Default is false.
 	// The study controller will set this to true if a model is the best model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Tested *bool `json:"tested,omitempty" protobuf:"bytes,15,opt,name=tested"`
+	Tested *bool `json:"tested,omitempty" protobuf:"bytes,16,opt,name=tested"`
 	// Aborted indicate the desire to abort the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,17,opt,name=aborted"`
 	// Published is set when we want to wrap the model in a docker container
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Published *bool `json:"published,omitempty" protobuf:"bytes,17,opt,name=published"`
+	Published *bool `json:"published,omitempty" protobuf:"bytes,18,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,18,opt,name=pushed"`
+	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,19,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"bytes,19,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"bytes,20,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,20,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,21,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,21,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,22,opt,name=profiled"`
 	// Archived is true when the model should be archived
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Archived *bool `json:"archived,omitempty" protobuf:"bytes,22,opt,name=archived"`
+	Archived *bool `json:"archived,omitempty" protobuf:"bytes,23,opt,name=archived"`
 	// Forecasted is true when the model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,23,opt,name=forecasted"`
+	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,24,opt,name=forecasted"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,24,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,25,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,25,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,26,opt,name=forecastingSpec"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,27,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,27,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,28,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,28,opt,name=estimatorType"`
+	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {

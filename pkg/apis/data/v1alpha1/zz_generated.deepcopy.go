@@ -900,6 +900,11 @@ func (in *DataProductStatus) DeepCopyInto(out *DataProductStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.LastStudyID != nil {
+		in, out := &in.LastStudyID, &out.LastStudyID
+		*out = new(int64)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DataProductCondition, len(*in))

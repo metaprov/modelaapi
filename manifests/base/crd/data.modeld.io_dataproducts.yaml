@@ -346,6 +346,10 @@ spec:
                   version with final models.
                 format: int32
                 type: integer
+              lastStudyID:
+                description: The last study id generated for this product.
+                format: int64
+                type: integer
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

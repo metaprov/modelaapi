@@ -215,6 +215,11 @@ spec:
                     description: Optional notifier to use when the forecast is complete.
                     type: string
                 type: object
+              id:
+                description: ID is the id of the study within the data product Note
+                  that multiplie models can have the same version
+                format: int64
+                type: integer
               labRef:
                 description: LabRef is a reference to the lab where the trainers for
                   this study run. If no value is provided, the lab is taken from the
@@ -275,12 +280,6 @@ spec:
                 description: Set to true if you want the system to create a docker
                   model image, at the end of training.
                 type: boolean
-              modelVersion:
-                default: ""
-                description: ModelVersion is the semver version of the resulting model.
-                  Note that multiplie models can have the same version
-                maxLength: 63
-                type: string
               objective:
                 description: Objective is the objective defined how the study controller
                   will compare model performance.
@@ -1210,6 +1209,10 @@ spec:
               freeTrainers:
                 description: Free trainers
                 format: int32
+                type: integer
+              lastModelID:
+                description: the last model id generated for this study
+                format: int64
                 type: integer
               models:
                 description: Total models created for the study
