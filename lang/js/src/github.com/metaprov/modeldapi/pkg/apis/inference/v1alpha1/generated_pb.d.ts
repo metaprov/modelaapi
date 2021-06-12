@@ -421,36 +421,6 @@ export namespace CurtainTemplateSpec {
   }
 }
 
-export class DriftCheckSpec extends jspb.Message {
-  getCronexpr(): string;
-  setCronexpr(value: string): DriftCheckSpec;
-
-  getTreshold(): number;
-  setTreshold(value: number): DriftCheckSpec;
-
-  getNotifiername(): string;
-  setNotifiername(value: string): DriftCheckSpec;
-
-  getTestdataset(): string;
-  setTestdataset(value: string): DriftCheckSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DriftCheckSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DriftCheckSpec): DriftCheckSpec.AsObject;
-  static serializeBinaryToWriter(message: DriftCheckSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DriftCheckSpec;
-  static deserializeBinaryFromReader(message: DriftCheckSpec, reader: jspb.BinaryReader): DriftCheckSpec;
-}
-
-export namespace DriftCheckSpec {
-  export type AsObject = {
-    cronexpr: string,
-    treshold: number,
-    notifiername: string,
-    testdataset: string,
-  }
-}
-
 export class MonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): MonitorSpec;
@@ -978,6 +948,9 @@ export namespace PredictorList {
 }
 
 export class PredictorSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): PredictorSpec;
+
   getDescription(): string;
   setDescription(value: string): PredictorSpec;
 
@@ -1000,11 +973,6 @@ export class PredictorSpec extends jspb.Message {
   setModelsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
   clearModelsList(): PredictorSpec;
   addModels(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
-
-  getDriftcheck(): DriftCheckSpec | undefined;
-  setDriftcheck(value?: DriftCheckSpec): PredictorSpec;
-  hasDriftcheck(): boolean;
-  clearDriftcheck(): PredictorSpec;
 
   getProgressive(): ProgressiveSpec | undefined;
   setProgressive(value?: ProgressiveSpec): PredictorSpec;
@@ -1073,12 +1041,12 @@ export class PredictorSpec extends jspb.Message {
 
 export namespace PredictorSpec {
   export type AsObject = {
+    versionname: string,
     description: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
     modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
-    driftcheck?: DriftCheckSpec.AsObject,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,
     input?: PredictionChannels.AsObject,

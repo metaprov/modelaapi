@@ -229,23 +229,6 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
-// Specification for drift detection
-message DriftCheckSpec {
-  // The crdn schedule to run the drift detection
-  optional string cronExpr = 1;
-
-  // The drift threshold.
-  // +kubebuilder:validation:Optional
-  optional double treshold = 2;
-
-  // The notifier to invoke in case of
-  // +kubebuilder:default:=""
-  optional string notifierName = 3;
-
-  // Tested dataset
-  optional string testDataset = 4;
-}
-
 // Specify the model monitor.
 message MonitorSpec {
   // If true monitoring is enabled.
@@ -528,102 +511,103 @@ message PredictorList {
 
 // PredictorSpec define the desired state of the predictor
 message PredictorSpec {
+  // VersionName is the data product version of the data pipeline
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
   // User provided description
   // +kubebuilder:validation:MaxLength=256
   // +kubebuilder:default:=""
-  optional string description = 1;
+  optional string description = 2;
 
   // The product that this predictor serve.
-  optional k8s.io.api.core.v1.ObjectReference productRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference productRef = 3;
 
   // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 3;
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 4;
 
   // A template for the predictor pod. The system will create the deployment based on this template.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.PodTemplate template = 4;
+  optional k8s.io.api.core.v1.PodTemplate template = 5;
 
   // Models is the list of models
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 5;
-
-  // How much do we increment the warm up traffic
-  // +kubebuilder:validation:Optional
-  optional DriftCheckSpec driftCheck = 12;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec models = 6;
 
   // Denotes the progressive spec
   // What metric to use when comparing the candidate to the current
   // +kubebuilder:validation:Optional
-  optional ProgressiveSpec progressive = 13;
+  optional ProgressiveSpec progressive = 7;
 
   // The key in the bucket for storing all the predictor artifacts.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
-  optional string artifactsFolder = 14;
+  optional string artifactsFolder = 8;
 
   // set of input channel, the predictor will watch those channels for predictions
   // +kubebuilder:validation:Optional
-  optional PredictionChannels input = 15;
+  optional PredictionChannels input = 9;
 
   // set of output channels, the predictor will output the result on any channel that is active in the output
   // +kubebuilder:validation:Optional
-  optional PredictionChannels output = 16;
+  optional PredictionChannels output = 10;
 
   // Min num of replicates
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:default:=1
-  optional int32 minReplicas = 17;
+  optional int32 minReplicas = 11;
 
   // Does the current model pods needs autoscaling. If yes we will use HPA.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool autoscale = 18;
+  optional bool autoscale = 12;
 
   // Max num of replicates. Used during auto scaling
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:default:=1
-  optional int32 maxReplicas = 19;
+  optional int32 maxReplicas = 13;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 20;
+  optional string owner = 14;
 
   // A reference to the workload class for this predictor deployment
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 21;
+  optional string workloadClassName = 15;
 
   // Cache is the specification of prediction cache
   // +kubebuilder:validation:Optional
-  optional PredictionCacheSpec cache = 22;
+  optional PredictionCacheSpec cache = 16;
 
   // Store is the specification of the online data store.
   // +kubebuilder:validation:Optional
-  optional OnlineFeaturestoreSpec store = 23;
+  optional OnlineFeaturestoreSpec store = 17;
 
   // The forward curtain recieve the prediction request before the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string forewardCurtain = 24;
+  optional string forewardCurtain = 18;
 
   // The backward curtain recieve the curtain after the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string backwardCurtain = 25;
+  optional string backwardCurtain = 19;
 
   // Type is the type of predictor
   // +kubebuilder:default:="online"
   // +kubebuilder:validation:Optional
-  optional string type = 26;
+  optional string type = 20;
 
   // Monitor spec specify the monitor for this predictor.
-  optional MonitorSpec monitor = 27;
+  optional MonitorSpec monitor = 21;
 }
 
 // PredictorStatus contain the current state of the Predictor resource

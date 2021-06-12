@@ -69,20 +69,6 @@ type PredictorList struct {
 	Items           []Predictor `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// Specification for drift detection
-type DriftCheckSpec struct {
-	// The crdn schedule to run the drift detection
-	CronExpression string `json:"cronExpr,omitempty" protobuf:"bytes,1,opt,name=cronExpr"`
-	// The drift threshold.
-	// +kubebuilder:validation:Optional
-	Threshold *float64 `json:"threshold,omitempty" protobuf:"bytes,2,opt,name=treshold"`
-	// The notifier to invoke in case of
-	// +kubebuilder:default:=""
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
-	// Tested dataset
-	TestDatasetName string `json:"testDataset,omitempty" protobuf:"bytes,4,opt,name=testDataset"`
-}
-
 type ProgressiveSpec struct {
 	// How long in seconds does the warm up period started
 	// This is used only during progressive deployment
@@ -103,82 +89,83 @@ type ProgressiveSpec struct {
 
 // PredictorSpec define the desired state of the predictor
 type PredictorSpec struct {
+	// VersionName is the data product version of the data pipeline
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// User provided description
 	// +kubebuilder:validation:MaxLength=256
 	// +kubebuilder:default:=""
-	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The product that this predictor serve.
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,2,opt,name=productRef"`
+	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,3,opt,name=productRef"`
 	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,3,opt,name=servingsiteRef"`
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,4,opt,name=servingsiteRef"`
 	// A template for the predictor pod. The system will create the deployment based on this template.
 	// +kubebuilder:validation:Optional
-	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	Template *v1.PodTemplate `json:"template,omitempty" protobuf:"bytes,5,opt,name=template"`
 	// Models is the list of models
 	// +kubebuilder:validation:Optional
-	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,5,rep,name=models"`
-	// How much do we increment the warm up traffic
-	// +kubebuilder:validation:Optional
-	DriftCheck *DriftCheckSpec `json:"driftCheck,omitempty" protobuf:"bytes,12,opt,name=driftCheck"`
+	Models []catalog.ModelDeploymentSpec `json:"models,omitempty" protobuf:"bytes,6,rep,name=models"`
 	// Denotes the progressive spec
 	// What metric to use when comparing the candidate to the current
 	// +kubebuilder:validation:Optional
-	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,13,opt,name=progressive"`
+	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,7,opt,name=progressive"`
 	// The key in the bucket for storing all the predictor artifacts.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
-	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,14,opt,name=artifactsFolder"`
+	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,8,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions
 	// +kubebuilder:validation:Optional
-	Input PredictionChannels `json:"input,omitempty" protobuf:"bytes,15,opt,name=input"`
+	Input PredictionChannels `json:"input,omitempty" protobuf:"bytes,9,opt,name=input"`
 	// set of output channels, the predictor will output the result on any channel that is active in the output
 	// +kubebuilder:validation:Optional
-	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,16,opt,name=output"`
+	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,10,opt,name=output"`
 	// Min num of replicates
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
-	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,17,opt,name=minReplicas"`
+	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,11,opt,name=minReplicas"`
 	// Does the current model pods needs autoscaling. If yes we will use HPA.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,18,opt,name=autoscale"`
+	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,12,opt,name=autoscale"`
 	// Max num of replicates. Used during auto scaling
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:default:=1
-	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,19,opt,name=maxReplicas"`
+	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,13,opt,name=maxReplicas"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,20,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
 	// A reference to the workload class for this predictor deployment
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,21,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,15,opt,name=workloadClassName"`
 	// Cache is the specification of prediction cache
 	// +kubebuilder:validation:Optional
-	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,22,opt,name=cache"`
+	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,16,opt,name=cache"`
 	// Store is the specification of the online data store.
 	// +kubebuilder:validation:Optional
-	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,23,opt,name=store"`
+	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,17,opt,name=store"`
 	// The forward curtain recieve the prediction request before the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,24,opt,name=forewardCurtain"`
+	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,18,opt,name=forewardCurtain"`
 	// The backward curtain recieve the curtain after the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,25,opt,name=backwardCurtain"`
+	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,19,opt,name=backwardCurtain"`
 	// Type is the type of predictor
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
-	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,26,opt,name=type"`
+	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,20,opt,name=type"`
 	// Monitor spec specify the monitor for this predictor.
-	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,27,opt,name=monitor"`
+	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,21,opt,name=monitor"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.

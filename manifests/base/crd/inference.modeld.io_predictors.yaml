@@ -92,23 +92,6 @@ spec:
                 description: User provided description
                 maxLength: 256
                 type: string
-              driftCheck:
-                description: How much do we increment the warm up traffic
-                properties:
-                  cronExpr:
-                    description: The crdn schedule to run the drift detection
-                    type: string
-                  notifierName:
-                    default: ""
-                    description: The notifier to invoke in case of
-                    type: string
-                  testDataset:
-                    description: Tested dataset
-                    type: string
-                  threshold:
-                    description: The drift threshold.
-                    type: number
-                type: object
               forwardCurtain:
                 default: ""
                 description: The forward curtain recieve the prediction request before
@@ -7200,6 +7183,10 @@ spec:
                 - online
                 - batch
                 - streaming
+                type: string
+              versionName:
+                default: ""
+                description: VersionName is the data product version of the data pipeline
                 type: string
               workloadClassName:
                 default: ""
