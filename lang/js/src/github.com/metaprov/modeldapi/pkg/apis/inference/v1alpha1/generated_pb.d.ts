@@ -212,6 +212,11 @@ export namespace CronPredictionSpec {
 }
 
 export class CronPredictionStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): CronPredictionStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): CronPredictionStatus;
 
@@ -230,6 +235,7 @@ export class CronPredictionStatus extends jspb.Message {
 
 export namespace CronPredictionStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<CronPredictionCondition.AsObject>,
   }

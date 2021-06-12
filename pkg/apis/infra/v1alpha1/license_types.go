@@ -143,10 +143,13 @@ type LicenseSpec struct {
 
 // LicenseStatus is the observed state of a License
 type LicenseStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Represents the latest available observations of a license state.
 	//+optional
-	Conditions []LicenseCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []LicenseCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

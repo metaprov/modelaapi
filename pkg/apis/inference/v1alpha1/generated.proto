@@ -121,12 +121,16 @@ message CronPredictionSpec {
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
 message CronPredictionStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
-  // +optional
-  repeated CronPredictionCondition conditions = 2;
+  // +kubebuilder:validation:Optional
+  repeated CronPredictionCondition conditions = 3;
 }
 
 // Curtain represent an object which can be placed before or after predictor

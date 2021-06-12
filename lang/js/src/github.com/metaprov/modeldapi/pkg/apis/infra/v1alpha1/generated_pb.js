@@ -18766,7 +18766,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.repeatedFields_ = [3];
 
 
 
@@ -18799,7 +18799,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition.toObject, includeInstance)
   };
@@ -18839,10 +18840,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 2:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -18876,17 +18882,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt64(
-      1,
+      2,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition.serializeBinaryToWriter
     );
@@ -18895,11 +18909,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.serial
 
 
 /**
- * optional int64 observedGeneration = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int64 observedGeneration = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -18908,7 +18959,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -18917,7 +18968,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -18926,17 +18977,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * repeated LicenseCondition conditions = 2;
+ * repeated LicenseCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition, 3));
 };
 
 
@@ -18945,7 +18996,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -18955,7 +19006,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseCondition, opt_index);
 };
 
 

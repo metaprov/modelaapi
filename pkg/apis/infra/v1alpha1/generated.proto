@@ -986,13 +986,17 @@ message LicenseSpec {
 
 // LicenseStatus is the observed state of a License
 message LicenseStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
   // Represents the latest available observations of a license state.
   // +optional
-  repeated LicenseCondition conditions = 2;
+  repeated LicenseCondition conditions = 3;
 }
 
 message LinodeSpec {

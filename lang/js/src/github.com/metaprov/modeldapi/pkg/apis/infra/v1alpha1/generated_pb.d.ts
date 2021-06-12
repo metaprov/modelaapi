@@ -1816,6 +1816,11 @@ export namespace LicenseSpec {
 }
 
 export class LicenseStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LicenseStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): LicenseStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LicenseStatus;
 
@@ -1834,6 +1839,7 @@ export class LicenseStatus extends jspb.Message {
 
 export namespace LicenseStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<LicenseCondition.AsObject>,
   }

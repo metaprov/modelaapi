@@ -78,9 +78,12 @@ type CronPredictionSpec struct {
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
 type CronPredictionStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
-	//+optional
-	Conditions []CronPredictionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	//+kubebuilder:validation:Optional
+	Conditions []CronPredictionCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }
