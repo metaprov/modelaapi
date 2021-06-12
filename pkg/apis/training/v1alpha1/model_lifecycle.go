@@ -719,7 +719,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
 	*model.Spec.Training = *study.Spec.Training.DeepCopy()
 	model.Spec.StudyName = &study.Name
-	model.Spec.ModelVersion = util.StrPtr(fmt.Sprintf("%d-%d", *study.Spec.ID, *model.Spec.ID))
+	model.Spec.ModelVersion = util.StrPtr(fmt.Sprintf("v%d-%d", *study.Spec.ID, *model.Spec.ID))
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.Task = study.Spec.Task
