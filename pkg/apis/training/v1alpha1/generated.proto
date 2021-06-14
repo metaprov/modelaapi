@@ -1046,13 +1046,18 @@ message ModelSearchSpec {
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // The pruner to use during model search.
+  // +kubebuilder:default:=median
+  // +kubebuilder:validation:Optional
+  optional PrunerSpec pruning = 2;
+
   // MaxCost specify what is the maximum cost incurred before
   // stopping model creations
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=1000
-  optional int32 maxCost = 2;
+  optional int32 maxCost = 3;
 
   // MaxTime specify what is the maximum time allocated to a study (in minutes).
   // the cross validation stage.
@@ -1060,31 +1065,26 @@ message ModelSearchSpec {
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10000
   // +kubebuilder:validation:Optional
-  optional int32 maxTime = 3;
+  optional int32 maxTime = 4;
 
   // Used for random search, the max models sampled.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=1000
   // +kubebuilder:validation:Optional
-  optional int32 maxModels = 4;
+  optional int32 maxModels = 5;
 
   // The minimum score by which the search would stop
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double minScore = 5;
+  optional double minScore = 6;
 
   // The desired number of trainers running during search.
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=50
   // +kubebuilder:validation:Minimum=0
-  optional int32 trainers = 6;
-
-  // SHOptions is the desired options for successive halving search.
-  // All other models are saved into an archive.
-  // +kubebuilder:validation:Optional
-  optional SuccessiveHalvingOptions shOptions = 7;
+  optional int32 trainers = 7;
 
   // Test indicate the desired number of models that should be passed to the testing phase.
   // +kubebuilder:default:=1
@@ -1748,6 +1748,18 @@ message PreprocessingSpec {
   // Imbalance flag instruct the designer to create an imbalanced pipeline. Default is false
   // +kubebuilder:validation:Optional
   optional bool imbalanced = 10;
+}
+
+message PrunerSpec {
+  // The pruner to use during model search.
+  // +kubebuilder:default:=median
+  // +kubebuilder:validation:Optional
+  optional string pruner = 1;
+
+  // SHOptions is the desired options for successive halving search.
+  // All other models are saved into an archive.
+  // +kubebuilder:validation:Optional
+  optional SuccessiveHalvingOptions shOptions = 2;
 }
 
 message ReleaseStageSpec {

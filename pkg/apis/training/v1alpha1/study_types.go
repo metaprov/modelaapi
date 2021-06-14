@@ -30,7 +30,7 @@ const (
 	StudyPhasePaused             StudyPhase = "Paused"
 )
 
-// +kubebuilder:validation:Enum="random";"grid";"bayesian";"sh";"manual";"auto";
+// +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
 // SearchMethodName
 type SearchMethodName string
 
@@ -38,9 +38,21 @@ const (
 	RandomSearch     SearchMethodName = "random"
 	GridSearch       SearchMethodName = "grid"
 	BayesianSearch   SearchMethodName = "bayesian"
-	SHSearch         SearchMethodName = "sh"
+	TPESearch        SearchMethodName = "tpe"
 	ManualSearch     SearchMethodName = "manual"
 	AutoSearchMethod SearchMethodName = "auto"
+)
+
+// +kubebuilder:validation:Enum="none";"patient";"precentile";"sh";"hyperband";"treshold";
+type PrunerName string
+
+const (
+	NonePruner      PrunerName       = "none"
+	PatientPruner   SearchMethodName = "patient"
+	PrcentilePruner SearchMethodName = "precentile"
+	SHPruner        SearchMethodName = "sh"
+	HyperbandPruner SearchMethodName = "hyperband"
+	TresholdPruner  SearchMethodName = "treshold"
 )
 
 // StudyConditionType is the condition on the study
@@ -210,40 +222,40 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=random
 	// +kubebuilder:validation:Optional
 	Type *SearchMethodName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// The pruner to use during model search.
+	// +kubebuilder:default:=median
+	// +kubebuilder:validation:Optional
+	Pruning *PrunerSpec `json:"pruning,omitempty" protobuf:"bytes,2,opt,name=pruning"`
 	// MaxCost specify what is the maximum cost incurred before
 	// stopping model creations
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
-	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,2,opt,name=maxCost"`
+	MaxCost *int32 `json:"maxCost,omitempty" protobuf:"varint,3,opt,name=maxCost"`
 	// MaxTime specify what is the maximum time allocated to a study (in minutes).
 	// the cross validation stage.
 	// +kubebuilder:default:=30
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10000
 	// +kubebuilder:validation:Optional
-	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,3,opt,name=maxTime"`
+	MaxTime *int32 `json:"maxTime,omitempty" protobuf:"varint,4,opt,name=maxTime"`
 	// Used for random search, the max models sampled.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=1000
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
 	// The minimum score by which the search would stop
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,5,opt,name=minScore"`
+	MinScore *float64 `json:"minScore,omitempty" protobuf:"bytes,6,opt,name=minScore"`
 	// The desired number of trainers running during search.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=50
 	// +kubebuilder:validation:Minimum=0
-	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,6,opt,name=trainers"`
-	// SHOptions is the desired options for successive halving search.
-	// All other models are saved into an archive.
-	// +kubebuilder:validation:Optional
-	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,7,opt,name=shOptions"`
+	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,7,opt,name=trainers"`
 	// Test indicate the desired number of models that should be passed to the testing phase.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Minimum=1
@@ -275,6 +287,18 @@ type ModelSearchSpec struct {
 	// Set the start time, by default this is set to the start time of the study
 	// +kubebuilder:validation:Optional
 	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
+}
+
+type PrunerSpec struct {
+	// The pruner to use during model search.
+	// +kubebuilder:default:=median
+	// +kubebuilder:validation:Optional
+	Pruner *PrunerName `json:"pruner,omitempty" protobuf:"bytes,1,opt,name=pruner"`
+
+	// SHOptions is the desired options for successive halving search.
+	// All other models are saved into an archive.
+	// +kubebuilder:validation:Optional
+	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,2,opt,name=shOptions"`
 }
 
 // StudySpec defines the desired state of the study

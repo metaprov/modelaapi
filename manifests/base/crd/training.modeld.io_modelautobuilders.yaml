@@ -885,7 +885,7 @@ spec:
                 - random
                 - grid
                 - bayesian
-                - sh
+                - tpe
                 - manual
                 - auto
                 type: string

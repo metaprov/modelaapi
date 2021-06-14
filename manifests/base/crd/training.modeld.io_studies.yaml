@@ -659,6 +659,51 @@ spec:
                     default: 0
                     description: The minimum score by which the search would stop
                     type: number
+                  pruning:
+                    default: median
+                    description: The pruner to use during model search.
+                    properties:
+                      pruner:
+                        default: median
+                        description: The pruner to use during model search.
+                        enum:
+                        - none
+                        - patient
+                        - precentile
+                        - sh
+                        - hyperband
+                        - treshold
+                        type: string
+                      shOptions:
+                        description: SHOptions is the desired options for successive
+                          halving search. All other models are saved into an archive.
+                        properties:
+                          eliminationRate:
+                            default: 3
+                            description: The rate of elimination during SH search,
+                              such that only 1/rate of models are promoted to the
+                              next half
+                            format: int32
+                            minimum: 0
+                            type: integer
+                          maxBudget:
+                            default: 81
+                            description: The maximum budget allocated to each model
+                              during SH search. The default max budget is 81
+                            format: int32
+                            minimum: 0
+                            type: integer
+                          modality:
+                            default: epochs
+                            description: The modality type. The default modality is
+                              based on the type of models For deep models - we use
+                              epocs. For classical models - we use data
+                            enum:
+                            - data
+                            - epochs
+                            type: string
+                        type: object
+                    type: object
                   resources:
                     description: Define the general size of the resources needed for
                       each trainer.
@@ -722,34 +767,6 @@ spec:
                     maximum: 2400
                     minimum: 0
                     type: integer
-                  shOptions:
-                    description: SHOptions is the desired options for successive halving
-                      search. All other models are saved into an archive.
-                    properties:
-                      eliminationRate:
-                        default: 3
-                        description: The rate of elimination during SH search, such
-                          that only 1/rate of models are promoted to the next half
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      maxBudget:
-                        default: 81
-                        description: The maximum budget allocated to each model during
-                          SH search. The default max budget is 81
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      modality:
-                        default: epochs
-                        description: The modality type. The default modality is based
-                          on the type of models For deep models - we use epocs. For
-                          classical models - we use data
-                        enum:
-                        - data
-                        - epochs
-                        type: string
-                    type: object
                   stackingEnsemble:
                     default: true
                     description: StackingEnsemble If true, create a stacking ensemble
@@ -783,7 +800,7 @@ spec:
                     - random
                     - grid
                     - bayesian
-                    - sh
+                    - tpe
                     - manual
                     - auto
                     type: string
