@@ -9316,7 +9316,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     autoscale: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
     datasourcespec: (f = msg.getDatasourcespec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.toObject(includeInstance, f),
     trainers: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    searchmethod: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    sampler: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
@@ -9417,7 +9417,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSearchmethod(value);
+      msg.setSampler(value);
       break;
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -10111,10 +10111,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
 
 
 /**
- * optional string searchMethod = 15;
+ * optional string sampler = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getSearchmethod = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.getSampler = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -10123,7 +10123,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setSearchmethod = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.setSampler = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -10132,7 +10132,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearSearchmethod = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.clearSampler = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -10141,7 +10141,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasSearchmethod = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderSpec.prototype.hasSampler = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
@@ -16762,8 +16762,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    pruning: (f = msg.getPruning()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.toObject(includeInstance, f),
+    sampler: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    pruner: (f = msg.getPruner()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.toObject(includeInstance, f),
     maxcost: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     maxtime: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     maxmodels: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -16815,12 +16815,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.d
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setSampler(value);
       break;
     case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.deserializeBinaryFromReader);
-      msg.setPruning(value);
+      msg.setPruner(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -16912,7 +16912,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.s
       f
     );
   }
-  f = message.getPruning();
+  f = message.getPruner();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -17017,10 +17017,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.s
 
 
 /**
- * optional string type = 1;
+ * optional string sampler = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getSampler = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -17029,7 +17029,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setType = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setSampler = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -17038,7 +17038,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearSampler = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -17047,16 +17047,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasType = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasSampler = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional PrunerSpec pruning = 2;
+ * optional PrunerSpec pruner = 2;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getPruning = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getPruner = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec, 2));
 };
@@ -17066,7 +17066,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setPruning = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setPruner = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -17075,8 +17075,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearPruning = function() {
-  return this.setPruning(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearPruner = function() {
+  return this.setPruner(undefined);
 };
 
 
@@ -17084,7 +17084,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasPruning = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasPruner = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -26566,7 +26566,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pruner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     shoptions: (f = msg.getShoptions()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions.toObject(includeInstance, f)
   };
 
@@ -26606,7 +26606,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.deseri
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPruner(value);
+      msg.setType(value);
       break;
     case 2:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingOptions;
@@ -26661,10 +26661,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.serial
 
 
 /**
- * optional string pruner = 1;
+ * optional string type = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getPruner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -26673,7 +26673,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setPruner = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.setType = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -26682,7 +26682,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearPruner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.clearType = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -26691,7 +26691,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasPruner = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.PrunerSpec.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

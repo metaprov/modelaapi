@@ -155,7 +155,7 @@ type ModelAutobuilderSpec struct {
 	// Specify the search method
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
-	SearchMethod *SearchMethodName `json:"searchMethod,omitempty" protobuf:"bytes,15,opt,name=searchMethod"`
+	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,15,opt,name=sampler"`
 	// Set the true to abort the model auto builder
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

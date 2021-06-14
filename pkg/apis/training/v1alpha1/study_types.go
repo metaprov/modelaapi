@@ -31,28 +31,27 @@ const (
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
-// SearchMethodName
-type SearchMethodName string
+type SamplerName string
 
 const (
-	RandomSearch     SearchMethodName = "random"
-	GridSearch       SearchMethodName = "grid"
-	BayesianSearch   SearchMethodName = "bayesian"
-	TPESearch        SearchMethodName = "tpe"
-	ManualSearch     SearchMethodName = "manual"
-	AutoSearchMethod SearchMethodName = "auto"
+	RandomSearch     SamplerName = "random"
+	GridSearch       SamplerName = "grid"
+	BayesianSearch   SamplerName = "bayesian"
+	TPESearch        SamplerName = "tpe"
+	ManualSearch     SamplerName = "manual"
+	AutoSearchMethod SamplerName = "auto"
 )
 
 // +kubebuilder:validation:Enum="none";"patient";"precentile";"sh";"hyperband";"treshold";
 type PrunerName string
 
 const (
-	NonePruner      PrunerName       = "none"
-	PatientPruner   SearchMethodName = "patient"
-	PrcentilePruner SearchMethodName = "precentile"
-	SHPruner        SearchMethodName = "sh"
-	HyperbandPruner SearchMethodName = "hyperband"
-	TresholdPruner  SearchMethodName = "treshold"
+	NonePruner      PrunerName = "none"
+	PatientPruner   PrunerName = "patient"
+	PrcentilePruner PrunerName = "precentile"
+	SHPruner        PrunerName = "sh"
+	HyperbandPruner PrunerName = "hyperband"
+	TresholdPruner  PrunerName = "treshold"
 )
 
 // StudyConditionType is the condition on the study
@@ -221,11 +220,10 @@ type ModelSearchSpec struct {
 	// The only supported value is random
 	// +kubebuilder:default:=random
 	// +kubebuilder:validation:Optional
-	Type *SearchMethodName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,1,opt,name=sampler"`
 	// The pruner to use during model search.
-	// +kubebuilder:default:=median
 	// +kubebuilder:validation:Optional
-	Pruning *PrunerSpec `json:"pruning,omitempty" protobuf:"bytes,2,opt,name=pruning"`
+	Pruner *PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
 	// MaxCost specify what is the maximum cost incurred before
 	// stopping model creations
 	// +kubebuilder:validation:Optional
@@ -293,7 +291,7 @@ type PrunerSpec struct {
 	// The pruner to use during model search.
 	// +kubebuilder:default:=median
 	// +kubebuilder:validation:Optional
-	Pruner *PrunerName `json:"pruner,omitempty" protobuf:"bytes,1,opt,name=pruner"`
+	Type *PrunerName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 
 	// SHOptions is the desired options for successive halving search.
 	// All other models are saved into an archive.

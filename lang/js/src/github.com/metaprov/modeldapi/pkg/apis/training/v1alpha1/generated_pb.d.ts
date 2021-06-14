@@ -867,8 +867,8 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getTrainers(): number;
   setTrainers(value: number): ModelAutobuilderSpec;
 
-  getSearchmethod(): string;
-  setSearchmethod(value: string): ModelAutobuilderSpec;
+  getSampler(): string;
+  setSampler(value: string): ModelAutobuilderSpec;
 
   getAborted(): boolean;
   setAborted(value: boolean): ModelAutobuilderSpec;
@@ -908,7 +908,7 @@ export namespace ModelAutobuilderSpec {
     autoscale: boolean,
     datasourcespec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
     trainers: number,
-    searchmethod: string,
+    sampler: string,
     aborted: boolean,
     owner: string,
     workloadclassname: string,
@@ -1611,13 +1611,13 @@ export namespace ModelResult {
 }
 
 export class ModelSearchSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): ModelSearchSpec;
+  getSampler(): string;
+  setSampler(value: string): ModelSearchSpec;
 
-  getPruning(): PrunerSpec | undefined;
-  setPruning(value?: PrunerSpec): ModelSearchSpec;
-  hasPruning(): boolean;
-  clearPruning(): ModelSearchSpec;
+  getPruner(): PrunerSpec | undefined;
+  setPruner(value?: PrunerSpec): ModelSearchSpec;
+  hasPruner(): boolean;
+  clearPruner(): ModelSearchSpec;
 
   getMaxcost(): number;
   setMaxcost(value: number): ModelSearchSpec;
@@ -1674,8 +1674,8 @@ export class ModelSearchSpec extends jspb.Message {
 
 export namespace ModelSearchSpec {
   export type AsObject = {
-    type: string,
-    pruning?: PrunerSpec.AsObject,
+    sampler: string,
+    pruner?: PrunerSpec.AsObject,
     maxcost: number,
     maxtime: number,
     maxmodels: number,
@@ -2631,8 +2631,8 @@ export namespace PreprocessingSpec {
 }
 
 export class PrunerSpec extends jspb.Message {
-  getPruner(): string;
-  setPruner(value: string): PrunerSpec;
+  getType(): string;
+  setType(value: string): PrunerSpec;
 
   getShoptions(): SuccessiveHalvingOptions | undefined;
   setShoptions(value?: SuccessiveHalvingOptions): PrunerSpec;
@@ -2649,7 +2649,7 @@ export class PrunerSpec extends jspb.Message {
 
 export namespace PrunerSpec {
   export type AsObject = {
-    pruner: string,
+    type: string,
     shoptions?: SuccessiveHalvingOptions.AsObject,
   }
 }

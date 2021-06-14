@@ -659,21 +659,9 @@ spec:
                     default: 0
                     description: The minimum score by which the search would stop
                     type: number
-                  pruning:
-                    default: median
+                  pruner:
                     description: The pruner to use during model search.
                     properties:
-                      pruner:
-                        default: median
-                        description: The pruner to use during model search.
-                        enum:
-                        - none
-                        - patient
-                        - precentile
-                        - sh
-                        - hyperband
-                        - treshold
-                        type: string
                       shOptions:
                         description: SHOptions is the desired options for successive
                           halving search. All other models are saved into an archive.
@@ -703,6 +691,17 @@ spec:
                             - epochs
                             type: string
                         type: object
+                      type:
+                        default: median
+                        description: The pruner to use during model search.
+                        enum:
+                        - none
+                        - patient
+                        - precentile
+                        - sh
+                        - hyperband
+                        - treshold
+                        type: string
                     type: object
                   resources:
                     description: Define the general size of the resources needed for
@@ -767,6 +766,18 @@ spec:
                     maximum: 2400
                     minimum: 0
                     type: integer
+                  sampler:
+                    default: random
+                    description: Type specify the hyper parameter optimization search
+                      method. The only supported value is random
+                    enum:
+                    - random
+                    - grid
+                    - bayesian
+                    - tpe
+                    - manual
+                    - auto
+                    type: string
                   stackingEnsemble:
                     default: true
                     description: StackingEnsemble If true, create a stacking ensemble
@@ -792,18 +803,6 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
-                  type:
-                    default: random
-                    description: Type specify the hyper parameter optimization search
-                      method. The only supported value is random
-                    enum:
-                    - random
-                    - grid
-                    - bayesian
-                    - tpe
-                    - manual
-                    - auto
-                    type: string
                   votingEnsemble:
                     default: false
                     description: VotingEnsample - If true, create a voting ensemble

@@ -595,7 +595,7 @@ message ModelAutobuilderSpec {
   // Specify the search method
   // +kubebuilder:default:="random"
   // +kubebuilder:validation:Optional
-  optional string searchMethod = 15;
+  optional string sampler = 15;
 
   // Set the true to abort the model auto builder
   // +kubebuilder:default:=false
@@ -1044,12 +1044,11 @@ message ModelSearchSpec {
   // The only supported value is random
   // +kubebuilder:default:=random
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string sampler = 1;
 
   // The pruner to use during model search.
-  // +kubebuilder:default:=median
   // +kubebuilder:validation:Optional
-  optional PrunerSpec pruning = 2;
+  optional PrunerSpec pruner = 2;
 
   // MaxCost specify what is the maximum cost incurred before
   // stopping model creations
@@ -1754,7 +1753,7 @@ message PrunerSpec {
   // The pruner to use during model search.
   // +kubebuilder:default:=median
   // +kubebuilder:validation:Optional
-  optional string pruner = 1;
+  optional string type = 1;
 
   // SHOptions is the desired options for successive halving search.
   // All other models are saved into an archive.
