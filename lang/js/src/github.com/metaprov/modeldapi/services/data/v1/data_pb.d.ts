@@ -1923,38 +1923,20 @@ export class AskModelRequest extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): AskModelRequest;
 
-  getStudyname(): string;
-  setStudyname(value: string): AskModelRequest;
+  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskModelRequest;
+  hasStudy(): boolean;
+  clearStudy(): AskModelRequest;
 
-  getStudynamespace(): string;
-  setStudynamespace(value: string): AskModelRequest;
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): AskModelRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): AskModelRequest;
 
-  getStudyspec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec | undefined;
-  setStudyspec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec): AskModelRequest;
-  hasStudyspec(): boolean;
-  clearStudyspec(): AskModelRequest;
-
-  getDatasourcename(): string;
-  setDatasourcename(value: string): AskModelRequest;
-
-  getDatasourcenamespace(): string;
-  setDatasourcenamespace(value: string): AskModelRequest;
-
-  getDatasourcespec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec | undefined;
-  setDatasourcespec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec): AskModelRequest;
-  hasDatasourcespec(): boolean;
-  clearDatasourcespec(): AskModelRequest;
-
-  getDatasetname(): string;
-  setDatasetname(value: string): AskModelRequest;
-
-  getDatasetnamespace(): string;
-  setDatasetnamespace(value: string): AskModelRequest;
-
-  getDatasetspec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec | undefined;
-  setDatasetspec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec): AskModelRequest;
-  hasDatasetspec(): boolean;
-  clearDatasetspec(): AskModelRequest;
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): AskModelRequest;
+  hasDataset(): boolean;
+  clearDataset(): AskModelRequest;
 
   getBudget(): number;
   setBudget(value: number): AskModelRequest;
@@ -1971,24 +1953,18 @@ export namespace AskModelRequest {
   export type AsObject = {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    studyname: string,
-    studynamespace: string,
-    studyspec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.AsObject,
-    datasourcename: string,
-    datasourcenamespace: string,
-    datasourcespec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
-    datasetname: string,
-    datasetnamespace: string,
-    datasetspec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.AsObject,
+    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     budget: number,
   }
 }
 
 export class AskModelResponse extends jspb.Message {
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec): AskModelResponse;
-  hasSpec(): boolean;
-  clearSpec(): AskModelResponse;
+  getModel(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): AskModelResponse;
+  hasModel(): boolean;
+  clearModel(): AskModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskModelResponse.AsObject;
@@ -2000,7 +1976,7 @@ export class AskModelResponse extends jspb.Message {
 
 export namespace AskModelResponse {
   export type AsObject = {
-    spec?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.AsObject,
+    model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 

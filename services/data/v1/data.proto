@@ -416,23 +416,17 @@ message CreateStudyReportRequest {
 
 
 message AskModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct  product     = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
-    string studyName        = 3;
-    string studyNamespace   = 4;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec  studySpec     = 5;
-    string datasourceName      = 6;
-    string datasourceNamespace = 7;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec    datasourceSpec    = 8;
-    string datasetName      = 9;
-    string datasetNamespace = 10;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec    datasetSpec   = 11;
-    int32  budget = 12;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
+    int32  budget = 6;
 }
 
 
 message AskModelResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec spec = 1;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
 message TellModelRequest{

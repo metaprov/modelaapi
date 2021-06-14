@@ -16529,16 +16529,10 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.toObject = 
   var f, obj = {
     product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     version: (f = msg.getVersion()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
-    studyname: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    studynamespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    studyspec: (f = msg.getStudyspec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.toObject(includeInstance, f),
-    datasourcename: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    datasourcenamespace: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    datasourcespec: (f = msg.getDatasourcespec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.toObject(includeInstance, f),
-    datasetname: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    datasetnamespace: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    datasetspec: (f = msg.getDatasetspec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.toObject(includeInstance, f),
-    budget: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    study: (f = msg.getStudy()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
+    budget: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -16586,45 +16580,21 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.deserialize
       msg.setVersion(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStudyname(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
+      msg.setStudy(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStudynamespace(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
       break;
     case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.deserializeBinaryFromReader);
-      msg.setStudyspec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcename(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasourcenamespace(value);
-      break;
-    case 8:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.deserializeBinaryFromReader);
-      msg.setDatasourcespec(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetname(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetnamespace(value);
-      break;
-    case 11:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.deserializeBinaryFromReader);
-      msg.setDatasetspec(value);
-      break;
-    case 12:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setBudget(value);
       break;
@@ -16673,76 +16643,34 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.serializeBi
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
     );
   }
-  f = message.getStudyname();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getStudy();
+  if (f != null) {
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
     );
   }
-  f = message.getStudynamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
-  f = message.getStudyspec();
+  f = message.getDataset();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasourcename();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getDatasourcenamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
-  f = message.getDatasourcespec();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getDatasetname();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getDatasetnamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getDatasetspec();
-  if (f != null) {
-    writer.writeMessage(
-      11,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
     );
   }
   f = message.getBudget();
   if (f !== 0) {
     writer.writeInt32(
-      12,
+      6,
       f
     );
   }
@@ -16824,56 +16752,94 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.h
 
 
 /**
- * optional string studyName = 3;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getStudyname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getStudy = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study, 3));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setStudyname = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string studyNamespace = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getStudynamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setStudynamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec studySpec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getStudyspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudySpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setStudyspec = function(value) {
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setStudy = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasStudy = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDataset = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -16882,8 +16848,8 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.s
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearStudyspec = function() {
-  return this.setStudyspec(undefined);
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
 };
 
 
@@ -16891,163 +16857,17 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasStudyspec = function() {
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasDataset = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string datasourceName = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasourcename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasourcename = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string datasourceNamespace = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasourcenamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasourcenamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec datasourceSpec = 8;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasourcespec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasourcespec = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearDatasourcespec = function() {
-  return this.setDatasourcespec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasDatasourcespec = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional string datasetName = 9;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasetname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasetname = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string datasetNamespace = 10;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasetnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasetnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec datasetSpec = 11;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getDatasetspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetSpec, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setDatasetspec = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.clearDatasetspec = function() {
-  return this.setDatasetspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.hasDatasetspec = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional int32 budget = 12;
+ * optional int32 budget = 6;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.getBudget = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -17056,7 +16876,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.g
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.prototype.setBudget = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -17092,7 +16912,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    spec: (f = msg.getSpec()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.toObject(includeInstance, f)
+    model: (f = msg.getModel()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17130,9 +16950,9 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
+      msg.setModel(value);
       break;
     default:
       reader.skipField();
@@ -17163,32 +16983,32 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSpec();
+  f = message.getModel();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec spec = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelSpec, 1));
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.setSpec = function(value) {
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.setModel = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -17197,8 +17017,8 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.clearModel = function() {
+  return this.setModel(undefined);
 };
 
 
@@ -17206,7 +17026,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.hasSpec = function() {
+proto.github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.prototype.hasModel = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
