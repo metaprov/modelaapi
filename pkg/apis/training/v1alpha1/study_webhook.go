@@ -12,6 +12,7 @@ import (
 	"github.com/metaprov/modeldapi/pkg/util"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -117,6 +118,11 @@ func (study *Study) Default() {
 
 	if study.Spec.Search.SHOptions == nil {
 		study.Spec.Search.SHOptions = &SuccessiveHalvingOptions{}
+	}
+
+	if study.Spec.Search.StartAt == nil {
+		now := metav1.Now()
+		study.Spec.Search.StartAt = &now
 	}
 
 	if study.Spec.Search.SHOptions.MaxBudget == nil {

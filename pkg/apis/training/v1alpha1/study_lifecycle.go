@@ -8,9 +8,10 @@ package v1alpha1
 
 import (
 	"fmt"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	"path"
 	"time"
+
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
@@ -41,6 +42,14 @@ func NewStudy(ns string, name string, dataset string) *Study {
 		"dataset": dataset,
 	}
 	return result
+}
+
+func (study *Study) CanStart() bool {
+	if study.Spec.Search.StartAt == nil {
+		return true
+	}
+	now := metav1.Now()
+	return study.Spec.Search.StartAt.Before(&now)
 }
 
 func (study *Study) PipelineName() string {
