@@ -1614,6 +1614,11 @@ export class ModelSearchSpec extends jspb.Message {
   getType(): string;
   setType(value: string): ModelSearchSpec;
 
+  getPruning(): PrunerSpec | undefined;
+  setPruning(value?: PrunerSpec): ModelSearchSpec;
+  hasPruning(): boolean;
+  clearPruning(): ModelSearchSpec;
+
   getMaxcost(): number;
   setMaxcost(value: number): ModelSearchSpec;
 
@@ -1628,11 +1633,6 @@ export class ModelSearchSpec extends jspb.Message {
 
   getTrainers(): number;
   setTrainers(value: number): ModelSearchSpec;
-
-  getShoptions(): SuccessiveHalvingOptions | undefined;
-  setShoptions(value?: SuccessiveHalvingOptions): ModelSearchSpec;
-  hasShoptions(): boolean;
-  clearShoptions(): ModelSearchSpec;
 
   getTest(): number;
   setTest(value: number): ModelSearchSpec;
@@ -1675,12 +1675,12 @@ export class ModelSearchSpec extends jspb.Message {
 export namespace ModelSearchSpec {
   export type AsObject = {
     type: string,
+    pruning?: PrunerSpec.AsObject,
     maxcost: number,
     maxtime: number,
     maxmodels: number,
     minscore: number,
     trainers: number,
-    shoptions?: SuccessiveHalvingOptions.AsObject,
     test: number,
     retaintop: number,
     retainedfor: number,
@@ -2627,6 +2627,30 @@ export namespace PreprocessingSpec {
     featureengineering: string,
     balancer: string,
     imbalanced: boolean,
+  }
+}
+
+export class PrunerSpec extends jspb.Message {
+  getPruner(): string;
+  setPruner(value: string): PrunerSpec;
+
+  getShoptions(): SuccessiveHalvingOptions | undefined;
+  setShoptions(value?: SuccessiveHalvingOptions): PrunerSpec;
+  hasShoptions(): boolean;
+  clearShoptions(): PrunerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrunerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PrunerSpec): PrunerSpec.AsObject;
+  static serializeBinaryToWriter(message: PrunerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrunerSpec;
+  static deserializeBinaryFromReader(message: PrunerSpec, reader: jspb.BinaryReader): PrunerSpec;
+}
+
+export namespace PrunerSpec {
+  export type AsObject = {
+    pruner: string,
+    shoptions?: SuccessiveHalvingOptions.AsObject,
   }
 }
 
