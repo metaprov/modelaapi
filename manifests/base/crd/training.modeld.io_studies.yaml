@@ -662,6 +662,30 @@ spec:
                   pruner:
                     description: The pruner to use during model search.
                     properties:
+                      intervalTrials:
+                        default: 1
+                        description: Interval in number of steps between the pruning
+                          checks
+                        format: int32
+                        type: integer
+                      lower:
+                        description: A minimum value which determines whether pruner
+                          prunes or not. Used only for treshold pruner
+                        format: int32
+                        type: integer
+                      minTrials:
+                        default: 1
+                        description: Minimum number of reported trials.
+                        format: int32
+                        type: integer
+                      precentialTrials:
+                        default: 25
+                        description: Keep specific precent of trials. Used only with
+                          precential pruner
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
                       shOptions:
                         description: SHOptions is the desired options for successive
                           halving search. All other models are saved into an archive.
@@ -691,6 +715,12 @@ spec:
                             - epochs
                             type: string
                         type: object
+                      startupTrials:
+                        default: 5
+                        description: Pruning is disabled until the given number of
+                          trials finish in the same study.
+                        format: int32
+                        type: integer
                       type:
                         default: median
                         description: The pruner to use during model search.
@@ -703,6 +733,17 @@ spec:
                         - hyperband
                         - treshold
                         type: string
+                      upper:
+                        description: A maximum value which determines whether pruner
+                          prunes or not. Used only for treshold pruner
+                        format: int32
+                        type: integer
+                      wramupTrials:
+                        default: 0
+                        description: ' Pruning is disabled until the trial exceeds
+                          the given number of step'
+                        format: int32
+                        type: integer
                     type: object
                   resources:
                     description: Define the general size of the resources needed for

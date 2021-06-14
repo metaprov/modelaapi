@@ -2309,6 +2309,41 @@ func (in *PrunerSpec) DeepCopyInto(out *PrunerSpec) {
 		*out = new(PrunerName)
 		**out = **in
 	}
+	if in.StartupTrials != nil {
+		in, out := &in.StartupTrials, &out.StartupTrials
+		*out = new(int32)
+		**out = **in
+	}
+	if in.WramupTrials != nil {
+		in, out := &in.WramupTrials, &out.WramupTrials
+		*out = new(int32)
+		**out = **in
+	}
+	if in.MinimumTrials != nil {
+		in, out := &in.MinimumTrials, &out.MinimumTrials
+		*out = new(int32)
+		**out = **in
+	}
+	if in.IntervalSteps != nil {
+		in, out := &in.IntervalSteps, &out.IntervalSteps
+		*out = new(int32)
+		**out = **in
+	}
+	if in.Precentile != nil {
+		in, out := &in.Precentile, &out.Precentile
+		*out = new(int32)
+		**out = **in
+	}
+	if in.Lower != nil {
+		in, out := &in.Lower, &out.Lower
+		*out = new(int32)
+		**out = **in
+	}
+	if in.Upper != nil {
+		in, out := &in.Upper, &out.Upper
+		*out = new(int32)
+		**out = **in
+	}
 	if in.SHOptions != nil {
 		in, out := &in.SHOptions, &out.SHOptions
 		*out = new(SuccessiveHalvingOptions)

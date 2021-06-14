@@ -1755,10 +1755,45 @@ message PrunerSpec {
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // Pruning is disabled until the given number of trials finish in the same study.
+  // +kubebuilder:default:=5
+  // +kubebuilder:validation:Optional
+  optional int32 startupTrials = 2;
+
+  //  Pruning is disabled until the trial exceeds the given number of step
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 wramupTrials = 3;
+
+  // Minimum number of reported trials.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 minTrials = 4;
+
+  // Interval in number of steps between the pruning checks
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 intervalTrials = 5;
+
+  // Keep specific precent of trials. Used only with precential pruner
+  // +kubebuilder:default:=25
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:validation:Optional
+  optional int32 precentialTrials = 6;
+
+  // A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // +kubebuilder:validation:Optional
+  optional int32 lower = 7;
+
+  // A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // +kubebuilder:validation:Optional
+  optional int32 upper = 8;
+
   // SHOptions is the desired options for successive halving search.
   // All other models are saved into an archive.
   // +kubebuilder:validation:Optional
-  optional SuccessiveHalvingOptions shOptions = 2;
+  optional SuccessiveHalvingOptions shOptions = 9;
 }
 
 message ReleaseStageSpec {

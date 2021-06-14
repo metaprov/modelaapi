@@ -2634,6 +2634,27 @@ export class PrunerSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PrunerSpec;
 
+  getStartuptrials(): number;
+  setStartuptrials(value: number): PrunerSpec;
+
+  getWramuptrials(): number;
+  setWramuptrials(value: number): PrunerSpec;
+
+  getMintrials(): number;
+  setMintrials(value: number): PrunerSpec;
+
+  getIntervaltrials(): number;
+  setIntervaltrials(value: number): PrunerSpec;
+
+  getPrecentialtrials(): number;
+  setPrecentialtrials(value: number): PrunerSpec;
+
+  getLower(): number;
+  setLower(value: number): PrunerSpec;
+
+  getUpper(): number;
+  setUpper(value: number): PrunerSpec;
+
   getShoptions(): SuccessiveHalvingOptions | undefined;
   setShoptions(value?: SuccessiveHalvingOptions): PrunerSpec;
   hasShoptions(): boolean;
@@ -2650,6 +2671,13 @@ export class PrunerSpec extends jspb.Message {
 export namespace PrunerSpec {
   export type AsObject = {
     type: string,
+    startuptrials: number,
+    wramuptrials: number,
+    mintrials: number,
+    intervaltrials: number,
+    precentialtrials: number,
+    lower: number,
+    upper: number,
     shoptions?: SuccessiveHalvingOptions.AsObject,
   }
 }
