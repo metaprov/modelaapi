@@ -116,8 +116,8 @@ func (study *Study) Default() {
 		study.Spec.Search = &ModelSearchSpec{}
 	}
 
-	if study.Spec.Search.SHOptions == nil {
-		study.Spec.Search.SHOptions = &SuccessiveHalvingOptions{}
+	if study.Spec.Search.Pruner.SHOptions == nil {
+		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}
 	}
 
 	if study.Spec.Search.StartAt == nil {
@@ -125,12 +125,12 @@ func (study *Study) Default() {
 		study.Spec.Search.StartAt = &now
 	}
 
-	if study.Spec.Search.SHOptions.MaxBudget == nil {
-		study.Spec.Search.SHOptions.MaxBudget = util.Int32Ptr(81)
+	if study.Spec.Search.Pruner.SHOptions.MaxBudget == nil {
+		study.Spec.Search.Pruner.SHOptions.MaxBudget = util.Int32Ptr(81)
 	}
 
-	if study.Spec.Search.SHOptions.EliminationRate == nil {
-		study.Spec.Search.SHOptions.EliminationRate = util.Int32Ptr(3)
+	if study.Spec.Search.Pruner.SHOptions.EliminationRate == nil {
+		study.Spec.Search.Pruner.SHOptions.EliminationRate = util.Int32Ptr(3)
 	}
 
 	if study.Spec.Training == nil {

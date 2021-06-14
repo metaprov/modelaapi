@@ -494,7 +494,7 @@ func (study *Study) OpName() string {
 }
 
 func (study *Study) Random() bool {
-	return *study.Spec.Search.Type == RandomSearch
+	return *study.Spec.Search.Sampler == RandomSearch
 }
 
 func (study *Study) Deleted() bool {

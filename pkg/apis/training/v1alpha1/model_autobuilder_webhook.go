@@ -46,9 +46,9 @@ func (b *ModelAutobuilder) Default() {
 			},
 		}
 	}
-	if b.Spec.SearchMethod == nil {
+	if b.Spec.Sampler == nil {
 		sm := RandomSearch
-		b.Spec.SearchMethod = &sm
+		b.Spec.Sampler = &sm
 	}
 
 	if b.Spec.Objective == nil {

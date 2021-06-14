@@ -100,7 +100,7 @@ func TestStudy(t *testing.T) {
 
 	assert.Equal(t, study.Name, "iris")
 	assert.Equal(t, study.Spec.VersionName, "v0.0.1")
-	assert.Equal(t, *study.Spec.Search.Type, rand)
+	assert.Equal(t, *study.Spec.Search.Sampler, rand)
 	assert.Equal(t, *study.Spec.Search.MaxModels, int32(10))
 	assert.Equal(t, *study.Spec.Search.MaxTime, int32(4))
 }

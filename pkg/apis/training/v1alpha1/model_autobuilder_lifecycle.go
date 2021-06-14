@@ -526,7 +526,7 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			Task:        b.Spec.Task,
 			Objective:   b.Spec.Objective,
 			Search: &ModelSearchSpec{
-				Type:      b.Spec.SearchMethod,
+				Sampler:   b.Spec.Sampler,
 				MaxTime:   b.Spec.MaxTime,
 				MaxModels: b.Spec.MaxModels,
 				Trainers:  b.Spec.Trainers,
