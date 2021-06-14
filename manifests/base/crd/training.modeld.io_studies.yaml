@@ -697,6 +697,7 @@ spec:
                         enum:
                         - none
                         - patient
+                        - median
                         - precentile
                         - sh
                         - hyperband

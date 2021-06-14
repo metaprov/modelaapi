@@ -42,12 +42,13 @@ const (
 	AutoSearchMethod SamplerName = "auto"
 )
 
-// +kubebuilder:validation:Enum="none";"patient";"precentile";"sh";"hyperband";"treshold";
+// +kubebuilder:validation:Enum="none";"patient";"median";"precentile";"sh";"hyperband";"treshold";
 type PrunerName string
 
 const (
 	NonePruner      PrunerName = "none"
 	PatientPruner   PrunerName = "patient"
+	MedianPruner    PrunerName = "median"
 	PrcentilePruner PrunerName = "precentile"
 	SHPruner        PrunerName = "sh"
 	HyperbandPruner PrunerName = "hyperband"
