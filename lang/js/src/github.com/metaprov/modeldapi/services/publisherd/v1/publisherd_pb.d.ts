@@ -104,6 +104,9 @@ export class PublishModelRequest extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): PublishModelRequest;
 
+  getImagenamewithversion(): string;
+  setImagenamewithversion(value: string): PublishModelRequest;
+
   getPush(): boolean;
   setPush(value: boolean): PublishModelRequest;
 
@@ -158,6 +161,7 @@ export namespace PublishModelRequest {
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     provider: string,
     imagename: string,
+    imagenamewithversion: string,
     push: boolean,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     cloudconn?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,

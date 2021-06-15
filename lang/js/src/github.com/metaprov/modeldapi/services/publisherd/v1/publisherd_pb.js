@@ -657,16 +657,17 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.t
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     provider: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imagename: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    push: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    imagenamewithversion: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    push: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     cloudconn: (f = msg.getCloudconn()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     cloudsecretMap: (f = msg.getCloudsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     dockerconnection: (f = msg.getDockerconnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dockerregistrysecretMap: (f = msg.getDockerregistrysecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    kaniko: jspb.Message.getBooleanFieldWithDefault(msg, 17, false)
+    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    kaniko: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
   if (includeInstance) {
@@ -742,49 +743,53 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.d
       msg.setImagename(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImagenamewithversion(value);
+      break;
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPush(value);
       break;
-    case 10:
+    case 11:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 11:
+    case 12:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setCloudconn(value);
       break;
-    case 12:
+    case 13:
       var value = msg.getCloudsecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 13:
+    case 14:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setDockerconnection(value);
       break;
-    case 35:
+    case 15:
       var value = msg.getDockerregistrysecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 14:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setModelweightsuri(value);
       break;
-    case 15:
+    case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setPreprocessorweightsuri(value);
       break;
-    case 16:
+    case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setLabelencoderuri(value);
       break;
-    case 17:
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setKaniko(value);
       break;
@@ -879,17 +884,24 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.s
       f
     );
   }
+  f = message.getImagenamewithversion();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getPush();
   if (f) {
     writer.writeBool(
-      9,
+      10,
       f
     );
   }
   f = message.getBucket();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
@@ -897,52 +909,52 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.s
   f = message.getCloudconn();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getCloudsecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getDockerconnection();
   if (f != null) {
     writer.writeMessage(
-      13,
+      14,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getDockerregistrysecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(35, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getModelweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getPreprocessorweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getLabelencoderuri();
   if (f.length > 0) {
     writer.writeString(
       16,
       f
     );
   }
+  f = message.getPreprocessorweightsuri();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = message.getLabelencoderuri();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
   f = message.getKaniko();
   if (f) {
     writer.writeBool(
-      17,
+      19,
       f
     );
   }
@@ -1208,11 +1220,29 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional bool push = 9;
+ * optional string imagenameWithVersion = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getImagenamewithversion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setImagenamewithversion = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional bool push = 10;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPush = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -1221,17 +1251,17 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPush = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 10;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 11;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 10));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 11));
 };
 
 
@@ -1240,7 +1270,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -1258,17 +1288,17 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection cloudConn = 11;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection cloudConn = 12;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudconn = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 11));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 12));
 };
 
 
@@ -1277,7 +1307,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setCloudconn = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -1295,19 +1325,19 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasCloudconn = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * map<string, bytes> cloudSecret = 12;
+ * map<string, bytes> cloudSecret = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getCloudsecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
 };
 
@@ -1322,12 +1352,12 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection dockerConnection = 13;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection dockerConnection = 14;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerconnection = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 13));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 14));
 };
 
 
@@ -1336,7 +1366,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setDockerconnection = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1354,19 +1384,19 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.hasDockerconnection = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * map<string, bytes> dockerRegistrySecret = 35;
+ * map<string, bytes> dockerRegistrySecret = 15;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getDockerregistrysecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 35, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
       null));
 };
 
@@ -1381,46 +1411,10 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional string modelWeightsUri = 14;
+ * optional string modelWeightsUri = 16;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional string preprocessorWeightsUri = 15;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPreprocessorweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPreprocessorweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional string labelEncoderUri = 16;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getLabelencoderuri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
@@ -1429,17 +1423,53 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setLabelencoderuri = function(value) {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelweightsuri = function(value) {
   return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
- * optional bool kaniko = 17;
+ * optional string preprocessorWeightsUri = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPreprocessorweightsuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPreprocessorweightsuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string labelEncoderUri = 18;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getLabelencoderuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setLabelencoderuri = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional bool kaniko = 19;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getKaniko = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
@@ -1448,7 +1478,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setKaniko = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 17, value);
+  return jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 

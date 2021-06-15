@@ -30,16 +30,17 @@ message PublishModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
     string                                                                     provider            = 7; // the image registry provider
     string                                                                     imagename           = 8;
-    bool                                                                       push                = 9;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 10;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 11;
-    map<string,bytes>  cloudSecret   = 12; // the image registry login details.
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           dockerConnection   = 13;
-    map<string,bytes>  dockerRegistrySecret    = 35; // the image registry login details.
-    string    modelWeightsUri        = 14;
-    string    preprocessorWeightsUri = 15;
-    string    labelEncoderUri        = 16;
-    bool      kaniko                 = 17;
+    string                                                                     imagenameWithVersion = 9;
+    bool                                                                       push                = 10;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 11;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 12;
+    map<string,bytes>  cloudSecret   = 13; // the image registry login details.
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           dockerConnection   = 14;
+    map<string,bytes>  dockerRegistrySecret    = 15; // the image registry login details.
+    string    modelWeightsUri        = 16;
+    string    preprocessorWeightsUri = 17;
+    string    labelEncoderUri        = 18;
+    bool      kaniko                 = 19;
 }
 
 message PublishModelResponse {

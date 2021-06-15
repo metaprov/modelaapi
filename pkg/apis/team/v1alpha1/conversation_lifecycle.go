@@ -8,8 +8,8 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/metaprov/modeldapi/pkg/util"
 	team "github.com/metaprov/modeldapi/pkg/apis/team"
+	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
