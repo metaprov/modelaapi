@@ -77,7 +77,7 @@ ifeq (, $(shell which controller-gen))
 	CONTROLLER_GEN_TMP_DIR=$$(mktemp -d) ;\
 	cd $$CONTROLLER_GEN_TMP_DIR ;\
 	go mod init tmp ;\
-	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.2.5 ;\
+	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.6.0 ;\
 	rm -rf $$CONTROLLER_GEN_TMP_DIR ;\
 	}
 CONTROLLER_GEN=$(GOBIN)/controller-gen
@@ -100,7 +100,7 @@ install-gen:
 	go install k8s.io/code-generator/cmd/import-boss     
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
-	GO111MODULE=on go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.5.0 
+	GO111MODULE=on go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.6.0 
 	
 
 .PHONY: generate
