@@ -16,7 +16,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -111,15 +110,6 @@ func (vcluster *VirtualCluster) RootUri() string {
 
 func (vcluster *VirtualCluster) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualcluster.yaml", vcluster.RootUri(), vcluster.Name)
-}
-
-func ParseVirtualClusterYaml(content []byte) (*VirtualCluster, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*VirtualCluster)
-	return r, nil
 }
 
 func (vcluster *VirtualCluster) ToYamlFile() ([]byte, error) {

@@ -14,7 +14,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -93,15 +92,6 @@ func (alert *TaskCard) RootUri() string {
 
 func (alert *TaskCard) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
-}
-
-func ParseTaskCardYaml(content []byte) (*TaskCard, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*TaskCard)
-	return r, nil
 }
 
 func (alert *TaskCard) ToYamlFile() ([]byte, error) {

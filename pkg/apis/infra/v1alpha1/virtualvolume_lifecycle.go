@@ -15,7 +15,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -90,15 +89,6 @@ func (volume *VirtualVolume) RootUri() string {
 
 func (volume *VirtualVolume) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-virtualvolume.yaml", volume.RootUri(), volume.Name)
-}
-
-func ParseVirtualVolumeYaml(content []byte) (*VirtualVolume, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*VirtualVolume)
-	return r, nil
 }
 
 func (vv *VirtualVolume) ToYamlFile() ([]byte, error) {

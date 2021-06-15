@@ -16,7 +16,6 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 //==============================================================================
@@ -103,15 +102,6 @@ func (runbook *RunBook) GetCond(t RunBookConditionType) RunBookCondition {
 
 func (runbook *RunBook) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "connections", runbook.Namespace, runbook.Name)
-}
-
-func ParseRunBookYaml(content []byte) (*RunBook, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(v1alpha1.SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*RunBook)
-	return r, nil
 }
 
 func (runbook *RunBook) MarkReady() {

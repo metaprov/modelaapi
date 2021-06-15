@@ -19839,8 +19839,7 @@ proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.toObject = function(opt
  */
 proto.k8s.io.api.core.v1.EphemeralVolumeSource.toObject = function(includeInstance, msg) {
   var f, obj = {
-    volumeclaimtemplate: (f = msg.getVolumeclaimtemplate()) && proto.k8s.io.api.core.v1.PersistentVolumeClaimTemplate.toObject(includeInstance, f),
-    readonly: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+    volumeclaimtemplate: (f = msg.getVolumeclaimtemplate()) && proto.k8s.io.api.core.v1.PersistentVolumeClaimTemplate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19882,10 +19881,6 @@ proto.k8s.io.api.core.v1.EphemeralVolumeSource.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.k8s.io.api.core.v1.PersistentVolumeClaimTemplate.deserializeBinaryFromReader);
       msg.setVolumeclaimtemplate(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReadonly(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -19921,13 +19916,6 @@ proto.k8s.io.api.core.v1.EphemeralVolumeSource.serializeBinaryToWriter = functio
       1,
       f,
       proto.k8s.io.api.core.v1.PersistentVolumeClaimTemplate.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeBool(
-      2,
-      f
     );
   }
 };
@@ -19967,42 +19955,6 @@ proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.clearVolumeclaimtemplat
  */
 proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.hasVolumeclaimtemplate = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional bool readOnly = 2;
- * @return {boolean}
- */
-proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.getReadonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.k8s.io.api.core.v1.EphemeralVolumeSource} returns this
- */
-proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.setReadonly = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.k8s.io.api.core.v1.EphemeralVolumeSource} returns this
- */
-proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.clearReadonly = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.k8s.io.api.core.v1.EphemeralVolumeSource.prototype.hasReadonly = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -40325,7 +40277,8 @@ proto.k8s.io.api.core.v1.PodAffinityTerm.toObject = function(includeInstance, ms
   var f, obj = {
     labelselector: (f = msg.getLabelselector()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.toObject(includeInstance, f),
     namespacesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    topologykey: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    topologykey: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    namespaceselector: (f = msg.getNamespaceselector()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -40374,6 +40327,11 @@ proto.k8s.io.api.core.v1.PodAffinityTerm.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setTopologykey(value);
+      break;
+    case 4:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.deserializeBinaryFromReader);
+      msg.setNamespaceselector(value);
       break;
     default:
       reader.skipField();
@@ -40424,6 +40382,14 @@ proto.k8s.io.api.core.v1.PodAffinityTerm.serializeBinaryToWriter = function(mess
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getNamespaceselector();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.serializeBinaryToWriter
     );
   }
 };
@@ -40536,6 +40502,43 @@ proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.clearTopologykey = function()
  */
 proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.hasTopologykey = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector namespaceSelector = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector}
+ */
+proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.getNamespaceselector = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector|undefined} value
+ * @return {!proto.k8s.io.api.core.v1.PodAffinityTerm} returns this
+*/
+proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.setNamespaceselector = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.k8s.io.api.core.v1.PodAffinityTerm} returns this
+ */
+proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.clearNamespaceselector = function() {
+  return this.setNamespaceselector(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.core.v1.PodAffinityTerm.prototype.hasNamespaceselector = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -48996,7 +48999,8 @@ proto.k8s.io.api.core.v1.Probe.toObject = function(includeInstance, msg) {
     timeoutseconds: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     periodseconds: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     successthreshold: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    failurethreshold: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    failurethreshold: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    terminationgraceperiodseconds: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -49057,6 +49061,10 @@ proto.k8s.io.api.core.v1.Probe.deserializeBinaryFromReader = function(msg, reade
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setFailurethreshold(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTerminationgraceperiodseconds(value);
       break;
     default:
       reader.skipField();
@@ -49127,6 +49135,13 @@ proto.k8s.io.api.core.v1.Probe.serializeBinaryToWriter = function(message, write
   if (f != null) {
     writer.writeInt32(
       6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeInt64(
+      7,
       f
     );
   }
@@ -49347,6 +49362,42 @@ proto.k8s.io.api.core.v1.Probe.prototype.clearFailurethreshold = function() {
  */
 proto.k8s.io.api.core.v1.Probe.prototype.hasFailurethreshold = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 terminationGracePeriodSeconds = 7;
+ * @return {number}
+ */
+proto.k8s.io.api.core.v1.Probe.prototype.getTerminationgraceperiodseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.k8s.io.api.core.v1.Probe} returns this
+ */
+proto.k8s.io.api.core.v1.Probe.prototype.setTerminationgraceperiodseconds = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.api.core.v1.Probe} returns this
+ */
+proto.k8s.io.api.core.v1.Probe.prototype.clearTerminationgraceperiodseconds = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.core.v1.Probe.prototype.hasTerminationgraceperiodseconds = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -60390,7 +60441,9 @@ proto.k8s.io.api.core.v1.ServiceSpec.toObject = function(includeInstance, msg) {
     topologykeysList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f,
     ipfamiliesList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
     ipfamilypolicy: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    allocateloadbalancernodeports: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f
+    allocateloadbalancernodeports: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
+    loadbalancerclass: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+    internaltrafficpolicy: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -60502,6 +60555,14 @@ proto.k8s.io.api.core.v1.ServiceSpec.deserializeBinaryFromReader = function(msg,
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAllocateloadbalancernodeports(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLoadbalancerclass(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInternaltrafficpolicy(value);
       break;
     default:
       reader.skipField();
@@ -60654,6 +60715,20 @@ proto.k8s.io.api.core.v1.ServiceSpec.serializeBinaryToWriter = function(message,
   if (f != null) {
     writer.writeBool(
       20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  if (f != null) {
+    writer.writeString(
+      22,
       f
     );
   }
@@ -61299,6 +61374,78 @@ proto.k8s.io.api.core.v1.ServiceSpec.prototype.clearAllocateloadbalancernodeport
  */
 proto.k8s.io.api.core.v1.ServiceSpec.prototype.hasAllocateloadbalancernodeports = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional string loadBalancerClass = 21;
+ * @return {string}
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.getLoadbalancerclass = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.api.core.v1.ServiceSpec} returns this
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.setLoadbalancerclass = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.api.core.v1.ServiceSpec} returns this
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.clearLoadbalancerclass = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.hasLoadbalancerclass = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional string internalTrafficPolicy = 22;
+ * @return {string}
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.getInternaltrafficpolicy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.api.core.v1.ServiceSpec} returns this
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.setInternaltrafficpolicy = function(value) {
+  return jspb.Message.setField(this, 22, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.api.core.v1.ServiceSpec} returns this
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.clearInternaltrafficpolicy = function() {
+  return jspb.Message.setField(this, 22, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.api.core.v1.ServiceSpec.prototype.hasInternaltrafficpolicy = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

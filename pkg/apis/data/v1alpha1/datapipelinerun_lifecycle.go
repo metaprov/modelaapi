@@ -15,7 +15,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 func (run *DataPipelineRun) HasFinalizer() bool {
@@ -91,15 +90,6 @@ func (run *DataPipelineRun) RootUri() string {
 
 func (run *DataPipelineRun) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-wrangling.yaml", run.RootUri(), run.Name)
-}
-
-func ParseDataPipelineRunYaml(content []byte) (*DataPipelineRun, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*DataPipelineRun)
-	return r, nil
 }
 
 func (in *DataPipelineRun) Paused() bool {

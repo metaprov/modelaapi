@@ -17,7 +17,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 //==============================================================================
@@ -148,15 +147,6 @@ func (lp *LabelingPipeline) IsReady() bool {
 
 func (lp *LabelingPipeline) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", lp.Namespace, lp.Name)
-}
-
-func ParseLabelsetYaml(content []byte) (*LabelingPipeline, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*LabelingPipeline)
-	return r, nil
 }
 
 func (lp *LabelingPipeline) MarkReady() {

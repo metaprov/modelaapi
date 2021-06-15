@@ -14,7 +14,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
@@ -131,15 +130,6 @@ func (run *CronPrediction) IsReady() bool {
 
 func (run *CronPrediction) Key() string {
 	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
-}
-
-func ParseCronPredictionYaml(content []byte) (*CronPrediction, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*CronPrediction)
-	return r, nil
 }
 
 func (run *CronPrediction) ToYamlFile() ([]byte, error) {

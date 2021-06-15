@@ -8,10 +8,11 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"gopkg.in/yaml.v2"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	"k8s.io/client-go/kubernetes/scheme"
+
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
@@ -58,13 +59,4 @@ func (pd *PublicDataset) RepEntry() (string, error) {
 
 func (pd *PublicDataset) ValidateDelete() error {
 	return nil
-}
-
-func ParsePublicDatasetYaml(content []byte) (*PublicDataset, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*PublicDataset)
-	return r, nil
 }

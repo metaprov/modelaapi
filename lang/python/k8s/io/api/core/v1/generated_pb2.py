@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z\002v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"k8s.io/api/core/v1/generated.proto\x12\x12k8s.io.api.core.v1\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x1a\x33k8s.io/apimachinery/pkg/util/intstr/generated.proto\"i\n AWSElasticBlockStoreVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x11\n\tpartition\x18\x03 \x01(\x05\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\"\xb6\x01\n\x08\x41\x66\x66inity\x12\x36\n\x0cnodeAffinity\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeAffinity\x12\x34\n\x0bpodAffinity\x18\x02 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodAffinity\x12<\n\x0fpodAntiAffinity\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.PodAntiAffinity\"2\n\x0e\x41ttachedVolume\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ndevicePath\x18\x02 \x01(\t\"N\n\tAvoidPods\x12\x41\n\x0fpreferAvoidPods\x18\x01 \x03(\x0b\x32(.k8s.io.api.core.v1.PreferAvoidPodsEntry\"\x7f\n\x15\x41zureDiskVolumeSource\x12\x10\n\x08\x64iskName\x18\x01 \x01(\t\x12\x0f\n\x07\x64iskURI\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61\x63hingMode\x18\x03 \x01(\t\x12\x0e\n\x06\x66sType\x18\x04 \x01(\t\x12\x10\n\x08readOnly\x18\x05 \x01(\x08\x12\x0c\n\x04kind\x18\x06 \x01(\t\"s\n\x1f\x41zureFilePersistentVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12\x11\n\tshareName\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x17\n\x0fsecretNamespace\x18\x04 \x01(\t\"P\n\x15\x41zureFileVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12\x11\n\tshareName\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\x82\x01\n\x07\x42inding\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x06target\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\x90\x04\n\x19\x43SIPersistentVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x14\n\x0cvolumeHandle\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x0e\n\x06\x66sType\x18\x04 \x01(\t\x12]\n\x10volumeAttributes\x18\x05 \x03(\x0b\x32\x43.k8s.io.api.core.v1.CSIPersistentVolumeSource.VolumeAttributesEntry\x12G\n\x1a\x63ontrollerPublishSecretRef\x18\x06 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12?\n\x12nodeStageSecretRef\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x41\n\x14nodePublishSecretRef\x18\x08 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x46\n\x19\x63ontrollerExpandSecretRef\x18\t \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x1a\x37\n\x15VolumeAttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x99\x02\n\x0f\x43SIVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12S\n\x10volumeAttributes\x18\x04 \x03(\x0b\x32\x39.k8s.io.api.core.v1.CSIVolumeSource.VolumeAttributesEntry\x12\x46\n\x14nodePublishSecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x1a\x37\n\x15VolumeAttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x0c\x43\x61pabilities\x12\x0b\n\x03\x61\x64\x64\x18\x01 \x03(\t\x12\x0c\n\x04\x64rop\x18\x02 \x03(\t\"\xaa\x01\n\x1c\x43\x65phFSPersistentVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x12\n\nsecretFile\x18\x04 \x01(\t\x12\x36\n\tsecretRef\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\"\xa5\x01\n\x12\x43\x65phFSVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x12\n\nsecretFile\x18\x04 \x01(\t\x12;\n\tsecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\"\x8a\x01\n\x1c\x43inderPersistentVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x36\n\tsecretRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\"\x85\x01\n\x12\x43inderVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12;\n\tsecretRef\x18\x04 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\"(\n\x0e\x43lientIPConfig\x12\x16\n\x0etimeoutSeconds\x18\x01 \x01(\x05\"R\n\x12\x43omponentCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"\x91\x01\n\x0f\x43omponentStatus\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12:\n\nconditions\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.ComponentCondition\"\x8b\x01\n\x13\x43omponentStatusList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.ComponentStatus\"\xbc\x02\n\tConfigMap\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x11\n\timmutable\x18\x04 \x01(\x08\x12\x35\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\'.k8s.io.api.core.v1.ConfigMap.DataEntry\x12\x41\n\nbinaryData\x18\x03 \x03(\x0b\x32-.k8s.io.api.core.v1.ConfigMap.BinaryDataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0f\x42inaryDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"n\n\x12\x43onfigMapEnvSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08optional\x18\x02 \x01(\x08\"}\n\x14\x43onfigMapKeySelector\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08optional\x18\x03 \x01(\x08\"\x7f\n\rConfigMapList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.ConfigMap\"|\n\x19\x43onfigMapNodeConfigSource\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uid\x18\x03 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x04 \x01(\t\x12\x18\n\x10kubeletConfigKey\x18\x05 \x01(\t\"\x9d\x01\n\x13\x43onfigMapProjection\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xb4\x01\n\x15\x43onfigMapVolumeSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x03 \x01(\x05\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xa7\x06\n\tContainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x03 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x04 \x03(\t\x12\x12\n\nworkingDir\x18\x05 \x01(\t\x12\x30\n\x05ports\x18\x06 \x03(\x0b\x32!.k8s.io.api.core.v1.ContainerPort\x12\x32\n\x07\x65nvFrom\x18\x13 \x03(\x0b\x32!.k8s.io.api.core.v1.EnvFromSource\x12\'\n\x03\x65nv\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.EnvVar\x12;\n\tresources\x18\x08 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x35\n\x0cvolumeMounts\x18\t \x03(\x0b\x32\x1f.k8s.io.api.core.v1.VolumeMount\x12\x37\n\rvolumeDevices\x18\x15 \x03(\x0b\x32 .k8s.io.api.core.v1.VolumeDevice\x12\x30\n\rlivenessProbe\x18\n \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x31\n\x0ereadinessProbe\x18\x0b \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12/\n\x0cstartupProbe\x18\x16 \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x30\n\tlifecycle\x18\x0c \x01(\x0b\x32\x1d.k8s.io.api.core.v1.Lifecycle\x12\x1e\n\x16terminationMessagePath\x18\r \x01(\t\x12 \n\x18terminationMessagePolicy\x18\x14 \x01(\t\x12\x17\n\x0fimagePullPolicy\x18\x0e \x01(\t\x12<\n\x0fsecurityContext\x18\x0f \x01(\x0b\x32#.k8s.io.api.core.v1.SecurityContext\x12\r\n\x05stdin\x18\x10 \x01(\x08\x12\x11\n\tstdinOnce\x18\x11 \x01(\x08\x12\x0b\n\x03tty\x18\x12 \x01(\x08\"2\n\x0e\x43ontainerImage\x12\r\n\x05names\x18\x01 \x03(\t\x12\x11\n\tsizeBytes\x18\x02 \x01(\x03\"h\n\rContainerPort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08hostPort\x18\x02 \x01(\x05\x12\x15\n\rcontainerPort\x18\x03 \x01(\x05\x12\x10\n\x08protocol\x18\x04 \x01(\t\x12\x0e\n\x06hostIP\x18\x05 \x01(\t\"\xca\x01\n\x0e\x43ontainerState\x12:\n\x07waiting\x18\x01 \x01(\x0b\x32).k8s.io.api.core.v1.ContainerStateWaiting\x12:\n\x07running\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.ContainerStateRunning\x12@\n\nterminated\x18\x03 \x01(\x0b\x32,.k8s.io.api.core.v1.ContainerStateTerminated\"V\n\x15\x43ontainerStateRunning\x12=\n\tstartedAt\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\xf1\x01\n\x18\x43ontainerStateTerminated\x12\x10\n\x08\x65xitCode\x18\x01 \x01(\x05\x12\x0e\n\x06signal\x18\x02 \x01(\x05\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12=\n\tstartedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12>\n\nfinishedAt\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x13\n\x0b\x63ontainerID\x18\x07 \x01(\t\"8\n\x15\x43ontainerStateWaiting\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xf4\x01\n\x0f\x43ontainerStatus\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x31\n\x05state\x18\x02 \x01(\x0b\x32\".k8s.io.api.core.v1.ContainerState\x12\x35\n\tlastState\x18\x03 \x01(\x0b\x32\".k8s.io.api.core.v1.ContainerState\x12\r\n\x05ready\x18\x04 \x01(\x08\x12\x14\n\x0crestartCount\x18\x05 \x01(\x05\x12\r\n\x05image\x18\x06 \x01(\t\x12\x0f\n\x07imageID\x18\x07 \x01(\t\x12\x13\n\x0b\x63ontainerID\x18\x08 \x01(\t\x12\x0f\n\x07started\x18\t \x01(\x08\"\x1e\n\x0e\x44\x61\x65monEndpoint\x12\x0c\n\x04Port\x18\x01 \x01(\x05\"Q\n\x15\x44ownwardAPIProjection\x12\x38\n\x05items\x18\x01 \x03(\x0b\x32).k8s.io.api.core.v1.DownwardAPIVolumeFile\"\xb3\x01\n\x15\x44ownwardAPIVolumeFile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x39\n\x08\x66ieldRef\x18\x02 \x01(\x0b\x32\'.k8s.io.api.core.v1.ObjectFieldSelector\x12\x43\n\x10resourceFieldRef\x18\x03 \x01(\x0b\x32).k8s.io.api.core.v1.ResourceFieldSelector\x12\x0c\n\x04mode\x18\x04 \x01(\x05\"h\n\x17\x44ownwardAPIVolumeSource\x12\x38\n\x05items\x18\x01 \x03(\x0b\x32).k8s.io.api.core.v1.DownwardAPIVolumeFile\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x02 \x01(\x05\"i\n\x14\x45mptyDirVolumeSource\x12\x0e\n\x06medium\x18\x01 \x01(\t\x12\x41\n\tsizeLimit\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"y\n\x0f\x45ndpointAddress\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x10\n\x08hostname\x18\x03 \x01(\t\x12\x10\n\x08nodeName\x18\x04 \x01(\t\x12\x36\n\ttargetRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"Q\n\x0c\x45ndpointPort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08protocol\x18\x03 \x01(\t\x12\x13\n\x0b\x61ppProtocol\x18\x04 \x01(\t\"\xb9\x01\n\x0e\x45ndpointSubset\x12\x36\n\taddresses\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.EndpointAddress\x12>\n\x11notReadyAddresses\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.EndpointAddress\x12/\n\x05ports\x18\x03 \x03(\x0b\x32 .k8s.io.api.core.v1.EndpointPort\"\x84\x01\n\tEndpoints\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x07subsets\x18\x02 \x03(\x0b\x32\".k8s.io.api.core.v1.EndpointSubset\"\x7f\n\rEndpointsList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Endpoints\"\x95\x01\n\rEnvFromSource\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12<\n\x0c\x63onfigMapRef\x18\x02 \x01(\x0b\x32&.k8s.io.api.core.v1.ConfigMapEnvSource\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretEnvSource\"Z\n\x06\x45nvVar\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x33\n\tvalueFrom\x18\x03 \x01(\x0b\x32 .k8s.io.api.core.v1.EnvVarSource\"\x8e\x02\n\x0c\x45nvVarSource\x12\x39\n\x08\x66ieldRef\x18\x01 \x01(\x0b\x32\'.k8s.io.api.core.v1.ObjectFieldSelector\x12\x43\n\x10resourceFieldRef\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.ResourceFieldSelector\x12\x41\n\x0f\x63onfigMapKeyRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.ConfigMapKeySelector\x12;\n\x0csecretKeyRef\x18\x04 \x01(\x0b\x32%.k8s.io.api.core.v1.SecretKeySelector\"\x81\x01\n\x12\x45phemeralContainer\x12N\n\x18\x65phemeralContainerCommon\x18\x01 \x01(\x0b\x32,.k8s.io.api.core.v1.EphemeralContainerCommon\x12\x1b\n\x13targetContainerName\x18\x02 \x01(\t\"\xb6\x06\n\x18\x45phemeralContainerCommon\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x03 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x04 \x03(\t\x12\x12\n\nworkingDir\x18\x05 \x01(\t\x12\x30\n\x05ports\x18\x06 \x03(\x0b\x32!.k8s.io.api.core.v1.ContainerPort\x12\x32\n\x07\x65nvFrom\x18\x13 \x03(\x0b\x32!.k8s.io.api.core.v1.EnvFromSource\x12\'\n\x03\x65nv\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.EnvVar\x12;\n\tresources\x18\x08 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x35\n\x0cvolumeMounts\x18\t \x03(\x0b\x32\x1f.k8s.io.api.core.v1.VolumeMount\x12\x37\n\rvolumeDevices\x18\x15 \x03(\x0b\x32 .k8s.io.api.core.v1.VolumeDevice\x12\x30\n\rlivenessProbe\x18\n \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x31\n\x0ereadinessProbe\x18\x0b \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12/\n\x0cstartupProbe\x18\x16 \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x30\n\tlifecycle\x18\x0c \x01(\x0b\x32\x1d.k8s.io.api.core.v1.Lifecycle\x12\x1e\n\x16terminationMessagePath\x18\r \x01(\t\x12 \n\x18terminationMessagePolicy\x18\x14 \x01(\t\x12\x17\n\x0fimagePullPolicy\x18\x0e \x01(\t\x12<\n\x0fsecurityContext\x18\x0f \x01(\x0b\x32#.k8s.io.api.core.v1.SecurityContext\x12\r\n\x05stdin\x18\x10 \x01(\x08\x12\x11\n\tstdinOnce\x18\x11 \x01(\x08\x12\x0b\n\x03tty\x18\x12 \x01(\x08\"\x9e\x01\n\x13\x45phemeralContainers\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x43\n\x13\x65phemeralContainers\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.EphemeralContainer\"y\n\x15\x45phemeralVolumeSource\x12N\n\x13volumeClaimTemplate\x18\x01 \x01(\x0b\x32\x31.k8s.io.api.core.v1.PersistentVolumeClaimTemplate\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\"\xf0\x04\n\x05\x45vent\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x0einvolvedObject\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12/\n\x06source\x18\x05 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.EventSource\x12\x42\n\x0e\x66irstTimestamp\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x41\n\rlastTimestamp\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\r\n\x05\x63ount\x18\x08 \x01(\x05\x12\x0c\n\x04type\x18\t \x01(\t\x12\x42\n\teventTime\x18\n \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.MicroTime\x12/\n\x06series\x18\x0b \x01(\x0b\x32\x1f.k8s.io.api.core.v1.EventSeries\x12\x0e\n\x06\x61\x63tion\x18\x0c \x01(\t\x12\x34\n\x07related\x18\r \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x1a\n\x12reportingComponent\x18\x0e \x01(\t\x12\x19\n\x11reportingInstance\x18\x0f \x01(\t\"w\n\tEventList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.k8s.io.api.core.v1.Event\"g\n\x0b\x45ventSeries\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12I\n\x10lastObservedTime\x18\x02 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.MicroTime\".\n\x0b\x45ventSource\x12\x11\n\tcomponent\x18\x01 \x01(\t\x12\x0c\n\x04host\x18\x02 \x01(\t\"\x1d\n\nExecAction\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\"b\n\x0e\x46\x43VolumeSource\x12\x12\n\ntargetWWNs\x18\x01 \x03(\t\x12\x0b\n\x03lun\x18\x02 \x01(\x05\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\r\n\x05wwids\x18\x05 \x03(\t\"\x84\x02\n\x1a\x46lexPersistentVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12L\n\x07options\x18\x05 \x03(\x0b\x32;.k8s.io.api.core.v1.FlexPersistentVolumeSource.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf5\x01\n\x10\x46lexVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12;\n\tsecretRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\x42\n\x07options\x18\x05 \x03(\x0b\x32\x31.k8s.io.api.core.v1.FlexVolumeSource.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x13\x46lockerVolumeSource\x12\x13\n\x0b\x64\x61tasetName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tasetUUID\x18\x02 \x01(\t\"d\n\x1dGCEPersistentDiskVolumeSource\x12\x0e\n\x06pdName\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x11\n\tpartition\x18\x03 \x01(\x05\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\"N\n\x13GitRepoVolumeSource\x12\x12\n\nrepository\x18\x01 \x01(\t\x12\x10\n\x08revision\x18\x02 \x01(\t\x12\x11\n\tdirectory\x18\x03 \x01(\t\"p\n\x1fGlusterfsPersistentVolumeSource\x12\x11\n\tendpoints\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x1a\n\x12\x65ndpointsNamespace\x18\x04 \x01(\t\"J\n\x15GlusterfsVolumeSource\x12\x11\n\tendpoints\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\xb0\x01\n\rHTTPGetAction\x12\x0c\n\x04path\x18\x01 \x01(\t\x12>\n\x04port\x18\x02 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x0e\n\x06scheme\x18\x04 \x01(\t\x12\x33\n\x0bhttpHeaders\x18\x05 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.HTTPHeader\")\n\nHTTPHeader\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\xa3\x01\n\x07Handler\x12,\n\x04\x65xec\x18\x01 \x01(\x0b\x32\x1e.k8s.io.api.core.v1.ExecAction\x12\x32\n\x07httpGet\x18\x02 \x01(\x0b\x32!.k8s.io.api.core.v1.HTTPGetAction\x12\x36\n\ttcpSocket\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.TCPSocketAction\"*\n\tHostAlias\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x11\n\thostnames\x18\x02 \x03(\t\"2\n\x14HostPathVolumeSource\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x9b\x02\n\x1bISCSIPersistentVolumeSource\x12\x14\n\x0ctargetPortal\x18\x01 \x01(\t\x12\x0b\n\x03iqn\x18\x02 \x01(\t\x12\x0b\n\x03lun\x18\x03 \x01(\x05\x12\x16\n\x0eiscsiInterface\x18\x04 \x01(\t\x12\x0e\n\x06\x66sType\x18\x05 \x01(\t\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\x12\x0f\n\x07portals\x18\x07 \x03(\t\x12\x19\n\x11\x63hapAuthDiscovery\x18\x08 \x01(\x08\x12\x17\n\x0f\x63hapAuthSession\x18\x0b \x01(\x08\x12\x36\n\tsecretRef\x18\n \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x15\n\rinitiatorName\x18\x0c \x01(\t\"\x96\x02\n\x11ISCSIVolumeSource\x12\x14\n\x0ctargetPortal\x18\x01 \x01(\t\x12\x0b\n\x03iqn\x18\x02 \x01(\t\x12\x0b\n\x03lun\x18\x03 \x01(\x05\x12\x16\n\x0eiscsiInterface\x18\x04 \x01(\t\x12\x0e\n\x06\x66sType\x18\x05 \x01(\t\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\x12\x0f\n\x07portals\x18\x07 \x03(\t\x12\x19\n\x11\x63hapAuthDiscovery\x18\x08 \x01(\x08\x12\x17\n\x0f\x63hapAuthSession\x18\x0b \x01(\x08\x12;\n\tsecretRef\x18\n \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x15\n\rinitiatorName\x18\x0c \x01(\t\"4\n\tKeyToPath\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04mode\x18\x03 \x01(\x05\"i\n\tLifecycle\x12.\n\tpostStart\x18\x01 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\x12,\n\x07preStop\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\"\x82\x01\n\nLimitRange\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x30\n\x04spec\x18\x02 \x01(\x0b\x32\".k8s.io.api.core.v1.LimitRangeSpec\"\xec\x06\n\x0eLimitRangeItem\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x38\n\x03max\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.LimitRangeItem.MaxEntry\x12\x38\n\x03min\x18\x03 \x03(\x0b\x32+.k8s.io.api.core.v1.LimitRangeItem.MinEntry\x12@\n\x07\x64\x65\x66\x61ult\x18\x04 \x03(\x0b\x32/.k8s.io.api.core.v1.LimitRangeItem.DefaultEntry\x12N\n\x0e\x64\x65\x66\x61ultRequest\x18\x05 \x03(\x0b\x32\x36.k8s.io.api.core.v1.LimitRangeItem.DefaultRequestEntry\x12Z\n\x14maxLimitRequestRatio\x18\x06 \x03(\x0b\x32<.k8s.io.api.core.v1.LimitRangeItem.MaxLimitRequestRatioEntry\x1aZ\n\x08MaxEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1aZ\n\x08MinEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a^\n\x0c\x44\x65\x66\x61ultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a\x65\n\x13\x44\x65\x66\x61ultRequestEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1ak\n\x19MaxLimitRequestRatioEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\x81\x01\n\x0eLimitRangeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.LimitRange\"D\n\x0eLimitRangeSpec\x12\x32\n\x06limits\x18\x01 \x03(\x0b\x32\".k8s.io.api.core.v1.LimitRangeItem\"\x86\x01\n\x04List\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12<\n\x05items\x18\x02 \x03(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtension\"b\n\x13LoadBalancerIngress\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x10\n\x08hostname\x18\x02 \x01(\t\x12-\n\x05ports\x18\x04 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.PortStatus\"N\n\x12LoadBalancerStatus\x12\x38\n\x07ingress\x18\x01 \x03(\x0b\x32\'.k8s.io.api.core.v1.LoadBalancerIngress\"$\n\x14LocalObjectReference\x12\x0c\n\x04name\x18\x01 \x01(\t\"1\n\x11LocalVolumeSource\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\"A\n\x0fNFSVolumeSource\x12\x0e\n\x06server\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\xb5\x01\n\tNamespace\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12/\n\x04spec\x18\x02 \x01(\x0b\x32!.k8s.io.api.core.v1.NamespaceSpec\x12\x33\n\x06status\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.NamespaceStatus\"\x9b\x01\n\x12NamespaceCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x7f\n\rNamespaceList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Namespace\"#\n\rNamespaceSpec\x12\x12\n\nfinalizers\x18\x01 \x03(\t\"\\\n\x0fNamespaceStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12:\n\nconditions\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.NamespaceCondition\"\xa6\x01\n\x04Node\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12*\n\x04spec\x18\x02 \x01(\x0b\x32\x1c.k8s.io.api.core.v1.NodeSpec\x12.\n\x06status\x18\x03 \x01(\x0b\x32\x1e.k8s.io.api.core.v1.NodeStatus\",\n\x0bNodeAddress\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\xce\x01\n\x0cNodeAffinity\x12X\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeSelector\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.PreferredSchedulingTerm\"\xdd\x01\n\rNodeCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x45\n\x11lastHeartbeatTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"T\n\x10NodeConfigSource\x12@\n\tconfigMap\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.ConfigMapNodeConfigSource\"\xcc\x01\n\x10NodeConfigStatus\x12\x36\n\x08\x61ssigned\x18\x01 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\x34\n\x06\x61\x63tive\x18\x02 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12;\n\rlastKnownGood\x18\x03 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"R\n\x13NodeDaemonEndpoints\x12;\n\x0fkubeletEndpoint\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.DaemonEndpoint\"u\n\x08NodeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.k8s.io.api.core.v1.Node\" \n\x10NodeProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xb3\x01\n\rNodeResources\x12\x41\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32/.k8s.io.api.core.v1.NodeResources.CapacityEntry\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"O\n\x0cNodeSelector\x12?\n\x11nodeSelectorTerms\x18\x01 \x03(\x0b\x32$.k8s.io.api.core.v1.NodeSelectorTerm\"H\n\x17NodeSelectorRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"\x9b\x01\n\x10NodeSelectorTerm\x12\x45\n\x10matchExpressions\x18\x01 \x03(\x0b\x32+.k8s.io.api.core.v1.NodeSelectorRequirement\x12@\n\x0bmatchFields\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.NodeSelectorRequirement\"\xd3\x01\n\x08NodeSpec\x12\x0f\n\x07podCIDR\x18\x01 \x01(\t\x12\x10\n\x08podCIDRs\x18\x07 \x03(\t\x12\x12\n\nproviderID\x18\x03 \x01(\t\x12\x15\n\runschedulable\x18\x04 \x01(\x08\x12)\n\x06taints\x18\x05 \x03(\x0b\x32\x19.k8s.io.api.core.v1.Taint\x12:\n\x0c\x63onfigSource\x18\x06 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\x12\n\nexternalID\x18\x02 \x01(\t\"\x86\x06\n\nNodeStatus\x12>\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32,.k8s.io.api.core.v1.NodeStatus.CapacityEntry\x12\x44\n\x0b\x61llocatable\x18\x02 \x03(\x0b\x32/.k8s.io.api.core.v1.NodeStatus.AllocatableEntry\x12\r\n\x05phase\x18\x03 \x01(\t\x12\x35\n\nconditions\x18\x04 \x03(\x0b\x32!.k8s.io.api.core.v1.NodeCondition\x12\x32\n\taddresses\x18\x05 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.NodeAddress\x12@\n\x0f\x64\x61\x65monEndpoints\x18\x06 \x01(\x0b\x32\'.k8s.io.api.core.v1.NodeDaemonEndpoints\x12\x34\n\x08nodeInfo\x18\x07 \x01(\x0b\x32\".k8s.io.api.core.v1.NodeSystemInfo\x12\x32\n\x06images\x18\x08 \x03(\x0b\x32\".k8s.io.api.core.v1.ContainerImage\x12\x14\n\x0cvolumesInUse\x18\t \x03(\t\x12;\n\x0fvolumesAttached\x18\n \x03(\x0b\x32\".k8s.io.api.core.v1.AttachedVolume\x12\x34\n\x06\x63onfig\x18\x0b \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigStatus\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a\x62\n\x10\x41llocatableEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xf1\x01\n\x0eNodeSystemInfo\x12\x11\n\tmachineID\x18\x01 \x01(\t\x12\x12\n\nsystemUUID\x18\x02 \x01(\t\x12\x0e\n\x06\x62ootID\x18\x03 \x01(\t\x12\x15\n\rkernelVersion\x18\x04 \x01(\t\x12\x0f\n\x07osImage\x18\x05 \x01(\t\x12\x1f\n\x17\x63ontainerRuntimeVersion\x18\x06 \x01(\t\x12\x16\n\x0ekubeletVersion\x18\x07 \x01(\t\x12\x18\n\x10kubeProxyVersion\x18\x08 \x01(\t\x12\x17\n\x0foperatingSystem\x18\t \x01(\t\x12\x14\n\x0c\x61rchitecture\x18\n \x01(\t\"<\n\x13ObjectFieldSelector\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x11\n\tfieldPath\x18\x02 \x01(\t\"\x8d\x01\n\x0fObjectReference\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\t\x12\x12\n\napiVersion\x18\x05 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x06 \x01(\t\x12\x11\n\tfieldPath\x18\x07 \x01(\t\"\xca\x01\n\x10PersistentVolume\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x36\n\x04spec\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.PersistentVolumeSpec\x12:\n\x06status\x18\x03 \x01(\x0b\x32*.k8s.io.api.core.v1.PersistentVolumeStatus\"\xd9\x01\n\x15PersistentVolumeClaim\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.PersistentVolumeClaimSpec\x12?\n\x06status\x18\x03 \x01(\x0b\x32/.k8s.io.api.core.v1.PersistentVolumeClaimStatus\"\xea\x01\n\x1ePersistentVolumeClaimCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x41\n\rlastProbeTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x97\x01\n\x19PersistentVolumeClaimList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).k8s.io.api.core.v1.PersistentVolumeClaim\"\xb9\x02\n\x19PersistentVolumeClaimSpec\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x01 \x03(\t\x12\x45\n\x08selector\x18\x04 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\x12;\n\tresources\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x12\n\nvolumeName\x18\x03 \x01(\t\x12\x18\n\x10storageClassName\x18\x05 \x01(\t\x12\x12\n\nvolumeMode\x18\x06 \x01(\t\x12\x41\n\ndataSource\x18\x07 \x01(\x0b\x32-.k8s.io.api.core.v1.TypedLocalObjectReference\"\xbb\x02\n\x1bPersistentVolumeClaimStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x02 \x03(\t\x12O\n\x08\x63\x61pacity\x18\x03 \x03(\x0b\x32=.k8s.io.api.core.v1.PersistentVolumeClaimStatus.CapacityEntry\x12\x46\n\nconditions\x18\x04 \x03(\x0b\x32\x32.k8s.io.api.core.v1.PersistentVolumeClaimCondition\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xa0\x01\n\x1dPersistentVolumeClaimTemplate\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.PersistentVolumeClaimSpec\"H\n!PersistentVolumeClaimVolumeSource\x12\x11\n\tclaimName\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\"\x8d\x01\n\x14PersistentVolumeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x33\n\x05items\x18\x02 \x03(\x0b\x32$.k8s.io.api.core.v1.PersistentVolume\"\xbd\x0b\n\x16PersistentVolumeSource\x12L\n\x11gcePersistentDisk\x18\x01 \x01(\x0b\x32\x31.k8s.io.api.core.v1.GCEPersistentDiskVolumeSource\x12R\n\x14\x61wsElasticBlockStore\x18\x02 \x01(\x0b\x32\x34.k8s.io.api.core.v1.AWSElasticBlockStoreVolumeSource\x12:\n\x08hostPath\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.HostPathVolumeSource\x12\x46\n\tglusterfs\x18\x04 \x01(\x0b\x32\x33.k8s.io.api.core.v1.GlusterfsPersistentVolumeSource\x12\x30\n\x03nfs\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.NFSVolumeSource\x12:\n\x03rbd\x18\x06 \x01(\x0b\x32-.k8s.io.api.core.v1.RBDPersistentVolumeSource\x12>\n\x05iscsi\x18\x07 \x01(\x0b\x32/.k8s.io.api.core.v1.ISCSIPersistentVolumeSource\x12@\n\x06\x63inder\x18\x08 \x01(\x0b\x32\x30.k8s.io.api.core.v1.CinderPersistentVolumeSource\x12@\n\x06\x63\x65phfs\x18\t \x01(\x0b\x32\x30.k8s.io.api.core.v1.CephFSPersistentVolumeSource\x12.\n\x02\x66\x63\x18\n \x01(\x0b\x32\".k8s.io.api.core.v1.FCVolumeSource\x12\x38\n\x07\x66locker\x18\x0b \x01(\x0b\x32\'.k8s.io.api.core.v1.FlockerVolumeSource\x12\x42\n\nflexVolume\x18\x0c \x01(\x0b\x32..k8s.io.api.core.v1.FlexPersistentVolumeSource\x12\x46\n\tazureFile\x18\r \x01(\x0b\x32\x33.k8s.io.api.core.v1.AzureFilePersistentVolumeSource\x12I\n\rvsphereVolume\x18\x0e \x01(\x0b\x32\x32.k8s.io.api.core.v1.VsphereVirtualDiskVolumeSource\x12\x38\n\x07quobyte\x18\x0f \x01(\x0b\x32\'.k8s.io.api.core.v1.QuobyteVolumeSource\x12<\n\tazureDisk\x18\x10 \x01(\x0b\x32).k8s.io.api.core.v1.AzureDiskVolumeSource\x12R\n\x14photonPersistentDisk\x18\x11 \x01(\x0b\x32\x34.k8s.io.api.core.v1.PhotonPersistentDiskVolumeSource\x12@\n\x0eportworxVolume\x18\x12 \x01(\x0b\x32(.k8s.io.api.core.v1.PortworxVolumeSource\x12\x42\n\x07scaleIO\x18\x13 \x01(\x0b\x32\x31.k8s.io.api.core.v1.ScaleIOPersistentVolumeSource\x12\x34\n\x05local\x18\x14 \x01(\x0b\x32%.k8s.io.api.core.v1.LocalVolumeSource\x12\x46\n\tstorageos\x18\x15 \x01(\x0b\x32\x33.k8s.io.api.core.v1.StorageOSPersistentVolumeSource\x12:\n\x03\x63si\x18\x16 \x01(\x0b\x32-.k8s.io.api.core.v1.CSIPersistentVolumeSource\"\x82\x04\n\x14PersistentVolumeSpec\x12H\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32\x36.k8s.io.api.core.v1.PersistentVolumeSpec.CapacityEntry\x12J\n\x16persistentVolumeSource\x18\x02 \x01(\x0b\x32*.k8s.io.api.core.v1.PersistentVolumeSource\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x03 \x03(\t\x12\x35\n\x08\x63laimRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12%\n\x1dpersistentVolumeReclaimPolicy\x18\x05 \x01(\t\x12\x18\n\x10storageClassName\x18\x06 \x01(\t\x12\x14\n\x0cmountOptions\x18\x07 \x03(\t\x12\x12\n\nvolumeMode\x18\x08 \x01(\t\x12<\n\x0cnodeAffinity\x18\t \x01(\x0b\x32&.k8s.io.api.core.v1.VolumeNodeAffinity\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"H\n\x16PersistentVolumeStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0e\n\x06reason\x18\x03 \x01(\t\"@\n PhotonPersistentDiskVolumeSource\x12\x0c\n\x04pdID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\"\xa3\x01\n\x03Pod\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12)\n\x04spec\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.PodSpec\x12-\n\x06status\x18\x03 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\"\xd0\x01\n\x0bPodAffinity\x12[\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.WeightedPodAffinityTerm\"\x86\x01\n\x0fPodAffinityTerm\x12J\n\rlabelSelector\x18\x01 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\x12\x12\n\nnamespaces\x18\x02 \x03(\t\x12\x13\n\x0btopologyKey\x18\x03 \x01(\t\"\xd4\x01\n\x0fPodAntiAffinity\x12[\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.WeightedPodAffinityTerm\"a\n\x10PodAttachOptions\x12\r\n\x05stdin\x18\x01 \x01(\x08\x12\x0e\n\x06stdout\x18\x02 \x01(\x08\x12\x0e\n\x06stderr\x18\x03 \x01(\x08\x12\x0b\n\x03tty\x18\x04 \x01(\x08\x12\x11\n\tcontainer\x18\x05 \x01(\t\"\xd8\x01\n\x0cPodCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x41\n\rlastProbeTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"n\n\x0cPodDNSConfig\x12\x13\n\x0bnameservers\x18\x01 \x03(\t\x12\x10\n\x08searches\x18\x02 \x03(\t\x12\x37\n\x07options\x18\x03 \x03(\x0b\x32&.k8s.io.api.core.v1.PodDNSConfigOption\"1\n\x12PodDNSConfigOption\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"p\n\x0ePodExecOptions\x12\r\n\x05stdin\x18\x01 \x01(\x08\x12\x0e\n\x06stdout\x18\x02 \x01(\x08\x12\x0e\n\x06stderr\x18\x03 \x01(\x08\x12\x0b\n\x03tty\x18\x04 \x01(\x08\x12\x11\n\tcontainer\x18\x05 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x06 \x03(\t\"\x13\n\x05PodIP\x12\n\n\x02ip\x18\x01 \x01(\t\"s\n\x07PodList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.k8s.io.api.core.v1.Pod\"\xfa\x01\n\rPodLogOptions\x12\x11\n\tcontainer\x18\x01 \x01(\t\x12\x0e\n\x06\x66ollow\x18\x02 \x01(\x08\x12\x10\n\x08previous\x18\x03 \x01(\x08\x12\x14\n\x0csinceSeconds\x18\x04 \x01(\x03\x12=\n\tsinceTime\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x12\n\ntimestamps\x18\x06 \x01(\x08\x12\x11\n\ttailLines\x18\x07 \x01(\x03\x12\x12\n\nlimitBytes\x18\x08 \x01(\x03\x12$\n\x1cinsecureSkipTLSVerifyBackend\x18\t \x01(\x08\"&\n\x15PodPortForwardOptions\x12\r\n\x05ports\x18\x01 \x03(\x05\"\x1f\n\x0fPodProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\")\n\x10PodReadinessGate\x12\x15\n\rconditionType\x18\x01 \x01(\t\"\x8b\x03\n\x12PodSecurityContext\x12:\n\x0eseLinuxOptions\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.SELinuxOptions\x12I\n\x0ewindowsOptions\x18\x08 \x01(\x0b\x32\x31.k8s.io.api.core.v1.WindowsSecurityContextOptions\x12\x11\n\trunAsUser\x18\x02 \x01(\x03\x12\x12\n\nrunAsGroup\x18\x06 \x01(\x03\x12\x14\n\x0crunAsNonRoot\x18\x03 \x01(\x08\x12\x1a\n\x12supplementalGroups\x18\x04 \x03(\x03\x12\x0f\n\x07\x66sGroup\x18\x05 \x01(\x03\x12+\n\x07sysctls\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Sysctl\x12\x1b\n\x13\x66sGroupChangePolicy\x18\t \x01(\t\x12:\n\x0eseccompProfile\x18\n \x01(\x0b\x32\".k8s.io.api.core.v1.SeccompProfile\"[\n\x0cPodSignature\x12K\n\rpodController\x18\x01 \x01(\x0b\x32\x34.k8s.io.apimachinery.pkg.apis.meta.v1.OwnerReference\"\xe5\x0b\n\x07PodSpec\x12+\n\x07volumes\x18\x01 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Volume\x12\x35\n\x0einitContainers\x18\x14 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Container\x12\x31\n\ncontainers\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Container\x12\x43\n\x13\x65phemeralContainers\x18\" \x03(\x0b\x32&.k8s.io.api.core.v1.EphemeralContainer\x12\x15\n\rrestartPolicy\x18\x03 \x01(\t\x12%\n\x1dterminationGracePeriodSeconds\x18\x04 \x01(\x03\x12\x1d\n\x15\x61\x63tiveDeadlineSeconds\x18\x05 \x01(\x03\x12\x11\n\tdnsPolicy\x18\x06 \x01(\t\x12\x43\n\x0cnodeSelector\x18\x07 \x03(\x0b\x32-.k8s.io.api.core.v1.PodSpec.NodeSelectorEntry\x12\x1a\n\x12serviceAccountName\x18\x08 \x01(\t\x12\x16\n\x0eserviceAccount\x18\t \x01(\t\x12$\n\x1c\x61utomountServiceAccountToken\x18\x15 \x01(\x08\x12\x10\n\x08nodeName\x18\n \x01(\t\x12\x13\n\x0bhostNetwork\x18\x0b \x01(\x08\x12\x0f\n\x07hostPID\x18\x0c \x01(\x08\x12\x0f\n\x07hostIPC\x18\r \x01(\x08\x12\x1d\n\x15shareProcessNamespace\x18\x1b \x01(\x08\x12?\n\x0fsecurityContext\x18\x0e \x01(\x0b\x32&.k8s.io.api.core.v1.PodSecurityContext\x12\x42\n\x10imagePullSecrets\x18\x0f \x03(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08hostname\x18\x10 \x01(\t\x12\x11\n\tsubdomain\x18\x11 \x01(\t\x12.\n\x08\x61\x66\x66inity\x18\x12 \x01(\x0b\x32\x1c.k8s.io.api.core.v1.Affinity\x12\x15\n\rschedulerName\x18\x13 \x01(\t\x12\x33\n\x0btolerations\x18\x16 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.Toleration\x12\x32\n\x0bhostAliases\x18\x17 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.HostAlias\x12\x19\n\x11priorityClassName\x18\x18 \x01(\t\x12\x10\n\x08priority\x18\x19 \x01(\x05\x12\x33\n\tdnsConfig\x18\x1a \x01(\x0b\x32 .k8s.io.api.core.v1.PodDNSConfig\x12<\n\x0ereadinessGates\x18\x1c \x03(\x0b\x32$.k8s.io.api.core.v1.PodReadinessGate\x12\x18\n\x10runtimeClassName\x18\x1d \x01(\t\x12\x1a\n\x12\x65nableServiceLinks\x18\x1e \x01(\x08\x12\x18\n\x10preemptionPolicy\x18\x1f \x01(\t\x12;\n\x08overhead\x18  \x03(\x0b\x32).k8s.io.api.core.v1.PodSpec.OverheadEntry\x12O\n\x19topologySpreadConstraints\x18! \x03(\x0b\x32,.k8s.io.api.core.v1.TopologySpreadConstraint\x12\x19\n\x11setHostnameAsFQDN\x18# \x01(\x08\x1a\x33\n\x11NodeSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a_\n\rOverheadEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xf4\x03\n\tPodStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x34\n\nconditions\x18\x02 \x03(\x0b\x32 .k8s.io.api.core.v1.PodCondition\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x19\n\x11nominatedNodeName\x18\x0b \x01(\t\x12\x0e\n\x06hostIP\x18\x05 \x01(\t\x12\r\n\x05podIP\x18\x06 \x01(\t\x12)\n\x06podIPs\x18\x0c \x03(\x0b\x32\x19.k8s.io.api.core.v1.PodIP\x12=\n\tstartTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x42\n\x15initContainerStatuses\x18\n \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\x12>\n\x11\x63ontainerStatuses\x18\x08 \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\x12\x10\n\x08qosClass\x18\t \x01(\t\x12G\n\x1a\x65phemeralContainerStatuses\x18\r \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\"\x84\x01\n\x0fPodStatusResult\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12-\n\x06status\x18\x02 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\"\x88\x01\n\x0bPodTemplate\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x35\n\x08template\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\"\x83\x01\n\x0fPodTemplateList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\"\x80\x01\n\x0fPodTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12)\n\x04spec\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.PodSpec\";\n\nPortStatus\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"J\n\x14PortworxVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\x1c\n\rPreconditions\x12\x0b\n\x03uid\x18\x01 \x01(\t\"\xb1\x01\n\x14PreferAvoidPodsEntry\x12\x36\n\x0cpodSignature\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.PodSignature\x12@\n\x0c\x65victionTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\"c\n\x17PreferredSchedulingTerm\x12\x0e\n\x06weight\x18\x01 \x01(\x05\x12\x38\n\npreference\x18\x02 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeSelectorTerm\"\xb5\x01\n\x05Probe\x12,\n\x07handler\x18\x01 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\x12\x1b\n\x13initialDelaySeconds\x18\x02 \x01(\x05\x12\x16\n\x0etimeoutSeconds\x18\x03 \x01(\x05\x12\x15\n\rperiodSeconds\x18\x04 \x01(\x05\x12\x18\n\x10successThreshold\x18\x05 \x01(\x05\x12\x18\n\x10\x66\x61ilureThreshold\x18\x06 \x01(\x05\"c\n\x15ProjectedVolumeSource\x12\x35\n\x07sources\x18\x01 \x03(\x0b\x32$.k8s.io.api.core.v1.VolumeProjection\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x02 \x01(\x05\"v\n\x13QuobyteVolumeSource\x12\x10\n\x08registry\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\r\n\x05group\x18\x05 \x01(\t\x12\x0e\n\x06tenant\x18\x06 \x01(\t\"\xc3\x01\n\x19RBDPersistentVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x0c\n\x04pool\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0f\n\x07keyring\x18\x06 \x01(\t\x12\x36\n\tsecretRef\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x08 \x01(\x08\"\xbe\x01\n\x0fRBDVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x0c\n\x04pool\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0f\n\x07keyring\x18\x06 \x01(\t\x12;\n\tsecretRef\x18\x07 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x08 \x01(\x08\"r\n\x0fRangeAllocation\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\r\n\x05range\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\xd9\x01\n\x15ReplicationController\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.ReplicationControllerSpec\x12?\n\x06status\x18\x03 \x01(\x0b\x32/.k8s.io.api.core.v1.ReplicationControllerStatus\"\xa7\x01\n\x1eReplicationControllerCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x97\x01\n\x19ReplicationControllerList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).k8s.io.api.core.v1.ReplicationController\"\xfd\x01\n\x19ReplicationControllerSpec\x12\x10\n\x08replicas\x18\x01 \x01(\x05\x12\x17\n\x0fminReadySeconds\x18\x04 \x01(\x05\x12M\n\x08selector\x18\x02 \x03(\x0b\x32;.k8s.io.api.core.v1.ReplicationControllerSpec.SelectorEntry\x12\x35\n\x08template\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe3\x01\n\x1bReplicationControllerStatus\x12\x10\n\x08replicas\x18\x01 \x01(\x05\x12\x1c\n\x14\x66ullyLabeledReplicas\x18\x02 \x01(\x05\x12\x15\n\rreadyReplicas\x18\x04 \x01(\x05\x12\x19\n\x11\x61vailableReplicas\x18\x05 \x01(\x05\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x46\n\nconditions\x18\x06 \x03(\x0b\x32\x32.k8s.io.api.core.v1.ReplicationControllerCondition\"\x81\x01\n\x15ResourceFieldSelector\x12\x15\n\rcontainerName\x18\x01 \x01(\t\x12\x10\n\x08resource\x18\x02 \x01(\t\x12?\n\x07\x64ivisor\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xc1\x01\n\rResourceQuota\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x04spec\x18\x02 \x01(\x0b\x32%.k8s.io.api.core.v1.ResourceQuotaSpec\x12\x37\n\x06status\x18\x03 \x01(\x0b\x32\'.k8s.io.api.core.v1.ResourceQuotaStatus\"\x87\x01\n\x11ResourceQuotaList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x30\n\x05items\x18\x02 \x03(\x0b\x32!.k8s.io.api.core.v1.ResourceQuota\"\xf9\x01\n\x11ResourceQuotaSpec\x12=\n\x04hard\x18\x01 \x03(\x0b\x32/.k8s.io.api.core.v1.ResourceQuotaSpec.HardEntry\x12\x0e\n\x06scopes\x18\x02 \x03(\t\x12\x38\n\rscopeSelector\x18\x03 \x01(\x0b\x32!.k8s.io.api.core.v1.ScopeSelector\x1a[\n\tHardEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xd1\x02\n\x13ResourceQuotaStatus\x12?\n\x04hard\x18\x01 \x03(\x0b\x32\x31.k8s.io.api.core.v1.ResourceQuotaStatus.HardEntry\x12?\n\x04used\x18\x02 \x03(\x0b\x32\x31.k8s.io.api.core.v1.ResourceQuotaStatus.UsedEntry\x1a[\n\tHardEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a[\n\tUsedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xe6\x02\n\x14ResourceRequirements\x12\x44\n\x06limits\x18\x01 \x03(\x0b\x32\x34.k8s.io.api.core.v1.ResourceRequirements.LimitsEntry\x12H\n\x08requests\x18\x02 \x03(\x0b\x32\x36.k8s.io.api.core.v1.ResourceRequirements.RequestsEntry\x1a]\n\x0bLimitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a_\n\rRequestsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"I\n\x0eSELinuxOptions\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\"\x86\x02\n\x1dScaleIOPersistentVolumeSource\x12\x0f\n\x07gateway\x18\x01 \x01(\t\x12\x0e\n\x06system\x18\x02 \x01(\t\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x12\n\nsslEnabled\x18\x04 \x01(\x08\x12\x18\n\x10protectionDomain\x18\x05 \x01(\t\x12\x13\n\x0bstoragePool\x18\x06 \x01(\t\x12\x13\n\x0bstorageMode\x18\x07 \x01(\t\x12\x12\n\nvolumeName\x18\x08 \x01(\t\x12\x0e\n\x06\x66sType\x18\t \x01(\t\x12\x10\n\x08readOnly\x18\n \x01(\x08\"\x81\x02\n\x13ScaleIOVolumeSource\x12\x0f\n\x07gateway\x18\x01 \x01(\t\x12\x0e\n\x06system\x18\x02 \x01(\t\x12;\n\tsecretRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x12\n\nsslEnabled\x18\x04 \x01(\x08\x12\x18\n\x10protectionDomain\x18\x05 \x01(\t\x12\x13\n\x0bstoragePool\x18\x06 \x01(\t\x12\x13\n\x0bstorageMode\x18\x07 \x01(\t\x12\x12\n\nvolumeName\x18\x08 \x01(\t\x12\x0e\n\x06\x66sType\x18\t \x01(\t\x12\x10\n\x08readOnly\x18\n \x01(\x08\"`\n\rScopeSelector\x12O\n\x10matchExpressions\x18\x01 \x03(\x0b\x32\x35.k8s.io.api.core.v1.ScopedResourceSelectorRequirement\"X\n!ScopedResourceSelectorRequirement\x12\x11\n\tscopeName\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"8\n\x0eSeccompProfile\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x18\n\x10localhostProfile\x18\x02 \x01(\t\"\xc1\x02\n\x06Secret\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x11\n\timmutable\x18\x05 \x01(\x08\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.k8s.io.api.core.v1.Secret.DataEntry\x12>\n\nstringData\x18\x04 \x03(\x0b\x32*.k8s.io.api.core.v1.Secret.StringDataEntry\x12\x0c\n\x04type\x18\x03 \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a\x31\n\x0fStringDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x0fSecretEnvSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08optional\x18\x02 \x01(\x08\"z\n\x11SecretKeySelector\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08optional\x18\x03 \x01(\x08\"y\n\nSecretList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\x9a\x01\n\x10SecretProjection\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x10\n\x08optional\x18\x04 \x01(\x08\"2\n\x0fSecretReference\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"}\n\x12SecretVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x03 \x01(\x05\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xb2\x03\n\x0fSecurityContext\x12\x36\n\x0c\x63\x61pabilities\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.Capabilities\x12\x12\n\nprivileged\x18\x02 \x01(\x08\x12:\n\x0eseLinuxOptions\x18\x03 \x01(\x0b\x32\".k8s.io.api.core.v1.SELinuxOptions\x12I\n\x0ewindowsOptions\x18\n \x01(\x0b\x32\x31.k8s.io.api.core.v1.WindowsSecurityContextOptions\x12\x11\n\trunAsUser\x18\x04 \x01(\x03\x12\x12\n\nrunAsGroup\x18\x08 \x01(\x03\x12\x14\n\x0crunAsNonRoot\x18\x05 \x01(\x08\x12\x1e\n\x16readOnlyRootFilesystem\x18\x06 \x01(\x08\x12 \n\x18\x61llowPrivilegeEscalation\x18\x07 \x01(\x08\x12\x11\n\tprocMount\x18\t \x01(\t\x12:\n\x0eseccompProfile\x18\x0b \x01(\x0b\x32\".k8s.io.api.core.v1.SeccompProfile\"M\n\x13SerializedReference\x12\x36\n\treference\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xaf\x01\n\x07Service\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12-\n\x04spec\x18\x02 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.ServiceSpec\x12\x31\n\x06status\x18\x03 \x01(\x0b\x32!.k8s.io.api.core.v1.ServiceStatus\"\xf4\x01\n\x0eServiceAccount\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x34\n\x07secrets\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x42\n\x10imagePullSecrets\x18\x03 \x03(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12$\n\x1c\x61utomountServiceAccountToken\x18\x04 \x01(\x08\"\x89\x01\n\x12ServiceAccountList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".k8s.io.api.core.v1.ServiceAccount\"Z\n\x1dServiceAccountTokenProjection\x12\x10\n\x08\x61udience\x18\x01 \x01(\t\x12\x19\n\x11\x65xpirationSeconds\x18\x02 \x01(\x03\x12\x0c\n\x04path\x18\x03 \x01(\t\"{\n\x0bServiceList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.k8s.io.api.core.v1.Service\"\xa8\x01\n\x0bServicePort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x13\n\x0b\x61ppProtocol\x18\x06 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\x12\x44\n\ntargetPort\x18\x04 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x10\n\x08nodePort\x18\x05 \x01(\x05\"#\n\x13ServiceProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xf3\x04\n\x0bServiceSpec\x12.\n\x05ports\x18\x01 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.ServicePort\x12?\n\x08selector\x18\x02 \x03(\x0b\x32-.k8s.io.api.core.v1.ServiceSpec.SelectorEntry\x12\x11\n\tclusterIP\x18\x03 \x01(\t\x12\x12\n\nclusterIPs\x18\x12 \x03(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x13\n\x0b\x65xternalIPs\x18\x05 \x03(\t\x12\x17\n\x0fsessionAffinity\x18\x07 \x01(\t\x12\x16\n\x0eloadBalancerIP\x18\x08 \x01(\t\x12 \n\x18loadBalancerSourceRanges\x18\t \x03(\t\x12\x14\n\x0c\x65xternalName\x18\n \x01(\t\x12\x1d\n\x15\x65xternalTrafficPolicy\x18\x0b \x01(\t\x12\x1b\n\x13healthCheckNodePort\x18\x0c \x01(\x05\x12 \n\x18publishNotReadyAddresses\x18\r \x01(\x08\x12H\n\x15sessionAffinityConfig\x18\x0e \x01(\x0b\x32).k8s.io.api.core.v1.SessionAffinityConfig\x12\x14\n\x0ctopologyKeys\x18\x10 \x03(\t\x12\x12\n\nipFamilies\x18\x13 \x03(\t\x12\x16\n\x0eipFamilyPolicy\x18\x11 \x01(\t\x12%\n\x1d\x61llocateLoadBalancerNodePorts\x18\x14 \x01(\x08\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x92\x01\n\rServiceStatus\x12<\n\x0cloadBalancer\x18\x01 \x01(\x0b\x32&.k8s.io.api.core.v1.LoadBalancerStatus\x12\x43\n\nconditions\x18\x02 \x03(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Condition\"M\n\x15SessionAffinityConfig\x12\x34\n\x08\x63lientIP\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.ClientIPConfig\"\xa8\x01\n\x1fStorageOSPersistentVolumeSource\x12\x12\n\nvolumeName\x18\x01 \x01(\t\x12\x17\n\x0fvolumeNamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\x36\n\tsecretRef\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xa3\x01\n\x15StorageOSVolumeSource\x12\x12\n\nvolumeName\x18\x01 \x01(\t\x12\x17\n\x0fvolumeNamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12;\n\tsecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\"%\n\x06Sysctl\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"_\n\x0fTCPSocketAction\x12>\n\x04port\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x0c\n\x04host\x18\x02 \x01(\t\"r\n\x05Taint\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\t\x12=\n\ttimeAdded\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"e\n\nToleration\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x04 \x01(\t\x12\x19\n\x11tolerationSeconds\x18\x05 \x01(\x03\"?\n TopologySelectorLabelRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\"k\n\x14TopologySelectorTerm\x12S\n\x15matchLabelExpressions\x18\x01 \x03(\x0b\x32\x34.k8s.io.api.core.v1.TopologySelectorLabelRequirement\"\xa7\x01\n\x18TopologySpreadConstraint\x12\x0f\n\x07maxSkew\x18\x01 \x01(\x05\x12\x13\n\x0btopologyKey\x18\x02 \x01(\t\x12\x19\n\x11whenUnsatisfiable\x18\x03 \x01(\t\x12J\n\rlabelSelector\x18\x04 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\"I\n\x19TypedLocalObjectReference\x12\x10\n\x08\x61piGroup\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"N\n\x06Volume\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x36\n\x0cvolumeSource\x18\x02 \x01(\x0b\x32 .k8s.io.api.core.v1.VolumeSource\"0\n\x0cVolumeDevice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ndevicePath\x18\x02 \x01(\t\"\x80\x01\n\x0bVolumeMount\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\x12\x11\n\tmountPath\x18\x03 \x01(\t\x12\x0f\n\x07subPath\x18\x04 \x01(\t\x12\x18\n\x10mountPropagation\x18\x05 \x01(\t\x12\x13\n\x0bsubPathExpr\x18\x06 \x01(\t\"H\n\x12VolumeNodeAffinity\x12\x32\n\x08required\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeSelector\"\x94\x02\n\x10VolumeProjection\x12\x34\n\x06secret\x18\x01 \x01(\x0b\x32$.k8s.io.api.core.v1.SecretProjection\x12>\n\x0b\x64ownwardAPI\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.DownwardAPIProjection\x12:\n\tconfigMap\x18\x03 \x01(\x0b\x32\'.k8s.io.api.core.v1.ConfigMapProjection\x12N\n\x13serviceAccountToken\x18\x04 \x01(\x0b\x32\x31.k8s.io.api.core.v1.ServiceAccountTokenProjection\"\x99\x0e\n\x0cVolumeSource\x12:\n\x08hostPath\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.HostPathVolumeSource\x12:\n\x08\x65mptyDir\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.EmptyDirVolumeSource\x12L\n\x11gcePersistentDisk\x18\x03 \x01(\x0b\x32\x31.k8s.io.api.core.v1.GCEPersistentDiskVolumeSource\x12R\n\x14\x61wsElasticBlockStore\x18\x04 \x01(\x0b\x32\x34.k8s.io.api.core.v1.AWSElasticBlockStoreVolumeSource\x12\x38\n\x07gitRepo\x18\x05 \x01(\x0b\x32\'.k8s.io.api.core.v1.GitRepoVolumeSource\x12\x36\n\x06secret\x18\x06 \x01(\x0b\x32&.k8s.io.api.core.v1.SecretVolumeSource\x12\x30\n\x03nfs\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.NFSVolumeSource\x12\x34\n\x05iscsi\x18\x08 \x01(\x0b\x32%.k8s.io.api.core.v1.ISCSIVolumeSource\x12<\n\tglusterfs\x18\t \x01(\x0b\x32).k8s.io.api.core.v1.GlusterfsVolumeSource\x12T\n\x15persistentVolumeClaim\x18\n \x01(\x0b\x32\x35.k8s.io.api.core.v1.PersistentVolumeClaimVolumeSource\x12\x30\n\x03rbd\x18\x0b \x01(\x0b\x32#.k8s.io.api.core.v1.RBDVolumeSource\x12\x38\n\nflexVolume\x18\x0c \x01(\x0b\x32$.k8s.io.api.core.v1.FlexVolumeSource\x12\x36\n\x06\x63inder\x18\r \x01(\x0b\x32&.k8s.io.api.core.v1.CinderVolumeSource\x12\x36\n\x06\x63\x65phfs\x18\x0e \x01(\x0b\x32&.k8s.io.api.core.v1.CephFSVolumeSource\x12\x38\n\x07\x66locker\x18\x0f \x01(\x0b\x32\'.k8s.io.api.core.v1.FlockerVolumeSource\x12@\n\x0b\x64ownwardAPI\x18\x10 \x01(\x0b\x32+.k8s.io.api.core.v1.DownwardAPIVolumeSource\x12.\n\x02\x66\x63\x18\x11 \x01(\x0b\x32\".k8s.io.api.core.v1.FCVolumeSource\x12<\n\tazureFile\x18\x12 \x01(\x0b\x32).k8s.io.api.core.v1.AzureFileVolumeSource\x12<\n\tconfigMap\x18\x13 \x01(\x0b\x32).k8s.io.api.core.v1.ConfigMapVolumeSource\x12I\n\rvsphereVolume\x18\x14 \x01(\x0b\x32\x32.k8s.io.api.core.v1.VsphereVirtualDiskVolumeSource\x12\x38\n\x07quobyte\x18\x15 \x01(\x0b\x32\'.k8s.io.api.core.v1.QuobyteVolumeSource\x12<\n\tazureDisk\x18\x16 \x01(\x0b\x32).k8s.io.api.core.v1.AzureDiskVolumeSource\x12R\n\x14photonPersistentDisk\x18\x17 \x01(\x0b\x32\x34.k8s.io.api.core.v1.PhotonPersistentDiskVolumeSource\x12<\n\tprojected\x18\x1a \x01(\x0b\x32).k8s.io.api.core.v1.ProjectedVolumeSource\x12@\n\x0eportworxVolume\x18\x18 \x01(\x0b\x32(.k8s.io.api.core.v1.PortworxVolumeSource\x12\x38\n\x07scaleIO\x18\x19 \x01(\x0b\x32\'.k8s.io.api.core.v1.ScaleIOVolumeSource\x12<\n\tstorageos\x18\x1b \x01(\x0b\x32).k8s.io.api.core.v1.StorageOSVolumeSource\x12\x30\n\x03\x63si\x18\x1c \x01(\x0b\x32#.k8s.io.api.core.v1.CSIVolumeSource\x12<\n\tephemeral\x18\x1d \x01(\x0b\x32).k8s.io.api.core.v1.EphemeralVolumeSource\"x\n\x1eVsphereVirtualDiskVolumeSource\x12\x12\n\nvolumePath\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x19\n\x11storagePolicyName\x18\x03 \x01(\t\x12\x17\n\x0fstoragePolicyID\x18\x04 \x01(\t\"g\n\x17WeightedPodAffinityTerm\x12\x0e\n\x06weight\x18\x01 \x01(\x05\x12<\n\x0fpodAffinityTerm\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\"r\n\x1dWindowsSecurityContextOptions\x12\x1e\n\x16gmsaCredentialSpecName\x18\x01 \x01(\t\x12\x1a\n\x12gmsaCredentialSpec\x18\x02 \x01(\t\x12\x15\n\rrunAsUserName\x18\x03 \x01(\tB\x04Z\x02v1'
+  serialized_pb=b'\n\"k8s.io/api/core/v1/generated.proto\x12\x12k8s.io.api.core.v1\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x1a\x33k8s.io/apimachinery/pkg/util/intstr/generated.proto\"i\n AWSElasticBlockStoreVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x11\n\tpartition\x18\x03 \x01(\x05\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\"\xb6\x01\n\x08\x41\x66\x66inity\x12\x36\n\x0cnodeAffinity\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeAffinity\x12\x34\n\x0bpodAffinity\x18\x02 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodAffinity\x12<\n\x0fpodAntiAffinity\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.PodAntiAffinity\"2\n\x0e\x41ttachedVolume\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ndevicePath\x18\x02 \x01(\t\"N\n\tAvoidPods\x12\x41\n\x0fpreferAvoidPods\x18\x01 \x03(\x0b\x32(.k8s.io.api.core.v1.PreferAvoidPodsEntry\"\x7f\n\x15\x41zureDiskVolumeSource\x12\x10\n\x08\x64iskName\x18\x01 \x01(\t\x12\x0f\n\x07\x64iskURI\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61\x63hingMode\x18\x03 \x01(\t\x12\x0e\n\x06\x66sType\x18\x04 \x01(\t\x12\x10\n\x08readOnly\x18\x05 \x01(\x08\x12\x0c\n\x04kind\x18\x06 \x01(\t\"s\n\x1f\x41zureFilePersistentVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12\x11\n\tshareName\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x17\n\x0fsecretNamespace\x18\x04 \x01(\t\"P\n\x15\x41zureFileVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12\x11\n\tshareName\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\x82\x01\n\x07\x42inding\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x06target\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\x90\x04\n\x19\x43SIPersistentVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x14\n\x0cvolumeHandle\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x0e\n\x06\x66sType\x18\x04 \x01(\t\x12]\n\x10volumeAttributes\x18\x05 \x03(\x0b\x32\x43.k8s.io.api.core.v1.CSIPersistentVolumeSource.VolumeAttributesEntry\x12G\n\x1a\x63ontrollerPublishSecretRef\x18\x06 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12?\n\x12nodeStageSecretRef\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x41\n\x14nodePublishSecretRef\x18\x08 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x46\n\x19\x63ontrollerExpandSecretRef\x18\t \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x1a\x37\n\x15VolumeAttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x99\x02\n\x0f\x43SIVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12S\n\x10volumeAttributes\x18\x04 \x03(\x0b\x32\x39.k8s.io.api.core.v1.CSIVolumeSource.VolumeAttributesEntry\x12\x46\n\x14nodePublishSecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x1a\x37\n\x15VolumeAttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x0c\x43\x61pabilities\x12\x0b\n\x03\x61\x64\x64\x18\x01 \x03(\t\x12\x0c\n\x04\x64rop\x18\x02 \x03(\t\"\xaa\x01\n\x1c\x43\x65phFSPersistentVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x12\n\nsecretFile\x18\x04 \x01(\t\x12\x36\n\tsecretRef\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\"\xa5\x01\n\x12\x43\x65phFSVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x12\n\nsecretFile\x18\x04 \x01(\t\x12;\n\tsecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\"\x8a\x01\n\x1c\x43inderPersistentVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x36\n\tsecretRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\"\x85\x01\n\x12\x43inderVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12;\n\tsecretRef\x18\x04 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\"(\n\x0e\x43lientIPConfig\x12\x16\n\x0etimeoutSeconds\x18\x01 \x01(\x05\"R\n\x12\x43omponentCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"\x91\x01\n\x0f\x43omponentStatus\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12:\n\nconditions\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.ComponentCondition\"\x8b\x01\n\x13\x43omponentStatusList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.ComponentStatus\"\xbc\x02\n\tConfigMap\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x11\n\timmutable\x18\x04 \x01(\x08\x12\x35\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\'.k8s.io.api.core.v1.ConfigMap.DataEntry\x12\x41\n\nbinaryData\x18\x03 \x03(\x0b\x32-.k8s.io.api.core.v1.ConfigMap.BinaryDataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0f\x42inaryDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"n\n\x12\x43onfigMapEnvSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08optional\x18\x02 \x01(\x08\"}\n\x14\x43onfigMapKeySelector\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08optional\x18\x03 \x01(\x08\"\x7f\n\rConfigMapList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.ConfigMap\"|\n\x19\x43onfigMapNodeConfigSource\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uid\x18\x03 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x04 \x01(\t\x12\x18\n\x10kubeletConfigKey\x18\x05 \x01(\t\"\x9d\x01\n\x13\x43onfigMapProjection\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xb4\x01\n\x15\x43onfigMapVolumeSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x03 \x01(\x05\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xa7\x06\n\tContainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x03 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x04 \x03(\t\x12\x12\n\nworkingDir\x18\x05 \x01(\t\x12\x30\n\x05ports\x18\x06 \x03(\x0b\x32!.k8s.io.api.core.v1.ContainerPort\x12\x32\n\x07\x65nvFrom\x18\x13 \x03(\x0b\x32!.k8s.io.api.core.v1.EnvFromSource\x12\'\n\x03\x65nv\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.EnvVar\x12;\n\tresources\x18\x08 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x35\n\x0cvolumeMounts\x18\t \x03(\x0b\x32\x1f.k8s.io.api.core.v1.VolumeMount\x12\x37\n\rvolumeDevices\x18\x15 \x03(\x0b\x32 .k8s.io.api.core.v1.VolumeDevice\x12\x30\n\rlivenessProbe\x18\n \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x31\n\x0ereadinessProbe\x18\x0b \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12/\n\x0cstartupProbe\x18\x16 \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x30\n\tlifecycle\x18\x0c \x01(\x0b\x32\x1d.k8s.io.api.core.v1.Lifecycle\x12\x1e\n\x16terminationMessagePath\x18\r \x01(\t\x12 \n\x18terminationMessagePolicy\x18\x14 \x01(\t\x12\x17\n\x0fimagePullPolicy\x18\x0e \x01(\t\x12<\n\x0fsecurityContext\x18\x0f \x01(\x0b\x32#.k8s.io.api.core.v1.SecurityContext\x12\r\n\x05stdin\x18\x10 \x01(\x08\x12\x11\n\tstdinOnce\x18\x11 \x01(\x08\x12\x0b\n\x03tty\x18\x12 \x01(\x08\"2\n\x0e\x43ontainerImage\x12\r\n\x05names\x18\x01 \x03(\t\x12\x11\n\tsizeBytes\x18\x02 \x01(\x03\"h\n\rContainerPort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08hostPort\x18\x02 \x01(\x05\x12\x15\n\rcontainerPort\x18\x03 \x01(\x05\x12\x10\n\x08protocol\x18\x04 \x01(\t\x12\x0e\n\x06hostIP\x18\x05 \x01(\t\"\xca\x01\n\x0e\x43ontainerState\x12:\n\x07waiting\x18\x01 \x01(\x0b\x32).k8s.io.api.core.v1.ContainerStateWaiting\x12:\n\x07running\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.ContainerStateRunning\x12@\n\nterminated\x18\x03 \x01(\x0b\x32,.k8s.io.api.core.v1.ContainerStateTerminated\"V\n\x15\x43ontainerStateRunning\x12=\n\tstartedAt\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\xf1\x01\n\x18\x43ontainerStateTerminated\x12\x10\n\x08\x65xitCode\x18\x01 \x01(\x05\x12\x0e\n\x06signal\x18\x02 \x01(\x05\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12=\n\tstartedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12>\n\nfinishedAt\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x13\n\x0b\x63ontainerID\x18\x07 \x01(\t\"8\n\x15\x43ontainerStateWaiting\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xf4\x01\n\x0f\x43ontainerStatus\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x31\n\x05state\x18\x02 \x01(\x0b\x32\".k8s.io.api.core.v1.ContainerState\x12\x35\n\tlastState\x18\x03 \x01(\x0b\x32\".k8s.io.api.core.v1.ContainerState\x12\r\n\x05ready\x18\x04 \x01(\x08\x12\x14\n\x0crestartCount\x18\x05 \x01(\x05\x12\r\n\x05image\x18\x06 \x01(\t\x12\x0f\n\x07imageID\x18\x07 \x01(\t\x12\x13\n\x0b\x63ontainerID\x18\x08 \x01(\t\x12\x0f\n\x07started\x18\t \x01(\x08\"\x1e\n\x0e\x44\x61\x65monEndpoint\x12\x0c\n\x04Port\x18\x01 \x01(\x05\"Q\n\x15\x44ownwardAPIProjection\x12\x38\n\x05items\x18\x01 \x03(\x0b\x32).k8s.io.api.core.v1.DownwardAPIVolumeFile\"\xb3\x01\n\x15\x44ownwardAPIVolumeFile\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x39\n\x08\x66ieldRef\x18\x02 \x01(\x0b\x32\'.k8s.io.api.core.v1.ObjectFieldSelector\x12\x43\n\x10resourceFieldRef\x18\x03 \x01(\x0b\x32).k8s.io.api.core.v1.ResourceFieldSelector\x12\x0c\n\x04mode\x18\x04 \x01(\x05\"h\n\x17\x44ownwardAPIVolumeSource\x12\x38\n\x05items\x18\x01 \x03(\x0b\x32).k8s.io.api.core.v1.DownwardAPIVolumeFile\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x02 \x01(\x05\"i\n\x14\x45mptyDirVolumeSource\x12\x0e\n\x06medium\x18\x01 \x01(\t\x12\x41\n\tsizeLimit\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"y\n\x0f\x45ndpointAddress\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x10\n\x08hostname\x18\x03 \x01(\t\x12\x10\n\x08nodeName\x18\x04 \x01(\t\x12\x36\n\ttargetRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"Q\n\x0c\x45ndpointPort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08protocol\x18\x03 \x01(\t\x12\x13\n\x0b\x61ppProtocol\x18\x04 \x01(\t\"\xb9\x01\n\x0e\x45ndpointSubset\x12\x36\n\taddresses\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.EndpointAddress\x12>\n\x11notReadyAddresses\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.EndpointAddress\x12/\n\x05ports\x18\x03 \x03(\x0b\x32 .k8s.io.api.core.v1.EndpointPort\"\x84\x01\n\tEndpoints\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x07subsets\x18\x02 \x03(\x0b\x32\".k8s.io.api.core.v1.EndpointSubset\"\x7f\n\rEndpointsList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Endpoints\"\x95\x01\n\rEnvFromSource\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12<\n\x0c\x63onfigMapRef\x18\x02 \x01(\x0b\x32&.k8s.io.api.core.v1.ConfigMapEnvSource\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretEnvSource\"Z\n\x06\x45nvVar\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x33\n\tvalueFrom\x18\x03 \x01(\x0b\x32 .k8s.io.api.core.v1.EnvVarSource\"\x8e\x02\n\x0c\x45nvVarSource\x12\x39\n\x08\x66ieldRef\x18\x01 \x01(\x0b\x32\'.k8s.io.api.core.v1.ObjectFieldSelector\x12\x43\n\x10resourceFieldRef\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.ResourceFieldSelector\x12\x41\n\x0f\x63onfigMapKeyRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.ConfigMapKeySelector\x12;\n\x0csecretKeyRef\x18\x04 \x01(\x0b\x32%.k8s.io.api.core.v1.SecretKeySelector\"\x81\x01\n\x12\x45phemeralContainer\x12N\n\x18\x65phemeralContainerCommon\x18\x01 \x01(\x0b\x32,.k8s.io.api.core.v1.EphemeralContainerCommon\x12\x1b\n\x13targetContainerName\x18\x02 \x01(\t\"\xb6\x06\n\x18\x45phemeralContainerCommon\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x03 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x04 \x03(\t\x12\x12\n\nworkingDir\x18\x05 \x01(\t\x12\x30\n\x05ports\x18\x06 \x03(\x0b\x32!.k8s.io.api.core.v1.ContainerPort\x12\x32\n\x07\x65nvFrom\x18\x13 \x03(\x0b\x32!.k8s.io.api.core.v1.EnvFromSource\x12\'\n\x03\x65nv\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.EnvVar\x12;\n\tresources\x18\x08 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x35\n\x0cvolumeMounts\x18\t \x03(\x0b\x32\x1f.k8s.io.api.core.v1.VolumeMount\x12\x37\n\rvolumeDevices\x18\x15 \x03(\x0b\x32 .k8s.io.api.core.v1.VolumeDevice\x12\x30\n\rlivenessProbe\x18\n \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x31\n\x0ereadinessProbe\x18\x0b \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12/\n\x0cstartupProbe\x18\x16 \x01(\x0b\x32\x19.k8s.io.api.core.v1.Probe\x12\x30\n\tlifecycle\x18\x0c \x01(\x0b\x32\x1d.k8s.io.api.core.v1.Lifecycle\x12\x1e\n\x16terminationMessagePath\x18\r \x01(\t\x12 \n\x18terminationMessagePolicy\x18\x14 \x01(\t\x12\x17\n\x0fimagePullPolicy\x18\x0e \x01(\t\x12<\n\x0fsecurityContext\x18\x0f \x01(\x0b\x32#.k8s.io.api.core.v1.SecurityContext\x12\r\n\x05stdin\x18\x10 \x01(\x08\x12\x11\n\tstdinOnce\x18\x11 \x01(\x08\x12\x0b\n\x03tty\x18\x12 \x01(\x08\"\x9e\x01\n\x13\x45phemeralContainers\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x43\n\x13\x65phemeralContainers\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.EphemeralContainer\"g\n\x15\x45phemeralVolumeSource\x12N\n\x13volumeClaimTemplate\x18\x01 \x01(\x0b\x32\x31.k8s.io.api.core.v1.PersistentVolumeClaimTemplate\"\xf0\x04\n\x05\x45vent\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x0einvolvedObject\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12/\n\x06source\x18\x05 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.EventSource\x12\x42\n\x0e\x66irstTimestamp\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x41\n\rlastTimestamp\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\r\n\x05\x63ount\x18\x08 \x01(\x05\x12\x0c\n\x04type\x18\t \x01(\t\x12\x42\n\teventTime\x18\n \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.MicroTime\x12/\n\x06series\x18\x0b \x01(\x0b\x32\x1f.k8s.io.api.core.v1.EventSeries\x12\x0e\n\x06\x61\x63tion\x18\x0c \x01(\t\x12\x34\n\x07related\x18\r \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x1a\n\x12reportingComponent\x18\x0e \x01(\t\x12\x19\n\x11reportingInstance\x18\x0f \x01(\t\"w\n\tEventList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12(\n\x05items\x18\x02 \x03(\x0b\x32\x19.k8s.io.api.core.v1.Event\"g\n\x0b\x45ventSeries\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12I\n\x10lastObservedTime\x18\x02 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.MicroTime\".\n\x0b\x45ventSource\x12\x11\n\tcomponent\x18\x01 \x01(\t\x12\x0c\n\x04host\x18\x02 \x01(\t\"\x1d\n\nExecAction\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\"b\n\x0e\x46\x43VolumeSource\x12\x12\n\ntargetWWNs\x18\x01 \x03(\t\x12\x0b\n\x03lun\x18\x02 \x01(\x05\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\r\n\x05wwids\x18\x05 \x03(\t\"\x84\x02\n\x1a\x46lexPersistentVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12L\n\x07options\x18\x05 \x03(\x0b\x32;.k8s.io.api.core.v1.FlexPersistentVolumeSource.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf5\x01\n\x10\x46lexVolumeSource\x12\x0e\n\x06\x64river\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12;\n\tsecretRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\x42\n\x07options\x18\x05 \x03(\x0b\x32\x31.k8s.io.api.core.v1.FlexVolumeSource.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x13\x46lockerVolumeSource\x12\x13\n\x0b\x64\x61tasetName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tasetUUID\x18\x02 \x01(\t\"d\n\x1dGCEPersistentDiskVolumeSource\x12\x0e\n\x06pdName\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x11\n\tpartition\x18\x03 \x01(\x05\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\"N\n\x13GitRepoVolumeSource\x12\x12\n\nrepository\x18\x01 \x01(\t\x12\x10\n\x08revision\x18\x02 \x01(\t\x12\x11\n\tdirectory\x18\x03 \x01(\t\"p\n\x1fGlusterfsPersistentVolumeSource\x12\x11\n\tendpoints\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x1a\n\x12\x65ndpointsNamespace\x18\x04 \x01(\t\"J\n\x15GlusterfsVolumeSource\x12\x11\n\tendpoints\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\xb0\x01\n\rHTTPGetAction\x12\x0c\n\x04path\x18\x01 \x01(\t\x12>\n\x04port\x18\x02 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x0c\n\x04host\x18\x03 \x01(\t\x12\x0e\n\x06scheme\x18\x04 \x01(\t\x12\x33\n\x0bhttpHeaders\x18\x05 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.HTTPHeader\")\n\nHTTPHeader\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\xa3\x01\n\x07Handler\x12,\n\x04\x65xec\x18\x01 \x01(\x0b\x32\x1e.k8s.io.api.core.v1.ExecAction\x12\x32\n\x07httpGet\x18\x02 \x01(\x0b\x32!.k8s.io.api.core.v1.HTTPGetAction\x12\x36\n\ttcpSocket\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.TCPSocketAction\"*\n\tHostAlias\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x11\n\thostnames\x18\x02 \x03(\t\"2\n\x14HostPathVolumeSource\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x9b\x02\n\x1bISCSIPersistentVolumeSource\x12\x14\n\x0ctargetPortal\x18\x01 \x01(\t\x12\x0b\n\x03iqn\x18\x02 \x01(\t\x12\x0b\n\x03lun\x18\x03 \x01(\x05\x12\x16\n\x0eiscsiInterface\x18\x04 \x01(\t\x12\x0e\n\x06\x66sType\x18\x05 \x01(\t\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\x12\x0f\n\x07portals\x18\x07 \x03(\t\x12\x19\n\x11\x63hapAuthDiscovery\x18\x08 \x01(\x08\x12\x17\n\x0f\x63hapAuthSession\x18\x0b \x01(\x08\x12\x36\n\tsecretRef\x18\n \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x15\n\rinitiatorName\x18\x0c \x01(\t\"\x96\x02\n\x11ISCSIVolumeSource\x12\x14\n\x0ctargetPortal\x18\x01 \x01(\t\x12\x0b\n\x03iqn\x18\x02 \x01(\t\x12\x0b\n\x03lun\x18\x03 \x01(\x05\x12\x16\n\x0eiscsiInterface\x18\x04 \x01(\t\x12\x0e\n\x06\x66sType\x18\x05 \x01(\t\x12\x10\n\x08readOnly\x18\x06 \x01(\x08\x12\x0f\n\x07portals\x18\x07 \x03(\t\x12\x19\n\x11\x63hapAuthDiscovery\x18\x08 \x01(\x08\x12\x17\n\x0f\x63hapAuthSession\x18\x0b \x01(\x08\x12;\n\tsecretRef\x18\n \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x15\n\rinitiatorName\x18\x0c \x01(\t\"4\n\tKeyToPath\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04mode\x18\x03 \x01(\x05\"i\n\tLifecycle\x12.\n\tpostStart\x18\x01 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\x12,\n\x07preStop\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\"\x82\x01\n\nLimitRange\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x30\n\x04spec\x18\x02 \x01(\x0b\x32\".k8s.io.api.core.v1.LimitRangeSpec\"\xec\x06\n\x0eLimitRangeItem\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x38\n\x03max\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.LimitRangeItem.MaxEntry\x12\x38\n\x03min\x18\x03 \x03(\x0b\x32+.k8s.io.api.core.v1.LimitRangeItem.MinEntry\x12@\n\x07\x64\x65\x66\x61ult\x18\x04 \x03(\x0b\x32/.k8s.io.api.core.v1.LimitRangeItem.DefaultEntry\x12N\n\x0e\x64\x65\x66\x61ultRequest\x18\x05 \x03(\x0b\x32\x36.k8s.io.api.core.v1.LimitRangeItem.DefaultRequestEntry\x12Z\n\x14maxLimitRequestRatio\x18\x06 \x03(\x0b\x32<.k8s.io.api.core.v1.LimitRangeItem.MaxLimitRequestRatioEntry\x1aZ\n\x08MaxEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1aZ\n\x08MinEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a^\n\x0c\x44\x65\x66\x61ultEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a\x65\n\x13\x44\x65\x66\x61ultRequestEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1ak\n\x19MaxLimitRequestRatioEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\x81\x01\n\x0eLimitRangeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.LimitRange\"D\n\x0eLimitRangeSpec\x12\x32\n\x06limits\x18\x01 \x03(\x0b\x32\".k8s.io.api.core.v1.LimitRangeItem\"\x86\x01\n\x04List\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12<\n\x05items\x18\x02 \x03(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtension\"b\n\x13LoadBalancerIngress\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x10\n\x08hostname\x18\x02 \x01(\t\x12-\n\x05ports\x18\x04 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.PortStatus\"N\n\x12LoadBalancerStatus\x12\x38\n\x07ingress\x18\x01 \x03(\x0b\x32\'.k8s.io.api.core.v1.LoadBalancerIngress\"$\n\x14LocalObjectReference\x12\x0c\n\x04name\x18\x01 \x01(\t\"1\n\x11LocalVolumeSource\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\"A\n\x0fNFSVolumeSource\x12\x0e\n\x06server\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\xb5\x01\n\tNamespace\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12/\n\x04spec\x18\x02 \x01(\x0b\x32!.k8s.io.api.core.v1.NamespaceSpec\x12\x33\n\x06status\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.NamespaceStatus\"\x9b\x01\n\x12NamespaceCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x7f\n\rNamespaceList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Namespace\"#\n\rNamespaceSpec\x12\x12\n\nfinalizers\x18\x01 \x03(\t\"\\\n\x0fNamespaceStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12:\n\nconditions\x18\x02 \x03(\x0b\x32&.k8s.io.api.core.v1.NamespaceCondition\"\xa6\x01\n\x04Node\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12*\n\x04spec\x18\x02 \x01(\x0b\x32\x1c.k8s.io.api.core.v1.NodeSpec\x12.\n\x06status\x18\x03 \x01(\x0b\x32\x1e.k8s.io.api.core.v1.NodeStatus\",\n\x0bNodeAddress\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\xce\x01\n\x0cNodeAffinity\x12X\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeSelector\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.PreferredSchedulingTerm\"\xdd\x01\n\rNodeCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x45\n\x11lastHeartbeatTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"T\n\x10NodeConfigSource\x12@\n\tconfigMap\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.ConfigMapNodeConfigSource\"\xcc\x01\n\x10NodeConfigStatus\x12\x36\n\x08\x61ssigned\x18\x01 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\x34\n\x06\x61\x63tive\x18\x02 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12;\n\rlastKnownGood\x18\x03 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\r\n\x05\x65rror\x18\x04 \x01(\t\"R\n\x13NodeDaemonEndpoints\x12;\n\x0fkubeletEndpoint\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.DaemonEndpoint\"u\n\x08NodeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\'\n\x05items\x18\x02 \x03(\x0b\x32\x18.k8s.io.api.core.v1.Node\" \n\x10NodeProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xb3\x01\n\rNodeResources\x12\x41\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32/.k8s.io.api.core.v1.NodeResources.CapacityEntry\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"O\n\x0cNodeSelector\x12?\n\x11nodeSelectorTerms\x18\x01 \x03(\x0b\x32$.k8s.io.api.core.v1.NodeSelectorTerm\"H\n\x17NodeSelectorRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"\x9b\x01\n\x10NodeSelectorTerm\x12\x45\n\x10matchExpressions\x18\x01 \x03(\x0b\x32+.k8s.io.api.core.v1.NodeSelectorRequirement\x12@\n\x0bmatchFields\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.NodeSelectorRequirement\"\xd3\x01\n\x08NodeSpec\x12\x0f\n\x07podCIDR\x18\x01 \x01(\t\x12\x10\n\x08podCIDRs\x18\x07 \x03(\t\x12\x12\n\nproviderID\x18\x03 \x01(\t\x12\x15\n\runschedulable\x18\x04 \x01(\x08\x12)\n\x06taints\x18\x05 \x03(\x0b\x32\x19.k8s.io.api.core.v1.Taint\x12:\n\x0c\x63onfigSource\x18\x06 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigSource\x12\x12\n\nexternalID\x18\x02 \x01(\t\"\x86\x06\n\nNodeStatus\x12>\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32,.k8s.io.api.core.v1.NodeStatus.CapacityEntry\x12\x44\n\x0b\x61llocatable\x18\x02 \x03(\x0b\x32/.k8s.io.api.core.v1.NodeStatus.AllocatableEntry\x12\r\n\x05phase\x18\x03 \x01(\t\x12\x35\n\nconditions\x18\x04 \x03(\x0b\x32!.k8s.io.api.core.v1.NodeCondition\x12\x32\n\taddresses\x18\x05 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.NodeAddress\x12@\n\x0f\x64\x61\x65monEndpoints\x18\x06 \x01(\x0b\x32\'.k8s.io.api.core.v1.NodeDaemonEndpoints\x12\x34\n\x08nodeInfo\x18\x07 \x01(\x0b\x32\".k8s.io.api.core.v1.NodeSystemInfo\x12\x32\n\x06images\x18\x08 \x03(\x0b\x32\".k8s.io.api.core.v1.ContainerImage\x12\x14\n\x0cvolumesInUse\x18\t \x03(\t\x12;\n\x0fvolumesAttached\x18\n \x03(\x0b\x32\".k8s.io.api.core.v1.AttachedVolume\x12\x34\n\x06\x63onfig\x18\x0b \x01(\x0b\x32$.k8s.io.api.core.v1.NodeConfigStatus\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a\x62\n\x10\x41llocatableEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xf1\x01\n\x0eNodeSystemInfo\x12\x11\n\tmachineID\x18\x01 \x01(\t\x12\x12\n\nsystemUUID\x18\x02 \x01(\t\x12\x0e\n\x06\x62ootID\x18\x03 \x01(\t\x12\x15\n\rkernelVersion\x18\x04 \x01(\t\x12\x0f\n\x07osImage\x18\x05 \x01(\t\x12\x1f\n\x17\x63ontainerRuntimeVersion\x18\x06 \x01(\t\x12\x16\n\x0ekubeletVersion\x18\x07 \x01(\t\x12\x18\n\x10kubeProxyVersion\x18\x08 \x01(\t\x12\x17\n\x0foperatingSystem\x18\t \x01(\t\x12\x14\n\x0c\x61rchitecture\x18\n \x01(\t\"<\n\x13ObjectFieldSelector\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x11\n\tfieldPath\x18\x02 \x01(\t\"\x8d\x01\n\x0fObjectReference\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\t\x12\x12\n\napiVersion\x18\x05 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x06 \x01(\t\x12\x11\n\tfieldPath\x18\x07 \x01(\t\"\xca\x01\n\x10PersistentVolume\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x36\n\x04spec\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.PersistentVolumeSpec\x12:\n\x06status\x18\x03 \x01(\x0b\x32*.k8s.io.api.core.v1.PersistentVolumeStatus\"\xd9\x01\n\x15PersistentVolumeClaim\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.PersistentVolumeClaimSpec\x12?\n\x06status\x18\x03 \x01(\x0b\x32/.k8s.io.api.core.v1.PersistentVolumeClaimStatus\"\xea\x01\n\x1ePersistentVolumeClaimCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x41\n\rlastProbeTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x97\x01\n\x19PersistentVolumeClaimList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).k8s.io.api.core.v1.PersistentVolumeClaim\"\xb9\x02\n\x19PersistentVolumeClaimSpec\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x01 \x03(\t\x12\x45\n\x08selector\x18\x04 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\x12;\n\tresources\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.ResourceRequirements\x12\x12\n\nvolumeName\x18\x03 \x01(\t\x12\x18\n\x10storageClassName\x18\x05 \x01(\t\x12\x12\n\nvolumeMode\x18\x06 \x01(\t\x12\x41\n\ndataSource\x18\x07 \x01(\x0b\x32-.k8s.io.api.core.v1.TypedLocalObjectReference\"\xbb\x02\n\x1bPersistentVolumeClaimStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x02 \x03(\t\x12O\n\x08\x63\x61pacity\x18\x03 \x03(\x0b\x32=.k8s.io.api.core.v1.PersistentVolumeClaimStatus.CapacityEntry\x12\x46\n\nconditions\x18\x04 \x03(\x0b\x32\x32.k8s.io.api.core.v1.PersistentVolumeClaimCondition\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xa0\x01\n\x1dPersistentVolumeClaimTemplate\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.PersistentVolumeClaimSpec\"H\n!PersistentVolumeClaimVolumeSource\x12\x11\n\tclaimName\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\"\x8d\x01\n\x14PersistentVolumeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x33\n\x05items\x18\x02 \x03(\x0b\x32$.k8s.io.api.core.v1.PersistentVolume\"\xbd\x0b\n\x16PersistentVolumeSource\x12L\n\x11gcePersistentDisk\x18\x01 \x01(\x0b\x32\x31.k8s.io.api.core.v1.GCEPersistentDiskVolumeSource\x12R\n\x14\x61wsElasticBlockStore\x18\x02 \x01(\x0b\x32\x34.k8s.io.api.core.v1.AWSElasticBlockStoreVolumeSource\x12:\n\x08hostPath\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.HostPathVolumeSource\x12\x46\n\tglusterfs\x18\x04 \x01(\x0b\x32\x33.k8s.io.api.core.v1.GlusterfsPersistentVolumeSource\x12\x30\n\x03nfs\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.NFSVolumeSource\x12:\n\x03rbd\x18\x06 \x01(\x0b\x32-.k8s.io.api.core.v1.RBDPersistentVolumeSource\x12>\n\x05iscsi\x18\x07 \x01(\x0b\x32/.k8s.io.api.core.v1.ISCSIPersistentVolumeSource\x12@\n\x06\x63inder\x18\x08 \x01(\x0b\x32\x30.k8s.io.api.core.v1.CinderPersistentVolumeSource\x12@\n\x06\x63\x65phfs\x18\t \x01(\x0b\x32\x30.k8s.io.api.core.v1.CephFSPersistentVolumeSource\x12.\n\x02\x66\x63\x18\n \x01(\x0b\x32\".k8s.io.api.core.v1.FCVolumeSource\x12\x38\n\x07\x66locker\x18\x0b \x01(\x0b\x32\'.k8s.io.api.core.v1.FlockerVolumeSource\x12\x42\n\nflexVolume\x18\x0c \x01(\x0b\x32..k8s.io.api.core.v1.FlexPersistentVolumeSource\x12\x46\n\tazureFile\x18\r \x01(\x0b\x32\x33.k8s.io.api.core.v1.AzureFilePersistentVolumeSource\x12I\n\rvsphereVolume\x18\x0e \x01(\x0b\x32\x32.k8s.io.api.core.v1.VsphereVirtualDiskVolumeSource\x12\x38\n\x07quobyte\x18\x0f \x01(\x0b\x32\'.k8s.io.api.core.v1.QuobyteVolumeSource\x12<\n\tazureDisk\x18\x10 \x01(\x0b\x32).k8s.io.api.core.v1.AzureDiskVolumeSource\x12R\n\x14photonPersistentDisk\x18\x11 \x01(\x0b\x32\x34.k8s.io.api.core.v1.PhotonPersistentDiskVolumeSource\x12@\n\x0eportworxVolume\x18\x12 \x01(\x0b\x32(.k8s.io.api.core.v1.PortworxVolumeSource\x12\x42\n\x07scaleIO\x18\x13 \x01(\x0b\x32\x31.k8s.io.api.core.v1.ScaleIOPersistentVolumeSource\x12\x34\n\x05local\x18\x14 \x01(\x0b\x32%.k8s.io.api.core.v1.LocalVolumeSource\x12\x46\n\tstorageos\x18\x15 \x01(\x0b\x32\x33.k8s.io.api.core.v1.StorageOSPersistentVolumeSource\x12:\n\x03\x63si\x18\x16 \x01(\x0b\x32-.k8s.io.api.core.v1.CSIPersistentVolumeSource\"\x82\x04\n\x14PersistentVolumeSpec\x12H\n\x08\x63\x61pacity\x18\x01 \x03(\x0b\x32\x36.k8s.io.api.core.v1.PersistentVolumeSpec.CapacityEntry\x12J\n\x16persistentVolumeSource\x18\x02 \x01(\x0b\x32*.k8s.io.api.core.v1.PersistentVolumeSource\x12\x13\n\x0b\x61\x63\x63\x65ssModes\x18\x03 \x03(\t\x12\x35\n\x08\x63laimRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12%\n\x1dpersistentVolumeReclaimPolicy\x18\x05 \x01(\t\x12\x18\n\x10storageClassName\x18\x06 \x01(\t\x12\x14\n\x0cmountOptions\x18\x07 \x03(\t\x12\x12\n\nvolumeMode\x18\x08 \x01(\t\x12<\n\x0cnodeAffinity\x18\t \x01(\x0b\x32&.k8s.io.api.core.v1.VolumeNodeAffinity\x1a_\n\rCapacityEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"H\n\x16PersistentVolumeStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0e\n\x06reason\x18\x03 \x01(\t\"@\n PhotonPersistentDiskVolumeSource\x12\x0c\n\x04pdID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\"\xa3\x01\n\x03Pod\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12)\n\x04spec\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.PodSpec\x12-\n\x06status\x18\x03 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\"\xd0\x01\n\x0bPodAffinity\x12[\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.WeightedPodAffinityTerm\"\xd6\x01\n\x0fPodAffinityTerm\x12J\n\rlabelSelector\x18\x01 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\x12\x12\n\nnamespaces\x18\x02 \x03(\t\x12\x13\n\x0btopologyKey\x18\x03 \x01(\t\x12N\n\x11namespaceSelector\x18\x04 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\"\xd4\x01\n\x0fPodAntiAffinity\x12[\n.requiredDuringSchedulingIgnoredDuringExecution\x18\x01 \x03(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\x12\x64\n/preferredDuringSchedulingIgnoredDuringExecution\x18\x02 \x03(\x0b\x32+.k8s.io.api.core.v1.WeightedPodAffinityTerm\"a\n\x10PodAttachOptions\x12\r\n\x05stdin\x18\x01 \x01(\x08\x12\x0e\n\x06stdout\x18\x02 \x01(\x08\x12\x0e\n\x06stderr\x18\x03 \x01(\x08\x12\x0b\n\x03tty\x18\x04 \x01(\x08\x12\x11\n\tcontainer\x18\x05 \x01(\t\"\xd8\x01\n\x0cPodCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x41\n\rlastProbeTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"n\n\x0cPodDNSConfig\x12\x13\n\x0bnameservers\x18\x01 \x03(\t\x12\x10\n\x08searches\x18\x02 \x03(\t\x12\x37\n\x07options\x18\x03 \x03(\x0b\x32&.k8s.io.api.core.v1.PodDNSConfigOption\"1\n\x12PodDNSConfigOption\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"p\n\x0ePodExecOptions\x12\r\n\x05stdin\x18\x01 \x01(\x08\x12\x0e\n\x06stdout\x18\x02 \x01(\x08\x12\x0e\n\x06stderr\x18\x03 \x01(\x08\x12\x0b\n\x03tty\x18\x04 \x01(\x08\x12\x11\n\tcontainer\x18\x05 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x06 \x03(\t\"\x13\n\x05PodIP\x12\n\n\x02ip\x18\x01 \x01(\t\"s\n\x07PodList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12&\n\x05items\x18\x02 \x03(\x0b\x32\x17.k8s.io.api.core.v1.Pod\"\xfa\x01\n\rPodLogOptions\x12\x11\n\tcontainer\x18\x01 \x01(\t\x12\x0e\n\x06\x66ollow\x18\x02 \x01(\x08\x12\x10\n\x08previous\x18\x03 \x01(\x08\x12\x14\n\x0csinceSeconds\x18\x04 \x01(\x03\x12=\n\tsinceTime\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x12\n\ntimestamps\x18\x06 \x01(\x08\x12\x11\n\ttailLines\x18\x07 \x01(\x03\x12\x12\n\nlimitBytes\x18\x08 \x01(\x03\x12$\n\x1cinsecureSkipTLSVerifyBackend\x18\t \x01(\x08\"&\n\x15PodPortForwardOptions\x12\r\n\x05ports\x18\x01 \x03(\x05\"\x1f\n\x0fPodProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\")\n\x10PodReadinessGate\x12\x15\n\rconditionType\x18\x01 \x01(\t\"\x8b\x03\n\x12PodSecurityContext\x12:\n\x0eseLinuxOptions\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.SELinuxOptions\x12I\n\x0ewindowsOptions\x18\x08 \x01(\x0b\x32\x31.k8s.io.api.core.v1.WindowsSecurityContextOptions\x12\x11\n\trunAsUser\x18\x02 \x01(\x03\x12\x12\n\nrunAsGroup\x18\x06 \x01(\x03\x12\x14\n\x0crunAsNonRoot\x18\x03 \x01(\x08\x12\x1a\n\x12supplementalGroups\x18\x04 \x03(\x03\x12\x0f\n\x07\x66sGroup\x18\x05 \x01(\x03\x12+\n\x07sysctls\x18\x07 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Sysctl\x12\x1b\n\x13\x66sGroupChangePolicy\x18\t \x01(\t\x12:\n\x0eseccompProfile\x18\n \x01(\x0b\x32\".k8s.io.api.core.v1.SeccompProfile\"[\n\x0cPodSignature\x12K\n\rpodController\x18\x01 \x01(\x0b\x32\x34.k8s.io.apimachinery.pkg.apis.meta.v1.OwnerReference\"\xe5\x0b\n\x07PodSpec\x12+\n\x07volumes\x18\x01 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Volume\x12\x35\n\x0einitContainers\x18\x14 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Container\x12\x31\n\ncontainers\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.Container\x12\x43\n\x13\x65phemeralContainers\x18\" \x03(\x0b\x32&.k8s.io.api.core.v1.EphemeralContainer\x12\x15\n\rrestartPolicy\x18\x03 \x01(\t\x12%\n\x1dterminationGracePeriodSeconds\x18\x04 \x01(\x03\x12\x1d\n\x15\x61\x63tiveDeadlineSeconds\x18\x05 \x01(\x03\x12\x11\n\tdnsPolicy\x18\x06 \x01(\t\x12\x43\n\x0cnodeSelector\x18\x07 \x03(\x0b\x32-.k8s.io.api.core.v1.PodSpec.NodeSelectorEntry\x12\x1a\n\x12serviceAccountName\x18\x08 \x01(\t\x12\x16\n\x0eserviceAccount\x18\t \x01(\t\x12$\n\x1c\x61utomountServiceAccountToken\x18\x15 \x01(\x08\x12\x10\n\x08nodeName\x18\n \x01(\t\x12\x13\n\x0bhostNetwork\x18\x0b \x01(\x08\x12\x0f\n\x07hostPID\x18\x0c \x01(\x08\x12\x0f\n\x07hostIPC\x18\r \x01(\x08\x12\x1d\n\x15shareProcessNamespace\x18\x1b \x01(\x08\x12?\n\x0fsecurityContext\x18\x0e \x01(\x0b\x32&.k8s.io.api.core.v1.PodSecurityContext\x12\x42\n\x10imagePullSecrets\x18\x0f \x03(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08hostname\x18\x10 \x01(\t\x12\x11\n\tsubdomain\x18\x11 \x01(\t\x12.\n\x08\x61\x66\x66inity\x18\x12 \x01(\x0b\x32\x1c.k8s.io.api.core.v1.Affinity\x12\x15\n\rschedulerName\x18\x13 \x01(\t\x12\x33\n\x0btolerations\x18\x16 \x03(\x0b\x32\x1e.k8s.io.api.core.v1.Toleration\x12\x32\n\x0bhostAliases\x18\x17 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.HostAlias\x12\x19\n\x11priorityClassName\x18\x18 \x01(\t\x12\x10\n\x08priority\x18\x19 \x01(\x05\x12\x33\n\tdnsConfig\x18\x1a \x01(\x0b\x32 .k8s.io.api.core.v1.PodDNSConfig\x12<\n\x0ereadinessGates\x18\x1c \x03(\x0b\x32$.k8s.io.api.core.v1.PodReadinessGate\x12\x18\n\x10runtimeClassName\x18\x1d \x01(\t\x12\x1a\n\x12\x65nableServiceLinks\x18\x1e \x01(\x08\x12\x18\n\x10preemptionPolicy\x18\x1f \x01(\t\x12;\n\x08overhead\x18  \x03(\x0b\x32).k8s.io.api.core.v1.PodSpec.OverheadEntry\x12O\n\x19topologySpreadConstraints\x18! \x03(\x0b\x32,.k8s.io.api.core.v1.TopologySpreadConstraint\x12\x19\n\x11setHostnameAsFQDN\x18# \x01(\x08\x1a\x33\n\x11NodeSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a_\n\rOverheadEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xf4\x03\n\tPodStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x34\n\nconditions\x18\x02 \x03(\x0b\x32 .k8s.io.api.core.v1.PodCondition\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x19\n\x11nominatedNodeName\x18\x0b \x01(\t\x12\x0e\n\x06hostIP\x18\x05 \x01(\t\x12\r\n\x05podIP\x18\x06 \x01(\t\x12)\n\x06podIPs\x18\x0c \x03(\x0b\x32\x19.k8s.io.api.core.v1.PodIP\x12=\n\tstartTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x42\n\x15initContainerStatuses\x18\n \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\x12>\n\x11\x63ontainerStatuses\x18\x08 \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\x12\x10\n\x08qosClass\x18\t \x01(\t\x12G\n\x1a\x65phemeralContainerStatuses\x18\r \x03(\x0b\x32#.k8s.io.api.core.v1.ContainerStatus\"\x84\x01\n\x0fPodStatusResult\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12-\n\x06status\x18\x02 \x01(\x0b\x32\x1d.k8s.io.api.core.v1.PodStatus\"\x88\x01\n\x0bPodTemplate\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x35\n\x08template\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\"\x83\x01\n\x0fPodTemplateList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\"\x80\x01\n\x0fPodTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12)\n\x04spec\x18\x02 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.PodSpec\";\n\nPortStatus\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"J\n\x14PortworxVolumeSource\x12\x10\n\x08volumeID\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\"\x1c\n\rPreconditions\x12\x0b\n\x03uid\x18\x01 \x01(\t\"\xb1\x01\n\x14PreferAvoidPodsEntry\x12\x36\n\x0cpodSignature\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.PodSignature\x12@\n\x0c\x65victionTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\"c\n\x17PreferredSchedulingTerm\x12\x0e\n\x06weight\x18\x01 \x01(\x05\x12\x38\n\npreference\x18\x02 \x01(\x0b\x32$.k8s.io.api.core.v1.NodeSelectorTerm\"\xdc\x01\n\x05Probe\x12,\n\x07handler\x18\x01 \x01(\x0b\x32\x1b.k8s.io.api.core.v1.Handler\x12\x1b\n\x13initialDelaySeconds\x18\x02 \x01(\x05\x12\x16\n\x0etimeoutSeconds\x18\x03 \x01(\x05\x12\x15\n\rperiodSeconds\x18\x04 \x01(\x05\x12\x18\n\x10successThreshold\x18\x05 \x01(\x05\x12\x18\n\x10\x66\x61ilureThreshold\x18\x06 \x01(\x05\x12%\n\x1dterminationGracePeriodSeconds\x18\x07 \x01(\x03\"c\n\x15ProjectedVolumeSource\x12\x35\n\x07sources\x18\x01 \x03(\x0b\x32$.k8s.io.api.core.v1.VolumeProjection\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x02 \x01(\x05\"v\n\x13QuobyteVolumeSource\x12\x10\n\x08registry\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\t\x12\x10\n\x08readOnly\x18\x03 \x01(\x08\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\r\n\x05group\x18\x05 \x01(\t\x12\x0e\n\x06tenant\x18\x06 \x01(\t\"\xc3\x01\n\x19RBDPersistentVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x0c\n\x04pool\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0f\n\x07keyring\x18\x06 \x01(\t\x12\x36\n\tsecretRef\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x10\n\x08readOnly\x18\x08 \x01(\x08\"\xbe\x01\n\x0fRBDVolumeSource\x12\x10\n\x08monitors\x18\x01 \x03(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x0c\n\x04pool\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x0f\n\x07keyring\x18\x06 \x01(\t\x12;\n\tsecretRef\x18\x07 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08readOnly\x18\x08 \x01(\x08\"r\n\x0fRangeAllocation\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\r\n\x05range\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\xd9\x01\n\x15ReplicationController\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12;\n\x04spec\x18\x02 \x01(\x0b\x32-.k8s.io.api.core.v1.ReplicationControllerSpec\x12?\n\x06status\x18\x03 \x01(\x0b\x32/.k8s.io.api.core.v1.ReplicationControllerStatus\"\xa7\x01\n\x1eReplicationControllerCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x97\x01\n\x19ReplicationControllerList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x38\n\x05items\x18\x02 \x03(\x0b\x32).k8s.io.api.core.v1.ReplicationController\"\xfd\x01\n\x19ReplicationControllerSpec\x12\x10\n\x08replicas\x18\x01 \x01(\x05\x12\x17\n\x0fminReadySeconds\x18\x04 \x01(\x05\x12M\n\x08selector\x18\x02 \x03(\x0b\x32;.k8s.io.api.core.v1.ReplicationControllerSpec.SelectorEntry\x12\x35\n\x08template\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe3\x01\n\x1bReplicationControllerStatus\x12\x10\n\x08replicas\x18\x01 \x01(\x05\x12\x1c\n\x14\x66ullyLabeledReplicas\x18\x02 \x01(\x05\x12\x15\n\rreadyReplicas\x18\x04 \x01(\x05\x12\x19\n\x11\x61vailableReplicas\x18\x05 \x01(\x05\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x46\n\nconditions\x18\x06 \x03(\x0b\x32\x32.k8s.io.api.core.v1.ReplicationControllerCondition\"\x81\x01\n\x15ResourceFieldSelector\x12\x15\n\rcontainerName\x18\x01 \x01(\t\x12\x10\n\x08resource\x18\x02 \x01(\t\x12?\n\x07\x64ivisor\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xc1\x01\n\rResourceQuota\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x33\n\x04spec\x18\x02 \x01(\x0b\x32%.k8s.io.api.core.v1.ResourceQuotaSpec\x12\x37\n\x06status\x18\x03 \x01(\x0b\x32\'.k8s.io.api.core.v1.ResourceQuotaStatus\"\x87\x01\n\x11ResourceQuotaList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x30\n\x05items\x18\x02 \x03(\x0b\x32!.k8s.io.api.core.v1.ResourceQuota\"\xf9\x01\n\x11ResourceQuotaSpec\x12=\n\x04hard\x18\x01 \x03(\x0b\x32/.k8s.io.api.core.v1.ResourceQuotaSpec.HardEntry\x12\x0e\n\x06scopes\x18\x02 \x03(\t\x12\x38\n\rscopeSelector\x18\x03 \x01(\x0b\x32!.k8s.io.api.core.v1.ScopeSelector\x1a[\n\tHardEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xd1\x02\n\x13ResourceQuotaStatus\x12?\n\x04hard\x18\x01 \x03(\x0b\x32\x31.k8s.io.api.core.v1.ResourceQuotaStatus.HardEntry\x12?\n\x04used\x18\x02 \x03(\x0b\x32\x31.k8s.io.api.core.v1.ResourceQuotaStatus.UsedEntry\x1a[\n\tHardEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a[\n\tUsedEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"\xe6\x02\n\x14ResourceRequirements\x12\x44\n\x06limits\x18\x01 \x03(\x0b\x32\x34.k8s.io.api.core.v1.ResourceRequirements.LimitsEntry\x12H\n\x08requests\x18\x02 \x03(\x0b\x32\x36.k8s.io.api.core.v1.ResourceRequirements.RequestsEntry\x1a]\n\x0bLimitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\x1a_\n\rRequestsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity:\x02\x38\x01\"I\n\x0eSELinuxOptions\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\"\x86\x02\n\x1dScaleIOPersistentVolumeSource\x12\x0f\n\x07gateway\x18\x01 \x01(\t\x12\x0e\n\x06system\x18\x02 \x01(\t\x12\x36\n\tsecretRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\x12\n\nsslEnabled\x18\x04 \x01(\x08\x12\x18\n\x10protectionDomain\x18\x05 \x01(\t\x12\x13\n\x0bstoragePool\x18\x06 \x01(\t\x12\x13\n\x0bstorageMode\x18\x07 \x01(\t\x12\x12\n\nvolumeName\x18\x08 \x01(\t\x12\x0e\n\x06\x66sType\x18\t \x01(\t\x12\x10\n\x08readOnly\x18\n \x01(\x08\"\x81\x02\n\x13ScaleIOVolumeSource\x12\x0f\n\x07gateway\x18\x01 \x01(\t\x12\x0e\n\x06system\x18\x02 \x01(\t\x12;\n\tsecretRef\x18\x03 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x12\n\nsslEnabled\x18\x04 \x01(\x08\x12\x18\n\x10protectionDomain\x18\x05 \x01(\t\x12\x13\n\x0bstoragePool\x18\x06 \x01(\t\x12\x13\n\x0bstorageMode\x18\x07 \x01(\t\x12\x12\n\nvolumeName\x18\x08 \x01(\t\x12\x0e\n\x06\x66sType\x18\t \x01(\t\x12\x10\n\x08readOnly\x18\n \x01(\x08\"`\n\rScopeSelector\x12O\n\x10matchExpressions\x18\x01 \x03(\x0b\x32\x35.k8s.io.api.core.v1.ScopedResourceSelectorRequirement\"X\n!ScopedResourceSelectorRequirement\x12\x11\n\tscopeName\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"8\n\x0eSeccompProfile\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x18\n\x10localhostProfile\x18\x02 \x01(\t\"\xc1\x02\n\x06Secret\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x11\n\timmutable\x18\x05 \x01(\x08\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.k8s.io.api.core.v1.Secret.DataEntry\x12>\n\nstringData\x18\x04 \x03(\x0b\x32*.k8s.io.api.core.v1.Secret.StringDataEntry\x12\x0c\n\x04type\x18\x03 \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a\x31\n\x0fStringDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x0fSecretEnvSource\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x10\n\x08optional\x18\x02 \x01(\x08\"z\n\x11SecretKeySelector\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08optional\x18\x03 \x01(\x08\"y\n\nSecretList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.k8s.io.api.core.v1.Secret\"\x9a\x01\n\x10SecretProjection\x12\x46\n\x14localObjectReference\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x10\n\x08optional\x18\x04 \x01(\x08\"2\n\x0fSecretReference\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"}\n\x12SecretVolumeSource\x12\x12\n\nsecretName\x18\x01 \x01(\t\x12,\n\x05items\x18\x02 \x03(\x0b\x32\x1d.k8s.io.api.core.v1.KeyToPath\x12\x13\n\x0b\x64\x65\x66\x61ultMode\x18\x03 \x01(\x05\x12\x10\n\x08optional\x18\x04 \x01(\x08\"\xb2\x03\n\x0fSecurityContext\x12\x36\n\x0c\x63\x61pabilities\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.Capabilities\x12\x12\n\nprivileged\x18\x02 \x01(\x08\x12:\n\x0eseLinuxOptions\x18\x03 \x01(\x0b\x32\".k8s.io.api.core.v1.SELinuxOptions\x12I\n\x0ewindowsOptions\x18\n \x01(\x0b\x32\x31.k8s.io.api.core.v1.WindowsSecurityContextOptions\x12\x11\n\trunAsUser\x18\x04 \x01(\x03\x12\x12\n\nrunAsGroup\x18\x08 \x01(\x03\x12\x14\n\x0crunAsNonRoot\x18\x05 \x01(\x08\x12\x1e\n\x16readOnlyRootFilesystem\x18\x06 \x01(\x08\x12 \n\x18\x61llowPrivilegeEscalation\x18\x07 \x01(\x08\x12\x11\n\tprocMount\x18\t \x01(\t\x12:\n\x0eseccompProfile\x18\x0b \x01(\x0b\x32\".k8s.io.api.core.v1.SeccompProfile\"M\n\x13SerializedReference\x12\x36\n\treference\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xaf\x01\n\x07Service\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12-\n\x04spec\x18\x02 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.ServiceSpec\x12\x31\n\x06status\x18\x03 \x01(\x0b\x32!.k8s.io.api.core.v1.ServiceStatus\"\xf4\x01\n\x0eServiceAccount\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12\x34\n\x07secrets\x18\x02 \x03(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x42\n\x10imagePullSecrets\x18\x03 \x03(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\x12$\n\x1c\x61utomountServiceAccountToken\x18\x04 \x01(\x08\"\x89\x01\n\x12ServiceAccountList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".k8s.io.api.core.v1.ServiceAccount\"Z\n\x1dServiceAccountTokenProjection\x12\x10\n\x08\x61udience\x18\x01 \x01(\t\x12\x19\n\x11\x65xpirationSeconds\x18\x02 \x01(\x03\x12\x0c\n\x04path\x18\x03 \x01(\t\"{\n\x0bServiceList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.k8s.io.api.core.v1.Service\"\xa8\x01\n\x0bServicePort\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x13\n\x0b\x61ppProtocol\x18\x06 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\x12\x44\n\ntargetPort\x18\x04 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x10\n\x08nodePort\x18\x05 \x01(\x05\"#\n\x13ServiceProxyOptions\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xad\x05\n\x0bServiceSpec\x12.\n\x05ports\x18\x01 \x03(\x0b\x32\x1f.k8s.io.api.core.v1.ServicePort\x12?\n\x08selector\x18\x02 \x03(\x0b\x32-.k8s.io.api.core.v1.ServiceSpec.SelectorEntry\x12\x11\n\tclusterIP\x18\x03 \x01(\t\x12\x12\n\nclusterIPs\x18\x12 \x03(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x13\n\x0b\x65xternalIPs\x18\x05 \x03(\t\x12\x17\n\x0fsessionAffinity\x18\x07 \x01(\t\x12\x16\n\x0eloadBalancerIP\x18\x08 \x01(\t\x12 \n\x18loadBalancerSourceRanges\x18\t \x03(\t\x12\x14\n\x0c\x65xternalName\x18\n \x01(\t\x12\x1d\n\x15\x65xternalTrafficPolicy\x18\x0b \x01(\t\x12\x1b\n\x13healthCheckNodePort\x18\x0c \x01(\x05\x12 \n\x18publishNotReadyAddresses\x18\r \x01(\x08\x12H\n\x15sessionAffinityConfig\x18\x0e \x01(\x0b\x32).k8s.io.api.core.v1.SessionAffinityConfig\x12\x14\n\x0ctopologyKeys\x18\x10 \x03(\t\x12\x12\n\nipFamilies\x18\x13 \x03(\t\x12\x16\n\x0eipFamilyPolicy\x18\x11 \x01(\t\x12%\n\x1d\x61llocateLoadBalancerNodePorts\x18\x14 \x01(\x08\x12\x19\n\x11loadBalancerClass\x18\x15 \x01(\t\x12\x1d\n\x15internalTrafficPolicy\x18\x16 \x01(\t\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x92\x01\n\rServiceStatus\x12<\n\x0cloadBalancer\x18\x01 \x01(\x0b\x32&.k8s.io.api.core.v1.LoadBalancerStatus\x12\x43\n\nconditions\x18\x02 \x03(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Condition\"M\n\x15SessionAffinityConfig\x12\x34\n\x08\x63lientIP\x18\x01 \x01(\x0b\x32\".k8s.io.api.core.v1.ClientIPConfig\"\xa8\x01\n\x1fStorageOSPersistentVolumeSource\x12\x12\n\nvolumeName\x18\x01 \x01(\t\x12\x17\n\x0fvolumeNamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12\x36\n\tsecretRef\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xa3\x01\n\x15StorageOSVolumeSource\x12\x12\n\nvolumeName\x18\x01 \x01(\t\x12\x17\n\x0fvolumeNamespace\x18\x02 \x01(\t\x12\x0e\n\x06\x66sType\x18\x03 \x01(\t\x12\x10\n\x08readOnly\x18\x04 \x01(\x08\x12;\n\tsecretRef\x18\x05 \x01(\x0b\x32(.k8s.io.api.core.v1.LocalObjectReference\"%\n\x06Sysctl\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"_\n\x0fTCPSocketAction\x12>\n\x04port\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.util.intstr.IntOrString\x12\x0c\n\x04host\x18\x02 \x01(\t\"r\n\x05Taint\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\t\x12=\n\ttimeAdded\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"e\n\nToleration\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x04 \x01(\t\x12\x19\n\x11tolerationSeconds\x18\x05 \x01(\x03\"?\n TopologySelectorLabelRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\"k\n\x14TopologySelectorTerm\x12S\n\x15matchLabelExpressions\x18\x01 \x03(\x0b\x32\x34.k8s.io.api.core.v1.TopologySelectorLabelRequirement\"\xa7\x01\n\x18TopologySpreadConstraint\x12\x0f\n\x07maxSkew\x18\x01 \x01(\x05\x12\x13\n\x0btopologyKey\x18\x02 \x01(\t\x12\x19\n\x11whenUnsatisfiable\x18\x03 \x01(\t\x12J\n\rlabelSelector\x18\x04 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector\"I\n\x19TypedLocalObjectReference\x12\x10\n\x08\x61piGroup\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"N\n\x06Volume\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x36\n\x0cvolumeSource\x18\x02 \x01(\x0b\x32 .k8s.io.api.core.v1.VolumeSource\"0\n\x0cVolumeDevice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ndevicePath\x18\x02 \x01(\t\"\x80\x01\n\x0bVolumeMount\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08readOnly\x18\x02 \x01(\x08\x12\x11\n\tmountPath\x18\x03 \x01(\t\x12\x0f\n\x07subPath\x18\x04 \x01(\t\x12\x18\n\x10mountPropagation\x18\x05 \x01(\t\x12\x13\n\x0bsubPathExpr\x18\x06 \x01(\t\"H\n\x12VolumeNodeAffinity\x12\x32\n\x08required\x18\x01 \x01(\x0b\x32 .k8s.io.api.core.v1.NodeSelector\"\x94\x02\n\x10VolumeProjection\x12\x34\n\x06secret\x18\x01 \x01(\x0b\x32$.k8s.io.api.core.v1.SecretProjection\x12>\n\x0b\x64ownwardAPI\x18\x02 \x01(\x0b\x32).k8s.io.api.core.v1.DownwardAPIProjection\x12:\n\tconfigMap\x18\x03 \x01(\x0b\x32\'.k8s.io.api.core.v1.ConfigMapProjection\x12N\n\x13serviceAccountToken\x18\x04 \x01(\x0b\x32\x31.k8s.io.api.core.v1.ServiceAccountTokenProjection\"\x99\x0e\n\x0cVolumeSource\x12:\n\x08hostPath\x18\x01 \x01(\x0b\x32(.k8s.io.api.core.v1.HostPathVolumeSource\x12:\n\x08\x65mptyDir\x18\x02 \x01(\x0b\x32(.k8s.io.api.core.v1.EmptyDirVolumeSource\x12L\n\x11gcePersistentDisk\x18\x03 \x01(\x0b\x32\x31.k8s.io.api.core.v1.GCEPersistentDiskVolumeSource\x12R\n\x14\x61wsElasticBlockStore\x18\x04 \x01(\x0b\x32\x34.k8s.io.api.core.v1.AWSElasticBlockStoreVolumeSource\x12\x38\n\x07gitRepo\x18\x05 \x01(\x0b\x32\'.k8s.io.api.core.v1.GitRepoVolumeSource\x12\x36\n\x06secret\x18\x06 \x01(\x0b\x32&.k8s.io.api.core.v1.SecretVolumeSource\x12\x30\n\x03nfs\x18\x07 \x01(\x0b\x32#.k8s.io.api.core.v1.NFSVolumeSource\x12\x34\n\x05iscsi\x18\x08 \x01(\x0b\x32%.k8s.io.api.core.v1.ISCSIVolumeSource\x12<\n\tglusterfs\x18\t \x01(\x0b\x32).k8s.io.api.core.v1.GlusterfsVolumeSource\x12T\n\x15persistentVolumeClaim\x18\n \x01(\x0b\x32\x35.k8s.io.api.core.v1.PersistentVolumeClaimVolumeSource\x12\x30\n\x03rbd\x18\x0b \x01(\x0b\x32#.k8s.io.api.core.v1.RBDVolumeSource\x12\x38\n\nflexVolume\x18\x0c \x01(\x0b\x32$.k8s.io.api.core.v1.FlexVolumeSource\x12\x36\n\x06\x63inder\x18\r \x01(\x0b\x32&.k8s.io.api.core.v1.CinderVolumeSource\x12\x36\n\x06\x63\x65phfs\x18\x0e \x01(\x0b\x32&.k8s.io.api.core.v1.CephFSVolumeSource\x12\x38\n\x07\x66locker\x18\x0f \x01(\x0b\x32\'.k8s.io.api.core.v1.FlockerVolumeSource\x12@\n\x0b\x64ownwardAPI\x18\x10 \x01(\x0b\x32+.k8s.io.api.core.v1.DownwardAPIVolumeSource\x12.\n\x02\x66\x63\x18\x11 \x01(\x0b\x32\".k8s.io.api.core.v1.FCVolumeSource\x12<\n\tazureFile\x18\x12 \x01(\x0b\x32).k8s.io.api.core.v1.AzureFileVolumeSource\x12<\n\tconfigMap\x18\x13 \x01(\x0b\x32).k8s.io.api.core.v1.ConfigMapVolumeSource\x12I\n\rvsphereVolume\x18\x14 \x01(\x0b\x32\x32.k8s.io.api.core.v1.VsphereVirtualDiskVolumeSource\x12\x38\n\x07quobyte\x18\x15 \x01(\x0b\x32\'.k8s.io.api.core.v1.QuobyteVolumeSource\x12<\n\tazureDisk\x18\x16 \x01(\x0b\x32).k8s.io.api.core.v1.AzureDiskVolumeSource\x12R\n\x14photonPersistentDisk\x18\x17 \x01(\x0b\x32\x34.k8s.io.api.core.v1.PhotonPersistentDiskVolumeSource\x12<\n\tprojected\x18\x1a \x01(\x0b\x32).k8s.io.api.core.v1.ProjectedVolumeSource\x12@\n\x0eportworxVolume\x18\x18 \x01(\x0b\x32(.k8s.io.api.core.v1.PortworxVolumeSource\x12\x38\n\x07scaleIO\x18\x19 \x01(\x0b\x32\'.k8s.io.api.core.v1.ScaleIOVolumeSource\x12<\n\tstorageos\x18\x1b \x01(\x0b\x32).k8s.io.api.core.v1.StorageOSVolumeSource\x12\x30\n\x03\x63si\x18\x1c \x01(\x0b\x32#.k8s.io.api.core.v1.CSIVolumeSource\x12<\n\tephemeral\x18\x1d \x01(\x0b\x32).k8s.io.api.core.v1.EphemeralVolumeSource\"x\n\x1eVsphereVirtualDiskVolumeSource\x12\x12\n\nvolumePath\x18\x01 \x01(\t\x12\x0e\n\x06\x66sType\x18\x02 \x01(\t\x12\x19\n\x11storagePolicyName\x18\x03 \x01(\t\x12\x17\n\x0fstoragePolicyID\x18\x04 \x01(\t\"g\n\x17WeightedPodAffinityTerm\x12\x0e\n\x06weight\x18\x01 \x01(\x05\x12<\n\x0fpodAffinityTerm\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.PodAffinityTerm\"r\n\x1dWindowsSecurityContextOptions\x12\x1e\n\x16gmsaCredentialSpecName\x18\x01 \x01(\t\x12\x1a\n\x12gmsaCredentialSpec\x18\x02 \x01(\t\x12\x15\n\rrunAsUserName\x18\x03 \x01(\tB\x04Z\x02v1'
   ,
   dependencies=[k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_util_dot_intstr_dot_generated__pb2.DESCRIPTOR,])
 
@@ -2883,13 +2883,6 @@ _EPHEMERALVOLUMESOURCE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='readOnly', full_name='k8s.io.api.core.v1.EphemeralVolumeSource.readOnly', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2903,7 +2896,7 @@ _EPHEMERALVOLUMESOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=8870,
-  serialized_end=8991,
+  serialized_end=8973,
 )
 
 
@@ -3032,8 +3025,8 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8994,
-  serialized_end=9618,
+  serialized_start=8976,
+  serialized_end=9600,
 )
 
 
@@ -3071,8 +3064,8 @@ _EVENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9620,
-  serialized_end=9739,
+  serialized_start=9602,
+  serialized_end=9721,
 )
 
 
@@ -3110,8 +3103,8 @@ _EVENTSERIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9741,
-  serialized_end=9844,
+  serialized_start=9723,
+  serialized_end=9826,
 )
 
 
@@ -3149,8 +3142,8 @@ _EVENTSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9846,
-  serialized_end=9892,
+  serialized_start=9828,
+  serialized_end=9874,
 )
 
 
@@ -3181,8 +3174,8 @@ _EXECACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9894,
-  serialized_end=9923,
+  serialized_start=9876,
+  serialized_end=9905,
 )
 
 
@@ -3241,8 +3234,8 @@ _FCVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9925,
-  serialized_end=10023,
+  serialized_start=9907,
+  serialized_end=10005,
 )
 
 
@@ -3280,8 +3273,8 @@ _FLEXPERSISTENTVOLUMESOURCE_OPTIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10240,
-  serialized_end=10286,
+  serialized_start=10222,
+  serialized_end=10268,
 )
 
 _FLEXPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
@@ -3339,8 +3332,8 @@ _FLEXPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10026,
-  serialized_end=10286,
+  serialized_start=10008,
+  serialized_end=10268,
 )
 
 
@@ -3378,8 +3371,8 @@ _FLEXVOLUMESOURCE_OPTIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10240,
-  serialized_end=10286,
+  serialized_start=10222,
+  serialized_end=10268,
 )
 
 _FLEXVOLUMESOURCE = _descriptor.Descriptor(
@@ -3437,8 +3430,8 @@ _FLEXVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10289,
-  serialized_end=10534,
+  serialized_start=10271,
+  serialized_end=10516,
 )
 
 
@@ -3476,8 +3469,8 @@ _FLOCKERVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10536,
-  serialized_end=10599,
+  serialized_start=10518,
+  serialized_end=10581,
 )
 
 
@@ -3529,8 +3522,8 @@ _GCEPERSISTENTDISKVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10601,
-  serialized_end=10701,
+  serialized_start=10583,
+  serialized_end=10683,
 )
 
 
@@ -3575,8 +3568,8 @@ _GITREPOVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10703,
-  serialized_end=10781,
+  serialized_start=10685,
+  serialized_end=10763,
 )
 
 
@@ -3628,8 +3621,8 @@ _GLUSTERFSPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10783,
-  serialized_end=10895,
+  serialized_start=10765,
+  serialized_end=10877,
 )
 
 
@@ -3674,8 +3667,8 @@ _GLUSTERFSVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10897,
-  serialized_end=10971,
+  serialized_start=10879,
+  serialized_end=10953,
 )
 
 
@@ -3734,8 +3727,8 @@ _HTTPGETACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10974,
-  serialized_end=11150,
+  serialized_start=10956,
+  serialized_end=11132,
 )
 
 
@@ -3773,8 +3766,8 @@ _HTTPHEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11152,
-  serialized_end=11193,
+  serialized_start=11134,
+  serialized_end=11175,
 )
 
 
@@ -3819,8 +3812,8 @@ _HANDLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11196,
-  serialized_end=11359,
+  serialized_start=11178,
+  serialized_end=11341,
 )
 
 
@@ -3858,8 +3851,8 @@ _HOSTALIAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11361,
-  serialized_end=11403,
+  serialized_start=11343,
+  serialized_end=11385,
 )
 
 
@@ -3897,8 +3890,8 @@ _HOSTPATHVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11405,
-  serialized_end=11455,
+  serialized_start=11387,
+  serialized_end=11437,
 )
 
 
@@ -3999,8 +3992,8 @@ _ISCSIPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11458,
-  serialized_end=11741,
+  serialized_start=11440,
+  serialized_end=11723,
 )
 
 
@@ -4101,8 +4094,8 @@ _ISCSIVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11744,
-  serialized_end=12022,
+  serialized_start=11726,
+  serialized_end=12004,
 )
 
 
@@ -4147,8 +4140,8 @@ _KEYTOPATH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12024,
-  serialized_end=12076,
+  serialized_start=12006,
+  serialized_end=12058,
 )
 
 
@@ -4186,8 +4179,8 @@ _LIFECYCLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12078,
-  serialized_end=12183,
+  serialized_start=12060,
+  serialized_end=12165,
 )
 
 
@@ -4225,8 +4218,8 @@ _LIMITRANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12186,
-  serialized_end=12316,
+  serialized_start=12168,
+  serialized_end=12298,
 )
 
 
@@ -4264,8 +4257,8 @@ _LIMITRANGEITEM_MAXENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12705,
-  serialized_end=12795,
+  serialized_start=12687,
+  serialized_end=12777,
 )
 
 _LIMITRANGEITEM_MINENTRY = _descriptor.Descriptor(
@@ -4302,8 +4295,8 @@ _LIMITRANGEITEM_MINENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12797,
-  serialized_end=12887,
+  serialized_start=12779,
+  serialized_end=12869,
 )
 
 _LIMITRANGEITEM_DEFAULTENTRY = _descriptor.Descriptor(
@@ -4340,8 +4333,8 @@ _LIMITRANGEITEM_DEFAULTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12889,
-  serialized_end=12983,
+  serialized_start=12871,
+  serialized_end=12965,
 )
 
 _LIMITRANGEITEM_DEFAULTREQUESTENTRY = _descriptor.Descriptor(
@@ -4378,8 +4371,8 @@ _LIMITRANGEITEM_DEFAULTREQUESTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12985,
-  serialized_end=13086,
+  serialized_start=12967,
+  serialized_end=13068,
 )
 
 _LIMITRANGEITEM_MAXLIMITREQUESTRATIOENTRY = _descriptor.Descriptor(
@@ -4416,8 +4409,8 @@ _LIMITRANGEITEM_MAXLIMITREQUESTRATIOENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13088,
-  serialized_end=13195,
+  serialized_start=13070,
+  serialized_end=13177,
 )
 
 _LIMITRANGEITEM = _descriptor.Descriptor(
@@ -4482,8 +4475,8 @@ _LIMITRANGEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12319,
-  serialized_end=13195,
+  serialized_start=12301,
+  serialized_end=13177,
 )
 
 
@@ -4521,8 +4514,8 @@ _LIMITRANGELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13198,
-  serialized_end=13327,
+  serialized_start=13180,
+  serialized_end=13309,
 )
 
 
@@ -4553,8 +4546,8 @@ _LIMITRANGESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13329,
-  serialized_end=13397,
+  serialized_start=13311,
+  serialized_end=13379,
 )
 
 
@@ -4592,8 +4585,8 @@ _LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13400,
-  serialized_end=13534,
+  serialized_start=13382,
+  serialized_end=13516,
 )
 
 
@@ -4638,8 +4631,8 @@ _LOADBALANCERINGRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13536,
-  serialized_end=13634,
+  serialized_start=13518,
+  serialized_end=13616,
 )
 
 
@@ -4670,8 +4663,8 @@ _LOADBALANCERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13636,
-  serialized_end=13714,
+  serialized_start=13618,
+  serialized_end=13696,
 )
 
 
@@ -4702,8 +4695,8 @@ _LOCALOBJECTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13716,
-  serialized_end=13752,
+  serialized_start=13698,
+  serialized_end=13734,
 )
 
 
@@ -4741,8 +4734,8 @@ _LOCALVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13754,
-  serialized_end=13803,
+  serialized_start=13736,
+  serialized_end=13785,
 )
 
 
@@ -4787,8 +4780,8 @@ _NFSVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13805,
-  serialized_end=13870,
+  serialized_start=13787,
+  serialized_end=13852,
 )
 
 
@@ -4833,8 +4826,8 @@ _NAMESPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13873,
-  serialized_end=14054,
+  serialized_start=13855,
+  serialized_end=14036,
 )
 
 
@@ -4893,8 +4886,8 @@ _NAMESPACECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14057,
-  serialized_end=14212,
+  serialized_start=14039,
+  serialized_end=14194,
 )
 
 
@@ -4932,8 +4925,8 @@ _NAMESPACELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14214,
-  serialized_end=14341,
+  serialized_start=14196,
+  serialized_end=14323,
 )
 
 
@@ -4964,8 +4957,8 @@ _NAMESPACESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14343,
-  serialized_end=14378,
+  serialized_start=14325,
+  serialized_end=14360,
 )
 
 
@@ -5003,8 +4996,8 @@ _NAMESPACESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14380,
-  serialized_end=14472,
+  serialized_start=14362,
+  serialized_end=14454,
 )
 
 
@@ -5049,8 +5042,8 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14475,
-  serialized_end=14641,
+  serialized_start=14457,
+  serialized_end=14623,
 )
 
 
@@ -5088,8 +5081,8 @@ _NODEADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14643,
-  serialized_end=14687,
+  serialized_start=14625,
+  serialized_end=14669,
 )
 
 
@@ -5127,8 +5120,8 @@ _NODEAFFINITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14690,
-  serialized_end=14896,
+  serialized_start=14672,
+  serialized_end=14878,
 )
 
 
@@ -5194,8 +5187,8 @@ _NODECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14899,
-  serialized_end=15120,
+  serialized_start=14881,
+  serialized_end=15102,
 )
 
 
@@ -5226,8 +5219,8 @@ _NODECONFIGSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15122,
-  serialized_end=15206,
+  serialized_start=15104,
+  serialized_end=15188,
 )
 
 
@@ -5279,8 +5272,8 @@ _NODECONFIGSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15209,
-  serialized_end=15413,
+  serialized_start=15191,
+  serialized_end=15395,
 )
 
 
@@ -5311,8 +5304,8 @@ _NODEDAEMONENDPOINTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15415,
-  serialized_end=15497,
+  serialized_start=15397,
+  serialized_end=15479,
 )
 
 
@@ -5350,8 +5343,8 @@ _NODELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15499,
-  serialized_end=15616,
+  serialized_start=15481,
+  serialized_end=15598,
 )
 
 
@@ -5382,8 +5375,8 @@ _NODEPROXYOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15618,
-  serialized_end=15650,
+  serialized_start=15600,
+  serialized_end=15632,
 )
 
 
@@ -5421,8 +5414,8 @@ _NODERESOURCES_CAPACITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15737,
-  serialized_end=15832,
+  serialized_start=15719,
+  serialized_end=15814,
 )
 
 _NODERESOURCES = _descriptor.Descriptor(
@@ -5452,8 +5445,8 @@ _NODERESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15653,
-  serialized_end=15832,
+  serialized_start=15635,
+  serialized_end=15814,
 )
 
 
@@ -5484,8 +5477,8 @@ _NODESELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15834,
-  serialized_end=15913,
+  serialized_start=15816,
+  serialized_end=15895,
 )
 
 
@@ -5530,8 +5523,8 @@ _NODESELECTORREQUIREMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15915,
-  serialized_end=15987,
+  serialized_start=15897,
+  serialized_end=15969,
 )
 
 
@@ -5569,8 +5562,8 @@ _NODESELECTORTERM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15990,
-  serialized_end=16145,
+  serialized_start=15972,
+  serialized_end=16127,
 )
 
 
@@ -5643,8 +5636,8 @@ _NODESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16148,
-  serialized_end=16359,
+  serialized_start=16130,
+  serialized_end=16341,
 )
 
 
@@ -5682,8 +5675,8 @@ _NODESTATUS_CAPACITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15737,
-  serialized_end=15832,
+  serialized_start=15719,
+  serialized_end=15814,
 )
 
 _NODESTATUS_ALLOCATABLEENTRY = _descriptor.Descriptor(
@@ -5720,8 +5713,8 @@ _NODESTATUS_ALLOCATABLEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17038,
-  serialized_end=17136,
+  serialized_start=17020,
+  serialized_end=17118,
 )
 
 _NODESTATUS = _descriptor.Descriptor(
@@ -5821,8 +5814,8 @@ _NODESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16362,
-  serialized_end=17136,
+  serialized_start=16344,
+  serialized_end=17118,
 )
 
 
@@ -5916,8 +5909,8 @@ _NODESYSTEMINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17139,
-  serialized_end=17380,
+  serialized_start=17121,
+  serialized_end=17362,
 )
 
 
@@ -5955,8 +5948,8 @@ _OBJECTFIELDSELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17382,
-  serialized_end=17442,
+  serialized_start=17364,
+  serialized_end=17424,
 )
 
 
@@ -6029,8 +6022,8 @@ _OBJECTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17445,
-  serialized_end=17586,
+  serialized_start=17427,
+  serialized_end=17568,
 )
 
 
@@ -6075,8 +6068,8 @@ _PERSISTENTVOLUME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17589,
-  serialized_end=17791,
+  serialized_start=17571,
+  serialized_end=17773,
 )
 
 
@@ -6121,8 +6114,8 @@ _PERSISTENTVOLUMECLAIM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17794,
-  serialized_end=18011,
+  serialized_start=17776,
+  serialized_end=17993,
 )
 
 
@@ -6188,8 +6181,8 @@ _PERSISTENTVOLUMECLAIMCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18014,
-  serialized_end=18248,
+  serialized_start=17996,
+  serialized_end=18230,
 )
 
 
@@ -6227,8 +6220,8 @@ _PERSISTENTVOLUMECLAIMLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18251,
-  serialized_end=18402,
+  serialized_start=18233,
+  serialized_end=18384,
 )
 
 
@@ -6301,8 +6294,8 @@ _PERSISTENTVOLUMECLAIMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18405,
-  serialized_end=18718,
+  serialized_start=18387,
+  serialized_end=18700,
 )
 
 
@@ -6340,8 +6333,8 @@ _PERSISTENTVOLUMECLAIMSTATUS_CAPACITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15737,
-  serialized_end=15832,
+  serialized_start=15719,
+  serialized_end=15814,
 )
 
 _PERSISTENTVOLUMECLAIMSTATUS = _descriptor.Descriptor(
@@ -6392,8 +6385,8 @@ _PERSISTENTVOLUMECLAIMSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18721,
-  serialized_end=19036,
+  serialized_start=18703,
+  serialized_end=19018,
 )
 
 
@@ -6431,8 +6424,8 @@ _PERSISTENTVOLUMECLAIMTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19039,
-  serialized_end=19199,
+  serialized_start=19021,
+  serialized_end=19181,
 )
 
 
@@ -6470,8 +6463,8 @@ _PERSISTENTVOLUMECLAIMVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19201,
-  serialized_end=19273,
+  serialized_start=19183,
+  serialized_end=19255,
 )
 
 
@@ -6509,8 +6502,8 @@ _PERSISTENTVOLUMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19276,
-  serialized_end=19417,
+  serialized_start=19258,
+  serialized_end=19399,
 )
 
 
@@ -6688,8 +6681,8 @@ _PERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19420,
-  serialized_end=20889,
+  serialized_start=19402,
+  serialized_end=20871,
 )
 
 
@@ -6727,8 +6720,8 @@ _PERSISTENTVOLUMESPEC_CAPACITYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15737,
-  serialized_end=15832,
+  serialized_start=15719,
+  serialized_end=15814,
 )
 
 _PERSISTENTVOLUMESPEC = _descriptor.Descriptor(
@@ -6814,8 +6807,8 @@ _PERSISTENTVOLUMESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20892,
-  serialized_end=21406,
+  serialized_start=20874,
+  serialized_end=21388,
 )
 
 
@@ -6860,8 +6853,8 @@ _PERSISTENTVOLUMESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21408,
-  serialized_end=21480,
+  serialized_start=21390,
+  serialized_end=21462,
 )
 
 
@@ -6899,8 +6892,8 @@ _PHOTONPERSISTENTDISKVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21482,
-  serialized_end=21546,
+  serialized_start=21464,
+  serialized_end=21528,
 )
 
 
@@ -6945,8 +6938,8 @@ _POD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21549,
-  serialized_end=21712,
+  serialized_start=21531,
+  serialized_end=21694,
 )
 
 
@@ -6984,8 +6977,8 @@ _PODAFFINITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21715,
-  serialized_end=21923,
+  serialized_start=21697,
+  serialized_end=21905,
 )
 
 
@@ -7018,6 +7011,13 @@ _PODAFFINITYTERM = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='namespaceSelector', full_name='k8s.io.api.core.v1.PodAffinityTerm.namespaceSelector', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -7030,8 +7030,8 @@ _PODAFFINITYTERM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21926,
-  serialized_end=22060,
+  serialized_start=21908,
+  serialized_end=22122,
 )
 
 
@@ -7069,8 +7069,8 @@ _PODANTIAFFINITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22063,
-  serialized_end=22275,
+  serialized_start=22125,
+  serialized_end=22337,
 )
 
 
@@ -7129,8 +7129,8 @@ _PODATTACHOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22277,
-  serialized_end=22374,
+  serialized_start=22339,
+  serialized_end=22436,
 )
 
 
@@ -7196,8 +7196,8 @@ _PODCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22377,
-  serialized_end=22593,
+  serialized_start=22439,
+  serialized_end=22655,
 )
 
 
@@ -7242,8 +7242,8 @@ _PODDNSCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22595,
-  serialized_end=22705,
+  serialized_start=22657,
+  serialized_end=22767,
 )
 
 
@@ -7281,8 +7281,8 @@ _PODDNSCONFIGOPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22707,
-  serialized_end=22756,
+  serialized_start=22769,
+  serialized_end=22818,
 )
 
 
@@ -7348,8 +7348,8 @@ _PODEXECOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22758,
-  serialized_end=22870,
+  serialized_start=22820,
+  serialized_end=22932,
 )
 
 
@@ -7380,8 +7380,8 @@ _PODIP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22872,
-  serialized_end=22891,
+  serialized_start=22934,
+  serialized_end=22953,
 )
 
 
@@ -7419,8 +7419,8 @@ _PODLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22893,
-  serialized_end=23008,
+  serialized_start=22955,
+  serialized_end=23070,
 )
 
 
@@ -7507,8 +7507,8 @@ _PODLOGOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23011,
-  serialized_end=23261,
+  serialized_start=23073,
+  serialized_end=23323,
 )
 
 
@@ -7539,8 +7539,8 @@ _PODPORTFORWARDOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23263,
-  serialized_end=23301,
+  serialized_start=23325,
+  serialized_end=23363,
 )
 
 
@@ -7571,8 +7571,8 @@ _PODPROXYOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23303,
-  serialized_end=23334,
+  serialized_start=23365,
+  serialized_end=23396,
 )
 
 
@@ -7603,8 +7603,8 @@ _PODREADINESSGATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23336,
-  serialized_end=23377,
+  serialized_start=23398,
+  serialized_end=23439,
 )
 
 
@@ -7698,8 +7698,8 @@ _PODSECURITYCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23380,
-  serialized_end=23775,
+  serialized_start=23442,
+  serialized_end=23837,
 )
 
 
@@ -7730,8 +7730,8 @@ _PODSIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23777,
-  serialized_end=23868,
+  serialized_start=23839,
+  serialized_end=23930,
 )
 
 
@@ -7769,8 +7769,8 @@ _PODSPEC_NODESELECTORENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25232,
-  serialized_end=25283,
+  serialized_start=25294,
+  serialized_end=25345,
 )
 
 _PODSPEC_OVERHEADENTRY = _descriptor.Descriptor(
@@ -7807,8 +7807,8 @@ _PODSPEC_OVERHEADENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25285,
-  serialized_end=25380,
+  serialized_start=25347,
+  serialized_end=25442,
 )
 
 _PODSPEC = _descriptor.Descriptor(
@@ -8076,8 +8076,8 @@ _PODSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23871,
-  serialized_end=25380,
+  serialized_start=23933,
+  serialized_end=25442,
 )
 
 
@@ -8192,8 +8192,8 @@ _PODSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25383,
-  serialized_end=25883,
+  serialized_start=25445,
+  serialized_end=25945,
 )
 
 
@@ -8231,8 +8231,8 @@ _PODSTATUSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25886,
-  serialized_end=26018,
+  serialized_start=25948,
+  serialized_end=26080,
 )
 
 
@@ -8270,8 +8270,8 @@ _PODTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26021,
-  serialized_end=26157,
+  serialized_start=26083,
+  serialized_end=26219,
 )
 
 
@@ -8309,8 +8309,8 @@ _PODTEMPLATELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26160,
-  serialized_end=26291,
+  serialized_start=26222,
+  serialized_end=26353,
 )
 
 
@@ -8348,8 +8348,8 @@ _PODTEMPLATESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26294,
-  serialized_end=26422,
+  serialized_start=26356,
+  serialized_end=26484,
 )
 
 
@@ -8394,8 +8394,8 @@ _PORTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26424,
-  serialized_end=26483,
+  serialized_start=26486,
+  serialized_end=26545,
 )
 
 
@@ -8440,8 +8440,8 @@ _PORTWORXVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26485,
-  serialized_end=26559,
+  serialized_start=26547,
+  serialized_end=26621,
 )
 
 
@@ -8472,8 +8472,8 @@ _PRECONDITIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26561,
-  serialized_end=26589,
+  serialized_start=26623,
+  serialized_end=26651,
 )
 
 
@@ -8525,8 +8525,8 @@ _PREFERAVOIDPODSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26592,
-  serialized_end=26769,
+  serialized_start=26654,
+  serialized_end=26831,
 )
 
 
@@ -8564,8 +8564,8 @@ _PREFERREDSCHEDULINGTERM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26771,
-  serialized_end=26870,
+  serialized_start=26833,
+  serialized_end=26932,
 )
 
 
@@ -8619,6 +8619,13 @@ _PROBE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='terminationGracePeriodSeconds', full_name='k8s.io.api.core.v1.Probe.terminationGracePeriodSeconds', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -8631,8 +8638,8 @@ _PROBE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26873,
-  serialized_end=27054,
+  serialized_start=26935,
+  serialized_end=27155,
 )
 
 
@@ -8670,8 +8677,8 @@ _PROJECTEDVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27056,
-  serialized_end=27155,
+  serialized_start=27157,
+  serialized_end=27256,
 )
 
 
@@ -8737,8 +8744,8 @@ _QUOBYTEVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27157,
-  serialized_end=27275,
+  serialized_start=27258,
+  serialized_end=27376,
 )
 
 
@@ -8818,8 +8825,8 @@ _RBDPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27278,
-  serialized_end=27473,
+  serialized_start=27379,
+  serialized_end=27574,
 )
 
 
@@ -8899,8 +8906,8 @@ _RBDVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27476,
-  serialized_end=27666,
+  serialized_start=27577,
+  serialized_end=27767,
 )
 
 
@@ -8945,8 +8952,8 @@ _RANGEALLOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27668,
-  serialized_end=27782,
+  serialized_start=27769,
+  serialized_end=27883,
 )
 
 
@@ -8991,8 +8998,8 @@ _REPLICATIONCONTROLLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27785,
-  serialized_end=28002,
+  serialized_start=27886,
+  serialized_end=28103,
 )
 
 
@@ -9051,8 +9058,8 @@ _REPLICATIONCONTROLLERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28005,
-  serialized_end=28172,
+  serialized_start=28106,
+  serialized_end=28273,
 )
 
 
@@ -9090,8 +9097,8 @@ _REPLICATIONCONTROLLERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28175,
-  serialized_end=28326,
+  serialized_start=28276,
+  serialized_end=28427,
 )
 
 
@@ -9129,8 +9136,8 @@ _REPLICATIONCONTROLLERSPEC_SELECTORENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28535,
-  serialized_end=28582,
+  serialized_start=28636,
+  serialized_end=28683,
 )
 
 _REPLICATIONCONTROLLERSPEC = _descriptor.Descriptor(
@@ -9181,8 +9188,8 @@ _REPLICATIONCONTROLLERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28329,
-  serialized_end=28582,
+  serialized_start=28430,
+  serialized_end=28683,
 )
 
 
@@ -9248,8 +9255,8 @@ _REPLICATIONCONTROLLERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28585,
-  serialized_end=28812,
+  serialized_start=28686,
+  serialized_end=28913,
 )
 
 
@@ -9294,8 +9301,8 @@ _RESOURCEFIELDSELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28815,
-  serialized_end=28944,
+  serialized_start=28916,
+  serialized_end=29045,
 )
 
 
@@ -9340,8 +9347,8 @@ _RESOURCEQUOTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28947,
-  serialized_end=29140,
+  serialized_start=29048,
+  serialized_end=29241,
 )
 
 
@@ -9379,8 +9386,8 @@ _RESOURCEQUOTALIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29143,
-  serialized_end=29278,
+  serialized_start=29244,
+  serialized_end=29379,
 )
 
 
@@ -9418,8 +9425,8 @@ _RESOURCEQUOTASPEC_HARDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29439,
-  serialized_end=29530,
+  serialized_start=29540,
+  serialized_end=29631,
 )
 
 _RESOURCEQUOTASPEC = _descriptor.Descriptor(
@@ -9463,8 +9470,8 @@ _RESOURCEQUOTASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29281,
-  serialized_end=29530,
+  serialized_start=29382,
+  serialized_end=29631,
 )
 
 
@@ -9502,8 +9509,8 @@ _RESOURCEQUOTASTATUS_HARDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29439,
-  serialized_end=29530,
+  serialized_start=29540,
+  serialized_end=29631,
 )
 
 _RESOURCEQUOTASTATUS_USEDENTRY = _descriptor.Descriptor(
@@ -9540,8 +9547,8 @@ _RESOURCEQUOTASTATUS_USEDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29779,
-  serialized_end=29870,
+  serialized_start=29880,
+  serialized_end=29971,
 )
 
 _RESOURCEQUOTASTATUS = _descriptor.Descriptor(
@@ -9578,8 +9585,8 @@ _RESOURCEQUOTASTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29533,
-  serialized_end=29870,
+  serialized_start=29634,
+  serialized_end=29971,
 )
 
 
@@ -9617,8 +9624,8 @@ _RESOURCEREQUIREMENTS_LIMITSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30041,
-  serialized_end=30134,
+  serialized_start=30142,
+  serialized_end=30235,
 )
 
 _RESOURCEREQUIREMENTS_REQUESTSENTRY = _descriptor.Descriptor(
@@ -9655,8 +9662,8 @@ _RESOURCEREQUIREMENTS_REQUESTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30136,
-  serialized_end=30231,
+  serialized_start=30237,
+  serialized_end=30332,
 )
 
 _RESOURCEREQUIREMENTS = _descriptor.Descriptor(
@@ -9693,8 +9700,8 @@ _RESOURCEREQUIREMENTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29873,
-  serialized_end=30231,
+  serialized_start=29974,
+  serialized_end=30332,
 )
 
 
@@ -9746,8 +9753,8 @@ _SELINUXOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30233,
-  serialized_end=30306,
+  serialized_start=30334,
+  serialized_end=30407,
 )
 
 
@@ -9841,8 +9848,8 @@ _SCALEIOPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30309,
-  serialized_end=30571,
+  serialized_start=30410,
+  serialized_end=30672,
 )
 
 
@@ -9936,8 +9943,8 @@ _SCALEIOVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30574,
-  serialized_end=30831,
+  serialized_start=30675,
+  serialized_end=30932,
 )
 
 
@@ -9968,8 +9975,8 @@ _SCOPESELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30833,
-  serialized_end=30929,
+  serialized_start=30934,
+  serialized_end=31030,
 )
 
 
@@ -10014,8 +10021,8 @@ _SCOPEDRESOURCESELECTORREQUIREMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30931,
-  serialized_end=31019,
+  serialized_start=31032,
+  serialized_end=31120,
 )
 
 
@@ -10053,8 +10060,8 @@ _SECCOMPPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31021,
-  serialized_end=31077,
+  serialized_start=31122,
+  serialized_end=31178,
 )
 
 
@@ -10092,8 +10099,8 @@ _SECRET_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31307,
-  serialized_end=31350,
+  serialized_start=31408,
+  serialized_end=31451,
 )
 
 _SECRET_STRINGDATAENTRY = _descriptor.Descriptor(
@@ -10130,8 +10137,8 @@ _SECRET_STRINGDATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31352,
-  serialized_end=31401,
+  serialized_start=31453,
+  serialized_end=31502,
 )
 
 _SECRET = _descriptor.Descriptor(
@@ -10189,8 +10196,8 @@ _SECRET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31080,
-  serialized_end=31401,
+  serialized_start=31181,
+  serialized_end=31502,
 )
 
 
@@ -10228,8 +10235,8 @@ _SECRETENVSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31403,
-  serialized_end=31510,
+  serialized_start=31504,
+  serialized_end=31611,
 )
 
 
@@ -10274,8 +10281,8 @@ _SECRETKEYSELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31512,
-  serialized_end=31634,
+  serialized_start=31613,
+  serialized_end=31735,
 )
 
 
@@ -10313,8 +10320,8 @@ _SECRETLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31636,
-  serialized_end=31757,
+  serialized_start=31737,
+  serialized_end=31858,
 )
 
 
@@ -10359,8 +10366,8 @@ _SECRETPROJECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31760,
-  serialized_end=31914,
+  serialized_start=31861,
+  serialized_end=32015,
 )
 
 
@@ -10398,8 +10405,8 @@ _SECRETREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31916,
-  serialized_end=31966,
+  serialized_start=32017,
+  serialized_end=32067,
 )
 
 
@@ -10451,8 +10458,8 @@ _SECRETVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31968,
-  serialized_end=32093,
+  serialized_start=32069,
+  serialized_end=32194,
 )
 
 
@@ -10553,8 +10560,8 @@ _SECURITYCONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32096,
-  serialized_end=32530,
+  serialized_start=32197,
+  serialized_end=32631,
 )
 
 
@@ -10585,8 +10592,8 @@ _SERIALIZEDREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32532,
-  serialized_end=32609,
+  serialized_start=32633,
+  serialized_end=32710,
 )
 
 
@@ -10631,8 +10638,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32612,
-  serialized_end=32787,
+  serialized_start=32713,
+  serialized_end=32888,
 )
 
 
@@ -10684,8 +10691,8 @@ _SERVICEACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32790,
-  serialized_end=33034,
+  serialized_start=32891,
+  serialized_end=33135,
 )
 
 
@@ -10723,8 +10730,8 @@ _SERVICEACCOUNTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33037,
-  serialized_end=33174,
+  serialized_start=33138,
+  serialized_end=33275,
 )
 
 
@@ -10769,8 +10776,8 @@ _SERVICEACCOUNTTOKENPROJECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33176,
-  serialized_end=33266,
+  serialized_start=33277,
+  serialized_end=33367,
 )
 
 
@@ -10808,8 +10815,8 @@ _SERVICELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33268,
-  serialized_end=33391,
+  serialized_start=33369,
+  serialized_end=33492,
 )
 
 
@@ -10875,8 +10882,8 @@ _SERVICEPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33394,
-  serialized_end=33562,
+  serialized_start=33495,
+  serialized_end=33663,
 )
 
 
@@ -10907,8 +10914,8 @@ _SERVICEPROXYOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33564,
-  serialized_end=33599,
+  serialized_start=33665,
+  serialized_end=33700,
 )
 
 
@@ -10946,8 +10953,8 @@ _SERVICESPEC_SELECTORENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28535,
-  serialized_end=28582,
+  serialized_start=28636,
+  serialized_end=28683,
 )
 
 _SERVICESPEC = _descriptor.Descriptor(
@@ -11084,6 +11091,20 @@ _SERVICESPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='loadBalancerClass', full_name='k8s.io.api.core.v1.ServiceSpec.loadBalancerClass', index=18,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='internalTrafficPolicy', full_name='k8s.io.api.core.v1.ServiceSpec.internalTrafficPolicy', index=19,
+      number=22, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -11096,8 +11117,8 @@ _SERVICESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=33602,
-  serialized_end=34229,
+  serialized_start=33703,
+  serialized_end=34388,
 )
 
 
@@ -11135,8 +11156,8 @@ _SERVICESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34232,
-  serialized_end=34378,
+  serialized_start=34391,
+  serialized_end=34537,
 )
 
 
@@ -11167,8 +11188,8 @@ _SESSIONAFFINITYCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34380,
-  serialized_end=34457,
+  serialized_start=34539,
+  serialized_end=34616,
 )
 
 
@@ -11227,8 +11248,8 @@ _STORAGEOSPERSISTENTVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34460,
-  serialized_end=34628,
+  serialized_start=34619,
+  serialized_end=34787,
 )
 
 
@@ -11287,8 +11308,8 @@ _STORAGEOSVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34631,
-  serialized_end=34794,
+  serialized_start=34790,
+  serialized_end=34953,
 )
 
 
@@ -11326,8 +11347,8 @@ _SYSCTL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34796,
-  serialized_end=34833,
+  serialized_start=34955,
+  serialized_end=34992,
 )
 
 
@@ -11365,8 +11386,8 @@ _TCPSOCKETACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34835,
-  serialized_end=34930,
+  serialized_start=34994,
+  serialized_end=35089,
 )
 
 
@@ -11418,8 +11439,8 @@ _TAINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34932,
-  serialized_end=35046,
+  serialized_start=35091,
+  serialized_end=35205,
 )
 
 
@@ -11478,8 +11499,8 @@ _TOLERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35048,
-  serialized_end=35149,
+  serialized_start=35207,
+  serialized_end=35308,
 )
 
 
@@ -11517,8 +11538,8 @@ _TOPOLOGYSELECTORLABELREQUIREMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35151,
-  serialized_end=35214,
+  serialized_start=35310,
+  serialized_end=35373,
 )
 
 
@@ -11549,8 +11570,8 @@ _TOPOLOGYSELECTORTERM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35216,
-  serialized_end=35323,
+  serialized_start=35375,
+  serialized_end=35482,
 )
 
 
@@ -11602,8 +11623,8 @@ _TOPOLOGYSPREADCONSTRAINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35326,
-  serialized_end=35493,
+  serialized_start=35485,
+  serialized_end=35652,
 )
 
 
@@ -11648,8 +11669,8 @@ _TYPEDLOCALOBJECTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35495,
-  serialized_end=35568,
+  serialized_start=35654,
+  serialized_end=35727,
 )
 
 
@@ -11687,8 +11708,8 @@ _VOLUME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35570,
-  serialized_end=35648,
+  serialized_start=35729,
+  serialized_end=35807,
 )
 
 
@@ -11726,8 +11747,8 @@ _VOLUMEDEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35650,
-  serialized_end=35698,
+  serialized_start=35809,
+  serialized_end=35857,
 )
 
 
@@ -11793,8 +11814,8 @@ _VOLUMEMOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35701,
-  serialized_end=35829,
+  serialized_start=35860,
+  serialized_end=35988,
 )
 
 
@@ -11825,8 +11846,8 @@ _VOLUMENODEAFFINITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35831,
-  serialized_end=35903,
+  serialized_start=35990,
+  serialized_end=36062,
 )
 
 
@@ -11878,8 +11899,8 @@ _VOLUMEPROJECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=35906,
-  serialized_end=36182,
+  serialized_start=36065,
+  serialized_end=36341,
 )
 
 
@@ -12106,8 +12127,8 @@ _VOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=36185,
-  serialized_end=38002,
+  serialized_start=36344,
+  serialized_end=38161,
 )
 
 
@@ -12159,8 +12180,8 @@ _VSPHEREVIRTUALDISKVOLUMESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38004,
-  serialized_end=38124,
+  serialized_start=38163,
+  serialized_end=38283,
 )
 
 
@@ -12198,8 +12219,8 @@ _WEIGHTEDPODAFFINITYTERM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38126,
-  serialized_end=38229,
+  serialized_start=38285,
+  serialized_end=38388,
 )
 
 
@@ -12244,8 +12265,8 @@ _WINDOWSSECURITYCONTEXTOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38231,
-  serialized_end=38345,
+  serialized_start=38390,
+  serialized_end=38504,
 )
 
 _AFFINITY.fields_by_name['nodeAffinity'].message_type = _NODEAFFINITY
@@ -12485,6 +12506,7 @@ _POD.fields_by_name['status'].message_type = _PODSTATUS
 _PODAFFINITY.fields_by_name['requiredDuringSchedulingIgnoredDuringExecution'].message_type = _PODAFFINITYTERM
 _PODAFFINITY.fields_by_name['preferredDuringSchedulingIgnoredDuringExecution'].message_type = _WEIGHTEDPODAFFINITYTERM
 _PODAFFINITYTERM.fields_by_name['labelSelector'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LABELSELECTOR
+_PODAFFINITYTERM.fields_by_name['namespaceSelector'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LABELSELECTOR
 _PODANTIAFFINITY.fields_by_name['requiredDuringSchedulingIgnoredDuringExecution'].message_type = _PODAFFINITYTERM
 _PODANTIAFFINITY.fields_by_name['preferredDuringSchedulingIgnoredDuringExecution'].message_type = _WEIGHTEDPODAFFINITYTERM
 _PODCONDITION.fields_by_name['lastProbeTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME

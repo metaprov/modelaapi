@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z\002v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x12$k8s.io.apimachinery.pkg.apis.meta.v1\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xa9\x02\n\x08\x41PIGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12P\n\x08versions\x18\x02 \x03(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery\x12X\n\x10preferredVersion\x18\x03 \x01(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery\x12\x63\n\x1aserverAddressByClientCIDRs\x18\x04 \x03(\x0b\x32?.k8s.io.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR\"N\n\x0c\x41PIGroupList\x12>\n\x06groups\x18\x01 \x03(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.APIGroup\"\xf3\x01\n\x0b\x41PIResource\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0csingularName\x18\x06 \x01(\t\x12\x12\n\nnamespaced\x18\x02 \x01(\x08\x12\r\n\x05group\x18\x08 \x01(\t\x12\x0f\n\x07version\x18\t \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12:\n\x05verbs\x18\x04 \x01(\x0b\x32+.k8s.io.apimachinery.pkg.apis.meta.v1.Verbs\x12\x12\n\nshortNames\x18\x05 \x03(\t\x12\x12\n\ncategories\x18\x07 \x03(\t\x12\x1a\n\x12storageVersionHash\x18\n \x01(\t\"m\n\x0f\x41PIResourceList\x12\x14\n\x0cgroupVersion\x18\x01 \x01(\t\x12\x44\n\tresources\x18\x02 \x03(\x0b\x32\x31.k8s.io.apimachinery.pkg.apis.meta.v1.APIResource\"\x84\x01\n\x0b\x41PIVersions\x12\x10\n\x08versions\x18\x01 \x03(\t\x12\x63\n\x1aserverAddressByClientCIDRs\x18\x02 \x03(\x0b\x32?.k8s.io.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR\"\xae\x01\n\tCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"5\n\rCreateOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\x14\n\x0c\x66ieldManager\x18\x03 \x01(\t\"\xbc\x01\n\rDeleteOptions\x12\x1a\n\x12gracePeriodSeconds\x18\x01 \x01(\x03\x12J\n\rpreconditions\x18\x02 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.Preconditions\x12\x18\n\x10orphanDependents\x18\x03 \x01(\x08\x12\x19\n\x11propagationPolicy\x18\x04 \x01(\t\x12\x0e\n\x06\x64ryRun\x18\x05 \x03(\t\"\x1c\n\x08\x44uration\x12\x10\n\x08\x64uration\x18\x01 \x01(\x03\".\n\rExportOptions\x12\x0e\n\x06\x65xport\x18\x01 \x01(\x08\x12\r\n\x05\x65xact\x18\x02 \x01(\x08\"\x17\n\x08\x46ieldsV1\x12\x0b\n\x03Raw\x18\x01 \x01(\x0c\"%\n\nGetOptions\x12\x17\n\x0fresourceVersion\x18\x01 \x01(\t\"(\n\tGroupKind\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"0\n\rGroupResource\x12\r\n\x05group\x18\x01 \x01(\t\x12\x10\n\x08resource\x18\x02 \x01(\t\".\n\x0cGroupVersion\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"A\n\x18GroupVersionForDiscovery\x12\x14\n\x0cgroupVersion\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"@\n\x10GroupVersionKind\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\"H\n\x14GroupVersionResource\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08resource\x18\x03 \x01(\t\"\xf8\x01\n\rLabelSelector\x12Y\n\x0bmatchLabels\x18\x01 \x03(\x0b\x32\x44.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector.MatchLabelsEntry\x12X\n\x10matchExpressions\x18\x02 \x03(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement\x1a\x32\n\x10MatchLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x18LabelSelectorRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"\x86\x01\n\x04List\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12<\n\x05items\x18\x02 \x03(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtension\"c\n\x08ListMeta\x12\x10\n\x08selfLink\x18\x01 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x02 \x01(\t\x12\x10\n\x08\x63ontinue\x18\x03 \x01(\t\x12\x1a\n\x12remainingItemCount\x18\x04 \x01(\x03\"\xd7\x01\n\x0bListOptions\x12\x15\n\rlabelSelector\x18\x01 \x01(\t\x12\x15\n\rfieldSelector\x18\x02 \x01(\t\x12\r\n\x05watch\x18\x03 \x01(\x08\x12\x1b\n\x13\x61llowWatchBookmarks\x18\t \x01(\x08\x12\x17\n\x0fresourceVersion\x18\x04 \x01(\t\x12\x1c\n\x14resourceVersionMatch\x18\n \x01(\t\x12\x16\n\x0etimeoutSeconds\x18\x05 \x01(\x03\x12\r\n\x05limit\x18\x07 \x01(\x03\x12\x10\n\x08\x63ontinue\x18\x08 \x01(\t\"\xdc\x01\n\x12ManagedFieldsEntry\x12\x0f\n\x07manager\x18\x01 \x01(\t\x12\x11\n\toperation\x18\x02 \x01(\t\x12\x12\n\napiVersion\x18\x03 \x01(\t\x12\x38\n\x04time\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x12\n\nfieldsType\x18\x06 \x01(\t\x12@\n\x08\x66ieldsV1\x18\x07 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1\"+\n\tMicroTime\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\"\x93\x06\n\nObjectMeta\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cgenerateName\x18\x02 \x01(\t\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x10\n\x08selfLink\x18\x04 \x01(\t\x12\x0b\n\x03uid\x18\x05 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x06 \x01(\t\x12\x12\n\ngeneration\x18\x07 \x01(\x03\x12\x45\n\x11\x63reationTimestamp\x18\x08 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x45\n\x11\x64\x65letionTimestamp\x18\t \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\"\n\x1a\x64\x65letionGracePeriodSeconds\x18\n \x01(\x03\x12L\n\x06labels\x18\x0b \x03(\x0b\x32<.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta.LabelsEntry\x12V\n\x0b\x61nnotations\x18\x0c \x03(\x0b\x32\x41.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta.AnnotationsEntry\x12M\n\x0fownerReferences\x18\r \x03(\x0b\x32\x34.k8s.io.apimachinery.pkg.apis.meta.v1.OwnerReference\x12\x12\n\nfinalizers\x18\x0e \x03(\t\x12\x13\n\x0b\x63lusterName\x18\x0f \x01(\t\x12O\n\rmanagedFields\x18\x11 \x03(\x0b\x32\x38.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"}\n\x0eOwnerReference\x12\x12\n\napiVersion\x18\x05 \x01(\t\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\t\x12\x12\n\ncontroller\x18\x06 \x01(\x08\x12\x1a\n\x12\x62lockOwnerDeletion\x18\x07 \x01(\x08\"[\n\x15PartialObjectMetadata\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\"\xa9\x01\n\x19PartialObjectMetadataList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12J\n\x05items\x18\x02 \x03(\x0b\x32;.k8s.io.apimachinery.pkg.apis.meta.v1.PartialObjectMetadata\"\x07\n\x05Patch\"C\n\x0cPatchOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\x12\x14\n\x0c\x66ieldManager\x18\x03 \x01(\t\"5\n\rPreconditions\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x02 \x01(\t\"\x1a\n\tRootPaths\x12\r\n\x05paths\x18\x01 \x03(\t\"F\n\x19ServerAddressByClientCIDR\x12\x12\n\nclientCIDR\x18\x01 \x01(\t\x12\x15\n\rserverAddress\x18\x02 \x01(\t\"\xcf\x01\n\x06Status\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x44\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.StatusDetails\x12\x0c\n\x04\x63ode\x18\x06 \x01(\x05\"=\n\x0bStatusCause\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x66ield\x18\x03 \x01(\t\"\xa5\x01\n\rStatusDetails\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05group\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x06 \x01(\t\x12\x41\n\x06\x63\x61uses\x18\x04 \x03(\x0b\x32\x31.k8s.io.apimachinery.pkg.apis.meta.v1.StatusCause\x12\x19\n\x11retryAfterSeconds\x18\x05 \x01(\x05\"%\n\x0cTableOptions\x12\x15\n\rincludeObject\x18\x01 \x01(\t\"&\n\x04Time\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\"+\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\",\n\x08TypeMeta\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x12\n\napiVersion\x18\x02 \x01(\t\"5\n\rUpdateOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\x14\n\x0c\x66ieldManager\x18\x02 \x01(\t\"\x16\n\x05Verbs\x12\r\n\x05items\x18\x01 \x03(\t\"Y\n\nWatchEvent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12=\n\x06object\x18\x02 \x01(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtensionB\x04Z\x02v1'
+  serialized_pb=b'\n4k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x12$k8s.io.apimachinery.pkg.apis.meta.v1\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xa9\x02\n\x08\x41PIGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12P\n\x08versions\x18\x02 \x03(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery\x12X\n\x10preferredVersion\x18\x03 \x01(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery\x12\x63\n\x1aserverAddressByClientCIDRs\x18\x04 \x03(\x0b\x32?.k8s.io.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR\"N\n\x0c\x41PIGroupList\x12>\n\x06groups\x18\x01 \x03(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.APIGroup\"\xf3\x01\n\x0b\x41PIResource\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0csingularName\x18\x06 \x01(\t\x12\x12\n\nnamespaced\x18\x02 \x01(\x08\x12\r\n\x05group\x18\x08 \x01(\t\x12\x0f\n\x07version\x18\t \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12:\n\x05verbs\x18\x04 \x01(\x0b\x32+.k8s.io.apimachinery.pkg.apis.meta.v1.Verbs\x12\x12\n\nshortNames\x18\x05 \x03(\t\x12\x12\n\ncategories\x18\x07 \x03(\t\x12\x1a\n\x12storageVersionHash\x18\n \x01(\t\"m\n\x0f\x41PIResourceList\x12\x14\n\x0cgroupVersion\x18\x01 \x01(\t\x12\x44\n\tresources\x18\x02 \x03(\x0b\x32\x31.k8s.io.apimachinery.pkg.apis.meta.v1.APIResource\"\x84\x01\n\x0b\x41PIVersions\x12\x10\n\x08versions\x18\x01 \x03(\t\x12\x63\n\x1aserverAddressByClientCIDRs\x18\x02 \x03(\x0b\x32?.k8s.io.apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR\"C\n\x0c\x41pplyOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\x12\x14\n\x0c\x66ieldManager\x18\x03 \x01(\t\"\xae\x01\n\tCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"5\n\rCreateOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\x14\n\x0c\x66ieldManager\x18\x03 \x01(\t\"\xbc\x01\n\rDeleteOptions\x12\x1a\n\x12gracePeriodSeconds\x18\x01 \x01(\x03\x12J\n\rpreconditions\x18\x02 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.Preconditions\x12\x18\n\x10orphanDependents\x18\x03 \x01(\x08\x12\x19\n\x11propagationPolicy\x18\x04 \x01(\t\x12\x0e\n\x06\x64ryRun\x18\x05 \x03(\t\"\x1c\n\x08\x44uration\x12\x10\n\x08\x64uration\x18\x01 \x01(\x03\"\x17\n\x08\x46ieldsV1\x12\x0b\n\x03Raw\x18\x01 \x01(\x0c\"%\n\nGetOptions\x12\x17\n\x0fresourceVersion\x18\x01 \x01(\t\"(\n\tGroupKind\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"0\n\rGroupResource\x12\r\n\x05group\x18\x01 \x01(\t\x12\x10\n\x08resource\x18\x02 \x01(\t\".\n\x0cGroupVersion\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"A\n\x18GroupVersionForDiscovery\x12\x14\n\x0cgroupVersion\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"@\n\x10GroupVersionKind\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\"H\n\x14GroupVersionResource\x12\r\n\x05group\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08resource\x18\x03 \x01(\t\"\xf8\x01\n\rLabelSelector\x12Y\n\x0bmatchLabels\x18\x01 \x03(\x0b\x32\x44.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelector.MatchLabelsEntry\x12X\n\x10matchExpressions\x18\x02 \x03(\x0b\x32>.k8s.io.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement\x1a\x32\n\x10MatchLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x18LabelSelectorRequirement\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x0e\n\x06values\x18\x03 \x03(\t\"\x86\x01\n\x04List\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12<\n\x05items\x18\x02 \x03(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtension\"c\n\x08ListMeta\x12\x10\n\x08selfLink\x18\x01 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x02 \x01(\t\x12\x10\n\x08\x63ontinue\x18\x03 \x01(\t\x12\x1a\n\x12remainingItemCount\x18\x04 \x01(\x03\"\xd7\x01\n\x0bListOptions\x12\x15\n\rlabelSelector\x18\x01 \x01(\t\x12\x15\n\rfieldSelector\x18\x02 \x01(\t\x12\r\n\x05watch\x18\x03 \x01(\x08\x12\x1b\n\x13\x61llowWatchBookmarks\x18\t \x01(\x08\x12\x17\n\x0fresourceVersion\x18\x04 \x01(\t\x12\x1c\n\x14resourceVersionMatch\x18\n \x01(\t\x12\x16\n\x0etimeoutSeconds\x18\x05 \x01(\x03\x12\r\n\x05limit\x18\x07 \x01(\x03\x12\x10\n\x08\x63ontinue\x18\x08 \x01(\t\"\xdc\x01\n\x12ManagedFieldsEntry\x12\x0f\n\x07manager\x18\x01 \x01(\t\x12\x11\n\toperation\x18\x02 \x01(\t\x12\x12\n\napiVersion\x18\x03 \x01(\t\x12\x38\n\x04time\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x12\n\nfieldsType\x18\x06 \x01(\t\x12@\n\x08\x66ieldsV1\x18\x07 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1\"+\n\tMicroTime\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\"\x93\x06\n\nObjectMeta\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cgenerateName\x18\x02 \x01(\t\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x10\n\x08selfLink\x18\x04 \x01(\t\x12\x0b\n\x03uid\x18\x05 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x06 \x01(\t\x12\x12\n\ngeneration\x18\x07 \x01(\x03\x12\x45\n\x11\x63reationTimestamp\x18\x08 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x45\n\x11\x64\x65letionTimestamp\x18\t \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\"\n\x1a\x64\x65letionGracePeriodSeconds\x18\n \x01(\x03\x12L\n\x06labels\x18\x0b \x03(\x0b\x32<.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta.LabelsEntry\x12V\n\x0b\x61nnotations\x18\x0c \x03(\x0b\x32\x41.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta.AnnotationsEntry\x12M\n\x0fownerReferences\x18\r \x03(\x0b\x32\x34.k8s.io.apimachinery.pkg.apis.meta.v1.OwnerReference\x12\x12\n\nfinalizers\x18\x0e \x03(\t\x12\x13\n\x0b\x63lusterName\x18\x0f \x01(\t\x12O\n\rmanagedFields\x18\x11 \x03(\x0b\x32\x38.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"}\n\x0eOwnerReference\x12\x12\n\napiVersion\x18\x05 \x01(\t\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x04 \x01(\t\x12\x12\n\ncontroller\x18\x06 \x01(\x08\x12\x1a\n\x12\x62lockOwnerDeletion\x18\x07 \x01(\x08\"[\n\x15PartialObjectMetadata\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\"\xa9\x01\n\x19PartialObjectMetadataList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12J\n\x05items\x18\x02 \x03(\x0b\x32;.k8s.io.apimachinery.pkg.apis.meta.v1.PartialObjectMetadata\"\x07\n\x05Patch\"C\n\x0cPatchOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\x12\x14\n\x0c\x66ieldManager\x18\x03 \x01(\t\"5\n\rPreconditions\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\x17\n\x0fresourceVersion\x18\x02 \x01(\t\"\x1a\n\tRootPaths\x12\r\n\x05paths\x18\x01 \x03(\t\"F\n\x19ServerAddressByClientCIDR\x12\x12\n\nclientCIDR\x18\x01 \x01(\t\x12\x15\n\rserverAddress\x18\x02 \x01(\t\"\xcf\x01\n\x06Status\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x44\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x33.k8s.io.apimachinery.pkg.apis.meta.v1.StatusDetails\x12\x0c\n\x04\x63ode\x18\x06 \x01(\x05\"=\n\x0bStatusCause\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x66ield\x18\x03 \x01(\t\"\xa5\x01\n\rStatusDetails\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05group\x18\x02 \x01(\t\x12\x0c\n\x04kind\x18\x03 \x01(\t\x12\x0b\n\x03uid\x18\x06 \x01(\t\x12\x41\n\x06\x63\x61uses\x18\x04 \x03(\x0b\x32\x31.k8s.io.apimachinery.pkg.apis.meta.v1.StatusCause\x12\x19\n\x11retryAfterSeconds\x18\x05 \x01(\x05\"%\n\x0cTableOptions\x12\x15\n\rincludeObject\x18\x01 \x01(\t\"&\n\x04Time\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\"+\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\",\n\x08TypeMeta\x12\x0c\n\x04kind\x18\x01 \x01(\t\x12\x12\n\napiVersion\x18\x02 \x01(\t\"5\n\rUpdateOptions\x12\x0e\n\x06\x64ryRun\x18\x01 \x03(\t\x12\x14\n\x0c\x66ieldManager\x18\x02 \x01(\t\"\x16\n\x05Verbs\x12\r\n\x05items\x18\x01 \x03(\t\"Y\n\nWatchEvent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12=\n\x06object\x18\x02 \x01(\x0b\x32-.k8s.io.apimachinery.pkg.runtime.RawExtensionB\x04Z\x02v1'
   ,
   dependencies=[k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -286,6 +286,52 @@ _APIVERSIONS = _descriptor.Descriptor(
 )
 
 
+_APPLYOPTIONS = _descriptor.Descriptor(
+  name='ApplyOptions',
+  full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ApplyOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dryRun', full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ApplyOptions.dryRun', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='force', full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ApplyOptions.force', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fieldManager', full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ApplyOptions.fieldManager', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1071,
+  serialized_end=1138,
+)
+
+
 _CONDITION = _descriptor.Descriptor(
   name='Condition',
   full_name='k8s.io.apimachinery.pkg.apis.meta.v1.Condition',
@@ -348,8 +394,8 @@ _CONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1072,
-  serialized_end=1246,
+  serialized_start=1141,
+  serialized_end=1315,
 )
 
 
@@ -387,8 +433,8 @@ _CREATEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1248,
-  serialized_end=1301,
+  serialized_start=1317,
+  serialized_end=1370,
 )
 
 
@@ -447,8 +493,8 @@ _DELETEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1304,
-  serialized_end=1492,
+  serialized_start=1373,
+  serialized_end=1561,
 )
 
 
@@ -479,47 +525,8 @@ _DURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1494,
-  serialized_end=1522,
-)
-
-
-_EXPORTOPTIONS = _descriptor.Descriptor(
-  name='ExportOptions',
-  full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ExportOptions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='export', full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ExportOptions.export', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='exact', full_name='k8s.io.apimachinery.pkg.apis.meta.v1.ExportOptions.exact', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1524,
-  serialized_end=1570,
+  serialized_start=1563,
+  serialized_end=1591,
 )
 
 
@@ -550,8 +557,8 @@ _FIELDSV1 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1572,
-  serialized_end=1595,
+  serialized_start=1593,
+  serialized_end=1616,
 )
 
 
@@ -582,8 +589,8 @@ _GETOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1597,
-  serialized_end=1634,
+  serialized_start=1618,
+  serialized_end=1655,
 )
 
 
@@ -621,8 +628,8 @@ _GROUPKIND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1636,
-  serialized_end=1676,
+  serialized_start=1657,
+  serialized_end=1697,
 )
 
 
@@ -660,8 +667,8 @@ _GROUPRESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1678,
-  serialized_end=1726,
+  serialized_start=1699,
+  serialized_end=1747,
 )
 
 
@@ -699,8 +706,8 @@ _GROUPVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1728,
-  serialized_end=1774,
+  serialized_start=1749,
+  serialized_end=1795,
 )
 
 
@@ -738,8 +745,8 @@ _GROUPVERSIONFORDISCOVERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1776,
-  serialized_end=1841,
+  serialized_start=1797,
+  serialized_end=1862,
 )
 
 
@@ -784,8 +791,8 @@ _GROUPVERSIONKIND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1843,
-  serialized_end=1907,
+  serialized_start=1864,
+  serialized_end=1928,
 )
 
 
@@ -830,8 +837,8 @@ _GROUPVERSIONRESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1909,
-  serialized_end=1981,
+  serialized_start=1930,
+  serialized_end=2002,
 )
 
 
@@ -869,8 +876,8 @@ _LABELSELECTOR_MATCHLABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2182,
-  serialized_end=2232,
+  serialized_start=2203,
+  serialized_end=2253,
 )
 
 _LABELSELECTOR = _descriptor.Descriptor(
@@ -907,8 +914,8 @@ _LABELSELECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1984,
-  serialized_end=2232,
+  serialized_start=2005,
+  serialized_end=2253,
 )
 
 
@@ -953,8 +960,8 @@ _LABELSELECTORREQUIREMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2234,
-  serialized_end=2307,
+  serialized_start=2255,
+  serialized_end=2328,
 )
 
 
@@ -992,8 +999,8 @@ _LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2310,
-  serialized_end=2444,
+  serialized_start=2331,
+  serialized_end=2465,
 )
 
 
@@ -1045,8 +1052,8 @@ _LISTMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2446,
-  serialized_end=2545,
+  serialized_start=2467,
+  serialized_end=2566,
 )
 
 
@@ -1133,8 +1140,8 @@ _LISTOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2548,
-  serialized_end=2763,
+  serialized_start=2569,
+  serialized_end=2784,
 )
 
 
@@ -1200,8 +1207,8 @@ _MANAGEDFIELDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2766,
-  serialized_end=2986,
+  serialized_start=2787,
+  serialized_end=3007,
 )
 
 
@@ -1239,8 +1246,8 @@ _MICROTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2988,
-  serialized_end=3031,
+  serialized_start=3009,
+  serialized_end=3052,
 )
 
 
@@ -1278,8 +1285,8 @@ _OBJECTMETA_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3724,
-  serialized_end=3769,
+  serialized_start=3745,
+  serialized_end=3790,
 )
 
 _OBJECTMETA_ANNOTATIONSENTRY = _descriptor.Descriptor(
@@ -1316,8 +1323,8 @@ _OBJECTMETA_ANNOTATIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3771,
-  serialized_end=3821,
+  serialized_start=3792,
+  serialized_end=3842,
 )
 
 _OBJECTMETA = _descriptor.Descriptor(
@@ -1452,8 +1459,8 @@ _OBJECTMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3034,
-  serialized_end=3821,
+  serialized_start=3055,
+  serialized_end=3842,
 )
 
 
@@ -1519,8 +1526,8 @@ _OWNERREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3823,
-  serialized_end=3948,
+  serialized_start=3844,
+  serialized_end=3969,
 )
 
 
@@ -1551,8 +1558,8 @@ _PARTIALOBJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3950,
-  serialized_end=4041,
+  serialized_start=3971,
+  serialized_end=4062,
 )
 
 
@@ -1590,8 +1597,8 @@ _PARTIALOBJECTMETADATALIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4044,
-  serialized_end=4213,
+  serialized_start=4065,
+  serialized_end=4234,
 )
 
 
@@ -1615,8 +1622,8 @@ _PATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4215,
-  serialized_end=4222,
+  serialized_start=4236,
+  serialized_end=4243,
 )
 
 
@@ -1661,8 +1668,8 @@ _PATCHOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4224,
-  serialized_end=4291,
+  serialized_start=4245,
+  serialized_end=4312,
 )
 
 
@@ -1700,8 +1707,8 @@ _PRECONDITIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4293,
-  serialized_end=4346,
+  serialized_start=4314,
+  serialized_end=4367,
 )
 
 
@@ -1732,8 +1739,8 @@ _ROOTPATHS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4348,
-  serialized_end=4374,
+  serialized_start=4369,
+  serialized_end=4395,
 )
 
 
@@ -1771,8 +1778,8 @@ _SERVERADDRESSBYCLIENTCIDR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4376,
-  serialized_end=4446,
+  serialized_start=4397,
+  serialized_end=4467,
 )
 
 
@@ -1838,8 +1845,8 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4449,
-  serialized_end=4656,
+  serialized_start=4470,
+  serialized_end=4677,
 )
 
 
@@ -1884,8 +1891,8 @@ _STATUSCAUSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4658,
-  serialized_end=4719,
+  serialized_start=4679,
+  serialized_end=4740,
 )
 
 
@@ -1951,8 +1958,8 @@ _STATUSDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4722,
-  serialized_end=4887,
+  serialized_start=4743,
+  serialized_end=4908,
 )
 
 
@@ -1983,8 +1990,8 @@ _TABLEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4889,
-  serialized_end=4926,
+  serialized_start=4910,
+  serialized_end=4947,
 )
 
 
@@ -2022,8 +2029,8 @@ _TIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4928,
-  serialized_end=4966,
+  serialized_start=4949,
+  serialized_end=4987,
 )
 
 
@@ -2061,8 +2068,8 @@ _TIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4968,
-  serialized_end=5011,
+  serialized_start=4989,
+  serialized_end=5032,
 )
 
 
@@ -2100,8 +2107,8 @@ _TYPEMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5013,
-  serialized_end=5057,
+  serialized_start=5034,
+  serialized_end=5078,
 )
 
 
@@ -2139,8 +2146,8 @@ _UPDATEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5059,
-  serialized_end=5112,
+  serialized_start=5080,
+  serialized_end=5133,
 )
 
 
@@ -2171,8 +2178,8 @@ _VERBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5114,
-  serialized_end=5136,
+  serialized_start=5135,
+  serialized_end=5157,
 )
 
 
@@ -2210,8 +2217,8 @@ _WATCHEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5138,
-  serialized_end=5227,
+  serialized_start=5159,
+  serialized_end=5248,
 )
 
 _APIGROUP.fields_by_name['versions'].message_type = _GROUPVERSIONFORDISCOVERY
@@ -2250,11 +2257,11 @@ DESCRIPTOR.message_types_by_name['APIGroupList'] = _APIGROUPLIST
 DESCRIPTOR.message_types_by_name['APIResource'] = _APIRESOURCE
 DESCRIPTOR.message_types_by_name['APIResourceList'] = _APIRESOURCELIST
 DESCRIPTOR.message_types_by_name['APIVersions'] = _APIVERSIONS
+DESCRIPTOR.message_types_by_name['ApplyOptions'] = _APPLYOPTIONS
 DESCRIPTOR.message_types_by_name['Condition'] = _CONDITION
 DESCRIPTOR.message_types_by_name['CreateOptions'] = _CREATEOPTIONS
 DESCRIPTOR.message_types_by_name['DeleteOptions'] = _DELETEOPTIONS
 DESCRIPTOR.message_types_by_name['Duration'] = _DURATION
-DESCRIPTOR.message_types_by_name['ExportOptions'] = _EXPORTOPTIONS
 DESCRIPTOR.message_types_by_name['FieldsV1'] = _FIELDSV1
 DESCRIPTOR.message_types_by_name['GetOptions'] = _GETOPTIONS
 DESCRIPTOR.message_types_by_name['GroupKind'] = _GROUPKIND
@@ -2326,6 +2333,13 @@ APIVersions = _reflection.GeneratedProtocolMessageType('APIVersions', (_message.
   })
 _sym_db.RegisterMessage(APIVersions)
 
+ApplyOptions = _reflection.GeneratedProtocolMessageType('ApplyOptions', (_message.Message,), {
+  'DESCRIPTOR' : _APPLYOPTIONS,
+  '__module__' : 'k8s.io.apimachinery.pkg.apis.meta.v1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:k8s.io.apimachinery.pkg.apis.meta.v1.ApplyOptions)
+  })
+_sym_db.RegisterMessage(ApplyOptions)
+
 Condition = _reflection.GeneratedProtocolMessageType('Condition', (_message.Message,), {
   'DESCRIPTOR' : _CONDITION,
   '__module__' : 'k8s.io.apimachinery.pkg.apis.meta.v1.generated_pb2'
@@ -2353,13 +2367,6 @@ Duration = _reflection.GeneratedProtocolMessageType('Duration', (_message.Messag
   # @@protoc_insertion_point(class_scope:k8s.io.apimachinery.pkg.apis.meta.v1.Duration)
   })
 _sym_db.RegisterMessage(Duration)
-
-ExportOptions = _reflection.GeneratedProtocolMessageType('ExportOptions', (_message.Message,), {
-  'DESCRIPTOR' : _EXPORTOPTIONS,
-  '__module__' : 'k8s.io.apimachinery.pkg.apis.meta.v1.generated_pb2'
-  # @@protoc_insertion_point(class_scope:k8s.io.apimachinery.pkg.apis.meta.v1.ExportOptions)
-  })
-_sym_db.RegisterMessage(ExportOptions)
 
 FieldsV1 = _reflection.GeneratedProtocolMessageType('FieldsV1', (_message.Message,), {
   'DESCRIPTOR' : _FIELDSV1,

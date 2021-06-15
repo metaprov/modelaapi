@@ -10,13 +10,10 @@ import (
 	"fmt"
 
 	"github.com/metaprov/modeldapi/pkg/apis/infra"
-	"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 func (pm *PostMortem) HasFinalizer() bool {
@@ -95,15 +92,6 @@ func (pm *PostMortem) GetCond(t PostMortemConditionType) PostMortemCondition {
 
 func (pm *PostMortem) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "connections", pm.Namespace, pm.Name)
-}
-
-func ParsePostMortemYaml(content []byte) (*PostMortem, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(v1alpha1.SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*PostMortem)
-	return r, nil
 }
 
 func (pm *PostMortem) MarkReady() {

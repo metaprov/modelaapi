@@ -1713,9 +1713,6 @@ export class EphemeralVolumeSource extends jspb.Message {
   hasVolumeclaimtemplate(): boolean;
   clearVolumeclaimtemplate(): EphemeralVolumeSource;
 
-  getReadonly(): boolean;
-  setReadonly(value: boolean): EphemeralVolumeSource;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EphemeralVolumeSource.AsObject;
   static toObject(includeInstance: boolean, msg: EphemeralVolumeSource): EphemeralVolumeSource.AsObject;
@@ -1727,7 +1724,6 @@ export class EphemeralVolumeSource extends jspb.Message {
 export namespace EphemeralVolumeSource {
   export type AsObject = {
     volumeclaimtemplate?: PersistentVolumeClaimTemplate.AsObject,
-    readonly: boolean,
   }
 }
 
@@ -4049,6 +4045,11 @@ export class PodAffinityTerm extends jspb.Message {
   getTopologykey(): string;
   setTopologykey(value: string): PodAffinityTerm;
 
+  getNamespaceselector(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector | undefined;
+  setNamespaceselector(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector): PodAffinityTerm;
+  hasNamespaceselector(): boolean;
+  clearNamespaceselector(): PodAffinityTerm;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodAffinityTerm.AsObject;
   static toObject(includeInstance: boolean, msg: PodAffinityTerm): PodAffinityTerm.AsObject;
@@ -4062,6 +4063,7 @@ export namespace PodAffinityTerm {
     labelselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
     namespacesList: Array<string>,
     topologykey: string,
+    namespaceselector?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.LabelSelector.AsObject,
   }
 }
 
@@ -5006,6 +5008,9 @@ export class Probe extends jspb.Message {
   getFailurethreshold(): number;
   setFailurethreshold(value: number): Probe;
 
+  getTerminationgraceperiodseconds(): number;
+  setTerminationgraceperiodseconds(value: number): Probe;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Probe.AsObject;
   static toObject(includeInstance: boolean, msg: Probe): Probe.AsObject;
@@ -5022,6 +5027,7 @@ export namespace Probe {
     periodseconds: number,
     successthreshold: number,
     failurethreshold: number,
+    terminationgraceperiodseconds: number,
   }
 }
 
@@ -6312,6 +6318,12 @@ export class ServiceSpec extends jspb.Message {
   getAllocateloadbalancernodeports(): boolean;
   setAllocateloadbalancernodeports(value: boolean): ServiceSpec;
 
+  getLoadbalancerclass(): string;
+  setLoadbalancerclass(value: string): ServiceSpec;
+
+  getInternaltrafficpolicy(): string;
+  setInternaltrafficpolicy(value: string): ServiceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServiceSpec): ServiceSpec.AsObject;
@@ -6340,6 +6352,8 @@ export namespace ServiceSpec {
     ipfamiliesList: Array<string>,
     ipfamilypolicy: string,
     allocateloadbalancernodeports: boolean,
+    loadbalancerclass: string,
+    internaltrafficpolicy: string,
   }
 }
 

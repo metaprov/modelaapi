@@ -17,7 +17,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 //==============================================================================
@@ -153,15 +152,6 @@ func (run *FeaturePipelineRun) IsFailed() bool {
 
 func (run *FeaturePipelineRun) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "features", run.Namespace, run.Name)
-}
-
-func ParseFeaturePipelineRunYaml(content []byte) (*FeaturePipelineRun, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*FeaturePipelineRun)
-	return r, nil
 }
 
 func (run *FeaturePipelineRun) MarkReady() {

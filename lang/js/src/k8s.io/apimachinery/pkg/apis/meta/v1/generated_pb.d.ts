@@ -170,6 +170,34 @@ export namespace APIVersions {
   }
 }
 
+export class ApplyOptions extends jspb.Message {
+  getDryrunList(): Array<string>;
+  setDryrunList(value: Array<string>): ApplyOptions;
+  clearDryrunList(): ApplyOptions;
+  addDryrun(value: string, index?: number): ApplyOptions;
+
+  getForce(): boolean;
+  setForce(value: boolean): ApplyOptions;
+
+  getFieldmanager(): string;
+  setFieldmanager(value: string): ApplyOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApplyOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: ApplyOptions): ApplyOptions.AsObject;
+  static serializeBinaryToWriter(message: ApplyOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApplyOptions;
+  static deserializeBinaryFromReader(message: ApplyOptions, reader: jspb.BinaryReader): ApplyOptions;
+}
+
+export namespace ApplyOptions {
+  export type AsObject = {
+    dryrunList: Array<string>,
+    force: boolean,
+    fieldmanager: string,
+  }
+}
+
 export class Condition extends jspb.Message {
   getType(): string;
   setType(value: string): Condition;
@@ -287,28 +315,6 @@ export class Duration extends jspb.Message {
 export namespace Duration {
   export type AsObject = {
     duration: number,
-  }
-}
-
-export class ExportOptions extends jspb.Message {
-  getExport(): boolean;
-  setExport(value: boolean): ExportOptions;
-
-  getExact(): boolean;
-  setExact(value: boolean): ExportOptions;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ExportOptions.AsObject;
-  static toObject(includeInstance: boolean, msg: ExportOptions): ExportOptions.AsObject;
-  static serializeBinaryToWriter(message: ExportOptions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ExportOptions;
-  static deserializeBinaryFromReader(message: ExportOptions, reader: jspb.BinaryReader): ExportOptions;
-}
-
-export namespace ExportOptions {
-  export type AsObject = {
-    pb_export: boolean,
-    exact: boolean,
   }
 }
 

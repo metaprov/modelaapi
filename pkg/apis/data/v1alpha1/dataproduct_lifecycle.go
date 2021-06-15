@@ -16,8 +16,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	rbacv1 "k8s.io/api/rbac/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 func (r *DataProduct) HasFinalizer() bool {
@@ -104,15 +102,6 @@ func (r *DataProduct) PrefixDepotUri(uri string) string {
 
 func (r *DataProduct) PrefixArchiveUri(uri string) string {
 	return fmt.Sprintf("modeld/archive/tenants/%s/%s", r.Namespace, uri)
-}
-
-func ParseDataProductYaml(content []byte) (*DataProduct, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*DataProduct)
-	return r, nil
 }
 
 func (r *DataProduct) ToYamlFile() ([]byte, error) {

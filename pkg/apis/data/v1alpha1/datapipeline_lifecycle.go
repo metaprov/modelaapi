@@ -15,8 +15,6 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 //==============================================================================
@@ -88,15 +86,6 @@ func (wr *DataPipeline) RootUri() string {
 
 func (wr *DataPipeline) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-wrangler.yaml", wr.RootUri(), wr.Name)
-}
-
-func ParseDataPipelineYaml(content []byte) (*DataPipeline, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*DataPipeline)
-	return r, nil
 }
 
 func (wr *DataPipeline) ToYamlFile() ([]byte, error) {

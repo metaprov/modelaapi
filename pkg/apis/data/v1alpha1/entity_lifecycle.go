@@ -21,7 +21,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -138,15 +137,6 @@ func (entity *Entity) IsReady() bool {
 
 func (entity *Entity) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "entities", entity.Namespace, entity.Name)
-}
-
-func ParseEntityYaml(content []byte) (*Entity, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*Entity)
-	return r, nil
 }
 
 //Set up the webhook with the manager.

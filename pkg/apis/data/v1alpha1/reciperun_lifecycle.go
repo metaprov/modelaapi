@@ -15,7 +15,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
@@ -96,15 +95,6 @@ func (r *RecipeRun) RootUri() string {
 
 func (r *RecipeRun) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-r.yaml", r.RootUri(), r.Name)
-}
-
-func ParseRecipeYaml(content []byte) (*Recipe, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*Recipe)
-	return r, nil
 }
 
 func (r *RecipeRun) ToYamlFile() ([]byte, error) {

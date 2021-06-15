@@ -20,8 +20,6 @@ import (
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/kubernetes/scheme"
 )
 
 func (entity *Featureset) HasFinalizer() bool {
@@ -139,15 +137,6 @@ func (entity *Featureset) IsReady() bool {
 
 func (entity *Featureset) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "entities", entity.Namespace, entity.Name)
-}
-
-func ParseFeatureSetYaml(content []byte) (*Featureset, error) {
-	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
-	if err != nil {
-		return nil, err
-	}
-	r := requiredObj.(*Featureset)
-	return r, nil
 }
 
 func (fset *Featureset) MarkReady() {
