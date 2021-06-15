@@ -8,8 +8,8 @@ package v1alpha1
 
 import (
 	"fmt"
-	"github.com/metaprov/modeldapi/pkg/apis/infra"
 	"github.com/metaprov/modeldapi/pkg/util"
+	team "github.com/metaprov/modeldapi/pkg/apis/team"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -26,11 +26,11 @@ import (
 //==============================================================================
 
 func (conv *Conversation) HasFinalizer() bool {
-	return util.HasFin(&conv.ObjectMeta, infra.GroupName)
+	return util.HasFin(&conv.ObjectMeta, team.GroupName)
 }
-func (conv *Conversation) AddFinalizer() { util.AddFin(&conv.ObjectMeta, infra.GroupName) }
+func (conv *Conversation) AddFinalizer() { util.AddFin(&conv.ObjectMeta, team.GroupName) }
 func (conv *Conversation) RemoveFinalizer() {
-	util.RemoveFin(&conv.ObjectMeta, infra.GroupName)
+	util.RemoveFin(&conv.ObjectMeta, team.GroupName)
 }
 
 //==============================================================================

@@ -9,13 +9,11 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modeldapi/pkg/apis/infra"
-	"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	team "github.com/metaprov/modeldapi/pkg/apis/team"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
 )
 
 //==============================================================================
@@ -27,11 +25,11 @@ import (
 //==============================================================================
 
 func (runbook *RunBook) HasFinalizer() bool {
-	return util.HasFin(&runbook.ObjectMeta, infra.GroupName)
+	return util.HasFin(&runbook.ObjectMeta, team.GroupName)
 }
-func (runbook *RunBook) AddFinalizer() { util.AddFin(&runbook.ObjectMeta, infra.GroupName) }
+func (runbook *RunBook) AddFinalizer() { util.AddFin(&runbook.ObjectMeta, team.GroupName) }
 func (runbook *RunBook) RemoveFinalizer() {
-	util.RemoveFin(&runbook.ObjectMeta, infra.GroupName)
+	util.RemoveFin(&runbook.ObjectMeta, team.GroupName)
 }
 
 //==============================================================================

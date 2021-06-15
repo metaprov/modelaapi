@@ -9,7 +9,7 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modeldapi/pkg/apis/infra"
+	team "github.com/metaprov/modeldapi/pkg/apis/team"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
@@ -17,11 +17,11 @@ import (
 )
 
 func (pm *PostMortem) HasFinalizer() bool {
-	return util.HasFin(&pm.ObjectMeta, infra.GroupName)
+	return util.HasFin(&pm.ObjectMeta, team.GroupName)
 }
-func (pm *PostMortem) AddFinalizer() { util.AddFin(&pm.ObjectMeta, infra.GroupName) }
+func (pm *PostMortem) AddFinalizer() { util.AddFin(&pm.ObjectMeta, team.GroupName) }
 func (pm *PostMortem) RemoveFinalizer() {
-	util.RemoveFin(&pm.ObjectMeta, infra.GroupName)
+	util.RemoveFin(&pm.ObjectMeta, team.GroupName)
 }
 
 //==============================================================================

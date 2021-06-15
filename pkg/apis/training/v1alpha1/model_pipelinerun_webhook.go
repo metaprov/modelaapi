@@ -48,7 +48,7 @@ func (run *ModelPipelineRun) validateBucket() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modeld.io", Kind: "ModelPipelineRun"},
+		schema.GroupKind{Group: "training.modeld.io", Kind: "ModelPipelineRun"},
 		run.Name, allErrs)
 }
 
