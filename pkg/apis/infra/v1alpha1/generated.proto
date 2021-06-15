@@ -128,7 +128,7 @@ message AccountSpec {
   optional bool team = 10;
 
   // MemberOf is the team name of this account. An account can belong to one team
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string memberOf = 11;
 

@@ -116,7 +116,7 @@ spec:
                 maxLength: 64
                 type: string
               memberOf:
-                default: false
+                default: ""
                 description: MemberOf is the team name of this account. An account
                   can belong to one team
                 type: string

@@ -121,7 +121,7 @@ type AccountSpec struct {
 	// +kubebuilder:validation:Optional
 	Team *bool `json:"team,omitempty" protobuf:"bytes,10,opt,name=team"`
 	// MemberOf is the team name of this account. An account can belong to one team
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	MemberOf *string `json:"memberOf,omitempty" protobuf:"bytes,11,opt,name=memberOf"`
 	// Email account creation event to user (using the user email)
