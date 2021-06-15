@@ -1,8 +1,6 @@
 module github.com/metaprov/modeldapi
 
-go 1.15
-
-replace k8s.io/client-go => k8s.io/client-go v0.21.1
+go 1.16
 
 require (
 	github.com/dustin/go-humanize v1.0.0
@@ -32,4 +30,5 @@ require (
 	k8s.io/gengo v0.0.0-20210203185629-de9496dff47b // indirect
 	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
 	sigs.k8s.io/controller-runtime v0.9.0
+	sigs.k8s.io/controller-tools v0.6.0 // indirect
 )
