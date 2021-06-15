@@ -427,6 +427,48 @@ export namespace CurtainTemplateSpec {
   }
 }
 
+export class ModelRecord extends jspb.Message {
+  getModelname(): string;
+  setModelname(value: string): ModelRecord;
+
+  getModelversion(): string;
+  setModelversion(value: string): ModelRecord;
+
+  getLiveat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLiveat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelRecord;
+  hasLiveat(): boolean;
+  clearLiveat(): ModelRecord;
+
+  getRetiredat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setRetiredat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelRecord;
+  hasRetiredat(): boolean;
+  clearRetiredat(): ModelRecord;
+
+  getAvgdailyprediction(): number;
+  setAvgdailyprediction(value: number): ModelRecord;
+
+  getAvglatency(): number;
+  setAvglatency(value: number): ModelRecord;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelRecord.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelRecord): ModelRecord.AsObject;
+  static serializeBinaryToWriter(message: ModelRecord, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelRecord;
+  static deserializeBinaryFromReader(message: ModelRecord, reader: jspb.BinaryReader): ModelRecord;
+}
+
+export namespace ModelRecord {
+  export type AsObject = {
+    modelname: string,
+    modelversion: string,
+    liveat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    retiredat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    avgdailyprediction: number,
+    avglatency: number,
+  }
+}
+
 export class MonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): MonitorSpec;
@@ -1101,10 +1143,10 @@ export class PredictorStatus extends jspb.Message {
   clearStatusesList(): PredictorStatus;
   addStatuses(value?: ChannelStatus, index?: number): ChannelStatus;
 
-  getPrevmodel(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec | undefined;
-  setPrevmodel(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec): PredictorStatus;
-  hasPrevmodel(): boolean;
-  clearPrevmodel(): PredictorStatus;
+  getHistoryList(): Array<ModelRecord>;
+  setHistoryList(value: Array<ModelRecord>): PredictorStatus;
+  clearHistoryList(): PredictorStatus;
+  addHistory(value?: ModelRecord, index?: number): ModelRecord;
 
   getMonitorstatus(): MonitorStatus | undefined;
   setMonitorstatus(value?: MonitorStatus): PredictorStatus;
@@ -1138,7 +1180,7 @@ export namespace PredictorStatus {
     health?: PredictorHealth.AsObject,
     observedgeneration: number,
     statusesList: Array<ChannelStatus.AsObject>,
-    prevmodel?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
+    historyList: Array<ModelRecord.AsObject>,
     monitorstatus?: MonitorStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,

@@ -115,6 +115,11 @@ spec:
                 description: LastName is the user last name
                 maxLength: 64
                 type: string
+              memberOf:
+                default: false
+                description: MemberOf is the team name of this account. An account
+                  can belong to one team
+                type: string
               phone:
                 default: ""
                 description: Phone specify the phone of the user
@@ -172,6 +177,10 @@ spec:
                       type: string
                   type: object
                 type: array
+              team:
+                default: false
+                description: Team indicates if this a team account.
+                type: boolean
               tenantRef:
                 description: TenantRef is the account tenant
                 properties:

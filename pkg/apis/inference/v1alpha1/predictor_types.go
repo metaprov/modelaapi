@@ -212,7 +212,7 @@ type PredictorStatus struct {
 	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,rep,name=statuses"`
 	// Prev model spec stores the prev working model, The field is used in case of a roll back
 	//+kubebuilder:validation:Optional
-	PrevModelSpec *catalog.ModelDeploymentSpec `json:"prevModel,omitempty" protobuf:"bytes,9,opt,name=prevModel"`
+	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,9,opt,name=history"`
 	// Monitor status holds the status of the last monitor action.
 	//+kubebuilder:validation:Optional
 	MonitorStatus MonitorStatus `json:"monitorStatus,omitempty" protobuf:"bytes,10,opt,name=monitorStatus"`
@@ -346,4 +346,26 @@ type MonitorStatus struct {
 	LastTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,1,opt,name=lastTransitionTime"`
 	// Validation results contains the latest result
 	ValidationResult []training.ModelValidationResult `json:"validationResults,omitempty" protobuf:"bytes,2,opt,name=validationResults"`
+}
+
+// Model Record hold the state of a model that was in production. This support roll back of a model.
+type ModelRecord struct {
+	// Model Name is the name of the model
+	// +kubebuilder:validation:Optional
+	ModelName string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
+	// Model version is the version of the model
+	// +kubebuilder:validation:Optional
+	ModelVersion string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`
+	// Live at is the time that the model were placed in production
+	// +kubebuilder:validation:Optional
+	LiveAt *metav1.Time `json:"liveAt,omitempty" protobuf:"bytes,3,opt,name=liveAt"`
+	// Retried at is the time that the model was retired from production.
+	// +kubebuilder:validation:Optional
+	RetiredAt *metav1.Time `json:"retiredAt,omitempty" protobuf:"bytes,4,opt,name=retiredAt"`
+	// Retried at is the time that the model was retired from production.
+	// +kubebuilder:validation:Optional
+	AvgDailyPrediction int32 `json:"avgDailyPrediction,omitempty" protobuf:"bytes,5,opt,name=avgDailyPrediction"`
+	// Retried at is the time that the model was retired from production.
+	// +kubebuilder:validation:Optional
+	AvgLatency float64 `json:"avgLatency,omitempty" protobuf:"bytes,6,opt,name=avgLatency"`
 }

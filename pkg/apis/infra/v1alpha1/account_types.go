@@ -116,23 +116,31 @@ type AccountSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
+	// Team indicates if this a team account.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Team *bool `json:"team,omitempty" protobuf:"bytes,10,opt,name=team"`
+	// MemberOf is the team name of this account. An account can belong to one team
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	MemberOf *string `json:"memberOf,omitempty" protobuf:"bytes,11,opt,name=memberOf"`
 	// Email account creation event to user (using the user email)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,10,opt,name=emailPassword"`
+	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,12,opt,name=emailPassword"`
 	// User need to reset password upon login
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,11,opt,name=resetPassword"`
+	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,13,opt,name=resetPassword"`
 	// ProductBinding is the premission that the user have for each product
 	// +kubebuilder:validation:Optional
-	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,12,rep,name=productBindings"`
+	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,14,rep,name=productBindings"`
 	// LabBinding is the RBAC roles that the user have within each lab
 	// +kubebuilder:validation:Optional
-	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,13,rep,name=labBindings"`
+	LabBindings []AccountRoleBinding `json:"labBindings,omitempty" protobuf:"bytes,15,rep,name=labBindings"`
 	// SiteBindings is the RBAC roles that the user have within each serving site.
 	// +kubebuilder:validation:Optional
-	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,14,rep,name=siteBindings"`
+	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,16,rep,name=siteBindings"`
 }
 
 // AccountStatus defines the actual state of the api object

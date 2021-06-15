@@ -3476,7 +3476,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.repeatedFields_ = [12,13,14];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.repeatedFields_ = [14,15,16];
 
 
 
@@ -3518,8 +3518,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.toObject
     email: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     phone: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     admin: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    emailpassword: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
-    resetpassword: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+    team: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
+    memberof: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    emailpassword: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+    resetpassword: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     productbindingsList: jspb.Message.toObjectList(msg.getProductbindingsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.toObject, includeInstance),
     labbindingsList: jspb.Message.toObjectList(msg.getLabbindingsList(),
@@ -3601,23 +3603,31 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.deserial
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailpassword(value);
+      msg.setTeam(value);
       break;
     case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMemberof(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEmailpassword(value);
+      break;
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setResetpassword(value);
       break;
-    case 12:
+    case 14:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.deserializeBinaryFromReader);
       msg.addProductbindings(value);
       break;
-    case 13:
+    case 15:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.deserializeBinaryFromReader);
       msg.addLabbindings(value);
       break;
-    case 14:
+    case 16:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.deserializeBinaryFromReader);
       msg.addSitebindings(value);
@@ -3722,17 +3732,31 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
   if (f != null) {
     writer.writeBool(
-      11,
+      12,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeBool(
+      13,
       f
     );
   }
   f = message.getProductbindingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      12,
+      14,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.serializeBinaryToWriter
     );
@@ -3740,7 +3764,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
   f = message.getLabbindingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      13,
+      15,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.serializeBinaryToWriter
     );
@@ -3748,7 +3772,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
   f = message.getSitebindingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      14,
+      16,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.serializeBinaryToWriter
     );
@@ -4082,10 +4106,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
 
 
 /**
- * optional bool emailPassword = 10;
+ * optional bool team = 10;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getEmailpassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getTeam = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
@@ -4094,7 +4118,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setEmailpassword = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setTeam = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -4103,7 +4127,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearEmailpassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearTeam = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -4112,25 +4136,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasEmailpassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasTeam = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional bool resetPassword = 11;
- * @return {boolean}
+ * optional string memberOf = 11;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getResetpassword = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getMemberof = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setResetpassword = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setMemberof = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -4139,7 +4163,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearResetpassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearMemberof = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -4148,18 +4172,90 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasResetpassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasMemberof = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * repeated AccountRoleBinding productBindings = 12;
+ * optional bool emailPassword = 12;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getEmailpassword = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setEmailpassword = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearEmailpassword = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasEmailpassword = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool resetPassword = 13;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getResetpassword = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setResetpassword = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearResetpassword = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasResetpassword = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * repeated AccountRoleBinding productBindings = 14;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getProductbindingsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 12));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 14));
 };
 
 
@@ -4168,7 +4264,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setProductbindingsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+  return jspb.Message.setRepeatedWrapperField(this, 14, value);
 };
 
 
@@ -4178,7 +4274,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.addProductbindings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 14, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
 };
 
 
@@ -4192,12 +4288,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
 
 
 /**
- * repeated AccountRoleBinding labBindings = 13;
+ * repeated AccountRoleBinding labBindings = 15;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getLabbindingsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 13));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 15));
 };
 
 
@@ -4206,7 +4302,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setLabbindingsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+  return jspb.Message.setRepeatedWrapperField(this, 15, value);
 };
 
 
@@ -4216,7 +4312,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.addLabbindings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
 };
 
 
@@ -4230,12 +4326,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
 
 
 /**
- * repeated AccountRoleBinding siteBindings = 14;
+ * repeated AccountRoleBinding siteBindings = 16;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getSitebindingsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 14));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, 16));
 };
 
 
@@ -4244,7 +4340,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setSitebindingsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 14, value);
+  return jspb.Message.setRepeatedWrapperField(this, 16, value);
 };
 
 
@@ -4254,7 +4350,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.addSitebindings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 14, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding, opt_index);
 };
 
 

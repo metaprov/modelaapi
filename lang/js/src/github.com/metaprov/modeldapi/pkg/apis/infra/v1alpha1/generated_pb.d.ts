@@ -153,6 +153,12 @@ export class AccountSpec extends jspb.Message {
   getAdmin(): boolean;
   setAdmin(value: boolean): AccountSpec;
 
+  getTeam(): boolean;
+  setTeam(value: boolean): AccountSpec;
+
+  getMemberof(): string;
+  setMemberof(value: string): AccountSpec;
+
   getEmailpassword(): boolean;
   setEmailpassword(value: boolean): AccountSpec;
 
@@ -193,6 +199,8 @@ export namespace AccountSpec {
     email: string,
     phone: string,
     admin: boolean,
+    team: boolean,
+    memberof: string,
     emailpassword: boolean,
     resetpassword: boolean,
     productbindingsList: Array<AccountRoleBinding.AsObject>,

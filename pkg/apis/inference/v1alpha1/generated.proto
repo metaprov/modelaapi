@@ -233,6 +233,33 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
+// Model Record hold the state of a model that was in production. This support roll back of a model.
+message ModelRecord {
+  // Model Name is the name of the model
+  // +kubebuilder:validation:Optional
+  optional string modelName = 1;
+
+  // Model version is the version of the model
+  // +kubebuilder:validation:Optional
+  optional string modelVersion = 2;
+
+  // Live at is the time that the model were placed in production
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time liveAt = 3;
+
+  // Retried at is the time that the model was retired from production.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time retiredAt = 4;
+
+  // Retried at is the time that the model was retired from production.
+  // +kubebuilder:validation:Optional
+  optional int32 avgDailyPrediction = 5;
+
+  // Retried at is the time that the model was retired from production.
+  // +kubebuilder:validation:Optional
+  optional double avgLatency = 6;
+}
+
 // Specify the model monitor.
 message MonitorSpec {
   // If true monitoring is enabled.
@@ -641,7 +668,7 @@ message PredictorStatus {
 
   // Prev model spec stores the prev working model, The field is used in case of a roll back
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec prevModel = 9;
+  repeated ModelRecord history = 9;
 
   // Monitor status holds the status of the last monitor action.
   // +kubebuilder:validation:Optional

@@ -122,27 +122,37 @@ message AccountSpec {
   // +kubebuilder:validation:Optional
   optional bool admin = 9;
 
+  // Team indicates if this a team account.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool team = 10;
+
+  // MemberOf is the team name of this account. An account can belong to one team
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional string memberOf = 11;
+
   // Email account creation event to user (using the user email)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool emailPassword = 10;
+  optional bool emailPassword = 12;
 
   // User need to reset password upon login
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool resetPassword = 11;
+  optional bool resetPassword = 13;
 
   // ProductBinding is the premission that the user have for each product
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding productBindings = 12;
+  repeated AccountRoleBinding productBindings = 14;
 
   // LabBinding is the RBAC roles that the user have within each lab
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding labBindings = 13;
+  repeated AccountRoleBinding labBindings = 15;
 
   // SiteBindings is the RBAC roles that the user have within each serving site.
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding siteBindings = 14;
+  repeated AccountRoleBinding siteBindings = 16;
 }
 
 // AccountStatus defines the actual state of the api object

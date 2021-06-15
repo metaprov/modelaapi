@@ -7699,6 +7699,40 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              history:
+                description: Prev model spec stores the prev working model, The field
+                  is used in case of a roll back
+                items:
+                  description: Model Record hold the state of a model that was in
+                    production. This support roll back of a model.
+                  properties:
+                    avgDailyPrediction:
+                      description: Retried at is the time that the model was retired
+                        from production.
+                      format: int32
+                      type: integer
+                    avgLatency:
+                      description: Retried at is the time that the model was retired
+                        from production.
+                      type: number
+                    liveAt:
+                      description: Live at is the time that the model were placed
+                        in production
+                      format: date-time
+                      type: string
+                    modelName:
+                      description: Model Name is the name of the model
+                      type: string
+                    modelVersion:
+                      description: Model version is the version of the model
+                      type: string
+                    retiredAt:
+                      description: Retried at is the time that the model was retired
+                        from production.
+                      format: date-time
+                      type: string
+                  type: object
+                type: array
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
@@ -7883,67 +7917,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              prevModel:
-                description: Prev model spec stores the prev working model, The field
-                  is used in case of a roll back
-                properties:
-                  canary:
-                    description: 'Canary denotes if this deployment is staged release.
-                      A staged release will serve traffic in incerements Default:
-                      false'
-                    type: boolean
-                  canaryMetrics:
-                    description: 'If the deployment is canary, the metric define how
-                      to evaluate the canary. Default: none'
-                    items:
-                      description: CanaryMetric is used when testing the canary
-                      enum:
-                      - cpu
-                      - mem
-                      - latency
-                      - crash
-                      type: string
-                    type: array
-                  deployed:
-                    description: 'a deployed model is a model whose containers are
-                      up, but does not serve production traffic. Default: false'
-                    type: boolean
-                  maxTraffic:
-                    description: 'How much traffic this deployment model should serve.
-                      Default: 100.'
-                    format: int32
-                    maximum: 100
-                    minimum: 0
-                    type: integer
-                  modelName:
-                    description: ModelName is the name of the model. The name must
-                      be unique within
-                    type: string
-                  modelVersion:
-                    description: The version of the model. Note that a single predictor
-                      might serve different models
-                    type: string
-                  released:
-                    description: 'A released model is a model that should serve production
-                      traffic. Default: false'
-                    type: boolean
-                  shadow:
-                    description: 'Shadow denotes if the model is running in shadow
-                      mode. a shadow model face the production traffic, however, the
-                      predictions are not served back to the client Default: false'
-                    type: boolean
-                  traffic:
-                    description: 'Traffic is the current amount of production traffic
-                      served by this model. Default: 100.'
-                    format: int32
-                    maximum: 100
-                    minimum: 0
-                    type: integer
-                  trafficSelector:
-                    description: TrafficSelector is a filter on the traffic to this
-                      model
-                    type: string
-                type: object
               statuses:
                 description: The channels
                 items:

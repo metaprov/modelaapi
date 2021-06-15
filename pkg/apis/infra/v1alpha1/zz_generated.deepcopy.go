@@ -157,6 +157,16 @@ func (in *AccountSpec) DeepCopyInto(out *AccountSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.Team != nil {
+		in, out := &in.Team, &out.Team
+		*out = new(bool)
+		**out = **in
+	}
+	if in.MemberOf != nil {
+		in, out := &in.MemberOf, &out.MemberOf
+		*out = new(string)
+		**out = **in
+	}
 	if in.EmailPassword != nil {
 		in, out := &in.EmailPassword, &out.EmailPassword
 		*out = new(bool)
