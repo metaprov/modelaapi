@@ -40,14 +40,6 @@ func (run *CronReport) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-run.yaml", run.RootUri(), run.Name)
 }
 
-func (run *CronReport) InputKey() string {
-	return run.Spec.Template.Spec.Input.Path
-}
-
-func (run *CronReport) OutputKey() string {
-	return run.Spec.Template.Spec.Output.Path
-}
-
 //==============================================================================
 // Validate
 //==============================================================================
