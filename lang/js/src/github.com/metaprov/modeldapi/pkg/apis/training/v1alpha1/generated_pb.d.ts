@@ -156,6 +156,172 @@ export namespace ClassicalEstimatorSpec {
   }
 }
 
+export class CronReport extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronReport;
+  hasMetadata(): boolean;
+  clearMetadata(): CronReport;
+
+  getSpec(): CronReportSpec | undefined;
+  setSpec(value?: CronReportSpec): CronReport;
+  hasSpec(): boolean;
+  clearSpec(): CronReport;
+
+  getStatus(): CronReportStatus | undefined;
+  setStatus(value?: CronReportStatus): CronReport;
+  hasStatus(): boolean;
+  clearStatus(): CronReport;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronReport.AsObject;
+  static toObject(includeInstance: boolean, msg: CronReport): CronReport.AsObject;
+  static serializeBinaryToWriter(message: CronReport, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronReport;
+  static deserializeBinaryFromReader(message: CronReport, reader: jspb.BinaryReader): CronReport;
+}
+
+export namespace CronReport {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: CronReportSpec.AsObject,
+    status?: CronReportStatus.AsObject,
+  }
+}
+
+export class CronReportCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): CronReportCondition;
+
+  getStatus(): string;
+  setStatus(value: string): CronReportCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronReportCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): CronReportCondition;
+
+  getReason(): string;
+  setReason(value: string): CronReportCondition;
+
+  getMessage(): string;
+  setMessage(value: string): CronReportCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronReportCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: CronReportCondition): CronReportCondition.AsObject;
+  static serializeBinaryToWriter(message: CronReportCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronReportCondition;
+  static deserializeBinaryFromReader(message: CronReportCondition, reader: jspb.BinaryReader): CronReportCondition;
+}
+
+export namespace CronReportCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class CronReportList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CronReportList;
+  hasMetadata(): boolean;
+  clearMetadata(): CronReportList;
+
+  getItemsList(): Array<CronReport>;
+  setItemsList(value: Array<CronReport>): CronReportList;
+  clearItemsList(): CronReportList;
+  addItems(value?: CronReport, index?: number): CronReport;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronReportList.AsObject;
+  static toObject(includeInstance: boolean, msg: CronReportList): CronReportList.AsObject;
+  static serializeBinaryToWriter(message: CronReportList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronReportList;
+  static deserializeBinaryFromReader(message: CronReportList, reader: jspb.BinaryReader): CronReportList;
+}
+
+export namespace CronReportList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<CronReport.AsObject>,
+  }
+}
+
+export class CronReportSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): CronReportSpec;
+
+  getOwner(): string;
+  setOwner(value: string): CronReportSpec;
+
+  getSchedule(): string;
+  setSchedule(value: string): CronReportSpec;
+
+  getRange(): string;
+  setRange(value: string): CronReportSpec;
+
+  getTemplate(): ReportTemplate | undefined;
+  setTemplate(value?: ReportTemplate): CronReportSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): CronReportSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronReportSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CronReportSpec): CronReportSpec.AsObject;
+  static serializeBinaryToWriter(message: CronReportSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronReportSpec;
+  static deserializeBinaryFromReader(message: CronReportSpec, reader: jspb.BinaryReader): CronReportSpec;
+}
+
+export namespace CronReportSpec {
+  export type AsObject = {
+    versionname: string,
+    owner: string,
+    schedule: string,
+    range: string,
+    template?: ReportTemplate.AsObject,
+  }
+}
+
+export class CronReportStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronReportStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): CronReportStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronReportStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): CronReportStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): CronReportStatus;
+
+  getConditionsList(): Array<CronReportCondition>;
+  setConditionsList(value: Array<CronReportCondition>): CronReportStatus;
+  clearConditionsList(): CronReportStatus;
+  addConditions(value?: CronReportCondition, index?: number): CronReportCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronReportStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: CronReportStatus): CronReportStatus.AsObject;
+  static serializeBinaryToWriter(message: CronReportStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronReportStatus;
+  static deserializeBinaryFromReader(message: CronReportStatus, reader: jspb.BinaryReader): CronReportStatus;
+}
+
+export namespace CronReportStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    conditionsList: Array<CronReportCondition.AsObject>,
+  }
+}
+
 export class DataSplit extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): DataSplit;
@@ -2870,12 +3036,6 @@ export class ReportSpec extends jspb.Message {
   hasTo(): boolean;
   clearTo(): ReportSpec;
 
-  getResolution(): string;
-  setResolution(value: string): ReportSpec;
-
-  getRange(): string;
-  setRange(value: string): ReportSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -2897,8 +3057,6 @@ export namespace ReportSpec {
     activedeadlineseconds: number,
     from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resolution: string,
-    range: string,
   }
 }
 
@@ -2943,6 +3101,26 @@ export namespace ReportStatus {
     uri: string,
     observedgeneration: number,
     conditionsList: Array<ReportCondition.AsObject>,
+  }
+}
+
+export class ReportTemplate extends jspb.Message {
+  getSpec(): ReportSpec | undefined;
+  setSpec(value?: ReportSpec): ReportTemplate;
+  hasSpec(): boolean;
+  clearSpec(): ReportTemplate;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportTemplate.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportTemplate): ReportTemplate.AsObject;
+  static serializeBinaryToWriter(message: ReportTemplate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportTemplate;
+  static deserializeBinaryFromReader(message: ReportTemplate, reader: jspb.BinaryReader): ReportTemplate;
+}
+
+export namespace ReportTemplate {
+  export type AsObject = {
+    spec?: ReportSpec.AsObject,
   }
 }
 

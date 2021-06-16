@@ -103,6 +103,92 @@ message ClassicalEstimatorSpec {
   repeated HyperParameterValue parameters = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Cron",type="string",JSONPath=".spec.schedule"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modeld}
+// CronReport represents a run of the summary report.
+message CronReport {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional CronReportSpec spec = 2;
+
+  optional CronReportStatus status = 3;
+}
+
+// ReportCondition describes the state of ReportTemplate
+message CronReportCondition {
+  // Type of  condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// CronReportList is a list of CronReport
+message CronReportList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated CronReport items = 2;
+}
+
+// CronReportSpec represent the desired state of CronReport
+message CronReportSpec {
+  // VersionName is the data product version of the data pipeline
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
+  // The owner account name
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 2;
+
+  // Schedule is the cron schedule
+  // Schedule for running the pipeline
+  // +kubebuilder:validation:Optional
+  optional string schedule = 3;
+
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string range = 4;
+
+  // Template refer to the prediction template
+  optional ReportTemplate template = 5;
+}
+
+// CronReportStatus is the observed state of a ReportTemplate
+message CronReportStatus {
+  // Last run is the last time a run was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
+  // Conditions of the cron predictions
+  // +kubebuilder:validation:Optional
+  repeated CronReportCondition conditions = 4;
+}
+
 message DataSplit {
   // Indicate that this is an automatic split.
   // +kubebuilder:default:=true
@@ -1931,15 +2017,6 @@ message ReportSpec {
   // To is the end time of the report . Use only for summary report. If empty, the system will use the current time.
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 12;
-
-  // For summary report, set the resultion
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string resolution = 13;
-
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string range = 14;
 }
 
 // ReportStatus defines the observed state of the report.
@@ -1970,6 +2047,10 @@ message ReportStatus {
 
   // +kubebuilder:validation:Optional
   repeated ReportCondition conditions = 7;
+}
+
+message ReportTemplate {
+  optional ReportSpec spec = 1;
 }
 
 // PreformanceStatus containt the avg resource consumption
