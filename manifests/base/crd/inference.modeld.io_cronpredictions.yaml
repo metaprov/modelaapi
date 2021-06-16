@@ -184,7 +184,7 @@ spec:
                         type: array
                       updateStrategy:
                         description: Update strategy
-                        type: boolean
+                        type: string
                       versionName:
                         default: ""
                         description: VersionName is the data product version of the

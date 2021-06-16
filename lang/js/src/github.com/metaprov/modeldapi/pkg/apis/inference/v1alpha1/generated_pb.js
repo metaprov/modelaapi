@@ -7376,7 +7376,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     includefeatures: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     xai: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
-    updatestrategy: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    updatestrategy: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     createtableifnotexist: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
   };
 
@@ -7465,7 +7465,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       msg.setXai(value);
       break;
     case 13:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = /** @type {string} */ (reader.readString());
       msg.setUpdatestrategy(value);
       break;
     case 14:
@@ -7587,9 +7587,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       13,
       f
     );
@@ -8040,16 +8040,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional bool updateStrategy = 13;
- * @return {boolean}
+ * optional string updateStrategy = 13;
+ * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getUpdatestrategy = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setUpdatestrategy = function(value) {

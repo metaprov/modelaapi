@@ -118,7 +118,7 @@ type PredictionSpec struct {
 	XAI *bool `json:"xai,omitempty" protobuf:"bytes,12,opt,name=xai"`
 	// Update strategy
 	// +kubebuilder:validation:Optional
-	UpdateStrategy *bool `json:"updateStrategy,omitempty" protobuf:"bytes,13,opt,name=updateStrategy"`
+	UpdateStrategy *catalog.UpdateStrategy `json:"updateStrategy,omitempty" protobuf:"bytes,13,opt,name=updateStrategy"`
 	// Create the data source table on the target, if not exist.
 	// +kubebuilder:validation:Optional
 	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"bytes,14,opt,name=createTableIfNotExist"`

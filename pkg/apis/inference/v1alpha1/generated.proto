@@ -473,7 +473,7 @@ message PredictionSpec {
 
   // Update strategy
   // +kubebuilder:validation:Optional
-  optional bool updateStrategy = 13;
+  optional string updateStrategy = 13;
 
   // Create the data source table on the target, if not exist.
   // +kubebuilder:validation:Optional

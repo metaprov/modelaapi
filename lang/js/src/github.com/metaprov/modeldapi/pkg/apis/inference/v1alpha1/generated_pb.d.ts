@@ -786,8 +786,8 @@ export class PredictionSpec extends jspb.Message {
   getXai(): boolean;
   setXai(value: boolean): PredictionSpec;
 
-  getUpdatestrategy(): boolean;
-  setUpdatestrategy(value: boolean): PredictionSpec;
+  getUpdatestrategy(): string;
+  setUpdatestrategy(value: string): PredictionSpec;
 
   getCreatetableifnotexist(): boolean;
   setCreatetableifnotexist(value: boolean): PredictionSpec;
@@ -814,7 +814,7 @@ export namespace PredictionSpec {
     activedeadlineseconds: number,
     includefeatures: boolean,
     xai: boolean,
-    updatestrategy: boolean,
+    updatestrategy: string,
     createtableifnotexist: boolean,
   }
 }

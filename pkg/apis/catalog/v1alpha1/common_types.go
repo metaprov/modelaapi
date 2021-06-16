@@ -1328,3 +1328,11 @@ const (
 	LE Op = "le" // less or equal
 	GE Op = "ge" // greater or equal
 )
+
+type UpdateStrategy string
+
+const (
+	Upsert UpdateStrategy = "upsert"
+	Insert UpdateStrategy = "insert"
+	Update UpdateStrategy = "update"
+)

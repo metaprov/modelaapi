@@ -728,7 +728,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	if in.UpdateStrategy != nil {
 		in, out := &in.UpdateStrategy, &out.UpdateStrategy
-		*out = new(bool)
+		*out = new(catalogv1alpha1.UpdateStrategy)
 		**out = **in
 	}
 	if in.CreateTableIfNotExist != nil {
