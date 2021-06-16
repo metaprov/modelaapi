@@ -76,6 +76,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/labelingpipelinerun/v1/labelingpipelinerun.proto \
     github.com/metaprov/modeldapi/services/license/v1/license.proto \
     github.com/metaprov/modeldapi/services/model/v1/model.proto \
+    github.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto \
     github.com/metaprov/modeldapi/services/notebook/v1/notebook.proto \
     github.com/metaprov/modeldapi/services/notebookrun/v1/notebookrun.proto \

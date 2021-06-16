@@ -87,6 +87,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto \
          github.com/metaprov/modeldapi/services/prediction/v1/prediction.proto \
          github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto \
+         github.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto \
          github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore.proto \
          github.com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto \
          github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto \

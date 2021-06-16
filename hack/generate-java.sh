@@ -44,6 +44,7 @@ protoc \
     github.com/metaprov/modeldapi/services/common/v1/common.proto \
     github.com/metaprov/modeldapi/services/connection/v1/connection.proto \
     github.com/metaprov/modeldapi/services/curtain/v1/curtain.proto \
+    github.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto \
     github.com/metaprov/modeldapi/services/data/v1/data.proto \
     github.com/metaprov/modeldapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modeldapi/services/datapipelinerun/v1/datapipelinerun.proto \

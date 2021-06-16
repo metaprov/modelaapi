@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/cronprediction/v1";
+package github.com.metaprov.modeldapi.services.cronprediction.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListCronReportsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListCronReportsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronReportList items = 1;
+}
+
+message CreateCronReportResponse {}
+
+message CreateCronReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronReport item = 1;
+}
+
+message UpdateCronReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronReport item = 1;
+}
+
+message UpdateCronReportResponse {
+
+}
+
+message GetCronReportRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetCronReportResponse {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronReport item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteCronReportRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteCronReportResponse {
+
+}
+
+message RunCronReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronReport item = 1;
+}
+
+
+message RunCronReportResponse {
+    
+}
+
+
+service CronReportService {
+
+    rpc ListCronReports(ListCronReportsRequest) returns (ListCronReportsResponse) {
+        option (google.api.http).get = "/v1/cronpredictions";
+    }
+
+    rpc CreateCronReport(CreateCronReportRequest) returns (CreateCronReportResponse) {
+        option (google.api.http) = {
+			post: "/v1/cronpredictions"
+			body: "*"
+		};
+    }
+
+    rpc GetCronReport(GetCronReportRequest) returns (GetCronReportResponse) {
+        option (google.api.http).get = "/v1/cronpredictions/{name}";
+    }
+
+    rpc UpdateCronReport(UpdateCronReportRequest) returns (UpdateCronReportResponse) {
+        option (google.api.http) = {
+			put: "/v1/cronpredictions/{cronprediction.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteCronReport(DeleteCronReportRequest) returns (DeleteCronReportResponse) {
+        option (google.api.http).delete = "/v1/cronpredictions/{name}";
+    }
+
+    rpc RunReport(RunCronReportRequest) returns (RunCronReportResponse) {
+        option (google.api.http).post = "/v1/cronpredictions/{name}:run";
+    }
+  
+
+}

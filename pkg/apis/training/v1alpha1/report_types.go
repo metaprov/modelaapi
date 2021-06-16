@@ -41,28 +41,6 @@ const (
 	InvalidReport  ReportType = "invalid-report"
 )
 
-// +kubebuilder:validation:Enum="last-24-hours";"last-7-days";"last-30-days";"last-90-days";"none"
-type SummaryReportRange string
-
-const (
-	ReportRangeLast24Hours SummaryReportRange = "last-24-hours"
-	ReportRangeLast7Days   SummaryReportRange = "last-7-days"
-	ReportRangeLast30Days  SummaryReportRange = "last-30-days"
-	ReportRangeLast90Days  SummaryReportRange = "last-90-days"
-	ReportRangeNone        SummaryReportRange = "none"
-)
-
-// +kubebuilder:validation:Enum="hourly";"daily";"weekly";"montly";"none"
-type SummaryReportResolution string
-
-const (
-	ReportResolutionHourly  SummaryReportRange = "hourly"
-	ReportResolutionDaily   SummaryReportRange = "daily"
-	ReportResolutionWeekly  SummaryReportRange = "weekly"
-	ReportResolutionMonthly SummaryReportRange = "montly"
-	ReportResolutionNone    SummaryReportRange = "none"
-)
-
 // +kubebuilder:validation:Enum="pdf"
 type ReportFormat string
 
@@ -192,13 +170,6 @@ type ReportSpec struct {
 	// To is the end time of the report . Use only for summary report. If empty, the system will use the current time.
 	// +kubebuilder:validation:Optional
 	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,12,opt,name=to"`
-	// For summary report, set the resultion
-	// +kubebuilder:default:=none
-	// +kubebuilder:validation:Optional
-	Resolution *SummaryReportResolution `json:"resolution,omitempty" protobuf:"bytes,13,opt,name=resolution"`
-	// +kubebuilder:default:=none
-	// +kubebuilder:validation:Optional
-	Range *SummaryReportRange `json:"range,omitempty" protobuf:"bytes,14,opt,name=range"`
 }
 
 // ReportStatus defines the observed state of the report.

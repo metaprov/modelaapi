@@ -22,7 +22,7 @@ import (
 // EntityRef
 //==============================================================================
 
-func (run *CronPrediction) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (run *CronReport) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(run).
 		Complete()
@@ -32,19 +32,19 @@ func (run *CronPrediction) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Keys
 //==============================================================================
 
-func (run *CronPrediction) RootUri() string {
-	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
+func (run *CronReport) RootUri() string {
+	return fmt.Sprintf("dataproducts/%s/reports/%s", run.Namespace, run.Name)
 }
 
-func (run *CronPrediction) ManifestUri() string {
+func (run *CronReport) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-run.yaml", run.RootUri(), run.Name)
 }
 
-func (run *CronPrediction) InputKey() string {
+func (run *CronReport) InputKey() string {
 	return run.Spec.Template.Spec.Input.Path
 }
 
-func (run *CronPrediction) OutputKey() string {
+func (run *CronReport) OutputKey() string {
 	return run.Spec.Template.Spec.Output.Path
 }
 
@@ -52,7 +52,7 @@ func (run *CronPrediction) OutputKey() string {
 // Validate
 //==============================================================================
 
-func (run *CronPrediction) PipelineName() string {
+func (run *CronReport) PipelineName() string {
 	return run.ObjectMeta.Labels[PipelineLabelKey]
 }
 
@@ -60,13 +60,13 @@ func (run *CronPrediction) PipelineName() string {
 // Finalizer
 //==============================================================================
 
-func (run *CronPrediction) HasFinalizer() bool {
+func (run *CronReport) HasFinalizer() bool {
 	return util.HasFin(&run.ObjectMeta, inference.GroupName)
 }
-func (run *CronPrediction) AddFinalizer() {
+func (run *CronReport) AddFinalizer() {
 	util.AddFin(&run.ObjectMeta, inference.GroupName)
 }
-func (run *CronPrediction) RemoveFinalizer() {
+func (run *CronReport) RemoveFinalizer() {
 	util.RemoveFin(&run.ObjectMeta, inference.GroupName)
 }
 
@@ -75,13 +75,13 @@ func (run *CronPrediction) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (run *CronPrediction) RepPath(root string) (string, error) {
-	return fmt.Sprintf("%s/predictions/%s.yaml", root, run.ObjectMeta.Name), nil
+func (run *CronReport) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/reports/%s.yaml", root, run.ObjectMeta.Name), nil
 }
 
 // Merge or update condition
 // Merge or update condition
-func (run *CronPrediction) CreateOrUpdateCond(cond CronPredictionCondition) {
+func (run *CronReport) CreateOrUpdateCond(cond CronReportCondition) {
 	i := run.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -100,7 +100,7 @@ func (run *CronPrediction) CreateOrUpdateCond(cond CronPredictionCondition) {
 	run.Status.Conditions[i] = current
 }
 
-func (run *CronPrediction) GetCondIdx(t CronPredictionConditionType) int {
+func (run *CronReport) GetCondIdx(t CronReportConditionType) int {
 	for i, v := range run.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -109,14 +109,14 @@ func (run *CronPrediction) GetCondIdx(t CronPredictionConditionType) int {
 	return -1
 }
 
-func (run *CronPrediction) GetCond(t CronPredictionConditionType) CronPredictionCondition {
+func (run *CronReport) GetCond(t CronReportConditionType) CronReportCondition {
 	for _, v := range run.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return CronPredictionCondition{
+	return CronReportCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -124,84 +124,84 @@ func (run *CronPrediction) GetCond(t CronPredictionConditionType) CronPrediction
 	}
 }
 
-func (run *CronPrediction) IsReady() bool {
-	return run.GetCond(CronPredictionReady).Status == v1.ConditionTrue
+func (run *CronReport) IsReady() bool {
+	return run.GetCond(CronReportReady).Status == v1.ConditionTrue
 }
 
-func (run *CronPrediction) Key() string {
-	return fmt.Sprintf("dataproducts/%s/predictions/%s", run.Namespace, run.Name)
+func (run *CronReport) Key() string {
+	return fmt.Sprintf("dataproducts/%s/reports/%s", run.Namespace, run.Name)
 }
 
-func (run *CronPrediction) ToYamlFile() ([]byte, error) {
+func (run *CronReport) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(run)
 }
-func (run *CronPrediction) OpName() string {
+func (run *CronReport) OpName() string {
 	return run.Namespace + "-" + run.Name
 }
 
-func (run *CronPrediction) MarkSaved() {
-	run.CreateOrUpdateCond(CronPredictionCondition{
-		Type:   CronPredictionSaved,
+func (run *CronReport) MarkSaved() {
+	run.CreateOrUpdateCond(CronReportCondition{
+		Type:   CronReportSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (run *CronPrediction) IsSaved() bool {
-	return run.GetCond(CronPredictionSaved).Status == v1.ConditionTrue
+func (run *CronReport) IsSaved() bool {
+	return run.GetCond(CronReportSaved).Status == v1.ConditionTrue
 }
 
-func (run *CronPrediction) MarkReady() {
-	run.CreateOrUpdateCond(CronPredictionCondition{
-		Type:   CronPredictionReady,
+func (run *CronReport) MarkReady() {
+	run.CreateOrUpdateCond(CronReportCondition{
+		Type:   CronReportReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (run *CronPrediction) IsCompleted() bool {
-	return run.GetCond(CronPredictionReady).Status == v1.ConditionTrue
+func (run *CronReport) IsCompleted() bool {
+	return run.GetCond(CronReportReady).Status == v1.ConditionTrue
 }
 
-func (run *CronPrediction) IsRunning() bool {
-	cond := run.GetCond(CronPredictionReady)
+func (run *CronReport) IsRunning() bool {
+	cond := run.GetCond(CronReportReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseRunning)
 }
 
-func (run *CronPrediction) IsFailed() bool {
-	cond := run.GetCond(CronPredictionReady)
+func (run *CronReport) IsFailed() bool {
+	cond := run.GetCond(CronReportReady)
 	return cond.Status == v1.ConditionFalse && cond.Reason == string(v1alpha1.FeaturePipelineRunPhaseFailed)
 }
 
 // defaulting
-var _ webhook.Defaulter = &CronPrediction{}
+var _ webhook.Defaulter = &CronReport{}
 
-func (pre *CronPrediction) Default() {
+func (pre *CronReport) Default() {
 
 }
 
 // validation
-var _ webhook.Validator = &CronPrediction{}
+var _ webhook.Validator = &CronReport{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *CronPrediction) ValidateCreate() error {
-	return prediction.validate()
+func (report *CronReport) ValidateCreate() error {
+	return report.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (prediction *CronPrediction) ValidateUpdate(old runtime.Object) error {
-	return prediction.validate()
+func (report *CronReport) ValidateUpdate(old runtime.Object) error {
+	return report.validate()
 }
 
-func (prediction *CronPrediction) validate() error {
+func (report *CronReport) validate() error {
 	var allErrs field.ErrorList
 	if len(allErrs) == 0 {
 		return nil
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modeld.io", Kind: "Prediction"},
-		prediction.Name, allErrs)
+		schema.GroupKind{Group: "inference.modeld.io", Kind: "Report"},
+		report.Name, allErrs)
 }
 
-func (prediction *CronPrediction) ValidateDelete() error {
+func (report *CronReport) ValidateDelete() error {
 	return nil
 }
