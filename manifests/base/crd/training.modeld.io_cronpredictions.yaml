@@ -30,8 +30,11 @@ spec:
       priority: 1
       type: string
     - jsonPath: .spec.schedule
-      name: Cron
+      name: Schedule
       type: string
+    - jsonPath: .status.lastRun
+      name: Last Run
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

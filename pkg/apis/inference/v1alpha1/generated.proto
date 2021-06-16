@@ -60,7 +60,8 @@ message ChannelStatus {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
-// +kubebuilder:printcolumn:name="Cron",type="string",JSONPath=".spec.schedule.cron"
+// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule"
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modeld}
 // CronPrediction represents a single run of the Prediction Pipeline
@@ -113,7 +114,7 @@ message CronPredictionSpec {
   // Schedule is the cron schedule
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
+  optional string schedule = 3;
 
   // Template refer to the prediction template
   optional PredictionTemplate template = 4;
@@ -338,6 +339,7 @@ message OnlineFeaturestoreSpec {
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -459,6 +461,23 @@ message PredictionSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 10;
+
+  // Include the features in the results
+  // +kubebuilder:validation:Optional
+  optional bool includeFeatures = 11;
+
+  // Generate XAI
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool xai = 12;
+
+  // Update strategy
+  // +kubebuilder:validation:Optional
+  optional bool updateStrategy = 13;
+
+  // Create the data source table on the target, if not exist.
+  // +kubebuilder:validation:Optional
+  optional bool createTableIfNotExist = 14;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

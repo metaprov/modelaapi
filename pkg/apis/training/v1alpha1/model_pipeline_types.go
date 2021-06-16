@@ -31,6 +31,8 @@ type ModelPipelineCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
+// +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelpipelines,singular=modelpipeline,shortName=pipe,categories={training,modeld,all}
 // ModelPipeline represent a CI/CD machine learning pipeline definition
@@ -86,7 +88,7 @@ type ModelPipelineSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
+	Schedule string `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"

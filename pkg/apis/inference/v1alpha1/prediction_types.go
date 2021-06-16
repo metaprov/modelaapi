@@ -51,6 +51,7 @@ type PredictionCondition struct {
 // +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
 // +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
@@ -108,6 +109,19 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	// Include the features in the results
+	// +kubebuilder:validation:Optional
+	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"bytes,11,opt,name=includeFeatures"`
+	// Generate XAI
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	XAI *bool `json:"xai,omitempty" protobuf:"bytes,12,opt,name=xai"`
+	// Update strategy
+	// +kubebuilder:validation:Optional
+	UpdateStrategy *bool `json:"updateStrategy,omitempty" protobuf:"bytes,13,opt,name=updateStrategy"`
+	// Create the data source table on the target, if not exist.
+	// +kubebuilder:validation:Optional
+	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"bytes,14,opt,name=createTableIfNotExist"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

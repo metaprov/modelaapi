@@ -1671,10 +1671,8 @@ export class ModelPipelineSpec extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): ModelPipelineSpec;
 
-  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelPipelineSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): ModelPipelineSpec;
+  getSchedule(): string;
+  setSchedule(value: string): ModelPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): ModelPipelineSpec;
@@ -1708,7 +1706,7 @@ export namespace ModelPipelineSpec {
     deployment?: DeploymentStageSpec.AsObject,
     release?: ReleaseStageSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    schedule: string,
     owner: string,
     approveraccountname: string,
     notifiername: string,

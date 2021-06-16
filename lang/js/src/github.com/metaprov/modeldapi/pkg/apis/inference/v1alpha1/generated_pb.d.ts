@@ -184,10 +184,8 @@ export class CronPredictionSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): CronPredictionSpec;
 
-  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronPredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): CronPredictionSpec;
+  getSchedule(): string;
+  setSchedule(value: string): CronPredictionSpec;
 
   getTemplate(): PredictionTemplate | undefined;
   setTemplate(value?: PredictionTemplate): CronPredictionSpec;
@@ -206,7 +204,7 @@ export namespace CronPredictionSpec {
   export type AsObject = {
     versionname: string,
     owner: string,
-    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    schedule: string,
     template?: PredictionTemplate.AsObject,
   }
 }
@@ -782,6 +780,18 @@ export class PredictionSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): PredictionSpec;
 
+  getIncludefeatures(): boolean;
+  setIncludefeatures(value: boolean): PredictionSpec;
+
+  getXai(): boolean;
+  setXai(value: boolean): PredictionSpec;
+
+  getUpdatestrategy(): boolean;
+  setUpdatestrategy(value: boolean): PredictionSpec;
+
+  getCreatetableifnotexist(): boolean;
+  setCreatetableifnotexist(value: boolean): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -802,6 +812,10 @@ export namespace PredictionSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
+    includefeatures: boolean,
+    xai: boolean,
+    updatestrategy: boolean,
+    createtableifnotexist: boolean,
   }
 }
 

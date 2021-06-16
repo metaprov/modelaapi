@@ -154,7 +154,11 @@ func (in *CronPredictionSpec) DeepCopyInto(out *CronPredictionSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Schedule.DeepCopyInto(&out.Schedule)
+	if in.Schedule != nil {
+		in, out := &in.Schedule, &out.Schedule
+		*out = new(string)
+		**out = **in
+	}
 	in.Template.DeepCopyInto(&out.Template)
 }
 
@@ -710,6 +714,26 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
+		**out = **in
+	}
+	if in.IncludeFeatures != nil {
+		in, out := &in.IncludeFeatures, &out.IncludeFeatures
+		*out = new(bool)
+		**out = **in
+	}
+	if in.XAI != nil {
+		in, out := &in.XAI, &out.XAI
+		*out = new(bool)
+		**out = **in
+	}
+	if in.UpdateStrategy != nil {
+		in, out := &in.UpdateStrategy, &out.UpdateStrategy
+		*out = new(bool)
+		**out = **in
+	}
+	if in.CreateTableIfNotExist != nil {
+		in, out := &in.CreateTableIfNotExist, &out.CreateTableIfNotExist
+		*out = new(bool)
 		**out = **in
 	}
 }

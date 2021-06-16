@@ -32,6 +32,9 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .status.lastRun
+      name: Last Run
+      type: date
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -234,6 +237,10 @@ spec:
                   - type
                   type: object
                 type: array
+              lastRun:
+                description: Last run is the last time a run was created
+                format: date-time
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time
