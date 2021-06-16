@@ -108,13 +108,16 @@ type FeaturePipelineSpec struct {
 
 // FeatureStatus defines the observed state of Feature
 type FeaturePipelineStatus struct {
+	// Last run is the last time a run was created
+	//+kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// Store the avg cost of running this pipeline
-	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,1,rep,name=averageCost"`
+	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,2,rep,name=averageCost"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	//+optional
-	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 type MaterializationSpec struct {

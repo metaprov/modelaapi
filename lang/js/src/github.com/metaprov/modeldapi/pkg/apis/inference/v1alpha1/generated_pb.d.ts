@@ -212,6 +212,11 @@ export namespace CronPredictionSpec {
 }
 
 export class CronPredictionStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): CronPredictionStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronPredictionStatus;
   hasLastupdated(): boolean;
@@ -235,6 +240,7 @@ export class CronPredictionStatus extends jspb.Message {
 
 export namespace CronPredictionStatus {
   export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<CronPredictionCondition.AsObject>,
@@ -826,6 +832,9 @@ export class PredictionStatus extends jspb.Message {
   clearConditionsList(): PredictionStatus;
   addConditions(value?: PredictionCondition, index?: number): PredictionCondition;
 
+  getRows(): number;
+  setRows(value: number): PredictionStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionStatus): PredictionStatus.AsObject;
@@ -842,6 +851,7 @@ export namespace PredictionStatus {
     resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     observedgeneration: number,
     conditionsList: Array<PredictionCondition.AsObject>,
+    rows: number,
   }
 }
 

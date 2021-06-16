@@ -246,6 +246,7 @@ spec:
             description: CronPredictionStatus is the observed state of a PredictionTemplate
             properties:
               conditions:
+                description: Conditions of the cron predictions
                 items:
                   description: PredictionCondition describes the state of PredictionTemplate
                   properties:
@@ -272,6 +273,10 @@ spec:
                   - type
                   type: object
                 type: array
+              lastRun:
+                description: Last run is the last time a run was created
+                format: date-time
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

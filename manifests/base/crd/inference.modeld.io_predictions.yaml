@@ -285,6 +285,10 @@ spec:
                   - value
                   type: object
                 type: array
+              rows:
+                description: The number of rows in the predictions
+                format: int32
+                type: integer
               startTime:
                 description: StartTime is the start time of the prediction.
                 format: date-time

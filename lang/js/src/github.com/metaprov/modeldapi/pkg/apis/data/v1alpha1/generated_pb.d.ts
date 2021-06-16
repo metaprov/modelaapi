@@ -1404,6 +1404,14 @@ export class DataSourceStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataSourceStatus;
 
+  getLastdatasetcreated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastdatasetcreated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
+  hasLastdatasetcreated(): boolean;
+  clearLastdatasetcreated(): DataSourceStatus;
+
+  getLastdatasetname(): string;
+  setLastdatasetname(value: string): DataSourceStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataSourceStatus;
   hasLastupdated(): boolean;
@@ -1426,6 +1434,8 @@ export namespace DataSourceStatus {
   export type AsObject = {
     cols: number,
     observedgeneration: number,
+    lastdatasetcreated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastdatasetname: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataSourceCondition.AsObject>,
   }
@@ -2394,6 +2404,11 @@ export namespace FeaturePipelineSpec {
 }
 
 export class FeaturePipelineStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturePipelineStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): FeaturePipelineStatus;
+
   getAveragecost(): number;
   setAveragecost(value: number): FeaturePipelineStatus;
 
@@ -2415,6 +2430,7 @@ export class FeaturePipelineStatus extends jspb.Message {
 
 export namespace FeaturePipelineStatus {
   export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     averagecost: number,
     observedgeneration: number,
     conditionsList: Array<FeaturePipelineCondition.AsObject>,
@@ -3182,6 +3198,11 @@ export namespace LabelingPipelineSpec {
 }
 
 export class LabelingPipelineStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabelingPipelineStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): LabelingPipelineStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabelingPipelineStatus;
 
@@ -3200,6 +3221,7 @@ export class LabelingPipelineStatus extends jspb.Message {
 
 export namespace LabelingPipelineStatus {
   export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<LabelingPipelineCondition.AsObject>,
   }

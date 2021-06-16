@@ -1551,6 +1551,11 @@ export namespace ModelPipelineSpec {
 }
 
 export class ModelPipelineStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): ModelPipelineStatus;
+
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelPipelineStatus;
 
@@ -1574,6 +1579,7 @@ export class ModelPipelineStatus extends jspb.Message {
 
 export namespace ModelPipelineStatus {
   export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelPipelineCondition.AsObject>,
@@ -2842,8 +2848,8 @@ export class ReportSpec extends jspb.Message {
   getFormat(): string;
   setFormat(value: string): ReportSpec;
 
-  getDescription(): string;
-  setDescription(value: string): ReportSpec;
+  getNotifiername(): string;
+  setNotifiername(value: string): ReportSpec;
 
   getOwner(): string;
   setOwner(value: string): ReportSpec;
@@ -2864,6 +2870,12 @@ export class ReportSpec extends jspb.Message {
   hasTo(): boolean;
   clearTo(): ReportSpec;
 
+  getResolution(): string;
+  setResolution(value: string): ReportSpec;
+
+  getRange(): string;
+  setRange(value: string): ReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -2879,12 +2891,14 @@ export namespace ReportSpec {
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     reporttype: string,
     format: string,
-    description: string,
+    notifiername: string,
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
     from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    resolution: string,
+    range: string,
   }
 }
 

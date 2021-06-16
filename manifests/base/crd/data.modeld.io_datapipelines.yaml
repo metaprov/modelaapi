@@ -232,7 +232,7 @@ spec:
                   type: object
                 type: array
               lastRun:
-                description: Last time the object was updated
+                description: Last run is the last time a data pipeline run was created
                 format: date-time
                 type: string
               lastUpdated:

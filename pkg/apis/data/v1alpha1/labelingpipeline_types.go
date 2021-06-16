@@ -92,9 +92,12 @@ type LabelingPipelineSpec struct {
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 type LabelingPipelineStatus struct {
+	// Last run is the last time a run was created
+	//+kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	//+optional
-	Conditions []LabelingPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []LabelingPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
 }

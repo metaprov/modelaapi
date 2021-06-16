@@ -576,7 +576,7 @@ message DataPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // Last time the object was updated
+  // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
@@ -930,12 +930,21 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Last time an dataset from this datasource was created.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreated = 3;
+
+  // Last dataset name
+  // +kubebuilder:validation:Optional
+  optional string lastDatasetName = 4;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
-  // +optional
-  repeated DataSourceCondition conditions = 4;
+  // Conditions on the last data source status.
+  // +kubebuilder:validation:Optional
+  repeated DataSourceCondition conditions = 6;
 }
 
 message DataValidationResult {
@@ -1482,15 +1491,19 @@ message FeaturePipelineSpec {
 
 // FeatureStatus defines the observed state of Feature
 message FeaturePipelineStatus {
+  // Last run is the last time a run was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
   // Store the avg cost of running this pipeline
-  optional double averageCost = 1;
+  optional double averageCost = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 3;
 
   // +optional
-  repeated FeaturePipelineCondition conditions = 3;
+  repeated FeaturePipelineCondition conditions = 4;
 }
 
 // FeatureSpec contain the desired state of a Feature
@@ -1970,12 +1983,16 @@ message LabelingPipelineSpec {
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 message LabelingPipelineStatus {
+  // Last run is the last time a run was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 2;
 
   // +optional
-  repeated LabelingPipelineCondition conditions = 2;
+  repeated LabelingPipelineCondition conditions = 3;
 }
 
 message MaterializationSpec {

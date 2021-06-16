@@ -695,6 +695,7 @@ spec:
                 minimum: 0
                 type: integer
               conditions:
+                description: Conditions on the last data source status.
                 items:
                   description: DataSourceCondition describes the state of a datasource
                     at a certain point.
@@ -722,6 +723,13 @@ spec:
                   - type
                   type: object
                 type: array
+              lastDatasetCreated:
+                description: Last time an dataset from this datasource was created.
+                format: date-time
+                type: string
+              lastDatasetName:
+                description: Last dataset name
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

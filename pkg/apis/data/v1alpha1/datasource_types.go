@@ -561,11 +561,18 @@ type DataSourceStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	// Last time an dataset from this datasource was created.
+	//+kubebuilder:validation:Optional
+	LastDatasetCreated *metav1.Time `json:"lastDatasetCreated,omitempty" protobuf:"bytes,3,opt,name=lastDatasetCreated"`
+	// Last dataset name
+	//+kubebuilder:validation:Optional
+	LastDatasetName string `json:"lastDatasetName,omitempty" protobuf:"bytes,4,opt,name=lastDatasetName"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	//+optional
-	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
+	// Conditions on the last data source status.
+	//+kubebuilder:validation:Optional
+	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

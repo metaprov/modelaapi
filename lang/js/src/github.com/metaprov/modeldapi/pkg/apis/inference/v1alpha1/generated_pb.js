@@ -2616,7 +2616,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSp
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.repeatedFields_ = [3];
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.repeatedFields_ = [4];
 
 
 
@@ -2649,8 +2649,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
+    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.toObject, includeInstance)
   };
@@ -2692,13 +2693,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastupdated(value);
+      msg.setLastrun(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -2732,7 +2738,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastupdated();
+  f = message.getLastrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2740,17 +2746,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeInt64(
-      2,
+      3,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition.serializeBinaryToWriter
     );
@@ -2759,10 +2773,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastupdated = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastrun = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -2772,8 +2786,45 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastupdated = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearLastrun = function() {
+  return this.setLastrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasLastrun = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -2791,16 +2842,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int64 observedGeneration = 2;
+ * optional int64 observedGeneration = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -2809,7 +2860,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -2818,7 +2869,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -2827,17 +2878,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated CronPredictionCondition conditions = 3;
+ * repeated CronPredictionCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, 4));
 };
 
 
@@ -2846,7 +2897,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -2856,7 +2907,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSt
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionCondition, opt_index);
 };
 
 
@@ -7917,7 +7968,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus
     github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.toObject, includeInstance),
     observedgeneration: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition.toObject, includeInstance),
+    rows: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7981,6 +8033,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRows(value);
       break;
     default:
       reader.skipField();
@@ -8055,6 +8111,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus
       6,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionCondition.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeInt32(
+      7,
+      f
     );
   }
 };
@@ -8279,6 +8342,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearConditionsList = function() {
   return this.setConditionsList([]);
+};
+
+
+/**
+ * optional int32 rows = 7;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setRows = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearRows = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.hasRows = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

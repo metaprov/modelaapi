@@ -71,10 +71,6 @@ spec:
                   report.
                 format: int64
                 type: integer
-              description:
-                description: NotifierRef is areference to the notifier that is used
-                  to send the report
-                type: string
               entityRef:
                 description: EntityRef specify the entity being report. Currently
                   entities can be dataset,model or study
@@ -135,9 +131,22 @@ spec:
                 - bucketName
                 - path
                 type: object
+              notifierName:
+                description: NotifierName is a reference to the notifier that is used
+                  to send the report
+                type: string
               owner:
                 default: no-one
                 description: The owner account name
+                type: string
+              range:
+                default: none
+                enum:
+                - last-24-hours
+                - last-7-days
+                - last-30-days
+                - last-90-days
+                - none
                 type: string
               reportType:
                 description: ReportType specify the report type (e.g. classification
@@ -159,6 +168,16 @@ spec:
                 - weekly-report
                 - monthly-report
                 - summary-report
+                type: string
+              resolution:
+                default: none
+                description: For summary report, set the resultion
+                enum:
+                - hourly
+                - daily
+                - weekly
+                - montly
+                - none
                 type: string
               to:
                 description: To is the end time of the report . Use only for summary
