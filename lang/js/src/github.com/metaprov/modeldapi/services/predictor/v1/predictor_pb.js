@@ -1780,7 +1780,8 @@ proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.protot
 proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    modelname: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1825,6 +1826,10 @@ proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.deseri
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelname(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1868,6 +1873,13 @@ proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.serial
       f
     );
   }
+  f = message.getModelname();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1904,6 +1916,24 @@ proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.protot
  */
 proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string modelName = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.prototype.getModelname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest.prototype.setModelname = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

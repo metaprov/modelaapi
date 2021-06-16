@@ -2134,3 +2134,55 @@ export namespace ValidateModelResponse {
   }
 }
 
+export class DsTestConnectionRequest extends jspb.Message {
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsTestConnectionRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsTestConnectionRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsTestConnectionRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsTestConnectionRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsTestConnectionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsTestConnectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestConnectionRequest): DsTestConnectionRequest.AsObject;
+  static serializeBinaryToWriter(message: DsTestConnectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestConnectionRequest;
+  static deserializeBinaryFromReader(message: DsTestConnectionRequest, reader: jspb.BinaryReader): DsTestConnectionRequest;
+}
+
+export namespace DsTestConnectionRequest {
+  export type AsObject = {
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class DsTestConnectionResponse extends jspb.Message {
+  getStatus(): boolean;
+  setStatus(value: boolean): DsTestConnectionResponse;
+
+  getMsg(): string;
+  setMsg(value: string): DsTestConnectionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsTestConnectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsTestConnectionResponse): DsTestConnectionResponse.AsObject;
+  static serializeBinaryToWriter(message: DsTestConnectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsTestConnectionResponse;
+  static deserializeBinaryFromReader(message: DsTestConnectionResponse, reader: jspb.BinaryReader): DsTestConnectionResponse;
+}
+
+export namespace DsTestConnectionResponse {
+  export type AsObject = {
+    status: boolean,
+    msg: string,
+  }
+}
+

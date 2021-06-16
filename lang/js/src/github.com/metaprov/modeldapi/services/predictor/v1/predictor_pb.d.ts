@@ -203,6 +203,9 @@ export class RollbackRequest extends jspb.Message {
   getName(): string;
   setName(value: string): RollbackRequest;
 
+  getModelname(): string;
+  setModelname(value: string): RollbackRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RollbackRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RollbackRequest): RollbackRequest.AsObject;
@@ -215,6 +218,7 @@ export namespace RollbackRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    modelname: string,
   }
 }
 

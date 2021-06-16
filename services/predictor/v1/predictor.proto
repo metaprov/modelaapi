@@ -55,6 +55,7 @@ message DeletePredictorResponse {
 message RollbackRequest {
     string namespace = 1;
     string name      = 2;
+    string modelName = 3; // the model to roll back to
 }
 
 message RollbackResponse {

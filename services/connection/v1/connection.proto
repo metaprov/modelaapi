@@ -54,6 +54,15 @@ message DeleteConnectionResponse {
 
 }
 
+message TestConnectionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message TestConnectionResponse {
+    bool status = 1;
+    string msg  = 2; 
+}
 
 
 
@@ -79,6 +88,10 @@ service ConnectionService {
 
     rpc DeleteConnection(DeleteConnectionRequest) returns (DeleteConnectionResponse) {
         option (google.api.http).delete = "/api/v1/connections/{namespace}/{name}";
+    }
+
+    rpc TestConnection(TestConnectionRequest) returns (TestConnectionResponse) {
+        option (google.api.http).get = "/api/v1/connections/{namespace}/{name}:test";
     }
 
 }

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/connection/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modeldapi.services.connection.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc4\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListConnectionsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList\"\x84\x02\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\x84\x02\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x15GetConnectionResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse2\xd9\x08\n\x11\x43onnectionService\x12\xc7\x01\n\x0fListConnections\x12L.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/connections\x12\xd6\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/connections:\nconnection\x12\xc8\x01\n\rGetConnection\x12J.github.com.metaprov.modeldapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modeldapi.services.connection.v1.GetConnectionResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/connections/{name}\x12\xf1\x01\n\x10UpdateConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/connections/{connection.metadata.name}:\nconnection\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}B6Z4github.com/metaprov/modeldapi/services/connection/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modeldapi.services.connection.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc4\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListConnectionsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList\"\x84\x02\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\x84\x02\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x15GetConnectionResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse\"8\n\x15TestConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"5\n\x16TestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xbc\n\n\x11\x43onnectionService\x12\xc7\x01\n\x0fListConnections\x12L.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/connections\x12\xd6\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/connections:\nconnection\x12\xc8\x01\n\rGetConnection\x12J.github.com.metaprov.modeldapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modeldapi.services.connection.v1.GetConnectionResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/connections/{name}\x12\xf1\x01\n\x10UpdateConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/connections/{connection.metadata.name}:\nconnection\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}\x12\xe0\x01\n\x0eTestConnection\x12K.github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest\x1aL.github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/connections/{namespace}/{name}:testB6Z4github.com/metaprov/modeldapi/services/connection/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -482,6 +482,84 @@ _DELETECONNECTIONRESPONSE = _descriptor.Descriptor(
   serialized_end=1385,
 )
 
+
+_TESTCONNECTIONREQUEST = _descriptor.Descriptor(
+  name='TestConnectionRequest',
+  full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1387,
+  serialized_end=1443,
+)
+
+
+_TESTCONNECTIONRESPONSE = _descriptor.Descriptor(
+  name='TestConnectionResponse',
+  full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse.status', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse.msg', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1445,
+  serialized_end=1498,
+)
+
 _LISTCONNECTIONSREQUEST_LABELSENTRY.containing_type = _LISTCONNECTIONSREQUEST
 _LISTCONNECTIONSREQUEST.fields_by_name['labels'].message_type = _LISTCONNECTIONSREQUEST_LABELSENTRY
 _LISTCONNECTIONSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONLIST
@@ -502,6 +580,8 @@ DESCRIPTOR.message_types_by_name['GetConnectionRequest'] = _GETCONNECTIONREQUEST
 DESCRIPTOR.message_types_by_name['GetConnectionResponse'] = _GETCONNECTIONRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteConnectionRequest'] = _DELETECONNECTIONREQUEST
 DESCRIPTOR.message_types_by_name['DeleteConnectionResponse'] = _DELETECONNECTIONRESPONSE
+DESCRIPTOR.message_types_by_name['TestConnectionRequest'] = _TESTCONNECTIONREQUEST
+DESCRIPTOR.message_types_by_name['TestConnectionResponse'] = _TESTCONNECTIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListConnectionsRequest = _reflection.GeneratedProtocolMessageType('ListConnectionsRequest', (_message.Message,), {
@@ -598,6 +678,20 @@ DeleteConnectionResponse = _reflection.GeneratedProtocolMessageType('DeleteConne
   })
 _sym_db.RegisterMessage(DeleteConnectionResponse)
 
+TestConnectionRequest = _reflection.GeneratedProtocolMessageType('TestConnectionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TESTCONNECTIONREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.connection.v1.connection_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest)
+  })
+_sym_db.RegisterMessage(TestConnectionRequest)
+
+TestConnectionResponse = _reflection.GeneratedProtocolMessageType('TestConnectionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _TESTCONNECTIONRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.connection.v1.connection_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse)
+  })
+_sym_db.RegisterMessage(TestConnectionResponse)
+
 
 DESCRIPTOR._options = None
 _LISTCONNECTIONSREQUEST_LABELSENTRY._options = None
@@ -611,8 +705,8 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1388,
-  serialized_end=2501,
+  serialized_start=1501,
+  serialized_end=2841,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListConnections',
@@ -662,6 +756,16 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECONNECTIONREQUEST,
     output_type=_DELETECONNECTIONRESPONSE,
     serialized_options=b'\202\323\344\223\002(*&/api/v1/connections/{namespace}/{name}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='TestConnection',
+    full_name='github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.TestConnection',
+    index=5,
+    containing_service=None,
+    input_type=_TESTCONNECTIONREQUEST,
+    output_type=_TESTCONNECTIONRESPONSE,
+    serialized_options=b'\202\323\344\223\002-\022+/api/v1/connections/{namespace}/{name}:test',
     create_key=_descriptor._internal_create_key,
   ),
 ])

@@ -204,3 +204,47 @@ export namespace DeleteConnectionResponse {
   }
 }
 
+export class TestConnectionRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): TestConnectionRequest;
+
+  getName(): string;
+  setName(value: string): TestConnectionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestConnectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TestConnectionRequest): TestConnectionRequest.AsObject;
+  static serializeBinaryToWriter(message: TestConnectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestConnectionRequest;
+  static deserializeBinaryFromReader(message: TestConnectionRequest, reader: jspb.BinaryReader): TestConnectionRequest;
+}
+
+export namespace TestConnectionRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class TestConnectionResponse extends jspb.Message {
+  getStatus(): boolean;
+  setStatus(value: boolean): TestConnectionResponse;
+
+  getMsg(): string;
+  setMsg(value: string): TestConnectionResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestConnectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TestConnectionResponse): TestConnectionResponse.AsObject;
+  static serializeBinaryToWriter(message: TestConnectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestConnectionResponse;
+  static deserializeBinaryFromReader(message: TestConnectionResponse, reader: jspb.BinaryReader): TestConnectionResponse;
+}
+
+export namespace TestConnectionResponse {
+  export type AsObject = {
+    status: boolean,
+    msg: string,
+  }
+}
+

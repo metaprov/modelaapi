@@ -235,5 +235,45 @@ export class ConnectionServiceClient {
     this.methodInfoDeleteConnection);
   }
 
+  methodInfoTestConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse,
+    (request: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse.deserializeBinary
+  );
+
+  testConnection(
+    request: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse>;
+
+  testConnection(
+    request: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse>;
+
+  testConnection(
+    request: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_connection_v1_connection_pb.TestConnectionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/TestConnection',
+        request,
+        metadata || {},
+        this.methodInfoTestConnection,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/TestConnection',
+    request,
+    metadata || {},
+    this.methodInfoTestConnection);
+  }
+
 }
 

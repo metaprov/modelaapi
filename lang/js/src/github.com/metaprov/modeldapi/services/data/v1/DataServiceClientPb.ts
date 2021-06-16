@@ -1155,6 +1155,46 @@ export class DataServiceClient {
     this.methodInfoValidateModel);
   }
 
+  methodInfoDsTestConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse.deserializeBinary
+  );
+
+  dsTestConnection(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse>;
+
+  dsTestConnection(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse>;
+
+  dsTestConnection(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsTestConnectionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/DsTestConnection',
+        request,
+        metadata || {},
+        this.methodInfoDsTestConnection,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/DsTestConnection',
+    request,
+    metadata || {},
+    this.methodInfoDsTestConnection);
+  }
+
   methodInfoShutDown = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_data_v1_data_pb.DsShutdownResponse,
     (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsShutdownRequest) => {
