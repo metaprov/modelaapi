@@ -915,25 +915,23 @@ spec:
                     type: string
                 type: object
               spark:
-                description: CassandraSpec defines the connection to cassandra
                 properties:
                   host:
-                    default: ""
-                    type: string
-                  keyspace:
                     default: ""
                     type: string
                   password:
                     default: ""
                     type: string
                   port:
-                    default: 9042
+                    default: 5433
                     format: int32
                     minimum: 0
                     type: integer
-                  url:
+                  schema:
                     default: ""
-                    description: URL override the other settings
+                    type: string
+                  url:
+                    description: URL Override the other
                     type: string
                   username:
                     default: ""
@@ -1048,6 +1046,18 @@ spec:
                     description: URL Override the other
                     type: string
                   username:
+                    default: ""
+                    type: string
+                type: object
+              victorOp:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
                     default: ""
                     type: string
                 type: object

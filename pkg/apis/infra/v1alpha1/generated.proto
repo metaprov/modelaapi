@@ -760,7 +760,7 @@ message ConnectionSpec {
   optional GcpSpannerSpec spanner = 25;
 
   // +kubebuilder:validation:Optional
-  optional ApacheCassandraSpec spark = 26;
+  optional ApacheSparkSpec spark = 26;
 
   // +kubebuilder:validation:Optional
   optional MSSqlServerSpec mssqlserver = 27;
@@ -841,11 +841,14 @@ message ConnectionSpec {
   optional HipchatSpec hipchat = 52;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 53;
+  optional VictorOpSpec victorOp = 53;
+
+  // +kubebuilder:validation:Optional
+  optional WebhookSpec webhook = 54;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 54;
+  optional string owner = 55;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -2129,6 +2132,17 @@ message VerticaSpec {
 
   // URL Override the other
   optional string url = 6;
+}
+
+message VictorOpSpec {
+  // +kubebuilder:default:=""
+  optional string apiID = 1;
+
+  // +kubebuilder:default:=""
+  optional string apiKey = 2;
+
+  // +kubebuilder:default:=""
+  optional string url = 3;
 }
 
 // +kubebuilder:object:root=true

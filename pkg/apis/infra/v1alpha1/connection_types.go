@@ -136,7 +136,7 @@ type ConnectionSpec struct {
 	GcpSpanner *GcpSpannerSpec `json:"spanner,omitempty" protobuf:"bytes,25,opt,name=spanner"`
 
 	// +kubebuilder:validation:Optional
-	Spark *ApacheCassandraSpec `json:"spark,omitempty" protobuf:"bytes,26,opt,name=spark"`
+	Spark *ApacheSparkSpec `json:"spark,omitempty" protobuf:"bytes,26,opt,name=spark"`
 
 	// +kubebuilder:validation:Optional
 	MSSqlServer *MSSqlServerSpec `json:"mssqlserver,omitempty" protobuf:"bytes,27,opt,name=mssqlserver"`
@@ -220,10 +220,13 @@ type ConnectionSpec struct {
 	Hipchat *HipchatSpec `json:"hipchat,omitempty" protobuf:"bytes,52,opt,name=hipchat"`
 
 	// +kubebuilder:validation:Optional
-	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,53,opt,name=webhook"`
+	VictorOps *VictorOpSpec `json:"victorOp,omitempty" protobuf:"bytes,53,opt,name=victorOp"`
+
+	// +kubebuilder:validation:Optional
+	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,54,opt,name=webhook"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,54,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,55,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -879,6 +882,15 @@ type HipchatSpec struct {
 	Token *string `json:"token,omitempty" protobuf:"bytes,2,opt,name=token"`
 	// +kubebuilder:default:=""
 	Room *string `json:"room,omitempty" protobuf:"bytes,3,opt,name=room"`
+}
+
+type VictorOpSpec struct {
+	// +kubebuilder:default:=""
+	ID *string `json:"apiID,omitempty" protobuf:"bytes,1,opt,name=apiID"`
+	// +kubebuilder:default:=""
+	ApiKey *string `json:"apiKey,omitempty" protobuf:"bytes,2,opt,name=apiKey"`
+	// +kubebuilder:default:=""
+	Url *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
 }
 
 type WebhookSpec struct {

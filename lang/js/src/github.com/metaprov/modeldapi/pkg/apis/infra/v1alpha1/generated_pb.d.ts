@@ -1335,8 +1335,8 @@ export class ConnectionSpec extends jspb.Message {
   hasSpanner(): boolean;
   clearSpanner(): ConnectionSpec;
 
-  getSpark(): ApacheCassandraSpec | undefined;
-  setSpark(value?: ApacheCassandraSpec): ConnectionSpec;
+  getSpark(): ApacheSparkSpec | undefined;
+  setSpark(value?: ApacheSparkSpec): ConnectionSpec;
   hasSpark(): boolean;
   clearSpark(): ConnectionSpec;
 
@@ -1470,6 +1470,11 @@ export class ConnectionSpec extends jspb.Message {
   hasHipchat(): boolean;
   clearHipchat(): ConnectionSpec;
 
+  getVictorop(): VictorOpSpec | undefined;
+  setVictorop(value?: VictorOpSpec): ConnectionSpec;
+  hasVictorop(): boolean;
+  clearVictorop(): ConnectionSpec;
+
   getWebhook(): WebhookSpec | undefined;
   setWebhook(value?: WebhookSpec): ConnectionSpec;
   hasWebhook(): boolean;
@@ -1513,7 +1518,7 @@ export namespace ConnectionSpec {
     hana?: SAPHanaSpec.AsObject,
     teradata?: TeradataSpec.AsObject,
     spanner?: GcpSpannerSpec.AsObject,
-    spark?: ApacheCassandraSpec.AsObject,
+    spark?: ApacheSparkSpec.AsObject,
     mssqlserver?: MSSqlServerSpec.AsObject,
     clickhouse?: ClickHouseSpec.AsObject,
     greenplum?: GreenPlumSpec.AsObject,
@@ -1540,6 +1545,7 @@ export namespace ConnectionSpec {
     msteam?: MSTeamSpec.AsObject,
     mattermost?: MattermostSpec.AsObject,
     hipchat?: HipchatSpec.AsObject,
+    victorop?: VictorOpSpec.AsObject,
     webhook?: WebhookSpec.AsObject,
     owner: string,
   }
@@ -3957,6 +3963,32 @@ export namespace VerticaSpec {
     database: string,
     username: string,
     password: string,
+    url: string,
+  }
+}
+
+export class VictorOpSpec extends jspb.Message {
+  getApiid(): string;
+  setApiid(value: string): VictorOpSpec;
+
+  getApikey(): string;
+  setApikey(value: string): VictorOpSpec;
+
+  getUrl(): string;
+  setUrl(value: string): VictorOpSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VictorOpSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: VictorOpSpec): VictorOpSpec.AsObject;
+  static serializeBinaryToWriter(message: VictorOpSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VictorOpSpec;
+  static deserializeBinaryFromReader(message: VictorOpSpec, reader: jspb.BinaryReader): VictorOpSpec;
+}
+
+export namespace VictorOpSpec {
+  export type AsObject = {
+    apiid: string,
+    apikey: string,
     url: string,
   }
 }
