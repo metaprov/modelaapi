@@ -844,11 +844,20 @@ message ConnectionSpec {
   optional VictorOpSpec victorOp = 53;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 54;
+  optional PagerDutySpec pagerDuty = 54;
+
+  // +kubebuilder:validation:Optional
+  optional PushoverSpec pushover = 55;
+
+  // +kubebuilder:validation:Optional
+  optional OpsgenieSpec opsgenie = 56;
+
+  // +kubebuilder:validation:Optional
+  optional WebhookSpec webhook = 57;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 55;
+  optional string owner = 58;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -1616,6 +1625,17 @@ message OpenstackSpec {
   optional string region = 5;
 }
 
+message OpsgenieSpec {
+  // +kubebuilder:default:=""
+  optional string apiID = 1;
+
+  // +kubebuilder:default:=""
+  optional string apiKey = 2;
+
+  // +kubebuilder:default:=""
+  optional string url = 3;
+}
+
 message OracleSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -1653,6 +1673,17 @@ message OvhSpec {
 
   // +kubebuilder:default:=""
   optional string consumerkey = 4;
+}
+
+message PagerDutySpec {
+  // +kubebuilder:default:=""
+  optional string apiID = 1;
+
+  // +kubebuilder:default:=""
+  optional string apiKey = 2;
+
+  // +kubebuilder:default:=""
+  optional string url = 3;
 }
 
 message PostgresSQLSpec {
@@ -1700,6 +1731,17 @@ message PrestoSpec {
   // URL override the other settings
   // +kubebuilder:default:=""
   optional string url = 7;
+}
+
+message PushoverSpec {
+  // +kubebuilder:default:=""
+  optional string apiID = 1;
+
+  // +kubebuilder:default:=""
+  optional string apiKey = 2;
+
+  // +kubebuilder:default:=""
+  optional string url = 3;
 }
 
 message SAPHanaSpec {

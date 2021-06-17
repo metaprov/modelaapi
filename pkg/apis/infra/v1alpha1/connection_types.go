@@ -223,10 +223,19 @@ type ConnectionSpec struct {
 	VictorOps *VictorOpSpec `json:"victorOp,omitempty" protobuf:"bytes,53,opt,name=victorOp"`
 
 	// +kubebuilder:validation:Optional
-	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,54,opt,name=webhook"`
+	PagerDuty *PagerDutySpec `json:"pagerDuty,omitempty" protobuf:"bytes,54,opt,name=pagerDuty"`
+
+	// +kubebuilder:validation:Optional
+	Pushover *PushoverSpec `json:"pushover,omitempty" protobuf:"bytes,55,opt,name=pushover"`
+
+	// +kubebuilder:validation:Optional
+	Opsgenie *OpsgenieSpec `json:"opsgenie,omitempty" protobuf:"bytes,56,opt,name=opsgenie"`
+
+	// +kubebuilder:validation:Optional
+	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,57,opt,name=webhook"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,55,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,58,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -885,6 +894,33 @@ type HipchatSpec struct {
 }
 
 type VictorOpSpec struct {
+	// +kubebuilder:default:=""
+	ID *string `json:"apiID,omitempty" protobuf:"bytes,1,opt,name=apiID"`
+	// +kubebuilder:default:=""
+	ApiKey *string `json:"apiKey,omitempty" protobuf:"bytes,2,opt,name=apiKey"`
+	// +kubebuilder:default:=""
+	Url *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
+}
+
+type PagerDutySpec struct {
+	// +kubebuilder:default:=""
+	ID *string `json:"apiID,omitempty" protobuf:"bytes,1,opt,name=apiID"`
+	// +kubebuilder:default:=""
+	ApiKey *string `json:"apiKey,omitempty" protobuf:"bytes,2,opt,name=apiKey"`
+	// +kubebuilder:default:=""
+	Url *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
+}
+
+type PushoverSpec struct {
+	// +kubebuilder:default:=""
+	ID *string `json:"apiID,omitempty" protobuf:"bytes,1,opt,name=apiID"`
+	// +kubebuilder:default:=""
+	ApiKey *string `json:"apiKey,omitempty" protobuf:"bytes,2,opt,name=apiKey"`
+	// +kubebuilder:default:=""
+	Url *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
+}
+
+type OpsgenieSpec struct {
 	// +kubebuilder:default:=""
 	ID *string `json:"apiID,omitempty" protobuf:"bytes,1,opt,name=apiID"`
 	// +kubebuilder:default:=""

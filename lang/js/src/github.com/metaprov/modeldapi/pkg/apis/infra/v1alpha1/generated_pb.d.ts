@@ -1475,6 +1475,21 @@ export class ConnectionSpec extends jspb.Message {
   hasVictorop(): boolean;
   clearVictorop(): ConnectionSpec;
 
+  getPagerduty(): PagerDutySpec | undefined;
+  setPagerduty(value?: PagerDutySpec): ConnectionSpec;
+  hasPagerduty(): boolean;
+  clearPagerduty(): ConnectionSpec;
+
+  getPushover(): PushoverSpec | undefined;
+  setPushover(value?: PushoverSpec): ConnectionSpec;
+  hasPushover(): boolean;
+  clearPushover(): ConnectionSpec;
+
+  getOpsgenie(): OpsgenieSpec | undefined;
+  setOpsgenie(value?: OpsgenieSpec): ConnectionSpec;
+  hasOpsgenie(): boolean;
+  clearOpsgenie(): ConnectionSpec;
+
   getWebhook(): WebhookSpec | undefined;
   setWebhook(value?: WebhookSpec): ConnectionSpec;
   hasWebhook(): boolean;
@@ -1546,6 +1561,9 @@ export namespace ConnectionSpec {
     mattermost?: MattermostSpec.AsObject,
     hipchat?: HipchatSpec.AsObject,
     victorop?: VictorOpSpec.AsObject,
+    pagerduty?: PagerDutySpec.AsObject,
+    pushover?: PushoverSpec.AsObject,
+    opsgenie?: OpsgenieSpec.AsObject,
     webhook?: WebhookSpec.AsObject,
     owner: string,
   }
@@ -2995,6 +3013,32 @@ export namespace OpenstackSpec {
   }
 }
 
+export class OpsgenieSpec extends jspb.Message {
+  getApiid(): string;
+  setApiid(value: string): OpsgenieSpec;
+
+  getApikey(): string;
+  setApikey(value: string): OpsgenieSpec;
+
+  getUrl(): string;
+  setUrl(value: string): OpsgenieSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OpsgenieSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: OpsgenieSpec): OpsgenieSpec.AsObject;
+  static serializeBinaryToWriter(message: OpsgenieSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OpsgenieSpec;
+  static deserializeBinaryFromReader(message: OpsgenieSpec, reader: jspb.BinaryReader): OpsgenieSpec;
+}
+
+export namespace OpsgenieSpec {
+  export type AsObject = {
+    apiid: string,
+    apikey: string,
+    url: string,
+  }
+}
+
 export class OracleSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): OracleSpec;
@@ -3064,6 +3108,32 @@ export namespace OvhSpec {
     application: string,
     secret: string,
     consumerkey: string,
+  }
+}
+
+export class PagerDutySpec extends jspb.Message {
+  getApiid(): string;
+  setApiid(value: string): PagerDutySpec;
+
+  getApikey(): string;
+  setApikey(value: string): PagerDutySpec;
+
+  getUrl(): string;
+  setUrl(value: string): PagerDutySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PagerDutySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PagerDutySpec): PagerDutySpec.AsObject;
+  static serializeBinaryToWriter(message: PagerDutySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PagerDutySpec;
+  static deserializeBinaryFromReader(message: PagerDutySpec, reader: jspb.BinaryReader): PagerDutySpec;
+}
+
+export namespace PagerDutySpec {
+  export type AsObject = {
+    apiid: string,
+    apikey: string,
+    url: string,
   }
 }
 
@@ -3143,6 +3213,32 @@ export namespace PrestoSpec {
     schema: string,
     username: string,
     password: string,
+    url: string,
+  }
+}
+
+export class PushoverSpec extends jspb.Message {
+  getApiid(): string;
+  setApiid(value: string): PushoverSpec;
+
+  getApikey(): string;
+  setApikey(value: string): PushoverSpec;
+
+  getUrl(): string;
+  setUrl(value: string): PushoverSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushoverSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PushoverSpec): PushoverSpec.AsObject;
+  static serializeBinaryToWriter(message: PushoverSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushoverSpec;
+  static deserializeBinaryFromReader(message: PushoverSpec, reader: jspb.BinaryReader): PushoverSpec;
+}
+
+export namespace PushoverSpec {
+  export type AsObject = {
+    apiid: string,
+    apikey: string,
     url: string,
   }
 }

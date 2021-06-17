@@ -662,6 +662,18 @@ spec:
                     default: ""
                     type: string
                 type: object
+              opsgenie:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
               oracle:
                 properties:
                   driver:
@@ -707,6 +719,18 @@ spec:
               owner:
                 default: no-one
                 type: string
+              pagerDuty:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
               postgres:
                 properties:
                   database:
@@ -805,6 +829,18 @@ spec:
                 - docker-hub
                 - unknown
                 type: string
+              pushover:
+                properties:
+                  apiID:
+                    default: ""
+                    type: string
+                  apiKey:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                type: object
               redshift:
                 properties:
                   database:
