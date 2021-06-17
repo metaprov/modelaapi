@@ -9,6 +9,32 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class AutoScaling extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): AutoScaling;
+
+  getMinreplicas(): number;
+  setMinreplicas(value: number): AutoScaling;
+
+  getMaxreplicas(): number;
+  setMaxreplicas(value: number): AutoScaling;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AutoScaling.AsObject;
+  static toObject(includeInstance: boolean, msg: AutoScaling): AutoScaling.AsObject;
+  static serializeBinaryToWriter(message: AutoScaling, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AutoScaling;
+  static deserializeBinaryFromReader(message: AutoScaling, reader: jspb.BinaryReader): AutoScaling;
+}
+
+export namespace AutoScaling {
+  export type AsObject = {
+    enabled: boolean,
+    minreplicas: number,
+    maxreplicas: number,
+  }
+}
+
 export class BotChannelSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): BotChannelSpec;
@@ -1067,11 +1093,10 @@ export class PredictorSpec extends jspb.Message {
   getMinreplicas(): number;
   setMinreplicas(value: number): PredictorSpec;
 
-  getAutoscale(): boolean;
-  setAutoscale(value: boolean): PredictorSpec;
-
-  getMaxreplicas(): number;
-  setMaxreplicas(value: number): PredictorSpec;
+  getAutoscaling(): AutoScaling | undefined;
+  setAutoscaling(value?: AutoScaling): PredictorSpec;
+  hasAutoscaling(): boolean;
+  clearAutoscaling(): PredictorSpec;
 
   getOwner(): string;
   setOwner(value: string): PredictorSpec;
@@ -1124,8 +1149,7 @@ export namespace PredictorSpec {
     input?: PredictionChannels.AsObject,
     output?: PredictionChannels.AsObject,
     minreplicas: number,
-    autoscale: boolean,
-    maxreplicas: number,
+    autoscaling?: AutoScaling.AsObject,
     owner: string,
     workloadclassname: string,
     cache?: PredictionCacheSpec.AsObject,

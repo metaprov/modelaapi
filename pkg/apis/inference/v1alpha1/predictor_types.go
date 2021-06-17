@@ -123,21 +123,14 @@ type PredictorSpec struct {
 	// set of output channels, the predictor will output the result on any channel that is active in the output
 	// +kubebuilder:validation:Optional
 	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,10,opt,name=output"`
-	// Min num of replicates
+	// Replicas defines the number of replicas when auto scaling is disabled.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
-	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,11,opt,name=minReplicas"`
-	// Does the current model pods needs autoscaling. If yes we will use HPA.
-	// +kubebuilder:default:=false
+	Replicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,11,opt,name=minReplicas"`
+	// AutoScaling defines the auto scaling policy
 	// +kubebuilder:validation:Optional
-	AutoScale *bool `json:"autoscale,omitempty" protobuf:"bytes,12,opt,name=autoscale"`
-	// Max num of replicates. Used during auto scaling
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=10
-	// +kubebuilder:default:=1
-	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,13,opt,name=maxReplicas"`
+	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,12,opt,name=autoScaling"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -178,6 +171,22 @@ type PredictionCacheSpec struct {
 	// the name of the cache service
 	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
+}
+
+// AutoScaling defines the configuration for auto scaling
+type AutoScaling struct {
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// Min num of replicates
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:default:=1
+	MinReplicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,2,opt,name=minReplicas"`
+	// Max num of replicates. Used during auto scaling
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=10
+	// +kubebuilder:default:=1
+	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,4,opt,name=maxReplicas"`
 }
 
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.

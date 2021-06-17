@@ -70,110 +70,160 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Required
 	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
 
-	// +kubebuilder:validation:Optional
-	Athena *AthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
+	// Databases
 
 	// +kubebuilder:validation:Optional
-	AzureStorage *AzureStorageSpec `json:"azureStorage,omitempty" protobuf:"bytes,6,opt,name=azureStorage"`
+	AmazonAthena *AmazonAthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
 
 	// +kubebuilder:validation:Optional
-	AliCloud *AliCloudSpec `json:"aliCloud,omitempty" protobuf:"bytes,7,opt,name=aliCloud"`
+	GcpBigQuery *GcpBigQuerySpec `json:"bigQuery,omitempty" protobuf:"bytes,6,opt,name=bigQuery"`
 
 	// +kubebuilder:validation:Optional
-	BigQuery *BigQuerySpec `json:"bigQuery,omitempty" protobuf:"bytes,8,opt,name=bigQuery"`
+	Cassandra *ApacheCassandraSpec `json:"cassandra,omitempty" protobuf:"bytes,7,opt,name=cassandra"`
 
 	// +kubebuilder:validation:Optional
-	Bitbucket *BitbucketSpec `json:"bitbuckt,omitempty" protobuf:"bytes,9,opt,name=bitbucket"`
+	AzureSQLDatabase *AzureSQLDatabaseSpec `json:"azureSqlDatabase,omitempty" protobuf:"bytes,8,opt,name=azureSqlDatabase"`
 
 	// +kubebuilder:validation:Optional
-	Cassandra *CassandraSpec `json:"cassandra,omitempty" protobuf:"bytes,10,opt,name=cassandra"`
+	MongoDb *MongoDbSpec `json:"mongodb,omitempty" protobuf:"bytes,9,opt,name=mongodb"`
 
 	// +kubebuilder:validation:Optional
-	DigitalOcean *DigitalOceanSpec `json:"digitalocean,omitempty" protobuf:"bytes,11,opt,name=digitalocean"`
+	MySql *MySqlSpec `json:"mysql,omitempty" protobuf:"bytes,10,opt,name=mysql"`
 
 	// +kubebuilder:validation:Optional
-	Smtp *SmtpSpec `json:"smtp,omitempty" protobuf:"bytes,12,opt,name=smtp"`
+	Odbc *OdbcSpec `json:"odbc,omitempty" protobuf:"bytes,11,opt,name=odbc"`
 
 	// +kubebuilder:validation:Optional
-	Hetzner *HetznerSpec `json:"hetzner,omitempty" protobuf:"bytes,13,opt,name=hetzner"`
+	Oracle *OracleSpec `json:"oracle,omitempty" protobuf:"bytes,12,opt,name=oracle"`
 
 	// +kubebuilder:validation:Optional
-	ImageRegistry *ImageRegistrySpec `json:"imageRegistry,omitempty" protobuf:"bytes,14,opt,name=imageRegistry"`
+	PostgresSQL *PostgresSQLSpec `json:"postgres,omitempty" protobuf:"bytes,13,opt,name=postgres"`
 
 	// +kubebuilder:validation:Optional
-	Github *GithubSpec `json:"github,omitempty" protobuf:"bytes,15,opt,name=github"`
+	Presto *PrestoSpec `json:"presto,omitempty" protobuf:"bytes,14,opt,name=presto"`
 
 	// +kubebuilder:validation:Optional
-	Gitlab *GitlabSpec `json:"gitlab,omitempty" protobuf:"bytes,16,opt,name=gitlab"`
+	RedShift *AmazonRedShiftSpec `json:"redshift,omitempty" protobuf:"bytes,15,opt,name=redshift"`
 
 	// +kubebuilder:validation:Optional
-	GcpStorage *GcpStorageSpec `json:"gcpstorage,omitempty" protobuf:"bytes,17,opt,name=gcpstorage"`
+	Hive *ApacheHiveSpec `json:"hive,omitempty" protobuf:"bytes,16,opt,name=hive"`
 
 	// +kubebuilder:validation:Optional
-	Linode *LinodeSpec `json:"linode,omitempty" protobuf:"bytes,18,opt,name=linode"`
+	Snowflake *SnowflakeSpec `json:"snowflake,omitempty" protobuf:"bytes,17,opt,name=snowflake"`
 
 	// +kubebuilder:validation:Optional
-	MongoDb *MongoDbSpec `json:"mongodb,omitempty" protobuf:"bytes,19,opt,name=mongodb"`
+	Sybase *SybaseSpec `json:"sybase,omitempty" protobuf:"bytes,18,opt,name=sybase"`
 
 	// +kubebuilder:validation:Optional
-	MySql *MySqlSpec `json:"mysql,omitempty" protobuf:"bytes,20,opt,name=mysql"`
+	Vertica *VerticaSpec `json:"vertica,omitempty" protobuf:"bytes,19,opt,name=vertica"`
 
 	// +kubebuilder:validation:Optional
-	Minio *MinioSpec `json:"minio,omitempty" protobuf:"bytes,21,opt,name=minio"`
+	CockroachDB *CockroachDBSpec `json:"cockroachDB,omitempty" protobuf:"bytes,20,opt,name=cockroachDB"`
 
 	// +kubebuilder:validation:Optional
-	MSSqlServer *MSSqlServerSpec `json:"mssqlserver,omitempty" protobuf:"bytes,22,opt,name=mssqlserver"`
+	ElasticSearch *ElasticSearchSpec `json:"elasticSearch,omitempty" protobuf:"bytes,21,opt,name=elasticSearch"`
 
 	// +kubebuilder:validation:Optional
-	Odbc *OdbcSpec `json:"odbc,omitempty" protobuf:"bytes,23,opt,name=odbc"`
+	Informix *InformixSpec `json:"informix,omitempty" protobuf:"bytes,22,opt,name=informix"`
 
 	// +kubebuilder:validation:Optional
-	Oracle *OracleSpec `json:"oracle,omitempty" protobuf:"bytes,24,opt,name=oracle"`
+	SAPHana *SAPHanaSpec `json:"hana,omitempty" protobuf:"bytes,23,opt,name=hana"`
 
 	// +kubebuilder:validation:Optional
-	Openstack *OpenstackSpec `json:"openstack,omitempty" protobuf:"bytes,25,opt,name=openstack"`
+	Teradata *TeradataSpec `json:"teradata,omitempty" protobuf:"bytes,24,opt,name=teradata"`
 
 	// +kubebuilder:validation:Optional
-	Ovh *OvhSpec `json:"ovh,omitempty" protobuf:"bytes,26,opt,name=ovh"`
+	GcpSpanner *GcpSpannerSpec `json:"spanner,omitempty" protobuf:"bytes,25,opt,name=spanner"`
 
 	// +kubebuilder:validation:Optional
-	PostgresSQL *PostgresSQLSpec `json:"postgres,omitempty" protobuf:"bytes,27,opt,name=postgres"`
+	Spark *ApacheCassandraSpec `json:"spark,omitempty" protobuf:"bytes,26,opt,name=spark"`
 
 	// +kubebuilder:validation:Optional
-	Presto *PrestoSpec `json:"presto,omitempty" protobuf:"bytes,28,opt,name=presto"`
+	MSSqlServer *MSSqlServerSpec `json:"mssqlserver,omitempty" protobuf:"bytes,27,opt,name=mssqlserver"`
 
 	// +kubebuilder:validation:Optional
-	RedShift *RedShiftSpec `json:"redshift,omitempty" protobuf:"bytes,29,opt,name=redshift"`
+	Clickhouse *ClickHouseSpec `json:"clickhouse,omitempty" protobuf:"bytes,28,opt,name=clickhouse"`
 
 	// +kubebuilder:validation:Optional
-	SnowFlake *SnowFlakeSpec `json:"snowflake,omitempty" protobuf:"bytes,30,opt,name=snowflake"`
+	Greenplum *GreenPlumSpec `json:"greenplum,omitempty" protobuf:"bytes,29,opt,name=greenplum"`
 
 	// +kubebuilder:validation:Optional
-	SqlLite *SqliteSpec `json:"sqlite,omitempty" protobuf:"bytes,31,opt,name=sqlite"`
+	Couchbase *CouchbaseSpec `json:"couchbase,omitempty" protobuf:"bytes,30,opt,name=couchbase"`
 
 	// +kubebuilder:validation:Optional
-	Aws *AwsSpec `json:"aws,omitempty" protobuf:"bytes,32,opt,name=aws"`
+	Exasol *ExasolSpec `json:"exasol,omitempty" protobuf:"bytes,31,opt,name=exasol"`
 
 	// +kubebuilder:validation:Optional
-	Slack *SlackSpec `json:"slack,omitempty" protobuf:"bytes,33,opt,name=slack"`
+	SqlLite *SqliteSpec `json:"sqlite,omitempty" protobuf:"bytes,32,opt,name=sqlite"`
+
+	//////////////////////////////////////
+	// Cloud storage
 
 	// +kubebuilder:validation:Optional
-	Flock *FlockSpec `json:"flock,omitempty" protobuf:"bytes,34,opt,name=flock"`
+	AzureStorage *AzureStorageSpec `json:"azureStorage,omitempty" protobuf:"bytes,33,opt,name=azureStorage"`
 
 	// +kubebuilder:validation:Optional
-	MSTeam *MSTeamSpec `json:"msteam,omitempty" protobuf:"bytes,35,opt,name=msteam"`
+	AliCloud *AliCloudSpec `json:"aliCloud,omitempty" protobuf:"bytes,34,opt,name=aliCloud"`
 
 	// +kubebuilder:validation:Optional
-	MatterMost *MattermostSpec `json:"matterMost,omitempty" protobuf:"bytes,36,opt,name=matterMost"`
+	Bitbucket *BitbucketSpec `json:"bitbuckt,omitempty" protobuf:"bytes,35,opt,name=bitbucket"`
 
 	// +kubebuilder:validation:Optional
-	Hipchat *HipchatSpec `json:"hipchat,omitempty" protobuf:"bytes,37,opt,name=hipchat"`
+	DigitalOcean *DigitalOceanSpec `json:"digitalocean,omitempty" protobuf:"bytes,36,opt,name=digitalocean"`
 
 	// +kubebuilder:validation:Optional
-	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,38,opt,name=webhook"`
+	Hetzner *HetznerSpec `json:"hetzner,omitempty" protobuf:"bytes,37,opt,name=hetzner"`
+
+	// +kubebuilder:validation:Optional
+	GcpStorage *GcpStorageSpec `json:"gcpstorage,omitempty" protobuf:"bytes,38,opt,name=gcpstorage"`
+
+	// +kubebuilder:validation:Optional
+	Linode *LinodeSpec `json:"linode,omitempty" protobuf:"bytes,39,opt,name=linode"`
+
+	// +kubebuilder:validation:Optional
+	Minio *MinioSpec `json:"minio,omitempty" protobuf:"bytes,40,opt,name=minio"`
+
+	// +kubebuilder:validation:Optional
+	Openstack *OpenstackSpec `json:"openstack,omitempty" protobuf:"bytes,41,opt,name=openstack"`
+
+	// +kubebuilder:validation:Optional
+	Ovh *OvhSpec `json:"ovh,omitempty" protobuf:"bytes,42,opt,name=ovh"`
+
+	// +kubebuilder:validation:Optional
+	Aws *AwsS3Spec `json:"aws,omitempty" protobuf:"bytes,43,opt,name=aws"`
+
+	// +kubebuilder:validation:Optional
+	Smtp *SmtpSpec `json:"smtp,omitempty" protobuf:"bytes,44,opt,name=smtp"`
+
+	// +kubebuilder:validation:Optional
+	ImageRegistry *ImageRegistrySpec `json:"imageRegistry,omitempty" protobuf:"bytes,45,opt,name=imageRegistry"`
+
+	// +kubebuilder:validation:Optional
+	Github *GithubSpec `json:"github,omitempty" protobuf:"bytes,46,opt,name=github"`
+
+	// +kubebuilder:validation:Optional
+	Gitlab *GitlabSpec `json:"gitlab,omitempty" protobuf:"bytes,47,opt,name=gitlab"`
+
+	// +kubebuilder:validation:Optional
+	Slack *SlackSpec `json:"slack,omitempty" protobuf:"bytes,48,opt,name=slack"`
+
+	// +kubebuilder:validation:Optional
+	Flock *FlockSpec `json:"flock,omitempty" protobuf:"bytes,49,opt,name=flock"`
+
+	// +kubebuilder:validation:Optional
+	MSTeam *MSTeamSpec `json:"msteam,omitempty" protobuf:"bytes,50,opt,name=msteam"`
+
+	// +kubebuilder:validation:Optional
+	MatterMost *MattermostSpec `json:"matterMost,omitempty" protobuf:"bytes,51,opt,name=matterMost"`
+
+	// +kubebuilder:validation:Optional
+	Hipchat *HipchatSpec `json:"hipchat,omitempty" protobuf:"bytes,52,opt,name=hipchat"`
+
+	// +kubebuilder:validation:Optional
+	Webhook *WebhookSpec `json:"webhook,omitempty" protobuf:"bytes,53,opt,name=webhook"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,39,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,54,opt,name=owner"`
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -190,36 +240,74 @@ type ConnectionStatus struct {
 
 // =================== Definitions of spec files for each type
 // AthenaSpec defines the connection to Athena db
-type AthenaSpec struct {
+type AmazonAthenaSpec struct {
 	// +kubebuilder:default:=""
 	Database *string `json:"hostName,omitempty" protobuf:"bytes,1,opt,name=hostName"`
+	// UserName
 	// +kubebuilder:default:=""
-	S3OutputLocation *string `json:"s3OutputLocation,omitempty" protobuf:"bytes,2,opt,name=s3OutputLocation"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,2,opt,name=username"`
 	// +kubebuilder:default:=""
-	AccessKey *string `json:"accessKey,omitempty" protobuf:"bytes,3,opt,name=accessKey"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,3,opt,name=password"`
 	// +kubebuilder:default:=""
-	SecretKey *string `json:"secretKey,omitempty" protobuf:"bytes,4,opt,name=secretKey"`
+	Region *string `json:"region,omitempty" protobuf:"bytes,4,opt,name=region"`
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,5,opt,name=url"`
 }
 
 // BigQuerySpec defines the connection to big query
-type BigQuerySpec struct {
+type GcpBigQuerySpec struct {
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 9042
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// UserName
 	// +kubebuilder:default:=""
-	ServiceAccount *string `json:"serviceAccount,omitempty" protobuf:"bytes,1,opt,name=serviceAccount"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
+	// +kubebuilder:default:=""
+	ProjectID *string `json:"projectID,omitempty" protobuf:"bytes,5,opt,name=projectID"`
+	// +kubebuilder:default:=""
+	OAuthType *string `json:"oauthType,omitempty" protobuf:"bytes,6,opt,name=oauthType"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
 }
 
 // CassandraSpec defines the connection to cassandra
-type CassandraSpec struct {
+type ApacheCassandraSpec struct {
 	// +kubebuilder:default:=""
 	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:= 9042
 	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
-	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	KeySpace *string `json:"keyspace,omitempty" protobuf:"bytes,3,opt,name=keyspace"`
 	// +kubebuilder:default:=""
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+// CassandraSpec defines the connection to cassandra
+type AzureSQLDatabaseSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:= 1433
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,5,opt,name=database"`
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
 type MongoDbSpec struct {
@@ -234,6 +322,8 @@ type MongoDbSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
 type MySqlSpec struct {
@@ -248,6 +338,8 @@ type MySqlSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
 type OdbcSpec struct {
@@ -261,16 +353,17 @@ type OracleSpec struct {
 	// +kubebuilder:default:=1521
 	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:="XE"
+	SID *string `json:"sid,omitempty" protobuf:"bytes,3,opt,name=sid"`
+	// +kubebuilder:default:="thin"
+	Driver *string `json:"driver,omitempty" protobuf:"bytes,4,opt,name=driver"`
 	// +kubebuilder:default:=""
-	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
 	// +kubebuilder:default:=""
-	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,4,opt,name=serviceName"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	// URL override the other settings
 	// +kubebuilder:default:=""
-	Role *string `json:"role,omitempty" protobuf:"bytes,5,opt,name=role"`
-	// +kubebuilder:default:=""
-	Username *string `json:"username,omitempty" protobuf:"bytes,6,opt,name=username"`
-	// +kubebuilder:default:=""
-	Password *string `json:"password,omitempty" protobuf:"bytes,7,opt,name=password"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
 }
 
 type PostgresSQLSpec struct {
@@ -285,6 +378,9 @@ type PostgresSQLSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
 type PrestoSpec struct {
@@ -301,9 +397,12 @@ type PrestoSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	// URL override the other settings
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
 }
 
-type RedShiftSpec struct {
+type AmazonRedShiftSpec struct {
 	// +kubebuilder:default:=""
 	Hostname *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
 	// +kubebuilder:default:=5439
@@ -315,19 +414,187 @@ type RedShiftSpec struct {
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
-type SnowFlakeSpec struct {
+type ApacheHiveSpec struct {
 	// +kubebuilder:default:=""
-	Account *string `json:"account,omitempty" protobuf:"bytes,1,opt,name=account"`
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=10000
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
-	Warehouse *string `json:"warehouse,omitempty" protobuf:"bytes,2,opt,name=warehouse"`
+	Schema *string `json:"schema,omitempty" protobuf:"bytes,3,opt,name=schema"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type SnowflakeSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=443
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Schema *string `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
+}
+
+type SybaseSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5000
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
 	// +kubebuilder:default:=""
 	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type VerticaSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5433
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type CockroachDBSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5432
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type ElasticSearchSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5432
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Prefix *string `json:"prefix,omitempty" protobuf:"bytes,3,opt,name=prefix"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type InformixSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=1526
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type SAPHanaSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=1526
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type TeradataSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=6666
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type GcpSpannerSpec struct {
+	// +kubebuilder:default:=""
+	Project *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5432
+	// +kubebuilder:validation:Minimum=0
+	Instance *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Prefix *string `json:"prefix,omitempty" protobuf:"bytes,3,opt,name=prefix"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type ApacheSparkSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5433
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Schema *string `json:"schema,omitempty" protobuf:"bytes,3,opt,name=schema"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
 
 type MSSqlServerSpec struct {
@@ -339,11 +606,80 @@ type MSSqlServerSpec struct {
 	// +kubebuilder:default:=""
 	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
 	// +kubebuilder:default:=""
-	Domain *string `json:"domain,omitempty" protobuf:"bytes,4,opt,name=domain"`
+	Instance *string `json:"instance,omitempty" protobuf:"bytes,4,opt,name=instance"`
 	// +kubebuilder:default:=""
 	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
 	// +kubebuilder:default:=""
 	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	// URL Override the other
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
+}
+
+type ClickHouseSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=8123
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type GreenPlumSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=5432
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
+}
+
+type CouchbaseSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:default:=8123
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	DefaultBucket *string `json:"defaultBucket,omitempty" protobuf:"bytes,6,opt,name=defaultBucket"`
+	// URL Override the other
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
+}
+
+type ExasolSpec struct {
+	// +kubebuilder:default:=""
+	Host *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	// +kubebuilder:default:=""
+	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	// +kubebuilder:default:=""
+	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	// URL Override the other
+	// +kubebuilder:default:=""
+	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
 }
 
 type SqliteSpec struct {
@@ -354,7 +690,7 @@ type SqliteSpec struct {
 ////////////////////////////
 // Cloud connection
 ////////////////////////////
-type AwsSpec struct {
+type AwsS3Spec struct {
 	// Default zone.
 	// +kubebuilder:default:=""
 	DefaultRegion *string `json:"defaultRegion,omitempty" protobuf:"bytes,1,opt,name=defaultRegion"`

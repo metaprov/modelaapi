@@ -274,6 +274,113 @@ message AliCloudSpec {
   optional string host = 4;
 }
 
+// =================== Definitions of spec files for each type
+// AthenaSpec defines the connection to Athena db
+message AmazonAthenaSpec {
+  // +kubebuilder:default:=""
+  optional string hostName = 1;
+
+  // UserName
+  // +kubebuilder:default:=""
+  optional string username = 2;
+
+  // +kubebuilder:default:=""
+  optional string password = 3;
+
+  // +kubebuilder:default:=""
+  optional string region = 4;
+
+  // +kubebuilder:default:=""
+  optional string url = 5;
+}
+
+message AmazonRedShiftSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5439
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+// CassandraSpec defines the connection to cassandra
+message ApacheCassandraSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message ApacheHiveSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=10000
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string schema = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
+}
+
+message ApacheSparkSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5433
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string schema = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
+}
+
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -338,26 +445,10 @@ message ApiTokenStatus {
   repeated ApiTokenCondition conditions = 2;
 }
 
-// =================== Definitions of spec files for each type
-// AthenaSpec defines the connection to Athena db
-message AthenaSpec {
-  // +kubebuilder:default:=""
-  optional string hostName = 1;
-
-  // +kubebuilder:default:=""
-  optional string s3OutputLocation = 2;
-
-  // +kubebuilder:default:=""
-  optional string accessKey = 3;
-
-  // +kubebuilder:default:=""
-  optional string secretKey = 4;
-}
-
 // //////////////////////////
 // Cloud connection
 // //////////////////////////
-message AwsSpec {
+message AwsS3Spec {
   // Default zone.
   // +kubebuilder:default:=""
   optional string defaultRegion = 1;
@@ -371,6 +462,29 @@ message AwsSpec {
   optional string secretKey = 3;
 }
 
+// CassandraSpec defines the connection to cassandra
+message AzureSQLDatabaseSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 1433
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 3;
+
+  // +kubebuilder:default:=""
+  optional string password = 4;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string database = 5;
+
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 message AzureStorageSpec {
   // +kubebuilder:default:=""
   optional string storageAccount = 1;
@@ -378,12 +492,6 @@ message AzureStorageSpec {
   // This is an hidden field which is stored in a p
   // +kubebuilder:default:=""
   optional string accessKey = 2;
-}
-
-// BigQuerySpec defines the connection to big query
-message BigQuerySpec {
-  // +kubebuilder:default:=""
-  optional string serviceAccount = 1;
 }
 
 message BitbucketSpec {
@@ -397,12 +505,11 @@ message BitbucketSpec {
   optional string ssh = 3;
 }
 
-// CassandraSpec defines the connection to cassandra
-message CassandraSpec {
+message ClickHouseSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // +kubebuilder:default:= 9042
+  // +kubebuilder:default:=8123
   // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
@@ -414,6 +521,31 @@ message CassandraSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message CockroachDBSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5432
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -565,110 +697,155 @@ message ConnectionSpec {
   optional string secretName = 4;
 
   // +kubebuilder:validation:Optional
-  optional AthenaSpec athena = 5;
+  optional AmazonAthenaSpec athena = 5;
 
   // +kubebuilder:validation:Optional
-  optional AzureStorageSpec azureStorage = 6;
+  optional GcpBigQuerySpec bigQuery = 6;
 
   // +kubebuilder:validation:Optional
-  optional AliCloudSpec aliCloud = 7;
+  optional ApacheCassandraSpec cassandra = 7;
 
   // +kubebuilder:validation:Optional
-  optional BigQuerySpec bigQuery = 8;
+  optional AzureSQLDatabaseSpec azureSqlDatabase = 8;
 
   // +kubebuilder:validation:Optional
-  optional BitbucketSpec bitbucket = 9;
+  optional MongoDbSpec mongodb = 9;
 
   // +kubebuilder:validation:Optional
-  optional CassandraSpec cassandra = 10;
+  optional MySqlSpec mysql = 10;
 
   // +kubebuilder:validation:Optional
-  optional DigitalOceanSpec digitalocean = 11;
+  optional OdbcSpec odbc = 11;
 
   // +kubebuilder:validation:Optional
-  optional SmtpSpec smtp = 12;
+  optional OracleSpec oracle = 12;
 
   // +kubebuilder:validation:Optional
-  optional HetznerSpec hetzner = 13;
+  optional PostgresSQLSpec postgres = 13;
 
   // +kubebuilder:validation:Optional
-  optional ImageRegistrySpec imageRegistry = 14;
+  optional PrestoSpec presto = 14;
 
   // +kubebuilder:validation:Optional
-  optional GithubSpec github = 15;
+  optional AmazonRedShiftSpec redshift = 15;
 
   // +kubebuilder:validation:Optional
-  optional GitlabSpec gitlab = 16;
+  optional ApacheHiveSpec hive = 16;
 
   // +kubebuilder:validation:Optional
-  optional GcpStorageSpec gcpstorage = 17;
+  optional SnowflakeSpec snowflake = 17;
 
   // +kubebuilder:validation:Optional
-  optional LinodeSpec linode = 18;
+  optional SybaseSpec sybase = 18;
 
   // +kubebuilder:validation:Optional
-  optional MongoDbSpec mongodb = 19;
+  optional VerticaSpec vertica = 19;
 
   // +kubebuilder:validation:Optional
-  optional MySqlSpec mysql = 20;
+  optional CockroachDBSpec cockroachDB = 20;
 
   // +kubebuilder:validation:Optional
-  optional MinioSpec minio = 21;
+  optional ElasticSearchSpec elasticSearch = 21;
 
   // +kubebuilder:validation:Optional
-  optional MSSqlServerSpec mssqlserver = 22;
+  optional InformixSpec informix = 22;
 
   // +kubebuilder:validation:Optional
-  optional OdbcSpec odbc = 23;
+  optional SAPHanaSpec hana = 23;
 
   // +kubebuilder:validation:Optional
-  optional OracleSpec oracle = 24;
+  optional TeradataSpec teradata = 24;
 
   // +kubebuilder:validation:Optional
-  optional OpenstackSpec openstack = 25;
+  optional GcpSpannerSpec spanner = 25;
 
   // +kubebuilder:validation:Optional
-  optional OvhSpec ovh = 26;
+  optional ApacheCassandraSpec spark = 26;
 
   // +kubebuilder:validation:Optional
-  optional PostgresSQLSpec postgres = 27;
+  optional MSSqlServerSpec mssqlserver = 27;
 
   // +kubebuilder:validation:Optional
-  optional PrestoSpec presto = 28;
+  optional ClickHouseSpec clickhouse = 28;
 
   // +kubebuilder:validation:Optional
-  optional RedShiftSpec redshift = 29;
+  optional GreenPlumSpec greenplum = 29;
 
   // +kubebuilder:validation:Optional
-  optional SnowFlakeSpec snowflake = 30;
+  optional CouchbaseSpec couchbase = 30;
 
   // +kubebuilder:validation:Optional
-  optional SqliteSpec sqlite = 31;
+  optional ExasolSpec exasol = 31;
 
   // +kubebuilder:validation:Optional
-  optional AwsSpec aws = 32;
+  optional SqliteSpec sqlite = 32;
 
   // +kubebuilder:validation:Optional
-  optional SlackSpec slack = 33;
+  optional AzureStorageSpec azureStorage = 33;
 
   // +kubebuilder:validation:Optional
-  optional FlockSpec flock = 34;
+  optional AliCloudSpec aliCloud = 34;
 
   // +kubebuilder:validation:Optional
-  optional MSTeamSpec msteam = 35;
+  optional BitbucketSpec bitbucket = 35;
 
   // +kubebuilder:validation:Optional
-  optional MattermostSpec matterMost = 36;
+  optional DigitalOceanSpec digitalocean = 36;
 
   // +kubebuilder:validation:Optional
-  optional HipchatSpec hipchat = 37;
+  optional HetznerSpec hetzner = 37;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 38;
+  optional GcpStorageSpec gcpstorage = 38;
+
+  // +kubebuilder:validation:Optional
+  optional LinodeSpec linode = 39;
+
+  // +kubebuilder:validation:Optional
+  optional MinioSpec minio = 40;
+
+  // +kubebuilder:validation:Optional
+  optional OpenstackSpec openstack = 41;
+
+  // +kubebuilder:validation:Optional
+  optional OvhSpec ovh = 42;
+
+  // +kubebuilder:validation:Optional
+  optional AwsS3Spec aws = 43;
+
+  // +kubebuilder:validation:Optional
+  optional SmtpSpec smtp = 44;
+
+  // +kubebuilder:validation:Optional
+  optional ImageRegistrySpec imageRegistry = 45;
+
+  // +kubebuilder:validation:Optional
+  optional GithubSpec github = 46;
+
+  // +kubebuilder:validation:Optional
+  optional GitlabSpec gitlab = 47;
+
+  // +kubebuilder:validation:Optional
+  optional SlackSpec slack = 48;
+
+  // +kubebuilder:validation:Optional
+  optional FlockSpec flock = 49;
+
+  // +kubebuilder:validation:Optional
+  optional MSTeamSpec msteam = 50;
+
+  // +kubebuilder:validation:Optional
+  optional MattermostSpec matterMost = 51;
+
+  // +kubebuilder:validation:Optional
+  optional HipchatSpec hipchat = 52;
+
+  // +kubebuilder:validation:Optional
+  optional WebhookSpec webhook = 53;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 39;
+  optional string owner = 54;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -683,6 +860,31 @@ message ConnectionStatus {
 
   // +optional
   repeated ConnectionCondition conditions = 3;
+}
+
+message CouchbaseSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=8123
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string defaultBucket = 6;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 7;
 }
 
 message DigitalOceanSpec {
@@ -707,9 +909,95 @@ message DigitalOceanSpec {
   optional string host = 5;
 }
 
+message ElasticSearchSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5432
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string prefix = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
+}
+
+message ExasolSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 7;
+}
+
 message FlockSpec {
   // +kubebuilder:default:=""
   optional string url = 1;
+}
+
+// BigQuerySpec defines the connection to big query
+message GcpBigQuerySpec {
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // UserName
+  // +kubebuilder:default:=""
+  optional string username = 3;
+
+  // +kubebuilder:default:=""
+  optional string password = 4;
+
+  // +kubebuilder:default:=""
+  optional string projectID = 5;
+
+  // +kubebuilder:default:=""
+  optional string oauthType = 6;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 7;
+}
+
+message GcpSpannerSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5432
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string prefix = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 message GcpStorageSpec {
@@ -737,6 +1025,28 @@ message GitlabSpec {
 
   // +kubebuilder:default:=""
   optional string ssh = 2;
+}
+
+message GreenPlumSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5432
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 6;
 }
 
 message HetznerSpec {
@@ -769,6 +1079,27 @@ message ImageRegistrySpec {
 
   // +kubebuilder:default:=""
   optional string password = 3;
+}
+
+message InformixSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=1526
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 // Lab is a namespace used for training and data analysis operations.
@@ -1026,13 +1357,16 @@ message MSSqlServerSpec {
   optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string domain = 4;
+  optional string instance = 4;
 
   // +kubebuilder:default:=""
   optional string username = 5;
 
   // +kubebuilder:default:=""
   optional string password = 6;
+
+  // URL Override the other
+  optional string url = 7;
 }
 
 message MSTeamSpec {
@@ -1138,6 +1472,9 @@ message MongoDbSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+
+  // +kubebuilder:default:=""
+  optional string url = 6;
 }
 
 message MySqlSpec {
@@ -1156,6 +1493,9 @@ message MySqlSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+
+  // +kubebuilder:default:=""
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1281,20 +1621,21 @@ message OracleSpec {
   // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
-  // +kubebuilder:default:=""
-  optional string database = 3;
+  // +kubebuilder:default:="XE"
+  optional string sid = 3;
+
+  // +kubebuilder:default:="thin"
+  optional string driver = 4;
 
   // +kubebuilder:default:=""
-  optional string serviceName = 4;
+  optional string username = 5;
 
   // +kubebuilder:default:=""
-  optional string role = 5;
+  optional string password = 6;
 
+  // URL override the other settings
   // +kubebuilder:default:=""
-  optional string username = 6;
-
-  // +kubebuilder:default:=""
-  optional string password = 7;
+  optional string url = 7;
 }
 
 message OvhSpec {
@@ -1327,6 +1668,10 @@ message PostgresSQLSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
 }
 
 message PrestoSpec {
@@ -1348,13 +1693,17 @@ message PrestoSpec {
 
   // +kubebuilder:default:=""
   optional string password = 6;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 7;
 }
 
-message RedShiftSpec {
+message SAPHanaSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // +kubebuilder:default:=5439
+  // +kubebuilder:default:=1526
   // +kubebuilder:validation:Minimum=0
   optional int32 port = 2;
 
@@ -1366,6 +1715,9 @@ message RedShiftSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 message Scope {
@@ -1523,12 +1875,42 @@ message SmtpSpec {
   optional string password = 4;
 }
 
-message SnowFlakeSpec {
+message SnowflakeSpec {
   // +kubebuilder:default:=""
-  optional string account = 1;
+  optional string host = 1;
+
+  // +kubebuilder:default:=443
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string warehouse = 2;
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string schema = 4;
+
+  // +kubebuilder:default:=""
+  optional string username = 5;
+
+  // +kubebuilder:default:=""
+  optional string password = 6;
+
+  // URL Override the other
+  optional string url = 7;
+}
+
+message SqliteSpec {
+  // +kubebuilder:default:="general"
+  optional string fileName = 1;
+}
+
+message SybaseSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5000
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
   optional string database = 3;
@@ -1538,11 +1920,9 @@ message SnowFlakeSpec {
 
   // +kubebuilder:default:=""
   optional string password = 5;
-}
 
-message SqliteSpec {
-  // +kubebuilder:default:="general"
-  optional string fileName = 1;
+  // URL Override the other
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1707,6 +2087,48 @@ message TenantStatus {
 
   // +optional
   repeated TenantCondition conditions = 2;
+}
+
+message TeradataSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=6666
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
+}
+
+message VerticaSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:=5433
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string database = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true

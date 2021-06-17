@@ -77,17 +77,21 @@ spec:
                 description: =================== Definitions of spec files for each
                   type AthenaSpec defines the connection to Athena db
                 properties:
-                  accessKey:
-                    default: ""
-                    type: string
                   hostName:
                     default: ""
                     type: string
-                  s3OutputLocation:
+                  password:
                     default: ""
                     type: string
-                  secretKey:
+                  region:
                     default: ""
+                    type: string
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    description: UserName
                     type: string
                 type: object
               aws:
@@ -108,6 +112,31 @@ spec:
                       are stored in the secret
                     type: string
                 type: object
+              azureSqlDatabase:
+                description: CassandraSpec defines the connection to cassandra
+                properties:
+                  database:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1433
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               azureStorage:
                 properties:
                   accessKey:
@@ -121,8 +150,29 @@ spec:
               bigQuery:
                 description: BigQuerySpec defines the connection to big query
                 properties:
-                  serviceAccount:
+                  host:
+                    type: string
+                  oauthType:
                     default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  projectID:
+                    default: ""
+                    type: string
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
+                    default: ""
+                    description: UserName
                     type: string
                 type: object
               bitbuckt:
@@ -140,10 +190,10 @@ spec:
               cassandra:
                 description: CassandraSpec defines the connection to cassandra
                 properties:
-                  database:
+                  host:
                     default: ""
                     type: string
-                  host:
+                  keyspace:
                     default: ""
                     type: string
                   password:
@@ -154,6 +204,10 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -169,6 +223,80 @@ spec:
                 - git
                 - messaging
                 type: string
+              clickhouse:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 8123
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              cockroachDB:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              couchbase:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  defaultBucket:
+                    description: URL Override the other
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 8123
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               digitalocean:
                 properties:
                   accessKey:
@@ -190,6 +318,49 @@ spec:
                   token:
                     default: ""
                     description: Token for digital ocean
+                    type: string
+                type: object
+              elasticSearch:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  prefix:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              exasol:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
                     type: string
                 type: object
               flock:
@@ -228,6 +399,53 @@ spec:
                     default: ""
                     type: string
                 type: object
+              greenplum:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              hana:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1526
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               hetzner:
                 properties:
                   ssh:
@@ -249,6 +467,29 @@ spec:
                     default: ""
                     type: string
                 type: object
+              hive:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 10000
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               imageRegistry:
                 properties:
                   host:
@@ -261,6 +502,29 @@ spec:
                   username:
                     default: ""
                     description: Username for image registry
+                    type: string
+                type: object
+              informix:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 1526
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
                     type: string
                 type: object
               linode:
@@ -312,6 +576,9 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    default: ""
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -321,10 +588,10 @@ spec:
                   database:
                     default: ""
                     type: string
-                  domain:
+                  host:
                     default: ""
                     type: string
-                  host:
+                  instance:
                     default: ""
                     type: string
                   password:
@@ -335,6 +602,9 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -361,6 +631,9 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    default: ""
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -391,8 +664,8 @@ spec:
                 type: object
               oracle:
                 properties:
-                  database:
-                    default: ""
+                  driver:
+                    default: thin
                     type: string
                   host:
                     default: ""
@@ -405,11 +678,12 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
-                  role:
-                    default: ""
+                  sid:
+                    default: XE
                     type: string
-                  serviceName:
+                  url:
                     default: ""
+                    description: URL override the other settings
                     type: string
                   username:
                     default: ""
@@ -449,6 +723,10 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -471,6 +749,10 @@ spec:
                     type: integer
                   schema:
                     default: ""
+                    type: string
+                  url:
+                    default: ""
+                    description: URL override the other settings
                     type: string
                   username:
                     default: ""
@@ -539,6 +821,10 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -581,19 +867,75 @@ spec:
                 type: object
               snowflake:
                 properties:
-                  account:
+                  database:
                     default: ""
                     type: string
-                  database:
+                  host:
                     default: ""
                     type: string
                   password:
                     default: ""
                     type: string
+                  port:
+                    default: 443
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  schema:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
                   username:
                     default: ""
                     type: string
-                  warehouse:
+                type: object
+              spanner:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5432
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  prefix:
+                    default: ""
+                    type: string
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              spark:
+                description: CassandraSpec defines the connection to cassandra
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  keyspace:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 9042
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL override the other settings
+                    type: string
+                  username:
                     default: ""
                     type: string
                 type: object
@@ -601,6 +943,29 @@ spec:
                 properties:
                   fileName:
                     default: general
+                    type: string
+                type: object
+              sybase:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5000
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
                     type: string
                 type: object
               tenantRef:
@@ -638,6 +1003,52 @@ spec:
                     type: string
                   uid:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              teradata:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 6666
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              vertica:
+                properties:
+                  database:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 5433
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
                     type: string
                 type: object
               webhook:

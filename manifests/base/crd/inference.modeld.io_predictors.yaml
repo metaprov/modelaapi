@@ -66,11 +66,25 @@ spec:
                 description: The key in the bucket for storing all the predictor artifacts.
                 maxLength: 512
                 type: string
-              autoscale:
-                default: false
-                description: Does the current model pods needs autoscaling. If yes
-                  we will use HPA.
-                type: boolean
+              autoScaling:
+                description: AutoScaling defines the auto scaling policy
+                properties:
+                  enabled:
+                    type: boolean
+                  maxReplicas:
+                    default: 1
+                    description: Max num of replicates. Used during auto scaling
+                    format: int32
+                    maximum: 10
+                    minimum: 1
+                    type: integer
+                  minReplicas:
+                    default: 1
+                    description: Min num of replicates
+                    format: int32
+                    minimum: 1
+                    type: integer
+                type: object
               backwardCurtain:
                 default: ""
                 description: The backward curtain recieve the curtain after the prediction.
@@ -190,16 +204,10 @@ spec:
                         type: string
                     type: object
                 type: object
-              maxReplicas:
-                default: 1
-                description: Max num of replicates. Used during auto scaling
-                format: int32
-                maximum: 10
-                minimum: 1
-                type: integer
               minReplicas:
                 default: 1
-                description: Min num of replicates
+                description: Replicas defines the number of replicas when auto scaling
+                  is disabled.
                 format: int32
                 minimum: 1
                 type: integer

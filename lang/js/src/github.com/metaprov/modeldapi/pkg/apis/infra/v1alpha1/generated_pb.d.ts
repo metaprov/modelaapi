@@ -437,6 +437,192 @@ export namespace AliCloudSpec {
   }
 }
 
+export class AmazonAthenaSpec extends jspb.Message {
+  getHostname(): string;
+  setHostname(value: string): AmazonAthenaSpec;
+
+  getUsername(): string;
+  setUsername(value: string): AmazonAthenaSpec;
+
+  getPassword(): string;
+  setPassword(value: string): AmazonAthenaSpec;
+
+  getRegion(): string;
+  setRegion(value: string): AmazonAthenaSpec;
+
+  getUrl(): string;
+  setUrl(value: string): AmazonAthenaSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AmazonAthenaSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AmazonAthenaSpec): AmazonAthenaSpec.AsObject;
+  static serializeBinaryToWriter(message: AmazonAthenaSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AmazonAthenaSpec;
+  static deserializeBinaryFromReader(message: AmazonAthenaSpec, reader: jspb.BinaryReader): AmazonAthenaSpec;
+}
+
+export namespace AmazonAthenaSpec {
+  export type AsObject = {
+    hostname: string,
+    username: string,
+    password: string,
+    region: string,
+    url: string,
+  }
+}
+
+export class AmazonRedShiftSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): AmazonRedShiftSpec;
+
+  getPort(): number;
+  setPort(value: number): AmazonRedShiftSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): AmazonRedShiftSpec;
+
+  getUsername(): string;
+  setUsername(value: string): AmazonRedShiftSpec;
+
+  getPassword(): string;
+  setPassword(value: string): AmazonRedShiftSpec;
+
+  getUrl(): string;
+  setUrl(value: string): AmazonRedShiftSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AmazonRedShiftSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AmazonRedShiftSpec): AmazonRedShiftSpec.AsObject;
+  static serializeBinaryToWriter(message: AmazonRedShiftSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AmazonRedShiftSpec;
+  static deserializeBinaryFromReader(message: AmazonRedShiftSpec, reader: jspb.BinaryReader): AmazonRedShiftSpec;
+}
+
+export namespace AmazonRedShiftSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class ApacheCassandraSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ApacheCassandraSpec;
+
+  getPort(): number;
+  setPort(value: number): ApacheCassandraSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): ApacheCassandraSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ApacheCassandraSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ApacheCassandraSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ApacheCassandraSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApacheCassandraSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApacheCassandraSpec): ApacheCassandraSpec.AsObject;
+  static serializeBinaryToWriter(message: ApacheCassandraSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApacheCassandraSpec;
+  static deserializeBinaryFromReader(message: ApacheCassandraSpec, reader: jspb.BinaryReader): ApacheCassandraSpec;
+}
+
+export namespace ApacheCassandraSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class ApacheHiveSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ApacheHiveSpec;
+
+  getPort(): number;
+  setPort(value: number): ApacheHiveSpec;
+
+  getSchema(): string;
+  setSchema(value: string): ApacheHiveSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ApacheHiveSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ApacheHiveSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ApacheHiveSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApacheHiveSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApacheHiveSpec): ApacheHiveSpec.AsObject;
+  static serializeBinaryToWriter(message: ApacheHiveSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApacheHiveSpec;
+  static deserializeBinaryFromReader(message: ApacheHiveSpec, reader: jspb.BinaryReader): ApacheHiveSpec;
+}
+
+export namespace ApacheHiveSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    schema: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class ApacheSparkSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ApacheSparkSpec;
+
+  getPort(): number;
+  setPort(value: number): ApacheSparkSpec;
+
+  getSchema(): string;
+  setSchema(value: string): ApacheSparkSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ApacheSparkSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ApacheSparkSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ApacheSparkSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApacheSparkSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApacheSparkSpec): ApacheSparkSpec.AsObject;
+  static serializeBinaryToWriter(message: ApacheSparkSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApacheSparkSpec;
+  static deserializeBinaryFromReader(message: ApacheSparkSpec, reader: jspb.BinaryReader): ApacheSparkSpec;
+}
+
+export namespace ApacheSparkSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    schema: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class ApiToken extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ApiToken;
@@ -583,59 +769,67 @@ export namespace ApiTokenStatus {
   }
 }
 
-export class AthenaSpec extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): AthenaSpec;
-
-  getS3outputlocation(): string;
-  setS3outputlocation(value: string): AthenaSpec;
+export class AwsS3Spec extends jspb.Message {
+  getDefaultregion(): string;
+  setDefaultregion(value: string): AwsS3Spec;
 
   getAccesskey(): string;
-  setAccesskey(value: string): AthenaSpec;
+  setAccesskey(value: string): AwsS3Spec;
 
   getSecretkey(): string;
-  setSecretkey(value: string): AthenaSpec;
+  setSecretkey(value: string): AwsS3Spec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AthenaSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AthenaSpec): AthenaSpec.AsObject;
-  static serializeBinaryToWriter(message: AthenaSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AthenaSpec;
-  static deserializeBinaryFromReader(message: AthenaSpec, reader: jspb.BinaryReader): AthenaSpec;
+  toObject(includeInstance?: boolean): AwsS3Spec.AsObject;
+  static toObject(includeInstance: boolean, msg: AwsS3Spec): AwsS3Spec.AsObject;
+  static serializeBinaryToWriter(message: AwsS3Spec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AwsS3Spec;
+  static deserializeBinaryFromReader(message: AwsS3Spec, reader: jspb.BinaryReader): AwsS3Spec;
 }
 
-export namespace AthenaSpec {
+export namespace AwsS3Spec {
   export type AsObject = {
-    hostname: string,
-    s3outputlocation: string,
+    defaultregion: string,
     accesskey: string,
     secretkey: string,
   }
 }
 
-export class AwsSpec extends jspb.Message {
-  getDefaultregion(): string;
-  setDefaultregion(value: string): AwsSpec;
+export class AzureSQLDatabaseSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): AzureSQLDatabaseSpec;
 
-  getAccesskey(): string;
-  setAccesskey(value: string): AwsSpec;
+  getPort(): number;
+  setPort(value: number): AzureSQLDatabaseSpec;
 
-  getSecretkey(): string;
-  setSecretkey(value: string): AwsSpec;
+  getUsername(): string;
+  setUsername(value: string): AzureSQLDatabaseSpec;
+
+  getPassword(): string;
+  setPassword(value: string): AzureSQLDatabaseSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): AzureSQLDatabaseSpec;
+
+  getUrl(): string;
+  setUrl(value: string): AzureSQLDatabaseSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AwsSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AwsSpec): AwsSpec.AsObject;
-  static serializeBinaryToWriter(message: AwsSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AwsSpec;
-  static deserializeBinaryFromReader(message: AwsSpec, reader: jspb.BinaryReader): AwsSpec;
+  toObject(includeInstance?: boolean): AzureSQLDatabaseSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AzureSQLDatabaseSpec): AzureSQLDatabaseSpec.AsObject;
+  static serializeBinaryToWriter(message: AzureSQLDatabaseSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AzureSQLDatabaseSpec;
+  static deserializeBinaryFromReader(message: AzureSQLDatabaseSpec, reader: jspb.BinaryReader): AzureSQLDatabaseSpec;
 }
 
-export namespace AwsSpec {
+export namespace AzureSQLDatabaseSpec {
   export type AsObject = {
-    defaultregion: string,
-    accesskey: string,
-    secretkey: string,
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    database: string,
+    url: string,
   }
 }
 
@@ -658,24 +852,6 @@ export namespace AzureStorageSpec {
   export type AsObject = {
     storageaccount: string,
     accesskey: string,
-  }
-}
-
-export class BigQuerySpec extends jspb.Message {
-  getServiceaccount(): string;
-  setServiceaccount(value: string): BigQuerySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BigQuerySpec.AsObject;
-  static toObject(includeInstance: boolean, msg: BigQuerySpec): BigQuerySpec.AsObject;
-  static serializeBinaryToWriter(message: BigQuerySpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BigQuerySpec;
-  static deserializeBinaryFromReader(message: BigQuerySpec, reader: jspb.BinaryReader): BigQuerySpec;
-}
-
-export namespace BigQuerySpec {
-  export type AsObject = {
-    serviceaccount: string,
   }
 }
 
@@ -705,37 +881,79 @@ export namespace BitbucketSpec {
   }
 }
 
-export class CassandraSpec extends jspb.Message {
+export class ClickHouseSpec extends jspb.Message {
   getHost(): string;
-  setHost(value: string): CassandraSpec;
+  setHost(value: string): ClickHouseSpec;
 
   getPort(): number;
-  setPort(value: number): CassandraSpec;
+  setPort(value: number): ClickHouseSpec;
 
   getDatabase(): string;
-  setDatabase(value: string): CassandraSpec;
+  setDatabase(value: string): ClickHouseSpec;
 
   getUsername(): string;
-  setUsername(value: string): CassandraSpec;
+  setUsername(value: string): ClickHouseSpec;
 
   getPassword(): string;
-  setPassword(value: string): CassandraSpec;
+  setPassword(value: string): ClickHouseSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ClickHouseSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CassandraSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CassandraSpec): CassandraSpec.AsObject;
-  static serializeBinaryToWriter(message: CassandraSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CassandraSpec;
-  static deserializeBinaryFromReader(message: CassandraSpec, reader: jspb.BinaryReader): CassandraSpec;
+  toObject(includeInstance?: boolean): ClickHouseSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ClickHouseSpec): ClickHouseSpec.AsObject;
+  static serializeBinaryToWriter(message: ClickHouseSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ClickHouseSpec;
+  static deserializeBinaryFromReader(message: ClickHouseSpec, reader: jspb.BinaryReader): ClickHouseSpec;
 }
 
-export namespace CassandraSpec {
+export namespace ClickHouseSpec {
   export type AsObject = {
     host: string,
     port: number,
     database: string,
     username: string,
     password: string,
+    url: string,
+  }
+}
+
+export class CockroachDBSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): CockroachDBSpec;
+
+  getPort(): number;
+  setPort(value: number): CockroachDBSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): CockroachDBSpec;
+
+  getUsername(): string;
+  setUsername(value: string): CockroachDBSpec;
+
+  getPassword(): string;
+  setPassword(value: string): CockroachDBSpec;
+
+  getUrl(): string;
+  setUrl(value: string): CockroachDBSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CockroachDBSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CockroachDBSpec): CockroachDBSpec.AsObject;
+  static serializeBinaryToWriter(message: CockroachDBSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CockroachDBSpec;
+  static deserializeBinaryFromReader(message: CockroachDBSpec, reader: jspb.BinaryReader): CockroachDBSpec;
+}
+
+export namespace CockroachDBSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 
@@ -1012,10 +1230,145 @@ export class ConnectionSpec extends jspb.Message {
   getSecretname(): string;
   setSecretname(value: string): ConnectionSpec;
 
-  getAthena(): AthenaSpec | undefined;
-  setAthena(value?: AthenaSpec): ConnectionSpec;
+  getAthena(): AmazonAthenaSpec | undefined;
+  setAthena(value?: AmazonAthenaSpec): ConnectionSpec;
   hasAthena(): boolean;
   clearAthena(): ConnectionSpec;
+
+  getBigquery(): GcpBigQuerySpec | undefined;
+  setBigquery(value?: GcpBigQuerySpec): ConnectionSpec;
+  hasBigquery(): boolean;
+  clearBigquery(): ConnectionSpec;
+
+  getCassandra(): ApacheCassandraSpec | undefined;
+  setCassandra(value?: ApacheCassandraSpec): ConnectionSpec;
+  hasCassandra(): boolean;
+  clearCassandra(): ConnectionSpec;
+
+  getAzuresqldatabase(): AzureSQLDatabaseSpec | undefined;
+  setAzuresqldatabase(value?: AzureSQLDatabaseSpec): ConnectionSpec;
+  hasAzuresqldatabase(): boolean;
+  clearAzuresqldatabase(): ConnectionSpec;
+
+  getMongodb(): MongoDbSpec | undefined;
+  setMongodb(value?: MongoDbSpec): ConnectionSpec;
+  hasMongodb(): boolean;
+  clearMongodb(): ConnectionSpec;
+
+  getMysql(): MySqlSpec | undefined;
+  setMysql(value?: MySqlSpec): ConnectionSpec;
+  hasMysql(): boolean;
+  clearMysql(): ConnectionSpec;
+
+  getOdbc(): OdbcSpec | undefined;
+  setOdbc(value?: OdbcSpec): ConnectionSpec;
+  hasOdbc(): boolean;
+  clearOdbc(): ConnectionSpec;
+
+  getOracle(): OracleSpec | undefined;
+  setOracle(value?: OracleSpec): ConnectionSpec;
+  hasOracle(): boolean;
+  clearOracle(): ConnectionSpec;
+
+  getPostgres(): PostgresSQLSpec | undefined;
+  setPostgres(value?: PostgresSQLSpec): ConnectionSpec;
+  hasPostgres(): boolean;
+  clearPostgres(): ConnectionSpec;
+
+  getPresto(): PrestoSpec | undefined;
+  setPresto(value?: PrestoSpec): ConnectionSpec;
+  hasPresto(): boolean;
+  clearPresto(): ConnectionSpec;
+
+  getRedshift(): AmazonRedShiftSpec | undefined;
+  setRedshift(value?: AmazonRedShiftSpec): ConnectionSpec;
+  hasRedshift(): boolean;
+  clearRedshift(): ConnectionSpec;
+
+  getHive(): ApacheHiveSpec | undefined;
+  setHive(value?: ApacheHiveSpec): ConnectionSpec;
+  hasHive(): boolean;
+  clearHive(): ConnectionSpec;
+
+  getSnowflake(): SnowflakeSpec | undefined;
+  setSnowflake(value?: SnowflakeSpec): ConnectionSpec;
+  hasSnowflake(): boolean;
+  clearSnowflake(): ConnectionSpec;
+
+  getSybase(): SybaseSpec | undefined;
+  setSybase(value?: SybaseSpec): ConnectionSpec;
+  hasSybase(): boolean;
+  clearSybase(): ConnectionSpec;
+
+  getVertica(): VerticaSpec | undefined;
+  setVertica(value?: VerticaSpec): ConnectionSpec;
+  hasVertica(): boolean;
+  clearVertica(): ConnectionSpec;
+
+  getCockroachdb(): CockroachDBSpec | undefined;
+  setCockroachdb(value?: CockroachDBSpec): ConnectionSpec;
+  hasCockroachdb(): boolean;
+  clearCockroachdb(): ConnectionSpec;
+
+  getElasticsearch(): ElasticSearchSpec | undefined;
+  setElasticsearch(value?: ElasticSearchSpec): ConnectionSpec;
+  hasElasticsearch(): boolean;
+  clearElasticsearch(): ConnectionSpec;
+
+  getInformix(): InformixSpec | undefined;
+  setInformix(value?: InformixSpec): ConnectionSpec;
+  hasInformix(): boolean;
+  clearInformix(): ConnectionSpec;
+
+  getHana(): SAPHanaSpec | undefined;
+  setHana(value?: SAPHanaSpec): ConnectionSpec;
+  hasHana(): boolean;
+  clearHana(): ConnectionSpec;
+
+  getTeradata(): TeradataSpec | undefined;
+  setTeradata(value?: TeradataSpec): ConnectionSpec;
+  hasTeradata(): boolean;
+  clearTeradata(): ConnectionSpec;
+
+  getSpanner(): GcpSpannerSpec | undefined;
+  setSpanner(value?: GcpSpannerSpec): ConnectionSpec;
+  hasSpanner(): boolean;
+  clearSpanner(): ConnectionSpec;
+
+  getSpark(): ApacheCassandraSpec | undefined;
+  setSpark(value?: ApacheCassandraSpec): ConnectionSpec;
+  hasSpark(): boolean;
+  clearSpark(): ConnectionSpec;
+
+  getMssqlserver(): MSSqlServerSpec | undefined;
+  setMssqlserver(value?: MSSqlServerSpec): ConnectionSpec;
+  hasMssqlserver(): boolean;
+  clearMssqlserver(): ConnectionSpec;
+
+  getClickhouse(): ClickHouseSpec | undefined;
+  setClickhouse(value?: ClickHouseSpec): ConnectionSpec;
+  hasClickhouse(): boolean;
+  clearClickhouse(): ConnectionSpec;
+
+  getGreenplum(): GreenPlumSpec | undefined;
+  setGreenplum(value?: GreenPlumSpec): ConnectionSpec;
+  hasGreenplum(): boolean;
+  clearGreenplum(): ConnectionSpec;
+
+  getCouchbase(): CouchbaseSpec | undefined;
+  setCouchbase(value?: CouchbaseSpec): ConnectionSpec;
+  hasCouchbase(): boolean;
+  clearCouchbase(): ConnectionSpec;
+
+  getExasol(): ExasolSpec | undefined;
+  setExasol(value?: ExasolSpec): ConnectionSpec;
+  hasExasol(): boolean;
+  clearExasol(): ConnectionSpec;
+
+  getSqlite(): SqliteSpec | undefined;
+  setSqlite(value?: SqliteSpec): ConnectionSpec;
+  hasSqlite(): boolean;
+  clearSqlite(): ConnectionSpec;
 
   getAzurestorage(): AzureStorageSpec | undefined;
   setAzurestorage(value?: AzureStorageSpec): ConnectionSpec;
@@ -1027,35 +1380,55 @@ export class ConnectionSpec extends jspb.Message {
   hasAlicloud(): boolean;
   clearAlicloud(): ConnectionSpec;
 
-  getBigquery(): BigQuerySpec | undefined;
-  setBigquery(value?: BigQuerySpec): ConnectionSpec;
-  hasBigquery(): boolean;
-  clearBigquery(): ConnectionSpec;
-
   getBitbucket(): BitbucketSpec | undefined;
   setBitbucket(value?: BitbucketSpec): ConnectionSpec;
   hasBitbucket(): boolean;
   clearBitbucket(): ConnectionSpec;
-
-  getCassandra(): CassandraSpec | undefined;
-  setCassandra(value?: CassandraSpec): ConnectionSpec;
-  hasCassandra(): boolean;
-  clearCassandra(): ConnectionSpec;
 
   getDigitalocean(): DigitalOceanSpec | undefined;
   setDigitalocean(value?: DigitalOceanSpec): ConnectionSpec;
   hasDigitalocean(): boolean;
   clearDigitalocean(): ConnectionSpec;
 
-  getSmtp(): SmtpSpec | undefined;
-  setSmtp(value?: SmtpSpec): ConnectionSpec;
-  hasSmtp(): boolean;
-  clearSmtp(): ConnectionSpec;
-
   getHetzner(): HetznerSpec | undefined;
   setHetzner(value?: HetznerSpec): ConnectionSpec;
   hasHetzner(): boolean;
   clearHetzner(): ConnectionSpec;
+
+  getGcpstorage(): GcpStorageSpec | undefined;
+  setGcpstorage(value?: GcpStorageSpec): ConnectionSpec;
+  hasGcpstorage(): boolean;
+  clearGcpstorage(): ConnectionSpec;
+
+  getLinode(): LinodeSpec | undefined;
+  setLinode(value?: LinodeSpec): ConnectionSpec;
+  hasLinode(): boolean;
+  clearLinode(): ConnectionSpec;
+
+  getMinio(): MinioSpec | undefined;
+  setMinio(value?: MinioSpec): ConnectionSpec;
+  hasMinio(): boolean;
+  clearMinio(): ConnectionSpec;
+
+  getOpenstack(): OpenstackSpec | undefined;
+  setOpenstack(value?: OpenstackSpec): ConnectionSpec;
+  hasOpenstack(): boolean;
+  clearOpenstack(): ConnectionSpec;
+
+  getOvh(): OvhSpec | undefined;
+  setOvh(value?: OvhSpec): ConnectionSpec;
+  hasOvh(): boolean;
+  clearOvh(): ConnectionSpec;
+
+  getAws(): AwsS3Spec | undefined;
+  setAws(value?: AwsS3Spec): ConnectionSpec;
+  hasAws(): boolean;
+  clearAws(): ConnectionSpec;
+
+  getSmtp(): SmtpSpec | undefined;
+  setSmtp(value?: SmtpSpec): ConnectionSpec;
+  hasSmtp(): boolean;
+  clearSmtp(): ConnectionSpec;
 
   getImageregistry(): ImageRegistrySpec | undefined;
   setImageregistry(value?: ImageRegistrySpec): ConnectionSpec;
@@ -1071,86 +1444,6 @@ export class ConnectionSpec extends jspb.Message {
   setGitlab(value?: GitlabSpec): ConnectionSpec;
   hasGitlab(): boolean;
   clearGitlab(): ConnectionSpec;
-
-  getGcpstorage(): GcpStorageSpec | undefined;
-  setGcpstorage(value?: GcpStorageSpec): ConnectionSpec;
-  hasGcpstorage(): boolean;
-  clearGcpstorage(): ConnectionSpec;
-
-  getLinode(): LinodeSpec | undefined;
-  setLinode(value?: LinodeSpec): ConnectionSpec;
-  hasLinode(): boolean;
-  clearLinode(): ConnectionSpec;
-
-  getMongodb(): MongoDbSpec | undefined;
-  setMongodb(value?: MongoDbSpec): ConnectionSpec;
-  hasMongodb(): boolean;
-  clearMongodb(): ConnectionSpec;
-
-  getMysql(): MySqlSpec | undefined;
-  setMysql(value?: MySqlSpec): ConnectionSpec;
-  hasMysql(): boolean;
-  clearMysql(): ConnectionSpec;
-
-  getMinio(): MinioSpec | undefined;
-  setMinio(value?: MinioSpec): ConnectionSpec;
-  hasMinio(): boolean;
-  clearMinio(): ConnectionSpec;
-
-  getMssqlserver(): MSSqlServerSpec | undefined;
-  setMssqlserver(value?: MSSqlServerSpec): ConnectionSpec;
-  hasMssqlserver(): boolean;
-  clearMssqlserver(): ConnectionSpec;
-
-  getOdbc(): OdbcSpec | undefined;
-  setOdbc(value?: OdbcSpec): ConnectionSpec;
-  hasOdbc(): boolean;
-  clearOdbc(): ConnectionSpec;
-
-  getOracle(): OracleSpec | undefined;
-  setOracle(value?: OracleSpec): ConnectionSpec;
-  hasOracle(): boolean;
-  clearOracle(): ConnectionSpec;
-
-  getOpenstack(): OpenstackSpec | undefined;
-  setOpenstack(value?: OpenstackSpec): ConnectionSpec;
-  hasOpenstack(): boolean;
-  clearOpenstack(): ConnectionSpec;
-
-  getOvh(): OvhSpec | undefined;
-  setOvh(value?: OvhSpec): ConnectionSpec;
-  hasOvh(): boolean;
-  clearOvh(): ConnectionSpec;
-
-  getPostgres(): PostgresSQLSpec | undefined;
-  setPostgres(value?: PostgresSQLSpec): ConnectionSpec;
-  hasPostgres(): boolean;
-  clearPostgres(): ConnectionSpec;
-
-  getPresto(): PrestoSpec | undefined;
-  setPresto(value?: PrestoSpec): ConnectionSpec;
-  hasPresto(): boolean;
-  clearPresto(): ConnectionSpec;
-
-  getRedshift(): RedShiftSpec | undefined;
-  setRedshift(value?: RedShiftSpec): ConnectionSpec;
-  hasRedshift(): boolean;
-  clearRedshift(): ConnectionSpec;
-
-  getSnowflake(): SnowFlakeSpec | undefined;
-  setSnowflake(value?: SnowFlakeSpec): ConnectionSpec;
-  hasSnowflake(): boolean;
-  clearSnowflake(): ConnectionSpec;
-
-  getSqlite(): SqliteSpec | undefined;
-  setSqlite(value?: SqliteSpec): ConnectionSpec;
-  hasSqlite(): boolean;
-  clearSqlite(): ConnectionSpec;
-
-  getAws(): AwsSpec | undefined;
-  setAws(value?: AwsSpec): ConnectionSpec;
-  hasAws(): boolean;
-  clearAws(): ConnectionSpec;
 
   getSlack(): SlackSpec | undefined;
   setSlack(value?: SlackSpec): ConnectionSpec;
@@ -1199,34 +1492,49 @@ export namespace ConnectionSpec {
     category: string,
     provider: string,
     secretname: string,
-    athena?: AthenaSpec.AsObject,
+    athena?: AmazonAthenaSpec.AsObject,
+    bigquery?: GcpBigQuerySpec.AsObject,
+    cassandra?: ApacheCassandraSpec.AsObject,
+    azuresqldatabase?: AzureSQLDatabaseSpec.AsObject,
+    mongodb?: MongoDbSpec.AsObject,
+    mysql?: MySqlSpec.AsObject,
+    odbc?: OdbcSpec.AsObject,
+    oracle?: OracleSpec.AsObject,
+    postgres?: PostgresSQLSpec.AsObject,
+    presto?: PrestoSpec.AsObject,
+    redshift?: AmazonRedShiftSpec.AsObject,
+    hive?: ApacheHiveSpec.AsObject,
+    snowflake?: SnowflakeSpec.AsObject,
+    sybase?: SybaseSpec.AsObject,
+    vertica?: VerticaSpec.AsObject,
+    cockroachdb?: CockroachDBSpec.AsObject,
+    elasticsearch?: ElasticSearchSpec.AsObject,
+    informix?: InformixSpec.AsObject,
+    hana?: SAPHanaSpec.AsObject,
+    teradata?: TeradataSpec.AsObject,
+    spanner?: GcpSpannerSpec.AsObject,
+    spark?: ApacheCassandraSpec.AsObject,
+    mssqlserver?: MSSqlServerSpec.AsObject,
+    clickhouse?: ClickHouseSpec.AsObject,
+    greenplum?: GreenPlumSpec.AsObject,
+    couchbase?: CouchbaseSpec.AsObject,
+    exasol?: ExasolSpec.AsObject,
+    sqlite?: SqliteSpec.AsObject,
     azurestorage?: AzureStorageSpec.AsObject,
     alicloud?: AliCloudSpec.AsObject,
-    bigquery?: BigQuerySpec.AsObject,
     bitbucket?: BitbucketSpec.AsObject,
-    cassandra?: CassandraSpec.AsObject,
     digitalocean?: DigitalOceanSpec.AsObject,
-    smtp?: SmtpSpec.AsObject,
     hetzner?: HetznerSpec.AsObject,
+    gcpstorage?: GcpStorageSpec.AsObject,
+    linode?: LinodeSpec.AsObject,
+    minio?: MinioSpec.AsObject,
+    openstack?: OpenstackSpec.AsObject,
+    ovh?: OvhSpec.AsObject,
+    aws?: AwsS3Spec.AsObject,
+    smtp?: SmtpSpec.AsObject,
     imageregistry?: ImageRegistrySpec.AsObject,
     github?: GithubSpec.AsObject,
     gitlab?: GitlabSpec.AsObject,
-    gcpstorage?: GcpStorageSpec.AsObject,
-    linode?: LinodeSpec.AsObject,
-    mongodb?: MongoDbSpec.AsObject,
-    mysql?: MySqlSpec.AsObject,
-    minio?: MinioSpec.AsObject,
-    mssqlserver?: MSSqlServerSpec.AsObject,
-    odbc?: OdbcSpec.AsObject,
-    oracle?: OracleSpec.AsObject,
-    openstack?: OpenstackSpec.AsObject,
-    ovh?: OvhSpec.AsObject,
-    postgres?: PostgresSQLSpec.AsObject,
-    presto?: PrestoSpec.AsObject,
-    redshift?: RedShiftSpec.AsObject,
-    snowflake?: SnowFlakeSpec.AsObject,
-    sqlite?: SqliteSpec.AsObject,
-    aws?: AwsSpec.AsObject,
     slack?: SlackSpec.AsObject,
     flock?: FlockSpec.AsObject,
     msteam?: MSTeamSpec.AsObject,
@@ -1267,6 +1575,48 @@ export namespace ConnectionStatus {
   }
 }
 
+export class CouchbaseSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): CouchbaseSpec;
+
+  getPort(): number;
+  setPort(value: number): CouchbaseSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): CouchbaseSpec;
+
+  getUsername(): string;
+  setUsername(value: string): CouchbaseSpec;
+
+  getPassword(): string;
+  setPassword(value: string): CouchbaseSpec;
+
+  getDefaultbucket(): string;
+  setDefaultbucket(value: string): CouchbaseSpec;
+
+  getUrl(): string;
+  setUrl(value: string): CouchbaseSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CouchbaseSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CouchbaseSpec): CouchbaseSpec.AsObject;
+  static serializeBinaryToWriter(message: CouchbaseSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CouchbaseSpec;
+  static deserializeBinaryFromReader(message: CouchbaseSpec, reader: jspb.BinaryReader): CouchbaseSpec;
+}
+
+export namespace CouchbaseSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    defaultbucket: string,
+    url: string,
+  }
+}
+
 export class DigitalOceanSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): DigitalOceanSpec;
@@ -1301,6 +1651,78 @@ export namespace DigitalOceanSpec {
   }
 }
 
+export class ElasticSearchSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ElasticSearchSpec;
+
+  getPort(): number;
+  setPort(value: number): ElasticSearchSpec;
+
+  getPrefix(): string;
+  setPrefix(value: string): ElasticSearchSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ElasticSearchSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ElasticSearchSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ElasticSearchSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ElasticSearchSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ElasticSearchSpec): ElasticSearchSpec.AsObject;
+  static serializeBinaryToWriter(message: ElasticSearchSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ElasticSearchSpec;
+  static deserializeBinaryFromReader(message: ElasticSearchSpec, reader: jspb.BinaryReader): ElasticSearchSpec;
+}
+
+export namespace ElasticSearchSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    prefix: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class ExasolSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ExasolSpec;
+
+  getPort(): number;
+  setPort(value: number): ExasolSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ExasolSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ExasolSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ExasolSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExasolSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ExasolSpec): ExasolSpec.AsObject;
+  static serializeBinaryToWriter(message: ExasolSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExasolSpec;
+  static deserializeBinaryFromReader(message: ExasolSpec, reader: jspb.BinaryReader): ExasolSpec;
+}
+
+export namespace ExasolSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class FlockSpec extends jspb.Message {
   getUrl(): string;
   setUrl(value: string): FlockSpec;
@@ -1315,6 +1737,86 @@ export class FlockSpec extends jspb.Message {
 
 export namespace FlockSpec {
   export type AsObject = {
+    url: string,
+  }
+}
+
+export class GcpBigQuerySpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): GcpBigQuerySpec;
+
+  getPort(): number;
+  setPort(value: number): GcpBigQuerySpec;
+
+  getUsername(): string;
+  setUsername(value: string): GcpBigQuerySpec;
+
+  getPassword(): string;
+  setPassword(value: string): GcpBigQuerySpec;
+
+  getProjectid(): string;
+  setProjectid(value: string): GcpBigQuerySpec;
+
+  getOauthtype(): string;
+  setOauthtype(value: string): GcpBigQuerySpec;
+
+  getUrl(): string;
+  setUrl(value: string): GcpBigQuerySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GcpBigQuerySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GcpBigQuerySpec): GcpBigQuerySpec.AsObject;
+  static serializeBinaryToWriter(message: GcpBigQuerySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GcpBigQuerySpec;
+  static deserializeBinaryFromReader(message: GcpBigQuerySpec, reader: jspb.BinaryReader): GcpBigQuerySpec;
+}
+
+export namespace GcpBigQuerySpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    projectid: string,
+    oauthtype: string,
+    url: string,
+  }
+}
+
+export class GcpSpannerSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): GcpSpannerSpec;
+
+  getPort(): number;
+  setPort(value: number): GcpSpannerSpec;
+
+  getPrefix(): string;
+  setPrefix(value: string): GcpSpannerSpec;
+
+  getUsername(): string;
+  setUsername(value: string): GcpSpannerSpec;
+
+  getPassword(): string;
+  setPassword(value: string): GcpSpannerSpec;
+
+  getUrl(): string;
+  setUrl(value: string): GcpSpannerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GcpSpannerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GcpSpannerSpec): GcpSpannerSpec.AsObject;
+  static serializeBinaryToWriter(message: GcpSpannerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GcpSpannerSpec;
+  static deserializeBinaryFromReader(message: GcpSpannerSpec, reader: jspb.BinaryReader): GcpSpannerSpec;
+}
+
+export namespace GcpSpannerSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    prefix: string,
+    username: string,
+    password: string,
     url: string,
   }
 }
@@ -1389,6 +1891,44 @@ export namespace GitlabSpec {
   }
 }
 
+export class GreenPlumSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): GreenPlumSpec;
+
+  getPort(): number;
+  setPort(value: number): GreenPlumSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): GreenPlumSpec;
+
+  getUsername(): string;
+  setUsername(value: string): GreenPlumSpec;
+
+  getPassword(): string;
+  setPassword(value: string): GreenPlumSpec;
+
+  getUrl(): string;
+  setUrl(value: string): GreenPlumSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GreenPlumSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GreenPlumSpec): GreenPlumSpec.AsObject;
+  static serializeBinaryToWriter(message: GreenPlumSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GreenPlumSpec;
+  static deserializeBinaryFromReader(message: GreenPlumSpec, reader: jspb.BinaryReader): GreenPlumSpec;
+}
+
+export namespace GreenPlumSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class HetznerSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): HetznerSpec;
@@ -1460,6 +2000,44 @@ export namespace ImageRegistrySpec {
     host: string,
     username: string,
     password: string,
+  }
+}
+
+export class InformixSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): InformixSpec;
+
+  getPort(): number;
+  setPort(value: number): InformixSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): InformixSpec;
+
+  getUsername(): string;
+  setUsername(value: string): InformixSpec;
+
+  getPassword(): string;
+  setPassword(value: string): InformixSpec;
+
+  getUrl(): string;
+  setUrl(value: string): InformixSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InformixSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: InformixSpec): InformixSpec.AsObject;
+  static serializeBinaryToWriter(message: InformixSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InformixSpec;
+  static deserializeBinaryFromReader(message: InformixSpec, reader: jspb.BinaryReader): InformixSpec;
+}
+
+export namespace InformixSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 
@@ -1881,14 +2459,17 @@ export class MSSqlServerSpec extends jspb.Message {
   getDatabase(): string;
   setDatabase(value: string): MSSqlServerSpec;
 
-  getDomain(): string;
-  setDomain(value: string): MSSqlServerSpec;
+  getInstance(): string;
+  setInstance(value: string): MSSqlServerSpec;
 
   getUsername(): string;
   setUsername(value: string): MSSqlServerSpec;
 
   getPassword(): string;
   setPassword(value: string): MSSqlServerSpec;
+
+  getUrl(): string;
+  setUrl(value: string): MSSqlServerSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MSSqlServerSpec.AsObject;
@@ -1903,9 +2484,10 @@ export namespace MSSqlServerSpec {
     host: string,
     port: number,
     database: string,
-    domain: string,
+    instance: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2127,6 +2709,9 @@ export class MongoDbSpec extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): MongoDbSpec;
 
+  getUrl(): string;
+  setUrl(value: string): MongoDbSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MongoDbSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MongoDbSpec): MongoDbSpec.AsObject;
@@ -2142,6 +2727,7 @@ export namespace MongoDbSpec {
     database: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2161,6 +2747,9 @@ export class MySqlSpec extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): MySqlSpec;
 
+  getUrl(): string;
+  setUrl(value: string): MySqlSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MySqlSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MySqlSpec): MySqlSpec.AsObject;
@@ -2176,6 +2765,7 @@ export namespace MySqlSpec {
     database: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2406,20 +2996,20 @@ export class OracleSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): OracleSpec;
 
-  getDatabase(): string;
-  setDatabase(value: string): OracleSpec;
+  getSid(): string;
+  setSid(value: string): OracleSpec;
 
-  getServicename(): string;
-  setServicename(value: string): OracleSpec;
-
-  getRole(): string;
-  setRole(value: string): OracleSpec;
+  getDriver(): string;
+  setDriver(value: string): OracleSpec;
 
   getUsername(): string;
   setUsername(value: string): OracleSpec;
 
   getPassword(): string;
   setPassword(value: string): OracleSpec;
+
+  getUrl(): string;
+  setUrl(value: string): OracleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleSpec.AsObject;
@@ -2433,11 +3023,11 @@ export namespace OracleSpec {
   export type AsObject = {
     host: string,
     port: number,
-    database: string,
-    servicename: string,
-    role: string,
+    sid: string,
+    driver: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2487,6 +3077,9 @@ export class PostgresSQLSpec extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): PostgresSQLSpec;
 
+  getUrl(): string;
+  setUrl(value: string): PostgresSQLSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostgresSQLSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PostgresSQLSpec): PostgresSQLSpec.AsObject;
@@ -2502,6 +3095,7 @@ export namespace PostgresSQLSpec {
     database: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2524,6 +3118,9 @@ export class PrestoSpec extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): PrestoSpec;
 
+  getUrl(): string;
+  setUrl(value: string): PrestoSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrestoSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PrestoSpec): PrestoSpec.AsObject;
@@ -2540,40 +3137,45 @@ export namespace PrestoSpec {
     schema: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
-export class RedShiftSpec extends jspb.Message {
+export class SAPHanaSpec extends jspb.Message {
   getHost(): string;
-  setHost(value: string): RedShiftSpec;
+  setHost(value: string): SAPHanaSpec;
 
   getPort(): number;
-  setPort(value: number): RedShiftSpec;
+  setPort(value: number): SAPHanaSpec;
 
   getDatabase(): string;
-  setDatabase(value: string): RedShiftSpec;
+  setDatabase(value: string): SAPHanaSpec;
 
   getUsername(): string;
-  setUsername(value: string): RedShiftSpec;
+  setUsername(value: string): SAPHanaSpec;
 
   getPassword(): string;
-  setPassword(value: string): RedShiftSpec;
+  setPassword(value: string): SAPHanaSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SAPHanaSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RedShiftSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: RedShiftSpec): RedShiftSpec.AsObject;
-  static serializeBinaryToWriter(message: RedShiftSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RedShiftSpec;
-  static deserializeBinaryFromReader(message: RedShiftSpec, reader: jspb.BinaryReader): RedShiftSpec;
+  toObject(includeInstance?: boolean): SAPHanaSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SAPHanaSpec): SAPHanaSpec.AsObject;
+  static serializeBinaryToWriter(message: SAPHanaSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SAPHanaSpec;
+  static deserializeBinaryFromReader(message: SAPHanaSpec, reader: jspb.BinaryReader): SAPHanaSpec;
 }
 
-export namespace RedShiftSpec {
+export namespace SAPHanaSpec {
   export type AsObject = {
     host: string,
     port: number,
     database: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2863,37 +3465,45 @@ export namespace SmtpSpec {
   }
 }
 
-export class SnowFlakeSpec extends jspb.Message {
-  getAccount(): string;
-  setAccount(value: string): SnowFlakeSpec;
+export class SnowflakeSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SnowflakeSpec;
 
-  getWarehouse(): string;
-  setWarehouse(value: string): SnowFlakeSpec;
+  getPort(): number;
+  setPort(value: number): SnowflakeSpec;
 
   getDatabase(): string;
-  setDatabase(value: string): SnowFlakeSpec;
+  setDatabase(value: string): SnowflakeSpec;
+
+  getSchema(): string;
+  setSchema(value: string): SnowflakeSpec;
 
   getUsername(): string;
-  setUsername(value: string): SnowFlakeSpec;
+  setUsername(value: string): SnowflakeSpec;
 
   getPassword(): string;
-  setPassword(value: string): SnowFlakeSpec;
+  setPassword(value: string): SnowflakeSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SnowflakeSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SnowFlakeSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SnowFlakeSpec): SnowFlakeSpec.AsObject;
-  static serializeBinaryToWriter(message: SnowFlakeSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SnowFlakeSpec;
-  static deserializeBinaryFromReader(message: SnowFlakeSpec, reader: jspb.BinaryReader): SnowFlakeSpec;
+  toObject(includeInstance?: boolean): SnowflakeSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SnowflakeSpec): SnowflakeSpec.AsObject;
+  static serializeBinaryToWriter(message: SnowflakeSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnowflakeSpec;
+  static deserializeBinaryFromReader(message: SnowflakeSpec, reader: jspb.BinaryReader): SnowflakeSpec;
 }
 
-export namespace SnowFlakeSpec {
+export namespace SnowflakeSpec {
   export type AsObject = {
-    account: string,
-    warehouse: string,
+    host: string,
+    port: number,
     database: string,
+    schema: string,
     username: string,
     password: string,
+    url: string,
   }
 }
 
@@ -2912,6 +3522,44 @@ export class SqliteSpec extends jspb.Message {
 export namespace SqliteSpec {
   export type AsObject = {
     filename: string,
+  }
+}
+
+export class SybaseSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SybaseSpec;
+
+  getPort(): number;
+  setPort(value: number): SybaseSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): SybaseSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SybaseSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SybaseSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SybaseSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SybaseSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SybaseSpec): SybaseSpec.AsObject;
+  static serializeBinaryToWriter(message: SybaseSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SybaseSpec;
+  static deserializeBinaryFromReader(message: SybaseSpec, reader: jspb.BinaryReader): SybaseSpec;
+}
+
+export namespace SybaseSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 
@@ -3234,6 +3882,82 @@ export namespace TenantStatus {
   export type AsObject = {
     observedgeneration: number,
     conditionsList: Array<TenantCondition.AsObject>,
+  }
+}
+
+export class TeradataSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): TeradataSpec;
+
+  getPort(): number;
+  setPort(value: number): TeradataSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): TeradataSpec;
+
+  getUsername(): string;
+  setUsername(value: string): TeradataSpec;
+
+  getPassword(): string;
+  setPassword(value: string): TeradataSpec;
+
+  getUrl(): string;
+  setUrl(value: string): TeradataSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TeradataSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TeradataSpec): TeradataSpec.AsObject;
+  static serializeBinaryToWriter(message: TeradataSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TeradataSpec;
+  static deserializeBinaryFromReader(message: TeradataSpec, reader: jspb.BinaryReader): TeradataSpec;
+}
+
+export namespace TeradataSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class VerticaSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): VerticaSpec;
+
+  getPort(): number;
+  setPort(value: number): VerticaSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): VerticaSpec;
+
+  getUsername(): string;
+  setUsername(value: string): VerticaSpec;
+
+  getPassword(): string;
+  setPassword(value: string): VerticaSpec;
+
+  getUrl(): string;
+  setUrl(value: string): VerticaSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VerticaSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: VerticaSpec): VerticaSpec.AsObject;
+  static serializeBinaryToWriter(message: VerticaSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VerticaSpec;
+  static deserializeBinaryFromReader(message: VerticaSpec, reader: jspb.BinaryReader): VerticaSpec;
+}
+
+export namespace VerticaSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    database: string,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 

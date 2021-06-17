@@ -20,6 +20,24 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// AutoScaling defines the configuration for auto scaling
+message AutoScaling {
+  optional bool enabled = 1;
+
+  // Min num of replicates
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:default:=1
+  optional int32 minReplicas = 2;
+
+  // Max num of replicates. Used during auto scaling
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=10
+  // +kubebuilder:default:=1
+  optional int32 maxReplicas = 4;
+}
+
 message BotChannelSpec {
   // the connection to the messaging provider
   // Required,
@@ -614,23 +632,15 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional PredictionChannels output = 10;
 
-  // Min num of replicates
+  // Replicas defines the number of replicas when auto scaling is disabled.
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:default:=1
   optional int32 minReplicas = 11;
 
-  // Does the current model pods needs autoscaling. If yes we will use HPA.
-  // +kubebuilder:default:=false
+  // AutoScaling defines the auto scaling policy
   // +kubebuilder:validation:Optional
-  optional bool autoscale = 12;
-
-  // Max num of replicates. Used during auto scaling
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:default:=1
-  optional int32 maxReplicas = 13;
+  optional AutoScaling autoScaling = 12;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
