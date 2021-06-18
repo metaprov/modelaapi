@@ -454,15 +454,17 @@ type SnowflakeSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 	// +kubebuilder:default:=""
-	Database *string `json:"database,omitempty" protobuf:"bytes,3,opt,name=database"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
 	// +kubebuilder:default:=""
-	Schema *string `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
 	// +kubebuilder:default:=""
-	Username *string `json:"username,omitempty" protobuf:"bytes,5,opt,name=username"`
+	Database *string `json:"database,omitempty" protobuf:"bytes,5,opt,name=database"`
 	// +kubebuilder:default:=""
-	Password *string `json:"password,omitempty" protobuf:"bytes,6,opt,name=password"`
+	Schema *string `json:"schema,omitempty" protobuf:"bytes,6,opt,name=schema"`
+	// +kubebuilder:default:=""
+	Warehouse *string `json:"warehouse,omitempty" protobuf:"bytes,7,opt,name=warehouse"`
 	// URL Override the other
-	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,8,opt,name=url"`
 }
 
 type SybaseSpec struct {

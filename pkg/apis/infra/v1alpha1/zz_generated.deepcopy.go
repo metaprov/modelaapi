@@ -3581,6 +3581,16 @@ func (in *SnowflakeSpec) DeepCopyInto(out *SnowflakeSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.Username != nil {
+		in, out := &in.Username, &out.Username
+		*out = new(string)
+		**out = **in
+	}
+	if in.Password != nil {
+		in, out := &in.Password, &out.Password
+		*out = new(string)
+		**out = **in
+	}
 	if in.Database != nil {
 		in, out := &in.Database, &out.Database
 		*out = new(string)
@@ -3591,13 +3601,8 @@ func (in *SnowflakeSpec) DeepCopyInto(out *SnowflakeSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Username != nil {
-		in, out := &in.Username, &out.Username
-		*out = new(string)
-		**out = **in
-	}
-	if in.Password != nil {
-		in, out := &in.Password, &out.Password
+	if in.Warehouse != nil {
+		in, out := &in.Warehouse, &out.Warehouse
 		*out = new(string)
 		**out = **in
 	}

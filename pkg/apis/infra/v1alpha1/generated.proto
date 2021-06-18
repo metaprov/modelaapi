@@ -1929,19 +1929,22 @@ message SnowflakeSpec {
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3;
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string schema = 4;
+  optional string password = 4;
 
   // +kubebuilder:default:=""
-  optional string username = 5;
+  optional string database = 5;
 
   // +kubebuilder:default:=""
-  optional string password = 6;
+  optional string schema = 6;
+
+  // +kubebuilder:default:=""
+  optional string warehouse = 7;
 
   // URL Override the other
-  optional string url = 7;
+  optional string url = 8;
 }
 
 message SqliteSpec {

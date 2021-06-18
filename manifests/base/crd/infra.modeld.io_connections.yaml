@@ -926,6 +926,9 @@ spec:
                   username:
                     default: ""
                     type: string
+                  warehouse:
+                    default: ""
+                    type: string
                 type: object
               spanner:
                 properties:

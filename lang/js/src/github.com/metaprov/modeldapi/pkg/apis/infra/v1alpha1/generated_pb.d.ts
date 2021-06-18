@@ -3574,17 +3574,20 @@ export class SnowflakeSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): SnowflakeSpec;
 
+  getUsername(): string;
+  setUsername(value: string): SnowflakeSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SnowflakeSpec;
+
   getDatabase(): string;
   setDatabase(value: string): SnowflakeSpec;
 
   getSchema(): string;
   setSchema(value: string): SnowflakeSpec;
 
-  getUsername(): string;
-  setUsername(value: string): SnowflakeSpec;
-
-  getPassword(): string;
-  setPassword(value: string): SnowflakeSpec;
+  getWarehouse(): string;
+  setWarehouse(value: string): SnowflakeSpec;
 
   getUrl(): string;
   setUrl(value: string): SnowflakeSpec;
@@ -3601,10 +3604,11 @@ export namespace SnowflakeSpec {
   export type AsObject = {
     host: string,
     port: number,
-    database: string,
-    schema: string,
     username: string,
     password: string,
+    database: string,
+    schema: string,
+    warehouse: string,
     url: string,
   }
 }

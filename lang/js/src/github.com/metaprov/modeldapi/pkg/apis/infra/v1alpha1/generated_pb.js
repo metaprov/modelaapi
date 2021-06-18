@@ -35991,11 +35991,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.toObje
   var f, obj = {
     host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    database: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    schema: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    username: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    password: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    username: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    database: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    schema: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    warehouse: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -36042,21 +36043,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.deseri
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatabase(value);
+      msg.setUsername(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSchema(value);
+      msg.setPassword(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUsername(value);
+      msg.setDatabase(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
+      msg.setSchema(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWarehouse(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -36138,6 +36143,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.serial
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -36214,10 +36226,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
 
 
 /**
- * optional string database = 3;
+ * optional string username = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getDatabase = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -36226,7 +36238,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setDatabase = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUsername = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -36235,7 +36247,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearDatabase = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUsername = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -36244,16 +36256,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasDatabase = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUsername = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string schema = 4;
+ * optional string password = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getSchema = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -36262,7 +36274,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setSchema = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setPassword = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -36271,7 +36283,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearSchema = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearPassword = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -36280,16 +36292,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasSchema = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasPassword = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string username = 5;
+ * optional string database = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUsername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getDatabase = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -36298,7 +36310,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUsername = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setDatabase = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -36307,7 +36319,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUsername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearDatabase = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -36316,16 +36328,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUsername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasDatabase = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string password = 6;
+ * optional string schema = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getPassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getSchema = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -36334,7 +36346,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setPassword = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setSchema = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -36343,7 +36355,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearPassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearSchema = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -36352,16 +36364,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasPassword = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasSchema = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string url = 7;
+ * optional string warehouse = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getWarehouse = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -36370,7 +36382,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setWarehouse = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -36379,7 +36391,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearWarehouse = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -36388,8 +36400,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasWarehouse = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string url = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
