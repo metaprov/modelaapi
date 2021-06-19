@@ -208,9 +208,6 @@ type ConnectionSpec struct {
 	Slack *SlackSpec `json:"slack,omitempty" protobuf:"bytes,48,opt,name=slack"`
 
 	// +kubebuilder:validation:Optional
-	Flock *FlockSpec `json:"flock,omitempty" protobuf:"bytes,49,opt,name=flock"`
-
-	// +kubebuilder:validation:Optional
 	MSTeam *MSTeamSpec `json:"msteam,omitempty" protobuf:"bytes,50,opt,name=msteam"`
 
 	// +kubebuilder:validation:Optional
@@ -581,16 +578,15 @@ type TeradataSpec struct {
 
 type GcpSpannerSpec struct {
 	// +kubebuilder:default:=""
-	Project *string `json:"host,omitempty" protobuf:"bytes,1,opt,name=host"`
-	// +kubebuilder:default:=5432
-	// +kubebuilder:validation:Minimum=0
-	Instance *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+	Project *string `json:"project,omitempty" protobuf:"bytes,1,opt,name=project"`
 	// +kubebuilder:default:=""
-	Prefix *string `json:"prefix,omitempty" protobuf:"bytes,3,opt,name=prefix"`
+	Instance *string `json:"instance,omitempty" protobuf:"bytes,2,opt,name=instance"`
 	// +kubebuilder:default:=""
-	Username *string `json:"username,omitempty" protobuf:"bytes,4,opt,name=username"`
+	Username *string `json:"username,omitempty" protobuf:"bytes,3,opt,name=username"`
 	// +kubebuilder:default:=""
-	Password *string `json:"password,omitempty" protobuf:"bytes,5,opt,name=password"`
+	Password *string `json:"password,omitempty" protobuf:"bytes,4,opt,name=password"`
+	// +kubebuilder:default:=""
+	Database *string `json:"database,omitempty" protobuf:"bytes,5,opt,name=database"`
 	// URL Override the other
 	URL *string `json:"url,omitempty" protobuf:"bytes,6,opt,name=url"`
 }
@@ -864,12 +860,7 @@ type OvhSpec struct {
 
 type LinodeSpec struct {
 	// +kubebuilder:default:=""
-	ApiKey *string `json:"apikey,omitempty" protobuf:"bytes,1,opt,name=apikey"`
-}
-
-type FlockSpec struct {
-	// +kubebuilder:default:=""
-	Url *string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
+	Token *string `json:"token,omitempty" protobuf:"bytes,1,opt,name=token"`
 }
 
 type MSTeamSpec struct {

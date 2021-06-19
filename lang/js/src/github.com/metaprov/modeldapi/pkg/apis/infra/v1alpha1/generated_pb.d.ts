@@ -1450,11 +1450,6 @@ export class ConnectionSpec extends jspb.Message {
   hasSlack(): boolean;
   clearSlack(): ConnectionSpec;
 
-  getFlock(): FlockSpec | undefined;
-  setFlock(value?: FlockSpec): ConnectionSpec;
-  hasFlock(): boolean;
-  clearFlock(): ConnectionSpec;
-
   getMsteam(): MSTeamSpec | undefined;
   setMsteam(value?: MSTeamSpec): ConnectionSpec;
   hasMsteam(): boolean;
@@ -1556,7 +1551,6 @@ export namespace ConnectionSpec {
     github?: GithubSpec.AsObject,
     gitlab?: GitlabSpec.AsObject,
     slack?: SlackSpec.AsObject,
-    flock?: FlockSpec.AsObject,
     msteam?: MSTeamSpec.AsObject,
     mattermost?: MattermostSpec.AsObject,
     hipchat?: HipchatSpec.AsObject,
@@ -1747,24 +1741,6 @@ export namespace ExasolSpec {
   }
 }
 
-export class FlockSpec extends jspb.Message {
-  getUrl(): string;
-  setUrl(value: string): FlockSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlockSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FlockSpec): FlockSpec.AsObject;
-  static serializeBinaryToWriter(message: FlockSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlockSpec;
-  static deserializeBinaryFromReader(message: FlockSpec, reader: jspb.BinaryReader): FlockSpec;
-}
-
-export namespace FlockSpec {
-  export type AsObject = {
-    url: string,
-  }
-}
-
 export class GcpBigQuerySpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): GcpBigQuerySpec;
@@ -1808,20 +1784,20 @@ export namespace GcpBigQuerySpec {
 }
 
 export class GcpSpannerSpec extends jspb.Message {
-  getHost(): string;
-  setHost(value: string): GcpSpannerSpec;
+  getProject(): string;
+  setProject(value: string): GcpSpannerSpec;
 
-  getPort(): number;
-  setPort(value: number): GcpSpannerSpec;
-
-  getPrefix(): string;
-  setPrefix(value: string): GcpSpannerSpec;
+  getInstance(): string;
+  setInstance(value: string): GcpSpannerSpec;
 
   getUsername(): string;
   setUsername(value: string): GcpSpannerSpec;
 
   getPassword(): string;
   setPassword(value: string): GcpSpannerSpec;
+
+  getDatabase(): string;
+  setDatabase(value: string): GcpSpannerSpec;
 
   getUrl(): string;
   setUrl(value: string): GcpSpannerSpec;
@@ -1836,11 +1812,11 @@ export class GcpSpannerSpec extends jspb.Message {
 
 export namespace GcpSpannerSpec {
   export type AsObject = {
-    host: string,
-    port: number,
-    prefix: string,
+    project: string,
+    instance: string,
     username: string,
     password: string,
+    database: string,
     url: string,
   }
 }
@@ -2456,8 +2432,8 @@ export namespace LicenseStatus {
 }
 
 export class LinodeSpec extends jspb.Message {
-  getApikey(): string;
-  setApikey(value: string): LinodeSpec;
+  getToken(): string;
+  setToken(value: string): LinodeSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LinodeSpec.AsObject;
@@ -2469,7 +2445,7 @@ export class LinodeSpec extends jspb.Message {
 
 export namespace LinodeSpec {
   export type AsObject = {
-    apikey: string,
+    token: string,
   }
 }
 

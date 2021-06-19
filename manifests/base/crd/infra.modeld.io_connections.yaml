@@ -363,12 +363,6 @@ spec:
                     default: ""
                     type: string
                 type: object
-              flock:
-                properties:
-                  url:
-                    default: ""
-                    type: string
-                type: object
               gcpstorage:
                 properties:
                   keyFile:
@@ -529,7 +523,7 @@ spec:
                 type: object
               linode:
                 properties:
-                  apikey:
+                  token:
                     default: ""
                     type: string
                 type: object
@@ -932,18 +926,16 @@ spec:
                 type: object
               spanner:
                 properties:
-                  host:
+                  database:
+                    default: ""
+                    type: string
+                  instance:
                     default: ""
                     type: string
                   password:
                     default: ""
                     type: string
-                  port:
-                    default: 5432
-                    format: int32
-                    minimum: 0
-                    type: integer
-                  prefix:
+                  project:
                     default: ""
                     type: string
                   url:

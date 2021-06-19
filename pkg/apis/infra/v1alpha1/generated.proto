@@ -829,9 +829,6 @@ message ConnectionSpec {
   optional SlackSpec slack = 48;
 
   // +kubebuilder:validation:Optional
-  optional FlockSpec flock = 49;
-
-  // +kubebuilder:validation:Optional
   optional MSTeamSpec msteam = 50;
 
   // +kubebuilder:validation:Optional
@@ -960,11 +957,6 @@ message ExasolSpec {
   optional string url = 7;
 }
 
-message FlockSpec {
-  // +kubebuilder:default:=""
-  optional string url = 1;
-}
-
 // BigQuerySpec defines the connection to big query
 message GcpBigQuerySpec {
   optional string host = 1;
@@ -993,20 +985,19 @@ message GcpBigQuerySpec {
 
 message GcpSpannerSpec {
   // +kubebuilder:default:=""
-  optional string host = 1;
-
-  // +kubebuilder:default:=5432
-  // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2;
+  optional string project = 1;
 
   // +kubebuilder:default:=""
-  optional string prefix = 3;
+  optional string instance = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 4;
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 5;
+  optional string password = 4;
+
+  // +kubebuilder:default:=""
+  optional string database = 5;
 
   // URL Override the other
   optional string url = 6;
@@ -1354,7 +1345,7 @@ message LicenseStatus {
 
 message LinodeSpec {
   // +kubebuilder:default:=""
-  optional string apikey = 1;
+  optional string token = 1;
 }
 
 message MSSqlServerSpec {

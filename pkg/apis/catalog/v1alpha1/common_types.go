@@ -87,8 +87,10 @@ const (
 	SecretKey        ApiKeyName = "secretKey"
 	Host             ApiKeyName = "host"
 	Token            ApiKeyName = "token"
+	ApiKey           ApiKeyName = "apikey"
 	Username         ApiKeyName = "username"
 	Passwd           ApiKeyName = "password"
+	URL              ApiKeyName = "url"
 	Port             ApiKeyName = "port"
 	Ssh              ApiKeyName = "ssh"
 	OpenstackAuthUrl ApiKeyName = "openstack-authurl"
@@ -161,7 +163,7 @@ const (
 	Clickhouse       ProviderName = "click-house"
 	Greenplum        ProviderName = "greenplum"
 	Couchbase        ProviderName = "couchbase"
-	ExasolSpec       ProviderName = "exasol"
+	Exasol           ProviderName = "exasol"
 	Sqlite           ProviderName = "sqlite"
 	// Cloud Storage
 	AliCloud     ProviderName = "alicloud"
@@ -187,15 +189,12 @@ const (
 	// Messaging
 	SmtpProvider    ProviderName = "smtp"
 	Slack           ProviderName = "slack"
-	License         ProviderName = "license"
-	LocalMachine    ProviderName = "lm"
 	Hipchat         ProviderName = "hipchat"
 	PageDuty        ProviderName = "pagerduty"
 	PushOver        ProviderName = "pushover"
-	OpenGenie       ProviderName = "opengenie"
+	OpsGenie        ProviderName = "opsgenie"
 	Webhook         ProviderName = "webook"
 	VictorOps       ProviderName = "victorops"
-	Wechat          ProviderName = "wechat"
 	Flock           ProviderName = "flock"
 	MSTeam          ProviderName = "msteam"
 	MatterMost      ProviderName = "mattermost"
@@ -240,10 +239,7 @@ func NewProviderNameFromString(name string) ProviderName {
 	case "azure":
 		return Azure
 	case "gcp":
-
 		return Gcp
-	case "lm":
-		return LocalMachine
 	case "email":
 		return SmtpProvider
 	case "slack":
@@ -252,9 +248,6 @@ func NewProviderNameFromString(name string) ProviderName {
 		return GitHub
 	case "image-registry":
 		return ImageRegistry
-	case "modeld-license":
-		return License
-
 	}
 	return UnknownProvider
 }

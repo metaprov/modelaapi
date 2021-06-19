@@ -8,11 +8,9 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/util"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
-	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -51,80 +49,6 @@ func (connection *Connection) ValidateSecret(s *v1.Secret) field.ErrorList {
 	return connection.validateSecret(s.StringData)
 }
 
-// create a new secret based on secret fields.
-// currently we place all the fields in the connection.
-func (connection *Connection) CreateSecret() *v1.Secret {
-	secretName := connection.Name
-	if *connection.Spec.SecretName != "" {
-		secretName = *connection.Spec.SecretName
-	}
-	result := &v1.Secret{
-		ObjectMeta: meta_v1.ObjectMeta{
-			Name:      secretName,
-			Namespace: connection.Namespace,
-		},
-	}
-	fields := make(map[string]string)
-	switch *connection.Spec.Provider {
-	case catalog.Aws:
-		fields[string(catalog.AccessKey)] = *connection.Spec.Aws.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.Aws.SecretKey
-	case catalog.Minio:
-		fields[string(catalog.AccessKey)] = *connection.Spec.Minio.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.Minio.SecretKey
-	case catalog.DigitalOcean:
-		fields[string(catalog.AccessKey)] = *connection.Spec.DigitalOcean.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.DigitalOcean.SecretKey
-		fields[string(catalog.Token)] = *connection.Spec.DigitalOcean.Token
-	case catalog.Gcp:
-		fields[string(catalog.KeyFile)] = *connection.Spec.GcpStorage.KeyFile
-	case catalog.Azure:
-		fields[string(catalog.AccessKey)] = *connection.Spec.AzureStorage.AccessKey
-	case catalog.SmtpProvider:
-		fields[string(catalog.Host)] = *connection.Spec.Smtp.Host
-		fields[string(catalog.Port)] = util.ItoA(connection.Spec.Smtp.Port)
-		fields[string(catalog.Username)] = *connection.Spec.Smtp.Username
-		fields[string(catalog.Password)] = *connection.Spec.Smtp.Password
-	case catalog.Slack:
-		fields[string(catalog.Username)] = *connection.Spec.Slack.Username
-		fields[string(catalog.Token)] = *connection.Spec.Slack.Token
-	case catalog.ImageRegistry:
-		fields[string(catalog.Host)] = *connection.Spec.ImageRegistry.Host
-		fields[string(catalog.Username)] = *connection.Spec.ImageRegistry.Username
-		fields[string(catalog.Password)] = *connection.Spec.ImageRegistry.Password
-	}
-	result.StringData = fields
-	return result
-
-}
-
-// ask the connection to mask secret fields based on the type of the connection
-func (connection *Connection) MaskSecretFields() {
-	hiddenPtr := util.StrPtr("[hidden]")
-	switch *connection.Spec.Provider {
-	case catalog.Aws:
-		connection.Spec.Aws.AccessKey = hiddenPtr
-		connection.Spec.Aws.SecretKey = hiddenPtr
-	case catalog.DigitalOcean:
-		connection.Spec.DigitalOcean.AccessKey = hiddenPtr
-		connection.Spec.DigitalOcean.SecretKey = hiddenPtr
-		connection.Spec.DigitalOcean.Token = hiddenPtr
-	case catalog.Gcp:
-		connection.Spec.GcpStorage.KeyFile = hiddenPtr
-	case catalog.Azure:
-		connection.Spec.AzureStorage.AccessKey = hiddenPtr
-	case catalog.Minio:
-		connection.Spec.Minio.AccessKey = hiddenPtr
-		connection.Spec.Minio.SecretKey = hiddenPtr
-	case catalog.SmtpProvider:
-		connection.Spec.Smtp.Password = hiddenPtr
-	case catalog.Slack:
-		connection.Spec.Slack.Token = hiddenPtr
-	case catalog.ImageRegistry:
-		connection.Spec.ImageRegistry.Password = hiddenPtr
-	}
-}
-
 func (connection *Connection) validateSecret(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 	switch *connection.Spec.Provider {
@@ -153,8 +77,6 @@ func (connection *Connection) validateSecret(vars map[string]string) field.Error
 		return connection.validateGithub(vars)
 	case catalog.ImageRegistry:
 		return connection.validateDockerReg(vars)
-	case catalog.License:
-		return connection.validateLicense(vars)
 	case catalog.AliCloud:
 		return connection.validateAliCloud(vars)
 	case catalog.Bitbucket:
@@ -163,8 +85,6 @@ func (connection *Connection) validateSecret(vars map[string]string) field.Error
 		return connection.validateGitLab(vars)
 	case catalog.Hetzner:
 		return connection.validateHetzner(vars)
-	case catalog.LocalMachine:
-		return connection.validateLocalMachine(vars)
 	case catalog.Openstack:
 		return connection.validateOpenstack(vars)
 	case catalog.Ovh:
