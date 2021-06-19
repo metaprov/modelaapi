@@ -322,8 +322,6 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 	case catalog.Webhook:
 	case catalog.VictorOps:
 		fields[string(catalog.ApiKey)] = *connection.Spec.VictorOps.ApiKey
-	case catalog.Flock:
-		fields[string(catalog.ApiKey)] = *connection.Spec.Flock.ApiKey
 	case catalog.MSTeam:
 		fields[string(catalog.URL)] = *connection.Spec.MSTeam.Webhook
 	case catalog.MatterMost:
@@ -497,8 +495,6 @@ func (connection *Connection) MaskSecretFields() {
 		connection.Spec.Webhook.Url = hiddenPtr
 	case catalog.VictorOps:
 		connection.Spec.VictorOps.ApiKey = hiddenPtr
-	case catalog.Flock:
-		connection.Spec.Flock.Token = hiddenPtr
 	case catalog.MSTeam:
 		connection.Spec.MSTeam.Webhook = hiddenPtr
 	case catalog.MatterMost:
