@@ -1892,6 +1892,16 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	out.TestDatasetLocation = in.TestDatasetLocation
 	out.ValidationDataset = in.ValidationDataset
 	out.ResourceConsumed = in.ResourceConsumed
+	if in.CPU != nil {
+		in, out := &in.CPU, &out.CPU
+		*out = new(int32)
+		**out = **in
+	}
+	if in.Mem != nil {
+		in, out := &in.Mem, &out.Mem
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

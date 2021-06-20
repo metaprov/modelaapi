@@ -6210,7 +6210,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.toOb
     max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
+    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6274,6 +6275,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.dese
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmax(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
       break;
     default:
       reader.skipField();
@@ -6350,6 +6355,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.seri
   if (f != null) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -6606,6 +6618,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool generated = 8;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -19028,7 +19076,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.toO
     max: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     strictmin: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    strictmax: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -19088,6 +19137,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.des
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmax(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
       break;
     default:
       reader.skipField();
@@ -19157,6 +19210,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.ser
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -19377,6 +19437,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasStrictmax = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool generated = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -32903,7 +32999,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
     max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     valuesetList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     strictmin: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
-    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
+    strictmax: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32967,6 +33064,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrictmax(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
       break;
     default:
       reader.skipField();
@@ -33043,6 +33144,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
   if (f != null) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -33303,6 +33411,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
 };
 
 
+/**
+ * optional bool generated = 8;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -33343,7 +33487,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    datasetsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    datasetsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -33388,6 +33533,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
       var value = /** @type {string} */ (reader.readString());
       msg.addDatasets(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -33428,6 +33577,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -33504,6 +33660,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearDatasetsList = function() {
   return this.setDatasetsList([]);
+};
+
+
+/**
+ * optional bool generated = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

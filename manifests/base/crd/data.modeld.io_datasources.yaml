@@ -502,6 +502,10 @@ spec:
                           properties:
                             column:
                               type: string
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
                             max:
                               type: number
                             min:
@@ -522,6 +526,10 @@ spec:
                         description: DatasetAssertions contains assertions for datasets
                         items:
                           properties:
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
                             max:
                               type: number
                             min:
@@ -547,6 +555,10 @@ spec:
                               items:
                                 type: string
                               type: array
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
                             max:
                               type: number
                             min:
@@ -572,6 +584,10 @@ spec:
                               items:
                                 type: string
                               type: array
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
                             type:
                               type: string
                           type: object

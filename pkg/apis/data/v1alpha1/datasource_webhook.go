@@ -11,6 +11,7 @@ import (
 	"github.com/metaprov/modeldapi/pkg/apis/common"
 	"github.com/metaprov/modeldapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -110,4 +111,8 @@ func (ffile *DataSource) validateSpec(fldPath *field.Path) field.ErrorList {
 
 func (ffile *DataSource) ValidateDelete() error {
 	return nil
+}
+
+func (in *Column) Validate() (bool, []metav1.StatusCause) {
+	return false, nil
 }

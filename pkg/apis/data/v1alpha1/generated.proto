@@ -338,6 +338,10 @@ message ColumnValidation {
 
   // +kubebuilder:validation:Optional
   optional bool strictMax = 7;
+
+  // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:validation:Optional
+  optional bool generated = 8;
 }
 
 message CompilerSpec {
@@ -1178,6 +1182,10 @@ message DatasetValidation {
 
   // +kubebuilder:validation:Optional
   optional bool strictMax = 6;
+
+  // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:validation:Optional
+  optional bool generated = 7;
 }
 
 message Entity {
@@ -2050,6 +2058,10 @@ message MultiColumnValidation {
 
   // +kubebuilder:validation:Optional
   optional bool strictMax = 7;
+
+  // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:validation:Optional
+  optional bool generated = 8;
 }
 
 message MultiDatasetValidation {
@@ -2058,6 +2070,10 @@ message MultiDatasetValidation {
 
   // +kubebuilder:validation:Optional
   repeated string datasets = 2;
+
+  // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:validation:Optional
+  optional bool generated = 3;
 }
 
 // Recipe represents a single batch of data

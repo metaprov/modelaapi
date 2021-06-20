@@ -377,6 +377,9 @@ export class ColumnValidation extends jspb.Message {
   getStrictmax(): boolean;
   setStrictmax(value: boolean): ColumnValidation;
 
+  getGenerated(): boolean;
+  setGenerated(value: boolean): ColumnValidation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnValidation.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnValidation): ColumnValidation.AsObject;
@@ -394,6 +397,7 @@ export namespace ColumnValidation {
     valuesetList: Array<string>,
     strictmin: boolean,
     strictmax: boolean,
+    generated: boolean,
   }
 }
 
@@ -1786,6 +1790,9 @@ export class DatasetValidation extends jspb.Message {
   getStrictmax(): boolean;
   setStrictmax(value: boolean): DatasetValidation;
 
+  getGenerated(): boolean;
+  setGenerated(value: boolean): DatasetValidation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetValidation.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetValidation): DatasetValidation.AsObject;
@@ -1802,6 +1809,7 @@ export namespace DatasetValidation {
     valuesetList: Array<string>,
     strictmin: boolean,
     strictmax: boolean,
+    generated: boolean,
   }
 }
 
@@ -3289,6 +3297,9 @@ export class MultiColumnValidation extends jspb.Message {
   getStrictmax(): boolean;
   setStrictmax(value: boolean): MultiColumnValidation;
 
+  getGenerated(): boolean;
+  setGenerated(value: boolean): MultiColumnValidation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiColumnValidation.AsObject;
   static toObject(includeInstance: boolean, msg: MultiColumnValidation): MultiColumnValidation.AsObject;
@@ -3306,6 +3317,7 @@ export namespace MultiColumnValidation {
     valuesetList: Array<string>,
     strictmin: boolean,
     strictmax: boolean,
+    generated: boolean,
   }
 }
 
@@ -3317,6 +3329,9 @@ export class MultiDatasetValidation extends jspb.Message {
   setDatasetsList(value: Array<string>): MultiDatasetValidation;
   clearDatasetsList(): MultiDatasetValidation;
   addDatasets(value: string, index?: number): MultiDatasetValidation;
+
+  getGenerated(): boolean;
+  setGenerated(value: boolean): MultiDatasetValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MultiDatasetValidation.AsObject;
@@ -3330,6 +3345,7 @@ export namespace MultiDatasetValidation {
   export type AsObject = {
     type: string,
     datasetsList: Array<string>,
+    generated: boolean,
   }
 }
 

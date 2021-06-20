@@ -2132,6 +2132,12 @@ export class ModelStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelStatus;
 
+  getCpu(): number;
+  setCpu(value: number): ModelStatus;
+
+  getMem(): number;
+  setMem(value: number): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2178,6 +2184,8 @@ export namespace ModelStatus {
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     resourceconsumed?: ResourceConsumption.AsObject,
     observedgeneration: number,
+    cpu: number,
+    mem: number,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

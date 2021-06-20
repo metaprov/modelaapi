@@ -25,6 +25,9 @@ type MultiDatasetValidation struct {
 	Type *MultiDatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
 	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"bytes,3,rep,name=generated"`
 }
 
 type DatasetValidationName string
@@ -51,6 +54,9 @@ type DatasetValidation struct {
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"bytes,7,rep,name=generated"`
 }
 
 const (
@@ -74,6 +80,9 @@ type MultiColumnValidation struct {
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"bytes,8,rep,name=generated"`
 }
 
 type ColumnValidationName string
@@ -125,6 +134,9 @@ type ColumnValidation struct {
 	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"bytes,8,rep,name=generated"`
 }
 
 // Condition on the dataset
@@ -486,10 +498,6 @@ type Column struct {
 	// Drift treshold is the treshold for drift detection.
 	// +kubebuilder:validation:Optional
 	DriftTreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,35,opt,name=driftThreshold"`
-}
-
-func (in *Column) Validate() (bool, []metav1.StatusCause) {
-	return false, nil
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

@@ -417,10 +417,16 @@ type ModelStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,31,opt,name=observedGeneration"`
+	// CPU is the avg cpu consumed during training.
+	//+kubebuilder:validation:Optional
+	CPU *int32 `json:"cpu,omitempty" protobuf:"varint,32,opt,name=cpu"`
+	// Mem is the avg memory consumed during training.
+	//+kubebuilder:validation:Optional
+	Mem *int32 `json:"mem,omitempty" protobuf:"varint,33,opt,name=mem"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

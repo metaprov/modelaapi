@@ -1071,6 +1071,10 @@ spec:
               cost:
                 description: Cost is the cost of training the model
                 type: number
+              cpu:
+                description: CPU is the avg cpu consumed during training.
+                format: int32
+                type: integer
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
@@ -1102,6 +1106,10 @@ spec:
                 description: ManifestUri is the URI of the manifest in the product
                   bucket.
                 type: string
+              mem:
+                description: Mem is the avg memory consumed during training.
+                format: int32
+                type: integer
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing

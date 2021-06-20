@@ -1488,10 +1488,18 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 31;
 
+  // CPU is the avg cpu consumed during training.
+  // +kubebuilder:validation:Optional
+  optional int32 cpu = 32;
+
+  // Mem is the avg memory consumed during training.
+  // +kubebuilder:validation:Optional
+  optional int32 mem = 33;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 32;
+  repeated ModelCondition conditions = 34;
 }
 
 message ModelValidation {
