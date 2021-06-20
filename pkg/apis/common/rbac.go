@@ -49,6 +49,7 @@ const (
 	VirtualVolumeKind  KindName = "VirtualVolume"
 	ApiTokenKind       KindName = "ApiToken"
 	AlertKind          KindName = "Alert"
+	TaskCardKind       KindName = "TaskCard"
 
 	// Training kind
 	ModelKind            KindName = "Model"
