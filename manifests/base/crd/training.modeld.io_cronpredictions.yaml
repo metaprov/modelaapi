@@ -142,13 +142,18 @@ spec:
                         description: Location is the report location in storage.
                         properties:
                           bucketName:
+                            default: ""
+                            description: Bucketname is the name of the bucket
+                            type: string
+                          datasourceName:
+                            default: ""
+                            description: Datasource name is a pointer to a data source
+                              for cases that the data location is not a simple bucket
+                              but a database
                             type: string
                           path:
                             description: Path to the full data file (e.g. csv file).
                             type: string
-                        required:
-                        - bucketName
-                        - path
                         type: object
                       notifierName:
                         description: NotifierName is a reference to the notifier that

@@ -275,10 +275,17 @@ type DatasetTemplate struct {
 
 // data reference contain pointers to the actual data objects
 type DataLocation struct {
-	BucketName string `json:"bucketName" protobuf:"bytes,1,opt,name=bucketName"`
+	// +kubebuilder:default:=""
+	// Datasource name is a pointer to a data source for cases that the data location is not a simple bucket but a database
+	// +kubebuilder:validation:Optional
+	DatasourceName string `json:"datasourceName" protobuf:"bytes,1,opt,name=datasourceName"`
+	// +kubebuilder:default:=""
+	// Bucketname is the name of the bucket
+	// +kubebuilder:validation:Optional
+	BucketName string `json:"bucketName" protobuf:"bytes,2,opt,name=bucketName"`
 	// Path to the full data file (e.g. csv file).
-	// +required
-	Path string `json:"path" protobuf:"bytes,2,opt,name=path"`
+	// +kubebuilder:validation:Optional
+	Path string `json:"path" protobuf:"bytes,3,opt,name=path"`
 }
 
 // Signatures contains the sha256 signatures of the datasets

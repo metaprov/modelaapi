@@ -356,11 +356,19 @@ message CompilerSpec {
 
 // data reference contain pointers to the actual data objects
 message DataLocation {
-  optional string bucketName = 1;
+  // +kubebuilder:default:=""
+  // Datasource name is a pointer to a data source for cases that the data location is not a simple bucket but a database
+  // +kubebuilder:validation:Optional
+  optional string datasourceName = 1;
+
+  // +kubebuilder:default:=""
+  // Bucketname is the name of the bucket
+  // +kubebuilder:validation:Optional
+  optional string bucketName = 2;
 
   // Path to the full data file (e.g. csv file).
-  // +required
-  optional string path = 2;
+  // +kubebuilder:validation:Optional
+  optional string path = 3;
 }
 
 // DataOutputSpec is the definition of the out file.

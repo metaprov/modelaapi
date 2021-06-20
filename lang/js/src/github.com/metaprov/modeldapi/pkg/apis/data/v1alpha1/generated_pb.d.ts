@@ -426,6 +426,9 @@ export namespace CompilerSpec {
 }
 
 export class DataLocation extends jspb.Message {
+  getDatasourcename(): string;
+  setDatasourcename(value: string): DataLocation;
+
   getBucketname(): string;
   setBucketname(value: string): DataLocation;
 
@@ -442,6 +445,7 @@ export class DataLocation extends jspb.Message {
 
 export namespace DataLocation {
   export type AsObject = {
+    datasourcename: string,
     bucketname: string,
     path: string,
   }

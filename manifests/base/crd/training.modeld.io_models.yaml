@@ -379,13 +379,17 @@ spec:
                   reports and estimators).
                 properties:
                   bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
                     type: string
                   path:
                     description: Path to the full data file (e.g. csv file).
                     type: string
-                required:
-                - bucketName
-                - path
                 type: object
               modelVersion:
                 description: ModelVersion composed of studyid-modelid.
@@ -1167,13 +1171,17 @@ spec:
                   used to test this model
                 properties:
                   bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
                     type: string
                   path:
                     description: Path to the full data file (e.g. csv file).
                     type: string
-                required:
-                - bucketName
-                - path
                 type: object
               testResult:
                 description: TestResult is the results of training the model (pipeline)
@@ -1253,13 +1261,17 @@ spec:
                 description: TrainDatasetLocation is the location of the train dataset
                 properties:
                   bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
                     type: string
                   path:
                     description: Path to the full data file (e.g. csv file).
                     type: string
-                required:
-                - bucketName
-                - path
                 type: object
               trainResult:
                 description: TrainResult is the results of training the model (pipeline)
@@ -1334,13 +1346,17 @@ spec:
                   used for validation
                 properties:
                   bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
                     type: string
                   path:
                     description: Path to the full data file (e.g. csv file).
                     type: string
-                required:
-                - bucketName
-                - path
                 type: object
               weightsUri:
                 description: WeightsUri is the URI of the model binary file.
