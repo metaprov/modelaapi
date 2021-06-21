@@ -155,7 +155,7 @@ func (study *Study) Default() {
 			Validation:  util.Int32Ptr(0),
 			Test:        util.Int32Ptr(20),
 			SplitPolicy: &splitPolicy,
-			Seed:        util.Float64Ptr(42),
+			Seed:        util.Int32Ptr(42),
 		}
 
 	}
