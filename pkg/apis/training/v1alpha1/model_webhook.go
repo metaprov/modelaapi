@@ -138,7 +138,7 @@ func (r *Model) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 func (in *Model) ValidateDelete() error {
-	return nil
+	return in.validateDelete()
 }
 
 //==============================================================================
