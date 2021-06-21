@@ -430,7 +430,12 @@ message AskModelResponse {
 }
 
 message TellModelRequest{
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;    
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model   model              = 6;
 }
 message TellModelResponse {}
 

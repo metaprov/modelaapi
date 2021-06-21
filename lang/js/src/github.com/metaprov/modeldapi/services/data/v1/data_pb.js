@@ -17107,6 +17107,11 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    version: (f = msg.getVersion()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    study: (f = msg.getStudy()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     model: (f = msg.getModel()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
   };
 
@@ -17145,6 +17150,31 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.deserializ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setProduct(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setVersion(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
+      msg.setStudy(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
+      break;
+    case 6:
       var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
       msg.setModel(value);
@@ -17178,10 +17208,50 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getModel();
+  f = message.getProduct();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
+    );
+  }
+  f = message.getVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getStudy();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getDataset();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
     );
@@ -17190,12 +17260,197 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.serializeB
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 1;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getProduct = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setProduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.clearProduct = function() {
+  return this.setProduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getVersion = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.clearVersion = function() {
+  return this.setVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study study = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getStudy = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setStudy = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.clearStudy = function() {
+  return this.setStudy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasStudy = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setDataset = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasDataset = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model model = 6;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.getModel = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, 6));
 };
 
 
@@ -17204,7 +17459,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -17222,7 +17477,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
