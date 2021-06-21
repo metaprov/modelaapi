@@ -336,6 +336,8 @@ type StudySpec struct {
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
 	// ID is the id of the study within the data product
 	// Note that multiplie models can have the same version
+	// Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
+	// +kubebuilder:default:=-1
 	// +kubebuilder:validation:Optional
 	ID *int64 `json:"id" protobuf:"bytes,2,opt,name=id"`
 	// Description is user provided description
