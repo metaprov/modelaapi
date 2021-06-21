@@ -12,22 +12,21 @@ import (
 type StudyPhase string
 
 const (
-	StudyPhaseModelSearchPending StudyPhase = "ModelSearchPending"
-	StudyPhaseModelSearchRunning StudyPhase = "ModelSearchRunning"
-	StudyPhaseModelSearchSuccess StudyPhase = "ModelSearchSuccess"
-	StudyPhaseModelSearchFailed  StudyPhase = "ModelSearchFailed"
-	StudyPhaseModelTestRunning   StudyPhase = "ModelTestRunning"
-	StudyPhaseModelTestSuccess   StudyPhase = "ModelTestSuccess"
-	StudyPhaseModelTestFailed    StudyPhase = "ModelTestFailed"
-	StudyPhaseReported           StudyPhase = "Reported"
-	StudyPhaseReportFailed       StudyPhase = "ReportFailedCreate"
-	StudyPhaseProfileRunning     StudyPhase = "ProfileRunning"
-	StudyPhaseProfileSuccess     StudyPhase = "ProfileSuccess"
-	StudyPhaseProfileFailed      StudyPhase = "ProfileFailed"
-	StudyPhaseReady              StudyPhase = "Succeeded"
-	StudyPhaseFailed             StudyPhase = "IsFailed"
-	StudyPhaseAborted            StudyPhase = "Aborted"
-	StudyPhasePaused             StudyPhase = "Paused"
+	StudyPhaseModelPending StudyPhase = "Pending"
+	StudyPhaseSpliting     StudyPhase = "Spliting"
+	StudyPhaseSplitted     StudyPhase = "Splitted"
+	StudyPhaseSearching    StudyPhase = "Searching"
+	StudyPhaseSearched     StudyPhase = "Searched"
+	StudyPhaseTesting      StudyPhase = "Testing"
+	StudyPhaseTested       StudyPhase = "Tested"
+	StudyPhaseReported     StudyPhase = "Reported"
+	StudyPhaseReporting    StudyPhase = "Reporting"
+	StudyPhaseProfiling    StudyPhase = "Profiling"
+	StudyPhaseProfiled     StudyPhase = "Profiled"
+	StudyPhaseSucceeded    StudyPhase = "Succeeded"
+	StudyPhaseFailed       StudyPhase = "Failed"
+	StudyPhaseAborted      StudyPhase = "Aborted"
+	StudyPhasePaused       StudyPhase = "Paused"
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";

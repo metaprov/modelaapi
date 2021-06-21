@@ -74,32 +74,26 @@ type ModelValidation struct {
 type ModelPhase string
 
 const (
-	ModelPhasePending         ModelPhase = "Pending"
-	ModelPhaseTrainRunning    ModelPhase = "TrainRunning"
-	ModelPhaseTrainSuccess    ModelPhase = "TrainSuccess"
-	ModelPhaseTrainFailed     ModelPhase = "TrainFailed"
-	ModelPhaseTestRunning     ModelPhase = "TestRunning"
-	ModelPhaseTestSuccess     ModelPhase = "TestSuccess"
-	ModelPhaseTestFailed      ModelPhase = "TestFailed"
-	ModelPhaseReportRunning   ModelPhase = "ReportRunning"
-	ModelPhaseReportSuccess   ModelPhase = "ReportSuccess"
-	ModelPhaseReportFailed    ModelPhase = "ReportFailed"
-	ModelPhasePublishRunning  ModelPhase = "PublishRunning"
-	ModelPhasePublishSuccess  ModelPhase = "PublishSuccess"
-	ModelPhasePublishFailed   ModelPhase = "PublishFailed"
-	ModelPhaseProfileRunning  ModelPhase = "ProfileRunning"
-	ModelPhaseProfileSuccess  ModelPhase = "ProfileSuccess"
-	ModelPhaseProfileFailed   ModelPhase = "ProfileFailed"
-	ModelPhaseAborted         ModelPhase = "Aborted"
-	ModelPhaseForecastRunning ModelPhase = "ForecastRunning"
-	ModelPhaseForecasted      ModelPhase = "Forecasted"
-	ModelPhaseFailedForecast  ModelPhase = "FailedForecast"
-	ModelPhaseUat             ModelPhase = "UAT"
-	ModelPhaseProd            ModelPhase = "Deployment"
-	ModelPhaseServing         ModelPhase = "Serving"
-	ModelPhaseStale           ModelPhase = "Stale"
-	ModelPhaseMaintaince      ModelPhase = "Maintainance"
-	ModelPhaseRetired         ModelPhase = "Retired"
+	ModelPhaseFailed      ModelPhase = "Failed"
+	ModelPhasePending     ModelPhase = "Pending"
+	ModelPhaseTraining    ModelPhase = "Training"
+	ModelPhaseTrained     ModelPhase = "Trained"
+	ModelPhaseTesting     ModelPhase = "Testing"
+	ModelPhaseTested      ModelPhase = "Tested"
+	ModelPhaseReporting   ModelPhase = "Reporting"
+	ModelPhaseReported    ModelPhase = "Reported"
+	ModelPhasePublishing  ModelPhase = "Publishing"
+	ModelPhasePublished   ModelPhase = "Published"
+	ModelPhaseProfiling   ModelPhase = "Profiling"
+	ModelPhaseProfiled    ModelPhase = "Profiled"
+	ModelPhaseAborted     ModelPhase = "Aborted"
+	ModelPhaseForecasting ModelPhase = "Forecasting"
+	ModelPhaseForecasted  ModelPhase = "Forecasted"
+	ModelPhaseUat         ModelPhase = "UAT"
+	ModelPhaseDeployed    ModelPhase = "Deployed"
+	ModelPhaseReleased    ModelPhase = "Released"
+	ModelPhaseMaintaince  ModelPhase = "Maintainance"
+	ModelPhaseRetired     ModelPhase = "Retired"
 )
 
 // ModelConditionType is a condition on a model
@@ -126,7 +120,7 @@ const (
 	// The model artifact were archived in the bucket.
 	ModelArchived ModelConditionType = "Archived"
 	// True if the model is active and serving prediction
-	ModelServing ModelConditionType = "Serving"
+	ModelReleased ModelConditionType = "Released"
 	// Training was aborted
 	ModelAborted ModelConditionType = "Aborted"
 	// Training is paused
@@ -136,7 +130,7 @@ const (
 	// The model is under testing
 	ModelUat ModelConditionType = "UAT"
 	// The model is in production
-	ModelProd ModelConditionType = "Deployment"
+	ModelDeployed ModelConditionType = "Deployed"
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
 	// The model is in maintance

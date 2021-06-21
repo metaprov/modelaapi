@@ -59,6 +59,7 @@ const (
 	ModelPipelineRunKind KindName = "ModelPipelineRun"
 	ModelAutobuilderKind KindName = "ModelAutobuilder"
 	ReportKind           KindName = "Report"
+	CronReportKind       KindName = "CronReport"
 	StudyKind            KindName = "Study"
 
 	// team

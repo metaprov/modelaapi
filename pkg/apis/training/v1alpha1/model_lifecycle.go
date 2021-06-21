@@ -351,14 +351,14 @@ func (model *Model) MarkTraining() {
 	now := metav1.Now()
 	model.Status.StartTime = &now
 	model.Status.TrainStartTime = &now
-	model.Status.Phase = ModelPhaseTrainRunning
+	model.Status.Phase = ModelPhaseTraining
 }
 
 func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	now := metav1.Now()
 	model.Status.TrainCompletionTime = &now
 	model.Status.TrainResult = ms
-	model.Status.Phase = ModelPhaseTrainSuccess
+	model.Status.Phase = ModelPhaseTrained
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTrained,
 		Status: v1.ConditionTrue,
@@ -372,7 +372,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseTrainFailed
+	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
 	model.Status.TrainCompletionTime = &now
 	// set the scores to 0, since Nan is invalid value
@@ -416,7 +416,7 @@ func (model *Model) MarkWaitingToTest() {
 func (model *Model) MarkTesting() {
 	now := metav1.Now()
 	model.Status.TestStartTime = &now
-	model.Status.Phase = ModelPhaseTestRunning
+	model.Status.Phase = ModelPhaseTesting
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTested,
 		Status: v1.ConditionFalse,
@@ -431,11 +431,11 @@ func (model *Model) MarkTestingFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseTestFailed
+	model.Status.Phase = ModelPhaseFailed
 }
 
 func (model *Model) MarkTested() {
-	model.Status.Phase = ModelPhaseTestSuccess
+	model.Status.Phase = ModelPhaseTested
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTested,
 		Status: v1.ConditionTrue,
@@ -465,7 +465,7 @@ func (model *Model) WaitingToTest() bool {
 //-------------------- profile command
 
 func (model *Model) MarkProfiling() {
-	model.Status.Phase = ModelPhaseProfileRunning
+	model.Status.Phase = ModelPhaseProfiling
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelProfiled,
 		Status: v1.ConditionFalse,
@@ -474,6 +474,7 @@ func (model *Model) MarkProfiling() {
 }
 
 func (model *Model) MarkProfiled(uri string) {
+	model.Status.Phase = ModelPhaseProfiled
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelProfiled,
 		Status: v1.ConditionTrue,
@@ -488,7 +489,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseProfileFailed
+	model.Status.Phase = ModelPhaseFailed
 }
 
 func (model *Model) Profiled() bool {
@@ -498,17 +499,17 @@ func (model *Model) Profiled() bool {
 
 // --------------- Reporting
 func (model *Model) MarkReporting() {
-	model.Status.Phase = ModelPhaseReportRunning
+	model.Status.Phase = ModelPhaseReporting
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelReported,
 		Status: v1.ConditionFalse,
-		Reason: string(ModelPhaseReportRunning),
+		Reason: string(ModelPhaseReporting),
 	})
 
 }
 
 func (model *Model) MarkReported(name string) {
-	model.Status.Phase = ModelPhaseReportSuccess
+	model.Status.Phase = ModelPhaseReported
 	model.Status.ReportName = name
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelReported,
@@ -520,10 +521,10 @@ func (model *Model) MarkReportFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:    ModelReported,
 		Status:  v1.ConditionFalse,
-		Reason:  string(ModelPhaseReportFailed),
+		Reason:  string(ModelPhaseFailed),
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseReportFailed
+	model.Status.Phase = ModelPhaseFailed
 }
 
 func (model *Model) Reported() bool {
@@ -553,11 +554,11 @@ func (model *Model) MarkForecastFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhaseFailedForecast
+	model.Status.Phase = ModelPhaseFailed
 }
 
 func (model *Model) MarkForecasting() {
-	model.Status.Phase = ModelPhaseForecastRunning
+	model.Status.Phase = ModelPhaseForecasting
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelForecasted,
 		Status: v1.ConditionFalse,
@@ -568,7 +569,7 @@ func (model *Model) MarkForecasting() {
 // ---------------------- publish
 
 func (model *Model) MarkPublishing() {
-	model.Status.Phase = ModelPhasePublishRunning
+	model.Status.Phase = ModelPhasePublishing
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelPublished,
 		Status: v1.ConditionFalse,
@@ -584,7 +585,7 @@ func (model *Model) Published() bool {
 
 func (model *Model) MarkPublished(image string) {
 	model.Status.ImageName = image
-	model.Status.Phase = ModelPhasePublishSuccess
+	model.Status.Phase = ModelPhasePublished
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelPublished,
 		Status: v1.ConditionTrue,
@@ -598,7 +599,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Reason:  ReasonFailed,
 		Message: err,
 	})
-	model.Status.Phase = ModelPhasePublishFailed
+	model.Status.Phase = ModelPhaseFailed
 }
 
 // -------------- Resume
@@ -631,15 +632,15 @@ func (model *Model) Aborted() bool {
 // -------------------- Serving
 
 func (model *Model) MarkServing() {
-	model.Status.Phase = ModelPhaseServing
+	model.Status.Phase = ModelPhaseReleased
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelServing,
+		Type:   ModelReleased,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (model *Model) Serving() bool {
-	cond := model.GetCond(ModelServing)
+	cond := model.GetCond(ModelReleased)
 	return cond.Status == v1.ConditionTrue
 }
 
