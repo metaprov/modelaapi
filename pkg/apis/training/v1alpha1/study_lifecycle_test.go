@@ -107,8 +107,8 @@ func TestTrainTestValidation_CV_More_Than_20000_(t *testing.T) {
 
 func Test_MarkModelTrained(t *testing.T) {
 	study := NewStudy("ns", "name", "")
-	study.MarkModelsTrained()
-	assert.True(t, study.ModelTrained())
+	study.MarkSearched()
+	assert.True(t, study.Searched())
 }
 
 func Test_MarkEnsembleTrained(t *testing.T) {
@@ -119,7 +119,7 @@ func Test_MarkEnsembleTrained(t *testing.T) {
 
 func Test_MarkModelTested(t *testing.T) {
 	study := NewStudy("ns", "name", "")
-	study.MarkModelsTested()
+	study.MarkTested()
 	assert.True(t, study.ModelTested())
 }
 

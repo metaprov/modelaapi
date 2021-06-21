@@ -65,11 +65,11 @@ const (
 	StudySplitted StudyConditionType = "StudySplitted"
 	// The search for the best model candidates is completed.
 	// This phase consists mainly of cross validation.
-	StudyModelsTrained StudyConditionType = "ModelsTrained"
+	StudySearched StudyConditionType = "ModelsTrained"
 	// true if we did ensamble training
 	StudyEnsambleTrained StudyConditionType = "ModelsEnsembleTrained"
 	// The best model candidate was tested on the full dataset.
-	StudyBestModelTested StudyConditionType = "ModelTested"
+	StudyTested StudyConditionType = "ModelTested"
 	// True when we generated the reports.
 	StudyReported StudyConditionType = "Reported"
 	// True after we profiled the study

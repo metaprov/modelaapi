@@ -263,14 +263,14 @@ func (study *Study) MarkSplitFailed(err string) {
 
 // --------------- Training
 
-func (study *Study) ModelTrained() bool {
-	cond := study.GetCond(StudyModelsTrained)
+func (study *Study) Searched() bool {
+	cond := study.GetCond(StudySearched)
 	return cond.Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkTraining() {
+func (study *Study) MarkSearching() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyModelsTrained,
+		Type:   StudySearched,
 		Status: v1.ConditionFalse,
 		Reason: ReasonTraining,
 	})
@@ -281,9 +281,9 @@ func (study *Study) MarkTraining() {
 	study.Status.Phase = StudyPhaseSearching
 }
 
-func (study *Study) MarkModelsTrained() {
+func (study *Study) MarkSearched() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyModelsTrained,
+		Type:   StudySearched,
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
@@ -293,9 +293,9 @@ func (study *Study) MarkModelsTrained() {
 	study.Status.Phase = StudyPhaseSearched
 }
 
-func (study *Study) MarkModelTrainedFailed(err string) {
+func (study *Study) MarkSearchFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudyModelsTrained,
+		Type:    StudySearched,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
@@ -306,13 +306,13 @@ func (study *Study) MarkModelTrainedFailed(err string) {
 // --------------- Test
 
 func (study *Study) ModelTested() bool {
-	cond := study.GetCond(StudyBestModelTested)
+	cond := study.GetCond(StudyTested)
 	return cond.Status == v1.ConditionTrue
 }
 
 func (study *Study) MarkTesting() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyBestModelTested,
+		Type:   StudyTested,
 		Status: v1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
@@ -321,9 +321,9 @@ func (study *Study) MarkTesting() {
 	study.Status.Phase = StudyPhaseTesting
 }
 
-func (study *Study) MarkModelsTested() {
+func (study *Study) MarkTested() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyBestModelTested,
+		Type:   StudyTested,
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
@@ -331,9 +331,9 @@ func (study *Study) MarkModelsTested() {
 	study.Status.Phase = StudyPhaseTested
 }
 
-func (study *Study) MarkModelTestedFailed(err string) {
+func (study *Study) MarkTestingFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudyBestModelTested,
+		Type:    StudyTested,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
