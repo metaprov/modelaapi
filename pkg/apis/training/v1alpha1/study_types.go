@@ -576,7 +576,7 @@ type DataSplit struct {
 	// Default: 42
 	// +kubebuilder:default:=42
 	// +kubebuilder:validation:Optional
-	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,7,opt,name=seed"`
+	Seed *int32 `json:"seed,omitempty" protobuf:"varint,7,opt,name=seed"`
 }
 
 type Level struct {

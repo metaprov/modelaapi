@@ -4818,7 +4818,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.toObjec
     test: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     splitpolicy: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     splitcolumn: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f
+    seed: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4880,7 +4880,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.deseria
       msg.setSplitcolumn(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setSeed(value);
       break;
     default:
@@ -4956,7 +4956,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.seriali
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       7,
       f
     );
@@ -5181,11 +5181,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.prototy
 
 
 /**
- * optional double seed = 7;
+ * optional int32 seed = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.DataSplit.prototype.getSeed = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 

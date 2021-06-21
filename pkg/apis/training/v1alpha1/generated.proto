@@ -235,7 +235,7 @@ message DataSplit {
   // Default: 42
   // +kubebuilder:default:=42
   // +kubebuilder:validation:Optional
-  optional double seed = 7;
+  optional int32 seed = 7;
 }
 
 // DataStageSpec is the desired state of the data preprocesing step of the pipeline.

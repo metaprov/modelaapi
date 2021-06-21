@@ -353,7 +353,7 @@ func (in *DataSplit) DeepCopyInto(out *DataSplit) {
 	}
 	if in.Seed != nil {
 		in, out := &in.Seed, &out.Seed
-		*out = new(float64)
+		*out = new(int32)
 		**out = **in
 	}
 }
