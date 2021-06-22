@@ -142,11 +142,11 @@ func (b *ModelAutobuilder) MarkDatasourceReady() {
 }
 
 func (b *ModelAutobuilder) MarkDatasourceFailed(err error) {
-	b.Status.Phase = ModelAutobuilderPhaseDataSourceFailed
+	b.Status.Phase = ModelAutobuilderPhaseFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
 		Type:    ModelAutobuilderDataSourceReady,
 		Status:  v1.ConditionFalse,
-		Reason:  string(ModelAutobuilderPhaseDataSourceFailed),
+		Reason:  "DataSourceFailed",
 		Message: err.Error(),
 	})
 }
@@ -168,11 +168,11 @@ func (b *ModelAutobuilder) MarkDataSetRunning() {
 
 // DatasetFailed
 func (b *ModelAutobuilder) MarkDataSetFailed(err error) {
-	b.Status.Phase = ModelAutobuilderPhaseDatasetFailed
+	b.Status.Phase = ModelAutobuilderPhaseFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
 		Type:    ModelAutobuilderDatasetCompleted,
 		Status:  v1.ConditionFalse,
-		Reason:  string(ModelAutobuilderPhaseDatasetFailed),
+		Reason:  "DatasetFailed",
 		Message: err.Error(),
 	})
 }
@@ -202,11 +202,11 @@ func (b *ModelAutobuilder) MarkStudyRunning() {
 
 // StudyFailed
 func (b *ModelAutobuilder) MarkStudyFailed(err error) {
-	b.Status.Phase = ModelAutobuilderPhaseStudyFailed
+	b.Status.Phase = ModelAutobuilderPhaseFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
 		Type:    ModelAutobuilderStudyCompleted,
 		Status:  v1.ConditionFalse,
-		Reason:  string(ModelAutobuilderPhaseStudyFailed),
+		Reason:  "StudyFailed",
 		Message: err.Error(),
 	})
 }

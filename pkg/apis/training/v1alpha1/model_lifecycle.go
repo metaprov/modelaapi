@@ -647,7 +647,7 @@ func (model *Model) Serving() bool {
 // -------------------- Maintaince
 
 func (model *Model) MarkMaintain() {
-	model.Status.Phase = ModelPhaseMaintaince
+	model.Status.Phase = ModelPhaseMaintenance
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelMaintaince,
 		Status: v1.ConditionTrue,
