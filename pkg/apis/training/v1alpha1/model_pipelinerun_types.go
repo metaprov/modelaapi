@@ -128,6 +128,10 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	// The priority of this pipeline run. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,6,opt,name=priority"`
 }
 
 type StageStatusPhase string

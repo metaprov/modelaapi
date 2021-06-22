@@ -3923,7 +3923,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.toObject
     labbindingsList: jspb.Message.toObjectList(msg.getLabbindingsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.toObject, includeInstance),
     sitebindingsList: jspb.Message.toObjectList(msg.getSitebindingsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.toObject, includeInstance),
+    clearencelevel: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4027,6 +4028,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.deserial
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.deserializeBinaryFromReader);
       msg.addSitebindings(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClearencelevel(value);
       break;
     default:
       reader.skipField();
@@ -4171,6 +4176,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
       16,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeString(
+      17,
+      f
     );
   }
 };
@@ -4756,6 +4768,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearSitebindingsList = function() {
   return this.setSitebindingsList([]);
+};
+
+
+/**
+ * optional string clearenceLevel = 17;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getClearencelevel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setClearencelevel = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearClearencelevel = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasClearencelevel = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

@@ -1053,6 +1053,7 @@ const (
 // CrossValidationType
 //==============================================================================
 
+// +kubebuilder:validation:Enum="none";"kfold";"loocv";"stratified"
 type CvType string
 
 const (
@@ -1063,6 +1064,7 @@ const (
 )
 
 // Common encoding for flat file
+// +kubebuilder:validation:Enum="utf-8";"latin-1";"utf-16";
 type FileEncoding string
 
 const (
@@ -1144,6 +1146,7 @@ type RunSchedule struct {
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,6,opt,name=type"`
 }
 
+// +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-pref-degradation"
 type TriggerType string
 
 const (
@@ -1166,6 +1169,7 @@ const (
 	Denied             ConditionReason = "Denied"
 )
 
+// +kubebuilder:validation:Enum="amd-epyc-2";"arma-53";"arma-72";"intel-cascade-lake";"intel-broadwell";"intel-skylake";"tesla-v100";"tesla-k80";"t4";"raspberry-pi8-modeld-b";
 type HardwareTarget string
 
 const (
@@ -1181,6 +1185,7 @@ const (
 	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modeld-b"
 )
 
+// +kubebuilder:validation:Enum="tvm";"onyx";"xla";
 type CompilerName string
 
 const (
@@ -1305,7 +1310,7 @@ const (
 	ModelDeploymentPhaseFailed    ModelDeploymentPhase = "Failed"
 )
 
-// +kubebuilder:validation:Enum="tabular";"image";"text";"video"
+// +kubebuilder:validation:Enum="tabular";"image";"text";"video";"audio"
 type DatasetType string
 
 const (
@@ -1313,6 +1318,7 @@ const (
 	DatasetTypeImage   DatasetType = "image"
 	DatasetTypeText    DatasetType = "text"
 	DatasetTypeVideo   DatasetType = "video"
+	DatasetTypeAudio   DatasetType = "audio"
 )
 
 // AccessType define how client reach the predictor
@@ -1334,6 +1340,8 @@ const (
 	NoneAccessType AccessType = "none"
 )
 
+// Op is a relational operator
+// +kubebuilder:validation:Enum="lt";"eq";"gt";"ne";"le";"ge"
 type Op string
 
 const (
@@ -1345,10 +1353,88 @@ const (
 	GE Op = "ge" // greater or equal
 )
 
+// Update strategy is a dataset update strategy
+// +kubebuilder:validation:Enum="upsert";"insert";"update"
 type UpdateStrategy string
 
 const (
 	Upsert UpdateStrategy = "upsert"
 	Insert UpdateStrategy = "insert"
 	Update UpdateStrategy = "update"
+)
+
+// SamplingType defines how the recipe file is sampled.
+// +kubebuilder:validation:Enum="header";"random";"filter";"anomaly"
+type SamplingType string
+
+const (
+	Header  SamplingType = "header"
+	Random  SamplingType = "random"
+	Filter  SamplingType = "filter"
+	Anomaly SamplingType = "anomaly"
+)
+
+// +kubebuilder:validation:Enum="unclassified";"confidential";"secret";"top-secret"
+type SecurityClearanceLevel string
+
+const (
+	SecurityClearanceLevelUnclassified SecurityClearanceLevel = "unclassified"
+	SecurityClearanceLevelConfidential SecurityClearanceLevel = "confidential"
+	SecurityClearanceLevelSecret       SecurityClearanceLevel = "secret"
+	SecurityClearanceLevelTopSecret    SecurityClearanceLevel = "top-secret"
+)
+
+// the priority level for a task
+// +kubebuilder:validation:Enum="low";"medium";"high";"urgent"
+type PriorityLevel string
+
+const (
+	PriorityLevelLow    SecurityClearanceLevel = "low"
+	PriorityLevelMedium SecurityClearanceLevel = "medium"
+	PriorityLevelHigh   SecurityClearanceLevel = "high"
+	PriorityLevelUrgent SecurityClearanceLevel = "urgent"
+)
+
+// ModelType enamurate the model type
+// +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";
+type ModelType string
+
+const (
+	ModelTypeClassical   ModelType = "classical"
+	ModelTypeDNN         ModelType = "dnn"
+	ModelTypeTransformer ModelType = "transformer"
+	ModelTypeChatbot     ModelType = "chatbot"
+	ModelTypeRL          ModelType = "rl"
+)
+
+// +kubebuilder:validation:Enum="flask";"grpc";"onyx";
+// Predictor format represent the API implementation of the model
+type PredictorFormat string
+
+const (
+	FlaskPredictor PredictorFormat = "flask"
+	GrpcPredictor  PredictorFormat = "grpc"
+	OnyxPredictor  PredictorFormat = "onyx"
+)
+
+// ModalityType define the way that ASHA algorithm divide the data .
+// Since we are using multi modal alg , this parameter define the modality
+// +kubebuilder:validation:Enum="data";"epochs";
+type ModalityType string
+
+const (
+	ModalityTypeData   ModalityType = "data"
+	ModalityTypeEpochs ModalityType = "epochs"
+)
+
+// SplitType defines how the data is splitted between training/testing or training/testing/validation
+type SplitType string
+
+const (
+	SplitTypeRandom         SplitType = "random"
+	SplitTypeParitionColumn SplitType = "partition-column"
+	SplitTypeGroup          SplitType = "group"
+	SplitTypeDatetime       SplitType = "datatime"
+	SplitTypeStratified     SplitType = "stratified"
+	SplitTypeAuto           SplitType = "auto"
 )

@@ -914,6 +914,11 @@ message ModelPipelineRunSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
+
+  // The priority of this pipeline run. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 6;
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
@@ -1094,6 +1099,11 @@ message ModelPipelineSpec {
   // +kubebuilder:default =""
   // +kubebuilder:validation:Optional
   optional string baselineModelName = 18;
+
+  // The priority of this pipeline. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 30;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -1356,6 +1366,11 @@ message ModelSpec {
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
   optional string estimatorType = 29;
+
+  // The priority of this model. The defualt is medium. This is assigned from the study
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 30;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -1764,6 +1779,15 @@ message NotebookSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 11;
+
+  // Schedule for running the pipeline
+  // +kubebuilder:validation:Optional
+  optional string schedule = 12;
+
+  // The priority of this notebook run. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 13;
 }
 
 // NotebookStatus is the observed state of the notebook resource
@@ -2244,6 +2268,11 @@ message StudySpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool template = 25;
+
+  // The priority of this study. The defualt is medium
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 26;
 }
 
 // StudyStatus defines the observed state of the Study

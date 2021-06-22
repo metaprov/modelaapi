@@ -167,8 +167,14 @@ export class Column extends jspb.Message {
   getTimecolumn(): boolean;
   setTimecolumn(value: boolean): Column;
 
-  getPreserveprivacy(): boolean;
-  setPreserveprivacy(value: boolean): Column;
+  getPii(): boolean;
+  setPii(value: boolean): Column;
+
+  getPhi(): boolean;
+  setPhi(value: boolean): Column;
+
+  getPersonaldata(): boolean;
+  setPersonaldata(value: boolean): Column;
 
   getProtected(): boolean;
   setProtected(value: boolean): Column;
@@ -228,7 +234,9 @@ export namespace Column {
     minitems: number,
     uniqueitems: boolean,
     timecolumn: boolean,
-    preserveprivacy: boolean,
+    pii: boolean,
+    phi: boolean,
+    personaldata: boolean,
     pb_protected: boolean,
     defaultvaluenum: number,
     log: boolean,
@@ -689,6 +697,9 @@ export class DataPipelineRunSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): DataPipelineRunSpec;
 
+  getPriority(): string;
+  setPriority(value: string): DataPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunSpec): DataPipelineRunSpec.AsObject;
@@ -704,6 +715,7 @@ export namespace DataPipelineRunSpec {
     datalocation?: DataLocation.AsObject,
     owner: string,
     workloadclassname: string,
+    priority: string,
   }
 }
 
@@ -793,6 +805,9 @@ export class DataPipelineSpec extends jspb.Message {
   hasDefaultcompilerspec(): boolean;
   clearDefaultcompilerspec(): DataPipelineSpec;
 
+  getPriority(): string;
+  setPriority(value: string): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -812,6 +827,7 @@ export namespace DataPipelineSpec {
     owner: string,
     workloadclassname: string,
     defaultcompilerspec?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    priority: string,
   }
 }
 
@@ -1013,6 +1029,9 @@ export class DataProductSpec extends jspb.Message {
   hasCompilation(): boolean;
   clearCompilation(): DataProductSpec;
 
+  getClearencelevel(): string;
+  setClearencelevel(value: string): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1040,6 +1059,7 @@ export namespace DataProductSpec {
     oncallaccountname: string,
     attachmentsList: Array<Attachment.AsObject>,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    clearencelevel: string,
   }
 }
 

@@ -97,11 +97,24 @@ spec:
                       type: string
                   type: object
                 type: array
+              clearenceLevel:
+                default: unclassified
+                description: The clearance level of this data product
+                enum:
+                - unclassified
+                - confidential
+                - secret
+                - top-secret
+                type: string
               compilation:
                 description: List of documents attached to the this data product
                 properties:
                   compiler:
                     description: Set one or more targets
+                    enum:
+                    - tvm
+                    - onyx
+                    - xla
                     type: string
                   enable:
                     description: Enable set the enable to
@@ -109,6 +122,17 @@ spec:
                   targets:
                     description: Set one or more targets for the compiler
                     items:
+                      enum:
+                      - amd-epyc-2
+                      - arma-53
+                      - arma-72
+                      - intel-cascade-lake
+                      - intel-broadwell
+                      - intel-skylake
+                      - tesla-v100
+                      - tesla-k80
+                      - t4
+                      - raspberry-pi8-modeld-b
                       type: string
                     type: array
                 type: object

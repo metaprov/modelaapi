@@ -160,6 +160,11 @@ spec:
                   type:
                     default: random
                     description: Type is the sampling type Default is random
+                    enum:
+                    - header
+                    - random
+                    - filter
+                    - anomaly
                     type: string
                 type: object
               syntacticRows:
@@ -180,6 +185,7 @@ spec:
                 - image
                 - text
                 - video
+                - audio
                 type: string
               validate:
                 default: true

@@ -91,6 +91,10 @@ type DataPipelineSpec struct {
 	// This is the default compiler spec
 	//+kubebuilder:validation:Optional
 	DefaultCompilerSpec *catalog.CompilerSpec `json:"defaultCompilerSpec,omitempty" protobuf:"bytes,10,opt,name=defaultCompilerSpec"`
+	// The priority of this data pipeline. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,11,opt,name=priority"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -124,7 +128,7 @@ type DataOutputSpec struct {
 	//Action define how the new data will be created
 	// +kubebuilder:default:="create"
 	// +kubebuilder:validation:Optional
-	Action *OutputFileAction `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
+	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
 }
 
 type RecipePartSpec struct {
@@ -135,10 +139,3 @@ type RecipePartSpec struct {
 	// Dependents is the list of recipe that need to run after this recipe.
 	Dependents []string `json:"Dependents,omitempty" protobuf:"bytes,2,rep,name=Dependents"`
 }
-
-type OutputFileAction string
-
-const (
-	OutputFileActionCreate   OutputFileAction = "create"
-	OutputFileActionOverride OutputFileAction = "override"
-)

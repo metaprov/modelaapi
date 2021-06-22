@@ -153,6 +153,11 @@ message AccountSpec {
   // SiteBindings is the RBAC roles that the user have within each serving site.
   // +kubebuilder:validation:Optional
   repeated AccountRoleBinding siteBindings = 16;
+
+  // The clearence level of this account. The clearence level override user premissions.
+  // +kubebuilder:default:=unclassified
+  // +kubebuilder:validation:Optional
+  optional string clearenceLevel = 17;
 }
 
 // AccountStatus defines the actual state of the api object

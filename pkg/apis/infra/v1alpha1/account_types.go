@@ -141,6 +141,10 @@ type AccountSpec struct {
 	// SiteBindings is the RBAC roles that the user have within each serving site.
 	// +kubebuilder:validation:Optional
 	SiteBindings []AccountRoleBinding `json:"siteBindings,omitempty" protobuf:"bytes,16,rep,name=siteBindings"`
+	// The clearence level of this account. The clearence level override user premissions.
+	// +kubebuilder:default:=unclassified
+	// +kubebuilder:validation:Optional
+	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
 }
 
 // AccountStatus defines the actual state of the api object

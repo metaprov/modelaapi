@@ -143,38 +143,6 @@ const (
 	AutoResourceSize ResourceSize = "AutoScaler"
 )
 
-// +kubebuilder:validation:Enum="flask";"grpc";"onyx";
-// Predictor format represent the API implementation of the model
-type PredictorFormat string
-
-const (
-	FlaskPredictor PredictorFormat = "flask"
-	GrpcPredictor  PredictorFormat = "grpc"
-	OnyxPredictor  PredictorFormat = "onyx"
-)
-
-// ModalityType define the way that ASHA algorithm divide the data .
-// Since we are using multi modal alg , this parameter define the modality
-// +kubebuilder:validation:Enum="data";"epochs";
-type ModalityType string
-
-const (
-	ModalityTypeData   ModalityType = "data"
-	ModalityTypeEpochs ModalityType = "epochs"
-)
-
-// SplitType defines how the data is splitted between training/testing or training/testing/validation
-type SplitType string
-
-const (
-	Random         SplitType = "random"
-	ParitionColumn SplitType = "partition-column"
-	Group          SplitType = "group"
-	Datetime       SplitType = "datatime"
-	Stratified     SplitType = "stratified"
-	Auto           SplitType = "auto"
-)
-
 // TrainingResourceRequest specify the desired resources for the training job
 type TrainingResourceRequest struct {
 	// Gpu specify the desired gpu requirements.  will be compared
@@ -210,7 +178,7 @@ type SuccessiveHalvingOptions struct {
 	// For classical models - we use data
 	// +kubebuilder:default:=epochs
 	// +kubebuilder:validation:Optional
-	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,3,opt,name=modality"`
+	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,3,opt,name=modality"`
 }
 
 // ModelSearchSpec the constraint on the training process.
@@ -419,6 +387,10 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template,omitempty" protobuf:"bytes,25,opt,name=template"`
+	// The priority of this study. The defualt is medium
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,26,opt,name=priority"`
 }
 
 // StudyStatus defines the observed state of the Study
@@ -567,7 +539,7 @@ type DataSplit struct {
 	// Indicate if the dataset split should be stratified.
 	// +kubebuilder:default:="stratified"
 	// +kubebuilder:validation:Optional
-	SplitPolicy *SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
+	SplitPolicy *catalog.SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
 	// The name of the column used to split
 	// +kubebuilder:validation:Optional
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,6,opt,name=splitColumn"`

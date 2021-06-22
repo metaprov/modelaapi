@@ -180,6 +180,9 @@ export class AccountSpec extends jspb.Message {
   clearSitebindingsList(): AccountSpec;
   addSitebindings(value?: AccountRoleBinding, index?: number): AccountRoleBinding;
 
+  getClearencelevel(): string;
+  setClearencelevel(value: string): AccountSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AccountSpec): AccountSpec.AsObject;
@@ -206,6 +209,7 @@ export namespace AccountSpec {
     productbindingsList: Array<AccountRoleBinding.AsObject>,
     labbindingsList: Array<AccountRoleBinding.AsObject>,
     sitebindingsList: Array<AccountRoleBinding.AsObject>,
+    clearencelevel: string,
   }
 }
 

@@ -162,6 +162,10 @@ type DataProductSpec struct {
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
+	// The clearance level of this data product
+	// +kubebuilder:default:=unclassified
+	// +kubebuilder:validation:Optional
+	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,20,opt,name=clearenceLevel"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

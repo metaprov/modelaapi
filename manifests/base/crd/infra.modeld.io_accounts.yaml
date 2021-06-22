@@ -67,6 +67,16 @@ spec:
                 default: false
                 description: User is admin. Admin have full control on other accounts.
                 type: boolean
+              clearenceLevel:
+                default: unclassified
+                description: The clearence level of this account. The clearence level
+                  override user premissions.
+                enum:
+                - unclassified
+                - confidential
+                - secret
+                - top-secret
+                type: string
               email:
                 default: ""
                 description: Email specify the email of the user

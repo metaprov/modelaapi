@@ -142,6 +142,15 @@ spec:
                   the dataset of this prediction.
                 maxLength: 63
                 type: string
+              priority:
+                default: medium
+                description: The priority of this prediction. The defualt is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               tests:
                 description: Tests is the list of metrics that we need to measure
                   if we are running a labeled prediction
@@ -194,6 +203,10 @@ spec:
                 type: array
               updateStrategy:
                 description: Update strategy
+                enum:
+                - upsert
+                - insert
+                - update
                 type: string
               versionName:
                 default: ""

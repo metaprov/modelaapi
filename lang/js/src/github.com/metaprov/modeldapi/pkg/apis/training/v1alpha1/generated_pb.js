@@ -15120,7 +15120,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     pipelinename: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15176,6 +15177,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -15238,6 +15243,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -15421,6 +15433,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string priority = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRunSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -16981,7 +17029,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     owner: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     approveraccountname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     notifiername: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    baselinemodelname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f
+    baselinemodelname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17086,6 +17135,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setBaselinemodelname(value);
+      break;
+    case 30:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -17222,6 +17275,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   if (f != null) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 30));
+  if (f != null) {
+    writer.writeString(
+      30,
       f
     );
   }
@@ -17758,6 +17818,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasBaselinemodelname = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string priority = 30;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 30, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 30, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 30) != null;
 };
 
 
@@ -19260,7 +19356,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     forecastingspec: (f = msg.getForecastingspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
-    estimatortype: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f
+    estimatortype: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -19422,6 +19519,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 29:
       var value = /** @type {string} */ (reader.readString());
       msg.setEstimatortype(value);
+      break;
+    case 30:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -19662,6 +19763,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeString(
       29,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 30));
+  if (f != null) {
+    writer.writeString(
+      30,
       f
     );
   }
@@ -20719,6 +20827,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasEstimatortype = function() {
   return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * optional string priority = 30;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 30, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 30, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 30) != null;
 };
 
 
@@ -26324,7 +26468,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.toOb
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    schedule: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -26406,6 +26552,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
     case 11:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSchedule(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -26512,6 +26666,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
   if (f != null) {
     writer.writeInt64(
       11,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -26914,6 +27082,78 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string schedule = 12;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getSchedule = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setSchedule = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearSchedule = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasSchedule = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional string priority = 13;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -32365,7 +32605,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
+    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32501,6 +32742,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTemplate(value);
+      break;
+    case 26:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -32697,6 +32942,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeBool(
       25,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeString(
+      26,
       f
     );
   }
@@ -33536,6 +33788,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTemplate = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional string priority = 26;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

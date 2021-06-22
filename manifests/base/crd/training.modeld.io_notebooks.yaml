@@ -90,9 +90,21 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
+              priority:
+                default: medium
+                description: The priority of this notebook run. The defualt is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               requirements:
                 default: ""
                 description: Requirements python file
+                type: string
+              schedule:
+                description: Schedule for running the pipeline
                 type: string
               schemaRef:
                 description: SchemaName relate a notebook to a schema. The schema

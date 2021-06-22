@@ -3143,14 +3143,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     minitems: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
     uniqueitems: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
     timecolumn: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
-    preserveprivacy: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
-    pb_protected: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
-    defaultvaluenum: (f = jspb.Message.getOptionalFloatingPointField(msg, 30)) == null ? undefined : f,
-    log: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
-    mu: (f = jspb.Message.getOptionalFloatingPointField(msg, 32)) == null ? undefined : f,
-    sigma: (f = jspb.Message.getOptionalFloatingPointField(msg, 33)) == null ? undefined : f,
-    skewthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 34)) == null ? undefined : f,
-    driftthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 35)) == null ? undefined : f
+    pii: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
+    phi: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
+    personaldata: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
+    pb_protected: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
+    defaultvaluenum: (f = jspb.Message.getOptionalFloatingPointField(msg, 32)) == null ? undefined : f,
+    log: (f = jspb.Message.getBooleanField(msg, 33)) == null ? undefined : f,
+    mu: (f = jspb.Message.getOptionalFloatingPointField(msg, 34)) == null ? undefined : f,
+    sigma: (f = jspb.Message.getOptionalFloatingPointField(msg, 35)) == null ? undefined : f,
+    skewthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 36)) == null ? undefined : f,
+    driftthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3297,33 +3299,41 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 28:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPreserveprivacy(value);
+      msg.setPii(value);
       break;
     case 29:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setProtected(value);
+      msg.setPhi(value);
       break;
     case 30:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setDefaultvaluenum(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPersonaldata(value);
       break;
     case 31:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLog(value);
+      msg.setProtected(value);
       break;
     case 32:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMu(value);
+      msg.setDefaultvaluenum(value);
       break;
     case 33:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSigma(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLog(value);
       break;
     case 34:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setSkewthreshold(value);
+      msg.setMu(value);
       break;
     case 35:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setSigma(value);
+      break;
+    case 36:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setSkewthreshold(value);
+      break;
+    case 37:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setDriftthreshold(value);
       break;
@@ -3559,9 +3569,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.serializeBinar
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 30));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 30));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeBool(
       30,
       f
     );
@@ -3580,9 +3590,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.serializeBinar
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 33));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 33));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeBool(
       33,
       f
     );
@@ -3598,6 +3608,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeDouble(
       35,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 36));
+  if (f != null) {
+    writer.writeDouble(
+      36,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 37));
+  if (f != null) {
+    writer.writeDouble(
+      37,
       f
     );
   }
@@ -4578,10 +4602,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasT
 
 
 /**
- * optional bool preservePrivacy = 28;
+ * optional bool pii = 28;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getPreserveprivacy = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getPii = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
 };
 
@@ -4590,7 +4614,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getP
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setPreserveprivacy = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setPii = function(value) {
   return jspb.Message.setField(this, 28, value);
 };
 
@@ -4599,7 +4623,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setP
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearPreserveprivacy = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearPii = function() {
   return jspb.Message.setField(this, 28, undefined);
 };
 
@@ -4608,16 +4632,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasPreserveprivacy = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasPii = function() {
   return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * optional bool protected = 29;
+ * optional bool phi = 29;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getProtected = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getPhi = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
 };
 
@@ -4626,7 +4650,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getP
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setProtected = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setPhi = function(value) {
   return jspb.Message.setField(this, 29, value);
 };
 
@@ -4635,7 +4659,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setP
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearProtected = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearPhi = function() {
   return jspb.Message.setField(this, 29, undefined);
 };
 
@@ -4644,25 +4668,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasProtected = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasPhi = function() {
   return jspb.Message.getField(this, 29) != null;
 };
 
 
 /**
- * optional double defaultValueNum = 30;
- * @return {number}
+ * optional bool personalData = 30;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getDefaultvaluenum = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 30, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getPersonaldata = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setDefaultvaluenum = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setPersonaldata = function(value) {
   return jspb.Message.setField(this, 30, value);
 };
 
@@ -4671,7 +4695,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setD
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearDefaultvaluenum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearPersonaldata = function() {
   return jspb.Message.setField(this, 30, undefined);
 };
 
@@ -4680,16 +4704,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasDefaultvaluenum = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasPersonaldata = function() {
   return jspb.Message.getField(this, 30) != null;
 };
 
 
 /**
- * optional bool log = 31;
+ * optional bool protected = 31;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getLog = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getProtected = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
 };
 
@@ -4698,7 +4722,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getL
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setLog = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setProtected = function(value) {
   return jspb.Message.setField(this, 31, value);
 };
 
@@ -4707,7 +4731,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setL
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearLog = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearProtected = function() {
   return jspb.Message.setField(this, 31, undefined);
 };
 
@@ -4716,16 +4740,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasLog = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasProtected = function() {
   return jspb.Message.getField(this, 31) != null;
 };
 
 
 /**
- * optional double mu = 32;
+ * optional double defaultValueNum = 32;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getMu = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getDefaultvaluenum = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 32, 0.0));
 };
 
@@ -4734,7 +4758,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getM
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setMu = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setDefaultvaluenum = function(value) {
   return jspb.Message.setField(this, 32, value);
 };
 
@@ -4743,7 +4767,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setM
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearMu = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearDefaultvaluenum = function() {
   return jspb.Message.setField(this, 32, undefined);
 };
 
@@ -4752,25 +4776,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasMu = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasDefaultvaluenum = function() {
   return jspb.Message.getField(this, 32) != null;
 };
 
 
 /**
- * optional double sigma = 33;
- * @return {number}
+ * optional bool log = 33;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getSigma = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 33, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getLog = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setSigma = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setLog = function(value) {
   return jspb.Message.setField(this, 33, value);
 };
 
@@ -4779,7 +4803,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearSigma = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearLog = function() {
   return jspb.Message.setField(this, 33, undefined);
 };
 
@@ -4788,16 +4812,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasSigma = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasLog = function() {
   return jspb.Message.getField(this, 33) != null;
 };
 
 
 /**
- * optional double skewThreshold = 34;
+ * optional double mu = 34;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getSkewthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getMu = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 34, 0.0));
 };
 
@@ -4806,7 +4830,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getS
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setSkewthreshold = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setMu = function(value) {
   return jspb.Message.setField(this, 34, value);
 };
 
@@ -4815,7 +4839,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearSkewthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearMu = function() {
   return jspb.Message.setField(this, 34, undefined);
 };
 
@@ -4824,16 +4848,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasSkewthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasMu = function() {
   return jspb.Message.getField(this, 34) != null;
 };
 
 
 /**
- * optional double driftThreshold = 35;
+ * optional double sigma = 35;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getDriftthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getSigma = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 35, 0.0));
 };
 
@@ -4842,7 +4866,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getD
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setDriftthreshold = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setSigma = function(value) {
   return jspb.Message.setField(this, 35, value);
 };
 
@@ -4851,7 +4875,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setD
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearDriftthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearSigma = function() {
   return jspb.Message.setField(this, 35, undefined);
 };
 
@@ -4860,8 +4884,80 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasDriftthreshold = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasSigma = function() {
   return jspb.Message.getField(this, 35) != null;
+};
+
+
+/**
+ * optional double skewThreshold = 36;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getSkewthreshold = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 36, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setSkewthreshold = function(value) {
+  return jspb.Message.setField(this, 36, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearSkewthreshold = function() {
+  return jspb.Message.setField(this, 36, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasSkewthreshold = function() {
+  return jspb.Message.getField(this, 36) != null;
+};
+
+
+/**
+ * optional double driftThreshold = 37;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.getDriftthreshold = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 37, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.setDriftthreshold = function(value) {
+  return jspb.Message.setField(this, 37, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.clearDriftthreshold = function() {
+  return jspb.Message.setField(this, 37, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Column.prototype.hasDriftthreshold = function() {
+  return jspb.Message.getField(this, 37) != null;
 };
 
 
@@ -9050,7 +9146,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.t
     datapipelinename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9107,6 +9204,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.d
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -9170,6 +9271,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.s
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -9354,6 +9462,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string priority = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -9863,7 +10007,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    defaultcompilerspec: (f = msg.getDefaultcompilerspec()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f)
+    defaultcompilerspec: (f = msg.getDefaultcompilerspec()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
+    priority: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9940,6 +10085,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
       msg.setDefaultcompilerspec(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -10031,6 +10180,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
       10,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
     );
   }
 };
@@ -10347,6 +10503,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasDefaultcompilerspec = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string priority = 11;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -11525,7 +11717,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     oncallaccountname: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.toObject, includeInstance),
-    compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f)
+    compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
+    clearencelevel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11637,6 +11830,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
       msg.setCompilation(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClearencelevel(value);
       break;
     default:
       reader.skipField();
@@ -11792,6 +11989,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       19,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeString(
+      20,
+      f
     );
   }
 };
@@ -12417,6 +12621,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasCompilation = function() {
   return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional string clearenceLevel = 20;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getClearencelevel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setClearencelevel = function(value) {
+  return jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearClearencelevel = function() {
+  return jspb.Message.setField(this, 20, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasClearencelevel = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

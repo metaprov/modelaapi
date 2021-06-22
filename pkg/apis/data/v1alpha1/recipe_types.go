@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -405,16 +405,6 @@ const (
 	UnpivotStepOp      RecipeStepOperation = "unpivot"
 )
 
-// SamplingType defines how the recipe file is sampled.
-type SamplingType string
-
-const (
-	Header  SamplingType = "header"
-	Random  SamplingType = "random"
-	Filter  SamplingType = "filter"
-	Anomaly SamplingType = "anomaly"
-)
-
 // The sample spec define how to sample a dataset for analysis
 type SampleSpec struct {
 	// Enabled specify if the sample is enabled
@@ -425,7 +415,7 @@ type SampleSpec struct {
 	//Default is random
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
-	Type SamplingType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
+	Type catalog.SamplingType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Rows is the number of rows. Default is 500
 	// +kubebuilder:default:=500
 	// +kubebuilder:validation:Minimum=0
@@ -453,7 +443,7 @@ type RecipeInputSpec struct {
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Format is the dataset format
 	// +kubebuilder:default:=csv
-	Format *v1alpha1.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
+	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 }
 
 // RecipeOutputSpec for the recipe output

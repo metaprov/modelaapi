@@ -122,6 +122,10 @@ type PredictionSpec struct {
 	// Create the data source table on the target, if not exist.
 	// +kubebuilder:validation:Optional
 	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"bytes,14,opt,name=createTableIfNotExist"`
+	// The priority of this prediction. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,15,opt,name=priority"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

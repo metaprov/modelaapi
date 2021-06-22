@@ -297,7 +297,11 @@ type ModelSpec struct {
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
+	// The priority of this model. The defualt is medium. This is assigned from the study
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
 }
 
 type EnsembleSpec struct {
@@ -514,7 +518,7 @@ type SuccessiveHalvingSpec struct {
 	// For deep models - we use epocs.
 	// For classical models - we use data
 	// +kubebuilder:validation:Optional
-	Modality *ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
+	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
 }
 
 // TrainingSpec is the specification of the training process
@@ -769,15 +773,3 @@ type DimensionValue struct {
 }
 
 // List compiler spec
-
-// ModelType enamurate the model type
-// +kubebuilder:validation:Enum="classical";"dnn";"transformer";"chatbot";"rl";
-type ModelType string
-
-const (
-	ModelTypeClassical   ModelType = "classical"
-	ModelTypeDNN         ModelType = "dnn"
-	ModelTypeTransformer ModelType = "transformer"
-	ModelTypeChatbot     ModelType = "chatbot"
-	ModelTypeRL          ModelType = "rl"
-)

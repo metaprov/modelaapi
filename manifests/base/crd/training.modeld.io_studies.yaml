@@ -103,6 +103,10 @@ spec:
                 properties:
                   compiler:
                     description: Set one or more targets
+                    enum:
+                    - tvm
+                    - onyx
+                    - xla
                     type: string
                   enable:
                     description: Enable set the enable to
@@ -110,6 +114,17 @@ spec:
                   targets:
                     description: Set one or more targets for the compiler
                     items:
+                      enum:
+                      - amd-epyc-2
+                      - arma-53
+                      - arma-72
+                      - intel-cascade-lake
+                      - intel-broadwell
+                      - intel-skylake
+                      - tesla-v100
+                      - tesla-k80
+                      - t4
+                      - raspberry-pi8-modeld-b
                       type: string
                     type: array
                 type: object
@@ -574,6 +589,15 @@ spec:
                         type: string
                     type: object
                 type: object
+              priority:
+                default: medium
+                description: The priority of this study. The defualt is medium
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               profiled:
                 default: true
                 description: Profiled is set when we want to create model profile
@@ -959,6 +983,11 @@ spec:
                     default: kfold
                     description: The  type of cross validation. if we have a validation
                       set, we do not do cv.
+                    enum:
+                    - none
+                    - kfold
+                    - loocv
+                    - stratified
                     type: string
                   earlyStop:
                     default: false

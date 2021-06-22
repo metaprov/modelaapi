@@ -195,42 +195,51 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool timeColumn = 27;
 
+  // Personally Identifiable information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  // PreservePrivacy is true if the column content should not be exposed due to privacy concerns
-  optional bool preservePrivacy = 28;
+  optional bool pii = 28;
+
+  // Personally Health information
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool phi = 29;
 
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
+  optional bool personalData = 30;
+
   // Protected means that this feature is important for ethical AI / Fairness
-  optional bool protected = 29;
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool protected = 31;
 
   // The following attribute concern with syntatic data and validation
   // DefaultValueNum is the default value for numbers
-  optional double defaultValueNum = 30;
+  optional double defaultValueNum = 32;
 
   // Log if true, values from this column will be sampled on logaritmic scale
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool log = 31;
+  optional bool log = 33;
 
   // Mu is the mean of the normal distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double mu = 32;
+  optional double mu = 34;
 
   // Sigma is the standard deviation of the distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double sigma = 33;
+  optional double sigma = 35;
 
   // Skew treshold is the treshold for skew detection.
   // +kubebuilder:validation:Optional
-  optional double skewThreshold = 34;
+  optional double skewThreshold = 36;
 
   // Drift treshold is the treshold for drift detection.
   // +kubebuilder:validation:Optional
-  optional double driftThreshold = 35;
+  optional double driftThreshold = 37;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -504,6 +513,11 @@ message DataPipelineRunSpec {
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
+
+  // The priority of this data pipeline. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 6;
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
@@ -578,6 +592,11 @@ message DataPipelineSpec {
   // This is the default compiler spec
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
+
+  // The priority of this data pipeline. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 11;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -726,6 +745,11 @@ message DataProductSpec {
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
+
+  // The clearance level of this data product
+  // +kubebuilder:default:=unclassified
+  // +kubebuilder:validation:Optional
+  optional string clearenceLevel = 20;
 }
 
 // DataProductStatus defines the observed state of DataProduct

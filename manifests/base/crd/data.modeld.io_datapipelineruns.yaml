@@ -86,6 +86,15 @@ spec:
                 description: The owner of the run, set to the owner of the pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              priority:
+                default: medium
+                description: The priority of this data pipeline. The defualt is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               versionName:
                 default: ""
                 description: The data product version of the run

@@ -1446,6 +1446,9 @@ export class ModelPipelineRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelPipelineRunSpec;
 
+  getPriority(): string;
+  setPriority(value: string): ModelPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunSpec): ModelPipelineRunSpec.AsObject;
@@ -1461,6 +1464,7 @@ export namespace ModelPipelineRunSpec {
     datasetname: string,
     pipelinename: string,
     owner: string,
+    priority: string,
   }
 }
 
@@ -1686,6 +1690,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getBaselinemodelname(): string;
   setBaselinemodelname(value: string): ModelPipelineSpec;
 
+  getPriority(): string;
+  setPriority(value: string): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1711,6 +1718,7 @@ export namespace ModelPipelineSpec {
     approveraccountname: string,
     notifiername: string,
     baselinemodelname: string,
+    priority: string,
   }
 }
 
@@ -1970,6 +1978,9 @@ export class ModelSpec extends jspb.Message {
   getEstimatortype(): string;
   setEstimatortype(value: string): ModelSpec;
 
+  getPriority(): string;
+  setPriority(value: string): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2009,6 +2020,7 @@ export namespace ModelSpec {
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds: number,
     estimatortype: string,
+    priority: string,
   }
 }
 
@@ -2634,6 +2646,12 @@ export class NotebookSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): NotebookSpec;
 
+  getSchedule(): string;
+  setSchedule(value: string): NotebookSpec;
+
+  getPriority(): string;
+  setPriority(value: string): NotebookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookSpec): NotebookSpec.AsObject;
@@ -2655,6 +2673,8 @@ export namespace NotebookSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
+    schedule: string,
+    priority: string,
   }
 }
 
@@ -3336,6 +3356,9 @@ export class StudySpec extends jspb.Message {
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
 
+  getPriority(): string;
+  setPriority(value: string): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -3369,6 +3392,7 @@ export namespace StudySpec {
     activedeadlineseconds: number,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
+    priority: string,
   }
 }
 

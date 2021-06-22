@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
@@ -107,6 +108,13 @@ type NotebookSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
+	// Schedule for running the pipeline
+	// +kubebuilder:validation:Optional
+	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
+	// The priority of this notebook run. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,13,opt,name=priority"`
 }
 
 // NotebookStatus is the observed state of the notebook resource

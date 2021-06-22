@@ -469,35 +469,42 @@ type Column struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"bytes,27,opt,name=timeColumn"`
+	// Personally Identifiable information
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	// PreservePrivacy is true if the column content should not be exposed due to privacy concerns
-	PreservePrivacy *bool `json:"preservePrivacy,omitempty" protobuf:"bytes,28,opt,name=preservePrivacy"`
+	PII *bool `json:"pii,omitempty" protobuf:"bytes,28,opt,name=pii"`
+	// Personally Health information
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
+	PHI *bool `json:"phi,omitempty" protobuf:"bytes,29,opt,name=phi"`
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	PersonalData *bool `json:"personalData,omitempty" protobuf:"bytes,30,opt,name=personalData"`
 	// Protected means that this feature is important for ethical AI / Fairness
-	Protected *bool `json:"protected,omitempty" protobuf:"bytes,29,opt,name=protected"`
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Protected *bool `json:"protected,omitempty" protobuf:"bytes,31,opt,name=protected"`
 	// The following attribute concern with syntatic data and validation
 	// DefaultValueNum is the default value for numbers
-	DefaultValueNum *float64 `json:"DefaultValueNum,omitempty" protobuf:"bytes,30,opt,name=defaultValueNum"`
+	DefaultValueNum *float64 `json:"DefaultValueNum,omitempty" protobuf:"bytes,32,opt,name=defaultValueNum"`
 	// Log if true, values from this column will be sampled on logaritmic scale
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Log *bool `json:"log,omitempty" protobuf:"bytes,31,opt,name=log"`
+	Log *bool `json:"log,omitempty" protobuf:"bytes,33,opt,name=log"`
 	// Mu is the mean of the normal distribution
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Mu *float64 `json:"mu,omitempty" protobuf:"bytes,32,opt,name=mu"`
+	Mu *float64 `json:"mu,omitempty" protobuf:"bytes,34,opt,name=mu"`
 	// Sigma is the standard deviation of the distribution
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,33,opt,name=sigma"`
+	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,35,opt,name=sigma"`
 	// Skew treshold is the treshold for skew detection.
 	// +kubebuilder:validation:Optional
-	SkewTreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,34,opt,name=skewThreshold"`
+	SkewTreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
 	// Drift treshold is the treshold for drift detection.
 	// +kubebuilder:validation:Optional
-	DriftTreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,35,opt,name=driftThreshold"`
+	DriftTreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

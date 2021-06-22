@@ -136,6 +136,11 @@ message CronPredictionSpec {
 
   // Template refer to the prediction template
   optional PredictionTemplate template = 4;
+
+  // The priority of this data pipeline. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 5;
 }
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
@@ -496,6 +501,11 @@ message PredictionSpec {
   // Create the data source table on the target, if not exist.
   // +kubebuilder:validation:Optional
   optional bool createTableIfNotExist = 14;
+
+  // The priority of this prediction. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 15;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

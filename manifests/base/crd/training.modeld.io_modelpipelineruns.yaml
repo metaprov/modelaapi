@@ -82,6 +82,15 @@ spec:
                 description: PipelineName is the name of the ModelPipeline for this
                   pipeline
                 type: string
+              priority:
+                default: medium
+                description: The priority of this pipeline run. The defualt is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               versionName:
                 default: ""
                 description: VersionName is the data product version of the run

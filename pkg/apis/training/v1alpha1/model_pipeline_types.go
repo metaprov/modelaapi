@@ -106,6 +106,10 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,18,opt,name=baselineModelName"`
+	// The priority of this pipeline. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
 }
 
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.

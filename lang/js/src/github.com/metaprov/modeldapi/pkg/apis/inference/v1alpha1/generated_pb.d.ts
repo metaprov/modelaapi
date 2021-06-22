@@ -218,6 +218,9 @@ export class CronPredictionSpec extends jspb.Message {
   hasTemplate(): boolean;
   clearTemplate(): CronPredictionSpec;
 
+  getPriority(): string;
+  setPriority(value: string): CronPredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CronPredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CronPredictionSpec): CronPredictionSpec.AsObject;
@@ -232,6 +235,7 @@ export namespace CronPredictionSpec {
     owner: string,
     schedule: string,
     template?: PredictionTemplate.AsObject,
+    priority: string,
   }
 }
 
@@ -818,6 +822,9 @@ export class PredictionSpec extends jspb.Message {
   getCreatetableifnotexist(): boolean;
   setCreatetableifnotexist(value: boolean): PredictionSpec;
 
+  getPriority(): string;
+  setPriority(value: string): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -842,6 +849,7 @@ export namespace PredictionSpec {
     xai: boolean,
     updatestrategy: string,
     createtableifnotexist: boolean,
+    priority: string,
   }
 }
 

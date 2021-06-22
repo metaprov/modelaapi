@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	v1 "k8s.io/api/core/v1"
 
+	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -74,6 +75,10 @@ type CronPredictionSpec struct {
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// Template refer to the prediction template
 	Template PredictionTemplate `json:"template" protobuf:"bytes,4,opt,name=template"`
+	// The priority of this data pipeline. The defualt is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,5,opt,name=priority"`
 }
 
 // CronPredictionStatus is the observed state of a PredictionTemplate
