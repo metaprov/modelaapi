@@ -136,7 +136,7 @@ func (study *Study) GetCond(t StudyConditionType) StudyCondition {
 }
 
 func (r *Study) IsReady() bool {
-	return r.GetCond(StudyReady).Status == v1.ConditionTrue
+	return r.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
 
 func (r *Study) IsPartitioned() bool {
@@ -422,7 +422,7 @@ func (study *Study) EnsembleTrained() bool {
 }
 
 func (study *Study) Ready() bool {
-	return study.GetCond(StudyReady).Status == v1.ConditionTrue
+	return study.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
 
 func (study *Study) MarkSaved() {
@@ -454,10 +454,10 @@ func (study *Study) MarkReady() {
 	now := metav1.Now()
 	study.Status.CompletionTime = &now
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyReady,
+		Type:   StudyCompleted,
 		Status: v1.ConditionTrue,
 	})
-	study.Status.Phase = StudyPhaseSucceeded
+	study.Status.Phase = StudyPhaseCompleted
 }
 
 func (study *Study) MarkEnsembleTrained() {
@@ -602,11 +602,11 @@ func (h Hierarchy) Explode() []ForecastObj {
 }
 
 func (study *Study) IsRunning() bool {
-	return study.GetCond(StudyReady).Status != v1.ConditionFalse &&
-		study.GetCond(StudyReady).Reason == string(catalog.Running)
+	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&
+		study.GetCond(StudyCompleted).Reason == string(catalog.Running)
 }
 
 func (study *Study) IsFailed() bool {
-	return study.GetCond(StudyReady).Status != v1.ConditionFalse &&
-		study.GetCond(StudyReady).Reason == string(catalog.Failed)
+	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&
+		study.GetCond(StudyCompleted).Reason == string(catalog.Failed)
 }

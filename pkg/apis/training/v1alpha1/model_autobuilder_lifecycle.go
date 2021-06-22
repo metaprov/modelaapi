@@ -160,7 +160,7 @@ func (b *ModelAutobuilder) DataSourceReady() bool {
 func (b *ModelAutobuilder) MarkDataSetRunning() {
 	b.Status.Phase = ModelAutobuilderPhaseDatasetRunning
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:   ModelAutobuilderDatasetReady,
+		Type:   ModelAutobuilderDatasetCompleted,
 		Status: v1.ConditionFalse,
 		Reason: string(ModelAutobuilderPhaseDatasetRunning),
 	})
@@ -170,7 +170,7 @@ func (b *ModelAutobuilder) MarkDataSetRunning() {
 func (b *ModelAutobuilder) MarkDataSetFailed(err error) {
 	b.Status.Phase = ModelAutobuilderPhaseDatasetFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:    ModelAutobuilderDatasetReady,
+		Type:    ModelAutobuilderDatasetCompleted,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelAutobuilderPhaseDatasetFailed),
 		Message: err.Error(),
@@ -180,21 +180,21 @@ func (b *ModelAutobuilder) MarkDataSetFailed(err error) {
 // DatasetSuccess
 func (b *ModelAutobuilder) MarkDatasetReady() {
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:   ModelAutobuilderDatasetReady,
+		Type:   ModelAutobuilderDatasetCompleted,
 		Status: v1.ConditionTrue,
 	})
-	b.Status.Phase = ModelAutobuilderPhaseDatasetSuccess
+	b.Status.Phase = ModelAutobuilderPhaseDatasetCompleted
 }
 
 func (b *ModelAutobuilder) DatasetReady() bool {
-	return b.GetCond(ModelAutobuilderDatasetReady).Status == v1.ConditionTrue
+	return b.GetCond(ModelAutobuilderDatasetCompleted).Status == v1.ConditionTrue
 }
 
 // StudyRunning
 func (b *ModelAutobuilder) MarkStudyRunning() {
 	b.Status.Phase = ModelAutobuilderPhaseStudyRunning
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:   ModelAutobuilderStudyReady,
+		Type:   ModelAutobuilderStudyCompleted,
 		Status: v1.ConditionFalse,
 		Reason: string(ModelAutobuilderPhaseStudyRunning),
 	})
@@ -204,7 +204,7 @@ func (b *ModelAutobuilder) MarkStudyRunning() {
 func (b *ModelAutobuilder) MarkStudyFailed(err error) {
 	b.Status.Phase = ModelAutobuilderPhaseStudyFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:    ModelAutobuilderStudyReady,
+		Type:    ModelAutobuilderStudyCompleted,
 		Status:  v1.ConditionFalse,
 		Reason:  string(ModelAutobuilderPhaseStudyFailed),
 		Message: err.Error(),
@@ -213,15 +213,15 @@ func (b *ModelAutobuilder) MarkStudyFailed(err error) {
 
 // StudySuccess
 func (b *ModelAutobuilder) MarkStudyReady() {
-	b.Status.Phase = ModelAutobuilderPhaseStudySuccess
+	b.Status.Phase = ModelAutobuilderPhaseStudyCompleted
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:   ModelAutobuilderStudyReady,
+		Type:   ModelAutobuilderStudyCompleted,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (b *ModelAutobuilder) StudyReady() bool {
-	return b.GetCond(ModelAutobuilderStudyReady).Status == v1.ConditionTrue
+	return b.GetCond(ModelAutobuilderStudyCompleted).Status == v1.ConditionTrue
 }
 
 // Predictor
@@ -319,7 +319,7 @@ func (b *ModelAutobuilder) MarkFailed(err error) {
 func (b *ModelAutobuilder) MarkDatasetRunning() {
 	b.Status.Phase = ModelAutobuilderPhaseDatasetRunning
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
-		Type:    ModelAutobuilderDatasetReady,
+		Type:    ModelAutobuilderDatasetCompleted,
 		Status:  v1.ConditionFalse,
 		Message: string(ModelAutobuilderPhaseDatasetRunning),
 	})

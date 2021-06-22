@@ -123,7 +123,7 @@ func (run *NotebookRun) StatusString() string {
 }
 
 func (run *NotebookRun) IsReady() bool {
-	return run.GetCond(NotebookRunReady).Status == corev1.ConditionTrue
+	return run.GetCond(NotebookRunCompleted).Status == corev1.ConditionTrue
 }
 
 func (run *NotebookRun) Key() string {
@@ -146,7 +146,7 @@ func (run *NotebookRun) ToYamlFile() ([]byte, error) {
 func (r *NotebookRun) MarkCompleted() {
 	r.Status.Phase = NotebookRunPhaseCompleted
 	r.CreateOrUpdateCond(NotebookRunCondition{
-		Type:   NotebookRunReady,
+		Type:   NotebookRunCompleted,
 		Status: corev1.ConditionTrue,
 	})
 	now := metav1.Now()
@@ -167,7 +167,7 @@ func (r *NotebookRun) MarkArchived() {
 func (r *NotebookRun) MarkFailed(error string) {
 	r.Status.Phase = NotebookRunPhaseFailed
 	r.CreateOrUpdateCond(NotebookRunCondition{
-		Type:    NotebookRunReady,
+		Type:    NotebookRunCompleted,
 		Status:  corev1.ConditionFalse,
 		Reason:  error,
 		Message: error,
@@ -186,7 +186,7 @@ func (r *NotebookRun) MarkRunning() {
 	}
 	r.Status.Phase = NotebookRunPhaseRunning
 	r.CreateOrUpdateCond(NotebookRunCondition{
-		Type:    NotebookRunReady,
+		Type:    NotebookRunCompleted,
 		Status:  corev1.ConditionFalse,
 		Message: string(NotebookRunPhaseRunning),
 	})

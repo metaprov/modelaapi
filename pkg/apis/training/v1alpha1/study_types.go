@@ -23,7 +23,7 @@ const (
 	StudyPhaseReporting    StudyPhase = "Reporting"
 	StudyPhaseProfiling    StudyPhase = "Profiling"
 	StudyPhaseProfiled     StudyPhase = "Profiled"
-	StudyPhaseSucceeded    StudyPhase = "Succeeded"
+	StudyPhaseCompleted    StudyPhase = "Completed"
 	StudyPhaseFailed       StudyPhase = "Failed"
 	StudyPhaseAborted      StudyPhase = "Aborted"
 	StudyPhasePaused       StudyPhase = "Paused"
@@ -81,7 +81,7 @@ const (
 	// Study saved in database
 	StudySaved StudyConditionType = "Saved"
 	// Study ready state
-	StudyReady StudyConditionType = "Ready"
+	StudyCompleted StudyConditionType = "Completed"
 	// Study is partitioned based on the partition key
 	StudyPartitioned StudyConditionType = "Partitioned"
 )

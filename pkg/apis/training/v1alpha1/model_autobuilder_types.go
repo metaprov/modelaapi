@@ -12,20 +12,16 @@ import (
 type ModelAutobuilderPhase string
 
 const (
-	ModelAutobuilderPhaseDataSourceRunning ModelAutobuilderPhase = "DataSourceRunning"
-	ModelAutobuilderPhaseDataSourceFailed  ModelAutobuilderPhase = "DataSourceFailed"
-	ModelAutobuilderPhaseDataSourceSuccess ModelAutobuilderPhase = "DataSourceSuccess"
-	ModelAutobuilderPhaseDatasetRunning    ModelAutobuilderPhase = "DatasetRunning"
-	ModelAutobuilderPhaseDatasetFailed     ModelAutobuilderPhase = "DatasetFailed"
-	ModelAutobuilderPhaseDatasetSuccess    ModelAutobuilderPhase = "DatasetSuccess"
-	ModelAutobuilderPhaseStudyRunning      ModelAutobuilderPhase = "StudyRunning"
-	ModelAutobuilderPhaseStudyFailed       ModelAutobuilderPhase = "StudyFailed"
-	ModelAutobuilderPhaseStudySuccess      ModelAutobuilderPhase = "StudySuccess"
-	ModelAutobuilderPhasePredictorRunning  ModelAutobuilderPhase = "PredictorRunning"
-	ModelAutobuilderPhasePredictorFailed   ModelAutobuilderPhase = "PredictorFailed"
-	ModelAutobuilderPhasePredictorSuccess  ModelAutobuilderPhase = "PredictorSuccess"
-	ModelAutobuilderPhaseCompleted         ModelAutobuilderPhase = "IsCompleted"
-	ModelAutobuilderPhaseFailed            ModelAutobuilderPhase = "IsFailed"
+	ModelAutobuilderPhaseDataSourceRunning  ModelAutobuilderPhase = "DataSourceRunning"
+	ModelAutobuilderPhaseDataSourceReady    ModelAutobuilderPhase = "DataSourceReady"
+	ModelAutobuilderPhaseDatasetRunning     ModelAutobuilderPhase = "DatasetRunning"
+	ModelAutobuilderPhaseDatasetCompleted   ModelAutobuilderPhase = "DatasetCompleted"
+	ModelAutobuilderPhaseStudyRunning       ModelAutobuilderPhase = "StudyRunning"
+	ModelAutobuilderPhaseStudyCompleted     ModelAutobuilderPhase = "StudyCompleted"
+	ModelAutobuilderPhasePredictorRunning   ModelAutobuilderPhase = "PredictorRunning"
+	ModelAutobuilderPhasePredictorCompleted ModelAutobuilderPhase = "PredictorCompleted"
+	ModelAutobuilderPhaseCompleted          ModelAutobuilderPhase = "Completed"
+	ModelAutobuilderPhaseFailed             ModelAutobuilderPhase = "Failed"
 )
 
 // ModelAutobuilderConditionType represent that condition that a model auto builder can be in.
@@ -36,8 +32,8 @@ const (
 	ModelAutobuilderDataProductReady        ModelAutobuilderConditionType = "DataProductReady"
 	ModelAutobuilderDataProductVersionReady ModelAutobuilderConditionType = "DataProductVersionReady"
 	ModelAutobuilderDataSourceReady         ModelAutobuilderConditionType = "DataSourceReady"
-	ModelAutobuilderDatasetReady            ModelAutobuilderConditionType = "DatasetReady"
-	ModelAutobuilderStudyReady              ModelAutobuilderConditionType = "StudyReady"
+	ModelAutobuilderDatasetCompleted        ModelAutobuilderConditionType = "DatasetCompleted"
+	ModelAutobuilderStudyCompleted          ModelAutobuilderConditionType = "StudyCompleted"
 	ModelAutobuilderPredictorReady          ModelAutobuilderConditionType = "PredictorReady"
 	ModelAutobuilderSaved                   ModelAutobuilderConditionType = "Saved"
 )

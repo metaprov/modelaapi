@@ -12,10 +12,10 @@ type ReportPhase string
 
 /// Dataset Condition
 const (
-	ReportPhasePending ReportPhase = "Pending"
-	ReportPhaseRunning ReportPhase = "Running"
-	ReportPhaseSuccess ReportPhase = "Success"
-	ReportPhaseFailed  ReportPhase = "IsFailed"
+	ReportPhasePending   ReportPhase = "Pending"
+	ReportPhaseRunning   ReportPhase = "Running"
+	ReportPhaseCompleted ReportPhase = "Completed"
+	ReportPhaseFailed    ReportPhase = "IsFailed"
 )
 
 // ReportType is the type of report

@@ -92,7 +92,7 @@ const (
 	ModelPhaseUat         ModelPhase = "UAT"
 	ModelPhaseDeployed    ModelPhase = "Deployed"
 	ModelPhaseReleased    ModelPhase = "Released"
-	ModelPhaseMaintaince  ModelPhase = "Maintainance"
+	ModelPhaseMaintenance ModelPhase = "Maintenance"
 	ModelPhaseRetired     ModelPhase = "Retired"
 )
 
@@ -134,7 +134,7 @@ const (
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
 	// The model is in maintance
-	ModelMaintaince ModelConditionType = "Maintainance"
+	ModelMaintaince ModelConditionType = "Maintenance"
 	// The model is in retired
 	ModelRetired ModelConditionType = "Retired"
 )

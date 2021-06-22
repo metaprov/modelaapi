@@ -10,8 +10,8 @@ type RecipeRunPhase string
 const (
 	RecipeRunPhasePending RecipeRunPhase = "Pending"
 	RecipeRunPhaseRunning RecipeRunPhase = "Running"
-	RecipeRunPhaseSucceed RecipeRunPhase = "IsCompleted"
-	RecipeRunPhaseFailed  RecipeRunPhase = "IsFailed"
+	RecipeRunPhaseSucceed RecipeRunPhase = "Completed"
+	RecipeRunPhaseFailed  RecipeRunPhase = "Failed"
 )
 
 // Condition on the dataset

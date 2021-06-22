@@ -220,7 +220,7 @@ func (report *Report) MarkReportFailed(err string) {
 }
 
 func (report *Report) MarkReportReady(product *data.DataProduct) {
-	report.Status.Phase = ReportPhaseSuccess
+	report.Status.Phase = ReportPhaseCompleted
 	report.CreateOrUpdateCond(ReportCondition{
 		Type:   ReportReady,
 		Status: v1.ConditionTrue,
