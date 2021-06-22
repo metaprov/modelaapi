@@ -644,6 +644,10 @@ func (model *Model) Serving() bool {
 	return cond.Status == v1.ConditionTrue
 }
 
+func (model *Model) Failed() bool {
+	return model.Status.Phase == ModelPhaseFailed
+}
+
 // -------------------- Maintaince
 
 func (model *Model) MarkMaintain() {

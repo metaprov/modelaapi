@@ -607,6 +607,5 @@ func (study *Study) IsRunning() bool {
 }
 
 func (study *Study) IsFailed() bool {
-	return study.GetCond(StudyCompleted).Status != v1.ConditionFalse &&
-		study.GetCond(StudyCompleted).Reason == string(catalog.Failed)
+	return study.Status.Phase == StudyPhaseFailed
 }
