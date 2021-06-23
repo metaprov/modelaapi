@@ -62,11 +62,6 @@ message CapacityStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 3;
 
-  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool manualApproval = 4;
-
   // A reference to the workload class that is used for running the prediction
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
@@ -2599,16 +2594,9 @@ message TrainingStageSpec {
   // +kubebuilder:validation:Required
   optional string studyTemplateName = 4;
 
-  // Smoke is the expectation on the result from testing the model during training.
-  // If the model cannot pass this smoke test, the system will fail the pipeline
-  // If the smoke is empty, the system does not perform the test
+  // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
-  optional ModelValidation smoke = 5;
-
-  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool manualApproval = 6;
+  repeated ModelValidation validations = 5;
 }
 
 // TransformerEstimatorSpec is an transformer. This is not implemented yet.
@@ -2632,15 +2620,10 @@ message UATStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 3;
 
-  // ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool manualApproval = 4;
-
   // WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional string workloadClassName = 4;
 }
 
 // VideoPipelineSpec is the specification for preprocessing video data

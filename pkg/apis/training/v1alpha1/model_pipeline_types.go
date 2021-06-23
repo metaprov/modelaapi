@@ -157,15 +157,9 @@ type TrainingStageSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Required
 	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,4,opt,name=studyTemplateName"`
-	// Smoke is the expectation on the result from testing the model during training.
-	// If the model cannot pass this smoke test, the system will fail the pipeline
-	// If the smoke is empty, the system does not perform the test
+	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
-	Smoke *ModelValidation `json:"smoke,omitempty" protobuf:"bytes,5,opt,name=smoke"`
-	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,6,opt,name=manualApproval"`
+	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,rep,name=validations"`
 }
 
 //UATStageSpec is the specification of the user acceptance test.
@@ -182,14 +176,10 @@ type UATStageSpec struct {
 	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
-	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
@@ -206,10 +196,6 @@ type CapacityStageSpec struct {
 	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
-	// ManualApproval dentoes if we need manual apporval before advancing to further stages in the pipeline
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,4,opt,name=manualApproval"`
 	// A reference to the workload class that is used for running the prediction
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional

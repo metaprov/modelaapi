@@ -87,11 +87,6 @@ func (in *CapacityStageSpec) DeepCopyInto(out *CapacityStageSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.ManualApproval != nil {
-		in, out := &in.ManualApproval, &out.ManualApproval
-		*out = new(bool)
-		**out = **in
-	}
 	if in.WorkloadClassName != nil {
 		in, out := &in.WorkloadClassName, &out.WorkloadClassName
 		*out = new(string)
@@ -3303,15 +3298,12 @@ func (in *TrainingStageSpec) DeepCopyInto(out *TrainingStageSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Smoke != nil {
-		in, out := &in.Smoke, &out.Smoke
-		*out = new(ModelValidation)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.ManualApproval != nil {
-		in, out := &in.ManualApproval, &out.ManualApproval
-		*out = new(bool)
-		**out = **in
+	if in.Validations != nil {
+		in, out := &in.Validations, &out.Validations
+		*out = make([]ModelValidation, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 }
 
@@ -3359,11 +3351,6 @@ func (in *UATStageSpec) DeepCopyInto(out *UATStageSpec) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.ManualApproval != nil {
-		in, out := &in.ManualApproval, &out.ManualApproval
-		*out = new(bool)
-		**out = **in
 	}
 	if in.WorkloadClassName != nil {
 		in, out := &in.WorkloadClassName, &out.WorkloadClassName

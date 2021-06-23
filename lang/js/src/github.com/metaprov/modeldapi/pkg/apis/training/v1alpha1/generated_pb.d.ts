@@ -66,9 +66,6 @@ export class CapacityStageSpec extends jspb.Message {
   clearValidationsList(): CapacityStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getManualapproval(): boolean;
-  setManualapproval(value: boolean): CapacityStageSpec;
-
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): CapacityStageSpec;
 
@@ -85,7 +82,6 @@ export namespace CapacityStageSpec {
     enabled: boolean,
     servingsitename: string,
     validationsList: Array<ModelValidation.AsObject>,
-    manualapproval: boolean,
     workloadclassname: string,
   }
 }
@@ -3761,13 +3757,10 @@ export class TrainingStageSpec extends jspb.Message {
   getStudytemplatename(): string;
   setStudytemplatename(value: string): TrainingStageSpec;
 
-  getSmoke(): ModelValidation | undefined;
-  setSmoke(value?: ModelValidation): TrainingStageSpec;
-  hasSmoke(): boolean;
-  clearSmoke(): TrainingStageSpec;
-
-  getManualapproval(): boolean;
-  setManualapproval(value: boolean): TrainingStageSpec;
+  getValidationsList(): Array<ModelValidation>;
+  setValidationsList(value: Array<ModelValidation>): TrainingStageSpec;
+  clearValidationsList(): TrainingStageSpec;
+  addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingStageSpec.AsObject;
@@ -3783,8 +3776,7 @@ export namespace TrainingStageSpec {
     notebookname: string,
     labname: string,
     studytemplatename: string,
-    smoke?: ModelValidation.AsObject,
-    manualapproval: boolean,
+    validationsList: Array<ModelValidation.AsObject>,
   }
 }
 
@@ -3814,9 +3806,6 @@ export class UATStageSpec extends jspb.Message {
   clearValidationsList(): UATStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getManualapproval(): boolean;
-  setManualapproval(value: boolean): UATStageSpec;
-
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): UATStageSpec;
 
@@ -3833,7 +3822,6 @@ export namespace UATStageSpec {
     enabled: boolean,
     servingsitename: string,
     validationsList: Array<ModelValidation.AsObject>,
-    manualapproval: boolean,
     workloadclassname: string,
   }
 }

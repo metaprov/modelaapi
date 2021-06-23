@@ -71,11 +71,6 @@ spec:
                     default: false
                     description: Enabled indicates that the stage is enabled
                     type: boolean
-                  manualApproval:
-                    default: false
-                    description: ManualApproval dentoes if we need manual apporval
-                      before advancing to further stages in the pipeline
-                    type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
                       during the capacity stage If the serving site is empty or null,
@@ -580,117 +575,112 @@ spec:
                       If empty, the system will use the default lab assigned to the
                       data product
                     type: string
-                  manualApproval:
-                    default: false
-                    description: ManualApproval dentoes if we need manual apporval
-                      before advancing to further stages in the pipeline
-                    type: boolean
                   notebookName:
                     description: NotebookName specify the notebook to run before training.
                     type: string
-                  smoke:
-                    description: Smoke is the expectation on the result from testing
-                      the model during training. If the model cannot pass this smoke
-                      test, the system will fail the pipeline If the smoke is empty,
-                      the system does not perform the test
-                    properties:
-                      agg:
-                        description: Agg is used when we measured aggregate performance,
-                          for example median or average
-                        enum:
-                        - min
-                        - max
-                        - avg
-                        - median
-                        type: string
-                      column:
-                        type: string
-                      datasetName:
-                        description: Labeled dataset used to test the model, when
-                          measuring a performance metric
-                        type: string
-                      driftFreq:
-                        description: / The Horizon unit
-                        enum:
-                        - second
-                        - minute
-                        - hour
-                        - day
-                        - week
-                        - month
-                        - quarter
-                        - year
-                        type: string
-                      driftInterval:
-                        format: int32
-                        type: integer
-                      max:
-                        type: number
-                      maxPrecent:
-                        type: number
-                      metric:
-                        description: Metric is the machine learning metric used to
-                          evaluate a model performance.
-                        enum:
-                        - accuracy
-                        - average-precision
-                        - balanced-accuracy
-                        - brier-score-loss
-                        - f1
-                        - f1-macro
-                        - f1-micro
-                        - f1-weighted
-                        - log-loss
-                        - precision
-                        - precision-micro
-                        - precision-macro
-                        - precision-weighted
-                        - recall
-                        - recall-macro
-                        - recall-micro
-                        - recall-weighted
-                        - auc
-                        - fp
-                        - fn
-                        - tn
-                        - tp
-                        - explained_variance
-                        - mae
-                        - mse
-                        - msle
-                        - median-absolute-error
-                        - r2
-                        - adjusted-mutual-info-score
-                        - adjusted-rand-score
-                        - completeness-score
-                        - fowlkes-mallows-score
-                        - homogeneity-score
-                        - mutual-info-score
-                        - normalized-mutual-info-score
-                        - v-measure-score
-                        - rmse
-                        - unknown
-                        - mape
-                        - smape
-                        - mdape
-                        type: string
-                      min:
-                        type: number
-                      minPrecent:
-                        type: number
-                      prevModel:
-                        description: PrevModel compare to model
-                        type: string
-                      type:
-                        description: ModelValidationName is the name of one model
-                          monitoring validation
-                        type: string
-                    type: object
                   studyTemplateName:
                     description: StudyName is the name of a study template. The actual
                       study will clone the study template and will use the dataset
                       created in the data stage.
                     type: string
+                  validations:
+                    description: Validations defines the machine learning test cases
+                      to run against the new trained model.
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
                 type: object
               uat:
                 description: Acceptance stage is used for further testing
@@ -698,11 +688,6 @@ spec:
                   enabled:
                     default: false
                     description: Enabled indicates that the stage is enabled
-                    type: boolean
-                  manualApproval:
-                    default: true
-                    description: ManualApproval dentoes if we need manual apporval
-                      before advancing to further stages in the pipeline
                     type: boolean
                   servingSiteName:
                     description: The serving site (name space) used for running the
