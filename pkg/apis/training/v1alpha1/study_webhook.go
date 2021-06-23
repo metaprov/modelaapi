@@ -148,7 +148,7 @@ func (study *Study) Default() {
 	}
 
 	if study.Spec.Split == nil {
-		splitPolicy := Stratified
+		splitPolicy := catalog.SplitTypeStratified
 		study.Spec.Split = &DataSplit{
 			Auto:        util.BoolPtr(true),
 			Train:       util.Int32Ptr(80),
