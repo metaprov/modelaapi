@@ -158,6 +158,10 @@ message AccountSpec {
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
   optional string clearenceLevel = 17;
+
+  // The avatar location
+  // +kubebuilder:validation:Optional
+  optional AvatarSpec avatar = 18;
 }
 
 // AccountStatus defines the actual state of the api object
@@ -448,6 +452,17 @@ message ApiTokenStatus {
 
   // +optional
   repeated ApiTokenCondition conditions = 2;
+}
+
+message AvatarSpec {
+  // +kubebuilder:default:=""
+  // Bucketname is the name of the bucket holding the bucket name
+  // +kubebuilder:validation:Optional
+  optional string bucketName = 1;
+
+  // Path to the full data file (e.g. csv file).
+  // +kubebuilder:validation:Optional
+  optional string path = 2;
 }
 
 // //////////////////////////

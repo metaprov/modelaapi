@@ -27152,7 +27152,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.to
     uri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition.toObject, includeInstance)
+    proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition.toObject, includeInstance),
+    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -27205,6 +27206,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.de
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
+      break;
+    case 5:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastrun(value);
       break;
     default:
       reader.skipField();
@@ -27262,6 +27268,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.se
       4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookCondition.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastrun();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
 };
@@ -27410,6 +27424,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearConditionsList = function() {
   return this.setConditionsList([]);
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 5;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getLastrun = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setLastrun = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearLastrun = function() {
+  return this.setLastrun(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasLastrun = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

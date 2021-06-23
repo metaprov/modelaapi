@@ -1802,6 +1802,10 @@ message NotebookStatus {
   // Represents the latest available observations of a notebook state.
   // +optional
   repeated NotebookCondition conditions = 4;
+
+  // Last run is the last time a run was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 5;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

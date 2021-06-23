@@ -2689,6 +2689,11 @@ export class NotebookStatus extends jspb.Message {
   clearConditionsList(): NotebookStatus;
   addConditions(value?: NotebookCondition, index?: number): NotebookCondition;
 
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): NotebookStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookStatus.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookStatus): NotebookStatus.AsObject;
@@ -2703,6 +2708,7 @@ export namespace NotebookStatus {
     uri: string,
     observedgeneration: number,
     conditionsList: Array<NotebookCondition.AsObject>,
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

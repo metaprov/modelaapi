@@ -194,6 +194,10 @@ spec:
               image:
                 description: Image is the name of the image after publication
                 type: string
+              lastRun:
+                description: Last run is the last time a run was created
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

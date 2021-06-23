@@ -183,6 +183,11 @@ export class AccountSpec extends jspb.Message {
   getClearencelevel(): string;
   setClearencelevel(value: string): AccountSpec;
 
+  getAvatar(): AvatarSpec | undefined;
+  setAvatar(value?: AvatarSpec): AccountSpec;
+  hasAvatar(): boolean;
+  clearAvatar(): AccountSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AccountSpec): AccountSpec.AsObject;
@@ -210,6 +215,7 @@ export namespace AccountSpec {
     labbindingsList: Array<AccountRoleBinding.AsObject>,
     sitebindingsList: Array<AccountRoleBinding.AsObject>,
     clearencelevel: string,
+    avatar?: AvatarSpec.AsObject,
   }
 }
 
@@ -770,6 +776,28 @@ export namespace ApiTokenStatus {
   export type AsObject = {
     observedgeneration: number,
     conditionsList: Array<ApiTokenCondition.AsObject>,
+  }
+}
+
+export class AvatarSpec extends jspb.Message {
+  getBucketname(): string;
+  setBucketname(value: string): AvatarSpec;
+
+  getPath(): string;
+  setPath(value: string): AvatarSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AvatarSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AvatarSpec): AvatarSpec.AsObject;
+  static serializeBinaryToWriter(message: AvatarSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvatarSpec;
+  static deserializeBinaryFromReader(message: AvatarSpec, reader: jspb.BinaryReader): AvatarSpec;
+}
+
+export namespace AvatarSpec {
+  export type AsObject = {
+    bucketname: string,
+    path: string,
   }
 }
 

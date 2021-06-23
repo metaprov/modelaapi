@@ -145,6 +145,9 @@ type AccountSpec struct {
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
 	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
+	// The avatar location
+	// +kubebuilder:validation:Optional
+	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 }
 
 // AccountStatus defines the actual state of the api object
@@ -160,4 +163,14 @@ type AccountStatus struct {
 	// Represents the latest available observations of a account state.
 	//+optional
 	Conditions []AccountCondition `json:"conditions,omitempty" protobuf:"bytes,3,rep,name=conditions"`
+}
+
+type AvatarSpec struct {
+	// +kubebuilder:default:=""
+	// Bucketname is the name of the bucket holding the bucket name
+	// +kubebuilder:validation:Optional
+	BucketName *string `json:"bucketName" protobuf:"bytes,1,opt,name=bucketName"`
+	// Path to the full data file (e.g. csv file).
+	// +kubebuilder:validation:Optional
+	Path *string `json:"path" protobuf:"bytes,2,opt,name=path"`
 }
