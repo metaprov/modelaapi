@@ -99,7 +99,7 @@ spec:
                 description: The output definition
                 properties:
                   action:
-                    default: create
+                    default: upsert
                     description: Action define how the new data will be created
                     enum:
                     - upsert

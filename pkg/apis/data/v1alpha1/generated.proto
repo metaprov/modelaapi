@@ -397,7 +397,7 @@ message DataOutputSpec {
   optional string format = 3;
 
   // Action define how the new data will be created
-  // +kubebuilder:default:="create"
+  // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
   optional string action = 4;
 }

@@ -126,7 +126,7 @@ type DataOutputSpec struct {
 	// +kubebuilder:validation:Optional
 	Format *catalog.DatastoreType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 	//Action define how the new data will be created
-	// +kubebuilder:default:="create"
+	// +kubebuilder:default:="upsert"
 	// +kubebuilder:validation:Optional
 	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
 }
