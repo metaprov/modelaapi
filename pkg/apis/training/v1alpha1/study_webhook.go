@@ -135,8 +135,9 @@ func (study *Study) Default() {
 
 	if study.Spec.Training == nil {
 		cvtype := catalog.CvTypeStratified
+		pr := catalog.PriorityLevelMedium
 		study.Spec.Training = &TrainingSpec{
-			Priority:           util.Int32Ptr(5),
+			Priority:           &pr,
 			CvType:             &cvtype,
 			CV:                 util.BoolPtr(true),
 			Folds:              util.Int32Ptr(5),

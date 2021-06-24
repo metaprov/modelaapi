@@ -29,15 +29,13 @@ func (model *Model) Default() {
 	}
 
 	if model.Spec.Training.Priority == nil {
-		model.Spec.Training.Priority = util.Int32Ptr(int32(0)) // default prioirty is 5
+		p := catalog.PriorityLevelMedium
+		model.Spec.Training.Priority = &p
 	}
 
 	if model.Spec.Objective == nil {
 		o := model.DefaultObjective()
 		model.Spec.Objective = &o
-	}
-	if model.Spec.Training.Priority == nil {
-		model.Spec.Training.Priority = util.Int32Ptr(1)
 	}
 	if model.Spec.Estimator == nil {
 		model.Spec.Estimator = &ClassicalEstimatorSpec{}

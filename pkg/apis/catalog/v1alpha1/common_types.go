@@ -1389,10 +1389,10 @@ const (
 type PriorityLevel string
 
 const (
-	PriorityLevelLow    SecurityClearanceLevel = "low"
-	PriorityLevelMedium SecurityClearanceLevel = "medium"
-	PriorityLevelHigh   SecurityClearanceLevel = "high"
-	PriorityLevelUrgent SecurityClearanceLevel = "urgent"
+	PriorityLevelLow    PriorityLevel = "low"
+	PriorityLevelMedium PriorityLevel = "medium"
+	PriorityLevelHigh   PriorityLevel = "high"
+	PriorityLevelUrgent PriorityLevel = "urgent"
 )
 
 // ModelType enamurate the model type

@@ -147,7 +147,7 @@ type AccountSpec struct {
 	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
 	// The avatar location
 	// +kubebuilder:validation:Optional
-	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
+	Avatar *AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 }
 
 // AccountStatus defines the actual state of the api object
