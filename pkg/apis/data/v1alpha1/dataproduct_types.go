@@ -166,6 +166,10 @@ type DataProductSpec struct {
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
 	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,20,opt,name=clearenceLevel"`
+	// Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:="medium"
+	DefaultPriority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,21,opt,name=priority"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

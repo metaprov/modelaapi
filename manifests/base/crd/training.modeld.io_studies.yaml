@@ -589,15 +589,6 @@ spec:
                         type: string
                     type: object
                 type: object
-              priority:
-                default: medium
-                description: The priority of this study. The defualt is medium
-                enum:
-                - low
-                - medium
-                - high
-                - urgent
-                type: string
               profiled:
                 default: true
                 description: Profiled is set when we want to create model profile
@@ -1174,13 +1165,15 @@ spec:
                         type: string
                     type: object
                   priority:
-                    default: 5
+                    default: medium
                     description: Priority specify the priority of the model in the
                       training queue.
-                    format: int32
-                    maximum: 10
-                    minimum: 1
-                    type: integer
+                    enum:
+                    - low
+                    - medium
+                    - high
+                    - urgent
+                    type: string
                   retry:
                     default: 5
                     description: Retry attempt is the number of training retry for

@@ -750,6 +750,11 @@ message DataProductSpec {
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
   optional string clearenceLevel = 20;
+
+  // Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="medium"
+  optional string priority = 21;
 }
 
 // DataProductStatus defines the observed state of DataProduct

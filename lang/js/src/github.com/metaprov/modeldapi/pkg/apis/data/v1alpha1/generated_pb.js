@@ -11718,7 +11718,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     attachmentsList: jspb.Message.toObjectList(msg.getAttachmentsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Attachment.toObject, includeInstance),
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    clearencelevel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
+    clearencelevel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11834,6 +11835,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
     case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setClearencelevel(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -11995,6 +12000,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
   if (f != null) {
     writer.writeString(
       20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
       f
     );
   }
@@ -12657,6 +12669,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasClearencelevel = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional string priority = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getPriority = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setPriority = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearPriority = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasPriority = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 

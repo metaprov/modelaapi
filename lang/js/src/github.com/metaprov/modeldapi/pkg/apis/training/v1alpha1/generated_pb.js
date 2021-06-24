@@ -19308,8 +19308,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     forecastingspec: (f = msg.getForecastingspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
-    estimatortype: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
+    estimatortype: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -19471,10 +19470,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 29:
       var value = /** @type {string} */ (reader.readString());
       msg.setEstimatortype(value);
-      break;
-    case 30:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -19715,13 +19710,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeString(
       29,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 30));
-  if (f != null) {
-    writer.writeString(
-      30,
       f
     );
   }
@@ -20779,42 +20767,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasEstimatortype = function() {
   return jspb.Message.getField(this, 29) != null;
-};
-
-
-/**
- * optional string priority = 30;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 30, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 30, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 30) != null;
 };
 
 
@@ -32608,8 +32560,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f
+    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32745,10 +32696,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTemplate(value);
-      break;
-    case 26:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPriority(value);
       break;
     default:
       reader.skipField();
@@ -32945,13 +32892,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeBool(
       25,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 26));
-  if (f != null) {
-    writer.writeString(
-      26,
       f
     );
   }
@@ -33791,42 +33731,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTemplate = function() {
   return jspb.Message.getField(this, 25) != null;
-};
-
-
-/**
- * optional string priority = 26;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 26, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 26, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 26) != null;
 };
 
 
@@ -36769,7 +36673,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
       break;
     case 3:
@@ -36847,9 +36751,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       2,
       f
     );
@@ -36937,16 +36841,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
 
 
 /**
- * optional int32 priority = 2;
- * @return {number}
+ * optional string priority = 2;
+ * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getPriority = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setPriority = function(value) {

@@ -1032,6 +1032,9 @@ export class DataProductSpec extends jspb.Message {
   getClearencelevel(): string;
   setClearencelevel(value: string): DataProductSpec;
 
+  getPriority(): string;
+  setPriority(value: string): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1060,6 +1063,7 @@ export namespace DataProductSpec {
     attachmentsList: Array<Attachment.AsObject>,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     clearencelevel: string,
+    priority: string,
   }
 }
 

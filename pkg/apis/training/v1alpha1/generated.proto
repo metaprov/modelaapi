@@ -1361,11 +1361,6 @@ message ModelSpec {
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
   optional string estimatorType = 29;
-
-  // The priority of this model. The defualt is medium. This is assigned from the study
-  // +kubebuilder:default:=medium
-  // +kubebuilder:validation:Optional
-  optional string priority = 30;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2267,11 +2262,6 @@ message StudySpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool template = 25;
-
-  // The priority of this study. The defualt is medium
-  // +kubebuilder:default:=medium
-  // +kubebuilder:validation:Optional
-  optional string priority = 26;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -2510,10 +2500,8 @@ message TrainingResourceRequest {
 message TrainingSpec {
   // Priority specify the priority of the model in the training queue.
   // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=5
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Minimum=1
-  optional int32 priority = 2;
+  // +kubebuilder:default:="medium"
+  optional string priority = 2;
 
   // The  type of cross validation.
   // if we have a validation set, we do not do cv.

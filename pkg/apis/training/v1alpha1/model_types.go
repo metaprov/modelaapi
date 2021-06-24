@@ -298,10 +298,6 @@ type ModelSpec struct {
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
 	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
-	// The priority of this model. The defualt is medium. This is assigned from the study
-	// +kubebuilder:default:=medium
-	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
 }
 
 type EnsembleSpec struct {
@@ -525,10 +521,8 @@ type SuccessiveHalvingSpec struct {
 type TrainingSpec struct {
 	// Priority specify the priority of the model in the training queue.
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=5
-	// +kubebuilder:validation:Maximum=10
-	// +kubebuilder:validation:Minimum=1
-	Priority *int32 `json:"priority,omitempty" protobuf:"varint,2,opt,name=priority"`
+	// +kubebuilder:default:="medium"
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,2,opt,name=priority"`
 	// The  type of cross validation.
 	// if we have a validation set, we do not do cv.
 	// +kubebuilder:default:=kfold

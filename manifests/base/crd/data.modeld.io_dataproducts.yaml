@@ -232,6 +232,16 @@ spec:
                 default: no-one
                 description: The data product owner
                 type: string
+              priority:
+                default: medium
+                description: Default Priority level assigned to jobs for this data
+                  product (e.g. study, model pipeline,etc)
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
               retriesOnFailure:
                 default: 3
                 description: Denote how many time a job is retry after failure

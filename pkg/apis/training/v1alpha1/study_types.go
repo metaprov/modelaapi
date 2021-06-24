@@ -387,10 +387,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template,omitempty" protobuf:"bytes,25,opt,name=template"`
-	// The priority of this study. The defualt is medium
-	// +kubebuilder:default:=medium
-	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,26,opt,name=priority"`
 }
 
 // StudyStatus defines the observed state of the Study

@@ -1974,9 +1974,6 @@ export class ModelSpec extends jspb.Message {
   getEstimatortype(): string;
   setEstimatortype(value: string): ModelSpec;
 
-  getPriority(): string;
-  setPriority(value: string): ModelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2016,7 +2013,6 @@ export namespace ModelSpec {
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds: number,
     estimatortype: string,
-    priority: string,
   }
 }
 
@@ -3358,9 +3354,6 @@ export class StudySpec extends jspb.Message {
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
 
-  getPriority(): string;
-  setPriority(value: string): StudySpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -3394,7 +3387,6 @@ export namespace StudySpec {
     activedeadlineseconds: number,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
-    priority: string,
   }
 }
 
@@ -3683,8 +3675,8 @@ export namespace TrainingResourceRequest {
 }
 
 export class TrainingSpec extends jspb.Message {
-  getPriority(): number;
-  setPriority(value: number): TrainingSpec;
+  getPriority(): string;
+  setPriority(value: string): TrainingSpec;
 
   getCvtype(): string;
   setCvtype(value: string): TrainingSpec;
@@ -3735,7 +3727,7 @@ export class TrainingSpec extends jspb.Message {
 
 export namespace TrainingSpec {
   export type AsObject = {
-    priority: number,
+    priority: string,
     cvtype: string,
     cv: boolean,
     folds: number,
