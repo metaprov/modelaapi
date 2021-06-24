@@ -76,6 +76,7 @@ spec:
                       bucket name
                     type: string
                   path:
+                    default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
                 type: object

@@ -461,6 +461,7 @@ message AvatarSpec {
   optional string bucketName = 1;
 
   // Path to the full data file (e.g. csv file).
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string path = 2;
 }

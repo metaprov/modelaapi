@@ -169,8 +169,9 @@ type AvatarSpec struct {
 	// +kubebuilder:default:=""
 	// Bucketname is the name of the bucket holding the bucket name
 	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName" protobuf:"bytes,1,opt,name=bucketName"`
+	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
 	// Path to the full data file (e.g. csv file).
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Path *string `json:"path" protobuf:"bytes,2,opt,name=path"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
 }
