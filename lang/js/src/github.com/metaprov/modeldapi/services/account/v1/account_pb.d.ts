@@ -482,6 +482,9 @@ export class UploadAvatarRequest extends jspb.Message {
   getName(): string;
   setName(value: string): UploadAvatarRequest;
 
+  getBucketname(): string;
+  setBucketname(value: string): UploadAvatarRequest;
+
   getAvatar(): Uint8Array | string;
   getAvatar_asU8(): Uint8Array;
   getAvatar_asB64(): string;
@@ -499,6 +502,7 @@ export namespace UploadAvatarRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    bucketname: string,
     avatar: Uint8Array | string,
   }
 }

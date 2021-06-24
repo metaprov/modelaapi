@@ -4127,6 +4127,7 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.toOb
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    bucketname: jspb.Message.getFieldWithDefault(msg, 3, ""),
     avatar: msg.getAvatar_asB64()
   };
 
@@ -4173,6 +4174,10 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.dese
       msg.setName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBucketname(value);
+      break;
+    case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setAvatar(value);
       break;
@@ -4219,10 +4224,17 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.seri
       f
     );
   }
+  f = message.getBucketname();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getAvatar_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      3,
+      4,
       f
     );
   }
@@ -4266,16 +4278,34 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prot
 
 
 /**
- * optional bytes avatar = 3;
+ * optional string bucketName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prototype.getAvatar = function() {
+proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prototype.getBucketname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * optional bytes avatar = 3;
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prototype.setBucketname = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bytes avatar = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prototype.getAvatar = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * optional bytes avatar = 4;
  * This is a type-conversion wrapper around `getAvatar()`
  * @return {string}
  */
@@ -4286,7 +4316,7 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prot
 
 
 /**
- * optional bytes avatar = 3;
+ * optional bytes avatar = 4;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getAvatar()`
@@ -4303,7 +4333,7 @@ proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prot
  * @return {!proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest.prototype.setAvatar = function(value) {
-  return jspb.Message.setProto3BytesField(this, 3, value);
+  return jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 

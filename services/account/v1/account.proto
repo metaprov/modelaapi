@@ -116,9 +116,10 @@ message ResetPasswordReponse {
 
 
 message UploadAvatarRequest {
-    string namespace = 1;
-    string name      = 2;
-    bytes  avatar = 3;
+    string namespace  = 1;
+    string name       = 2;
+    string bucketName = 3;
+    bytes  avatar     = 4;
 }
 
 message UploadAvatarReponse {
@@ -127,8 +128,8 @@ message UploadAvatarReponse {
 
 
 message DownloadAvatarRequest {
-    string namespace = 1;
-    string name      = 2;    
+    string namespace  = 1;
+    string name       = 2;        
 }
 
 message DownloadAvatarReponse {
