@@ -47,7 +47,7 @@ type CronReportCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modeld}
+// +kubebuilder:resource:path=cronreports,shortName=cpred,singular=cronreport,categories={training,modeld}
 // CronReport represents a run of the summary report.
 type CronReport struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -52,4 +52,5 @@ resources:
   - training.modeld.io_notebookruns.yaml
   - training.modeld.io_notebooks.yaml
   - training.modeld.io_reports.yaml
+  - training.modeld.io_cronreports.yaml
   - training.modeld.io_studies.yaml
