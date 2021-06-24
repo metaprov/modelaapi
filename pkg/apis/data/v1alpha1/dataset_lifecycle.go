@@ -193,10 +193,10 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetValidated,
 		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseValidationFailed),
-		Message: msg,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to validate." + msg,
 	})
-	dataset.Status.Phase = DatasetPhaseValidationFailed
+	dataset.Status.Phase = DatasetPhaseFailed
 }
 
 func (dataset *Dataset) MarkValidated() {
@@ -242,10 +242,10 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetIngested,
 		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseIngestFailed),
-		Message: msg,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to ingest." + msg,
 	})
-	dataset.Status.Phase = DatasetPhaseIngestFailed
+	dataset.Status.Phase = DatasetPhaseFailed
 }
 
 // -------------------- generating
@@ -273,10 +273,10 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetGenerated,
 		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseGenFailed),
-		Message: msg,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to generate dataset." + msg,
 	})
-	dataset.Status.Phase = DatasetPhaseGenFailed
+	dataset.Status.Phase = DatasetPhaseFailed
 }
 
 // ------------------------- report
@@ -302,10 +302,10 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetReported,
 		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseReportFailed),
-		Message: msg,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to report." + msg,
 	})
-	dataset.Status.Phase = DatasetPhaseReportFailed
+	dataset.Status.Phase = DatasetPhaseFailed
 }
 
 // ----------------- profile
@@ -332,10 +332,10 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 	dataset.CreateOrUpdateCond(DatasetCondition{
 		Type:    DatasetProfiled,
 		Status:  v1.ConditionFalse,
-		Reason:  string(DatasetPhaseProfileFailed),
-		Message: msg,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to profiled." + msg,
 	})
-	dataset.Status.Phase = DatasetPhaseProfileFailed
+	dataset.Status.Phase = DatasetPhaseFailed
 }
 
 func (r *Dataset) OpName() string {

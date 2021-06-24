@@ -11,21 +11,16 @@ type DatasetPhase string
 const (
 	DatasetPhaseGenerating        DatasetPhase = "Generating" // when generating
 	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when syntatic gen success
-	DatasetPhaseGenFailed         DatasetPhase = "GenFailed"  // when syntatic gen failed
-	DatasetPhaseIngestRunning     DatasetPhase = "IngestRunning"
-	DatasetPhaseIngestSuccess     DatasetPhase = "IngestSuccess"
-	DatasetPhaseIngestFailed      DatasetPhase = "IngestFailed"
-	DatasetPhaseReportRunning     DatasetPhase = "ReportRunning"
-	DatasetPhaseReportSuccess     DatasetPhase = "ReportSuccess"
-	DatasetPhaseReportFailed      DatasetPhase = "ReportFailed"
-	DatasetPhaseProfileRunning    DatasetPhase = "ProfileRunning"
-	DatasetPhaseProfileSuccess    DatasetPhase = "ProfileSuccess"
-	DatasetPhaseProfileFailed     DatasetPhase = "ProfileFailed"
-	DatasetPhaseValidationRunning DatasetPhase = "ValidationRunning"
-	DatasetPhaseValidationSuccess DatasetPhase = "ValidationSuccess"
-	DatasetPhaseValidationFailed  DatasetPhase = "ValidationFailed"
+	DatasetPhaseIngestRunning     DatasetPhase = "Ingesting"
+	DatasetPhaseIngestSuccess     DatasetPhase = "Ingested"
+	DatasetPhaseReportRunning     DatasetPhase = "Reporting"
+	DatasetPhaseReportSuccess     DatasetPhase = "Reported"
+	DatasetPhaseProfileRunning    DatasetPhase = "Profiling"
+	DatasetPhaseProfileSuccess    DatasetPhase = "Profiled"
+	DatasetPhaseValidationRunning DatasetPhase = "Validating"
+	DatasetPhaseValidationSuccess DatasetPhase = "Validated"
+	DatasetPhaseFailed            DatasetPhase = "Failed"
 	DatasetPhaseReady             DatasetPhase = "Ready"
-	DatasetPhaseError             DatasetPhase = "Err"
 )
 
 // Condition on the dataset
