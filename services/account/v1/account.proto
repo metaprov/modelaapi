@@ -93,9 +93,6 @@ message AccountLogoutRequest {
 }
 
 
-
-
-
 message ChangePasswordRequest {
     string namespace = 1;
     string name      = 2;
@@ -116,6 +113,28 @@ message ResetPasswordRequest {
 message ResetPasswordReponse {
 
 }
+
+
+message UploadAvatarRequest {
+    string namespace = 1;
+    string name      = 2;
+    bytes  avatar = 3;
+}
+
+message UploadAvatarReponse {
+
+}
+
+
+message DownloadAvatarRequest {
+    string namespace = 1;
+    string name      = 2;    
+}
+
+message DownloadAvatarReponse {
+    bytes  avatar = 1;
+}
+
 
 
 
@@ -154,7 +173,7 @@ service AccountService {
     rpc Logout         (AccountLogoutRequest)       returns (LogoutResponse)   {}
     rpc ChangePassword (ChangePasswordRequest)      returns (ChangePasswordResponse)   {}
     rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
-
-
+    rpc UploadAvatar   (UploadAvatarRequest)        returns (UploadAvatarReponse)   {}
+    rpc DownloadAvatar (DownloadAvatarRequest)      returns (DownloadAvatarReponse)   {}
 
 }

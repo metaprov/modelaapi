@@ -435,5 +435,85 @@ export class AccountServiceClient {
     this.methodInfoResetPassword);
   }
 
+  methodInfoUploadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse,
+    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse.deserializeBinary
+  );
+
+  uploadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse>;
+
+  uploadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse>;
+
+  uploadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+        request,
+        metadata || {},
+        this.methodInfoUploadAvatar,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+    request,
+    metadata || {},
+    this.methodInfoUploadAvatar);
+  }
+
+  methodInfoDownloadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse,
+    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse.deserializeBinary
+  );
+
+  downloadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse>;
+
+  downloadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse>;
+
+  downloadAvatar(
+    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+        request,
+        metadata || {},
+        this.methodInfoDownloadAvatar,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+    request,
+    metadata || {},
+    this.methodInfoDownloadAvatar);
+  }
+
 }
 

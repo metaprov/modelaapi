@@ -64,6 +64,16 @@ class AccountServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
                 )
+        self.UploadAvatar = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+                )
+        self.DownloadAvatar = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
+                )
 
 
 class AccountServiceServicer(object):
@@ -129,6 +139,18 @@ class AccountServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UploadAvatar(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DownloadAvatar(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -181,6 +203,16 @@ def add_AccountServiceServicer_to_server(servicer, server):
                     servicer.ResetPassword,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.SerializeToString,
+            ),
+            'UploadAvatar': grpc.unary_unary_rpc_method_handler(
+                    servicer.UploadAvatar,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.SerializeToString,
+            ),
+            'DownloadAvatar': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadAvatar,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -359,5 +391,39 @@ class AccountService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UploadAvatar(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadAvatar(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

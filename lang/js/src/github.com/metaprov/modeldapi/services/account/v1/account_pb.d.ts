@@ -475,3 +475,87 @@ export namespace ResetPasswordReponse {
   }
 }
 
+export class UploadAvatarRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): UploadAvatarRequest;
+
+  getName(): string;
+  setName(value: string): UploadAvatarRequest;
+
+  getAvatar(): Uint8Array | string;
+  getAvatar_asU8(): Uint8Array;
+  getAvatar_asB64(): string;
+  setAvatar(value: Uint8Array | string): UploadAvatarRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadAvatarRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadAvatarRequest): UploadAvatarRequest.AsObject;
+  static serializeBinaryToWriter(message: UploadAvatarRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadAvatarRequest;
+  static deserializeBinaryFromReader(message: UploadAvatarRequest, reader: jspb.BinaryReader): UploadAvatarRequest;
+}
+
+export namespace UploadAvatarRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+    avatar: Uint8Array | string,
+  }
+}
+
+export class UploadAvatarReponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadAvatarReponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadAvatarReponse): UploadAvatarReponse.AsObject;
+  static serializeBinaryToWriter(message: UploadAvatarReponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadAvatarReponse;
+  static deserializeBinaryFromReader(message: UploadAvatarReponse, reader: jspb.BinaryReader): UploadAvatarReponse;
+}
+
+export namespace UploadAvatarReponse {
+  export type AsObject = {
+  }
+}
+
+export class DownloadAvatarRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DownloadAvatarRequest;
+
+  getName(): string;
+  setName(value: string): DownloadAvatarRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAvatarRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAvatarRequest): DownloadAvatarRequest.AsObject;
+  static serializeBinaryToWriter(message: DownloadAvatarRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAvatarRequest;
+  static deserializeBinaryFromReader(message: DownloadAvatarRequest, reader: jspb.BinaryReader): DownloadAvatarRequest;
+}
+
+export namespace DownloadAvatarRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class DownloadAvatarReponse extends jspb.Message {
+  getAvatar(): Uint8Array | string;
+  getAvatar_asU8(): Uint8Array;
+  getAvatar_asB64(): string;
+  setAvatar(value: Uint8Array | string): DownloadAvatarReponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAvatarReponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAvatarReponse): DownloadAvatarReponse.AsObject;
+  static serializeBinaryToWriter(message: DownloadAvatarReponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAvatarReponse;
+  static deserializeBinaryFromReader(message: DownloadAvatarReponse, reader: jspb.BinaryReader): DownloadAvatarReponse;
+}
+
+export namespace DownloadAvatarReponse {
+  export type AsObject = {
+    avatar: Uint8Array | string,
+  }
+}
+
