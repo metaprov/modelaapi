@@ -1061,11 +1061,6 @@ spec:
               best:
                 description: Best is true if this is the best model
                 type: boolean
-              completionTime:
-                description: CompletionTime represent the time that the model is marked
-                  as ready
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: ModelCondition describes the state of a model at a
@@ -1104,6 +1099,11 @@ spec:
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
+              endTime:
+                description: CompletionTime represent the time that the model is marked
+                  as ready
+                format: date-time
+                type: string
               forecastUri:
                 description: ForecastUri is the uri of the forecast
                 type: string
@@ -1180,12 +1180,6 @@ spec:
               startTime:
                 description: StartTime represents time when the model is first handled
                   by the model controller
-                format: date-time
-                type: string
-              testCompletionTime:
-                description: TestCompletionTime represents time when the model ended
-                  testing be set in happens-before order across separate operations.
-                  It is represented in RFC3339 form and is in UTC.
                 format: date-time
                 type: string
               testDataset:
@@ -1267,16 +1261,17 @@ spec:
               testScore:
                 description: TestScore is the score
                 type: number
-              testStartTime:
-                description: TestStartTime represents time when the model started
+              testingEndTime:
+                description: TestingEndTime represents time when the model ended testing
+                  be set in happens-before order across separate operations. It is
+                  represented in RFC3339 form and is in UTC.
+                format: date-time
+                type: string
+              testingStartTime:
+                description: TestingStartTime represents time when the model started
                   test on a trainer It is not guaranteed to be set in happens-before
                   order across separate operations. It is represented in RFC3339 form
                   and is in UTC.
-                format: date-time
-                type: string
-              trainCompletionTime:
-                description: TrainCompletionTime represents time when the model ended
-                  training
                 format: date-time
                 type: string
               trainDataset:
@@ -1354,11 +1349,16 @@ spec:
                   - value
                   type: object
                 type: array
-              trainScore:
-                description: TrainScore is the score on the full training set, Evaluating
-                  on the training set
+              trainingEndTime:
+                description: TrainCompletionTime represents time when the model ended
+                  training
+                format: date-time
+                type: string
+              trainingScore:
+                description: TrainingScore is the score on the full training set,
+                  Evaluating on the training set
                 type: number
-              trainStartTime:
+              trainingStartTime:
                 description: TrainStartTime represents time when the model started
                   training.
                 format: date-time

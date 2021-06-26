@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	"github.com/dustin/go-humanize"
 	"github.com/metaprov/modeldapi/pkg/apis/training"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -150,8 +151,8 @@ func (r *NotebookRun) MarkCompleted() {
 		Status: corev1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if r.Status.CompletionTime != nil {
-		r.Status.CompletionTime = &now
+	if r.Status.EndTime != nil {
+		r.Status.EndTime = &now
 	}
 
 }
@@ -173,8 +174,8 @@ func (r *NotebookRun) MarkFailed(error string) {
 		Message: error,
 	})
 	now := metav1.Now()
-	if r.Status.CompletionTime != nil {
-		r.Status.CompletionTime = &now
+	if r.Status.EndTime != nil {
+		r.Status.EndTime = &now
 	}
 
 }

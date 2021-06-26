@@ -11890,7 +11890,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     bestmodelscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 15)) == null ? undefined : f,
     estimator: (f = msg.getEstimator()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition.toObject, includeInstance)
@@ -11999,7 +11999,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     case 18:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 19:
       var value = /** @type {number} */ (reader.readInt64());
@@ -12153,7 +12153,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -12758,10 +12758,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 18));
 };
@@ -12771,7 +12771,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 18, value);
 };
 
@@ -12780,8 +12780,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -12789,7 +12789,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
@@ -20810,13 +20810,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    trainstarttime: (f = msg.getTrainstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    traincompletiontime: (f = msg.getTraincompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    teststarttime: (f = msg.getTeststarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    testcompletiontime: (f = msg.getTestcompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    trainingstarttime: (f = msg.getTrainingstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    trainingendtime: (f = msg.getTrainingendtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    testingstarttime: (f = msg.getTestingstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    testingendtime: (f = msg.getTestingendtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     cvscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
-    trainscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
+    trainingscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
     testscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 9)) == null ? undefined : f,
     cost: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
     best: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
@@ -20891,27 +20891,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.deser
     case 2:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTrainstarttime(value);
+      msg.setTrainingstarttime(value);
       break;
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTraincompletiontime(value);
+      msg.setTrainingendtime(value);
       break;
     case 4:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTeststarttime(value);
+      msg.setTestingstarttime(value);
       break;
     case 5:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTestcompletiontime(value);
+      msg.setTestingendtime(value);
       break;
     case 6:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readDouble());
@@ -20919,7 +20919,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       break;
     case 8:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setTrainscore(value);
+      msg.setTrainingscore(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readDouble());
@@ -21072,7 +21072,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTrainstarttime();
+  f = message.getTrainingstarttime();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -21080,7 +21080,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTraincompletiontime();
+  f = message.getTrainingendtime();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -21088,7 +21088,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTeststarttime();
+  f = message.getTestingstarttime();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -21096,7 +21096,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTestcompletiontime();
+  f = message.getTestingendtime();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -21104,7 +21104,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -21354,10 +21354,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainStartTime = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainstarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainingstarttime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
 };
@@ -21367,7 +21367,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainstarttime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainingstarttime = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -21376,8 +21376,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainstarttime = function() {
-  return this.setTrainstarttime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainingstarttime = function() {
+  return this.setTrainingstarttime(undefined);
 };
 
 
@@ -21385,16 +21385,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainstarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainingstarttime = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainCompletionTime = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTraincompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainingendtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -21404,7 +21404,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTraincompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainingendtime = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -21413,8 +21413,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTraincompletiontime = function() {
-  return this.setTraincompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainingendtime = function() {
+  return this.setTrainingendtime(undefined);
 };
 
 
@@ -21422,16 +21422,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTraincompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainingendtime = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testStartTime = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 4;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTeststarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTestingstarttime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
 };
@@ -21441,7 +21441,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTeststarttime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTestingstarttime = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -21450,8 +21450,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTeststarttime = function() {
-  return this.setTeststarttime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTestingstarttime = function() {
+  return this.setTestingstarttime(undefined);
 };
 
 
@@ -21459,16 +21459,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTeststarttime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTestingstarttime = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testCompletionTime = 5;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 5;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTestcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTestingendtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
 };
@@ -21478,7 +21478,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTestcompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTestingendtime = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -21487,8 +21487,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTestcompletiontime = function() {
-  return this.setTestcompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTestingendtime = function() {
+  return this.setTestingendtime(undefined);
 };
 
 
@@ -21496,16 +21496,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTestcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTestingendtime = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 6;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 6;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
 };
@@ -21515,7 +21515,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -21524,8 +21524,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -21533,7 +21533,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -21575,10 +21575,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional double trainScore = 8;
+ * optional double trainingScore = 8;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainscore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainingscore = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
 };
 
@@ -21587,7 +21587,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainscore = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainingscore = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -21596,7 +21596,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainscore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainingscore = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -21605,7 +21605,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainscore = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainingscore = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -26006,7 +26006,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunCondition.toObject, includeInstance)
@@ -26058,7 +26058,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
@@ -26113,7 +26113,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -26213,10 +26213,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -26226,7 +26226,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -26235,8 +26235,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -26244,7 +26244,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -30938,7 +30938,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prot
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     uri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -30988,7 +30988,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.dese
     case 3:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -31044,7 +31044,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.seri
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -31122,10 +31122,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prot
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
 };
@@ -31135,7 +31135,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -31144,8 +31144,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -31153,7 +31153,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -33787,10 +33787,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     budytrainers: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     trainingstarttime: (f = msg.getTrainingstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    trainingcompletiontime: (f = msg.getTrainingcompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    testingstarted: (f = msg.getTestingstarted()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    testingcompletiontime: (f = msg.getTestingcompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    completiontime: (f = msg.getCompletiontime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    trainingendtime: (f = msg.getTrainingendtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    testingstarttime: (f = msg.getTestingstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    testingendtime: (f = msg.getTestingendtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     bestmodel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     bestmodelscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 21)) == null ? undefined : f,
     profileuri: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
@@ -33900,22 +33900,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.deser
     case 15:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTrainingcompletiontime(value);
+      msg.setTrainingendtime(value);
       break;
     case 16:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTestingstarted(value);
+      msg.setTestingstarttime(value);
       break;
     case 17:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setTestingcompletiontime(value);
+      msg.setTestingendtime(value);
       break;
     case 18:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setCompletiontime(value);
+      msg.setEndtime(value);
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
@@ -34094,7 +34094,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTrainingcompletiontime();
+  f = message.getTrainingendtime();
   if (f != null) {
     writer.writeMessage(
       15,
@@ -34102,7 +34102,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTestingstarted();
+  f = message.getTestingstarttime();
   if (f != null) {
     writer.writeMessage(
       16,
@@ -34110,7 +34110,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getTestingcompletiontime();
+  f = message.getTestingendtime();
   if (f != null) {
     writer.writeMessage(
       17,
@@ -34118,7 +34118,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getCompletiontime();
+  f = message.getEndtime();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -34717,10 +34717,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingCompletionTime = 15;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 15;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTrainingcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTrainingendtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 15));
 };
@@ -34730,7 +34730,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTrainingcompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTrainingendtime = function(value) {
   return jspb.Message.setWrapperField(this, 15, value);
 };
 
@@ -34739,8 +34739,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTrainingcompletiontime = function() {
-  return this.setTrainingcompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTrainingendtime = function() {
+  return this.setTrainingendtime(undefined);
 };
 
 
@@ -34748,16 +34748,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTrainingcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTrainingendtime = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStarted = 16;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 16;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingstarted = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingstarttime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 16));
 };
@@ -34767,7 +34767,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingstarted = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingstarttime = function(value) {
   return jspb.Message.setWrapperField(this, 16, value);
 };
 
@@ -34776,8 +34776,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingstarted = function() {
-  return this.setTestingstarted(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingstarttime = function() {
+  return this.setTestingstarttime(undefined);
 };
 
 
@@ -34785,16 +34785,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingstarted = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingstarttime = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingCompletionTime = 17;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 17;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingendtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 17));
 };
@@ -34804,7 +34804,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingcompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingendtime = function(value) {
   return jspb.Message.setWrapperField(this, 17, value);
 };
 
@@ -34813,8 +34813,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingcompletiontime = function() {
-  return this.setTestingcompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingendtime = function() {
+  return this.setTestingendtime(undefined);
 };
 
 
@@ -34822,16 +34822,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingcompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingendtime = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getEndtime = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 18));
 };
@@ -34841,7 +34841,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setCompletiontime = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setEndtime = function(value) {
   return jspb.Message.setWrapperField(this, 18, value);
 };
 
@@ -34850,8 +34850,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearCompletiontime = function() {
-  return this.setCompletiontime(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearEndtime = function() {
+  return this.setEndtime(undefined);
 };
 
 
@@ -34859,7 +34859,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasCompletiontime = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasEndtime = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 

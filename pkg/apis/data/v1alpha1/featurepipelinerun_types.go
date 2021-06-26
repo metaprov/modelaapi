@@ -97,7 +97,7 @@ type FeaturePipelineRunStatus struct {
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// The End time of the run
 	//+option
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
 	// The phase of the dataset processing
 	// +kubebuilder:validation:Optional
 	Phase FeautrePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`

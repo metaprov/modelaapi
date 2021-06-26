@@ -287,8 +287,8 @@ func (study *Study) MarkSearched() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.TrainingCompletionTime == nil {
-		study.Status.TrainingCompletionTime = &now
+	if study.Status.TrainingEndTime == nil {
+		study.Status.TrainingEndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 }
@@ -327,7 +327,7 @@ func (study *Study) MarkTested() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	study.Status.TestingCompletionTime = &now
+	study.Status.TestingEndTime = &now
 	study.Status.Phase = StudyPhaseTested
 }
 
@@ -452,7 +452,7 @@ func (study *Study) MarkResumed() {
 
 func (study *Study) MarkReady() {
 	now := metav1.Now()
-	study.Status.CompletionTime = &now
+	study.Status.EndTime = &now
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyCompleted,
 		Status: v1.ConditionTrue,

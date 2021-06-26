@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/apis/inference"
 	"github.com/metaprov/modeldapi/pkg/util"
@@ -158,8 +159,8 @@ func (prediction *Prediction) MarkCompleted() {
 	})
 	prediction.Status.Phase = PredictionPhaseCompleted
 	now := metav1.Now()
-	if prediction.Status.CompletionTime == nil {
-		prediction.Status.CompletionTime = &now
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
 	}
 }
 
@@ -186,6 +187,6 @@ func (run *Prediction) MarkRunning() {
 	run.Status.Phase = PredictionPhaseRunning
 	now := metav1.Now()
 	if run.Status.StartTime == nil {
-		run.Status.CompletionTime = &now
+		run.Status.EndTime = &now
 	}
 }

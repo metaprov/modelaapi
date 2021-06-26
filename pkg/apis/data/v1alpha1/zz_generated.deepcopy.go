@@ -629,8 +629,8 @@ func (in *DataPipelineRunStatus) DeepCopyInto(out *DataPipelineRunStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -2013,8 +2013,8 @@ func (in *FeaturePipelineRunStatus) DeepCopyInto(out *FeaturePipelineRunStatus) 
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -2679,8 +2679,8 @@ func (in *LabelingPipelineRunStatus) DeepCopyInto(out *LabelingPipelineRunStatus
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -3199,8 +3199,8 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {

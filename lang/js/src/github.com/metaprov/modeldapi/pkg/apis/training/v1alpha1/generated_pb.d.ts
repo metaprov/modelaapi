@@ -1131,10 +1131,10 @@ export class ModelAutobuilderStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): ModelAutobuilderStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelAutobuilderStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): ModelAutobuilderStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelAutobuilderStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelAutobuilderStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelAutobuilderStatus;
@@ -1170,7 +1170,7 @@ export namespace ModelAutobuilderStatus {
     bestmodelscore: number,
     estimator?: ClassicalEstimatorSpec.AsObject,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
   }
@@ -2022,36 +2022,36 @@ export class ModelStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): ModelStatus;
 
-  getTrainstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTrainstarttime(): boolean;
-  clearTrainstarttime(): ModelStatus;
+  getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTrainingstarttime(): boolean;
+  clearTrainingstarttime(): ModelStatus;
 
-  getTraincompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTraincompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTraincompletiontime(): boolean;
-  clearTraincompletiontime(): ModelStatus;
+  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTrainingendtime(): boolean;
+  clearTrainingendtime(): ModelStatus;
 
-  getTeststarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTeststarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTeststarttime(): boolean;
-  clearTeststarttime(): ModelStatus;
+  getTestingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTestingstarttime(): boolean;
+  clearTestingstarttime(): ModelStatus;
 
-  getTestcompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestcompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasTestcompletiontime(): boolean;
-  clearTestcompletiontime(): ModelStatus;
+  getTestingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasTestingendtime(): boolean;
+  clearTestingendtime(): ModelStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): ModelStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ModelStatus;
 
   getCvscore(): number;
   setCvscore(value: number): ModelStatus;
 
-  getTrainscore(): number;
-  setTrainscore(value: number): ModelStatus;
+  getTrainingscore(): number;
+  setTrainingscore(value: number): ModelStatus;
 
   getTestscore(): number;
   setTestscore(value: number): ModelStatus;
@@ -2158,13 +2158,13 @@ export class ModelStatus extends jspb.Message {
 export namespace ModelStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    traincompletiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    teststarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testcompletiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cvscore: number,
-    trainscore: number,
+    trainingscore: number,
     testscore: number,
     cost: number,
     best: boolean,
@@ -2567,10 +2567,10 @@ export class NotebookRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): NotebookRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): NotebookRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): NotebookRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotebookRunStatus;
@@ -2592,7 +2592,7 @@ export namespace NotebookRunStatus {
   export type AsObject = {
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<NotebookRunCondition.AsObject>,
   }
@@ -3090,10 +3090,10 @@ export class ReportStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): ReportStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): ReportStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): ReportStatus;
 
   getPhase(): string;
   setPhase(value: string): ReportStatus;
@@ -3120,7 +3120,7 @@ export class ReportStatus extends jspb.Message {
 export namespace ReportStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     uri: string,
     observedgeneration: number,
@@ -3437,25 +3437,25 @@ export class StudyStatus extends jspb.Message {
   hasTrainingstarttime(): boolean;
   clearTrainingstarttime(): StudyStatus;
 
-  getTrainingcompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingcompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTrainingcompletiontime(): boolean;
-  clearTrainingcompletiontime(): StudyStatus;
+  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasTrainingendtime(): boolean;
+  clearTrainingendtime(): StudyStatus;
 
-  getTestingstarted(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingstarted(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTestingstarted(): boolean;
-  clearTestingstarted(): StudyStatus;
+  getTestingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasTestingstarttime(): boolean;
+  clearTestingstarttime(): StudyStatus;
 
-  getTestingcompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingcompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTestingcompletiontime(): boolean;
-  clearTestingcompletiontime(): StudyStatus;
+  getTestingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTestingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasTestingendtime(): boolean;
+  clearTestingendtime(): StudyStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): StudyStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): StudyStatus;
 
   getBestmodel(): string;
   setBestmodel(value: string): StudyStatus;
@@ -3522,10 +3522,10 @@ export namespace StudyStatus {
     budytrainers: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingcompletiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingstarted?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingcompletiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    testingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestmodel: string,
     bestmodelscore: number,
     profileuri: string,

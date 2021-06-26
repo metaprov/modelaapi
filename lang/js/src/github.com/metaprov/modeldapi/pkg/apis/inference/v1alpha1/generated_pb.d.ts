@@ -859,10 +859,10 @@ export class PredictionStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): PredictionStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): PredictionStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): PredictionStatus;
 
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
@@ -894,7 +894,7 @@ export class PredictionStatus extends jspb.Message {
 export namespace PredictionStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     observedgeneration: number,

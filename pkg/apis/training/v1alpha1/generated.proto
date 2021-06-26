@@ -760,7 +760,7 @@ message ModelAutobuilderStatus {
 
   // CompletionTime is the time that this prediction job finished
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -1371,35 +1371,35 @@ message ModelStatus {
 
   // TrainStartTime represents time when the model started training.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainStartTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
 
   // TrainCompletionTime represents time when the model ended training
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainCompletionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
 
-  // TestStartTime represents time when the model started test on a trainer
+  // TestingStartTime represents time when the model started test on a trainer
   // It is not guaranteed to be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testStartTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 4;
 
-  // TestCompletionTime represents time when the model ended testing
+  // TestingEndTime represents time when the model ended testing
   // be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testCompletionTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 5;
 
   // CompletionTime represent the time that the model is marked as ready
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 6;
 
   // CVScrore is the score using on the training set.
   // +kubebuilder:validation:Optional
   optional double cvScore = 7;
 
-  // TrainScore is the score on the full training set, Evaluating on the training set
+  // TrainingScore is the score on the full training set, Evaluating on the training set
   // +kubebuilder:validation:Optional
-  optional double trainScore = 8;
+  optional double trainingScore = 8;
 
   // TestScore is the score
   // +kubebuilder:validation:Optional
@@ -1703,9 +1703,9 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
-  // CompletionTime is the time that this prediction job finished
+  // EndTime is the time that this prediction job finished
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -2056,11 +2056,11 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
-  // CompletionTime is the time when the report ended generation and was uploaded to storage
+  // EndTime is the time when the report ended generation and was uploaded to storage
   // be set in happens-before order across separate operations.
   // It is represented in RFC3339 form and is in UTC.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // Phase is the phase of the report
   // +kubebuilder:validation:Optional
@@ -2324,19 +2324,19 @@ message StudyStatus {
 
   // End of the training phase.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingCompletionTime = 15;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 15;
 
   // Start of the testing phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStarted = 16;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 16;
 
   // Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingCompletionTime = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 17;
 
   // The study end time.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
 
   // The Best model name.
   // +kubebuilder:validation:Optional

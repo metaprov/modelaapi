@@ -350,13 +350,13 @@ func (model *Model) MarkWaitingToTrain() {
 func (model *Model) MarkTraining() {
 	now := metav1.Now()
 	model.Status.StartTime = &now
-	model.Status.TrainStartTime = &now
+	model.Status.TrainingStartTime = &now
 	model.Status.Phase = ModelPhaseTraining
 }
 
 func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	now := metav1.Now()
-	model.Status.TrainCompletionTime = &now
+	model.Status.TrainingEndTime = &now
 	model.Status.TrainResult = ms
 	model.Status.Phase = ModelPhaseTrained
 	model.CreateOrUpdateCond(ModelCondition{
@@ -374,7 +374,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
-	model.Status.TrainCompletionTime = &now
+	model.Status.TrainingEndTime = &now
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.TrainResult = make([]catalog.Measurement, 0)
@@ -415,7 +415,7 @@ func (model *Model) MarkWaitingToTest() {
 
 func (model *Model) MarkTesting() {
 	now := metav1.Now()
-	model.Status.TestStartTime = &now
+	model.Status.TestingStartTime = &now
 	model.Status.Phase = ModelPhaseTesting
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTested,
@@ -441,7 +441,7 @@ func (model *Model) MarkTested() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	model.Status.TestCompletionTime = &now
+	model.Status.TestingEndTime = &now
 }
 
 func (model *Model) TestingFailed() bool {
@@ -459,7 +459,7 @@ func (model *Model) Testing() bool {
 }
 
 func (model *Model) WaitingToTest() bool {
-	return *model.Spec.Tested && model.Status.TestStartTime == nil
+	return *model.Spec.Tested && model.Status.TestingStartTime == nil
 }
 
 //-------------------- profile command
@@ -672,7 +672,7 @@ func (model *Model) MarkReady() {
 	})
 	// mark the time
 	now := metav1.Now()
-	model.Status.CompletionTime = &now
+	model.Status.EndTime = &now
 }
 
 func (model *Model) IsReady() bool {

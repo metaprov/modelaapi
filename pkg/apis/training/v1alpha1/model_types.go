@@ -314,34 +314,36 @@ type ModelStatus struct {
 
 	// TrainStartTime represents time when the model started training.
 	// +kubebuilder:validation:Optional
-	TrainStartTime *metav1.Time `json:"trainStartTime,omitempty" protobuf:"bytes,2,opt,name=trainStartTime"`
+	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,2,opt,name=trainingStartTime"`
 
 	// TrainCompletionTime represents time when the model ended training
 	// +kubebuilder:validation:Optional
-	TrainCompletionTime *metav1.Time `json:"trainCompletionTime,omitempty" protobuf:"bytes,3,opt,name=trainCompletionTime"`
+	TrainingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
 
-	// TestStartTime represents time when the model started test on a trainer
+	// TestingStartTime represents time when the model started test on a trainer
 	// It is not guaranteed to be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
-	TestStartTime *metav1.Time `json:"testStartTime,omitempty" protobuf:"bytes,4,opt,name=testStartTime"`
+	TestingStartTime *metav1.Time `json:"testingStartTime,omitempty" protobuf:"bytes,4,opt,name=testingStartTime"`
 
-	// TestCompletionTime represents time when the model ended testing
+	// TestingEndTime represents time when the model ended testing
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
-	TestCompletionTime *metav1.Time `json:"testCompletionTime,omitempty" protobuf:"bytes,5,opt,name=testCompletionTime"`
+	TestingEndTime *metav1.Time `json:"testingEndTime,omitempty" protobuf:"bytes,5,opt,name=testingEndTime"`
 
 	// CompletionTime represent the time that the model is marked as ready
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,6,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,6,opt,name=endTime"`
 
 	// CVScrore is the score using on the training set.
 	// +kubebuilder:validation:Optional
 	CVScore float64 `json:"cvScore,omitempty" protobuf:"bytes,7,opt,name=cvScore"`
-	// TrainScore is the score on the full training set, Evaluating on the training set
+
+	// TrainingScore is the score on the full training set, Evaluating on the training set
 	// +kubebuilder:validation:Optional
-	TrainScore float64 `json:"trainScore,omitempty" protobuf:"bytes,8,opt,name=trainScore"`
+	TrainingScore float64 `json:"trainingScore,omitempty" protobuf:"bytes,8,opt,name=trainingScore"`
+
 	// TestScore is the score
 	// +kubebuilder:validation:Optional
 	TestScore float64 `json:"testScore,omitempty" protobuf:"bytes,9,opt,name=testScore"`

@@ -90,10 +90,6 @@ spec:
           status:
             description: LabelPipelineRunStatus defines the observed state of Label
             properties:
-              completionTime:
-                description: The End time of the run
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: LabelingPipelineRunCondition describes the state of
@@ -122,6 +118,10 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: The End time of the run
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
@@ -135,7 +135,7 @@ spec:
                 format: date-time
                 type: string
             required:
-            - completionTime
+            - endTime
             - phase
             - startTime
             type: object

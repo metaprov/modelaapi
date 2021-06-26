@@ -108,10 +108,6 @@ spec:
           status:
             description: DataPipelineRunStatus defines the observed state of DataPipelineRun
             properties:
-              completionTime:
-                description: CompletionTime is the end time of the pipeline
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: DataPipelineRunCondition describes the state of a data
@@ -140,6 +136,10 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: CompletionTime is the end time of the pipeline
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

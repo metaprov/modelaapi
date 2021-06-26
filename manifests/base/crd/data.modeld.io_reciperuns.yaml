@@ -100,10 +100,6 @@ spec:
           status:
             description: RecipeStatus defines the observed state of Recipe
             properties:
-              completionTime:
-                description: Represents the end time
-                format: date-time
-                type: string
               conditions:
                 description: Represents the latest available observations of a dataset
                   state.
@@ -134,6 +130,10 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: Represents the end time
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

@@ -795,8 +795,8 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Results != nil {

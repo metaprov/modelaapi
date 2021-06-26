@@ -435,16 +435,16 @@ type StudyStatus struct {
 	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,14,opt,name=trainingStartTime"`
 	// End of the training phase.
 	// +kubebuilder:validation:Optional
-	TrainingCompletionTime *metav1.Time `json:"trainingCompletionTime,omitempty" protobuf:"bytes,15,opt,name=trainingCompletionTime"`
+	TrainingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,15,opt,name=trainingEndTime"`
 	// Start of the testing phase
 	// +kubebuilder:validation:Optional
-	TestingStartTime *metav1.Time `json:"testingStarted,omitempty" protobuf:"bytes,16,opt,name=testingStarted"`
+	TestingStartTime *metav1.Time `json:"testingStartTime,omitempty" protobuf:"bytes,16,opt,name=testingStartTime"`
 	// Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
 	// +kubebuilder:validation:Optional
-	TestingCompletionTime *metav1.Time `json:"testingCompletionTime,omitempty" protobuf:"bytes,17,opt,name=testingCompletionTime"`
+	TestingEndTime *metav1.Time `json:"testingEndTime,omitempty" protobuf:"bytes,17,opt,name=testingEndTime"`
 	// The study end time.
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,18,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,18,opt,name=endTime"`
 	// The Best model name.
 	// +kubebuilder:validation:Optional
 	BestModel string `json:"bestModel,omitempty" protobuf:"bytes,20,opt,name=bestModel"`

@@ -182,8 +182,8 @@ func (run *FeaturePipelineRun) MarkComplete() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if run.Status.CompletionTime == nil {
-		run.Status.CompletionTime = &now
+	if run.Status.EndTime == nil {
+		run.Status.EndTime = &now
 	}
 }
 
@@ -196,7 +196,7 @@ func (run *FeaturePipelineRun) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 	now := metav1.Now()
-	if run.Status.CompletionTime == nil {
-		run.Status.CompletionTime = &now
+	if run.Status.EndTime == nil {
+		run.Status.EndTime = &now
 	}
 }

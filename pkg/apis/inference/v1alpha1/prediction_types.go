@@ -133,7 +133,7 @@ type PredictionStatus struct {
 	// StartTime is the start time of the prediction.
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// EndTime is the end time of the prediction.
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
 	// Phase is the current phase of the prediction
 	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
 	// Results is the results of running the prediction with a labeled dataset

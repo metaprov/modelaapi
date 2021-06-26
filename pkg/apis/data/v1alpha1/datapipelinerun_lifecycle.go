@@ -135,8 +135,8 @@ func (in *DataPipelineRun) MarkComplete() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if in.Status.CompletionTime == nil {
-		in.Status.CompletionTime = &now
+	if in.Status.EndTime == nil {
+		in.Status.EndTime = &now
 	}
 }
 
@@ -149,8 +149,8 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 	now := metav1.Now()
-	if in.Status.CompletionTime == nil {
-		in.Status.CompletionTime = &now
+	if in.Status.EndTime == nil {
+		in.Status.EndTime = &now
 	}
 }
 

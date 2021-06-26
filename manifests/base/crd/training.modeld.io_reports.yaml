@@ -183,13 +183,6 @@ spec:
           status:
             description: ReportStatus defines the observed state of the report.
             properties:
-              completionTime:
-                description: CompletionTime is the time when the report ended generation
-                  and was uploaded to storage be set in happens-before order across
-                  separate operations. It is represented in RFC3339 form and is in
-                  UTC.
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: ReportCondition describes the state of a ReportName
@@ -218,6 +211,13 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: EndTime is the time when the report ended generation
+                  and was uploaded to storage be set in happens-before order across
+                  separate operations. It is represented in RFC3339 form and is in
+                  UTC.
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

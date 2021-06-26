@@ -179,11 +179,11 @@ type ReportStatus struct {
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
-	// CompletionTime is the time when the report ended generation and was uploaded to storage
+	// EndTime is the time when the report ended generation and was uploaded to storage
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,3,opt,name=completionTime"`
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// Phase is the phase of the report
 	// +kubebuilder:validation:Optional
 	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`

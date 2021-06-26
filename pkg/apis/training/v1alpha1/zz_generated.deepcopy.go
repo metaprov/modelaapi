@@ -1097,8 +1097,8 @@ func (in *ModelAutobuilderStatus) DeepCopyInto(out *ModelAutobuilderStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -1847,24 +1847,24 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainStartTime != nil {
-		in, out := &in.TrainStartTime, &out.TrainStartTime
+	if in.TrainingStartTime != nil {
+		in, out := &in.TrainingStartTime, &out.TrainingStartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainCompletionTime != nil {
-		in, out := &in.TrainCompletionTime, &out.TrainCompletionTime
+	if in.TrainingEndTime != nil {
+		in, out := &in.TrainingEndTime, &out.TrainingEndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TestStartTime != nil {
-		in, out := &in.TestStartTime, &out.TestStartTime
+	if in.TestingStartTime != nil {
+		in, out := &in.TestingStartTime, &out.TestingStartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TestCompletionTime != nil {
-		in, out := &in.TestCompletionTime, &out.TestCompletionTime
+	if in.TestingEndTime != nil {
+		in, out := &in.TestingEndTime, &out.TestingEndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.TrainResult != nil {
@@ -2238,8 +2238,8 @@ func (in *NotebookRunStatus) DeepCopyInto(out *NotebookRunStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -2738,8 +2738,8 @@ func (in *ReportStatus) DeepCopyInto(out *ReportStatus) {
 		in, out := &in.StartTime, &out.StartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -3011,20 +3011,20 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		in, out := &in.TrainingStartTime, &out.TrainingStartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainingCompletionTime != nil {
-		in, out := &in.TrainingCompletionTime, &out.TrainingCompletionTime
+	if in.TrainingEndTime != nil {
+		in, out := &in.TrainingEndTime, &out.TrainingEndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.TestingStartTime != nil {
 		in, out := &in.TestingStartTime, &out.TestingStartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TestingCompletionTime != nil {
-		in, out := &in.TestingCompletionTime, &out.TestingCompletionTime
+	if in.TestingEndTime != nil {
+		in, out := &in.TestingEndTime, &out.TestingEndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.CompletionTime != nil {
-		in, out := &in.CompletionTime, &out.CompletionTime
+	if in.EndTime != nil {
+		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
 	out.TrainDatasetLocation = in.TrainDatasetLocation

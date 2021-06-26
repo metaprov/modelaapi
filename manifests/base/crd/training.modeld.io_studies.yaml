@@ -1256,10 +1256,6 @@ spec:
                 description: TotalTrainers training
                 format: int32
                 type: integer
-              completionTime:
-                description: The study end time.
-                format: date-time
-                type: string
               conditions:
                 description: This is the set of partition levels Represents the latest
                   available observations of a study state.
@@ -1286,6 +1282,10 @@ spec:
                       type: string
                   type: object
                 type: array
+              endTime:
+                description: The study end time.
+                format: date-time
+                type: string
               failedTestingModels:
                 description: models failed testing.
                 format: int32
@@ -1346,7 +1346,7 @@ spec:
                 description: Tested models
                 format: int32
                 type: integer
-              testingCompletionTime:
+              testingEndTime:
                 description: Represents time when the study reached a successful complete
                   or failure phase. It is not guaranteed to
                 format: date-time
@@ -1355,7 +1355,7 @@ spec:
                 description: models in testing
                 format: int32
                 type: integer
-              testingStarted:
+              testingStartTime:
                 description: Start of the testing phase
                 format: date-time
                 type: string
@@ -1383,7 +1383,7 @@ spec:
                 description: Total number of trainers in this study
                 format: int32
                 type: integer
-              trainingCompletionTime:
+              trainingEndTime:
                 description: End of the training phase.
                 format: date-time
                 type: string

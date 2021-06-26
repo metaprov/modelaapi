@@ -738,10 +738,10 @@ export class DataPipelineRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): DataPipelineRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): DataPipelineRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataPipelineRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): DataPipelineRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineRunStatus;
@@ -765,7 +765,7 @@ export namespace DataPipelineRunStatus {
     output?: DataLocation.AsObject,
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
@@ -2339,10 +2339,10 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): FeaturePipelineRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturePipelineRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): FeaturePipelineRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeaturePipelineRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): FeaturePipelineRunStatus;
 
   getPhase(): string;
   setPhase(value: string): FeaturePipelineRunStatus;
@@ -2366,7 +2366,7 @@ export class FeaturePipelineRunStatus extends jspb.Message {
 export namespace FeaturePipelineRunStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
@@ -3144,10 +3144,10 @@ export class LabelingPipelineRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): LabelingPipelineRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabelingPipelineRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): LabelingPipelineRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabelingPipelineRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): LabelingPipelineRunStatus;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabelingPipelineRunStatus;
@@ -3169,7 +3169,7 @@ export namespace LabelingPipelineRunStatus {
   export type AsObject = {
     phase: string,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<LabelingPipelineRunCondition.AsObject>,
   }
@@ -3687,10 +3687,10 @@ export class RecipeRunStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): RecipeRunStatus;
 
-  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
-  hasCompletiontime(): boolean;
-  clearCompletiontime(): RecipeRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RecipeRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): RecipeRunStatus;
 
   getPhase(): string;
   setPhase(value: string): RecipeRunStatus;
@@ -3714,7 +3714,7 @@ export class RecipeRunStatus extends jspb.Message {
 export namespace RecipeRunStatus {
   export type AsObject = {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
     conditionsList: Array<RecipeCondition.AsObject>,

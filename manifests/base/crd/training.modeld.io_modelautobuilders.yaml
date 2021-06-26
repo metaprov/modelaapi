@@ -983,10 +983,6 @@ spec:
                 description: number of columns, used mainly to show the columns
                 format: int32
                 type: integer
-              completionTime:
-                description: CompletionTime is the time that this prediction job finished
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: ModelAutobuilderCondition describes the state of a
@@ -1020,6 +1016,10 @@ spec:
                 type: string
               datasetName:
                 description: the generated dataset name (if generated)
+                type: string
+              endTime:
+                description: CompletionTime is the time that this prediction job finished
+                format: date-time
                 type: string
               estimator:
                 description: The best estimator, taken from the best model

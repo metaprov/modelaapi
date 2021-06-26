@@ -540,7 +540,7 @@ message DataPipelineRunStatus {
 
   // CompletionTime is the end time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -1468,7 +1468,7 @@ message FeaturePipelineRunStatus {
 
   // The End time of the run
   // +option
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // The phase of the dataset processing
   // +kubebuilder:validation:Optional
@@ -1978,7 +1978,7 @@ message LabelingPipelineRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
   // The End time of the run
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
@@ -2282,7 +2282,7 @@ message RecipeRunStatus {
 
   // Represents the end time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // The phase of the dataset processing
   // +kubebuilder:validation:Optional
