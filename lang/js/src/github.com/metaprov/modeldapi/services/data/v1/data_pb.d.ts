@@ -2242,6 +2242,19 @@ export class DsStudyEndedRequest extends jspb.Message {
   hasStudy(): boolean;
   clearStudy(): DsStudyEndedRequest;
 
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsStudyEndedRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsStudyEndedRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsStudyEndedRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsStudyEndedRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsStudyEndedRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsStudyEndedRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsStudyEndedRequest): DsStudyEndedRequest.AsObject;
@@ -2257,6 +2270,9 @@ export namespace DsStudyEndedRequest {
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
   }
 }
 

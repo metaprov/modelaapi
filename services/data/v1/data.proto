@@ -477,6 +477,10 @@ message DsStudyEndedRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset      = 4;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study              study        = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection   = 6;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 7;
+    map<string,bytes>                                                           secret       = 8;
+
 }
 
 message DsStudyEndedResponse {    
