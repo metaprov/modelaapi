@@ -64,11 +64,6 @@ class StudyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
                 )
-        self.StudyEnded = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/StudyEnded',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedResponse.FromString,
-                )
 
 
 class StudyServiceServicer(object):
@@ -134,13 +129,6 @@ class StudyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def StudyEnded(self, request, context):
-        """End the study
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_StudyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -193,11 +181,6 @@ def add_StudyServiceServicer_to_server(servicer, server):
                     servicer.ResumeStudy,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.SerializeToString,
-            ),
-            'StudyEnded': grpc.unary_unary_rpc_method_handler(
-                    servicer.StudyEnded,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -376,22 +359,5 @@ class StudyService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def StudyEnded(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/StudyEnded',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.StudyEndedResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

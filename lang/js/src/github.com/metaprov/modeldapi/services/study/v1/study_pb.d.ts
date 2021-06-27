@@ -411,39 +411,3 @@ export namespace UpdateStudyResponse {
   }
 }
 
-export class StudyEndedRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): StudyEndedRequest;
-
-  getName(): string;
-  setName(value: string): StudyEndedRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyEndedRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyEndedRequest): StudyEndedRequest.AsObject;
-  static serializeBinaryToWriter(message: StudyEndedRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyEndedRequest;
-  static deserializeBinaryFromReader(message: StudyEndedRequest, reader: jspb.BinaryReader): StudyEndedRequest;
-}
-
-export namespace StudyEndedRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class StudyEndedResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StudyEndedResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: StudyEndedResponse): StudyEndedResponse.AsObject;
-  static serializeBinaryToWriter(message: StudyEndedResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StudyEndedResponse;
-  static deserializeBinaryFromReader(message: StudyEndedResponse, reader: jspb.BinaryReader): StudyEndedResponse;
-}
-
-export namespace StudyEndedResponse {
-  export type AsObject = {
-  }
-}
-
