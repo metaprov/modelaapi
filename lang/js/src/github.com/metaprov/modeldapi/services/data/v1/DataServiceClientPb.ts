@@ -1235,5 +1235,45 @@ export class DataServiceClient {
     this.methodInfoShutDown);
   }
 
+  methodInfoStudyEnded = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse.deserializeBinary
+  );
+
+  studyEnded(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse>;
+
+  studyEnded(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse>;
+
+  studyEnded(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsStudyEndedResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/StudyEnded',
+        request,
+        metadata || {},
+        this.methodInfoStudyEnded,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/StudyEnded',
+    request,
+    metadata || {},
+    this.methodInfoStudyEnded);
+  }
+
 }
 

@@ -2216,3 +2216,61 @@ export namespace DsTestConnectionResponse {
   }
 }
 
+export class DsStudyEndedRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsStudyEndedRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsStudyEndedRequest;
+
+  getVersion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsStudyEndedRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsStudyEndedRequest;
+
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsStudyEndedRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsStudyEndedRequest;
+
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsStudyEndedRequest;
+  hasDataset(): boolean;
+  clearDataset(): DsStudyEndedRequest;
+
+  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsStudyEndedRequest;
+  hasStudy(): boolean;
+  clearStudy(): DsStudyEndedRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsStudyEndedRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsStudyEndedRequest): DsStudyEndedRequest.AsObject;
+  static serializeBinaryToWriter(message: DsStudyEndedRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsStudyEndedRequest;
+  static deserializeBinaryFromReader(message: DsStudyEndedRequest, reader: jspb.BinaryReader): DsStudyEndedRequest;
+}
+
+export namespace DsStudyEndedRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+  }
+}
+
+export class DsStudyEndedResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsStudyEndedResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsStudyEndedResponse): DsStudyEndedResponse.AsObject;
+  static serializeBinaryToWriter(message: DsStudyEndedResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsStudyEndedResponse;
+  static deserializeBinaryFromReader(message: DsStudyEndedResponse, reader: jspb.BinaryReader): DsStudyEndedResponse;
+}
+
+export namespace DsStudyEndedResponse {
+  export type AsObject = {
+  }
+}
+

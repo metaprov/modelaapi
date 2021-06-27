@@ -104,6 +104,16 @@ message UpdateStudyResponse {
 
 }
 
+message StudyEndedRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message StudyEndedResponse {
+
+}
+
+
 
 
 
@@ -154,6 +164,11 @@ service StudyService {
 
     rpc ResumeStudy(ResumeStudyRequest) returns (ResumeStudyResponse) {
         option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/resume";
+    }
+
+    // End the study
+    rpc StudyEnded(StudyEndedRequest) returns (StudyEndedResponse) {
+        option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/ended";
     }
 
 }

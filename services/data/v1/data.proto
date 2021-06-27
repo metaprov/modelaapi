@@ -471,6 +471,16 @@ message DsTestConnectionResponse {
     string msg  = 2;
 }
 
+message DsStudyEndedRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset      = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study              study        = 5;
+}
+
+message DsStudyEndedResponse {    
+}
 
 
 service DataService {
@@ -530,5 +540,7 @@ service DataService {
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
     
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
+
+    rpc StudyEnded(DsStudyEndedRequest) returns (DsStudyEndedResponse) {}
 
 }
