@@ -196,6 +196,8 @@ type ReportStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
 	//+kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

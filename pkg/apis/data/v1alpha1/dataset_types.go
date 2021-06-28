@@ -171,9 +171,7 @@ type DatasetStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
-	// Represents the latest available observations of a dataset state.
-	//+kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
+
 	// List of data problems, as reported by the validation process
 	//+kubebuilder:validation:Optional
 	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`
@@ -183,6 +181,10 @@ type DatasetStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,11,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

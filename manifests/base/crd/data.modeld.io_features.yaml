@@ -122,6 +122,9 @@ spec:
                   - type
                   type: object
                 type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
               distinc:
                 format: int32
                 type: integer

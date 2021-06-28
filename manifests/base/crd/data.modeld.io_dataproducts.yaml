@@ -356,7 +356,6 @@ spec:
             description: DataProductStatus defines the observed state of DataProduct
             properties:
               conditions:
-                description: The conditions of the product.
                 items:
                   description: DeploymentCondition describes the state of a deployment
                     at a certain point.
@@ -384,6 +383,9 @@ spec:
                   - type
                   type: object
                 type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
               lastModelVersion:
                 description: LastModelVersion is used to automatically associate model
                   version with final models.

@@ -157,6 +157,8 @@ type FeatureStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,28,opt,name=observedGeneration"`
-	//+optional
-	Conditions []FeatureCondition `json:"conditions,omitempty" protobuf:"bytes,29,rep,name=conditions"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []FeatureCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,29,rep,name=conditions"`
 }

@@ -249,7 +249,9 @@ message CurtainStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated CurtainCondition conditions = 2;
 }
 
@@ -527,12 +529,14 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 5;
 
-  // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 6;
-
   // The number of rows in the predictions
   // +kubebuilder:validation:Optional
-  optional int32 rows = 7;
+  optional int32 rows = 6;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated PredictionCondition conditions = 7;
 }
 
 message PredictionTemplate {
@@ -726,6 +730,9 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
 
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated PredictorCondition conditions = 12;
 }
 

@@ -109,12 +109,13 @@ type NotebookRunStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
-	// Represents the latest available observations of a notebook run state.
-	//+optional
-	Conditions []NotebookRunCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 	// Last error
 	//+kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,6,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []NotebookRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

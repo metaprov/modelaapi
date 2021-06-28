@@ -585,9 +585,10 @@ type DataSourceStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
-	// Conditions on the last data source status.
+	// +listType=map
+	// +listMapKey=type
 	//+kubebuilder:validation:Optional
-	Conditions []DataSourceCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []DataSourceCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

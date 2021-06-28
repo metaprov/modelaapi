@@ -94,5 +94,5 @@ type CronPredictionStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
 	// Conditions of the cron predictions
 	//+kubebuilder:validation:Optional
-	Conditions []CronPredictionCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []CronPredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }

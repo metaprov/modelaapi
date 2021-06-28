@@ -122,8 +122,6 @@ spec:
             description: DataProductVersionStatus defines the observed state of DataProductVersion
             properties:
               conditions:
-                description: Represents the latest available observations of a dataset
-                  state.
                 items:
                   description: DataProductVersionCondition describes the state of
                     a DataProductVersion at a certain point.
@@ -151,6 +149,9 @@ spec:
                   - type
                   type: object
                 type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

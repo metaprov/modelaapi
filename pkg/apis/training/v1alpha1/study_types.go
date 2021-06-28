@@ -479,7 +479,10 @@ type StudyStatus struct {
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
-	Conditions []StudyCondition `json:"conditions,omitempty" protobuf:"bytes,31,rep,name=conditions"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,31,rep,name=conditions"`
 }
 
 // model cv results

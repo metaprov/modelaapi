@@ -546,12 +546,14 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
-  // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 7;
-
   // Last error
   // +kubebuilder:validation:Optional
-  optional string lastError = 8;
+  optional string lastError = 7;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated DataPipelineRunCondition conditions = 8;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -617,7 +619,9 @@ message DataPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated DataPipelineCondition conditions = 4;
 }
 
@@ -777,8 +781,9 @@ message DataProductStatus {
   // The last study id generated for this product.
   optional int64 lastStudyID = 4;
 
-  // The conditions of the product.
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated DataProductCondition conditions = 5;
 }
 
@@ -863,7 +868,8 @@ message DataProductVersionStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Represents the latest available observations of a dataset state.
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated DataProductVersionCondition conditions = 2;
 }
@@ -989,7 +995,8 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
-  // Conditions on the last data source status.
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated DataSourceCondition conditions = 6;
 }
@@ -1182,10 +1189,6 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 7;
 
-  // Represents the latest available observations of a dataset state.
-  // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 8;
-
   // List of data problems, as reported by the validation process
   // +kubebuilder:validation:Optional
   repeated DataValidationResult validationResults = 9;
@@ -1197,6 +1200,11 @@ message DatasetStatus {
   // Last error
   // +kubebuilder:validation:Optional
   optional string lastError = 11;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated DatasetCondition conditions = 8;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -1297,7 +1305,9 @@ message EntityStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated EntityCondition conditions = 2;
 }
 
@@ -1486,7 +1496,9 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated FeaturePipelineRunCondition conditions = 5;
 }
 
@@ -1559,7 +1571,9 @@ message FeaturePipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated FeaturePipelineCondition conditions = 4;
 }
 
@@ -1693,7 +1707,9 @@ message FeatureStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 28;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated FeatureCondition conditions = 29;
 }
 
@@ -1766,7 +1782,9 @@ message FeaturesetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated FeaturesetCondition conditions = 2;
 }
 
@@ -1992,7 +2010,9 @@ message LabelingPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated LabelingPipelineRunCondition conditions = 5;
 }
 
@@ -2048,7 +2068,9 @@ message LabelingPipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated LabelingPipelineCondition conditions = 3;
 }
 
@@ -2300,13 +2322,14 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // Represents the latest available observations of a dataset state.
-  // +optional
-  repeated RecipeCondition conditions = 5;
-
   // Last error
   // +kubebuilder:validation:Optional
-  optional string lastError = 6;
+  optional string lastError = 5;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated RecipeCondition conditions = 6;
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -2370,8 +2393,9 @@ message RecipeStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // Represents the latest available observations of a dataset state.
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated RecipeCondition conditions = 4;
 }
 

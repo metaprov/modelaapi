@@ -107,9 +107,10 @@ type RecipeStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 
-	// Represents the latest available observations of a dataset state.
-	//+optional
-	Conditions []RecipeCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 //RecipeStep defines one step in the recipe

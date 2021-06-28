@@ -242,13 +242,15 @@ type ModelPipelineRunStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,16,opt,name=observedGeneration"`
-	//+kubebuilder:validation:Optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,17,rep,name=conditions"`
 	// Folder for pipeline run artifacts. This is assigned by the system
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
-	Folder string `json:"folder,omitempty" protobuf:"bytes,18,opt,name=evalMetrics"`
+	Folder string `json:"folder,omitempty" protobuf:"bytes,17,opt,name=evalMetrics"`
 	// Last error
 	//+kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,19,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,18,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,19,rep,name=conditions"`
 }

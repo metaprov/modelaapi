@@ -746,13 +746,13 @@ export class DataPipelineRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataPipelineRunStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): DataPipelineRunStatus;
+
   getConditionsList(): Array<DataPipelineRunCondition>;
   setConditionsList(value: Array<DataPipelineRunCondition>): DataPipelineRunStatus;
   clearConditionsList(): DataPipelineRunStatus;
   addConditions(value?: DataPipelineRunCondition, index?: number): DataPipelineRunCondition;
-
-  getLasterror(): string;
-  setLasterror(value: string): DataPipelineRunStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunStatus.AsObject;
@@ -770,8 +770,8 @@ export namespace DataPipelineRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    conditionsList: Array<DataPipelineRunCondition.AsObject>,
     lasterror: string,
+    conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
 }
 
@@ -1737,11 +1737,6 @@ export class DatasetStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
-  getConditionsList(): Array<DatasetCondition>;
-  setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
-  clearConditionsList(): DatasetStatus;
-  addConditions(value?: DatasetCondition, index?: number): DatasetCondition;
-
   getValidationresultsList(): Array<DataValidationResult>;
   setValidationresultsList(value: Array<DataValidationResult>): DatasetStatus;
   clearValidationresultsList(): DatasetStatus;
@@ -1754,6 +1749,11 @@ export class DatasetStatus extends jspb.Message {
 
   getLasterror(): string;
   setLasterror(value: string): DatasetStatus;
+
+  getConditionsList(): Array<DatasetCondition>;
+  setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
+  clearConditionsList(): DatasetStatus;
+  addConditions(value?: DatasetCondition, index?: number): DatasetCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetStatus.AsObject;
@@ -1772,10 +1772,10 @@ export namespace DatasetStatus {
     imbalanced: boolean,
     sigs?: Signatures.AsObject,
     observedgeneration: number,
-    conditionsList: Array<DatasetCondition.AsObject>,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasterror: string,
+    conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
 
@@ -3706,13 +3706,13 @@ export class RecipeRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RecipeRunStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): RecipeRunStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
   addConditions(value?: RecipeCondition, index?: number): RecipeCondition;
-
-  getLasterror(): string;
-  setLasterror(value: string): RecipeRunStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunStatus.AsObject;
@@ -3728,8 +3728,8 @@ export namespace RecipeRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
-    conditionsList: Array<RecipeCondition.AsObject>,
     lasterror: string,
+    conditionsList: Array<RecipeCondition.AsObject>,
   }
 }
 

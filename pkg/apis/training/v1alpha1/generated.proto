@@ -180,7 +180,8 @@ message CronReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Conditions of the cron predictions
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated CronReportCondition conditions = 4;
 }
@@ -766,12 +767,14 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 19;
 
-  // +optional
-  repeated ModelAutobuilderCondition conditions = 20;
-
   // Last error
   // +kubebuilder:validation:Optional
-  optional string lastError = 21;
+  optional string lastError = 20;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated ModelAutobuilderCondition conditions = 21;
 }
 
 // ModelCondition describes the state of a model at a certain point.
@@ -1020,17 +1023,19 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 16;
 
-  // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 17;
-
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
-  optional string evalMetrics = 18;
+  optional string evalMetrics = 17;
 
   // Last error
   // +kubebuilder:validation:Optional
-  optional string lastError = 19;
+  optional string lastError = 18;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated ModelPipelineRunCondition conditions = 19;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -1123,7 +1128,8 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // Condition is the list of the condition of the pipeline.
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated ModelPipelineCondition conditions = 4;
 }
@@ -1723,13 +1729,14 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // Represents the latest available observations of a notebook run state.
-  // +optional
-  repeated NotebookRunCondition conditions = 5;
-
   // Last error
   // +kubebuilder:validation:Optional
-  optional string lastError = 6;
+  optional string lastError = 5;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated NotebookRunCondition conditions = 6;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -1810,13 +1817,14 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // Represents the latest available observations of a notebook state.
-  // +optional
-  repeated NotebookCondition conditions = 4;
-
   // Last run is the last time a run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 4;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated NotebookCondition conditions = 5;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var
@@ -2094,6 +2102,8 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated ReportCondition conditions = 8;
 }
@@ -2403,6 +2413,9 @@ message StudyStatus {
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated StudyCondition conditions = 31;
 }
 

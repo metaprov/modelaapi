@@ -174,8 +174,9 @@ message AccountStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Represents the latest available observations of a account state.
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated AccountCondition conditions = 3;
 }
 
@@ -265,7 +266,9 @@ message AlertStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated AlertCondition conditions = 4;
 }
 
@@ -450,7 +453,9 @@ message ApiTokenStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated ApiTokenCondition conditions = 2;
 }
 
@@ -650,7 +655,9 @@ message CommitStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated CommitCondition conditions = 4;
 }
 
@@ -888,7 +895,9 @@ message ConnectionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated ConnectionCondition conditions = 3;
 }
 
@@ -1209,6 +1218,8 @@ message LabStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
+  // +listType=map
+  // +listMapKey=type
   // +kubebuilder:validation:Optional
   repeated LabCondition conditions = 3;
 }
@@ -1359,8 +1370,9 @@ message LicenseStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Represents the latest available observations of a license state.
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated LicenseCondition conditions = 3;
 }
 
@@ -1476,7 +1488,9 @@ message ModeldSystemStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated ModeldSystemCondition conditions = 2;
 }
 
@@ -1881,26 +1895,28 @@ message ServingSiteStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // +optional
-  repeated ServingSiteCondition conditions = 3;
-
   // active predictors
-  optional int32 activePredictors = 4;
+  optional int32 activePredictors = 3;
 
   // inactive predictors
-  optional int32 inactivePredictors = 5;
+  optional int32 inactivePredictors = 4;
 
   // total predictors service failed
-  optional int32 totalPredictorServiceFailed = 6;
+  optional int32 totalPredictorServiceFailed = 5;
 
   // total predictors with data drift failed
-  optional int32 totalPredictorDataDriftFailed = 7;
+  optional int32 totalPredictorDataDriftFailed = 6;
 
   // total predictors accuracy failed
-  optional int32 totalPredictorAccuracyFailed = 8;
+  optional int32 totalPredictorAccuracyFailed = 7;
 
   // Last 7 days predictions
-  repeated int32 lastDailyPredictions = 9;
+  repeated int32 lastDailyPredictions = 8;
+
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated ServingSiteCondition conditions = 9;
 }
 
 message SlackSpec {
@@ -2068,10 +2084,12 @@ message TaskCardStatus {
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 2;
 
-  // +optional
-  repeated TaskCardCondition conditions = 4;
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
+  repeated TaskCardCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -2145,7 +2163,9 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated TenantCondition conditions = 2;
 }
 
@@ -2282,7 +2302,9 @@ message VirtualBucketStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated VirtualBucketCondition conditions = 4;
 }
 
@@ -2391,7 +2413,9 @@ message VirtualClusterStatus {
   // +optional
   optional int32 availableGpus = 3;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated VirtualClusterCondition conditions = 4;
 }
 
@@ -2463,7 +2487,9 @@ message VirtualVolumeStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +optional
+  // +listType=map
+  // +listMapKey=type
+  // +kubebuilder:validation:Optional
   repeated VirtualVolumeCondition conditions = 2;
 }
 

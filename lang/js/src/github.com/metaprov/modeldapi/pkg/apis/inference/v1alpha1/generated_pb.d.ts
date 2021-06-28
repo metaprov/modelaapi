@@ -875,13 +875,13 @@ export class PredictionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
 
+  getRows(): number;
+  setRows(value: number): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
   addConditions(value?: PredictionCondition, index?: number): PredictionCondition;
-
-  getRows(): number;
-  setRows(value: number): PredictionStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionStatus.AsObject;
@@ -898,8 +898,8 @@ export namespace PredictionStatus {
     phase: string,
     resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     observedgeneration: number,
-    conditionsList: Array<PredictionCondition.AsObject>,
     rows: number,
+    conditionsList: Array<PredictionCondition.AsObject>,
   }
 }
 

@@ -258,8 +258,6 @@ spec:
             description: AccountStatus defines the actual state of the api object
             properties:
               conditions:
-                description: Represents the latest available observations of a account
-                  state.
                 items:
                   description: AccountCondition describes the state of a account at
                     a certain point.
@@ -287,6 +285,9 @@ spec:
                   - type
                   type: object
                 type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

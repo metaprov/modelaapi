@@ -91,7 +91,8 @@ type DataProductVersionStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// Represents the latest available observations of a dataset state.
+	// +listType=map
+	// +listMapKey=type
 	//+kubebuilder:validation:Optional
-	Conditions []DataProductVersionCondition `json:"conditions,omitempty" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []DataProductVersionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
 }

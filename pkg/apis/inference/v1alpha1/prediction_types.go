@@ -142,9 +142,11 @@ type PredictionStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,5,opt,name=observedGeneration"`
-	//+kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" protobuf:"bytes,6,rep,name=conditions"`
 	// The number of rows in the predictions
 	//+kubebuilder:validation:Optional
-	Rows int32 `json:"rows,omitempty" protobuf:"varint,7,opt,name=rows"`
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,6,opt,name=rows"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }

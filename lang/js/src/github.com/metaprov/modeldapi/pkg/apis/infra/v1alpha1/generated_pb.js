@@ -34925,7 +34925,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [3,9];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.repeatedFields_ = [8,9];
 
 
 
@@ -34960,14 +34960,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.to
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    activepredictors: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    inactivepredictors: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    totalpredictorservicefailed: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    totalpredictordatadriftfailed: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    totalpredictoraccuracyfailed: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
-    proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject, includeInstance),
-    activepredictors: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    inactivepredictors: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    totalpredictorservicefailed: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    totalpredictordatadriftfailed: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    totalpredictoraccuracyfailed: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    lastdailypredictionsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
+    proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -35014,35 +35014,35 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
       msg.setLastupdated(value);
       break;
     case 3:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader);
-      msg.addConditions(value);
-      break;
-    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setActivepredictors(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInactivepredictors(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalpredictorservicefailed(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalpredictordatadriftfailed(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalpredictoraccuracyfailed(value);
       break;
-    case 9:
+    case 8:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addLastdailypredictions(values[i]);
       }
+      break;
+    case 9:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.deserializeBinaryFromReader);
+      msg.addConditions(value);
       break;
     default:
       reader.skipField();
@@ -35088,12 +35088,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getConditionsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
       3,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
@@ -35124,18 +35123,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.se
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeInt32(
+  f = message.getLastdailypredictionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedInt32(
       8,
       f
     );
   }
-  f = message.getLastdailypredictionsList();
+  f = message.getConditionsList();
   if (f.length > 0) {
-    writer.writeRepeatedInt32(
+    writer.writeRepeatedMessage(
       9,
-      f
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition.serializeBinaryToWriter
     );
   }
 };
@@ -35215,49 +35215,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
 
 
 /**
- * repeated ServingSiteCondition conditions = 3;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getConditionsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 3));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearConditionsList = function() {
-  return this.setConditionsList([]);
-};
-
-
-/**
- * optional int32 activePredictors = 4;
+ * optional int32 activePredictors = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getActivepredictors = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -35266,7 +35228,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setActivepredictors = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -35275,7 +35237,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearActivepredictors = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -35284,16 +35246,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasActivepredictors = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 inactivePredictors = 5;
+ * optional int32 inactivePredictors = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getInactivepredictors = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -35302,7 +35264,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setInactivepredictors = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -35311,7 +35273,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearInactivepredictors = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -35320,16 +35282,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasInactivepredictors = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional int32 totalPredictorServiceFailed = 6;
+ * optional int32 totalPredictorServiceFailed = 5;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getTotalpredictorservicefailed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -35338,7 +35300,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setTotalpredictorservicefailed = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -35347,7 +35309,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearTotalpredictorservicefailed = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -35356,16 +35318,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasTotalpredictorservicefailed = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 totalPredictorDataDriftFailed = 7;
+ * optional int32 totalPredictorDataDriftFailed = 6;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getTotalpredictordatadriftfailed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -35374,7 +35336,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setTotalpredictordatadriftfailed = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -35383,7 +35345,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearTotalpredictordatadriftfailed = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -35392,16 +35354,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasTotalpredictordatadriftfailed = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 totalPredictorAccuracyFailed = 8;
+ * optional int32 totalPredictorAccuracyFailed = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getTotalpredictoraccuracyfailed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -35410,7 +35372,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setTotalpredictoraccuracyfailed = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -35419,7 +35381,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearTotalpredictoraccuracyfailed = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -35428,16 +35390,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.hasTotalpredictoraccuracyfailed = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated int32 lastDailyPredictions = 9;
+ * repeated int32 lastDailyPredictions = 8;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getLastdailypredictionsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 9));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
 };
 
 
@@ -35446,7 +35408,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setLastdailypredictionsList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
@@ -35456,7 +35418,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addLastdailypredictions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
@@ -35466,6 +35428,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearLastdailypredictionsList = function() {
   return this.setLastdailypredictionsList([]);
+};
+
+
+/**
+ * repeated ServingSiteCondition conditions = 9;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.getConditionsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.setConditionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.addConditions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.prototype.clearConditionsList = function() {
+  return this.setConditionsList([]);
 };
 
 
@@ -38331,7 +38331,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.repeatedFields_ = [4];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.repeatedFields_ = [3];
 
 
 
@@ -38365,7 +38365,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition.toObject, includeInstance)
   };
@@ -38408,11 +38408,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.deser
       var value = /** @type {string} */ (reader.readString());
       msg.setPhase(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
-    case 4:
+    case 3:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -38453,17 +38453,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt64(
-      3,
+      2,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      3,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition.serializeBinaryToWriter
     );
@@ -38508,11 +38508,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
 
 
 /**
- * optional int64 observedGeneration = 3;
+ * optional int64 observedGeneration = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -38521,7 +38521,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -38530,7 +38530,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -38539,17 +38539,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * repeated TaskCardCondition conditions = 4;
+ * repeated TaskCardCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition, 3));
 };
 
 
@@ -38558,7 +38558,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -38568,7 +38568,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCardCondition, opt_index);
 };
 
 

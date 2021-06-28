@@ -1482,13 +1482,6 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 	*out = *in
 	in.Statistics.DeepCopyInto(&out.Statistics)
 	out.Sigs = in.Sigs
-	if in.Conditions != nil {
-		in, out := &in.Conditions, &out.Conditions
-		*out = make([]DatasetCondition, len(*in))
-		for i := range *in {
-			(*in)[i].DeepCopyInto(&(*out)[i])
-		}
-	}
 	if in.ValidationResults != nil {
 		in, out := &in.ValidationResults, &out.ValidationResults
 		*out = make([]DataValidationResult, len(*in))
@@ -1497,6 +1490,13 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 	if in.LastStudyTime != nil {
 		in, out := &in.LastStudyTime, &out.LastStudyTime
 		*out = (*in).DeepCopy()
+	}
+	if in.Conditions != nil {
+		in, out := &in.Conditions, &out.Conditions
+		*out = make([]DatasetCondition, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 }
 

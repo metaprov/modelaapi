@@ -3468,11 +3468,6 @@ export class ServingSiteStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ServingSiteStatus;
 
-  getConditionsList(): Array<ServingSiteCondition>;
-  setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
-  clearConditionsList(): ServingSiteStatus;
-  addConditions(value?: ServingSiteCondition, index?: number): ServingSiteCondition;
-
   getActivepredictors(): number;
   setActivepredictors(value: number): ServingSiteStatus;
 
@@ -3493,6 +3488,11 @@ export class ServingSiteStatus extends jspb.Message {
   clearLastdailypredictionsList(): ServingSiteStatus;
   addLastdailypredictions(value: number, index?: number): ServingSiteStatus;
 
+  getConditionsList(): Array<ServingSiteCondition>;
+  setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
+  clearConditionsList(): ServingSiteStatus;
+  addConditions(value?: ServingSiteCondition, index?: number): ServingSiteCondition;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSiteStatus): ServingSiteStatus.AsObject;
@@ -3505,13 +3505,13 @@ export namespace ServingSiteStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    conditionsList: Array<ServingSiteCondition.AsObject>,
     activepredictors: number,
     inactivepredictors: number,
     totalpredictorservicefailed: number,
     totalpredictordatadriftfailed: number,
     totalpredictoraccuracyfailed: number,
     lastdailypredictionsList: Array<number>,
+    conditionsList: Array<ServingSiteCondition.AsObject>,
   }
 }
 

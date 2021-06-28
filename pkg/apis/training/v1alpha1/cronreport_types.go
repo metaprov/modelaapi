@@ -100,7 +100,8 @@ type CronReportStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// Conditions of the cron predictions
+	// +listType=map
+	// +listMapKey=type
 	//+kubebuilder:validation:Optional
-	Conditions []CronReportCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []CronReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }

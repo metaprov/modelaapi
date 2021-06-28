@@ -116,9 +116,11 @@ type DataPipelineRunStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
-	//+kubebuilder:validation:Optional
-	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
 	// Last error
 	//+kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,8,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

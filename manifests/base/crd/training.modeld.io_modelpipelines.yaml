@@ -806,7 +806,6 @@ spec:
             description: ModelPipelineStatus define the observed state of the pipeline
             properties:
               conditions:
-                description: Condition is the list of the condition of the pipeline.
                 items:
                   description: ModelPipelineCondition describes the state of a pipeline
                     at a certain point.
@@ -834,6 +833,9 @@ spec:
                   - type
                   type: object
                 type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
               lastRun:
                 description: Last run is the last time a run was created
                 format: date-time

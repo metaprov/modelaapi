@@ -114,8 +114,10 @@ type VirtualClusterStatus struct {
 	// +kubebuilder:validation:Minimum=0
 	//+optional
 	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,3,opt,name=availableGpus"`
-	//+optional
-	Conditions []VirtualClusterCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []VirtualClusterCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

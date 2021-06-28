@@ -128,10 +128,11 @@ type NotebookStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// Represents the latest available observations of a notebook state.
-	//+optional
-	Conditions []NotebookCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 	// Last run is the last time a run was created
 	//+kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,5,opt,name=lastRun"`
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,4,opt,name=lastRun"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []NotebookCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

@@ -1139,13 +1139,13 @@ export class ModelAutobuilderStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelAutobuilderStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): ModelAutobuilderStatus;
+
   getConditionsList(): Array<ModelAutobuilderCondition>;
   setConditionsList(value: Array<ModelAutobuilderCondition>): ModelAutobuilderStatus;
   clearConditionsList(): ModelAutobuilderStatus;
   addConditions(value?: ModelAutobuilderCondition, index?: number): ModelAutobuilderCondition;
-
-  getLasterror(): string;
-  setLasterror(value: string): ModelAutobuilderStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelAutobuilderStatus.AsObject;
@@ -1175,8 +1175,8 @@ export namespace ModelAutobuilderStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    conditionsList: Array<ModelAutobuilderCondition.AsObject>,
     lasterror: string,
+    conditionsList: Array<ModelAutobuilderCondition.AsObject>,
   }
 }
 
@@ -1591,16 +1591,16 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelPipelineRunStatus;
 
-  getConditionsList(): Array<ModelPipelineRunCondition>;
-  setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
-  clearConditionsList(): ModelPipelineRunStatus;
-  addConditions(value?: ModelPipelineRunCondition, index?: number): ModelPipelineRunCondition;
-
   getEvalmetrics(): string;
   setEvalmetrics(value: string): ModelPipelineRunStatus;
 
   getLasterror(): string;
   setLasterror(value: string): ModelPipelineRunStatus;
+
+  getConditionsList(): Array<ModelPipelineRunCondition>;
+  setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
+  clearConditionsList(): ModelPipelineRunStatus;
+  addConditions(value?: ModelPipelineRunCondition, index?: number): ModelPipelineRunCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStatus.AsObject;
@@ -1628,9 +1628,9 @@ export namespace ModelPipelineRunStatus {
     completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
-    conditionsList: Array<ModelPipelineRunCondition.AsObject>,
     evalmetrics: string,
     lasterror: string,
+    conditionsList: Array<ModelPipelineRunCondition.AsObject>,
   }
 }
 
@@ -2587,13 +2587,13 @@ export class NotebookRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotebookRunStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): NotebookRunStatus;
+
   getConditionsList(): Array<NotebookRunCondition>;
   setConditionsList(value: Array<NotebookRunCondition>): NotebookRunStatus;
   clearConditionsList(): NotebookRunStatus;
   addConditions(value?: NotebookRunCondition, index?: number): NotebookRunCondition;
-
-  getLasterror(): string;
-  setLasterror(value: string): NotebookRunStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookRunStatus.AsObject;
@@ -2609,8 +2609,8 @@ export namespace NotebookRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    conditionsList: Array<NotebookRunCondition.AsObject>,
     lasterror: string,
+    conditionsList: Array<NotebookRunCondition.AsObject>,
   }
 }
 
@@ -2696,15 +2696,15 @@ export class NotebookStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotebookStatus;
 
-  getConditionsList(): Array<NotebookCondition>;
-  setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
-  clearConditionsList(): NotebookStatus;
-  addConditions(value?: NotebookCondition, index?: number): NotebookCondition;
-
   getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookStatus;
   hasLastrun(): boolean;
   clearLastrun(): NotebookStatus;
+
+  getConditionsList(): Array<NotebookCondition>;
+  setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
+  clearConditionsList(): NotebookStatus;
+  addConditions(value?: NotebookCondition, index?: number): NotebookCondition;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookStatus.AsObject;
@@ -2719,8 +2719,8 @@ export namespace NotebookStatus {
     image: string,
     uri: string,
     observedgeneration: number,
-    conditionsList: Array<NotebookCondition.AsObject>,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<NotebookCondition.AsObject>,
   }
 }
 

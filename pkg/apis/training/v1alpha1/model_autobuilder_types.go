@@ -218,9 +218,11 @@ type ModelAutobuilderStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,19,opt,name=observedGeneration"`
-	//+optional
-	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
 	// Last error
 	//+kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,21,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,20,opt,name=lastError"`
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
+	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,21,rep,name=conditions"`
 }

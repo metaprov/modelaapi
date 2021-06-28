@@ -267,7 +267,8 @@ type ModelPipelineStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	// Condition is the list of the condition of the pipeline.
-	// +kubebuilder:validation:Optional
+	// +listType=map
+	// +listMapKey=type
+	//+kubebuilder:validation:Optional
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

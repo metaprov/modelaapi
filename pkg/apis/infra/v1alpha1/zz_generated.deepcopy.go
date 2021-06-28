@@ -3484,17 +3484,17 @@ func (in *ServingSiteStatus) DeepCopyInto(out *ServingSiteStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.LastDailyPredictions != nil {
+		in, out := &in.LastDailyPredictions, &out.LastDailyPredictions
+		*out = make([]int32, len(*in))
+		copy(*out, *in)
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ServingSiteCondition, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.LastDailyPredictions != nil {
-		in, out := &in.LastDailyPredictions, &out.LastDailyPredictions
-		*out = make([]int32, len(*in))
-		copy(*out, *in)
 	}
 }
 

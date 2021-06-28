@@ -91,5 +91,5 @@ type NotifierStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	//+kubebuilder:validation:Optional
-	Conditions []NotifierCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []NotifierCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
