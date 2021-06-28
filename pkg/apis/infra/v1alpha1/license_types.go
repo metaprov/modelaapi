@@ -117,15 +117,15 @@ type LicenseSpec struct {
 	MaxDataPlanes *int32 `json:"maxDataPlanes,omitempty" protobuf:"varint,11,opt,name=maxDataPlanes"`
 	// Forcast denote if forecast feature supported
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,12,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,12,opt,name=forecast"`
 	// NLP is nlp feature supported
 	// +kubebuilder:validation:Optional
-	NLP *bool `json:"nlp,omitempty" protobuf:"bytes,13,opt,name=nlp"`
+	NLP *bool `json:"nlp,omitempty" protobuf:"varint,13,opt,name=nlp"`
 	// Is vision feature supported
 	// +kubebuilder:validation:Optional
-	Vision *bool `json:"vision,omitempty" protobuf:"bytes,14,opt,name=vision"`
+	Vision *bool `json:"vision,omitempty" protobuf:"varint,14,opt,name=vision"`
 	// Is chatbot feature supported
-	Chatbot *bool `json:"chatbot,omitempty" protobuf:"bytes,15,opt,name=chatbot"`
+	Chatbot *bool `json:"chatbot,omitempty" protobuf:"varint,15,opt,name=chatbot"`
 	// The product name
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -149,8 +149,8 @@ type LicenseStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []LicenseCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

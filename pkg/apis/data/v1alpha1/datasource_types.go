@@ -27,7 +27,7 @@ type MultiDatasetValidation struct {
 	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"bytes,3,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,3,rep,name=generated"`
 }
 
 type DatasetValidationName string
@@ -51,12 +51,12 @@ type DatasetValidation struct {
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,5,opt,name=strictMin"`
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,5,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,6,opt,name=strictMax"`
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,6,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"bytes,7,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,7,rep,name=generated"`
 }
 
 const (
@@ -77,12 +77,12 @@ type MultiColumnValidation struct {
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,6,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,7,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"bytes,8,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
 }
 
 type ColumnValidationName string
@@ -131,12 +131,12 @@ type ColumnValidation struct {
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"bytes,6,opt,name=strictMin"`
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,6,opt,name=strictMin"`
 	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"bytes,7,opt,name=strictMax"`
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,7,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"bytes,8,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
 }
 
 // Condition on the dataset
@@ -291,7 +291,7 @@ type FlatFileSpec struct {
 	//Check if there is an header
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Header *bool `json:"header,omitempty" protobuf:"bytes,9,opt,name=header"`
+	Header *bool `json:"header,omitempty" protobuf:"varint,9,opt,name=header"`
 	//The number of rows to skip
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
@@ -312,7 +312,7 @@ type FlatFileSpec struct {
 	//If true, the import will fail if there is an error
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Strict *bool `json:"strict,omitempty" protobuf:"bytes,14,opt,name=strict"`
+	Strict *bool `json:"strict,omitempty" protobuf:"varint,14,opt,name=strict"`
 }
 
 type ValidationSpec struct {
@@ -375,21 +375,21 @@ type Column struct {
 	// default is false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Ignore *bool `json:"ignore,omitempty" protobuf:"bytes,6,opt,name=ignore"`
+	Ignore *bool `json:"ignore,omitempty" protobuf:"varint,6,opt,name=ignore"`
 	// Label should be true if this attribute is the predictable target
 	// Default is false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Label *bool `json:"label,omitempty" protobuf:"bytes,7,opt,name=label"`
+	Label *bool `json:"label,omitempty" protobuf:"varint,7,opt,name=label"`
 	// Nullable indicates if a column can contain string
 	// Default is false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Nullable *bool `json:"nullable,omitempty" protobuf:"bytes,8,opt,name=nullable"`
+	Nullable *bool `json:"nullable,omitempty" protobuf:"varint,8,opt,name=nullable"`
 	// PrimaryKey denotes if this column is part of the file key.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	PK *bool `json:"pk,omitempty" protobuf:"bytes,9,opt,name=pk"`
+	PK *bool `json:"pk,omitempty" protobuf:"varint,9,opt,name=pk"`
 	// MultipleOf
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
@@ -401,7 +401,7 @@ type Column struct {
 	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
 	// ExclusiveMaximum
 	// +kubebuilder:validation:Optional
-	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"bytes,12,opt,name=exclusiveMaximum"`
+	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"varint,12,opt,name=exclusiveMaximum"`
 	// MinimumFloat
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -409,7 +409,7 @@ type Column struct {
 	// ExclusiveMinimum
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"bytes,14,opt,name=exclusiveMinimum"`
+	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"varint,14,opt,name=exclusiveMinimum"`
 	// MaxLength
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
@@ -428,7 +428,7 @@ type Column struct {
 	// Required
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Required *bool `json:"required,omitempty" protobuf:"bytes,18,opt,name=required"`
+	Required *bool `json:"required,omitempty" protobuf:"varint,18,opt,name=required"`
 	// Title
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
@@ -463,34 +463,34 @@ type Column struct {
 	// Enforce that all the items in the list are unique
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"bytes,26,opt,name=uniqueItems"`
+	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"varint,26,opt,name=uniqueItems"`
 	// TimeColumn is true if this column is used as the time axis in time series foreacst
 	// Default is false.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"bytes,27,opt,name=timeColumn"`
+	TimeColumn *bool `json:"timeColumn,omitempty" protobuf:"varint,27,opt,name=timeColumn"`
 	// Personally Identifiable information
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	PII *bool `json:"pii,omitempty" protobuf:"bytes,28,opt,name=pii"`
+	PII *bool `json:"pii,omitempty" protobuf:"varint,28,opt,name=pii"`
 	// Personally Health information
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	PHI *bool `json:"phi,omitempty" protobuf:"bytes,29,opt,name=phi"`
+	PHI *bool `json:"phi,omitempty" protobuf:"varint,29,opt,name=phi"`
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	PersonalData *bool `json:"personalData,omitempty" protobuf:"bytes,30,opt,name=personalData"`
+	PersonalData *bool `json:"personalData,omitempty" protobuf:"varint,30,opt,name=personalData"`
 	// Protected means that this feature is important for ethical AI / Fairness
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Protected *bool `json:"protected,omitempty" protobuf:"bytes,31,opt,name=protected"`
+	Protected *bool `json:"protected,omitempty" protobuf:"varint,31,opt,name=protected"`
 	// The following attribute concern with syntatic data and validation
 	// DefaultValueNum is the default value for numbers
 	DefaultValueNum *float64 `json:"DefaultValueNum,omitempty" protobuf:"bytes,32,opt,name=defaultValueNum"`
 	// Log if true, values from this column will be sampled on logaritmic scale
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Log *bool `json:"log,omitempty" protobuf:"bytes,33,opt,name=log"`
+	Log *bool `json:"log,omitempty" protobuf:"varint,33,opt,name=log"`
 	// Mu is the mean of the normal distribution
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -585,9 +585,9 @@ type DataSourceStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []DataSourceCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 

@@ -41,20 +41,20 @@ type AlgorithmSpec struct {
 	URL *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
 	// Task is the machine learning task (binary classification / regression)
 	// +kubebuilder:validation:Optional
-	Task MLTask `json:"task" protobuf:"bytes,4,opt,name=task"`
+	Task MLTask `json:"task" protobuf:"bytes,4,opt,name=task,casttype=MLTask"`
 	// Sparse indicate if this algorithm can deal with sparse data
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Sparse *bool `json:"sparse,omitempty" protobuf:"bytes,5,opt,name=sparse"`
 	// IntegerParameters is the list of integer hyper parameter ranges.
 	// +kubebuilder:validation:Optional
-	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters"`
+	IntegerParameters []IntParameter `json:"integerParameters,omitempty" protobuf:"bytes,6,rep,name=integerParameters,casttype=IntParameter"`
 	// FloatParameters is the list of float hyper parameters ranges
 	// +kubebuilder:validation:Optional
-	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters"`
+	FloatParameters []FloatParameter `json:"floatParameters,omitempty" protobuf:"bytes,7,rep,name=floatParameters,casttype=FloatParameter"`
 	// CategoricalParameters is the list of categorical hyper parameters ranges
 	// +kubebuilder:validation:Optional
-	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters"`
+	CategoricalParameters []CategoricalParameter `json:"categoricalParameters,omitempty" protobuf:"bytes,8,rep,name=categoricalParameters,casttype=CategoricalParameter"`
 }
 
 // IntParameter contain the specification of an integer hyper parameter

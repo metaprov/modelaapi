@@ -180,8 +180,8 @@ message CronReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated CronReportCondition conditions = 4;
 }
@@ -771,8 +771,8 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 20;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ModelAutobuilderCondition conditions = 21;
 }
@@ -1032,8 +1032,8 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 18;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ModelPipelineRunCondition conditions = 19;
 }
@@ -1128,8 +1128,8 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ModelPipelineCondition conditions = 4;
 }
@@ -1733,8 +1733,8 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated NotebookRunCondition conditions = 6;
 }
@@ -1821,8 +1821,8 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 4;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated NotebookCondition conditions = 5;
 }
@@ -2102,8 +2102,8 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ReportCondition conditions = 8;
 }
@@ -2413,9 +2413,9 @@ message StudyStatus {
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
-  // +listType=map
-  // +listMapKey=type
-  // +kubebuilder:validation:Optional
+  // +optional
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   repeated StudyCondition conditions = 31;
 }
 

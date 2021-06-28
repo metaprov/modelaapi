@@ -107,19 +107,19 @@ type DatasetSpec struct {
 	// If true, a dataset report should be generated for this dataset.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"report,omitempty" protobuf:"bytes,7,opt,name=report"`
+	Reported *bool `json:"report,omitempty" protobuf:"varint,7,opt,name=report"`
 	// If true, we should validate the dataset
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Validated *bool `json:"validate,omitempty" protobuf:"bytes,8,opt,name=validate"`
+	Validated *bool `json:"validate,omitempty" protobuf:"varint,8,opt,name=validate"`
 	// Labeled indicates if this dataset is labeled or not.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,10,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,10,opt,name=labeled"`
 	// Syntactic indicates if we want to generate this dataset based on the data source
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Syntactic *bool `json:"syntatic,omitempty" protobuf:"bytes,11,opt,name=syntatic"`
+	Syntactic *bool `json:"syntatic,omitempty" protobuf:"varint,11,opt,name=syntatic"`
 	// If syntactic is true, indicates how many rows to generate
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -181,9 +181,9 @@ type DatasetStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,11,opt,name=lastError"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
@@ -239,21 +239,21 @@ type ColumnStatistics struct {
 	Distinct int32 `json:"distinc,omitempty" protobuf:"varint,18,opt,name=distinc"`
 	// Should this column be ignored, as specified by the user.
 	// This value is derived from the schema
-	Ignored bool `json:"ignored,omitempty" protobuf:"bytes,19,opt,name=ignored"`
+	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
 	// Is this column is nullable.
 	// This value is derived from the schema.
-	Nullable bool `json:"nullable,omitempty" protobuf:"bytes,20,opt,name=nullable"`
+	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
 	// This column has high cardinality and should be ignored.
 	// The value is set during the profile process.
-	HighCred bool `json:"highCred,omitempty" protobuf:"bytes,21,opt,name=highCred"`
+	HighCred bool `json:"highCred,omitempty" protobuf:"varint,21,opt,name=highCred"`
 	// This column has high corrolation with another feature and should be dropped.
 	// The value is set during the profile process.
-	HighCorr bool `json:"highCorr,omitempty" protobuf:"bytes,22,opt,name=highCorr"`
+	HighCorr bool `json:"highCorr,omitempty" protobuf:"varint,22,opt,name=highCorr"`
 	// Mark that this column is skewed and would require a power transform
 	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
 	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-	Skew bool `json:"skew,omitempty" protobuf:"bytes,23,opt,name=skew"`
+	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
 	// Completeness is the ratio between non null to null
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
 	// The ratio between distinc to total
@@ -308,5 +308,5 @@ type DataValidationResult struct {
 	Type   string `json:"type" protobuf:"bytes,1,opt,name=type"`
 	Column string `json:"column" protobuf:"bytes,2,opt,name=column"`
 	Error  string `json:"error" protobuf:"bytes,3,opt,name=error"`
-	Passed bool   `json:"passed" protobuf:"bytes,4,opt,name=passed"`
+	Passed bool   `json:"passed" protobuf:"varint,4,opt,name=passed"`
 }

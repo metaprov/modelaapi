@@ -93,7 +93,7 @@ type VirtualClusterSpec struct {
 	// Spot indicate if we should we use spot instances.
 	//+kubebuilder:default:=false
 	//+optional
-	Spot *bool `json:"spot,omitempty" protobuf:"bytes,7,opt,name=spot"`
+	Spot *bool `json:"spot,omitempty" protobuf:"varint,7,opt,name=spot"`
 	// ConnectionName refer to the name of the provider connection
 	// +kubebuilder:default:=""
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
@@ -114,9 +114,9 @@ type VirtualClusterStatus struct {
 	// +kubebuilder:validation:Minimum=0
 	//+optional
 	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,3,opt,name=availableGpus"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []VirtualClusterCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 

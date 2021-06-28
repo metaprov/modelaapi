@@ -833,9 +833,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               lastRun:
                 description: Last run is the last time a run was created
                 format: date-time

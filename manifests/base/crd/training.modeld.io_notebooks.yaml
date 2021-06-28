@@ -189,9 +189,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               image:
                 description: Image is the name of the image after publication
                 type: string

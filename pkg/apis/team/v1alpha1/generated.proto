@@ -111,8 +111,8 @@ message ConversationStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ConversationCondition conditions = 3;
 }
@@ -201,8 +201,8 @@ message PostMortemStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated PostMortemCondition conditions = 2;
 }
@@ -280,8 +280,8 @@ message RunBookStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated RunBookCondition conditions = 2;
 }

@@ -79,7 +79,7 @@ type DataProductVersionSpec struct {
 	// collect all the parents' product versions
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Baseline *bool `json:"baseline,omitempty" protobuf:"bytes,4,opt,name=baseline"`
+	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,4,opt,name=baseline"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -91,8 +91,8 @@ type DataProductVersionStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []DataProductVersionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
 }

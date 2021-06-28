@@ -117,15 +117,15 @@ type ModelPipelineSpec struct {
 type DataStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=true
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// LabName is the lab that execute processing of the data pipeline
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	LabName *string `json:"labName,omitempty" protobuf:"bytes,2,opt,name=labName"`
+	LabName *string `json:"labName,omitempty" protobuf:"varint,2,opt,name=labName"`
 	// If not null, run the data pipeline and create a dataset. else, use the data in the data location
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
-	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"bytes,3,opt,name=datapipelineName"`
+	DataPipelineName *string `json:"dataPipelineName,omitempty" protobuf:"varint,3,opt,name=datapipelineName"`
 	// The data source name for the data in the location. The data source will be used to create a new dataset for this pipeline
 	// based on the file in the location.
 	// +kubebuilder:default =""
@@ -143,7 +143,7 @@ type TrainingStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// NotebookName specify the notebook to run before training.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
@@ -167,7 +167,7 @@ type UATStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The serving site (name space) used for running the uat tests. If the serving site is empty, the system
 	// will skip the uat stage
 	// +kubebuilder:default =""
@@ -187,7 +187,7 @@ type CapacityStageSpec struct {
 	// Enabled indicates that the stage is enabled
 	// +kubebuilder:default:=false
 	//+kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the testing during the capacity stage
 	// If the serving site is empty or null, the system will skip the capacity stage unit tests.
 	// +kubebuilder:default =""
@@ -207,7 +207,7 @@ type DeploymentStageSpec struct {
 	// Enabled indicates that we want to release the model into production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
@@ -216,7 +216,7 @@ type DeploymentStageSpec struct {
 	// By default a user is needed to apporve the release to production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,3,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"varint,3,opt,name=manualApproval"`
 	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,4,rep,name=validations"`
@@ -230,7 +230,7 @@ type ReleaseStageSpec struct {
 	// Enabled indicates that we want to release the model into production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// ServingSiteName is the serving site for the release, if empty, the system will use the default serving site name
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
@@ -246,7 +246,7 @@ type ReleaseStageSpec struct {
 	// By default a user is needed to apporve the release to production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"bytes,5,opt,name=manualApproval"`
+	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"varint,5,opt,name=manualApproval"`
 	// Validations is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,6,rep,name=validations"`
@@ -267,8 +267,8 @@ type ModelPipelineStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
 }

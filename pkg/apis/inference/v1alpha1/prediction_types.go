@@ -85,7 +85,7 @@ type PredictionSpec struct {
 	// Labeled , true if this is labeled prediction request.
 	// +kubebuilder:default:=false
 	// Used usally for unit testing
-	Labeled *bool `json:"labeled,omitempty" protobuf:"bytes,3,opt,name=labeled"`
+	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,3,opt,name=labeled"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
@@ -111,17 +111,17 @@ type PredictionSpec struct {
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 	// Include the features in the results
 	// +kubebuilder:validation:Optional
-	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"bytes,11,opt,name=includeFeatures"`
+	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,11,opt,name=includeFeatures"`
 	// Generate XAI
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	XAI *bool `json:"xai,omitempty" protobuf:"bytes,12,opt,name=xai"`
+	XAI *bool `json:"xai,omitempty" protobuf:"varint,12,opt,name=xai"`
 	// Update strategy
 	// +kubebuilder:validation:Optional
 	UpdateStrategy *catalog.UpdateStrategy `json:"updateStrategy,omitempty" protobuf:"bytes,13,opt,name=updateStrategy"`
 	// Create the data source table on the target, if not exist.
 	// +kubebuilder:validation:Optional
-	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"bytes,14,opt,name=createTableIfNotExist"`
+	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"varint,14,opt,name=createTableIfNotExist"`
 	// The priority of this prediction. The defualt is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
@@ -145,8 +145,8 @@ type PredictionStatus struct {
 	// The number of rows in the predictions
 	//+kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,6,opt,name=rows"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }

@@ -115,11 +115,11 @@ type AccountSpec struct {
 	// User is admin. Admin have full control on other accounts.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Admin *bool `json:"admin,omitempty" protobuf:"bytes,9,opt,name=admin"`
+	Admin *bool `json:"admin,omitempty" protobuf:"varint,9,opt,name=admin"`
 	// Team indicates if this a team account.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Team *bool `json:"team,omitempty" protobuf:"bytes,10,opt,name=team"`
+	Team *bool `json:"team,omitempty" protobuf:"varint,10,opt,name=team"`
 	// MemberOf is the team name of this account. An account can belong to one team
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -127,11 +127,11 @@ type AccountSpec struct {
 	// Email account creation event to user (using the user email)
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"bytes,12,opt,name=emailPassword"`
+	EmailPassword *bool `json:"emailPassword,omitempty" protobuf:"varint,12,opt,name=emailPassword"`
 	// User need to reset password upon login
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"bytes,13,opt,name=resetPassword"`
+	ResetPassword *bool `json:"resetPassword,omitempty" protobuf:"varint,13,opt,name=resetPassword"`
 	// ProductBinding is the premission that the user have for each product
 	// +kubebuilder:validation:Optional
 	ProductBindings []AccountRoleBinding `json:"productBindings,omitempty" protobuf:"bytes,14,rep,name=productBindings"`
@@ -160,9 +160,9 @@ type AccountStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []AccountCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }
 

@@ -139,7 +139,7 @@ type ModelAutobuilderSpec struct {
 	// Default : false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	AutoScale *bool `json:"autoScale,omitempty" protobuf:"bytes,12,opt,name=autoScale"`
+	AutoScale *bool `json:"autoScale,omitempty" protobuf:"varint,12,opt,name=autoScale"`
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
 	// +kubebuilder:validation:Optional
 	DataSourceSpec *datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
@@ -155,7 +155,7 @@ type ModelAutobuilderSpec struct {
 	// Set the true to abort the model auto builder
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,16,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,16,opt,name=aborted"`
 	// The owner account name
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default:="no-one"
@@ -221,8 +221,8 @@ type ModelAutobuilderStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,20,opt,name=lastError"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,21,rep,name=conditions"`
 }

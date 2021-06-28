@@ -253,9 +253,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               dataStatus:
                 description: DataStatus is the status of the data stage data is the
                   status for the data stage.

@@ -754,9 +754,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               lastDatasetCreated:
                 description: Last time an dataset from this datasource was created.
                 format: date-time

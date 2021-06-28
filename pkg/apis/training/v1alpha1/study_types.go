@@ -246,10 +246,10 @@ type ModelSearchSpec struct {
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
 	// +kubebuilder:default:=false
-	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"bytes,13,opt,name=votingEnsemble"`
+	VotingEnsemble *bool `json:"votingEnsemble,omitempty" protobuf:"varint,13,opt,name=votingEnsemble"`
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
 	// +kubebuilder:default:=true
-	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"bytes,14,opt,name=stackingEnsemble"`
+	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"varint,14,opt,name=stackingEnsemble"`
 	// Set the start time, by default this is set to the start time of the study
 	// +kubebuilder:validation:Optional
 	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
@@ -343,27 +343,27 @@ type StudySpec struct {
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,13,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"bytes,14,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,14,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,15,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,15,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,16,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,16,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"bytes,17,opt,name=modelPublished"`
+	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,17,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"bytes,18,opt,name=modelImagePushed"`
+	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,18,opt,name=modelImagePushed"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
@@ -386,7 +386,7 @@ type StudySpec struct {
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Template *bool `json:"template,omitempty" protobuf:"bytes,25,opt,name=template"`
+	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
 }
 
 // StudyStatus defines the observed state of the Study
@@ -479,9 +479,9 @@ type StudyStatus struct {
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
 	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,31,rep,name=conditions"`
 }
 
@@ -494,7 +494,7 @@ type ModelResult struct {
 	// +kubebuilder:validation:Optional
 	Score *float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
 	// +kubebuilder:validation:Optional
-	Error *bool `json:"error,omitempty" protobuf:"bytes,4,opt,name=error"`
+	Error *bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
 }
 
 //==============================================================================
@@ -514,7 +514,7 @@ type DataSplit struct {
 	// Indicate that this is an automatic split.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"bytes,1,opt,name=auto"`
+	Auto *bool `json:"auto,omitempty" protobuf:"varint,1,opt,name=auto"`
 	// Training is a percent number (0-100) which specify how much of
 	// the data will be used for training
 	// +kubebuilder:validation:Optional

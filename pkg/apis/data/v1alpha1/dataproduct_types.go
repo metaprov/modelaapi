@@ -79,7 +79,7 @@ type GitLocation struct {
 	// +kubebuilder:validation:MaxLength=256
 	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
 	// Private is True if the repository is private.
-	Private *bool `json:"private,omitempty" protobuf:"bytes,4,opt,name=private"`
+	Private *bool `json:"private,omitempty" protobuf:"varint,4,opt,name=private"`
 }
 
 type ImageLocation struct {
@@ -184,9 +184,9 @@ type DataProductStatus struct {
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 	// The last study id generated for this product.
 	LastStudyID *int64 `json:"lastStudyID,omitempty" protobuf:"bytes,4,opt,name=lastStudyID"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 

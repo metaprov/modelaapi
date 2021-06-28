@@ -211,9 +211,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               endTime:
                 description: EndTime is the time when the report ended generation
                   and was uploaded to storage be set in happens-before order across

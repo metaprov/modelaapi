@@ -117,9 +117,9 @@ type FeaturePipelineStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []FeaturePipelineCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
@@ -127,11 +127,11 @@ type MaterializationSpec struct {
 	// If true, update the online store
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Online *bool `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
+	Online *bool `json:"online,omitempty" protobuf:"varint,1,opt,name=online"`
 	// If true update the offline store.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Offline *bool `json:"offline,omitempty" protobuf:"bytes,2,opt,name=offline"`
+	Offline *bool `json:"offline,omitempty" protobuf:"varint,2,opt,name=offline"`
 	// +kubebuilder:validation:Optional
 	StartDate *metav1.Time `json:"startDate,omitempty" protobuf:"bytes,3,opt,name=startDate"`
 	// +kubebuilder:validation:Optional

@@ -247,7 +247,6 @@ spec:
             description: CronPredictionStatus is the observed state of a PredictionTemplate
             properties:
               conditions:
-                description: Conditions of the cron predictions
                 items:
                   description: PredictionCondition describes the state of PredictionTemplate
                   properties:

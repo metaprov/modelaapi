@@ -79,7 +79,7 @@ type TaskCardSpec struct {
 	// Flagged donete that task was flagged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"bytes,5,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,5,opt,name=flagged"`
 	// Reminder is the time to send a reminder
 	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,6,opt,name=reminder"`
 	// Flagged donete that task was flagged
@@ -94,8 +94,8 @@ type TaskCardStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []TaskCardCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

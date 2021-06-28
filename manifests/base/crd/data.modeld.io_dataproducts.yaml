@@ -383,9 +383,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               lastModelVersion:
                 description: LastModelVersion is used to automatically associate model
                   version with final models.

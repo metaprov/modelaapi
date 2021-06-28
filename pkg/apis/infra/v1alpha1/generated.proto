@@ -174,8 +174,8 @@ message AccountStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated AccountCondition conditions = 3;
 }
@@ -266,8 +266,8 @@ message AlertStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated AlertCondition conditions = 4;
 }
@@ -453,8 +453,8 @@ message ApiTokenStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ApiTokenCondition conditions = 2;
 }
@@ -655,8 +655,8 @@ message CommitStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated CommitCondition conditions = 4;
 }
@@ -895,8 +895,8 @@ message ConnectionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ConnectionCondition conditions = 3;
 }
@@ -1218,8 +1218,8 @@ message LabStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated LabCondition conditions = 3;
 }
@@ -1370,8 +1370,8 @@ message LicenseStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated LicenseCondition conditions = 3;
 }
@@ -1488,8 +1488,8 @@ message ModeldSystemStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ModeldSystemCondition conditions = 2;
 }
@@ -1913,8 +1913,8 @@ message ServingSiteStatus {
   // Last 7 days predictions
   repeated int32 lastDailyPredictions = 8;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated ServingSiteCondition conditions = 9;
 }
@@ -2086,8 +2086,8 @@ message TaskCardStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated TaskCardCondition conditions = 3;
 }
@@ -2163,8 +2163,8 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated TenantCondition conditions = 2;
 }
@@ -2302,8 +2302,8 @@ message VirtualBucketStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated VirtualBucketCondition conditions = 4;
 }
@@ -2413,8 +2413,8 @@ message VirtualClusterStatus {
   // +optional
   optional int32 availableGpus = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated VirtualClusterCondition conditions = 4;
 }
@@ -2487,8 +2487,8 @@ message VirtualVolumeStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated VirtualVolumeCondition conditions = 2;
 }

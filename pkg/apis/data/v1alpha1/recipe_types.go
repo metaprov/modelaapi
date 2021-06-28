@@ -107,9 +107,9 @@ type RecipeStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
 
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
@@ -411,7 +411,7 @@ type SampleSpec struct {
 	// Enabled specify if the sample is enabled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	//Type is the sampling type
 	//Default is random
 	// +kubebuilder:default:="random"
@@ -451,7 +451,7 @@ type RecipeInputSpec struct {
 type RecipeOutputSpec struct {
 	// CreateDataset if true, create a new dataset when the recipe is done.
 	// +kubebuilder:validation:Optional
-	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"bytes,1,opt,name=createDataset"`
+	CreateDataset *bool `json:"createDataset,omitempty" protobuf:"varint,1,opt,name=createDataset"`
 	// DatasetName is the name of the dataset output to the recipe
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

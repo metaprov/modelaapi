@@ -218,7 +218,7 @@ type DeepEstimatorSpec struct {
 	ValidationSplit *int32 `json:"validationSplit,omitempty" protobuf:"varint,5,opt,name=validationSplit"`
 	// Is this a seq model
 	// +kubebuilder:validation:Optional
-	Seq *bool `json:"isSeq,omitempty" protobuf:"bytes,6,opt,name=isSeq"`
+	Seq *bool `json:"isSeq,omitempty" protobuf:"varint,6,opt,name=isSeq"`
 	// Gpus denote of gpu for trainer, any number more than 1 denote distribute training
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional

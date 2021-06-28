@@ -550,8 +550,8 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DataPipelineRunCondition conditions = 8;
 }
@@ -619,8 +619,8 @@ message DataPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DataPipelineCondition conditions = 4;
 }
@@ -781,8 +781,8 @@ message DataProductStatus {
   // The last study id generated for this product.
   optional int64 lastStudyID = 4;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DataProductCondition conditions = 5;
 }
@@ -868,8 +868,8 @@ message DataProductVersionStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DataProductVersionCondition conditions = 2;
 }
@@ -995,8 +995,8 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DataSourceCondition conditions = 6;
 }
@@ -1201,8 +1201,8 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 11;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated DatasetCondition conditions = 8;
 }
@@ -1305,8 +1305,8 @@ message EntityStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated EntityCondition conditions = 2;
 }
@@ -1496,8 +1496,8 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeaturePipelineRunCondition conditions = 5;
 }
@@ -1571,8 +1571,8 @@ message FeaturePipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeaturePipelineCondition conditions = 4;
 }
@@ -1707,8 +1707,8 @@ message FeatureStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 28;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeatureCondition conditions = 29;
 }
@@ -1782,8 +1782,8 @@ message FeaturesetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated FeaturesetCondition conditions = 2;
 }
@@ -2010,8 +2010,8 @@ message LabelingPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated LabelingPipelineRunCondition conditions = 5;
 }
@@ -2068,8 +2068,8 @@ message LabelingPipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated LabelingPipelineCondition conditions = 3;
 }
@@ -2326,8 +2326,8 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated RecipeCondition conditions = 6;
 }
@@ -2393,8 +2393,8 @@ message RecipeStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // +listType=map
-  // +listMapKey=type
+  // +patchMergeKey=type
+  // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated RecipeCondition conditions = 4;
 }

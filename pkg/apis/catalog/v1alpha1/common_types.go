@@ -1238,16 +1238,16 @@ type ModelDeploymentSpec struct {
 	// Canary denotes if this deployment is staged release. A staged release will serve traffic in incerements
 	// Default: false
 	// +kubebuilder:validation:Optional
-	Canary *bool `json:"canary,omitempty" protobuf:"bytes,5,opt,name=canary"`
+	Canary *bool `json:"canary,omitempty" protobuf:"varint,5,opt,name=canary"`
 	// Shadow denotes if the model is running in shadow mode. a shadow model face the production traffic, however, the predictions are not
 	// served back to the client
 	// Default: false
 	// +kubebuilder:validation:Optional
-	Shadow *bool `json:"shadow,omitempty" protobuf:"bytes,6,opt,name=shadow"`
+	Shadow *bool `json:"shadow,omitempty" protobuf:"varint,6,opt,name=shadow"`
 	// A released model is a model that should serve production traffic.
 	// Default: false
 	// +kubebuilder:validation:Optional
-	Released *bool `json:"released,omitempty" protobuf:"bytes,7,opt,name=released"`
+	Released *bool `json:"released,omitempty" protobuf:"varint,7,opt,name=released"`
 	// a deployed model is a model whose containers are up, but does not serve production traffic.
 	// Default: false
 	// +kubebuilder:validation:Optional

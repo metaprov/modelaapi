@@ -105,8 +105,8 @@ type RecipeRunStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []RecipeCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }

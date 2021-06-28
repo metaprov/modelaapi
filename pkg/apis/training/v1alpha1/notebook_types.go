@@ -131,8 +131,8 @@ type NotebookStatus struct {
 	// Last run is the last time a run was created
 	//+kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,4,opt,name=lastRun"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []NotebookCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

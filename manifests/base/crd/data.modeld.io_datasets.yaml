@@ -233,9 +233,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               imbalanced:
                 description: Based on the actual data, treat this dataset as imbalanced.
                 type: boolean

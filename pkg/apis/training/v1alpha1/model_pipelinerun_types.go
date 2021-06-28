@@ -249,8 +249,8 @@ type ModelPipelineRunStatus struct {
 	// Last error
 	//+kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,18,opt,name=lastError"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,19,rep,name=conditions"`
 }

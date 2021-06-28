@@ -1011,9 +1011,6 @@ spec:
                   - type
                   type: object
                 type: array
-                x-kubernetes-list-map-keys:
-                - type
-                x-kubernetes-list-type: map
               dataSourceName:
                 description: the generated schema name (if generated)
                 type: string

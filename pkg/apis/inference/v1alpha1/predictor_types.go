@@ -167,7 +167,7 @@ type PredictionCacheSpec struct {
 	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
+	Active *bool `json:"active,omitempty" protobuf:"varint,1,opt,name=active"`
 	// the name of the cache service
 	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
@@ -175,7 +175,7 @@ type PredictionCacheSpec struct {
 
 // AutoScaling defines the configuration for auto scaling
 type AutoScaling struct {
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Min num of replicates
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1
@@ -194,7 +194,7 @@ type OnlineFeaturestoreSpec struct {
 	// Active indicate if the cache is active
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Active *bool `json:"active,omitempty" protobuf:"bytes,1,opt,name=active"`
+	Active *bool `json:"active,omitempty" protobuf:"varint,1,opt,name=active"`
 	// the name of the cache service
 	// +kubebuilder:default:=""
 	ServiceName *string `json:"serviceName,omitempty" protobuf:"bytes,2,opt,name=serviceName"`
@@ -228,9 +228,9 @@ type PredictorStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
-	// +listType=map
-	// +listMapKey=type
-	//+kubebuilder:validation:Optional
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
 	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }
 
@@ -335,7 +335,7 @@ type ChannelStatus struct {
 // Specify the model monitor.
 type MonitorSpec struct {
 	// If true monitoring is enabled.
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

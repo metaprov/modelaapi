@@ -249,39 +249,39 @@ type ModelSpec struct {
 	// The study controller will set this to true if a model is the best model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Tested *bool `json:"tested,omitempty" protobuf:"bytes,16,opt,name=tested"`
+	Tested *bool `json:"tested,omitempty" protobuf:"varint,16,opt,name=tested"`
 	// Aborted indicate the desire to abort the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,17,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,17,opt,name=aborted"`
 	// Published is set when we want to wrap the model in a docker container
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Published *bool `json:"published,omitempty" protobuf:"bytes,18,opt,name=published"`
+	Published *bool `json:"published,omitempty" protobuf:"varint,18,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pushed *bool `json:"pushed,omitempty" protobuf:"bytes,19,opt,name=pushed"`
+	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,19,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"bytes,20,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,20,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,21,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,21,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"bytes,22,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,22,opt,name=profiled"`
 	// Archived is true when the model should be archived
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Archived *bool `json:"archived,omitempty" protobuf:"bytes,23,opt,name=archived"`
+	Archived *bool `json:"archived,omitempty" protobuf:"varint,23,opt,name=archived"`
 	// Forecasted is true when the model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecasted *bool `json:"forecasted,omitempty" protobuf:"bytes,24,opt,name=forecasted"`
+	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,24,opt,name=forecasted"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,25,opt,name=location"`
@@ -537,7 +537,7 @@ type TrainingSpec struct {
 	// If true, this is a cross validation using folds. If False, use the validation set.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	CV *bool `json:"cv,omitempty" protobuf:"bytes,4,opt,name=cv"`
+	CV *bool `json:"cv,omitempty" protobuf:"varint,4,opt,name=cv"`
 	// The number of folds during cross validation.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
@@ -552,7 +552,7 @@ type TrainingSpec struct {
 	// Early stopping, stop the training after X models with no improvement.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"bytes,9,opt,name=earlyStop"`
+	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,9,opt,name=earlyStop"`
 	// Add snapshot interval for long training time in minutes.
 	// This is used to checkpoint training model.
 	// +kubebuilder:validation:Optional
@@ -621,19 +621,19 @@ type TextPipelineSpec struct {
 	// If true, the controller will Add stop word handling to the text pipeline.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	StopWords *bool `json:"stopwords,omitempty" protobuf:"bytes,4,opt,name=stopwords"`
+	StopWords *bool `json:"stopwords,omitempty" protobuf:"varint,4,opt,name=stopwords"`
 	// If true, the controller will Add part of speech handling to the text pipeline.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Pos *bool `json:"pos,omitempty" protobuf:"bytes,5,opt,name=pos"`
+	Pos *bool `json:"pos,omitempty" protobuf:"varint,5,opt,name=pos"`
 	// If true, the controller will Add lemma handling to the text pipeline.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Lemma *bool `json:"lemma,omitempty" protobuf:"bytes,6,opt,name=lemma"`
+	Lemma *bool `json:"lemma,omitempty" protobuf:"varint,6,opt,name=lemma"`
 	// If true, the controller will Add stemmer handling to the text pipeline.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Stem *bool `json:"stem,omitempty" protobuf:"bytes,7,opt,name=stem"`
+	Stem *bool `json:"stem,omitempty" protobuf:"varint,7,opt,name=stem"`
 	// If true, the controller will Add word embedding handling to the text pipeline.
 	// +kubebuilder:validation:Optional
 	Embedding *string `json:"embedding,omitempty" protobuf:"bytes,8,opt,name=embedding"`
@@ -649,7 +649,7 @@ type DateTimePipelineSpec struct {
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Expand *bool `json:"expand,omitempty" protobuf:"bytes,3,opt,name=expand"`
+	Expand *bool `json:"expand,omitempty" protobuf:"varint,3,opt,name=expand"`
 }
 
 // ImagePipelineSpec is the specification for preprocessing image data
@@ -736,7 +736,7 @@ type ForecastingSpec struct {
 	// If true, the system will perform a forecast and update the forecast connection.
 	// Default it true
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"bytes,13,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,13,opt,name=forecast"`
 }
 
 // FreqSpec specify the frequency specification.
