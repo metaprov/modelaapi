@@ -141,6 +141,7 @@ spec:
                 format: date-time
                 type: string
               lastError:
+                default: ""
                 description: Last error
                 type: string
               observedGeneration:

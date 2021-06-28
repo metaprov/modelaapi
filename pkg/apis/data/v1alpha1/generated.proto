@@ -547,6 +547,7 @@ message DataPipelineRunStatus {
   optional int64 observedGeneration = 6;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
@@ -1198,6 +1199,7 @@ message DatasetStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 11;
 
@@ -2323,6 +2325,7 @@ message RecipeRunStatus {
   optional int64 observedGeneration = 4;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 

@@ -117,8 +117,9 @@ type DataPipelineRunStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
 	// Last error
-	//+kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,opt,name=lastError"`
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

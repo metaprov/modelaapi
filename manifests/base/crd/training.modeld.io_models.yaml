@@ -1126,6 +1126,7 @@ spec:
                   file, if there is one.
                 type: string
               lastError:
+                default: ""
                 description: Last error
                 type: string
               logsUri:

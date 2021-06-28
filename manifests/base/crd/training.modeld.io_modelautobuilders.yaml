@@ -1059,6 +1059,7 @@ spec:
                 description: the name of the image repository
                 type: string
               lastError:
+                default: ""
                 description: Last error
                 type: string
               models:

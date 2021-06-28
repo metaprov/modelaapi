@@ -179,7 +179,8 @@ type DatasetStatus struct {
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
 	// Last error
-	//+kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,11,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge

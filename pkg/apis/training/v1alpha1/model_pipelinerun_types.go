@@ -247,7 +247,8 @@ type ModelPipelineRunStatus struct {
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,17,opt,name=evalMetrics"`
 	// Last error
-	//+kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,18,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge

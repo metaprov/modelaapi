@@ -630,6 +630,7 @@ spec:
                     type: string
                 type: object
               lastError:
+                default: ""
                 description: Last error
                 type: string
               modelName:

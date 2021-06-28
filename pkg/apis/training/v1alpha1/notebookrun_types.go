@@ -110,7 +110,8 @@ type NotebookRunStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	// Last error
-	//+kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge

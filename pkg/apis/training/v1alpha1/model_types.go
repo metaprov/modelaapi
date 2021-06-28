@@ -421,7 +421,8 @@ type ModelStatus struct {
 	//+kubebuilder:validation:Optional
 	Mem *int32 `json:"mem,omitempty" protobuf:"varint,33,opt,name=mem"`
 	// Last error
-	//+kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,34,opt,name=lastError"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type

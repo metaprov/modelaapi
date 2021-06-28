@@ -475,7 +475,8 @@ type StudyStatus struct {
 	// the last model id generated for this study
 	LastModelID *int64 `json:"lastModelID,omitempty" protobuf:"varint,29,opt,name=lastModelID"`
 	// Last error
-	//+kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.

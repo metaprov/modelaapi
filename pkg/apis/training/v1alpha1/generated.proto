@@ -768,6 +768,7 @@ message ModelAutobuilderStatus {
   optional int64 observedGeneration = 19;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 20;
 
@@ -1029,6 +1030,7 @@ message ModelPipelineRunStatus {
   optional string evalMetrics = 17;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 18;
 
@@ -1516,6 +1518,7 @@ message ModelStatus {
   optional int32 mem = 33;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 34;
 
@@ -1730,6 +1733,7 @@ message NotebookRunStatus {
   optional int64 observedGeneration = 4;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 
@@ -2099,6 +2103,7 @@ message ReportStatus {
   optional int64 observedGeneration = 6;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
@@ -2408,6 +2413,7 @@ message StudyStatus {
   optional int64 lastModelID = 29;
 
   // Last error
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string lastError = 30;
 
