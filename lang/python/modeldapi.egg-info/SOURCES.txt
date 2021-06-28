@@ -82,6 +82,8 @@ github/com/metaprov/modeldapi/services/cronprediction/__init__.py
 github/com/metaprov/modeldapi/services/cronprediction/v1/__init__.py
 github/com/metaprov/modeldapi/services/cronprediction/v1/cronprediction_pb2.py
 github/com/metaprov/modeldapi/services/cronprediction/v1/cronprediction_pb2_grpc.py
+github/com/metaprov/modeldapi/services/cronreport/__init__.py
+github/com/metaprov/modeldapi/services/cronreport/v1/__init__.py
 github/com/metaprov/modeldapi/services/cronreport/v1/cronreport_pb2.py
 github/com/metaprov/modeldapi/services/cronreport/v1/cronreport_pb2_grpc.py
 github/com/metaprov/modeldapi/services/curtain/__init__.py
@@ -242,6 +244,8 @@ github/com/metaprov/modeldapi/services/study/__init__.py
 github/com/metaprov/modeldapi/services/study/v1/__init__.py
 github/com/metaprov/modeldapi/services/study/v1/study_pb2.py
 github/com/metaprov/modeldapi/services/study/v1/study_pb2_grpc.py
+github/com/metaprov/modeldapi/services/taskcard/__init__.py
+github/com/metaprov/modeldapi/services/taskcard/v1/__init__.py
 github/com/metaprov/modeldapi/services/taskcard/v1/taskcard_pb2.py
 github/com/metaprov/modeldapi/services/taskcard/v1/taskcard_pb2_grpc.py
 github/com/metaprov/modeldapi/services/tenant/__init__.py
