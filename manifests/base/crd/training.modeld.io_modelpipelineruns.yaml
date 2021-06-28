@@ -629,6 +629,9 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              lastError:
+                description: Last error
+                type: string
               modelName:
                 description: The name of the best model
                 type: string

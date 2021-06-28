@@ -135,6 +135,9 @@ spec:
                 description: EndTime is the time that this prediction job finished
                 format: date-time
                 type: string
+              lastError:
+                description: Last error
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

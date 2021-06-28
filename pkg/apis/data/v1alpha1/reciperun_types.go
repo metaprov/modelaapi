@@ -105,4 +105,7 @@ type RecipeRunStatus struct {
 	// Represents the latest available observations of a dataset state.
 	//+optional
 	Conditions []RecipeCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,6,opt,name=lastError"`
 }

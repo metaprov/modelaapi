@@ -1144,6 +1144,9 @@ export class ModelAutobuilderStatus extends jspb.Message {
   clearConditionsList(): ModelAutobuilderStatus;
   addConditions(value?: ModelAutobuilderCondition, index?: number): ModelAutobuilderCondition;
 
+  getLasterror(): string;
+  setLasterror(value: string): ModelAutobuilderStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelAutobuilderStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelAutobuilderStatus): ModelAutobuilderStatus.AsObject;
@@ -1173,6 +1176,7 @@ export namespace ModelAutobuilderStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
+    lasterror: string,
   }
 }
 
@@ -1595,6 +1599,9 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getEvalmetrics(): string;
   setEvalmetrics(value: string): ModelPipelineRunStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): ModelPipelineRunStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunStatus): ModelPipelineRunStatus.AsObject;
@@ -1623,6 +1630,7 @@ export namespace ModelPipelineRunStatus {
     observedgeneration: number,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
     evalmetrics: string,
+    lasterror: string,
   }
 }
 
@@ -2142,6 +2150,9 @@ export class ModelStatus extends jspb.Message {
   getMem(): number;
   setMem(value: number): ModelStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2190,6 +2201,7 @@ export namespace ModelStatus {
     observedgeneration: number,
     cpu: number,
     mem: number,
+    lasterror: string,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -2580,6 +2592,9 @@ export class NotebookRunStatus extends jspb.Message {
   clearConditionsList(): NotebookRunStatus;
   addConditions(value?: NotebookRunCondition, index?: number): NotebookRunCondition;
 
+  getLasterror(): string;
+  setLasterror(value: string): NotebookRunStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookRunStatus.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookRunStatus): NotebookRunStatus.AsObject;
@@ -2595,6 +2610,7 @@ export namespace NotebookRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<NotebookRunCondition.AsObject>,
+    lasterror: string,
   }
 }
 
@@ -3104,6 +3120,9 @@ export class ReportStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReportStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): ReportStatus;
+
   getConditionsList(): Array<ReportCondition>;
   setConditionsList(value: Array<ReportCondition>): ReportStatus;
   clearConditionsList(): ReportStatus;
@@ -3124,6 +3143,7 @@ export namespace ReportStatus {
     phase: string,
     uri: string,
     observedgeneration: number,
+    lasterror: string,
     conditionsList: Array<ReportCondition.AsObject>,
   }
 }
@@ -3493,6 +3513,9 @@ export class StudyStatus extends jspb.Message {
   getLastmodelid(): number;
   setLastmodelid(value: number): StudyStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3536,6 +3559,7 @@ export namespace StudyStatus {
     testdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     lastmodelid: number,
+    lasterror: string,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

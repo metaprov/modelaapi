@@ -544,10 +544,14 @@ message DataPipelineRunStatus {
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 8;
+  optional int64 observedGeneration = 6;
 
   // +kubebuilder:validation:Optional
   repeated DataPipelineRunCondition conditions = 7;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 8;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -1189,6 +1193,10 @@ message DatasetStatus {
   // Last time a study was done on the dataset.
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 11;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -2295,6 +2303,10 @@ message RecipeRunStatus {
   // Represents the latest available observations of a dataset state.
   // +optional
   repeated RecipeCondition conditions = 5;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 6;
 }
 
 // RecipeSpec defines the desired state of a dataset

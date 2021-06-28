@@ -115,7 +115,10 @@ type DataPipelineRunStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,5,opt,name=endTime"`
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
 	//+kubebuilder:validation:Optional
 	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,8,opt,name=lastError"`
 }

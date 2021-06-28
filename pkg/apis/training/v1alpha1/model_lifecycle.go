@@ -323,7 +323,7 @@ func ParseModelYaml(content []byte) (*Model, error) {
 }
 
 const (
-	ReasonFailed         = "IsFailed"
+	ReasonFailed         = "Failed"
 	ReasonTesting        = "Testing"
 	ReasonReporting      = "Reporting"
 	ReasonProfiling      = "Profiling"
@@ -378,6 +378,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.TrainResult = make([]catalog.Measurement, 0)
+	model.Status.LastError = "Failed to train." + err
 
 }
 
@@ -411,6 +412,7 @@ func (model *Model) MarkWaitingToTest() {
 		Status: v1.ConditionFalse,
 		Reason: ReasonWaitingToTest,
 	})
+	model.Status.Phase = ModelPhasePending
 }
 
 func (model *Model) MarkTesting() {
@@ -432,6 +434,7 @@ func (model *Model) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to test." + err
 }
 
 func (model *Model) MarkTested() {
@@ -490,6 +493,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to profile." + err
 }
 
 func (model *Model) Profiled() bool {
@@ -525,6 +529,7 @@ func (model *Model) MarkReportFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to report." + err
 }
 
 func (model *Model) Reported() bool {
@@ -555,6 +560,7 @@ func (model *Model) MarkForecastFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to forecast." + err
 }
 
 func (model *Model) MarkForecasting() {
@@ -600,6 +606,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to publish." + err
 }
 
 // -------------- Resume
@@ -673,6 +680,7 @@ func (model *Model) MarkReady() {
 	// mark the time
 	now := metav1.Now()
 	model.Status.EndTime = &now
+	model.Status.Phase = ModelPhaseCompleted
 }
 
 func (model *Model) IsReady() bool {

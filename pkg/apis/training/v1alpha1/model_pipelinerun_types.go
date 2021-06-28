@@ -248,4 +248,7 @@ type ModelPipelineRunStatus struct {
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,18,opt,name=evalMetrics"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,19,opt,name=lastError"`
 }

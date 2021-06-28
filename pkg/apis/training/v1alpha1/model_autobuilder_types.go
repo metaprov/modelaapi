@@ -220,4 +220,7 @@ type ModelAutobuilderStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,19,opt,name=observedGeneration"`
 	//+optional
 	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,21,opt,name=lastError"`
 }

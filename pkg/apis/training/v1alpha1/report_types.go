@@ -193,6 +193,9 @@ type ReportStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
+	// Last error
 	//+kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,7,rep,name=conditions"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
+	//+kubebuilder:validation:Optional
+	Conditions []ReportCondition `json:"conditions,omitempty" protobuf:"bytes,8,rep,name=conditions"`
 }

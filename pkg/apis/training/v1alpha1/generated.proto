@@ -768,6 +768,10 @@ message ModelAutobuilderStatus {
 
   // +optional
   repeated ModelAutobuilderCondition conditions = 20;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 21;
 }
 
 // ModelCondition describes the state of a model at a certain point.
@@ -1023,6 +1027,10 @@ message ModelPipelineRunStatus {
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
   optional string evalMetrics = 18;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 19;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -1501,10 +1509,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 mem = 33;
 
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 34;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 34;
+  repeated ModelCondition conditions = 35;
 }
 
 message ModelValidation {
@@ -1714,6 +1726,10 @@ message NotebookRunStatus {
   // Represents the latest available observations of a notebook run state.
   // +optional
   repeated NotebookRunCondition conditions = 5;
+
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 6;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -2074,8 +2090,12 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
+  // Last error
   // +kubebuilder:validation:Optional
-  repeated ReportCondition conditions = 7;
+  optional string lastError = 7;
+
+  // +kubebuilder:validation:Optional
+  repeated ReportCondition conditions = 8;
 }
 
 message ReportTemplate {
@@ -2377,9 +2397,13 @@ message StudyStatus {
   // the last model id generated for this study
   optional int64 lastModelID = 29;
 
+  // Last error
+  // +kubebuilder:validation:Optional
+  optional string lastError = 30;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
-  repeated StudyCondition conditions = 30;
+  repeated StudyCondition conditions = 31;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

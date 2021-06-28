@@ -218,6 +218,9 @@ spec:
                   UTC.
                 format: date-time
                 type: string
+              lastError:
+                description: Last error
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

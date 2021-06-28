@@ -180,6 +180,9 @@ type DatasetStatus struct {
 	// Last time a study was done on the dataset.
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,11,opt,name=lastError"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

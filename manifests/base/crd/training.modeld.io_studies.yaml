@@ -1298,6 +1298,9 @@ spec:
                 description: Free trainers
                 format: int32
                 type: integer
+              lastError:
+                description: Last error
+                type: string
               lastModelID:
                 description: the last model id generated for this study
                 format: int64

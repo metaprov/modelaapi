@@ -259,6 +259,7 @@ func (study *Study) MarkSplitFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to split." + err
 }
 
 // --------------- Training
@@ -301,6 +302,7 @@ func (study *Study) MarkSearchFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to search models." + err
 }
 
 // --------------- Test
@@ -339,6 +341,7 @@ func (study *Study) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to test model." + err
 }
 
 // --------------- Profile
@@ -364,6 +367,7 @@ func (study *Study) MarkProfileFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to profile." + err
 }
 
 // --------------- Report
@@ -545,6 +549,7 @@ func (study *Study) MarkReportFailed(err string) {
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to report." + err
 }
 
 func (study *Study) ReachedMaxModels() bool {

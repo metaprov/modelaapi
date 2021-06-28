@@ -82,6 +82,7 @@ const (
 	ModelPhaseTested      ModelPhase = "Tested"
 	ModelPhaseReporting   ModelPhase = "Reporting"
 	ModelPhaseReported    ModelPhase = "Reported"
+	ModelPhaseCompleted   ModelPhase = "Completed"
 	ModelPhasePublishing  ModelPhase = "Publishing"
 	ModelPhasePublished   ModelPhase = "Published"
 	ModelPhaseProfiling   ModelPhase = "Profiling"
@@ -419,10 +420,13 @@ type ModelStatus struct {
 	// Mem is the avg memory consumed during training.
 	//+kubebuilder:validation:Optional
 	Mem *int32 `json:"mem,omitempty" protobuf:"varint,33,opt,name=mem"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,34,opt,name=lastError"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

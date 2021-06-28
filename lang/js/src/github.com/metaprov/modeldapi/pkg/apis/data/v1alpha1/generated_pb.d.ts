@@ -751,6 +751,9 @@ export class DataPipelineRunStatus extends jspb.Message {
   clearConditionsList(): DataPipelineRunStatus;
   addConditions(value?: DataPipelineRunCondition, index?: number): DataPipelineRunCondition;
 
+  getLasterror(): string;
+  setLasterror(value: string): DataPipelineRunStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunStatus.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunStatus): DataPipelineRunStatus.AsObject;
@@ -768,6 +771,7 @@ export namespace DataPipelineRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
+    lasterror: string,
   }
 }
 
@@ -1748,6 +1752,9 @@ export class DatasetStatus extends jspb.Message {
   hasLaststudytime(): boolean;
   clearLaststudytime(): DatasetStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): DatasetStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetStatus.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetStatus): DatasetStatus.AsObject;
@@ -1768,6 +1775,7 @@ export namespace DatasetStatus {
     conditionsList: Array<DatasetCondition.AsObject>,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lasterror: string,
   }
 }
 
@@ -3703,6 +3711,9 @@ export class RecipeRunStatus extends jspb.Message {
   clearConditionsList(): RecipeRunStatus;
   addConditions(value?: RecipeCondition, index?: number): RecipeCondition;
 
+  getLasterror(): string;
+  setLasterror(value: string): RecipeRunStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunStatus.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeRunStatus): RecipeRunStatus.AsObject;
@@ -3718,6 +3729,7 @@ export namespace RecipeRunStatus {
     phase: string,
     observedgeneration: number,
     conditionsList: Array<RecipeCondition.AsObject>,
+    lasterror: string,
   }
 }
 

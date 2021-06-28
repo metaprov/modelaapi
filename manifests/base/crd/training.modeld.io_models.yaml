@@ -1125,6 +1125,9 @@ spec:
                 description: LabelEncoderUri is the URI of the label encoder binary
                   file, if there is one.
                 type: string
+              lastError:
+                description: Last error
+                type: string
               logsUri:
                 description: LogsUri is the URI of the log file
                 type: string

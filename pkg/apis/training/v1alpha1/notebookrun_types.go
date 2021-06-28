@@ -112,6 +112,9 @@ type NotebookRunStatus struct {
 	// Represents the latest available observations of a notebook run state.
 	//+optional
 	Conditions []NotebookRunCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
+	// Last error
+	//+kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,6,opt,name=lastError"`
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

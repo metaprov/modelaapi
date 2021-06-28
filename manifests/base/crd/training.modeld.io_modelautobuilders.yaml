@@ -1058,6 +1058,9 @@ spec:
               imageRepoName:
                 description: the name of the image repository
                 type: string
+              lastError:
+                description: Last error
+                type: string
               models:
                 description: Total models created for the study
                 format: int32
