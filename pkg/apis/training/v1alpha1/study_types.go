@@ -477,7 +477,7 @@ type StudyStatus struct {
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
+	LastError *string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
