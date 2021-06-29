@@ -81,19 +81,20 @@ const (
 type ApiKeyName string
 
 const (
-	Provider         ApiKeyName = "provider"
-	KeyFile          ApiKeyName = "keyfile"
-	AccessKey        ApiKeyName = "accessKey"
-	SecretKey        ApiKeyName = "secretKey"
-	Host             ApiKeyName = "host"
-	Token            ApiKeyName = "token"
-	ApiKey           ApiKeyName = "apikey"
-	Username         ApiKeyName = "username"
-	Passwd           ApiKeyName = "password"
-	URL              ApiKeyName = "url"
-	Port             ApiKeyName = "port"
-	Ssh              ApiKeyName = "ssh"
-	OpenstackAuthUrl ApiKeyName = "openstack-authurl"
+	ApiKeyNameProvider         ApiKeyName = "provider"
+	ApiKeyNameKeyFile          ApiKeyName = "keyfile"
+	ApiKeyNameAccessKey        ApiKeyName = "accessKey"
+	ApiKeyNameSecretKey        ApiKeyName = "secretKey"
+	ApiKeyNameHost             ApiKeyName = "host"
+	ApiKeyNameToken            ApiKeyName = "token"
+	ApiKeyNameApiKey           ApiKeyName = "apikey"
+	ApiKeyNameUsername         ApiKeyName = "username"
+	ApiKeyNamePassword         ApiKeyName = "password"
+	ApiKeyNameURL              ApiKeyName = "url"
+	ApiKeyNamePort             ApiKeyName = "port"
+	ApiKeyNameDatabase         ApiKeyName = "database"
+	ApiKeyNameSsh              ApiKeyName = "ssh"
+	ApiKeyNameOpenstackAuthUrl ApiKeyName = "openstack-authurl"
 )
 
 func (ak ApiKeyName) AsCliOption() string {
@@ -847,17 +848,17 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 type DatastoreType string
 
 const (
-	Csv     DatastoreType = "csv"
-	Json    DatastoreType = "json"
-	Parquet DatastoreType = "parquet"
-	Sas     DatastoreType = "sas"
-	Spss    DatastoreType = "spss"
-	Tde     DatastoreType = "tde"
-	Sql     DatastoreType = "sql"
-	Table   DatastoreType = "table"
-	Fwf     DatastoreType = "fwf"
-	Excel   DatastoreType = "excel"
-	Auto    DatastoreType = "auto"
+	DatastoreTypeCsv     DatastoreType = "csv"
+	DatastoreTypeJson    DatastoreType = "json"
+	DatastoreTypeParquet DatastoreType = "parquet"
+	DatastoreTypeSas     DatastoreType = "sas"
+	DatastoreTypeSpss    DatastoreType = "spss"
+	DatastoreTypeTde     DatastoreType = "tde"
+	DatastoreTypeSql     DatastoreType = "sql"
+	DatastoreTypeTable   DatastoreType = "table"
+	DatastoreTypeFwf     DatastoreType = "fwf"
+	DatastoreTypeExcel   DatastoreType = "excel"
+	DatastoreTypeAuto    DatastoreType = "auto"
 )
 
 // +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"embedding";"number-list";"categorical-list";"text-list";"useless";
@@ -892,67 +893,67 @@ const (
 type DataFormat string
 
 const (
-	Ordinal           DataFormat = "ordinal"
-	Url               DataFormat = "url"
-	Path              DataFormat = "path"
-	Password          DataFormat = "password"
-	Time              DataFormat = "time"
-	Count             DataFormat = "count"
-	Interval          DataFormat = "interval"
-	Nominal           DataFormat = "nominal"
-	Email             DataFormat = "email"
-	CreditCard        DataFormat = "creditCard"
-	Uuid3             DataFormat = "uuid"
-	Uuid5             DataFormat = "uuid5"
-	Uuid              DataFormat = "uuid"
-	Base64            DataFormat = "base64"
-	Latitude          DataFormat = "latitude"
-	Longtitude        DataFormat = "longtitude"
-	DnsName           DataFormat = "dns"
-	Ip4               DataFormat = "ip4"
-	Ip6               DataFormat = "ip6"
-	Ssn               DataFormat = "ssn"
-	Alpha             DataFormat = "alpha"
-	AlphaNumeric      DataFormat = "alphanumeric"
-	NoneDataFormat    DataFormat = "none"
-	UnknownDataFormat DataFormat = "unknown"
+	DataFormatOrdinal      DataFormat = "ordinal"
+	DataFormatUrl          DataFormat = "url"
+	DataFormatPath         DataFormat = "path"
+	DataFormatPassword     DataFormat = "password"
+	DataFormatTime         DataFormat = "time"
+	DataFormatCount        DataFormat = "count"
+	DataFormatInterval     DataFormat = "interval"
+	DataFormatNominal      DataFormat = "nominal"
+	DataFormatEmail        DataFormat = "email"
+	DataFormatCreditCard   DataFormat = "creditCard"
+	DataFormatUuid3        DataFormat = "uuid"
+	DataFormatUuid5        DataFormat = "uuid5"
+	DataFormatUuid         DataFormat = "uuid"
+	DataFormatBase64       DataFormat = "base64"
+	DataFormatLatitude     DataFormat = "latitude"
+	DataFormatLongtitude   DataFormat = "longtitude"
+	DataFormatDnsName      DataFormat = "dns"
+	DataFormatIp4          DataFormat = "ip4"
+	DataFormatIp6          DataFormat = "ip6"
+	DataFormatSsn          DataFormat = "ssn"
+	DataFormatAlpha        DataFormat = "alpha"
+	DataFormatAlphaNumeric DataFormat = "alphanumeric"
+	DataFormatNone         DataFormat = "none"
+	DataFormatUnknown      DataFormat = "unknown"
 )
 
 // +kubebuilder:validation:Enum="email";"hipchat";"pagerduty";"pushover";"slack";"opengenie";"webook";"victorops";"wechat";
 type NotificationReceiver string
 
 const (
-	EmailReceiver     NotificationReceiver = "email"
-	HipchatReceiver   NotificationReceiver = "hipchat"
-	PageDutyReceiver  NotificationReceiver = "pagerduty"
-	PushOverReceiver  NotificationReceiver = "pushover"
-	SlackReceiver     NotificationReceiver = "slack"
-	OpenGenieReceiver NotificationReceiver = "opengenie"
-	WebhookReceiver   NotificationReceiver = "webook"
-	VictorOpsReceiver NotificationReceiver = "victorops"
-	WechatReceiver    NotificationReceiver = "wechat"
+	NotificationReceiverEmail     NotificationReceiver = "email"
+	NotificationReceiverHipchat   NotificationReceiver = "hipchat"
+	NotificationReceiverPageDuty  NotificationReceiver = "pagerduty"
+	NotificationReceiverPushOver  NotificationReceiver = "pushover"
+	NotificationReceiverSlack     NotificationReceiver = "slack"
+	NotificationReceiverOpenGenie NotificationReceiver = "opengenie"
+	NotificationReceiverWebhook   NotificationReceiver = "webook"
+	NotificationReceiverVictorOps NotificationReceiver = "victorops"
+	NotificationReceiverWechat    NotificationReceiver = "wechat"
 )
 
 // Needed in order to map to the protobuf
 func (this NotificationReceiver) Code() int32 {
 	switch this {
-	case EmailReceiver:
+	case NotificationReceiverEmail:
 		return 0
-	case HipchatReceiver:
+	case NotificationReceiverHipchat:
 		return 1
-	case PageDutyReceiver:
+	case NotificationReceiverPageDuty:
 		return 2
-	case PushOverReceiver:
+	case NotificationReceiverPushOver:
 		return 3
-	case SlackReceiver:
+	case NotificationReceiverSlack:
 		return 4
-	case OpenGenieReceiver:
+	case NotificationReceiverOpenGenie:
 		return 5
-	case WebhookReceiver:
+	case NotificationReceiverWebhook:
 		return 6
-	case VictorOpsReceiver:
+	case NotificationReceiverVictorOps:
 		return 7
-	case WechatReceiver:
+	case NotificationReceiverWechat:
 		return 8
 	default:
 		panic("reciver not found")
@@ -1019,10 +1020,12 @@ const (
 type Aggregate string
 
 const (
-	Min    Aggregate = "min"
-	Max    Aggregate = "max"
-	Avg    Aggregate = "avg"
-	Median Aggregate = "median"
+	AggregateMin    Aggregate = "min"
+	AggregateMax    Aggregate = "max"
+	AggregateAvg    Aggregate = "avg"
+	AggregateMedian Aggregate = "median"
+	AggregateStddev Aggregate = "stddev"
+	AggregateVar    Aggregate = "var"
 )
 
 /// The HolidayCountry unit
@@ -1078,18 +1081,12 @@ const (
 type ConnectionCategory string
 
 const (
-	// the default category
-	General ConnectionCategory = "general"
-	// connection for cloud provider compute or storage access (e.g. azure)
-	CloudProvider ConnectionCategory = "cloud"
-	// connection for docker registry (e.g. docker hub)
-	DockerImageRegistry ConnectionCategory = "docker-image-registry"
-	// connection for database
-	Database ConnectionCategory = "database"
-	// connections for git repository
-	Git ConnectionCategory = "git"
-	// connections for git repository
-	Messaging ConnectionCategory = "messaging"
+	ConnectionCategoryGeneral             ConnectionCategory = "general"
+	ConnectionCategoryCloudProvider       ConnectionCategory = "cloud"
+	ConnectionCategoryDockerImageRegistry ConnectionCategory = "docker-image-registry"
+	ConnectionCategoryDatabase            ConnectionCategory = "database"
+	ConnectionCategoryGit                 ConnectionCategory = "git"
+	ConnectionCategoryMessaging           ConnectionCategory = "messaging"
 )
 
 //==============================================================================

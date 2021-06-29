@@ -30,7 +30,7 @@ func (connection *Connection) Default() {
 		}
 	}
 	if connection.Spec.Category == nil {
-		general := catalog.General
+		general := catalog.ConnectionCategoryGeneral
 		connection.Spec.Category = &general
 	}
 
@@ -117,21 +117,21 @@ func (connection *Connection) validateDockerReg(vars map[string]string) field.Er
 func (connection *Connection) validateGithub(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.Username)) || connection.varEmpty(vars, string(catalog.Username)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameUsername)) || connection.varEmpty(vars, string(catalog.ApiKeyNameUsername)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Username)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameUsername)),
 				"expected github user name value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.Token)) || connection.varEmpty(vars, string(catalog.Token)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameToken)) || connection.varEmpty(vars, string(catalog.ApiKeyNameToken)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Token)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameToken)),
 				"expected github token to be populated",
 			),
 		)
@@ -147,21 +147,21 @@ func (connection *Connection) validateGithub(vars map[string]string) field.Error
 func (connection *Connection) validateSlack(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.Token)) || connection.varEmpty(vars, string(catalog.Token)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameToken)) || connection.varEmpty(vars, string(catalog.ApiKeyNameToken)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Token)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameToken)),
 				"expected slack token value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.Username)) || connection.varEmpty(vars, string(catalog.Username)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameUsername)) || connection.varEmpty(vars, string(catalog.ApiKeyNameUsername)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Username)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameUsername)),
 				"expected slack user name to be populated",
 			),
 		)
@@ -178,21 +178,21 @@ func (connection *Connection) validateSlack(vars map[string]string) field.ErrorL
 func (connection *Connection) validateMinio(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.AccessKey)) || connection.varEmpty(vars, string(catalog.AccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.AccessKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
 				"expected minio access key value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.SecretKey)) || connection.varEmpty(vars, string(catalog.SecretKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameSecretKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameSecretKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.SecretKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameSecretKey)),
 				"expected minio secret key to be populated",
 			),
 		)
@@ -209,21 +209,21 @@ func (connection *Connection) validateMinio(vars map[string]string) field.ErrorL
 func (connection *Connection) validateEmailProvider(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.Username)) || connection.varEmpty(vars, string(catalog.Username)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameUsername)) || connection.varEmpty(vars, string(catalog.ApiKeyNameUsername)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Username)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameUsername)),
 				"expected email user name value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.Password)) || connection.varEmpty(vars, string(catalog.Password)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNamePassword)) || connection.varEmpty(vars, string(catalog.ApiKeyNamePassword)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Password)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNamePassword)),
 				"expected email password value to be populated",
 			),
 		)
@@ -239,21 +239,21 @@ func (connection *Connection) validateEmailProvider(vars map[string]string) fiel
 func (connection *Connection) validateAws(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.AccessKey)) || connection.varEmpty(vars, string(catalog.AccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.AccessKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
 				"expected aws access key value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.SecretKey)) || connection.varEmpty(vars, string(catalog.SecretKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameSecretKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameSecretKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.SecretKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameSecretKey)),
 				"expected was secret key value to be populated",
 			),
 		)
@@ -271,30 +271,30 @@ func (connection *Connection) validateAws(vars map[string]string) field.ErrorLis
 func (connection *Connection) validateDo(vars map[string]string) field.ErrorList {
 	var allErrs field.ErrorList
 
-	if !connection.varIncludes(vars, string(catalog.AccessKey)) || connection.varEmpty(vars, string(catalog.AccessKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameAccessKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameAccessKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.AccessKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameAccessKey)),
 				"expected digital ocean space access key value to be populated",
 			),
 		)
 	}
 
-	if !connection.varIncludes(vars, string(catalog.SecretKey)) || connection.varEmpty(vars, string(catalog.SecretKey)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameSecretKey)) || connection.varEmpty(vars, string(catalog.ApiKeyNameSecretKey)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.SecretKey)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameSecretKey)),
 				"expected digital ocean secret key value to be populated",
 			),
 		)
 	}
-	if !connection.varIncludes(vars, string(catalog.Token)) || connection.varEmpty(vars, string(catalog.Token)) {
+	if !connection.varIncludes(vars, string(catalog.ApiKeyNameToken)) || connection.varEmpty(vars, string(catalog.ApiKeyNameToken)) {
 		allErrs = append(
 			allErrs,
 			field.Required(
-				field.NewPath("secret", "values", string(catalog.Token)),
+				field.NewPath("secret", "values", string(catalog.ApiKeyNameToken)),
 				"expected digital ocean token key value to be populated",
 			),
 		)

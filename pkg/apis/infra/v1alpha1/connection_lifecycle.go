@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+	"strconv"
 
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modeldapi/pkg/apis/infra"
@@ -157,175 +158,243 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 	switch *connection.Spec.Provider {
 
 	case catalog.AmazonAthena:
-		fields[string(catalog.Username)] = *connection.Spec.AmazonAthena.Username
-		fields[string(catalog.Password)] = *connection.Spec.AmazonAthena.Password
-		fields[string(catalog.URL)] = *connection.Spec.AmazonAthena.URL
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.AmazonAthena.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AmazonAthena.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AmazonAthena.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AmazonAthena.URL
 	case catalog.GcpBigQuery:
-		fields[string(catalog.Username)] = *connection.Spec.GcpBigQuery.Username
-		fields[string(catalog.Password)] = *connection.Spec.GcpBigQuery.Password
-		fields[string(catalog.URL)] = *connection.Spec.GcpBigQuery.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.GcpBigQuery.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.GcpBigQuery.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.GcpBigQuery.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.GcpBigQuery.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.GcpBigQuery.URL
 	case catalog.ApacheCassandra:
-		fields[string(catalog.Username)] = *connection.Spec.Cassandra.Username
-		fields[string(catalog.Password)] = *connection.Spec.Cassandra.Password
-		fields[string(catalog.URL)] = *connection.Spec.Cassandra.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Cassandra.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Cassandra.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Cassandra.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Cassandra.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Cassandra.URL
 	case catalog.AzureSqlDatabase:
-		fields[string(catalog.Username)] = *connection.Spec.AzureSQLDatabase.Username
-		fields[string(catalog.Password)] = *connection.Spec.AzureSQLDatabase.Password
-		fields[string(catalog.URL)] = *connection.Spec.AzureSQLDatabase.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.AzureSQLDatabase.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.AzureSQLDatabase.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.AzureSQLDatabase.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AzureSQLDatabase.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AzureSQLDatabase.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AzureSQLDatabase.URL
 	case catalog.MongoDb:
-		fields[string(catalog.Username)] = *connection.Spec.MongoDb.Username
-		fields[string(catalog.Password)] = *connection.Spec.MongoDb.Password
-		fields[string(catalog.URL)] = *connection.Spec.MongoDb.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.MongoDb.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.MongoDb.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.MongoDb.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.MongoDb.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.MongoDb.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MongoDb.URL
 	case catalog.MySql:
-		fields[string(catalog.Username)] = *connection.Spec.MySql.Username
-		fields[string(catalog.Password)] = *connection.Spec.MySql.Password
-		fields[string(catalog.URL)] = *connection.Spec.MySql.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.MySql.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.MySql.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.MySql.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.MySql.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.MySql.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MySql.URL
 	case catalog.Odbc:
-		fields[string(catalog.URL)] = *connection.Spec.Odbc.ConnectionString
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Odbc.ConnectionString
 	case catalog.Oracle:
-		fields[string(catalog.Username)] = *connection.Spec.Oracle.Username
-		fields[string(catalog.Password)] = *connection.Spec.Oracle.Password
-		fields[string(catalog.URL)] = *connection.Spec.Oracle.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Oracle.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Oracle.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Oracle.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Oracle.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Oracle.URL
 	case catalog.Postgres:
-		fields[string(catalog.Username)] = *connection.Spec.PostgresSQL.Username
-		fields[string(catalog.Password)] = *connection.Spec.PostgresSQL.Password
-		fields[string(catalog.URL)] = *connection.Spec.PostgresSQL.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.PostgresSQL.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.PostgresSQL.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.PostgresSQL.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.PostgresSQL.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.PostgresSQL.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.PostgresSQL.URL
 	case catalog.Presto:
-		fields[string(catalog.Username)] = *connection.Spec.Presto.Username
-		fields[string(catalog.Password)] = *connection.Spec.Presto.Password
-		fields[string(catalog.URL)] = *connection.Spec.Presto.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Presto.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Presto.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Presto.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Presto.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Presto.URL
 	case catalog.AmazonRedshift:
-		fields[string(catalog.Username)] = *connection.Spec.RedShift.Username
-		fields[string(catalog.Password)] = *connection.Spec.RedShift.Password
-		fields[string(catalog.URL)] = *connection.Spec.RedShift.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.RedShift.Hostname
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.RedShift.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.RedShift.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.RedShift.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.RedShift.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.RedShift.URL
 	case catalog.ApacheHive:
-		fields[string(catalog.Username)] = *connection.Spec.Hive.Username
-		fields[string(catalog.Password)] = *connection.Spec.Hive.Password
-		fields[string(catalog.URL)] = *connection.Spec.Hive.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Hive.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Hive.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Hive.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Hive.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Hive.URL
 	case catalog.Snowflake:
-		fields[string(catalog.Username)] = *connection.Spec.Snowflake.Username
-		fields[string(catalog.Password)] = *connection.Spec.Snowflake.Password
-		fields[string(catalog.URL)] = *connection.Spec.Snowflake.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Snowflake.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Snowflake.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Snowflake.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Snowflake.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Snowflake.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Snowflake.URL
 	case catalog.Sybase:
-		fields[string(catalog.Username)] = *connection.Spec.Sybase.Username
-		fields[string(catalog.Password)] = *connection.Spec.Sybase.Password
-		fields[string(catalog.URL)] = *connection.Spec.Sybase.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Sybase.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Sybase.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Sybase.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Sybase.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Sybase.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Sybase.URL
 	case catalog.Vertica:
-		fields[string(catalog.Username)] = *connection.Spec.Vertica.Username
-		fields[string(catalog.Password)] = *connection.Spec.Vertica.Password
-		fields[string(catalog.URL)] = *connection.Spec.Vertica.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Vertica.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Vertica.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Vertica.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Vertica.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Vertica.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Vertica.URL
 	case catalog.CockrouchDB:
-		fields[string(catalog.Username)] = *connection.Spec.CockroachDB.Username
-		fields[string(catalog.Password)] = *connection.Spec.CockroachDB.Password
-		fields[string(catalog.URL)] = *connection.Spec.CockroachDB.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.CockroachDB.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.CockroachDB.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.CockroachDB.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.CockroachDB.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.CockroachDB.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.CockroachDB.URL
 	case catalog.ElasticSearch:
-		fields[string(catalog.Username)] = *connection.Spec.ElasticSearch.Username
-		fields[string(catalog.Password)] = *connection.Spec.ElasticSearch.Password
-		fields[string(catalog.URL)] = *connection.Spec.ElasticSearch.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ElasticSearch.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ElasticSearch.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ElasticSearch.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ElasticSearch.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ElasticSearch.URL
 	case catalog.Informix:
-		fields[string(catalog.Username)] = *connection.Spec.Informix.Username
-		fields[string(catalog.Password)] = *connection.Spec.Informix.Password
-		fields[string(catalog.URL)] = *connection.Spec.Informix.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Informix.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Informix.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Informix.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Informix.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Informix.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Informix.URL
 	case catalog.SAPHana:
-		fields[string(catalog.Username)] = *connection.Spec.SAPHana.Username
-		fields[string(catalog.Password)] = *connection.Spec.SAPHana.Password
-		fields[string(catalog.URL)] = *connection.Spec.SAPHana.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.SAPHana.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.SAPHana.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.SAPHana.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.SAPHana.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.SAPHana.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.SAPHana.URL
 	case catalog.Teradata:
-		fields[string(catalog.Username)] = *connection.Spec.Teradata.Username
-		fields[string(catalog.Password)] = *connection.Spec.Teradata.Password
-		fields[string(catalog.URL)] = *connection.Spec.Teradata.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Teradata.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Teradata.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Teradata.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Teradata.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Teradata.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Teradata.URL
 	case catalog.GcpSpanner:
-		fields[string(catalog.Username)] = *connection.Spec.GcpSpanner.Username
-		fields[string(catalog.Password)] = *connection.Spec.GcpSpanner.Password
-		fields[string(catalog.URL)] = *connection.Spec.GcpSpanner.URL
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.GcpSpanner.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.GcpSpanner.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.GcpSpanner.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.GcpSpanner.URL
 	case catalog.ApacheSpark:
-		fields[string(catalog.Username)] = *connection.Spec.Spark.Username
-		fields[string(catalog.Password)] = *connection.Spec.Spark.Password
-		fields[string(catalog.URL)] = *connection.Spec.Spark.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Spark.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Spark.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Spark.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Spark.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Spark.URL
 	case catalog.MSSqlServer:
-		fields[string(catalog.Username)] = *connection.Spec.MSSqlServer.Username
-		fields[string(catalog.Password)] = *connection.Spec.MSSqlServer.Password
-		fields[string(catalog.URL)] = *connection.Spec.MSSqlServer.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.MSSqlServer.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.MSSqlServer.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.MSSqlServer.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.MSSqlServer.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.MSSqlServer.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MSSqlServer.URL
 	case catalog.Clickhouse:
-		fields[string(catalog.Username)] = *connection.Spec.Clickhouse.Username
-		fields[string(catalog.Password)] = *connection.Spec.Clickhouse.Password
-		fields[string(catalog.URL)] = *connection.Spec.Clickhouse.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Clickhouse.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Clickhouse.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Clickhouse.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Clickhouse.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Clickhouse.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Clickhouse.URL
 	case catalog.Greenplum:
-		fields[string(catalog.Username)] = *connection.Spec.Greenplum.Username
-		fields[string(catalog.Password)] = *connection.Spec.Greenplum.Password
-		fields[string(catalog.URL)] = *connection.Spec.Greenplum.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Greenplum.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Greenplum.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Greenplum.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Greenplum.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Greenplum.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Greenplum.URL
 	case catalog.Couchbase:
-		fields[string(catalog.Username)] = *connection.Spec.Couchbase.Username
-		fields[string(catalog.Password)] = *connection.Spec.Couchbase.Password
-		fields[string(catalog.URL)] = *connection.Spec.Couchbase.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Couchbase.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Couchbase.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Couchbase.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Couchbase.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Couchbase.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Couchbase.URL
 	case catalog.Exasol:
-		fields[string(catalog.Username)] = *connection.Spec.Exasol.Username
-		fields[string(catalog.Password)] = *connection.Spec.Exasol.Password
-		fields[string(catalog.URL)] = *connection.Spec.Exasol.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Exasol.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Exasol.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Exasol.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Exasol.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Exasol.URL
 	// Cloud Storage
 	case catalog.AliCloud:
-		fields[string(catalog.AccessKey)] = *connection.Spec.AliCloud.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.AliCloud.SecretKey
+		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.AliCloud.AccessKey
+		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.AliCloud.SecretKey
 	case catalog.Azure:
-		fields[string(catalog.AccessKey)] = *connection.Spec.AzureStorage.AccessKey
-		fields[string(catalog.Username)] = *connection.Spec.AzureStorage.StorageAccount
+		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.AzureStorage.AccessKey
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AzureStorage.StorageAccount
 	case catalog.DigitalOcean:
-		fields[string(catalog.AccessKey)] = *connection.Spec.DigitalOcean.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.DigitalOcean.SecretKey
-		fields[string(catalog.Token)] = *connection.Spec.DigitalOcean.Token
+		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.DigitalOcean.AccessKey
+		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.DigitalOcean.SecretKey
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.DigitalOcean.Token
 	case catalog.Hetzner:
-		fields[string(catalog.Token)] = *connection.Spec.Hetzner.Token
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Hetzner.Token
 	case catalog.Linode:
-		fields[string(catalog.Token)] = *connection.Spec.Linode.Token
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Linode.Token
 	case catalog.Gcp:
-		fields[string(catalog.KeyFile)] = *connection.Spec.GcpStorage.KeyFile
+		fields[string(catalog.ApiKeyNameKeyFile)] = *connection.Spec.GcpStorage.KeyFile
 	case catalog.Minio:
-		fields[string(catalog.AccessKey)] = *connection.Spec.Minio.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.Minio.SecretKey
+		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.Minio.AccessKey
+		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Minio.SecretKey
 	case catalog.Ovh:
-		fields[string(catalog.SecretKey)] = *connection.Spec.Ovh.ConsumerKey
+		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Ovh.ConsumerKey
 	case catalog.Aws:
-		fields[string(catalog.AccessKey)] = *connection.Spec.Aws.AccessKey
-		fields[string(catalog.SecretKey)] = *connection.Spec.Aws.SecretKey
+		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.Aws.AccessKey
+		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Aws.SecretKey
 	case catalog.Dockerhub:
-		fields[string(catalog.Host)] = *connection.Spec.ImageRegistry.Host
-		fields[string(catalog.Username)] = *connection.Spec.ImageRegistry.Username
-		fields[string(catalog.Password)] = *connection.Spec.ImageRegistry.Password
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ImageRegistry.Host
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ImageRegistry.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ImageRegistry.Password
 	case catalog.ImageRegistry:
-		fields[string(catalog.Host)] = *connection.Spec.ImageRegistry.Host
-		fields[string(catalog.Username)] = *connection.Spec.ImageRegistry.Username
-		fields[string(catalog.Password)] = *connection.Spec.ImageRegistry.Password
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ImageRegistry.Host
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ImageRegistry.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ImageRegistry.Password
 	// Git Repository
 	case catalog.GitHub:
-		fields[string(catalog.Token)] = *connection.Spec.Github.Token
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Github.Username
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Github.Token
 	case catalog.Bitbucket:
-		fields[string(catalog.Token)] = *connection.Spec.Bitbucket.Token
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Bitbucket.Username
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Bitbucket.Token
 	case catalog.Gitlab:
-		fields[string(catalog.Token)] = *connection.Spec.Gitlab.Token
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Gitlab.Token
 	// Messaging
 	case catalog.SmtpProvider:
-		fields[string(catalog.Host)] = *connection.Spec.Smtp.Host
-		fields[string(catalog.Port)] = util.ItoA(connection.Spec.Smtp.Port)
-		fields[string(catalog.Username)] = *connection.Spec.Smtp.Username
-		fields[string(catalog.Password)] = *connection.Spec.Smtp.Password
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Smtp.Host
+		fields[string(catalog.ApiKeyNamePort)] = util.ItoA(connection.Spec.Smtp.Port)
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Smtp.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Smtp.Password
 	case catalog.Slack:
-		fields[string(catalog.Username)] = *connection.Spec.Slack.Username
-		fields[string(catalog.Token)] = *connection.Spec.Slack.Token
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Slack.Username
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Slack.Token
 	case catalog.Hipchat:
-		fields[string(catalog.Token)] = *connection.Spec.Hipchat.Token
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Hipchat.Token
 	case catalog.PageDuty:
-		fields[string(catalog.ApiKey)] = *connection.Spec.PagerDuty.ApiKey
+		fields[string(catalog.ApiKeyNameApiKey)] = *connection.Spec.PagerDuty.ApiKey
 	case catalog.PushOver:
-		fields[string(catalog.ApiKey)] = *connection.Spec.Pushover.ApiKey
+		fields[string(catalog.ApiKeyNameApiKey)] = *connection.Spec.Pushover.ApiKey
 	case catalog.OpsGenie:
-		fields[string(catalog.ApiKey)] = *connection.Spec.Opsgenie.ApiKey
+		fields[string(catalog.ApiKeyNameApiKey)] = *connection.Spec.Opsgenie.ApiKey
 	case catalog.Webhook:
 	case catalog.VictorOps:
-		fields[string(catalog.ApiKey)] = *connection.Spec.VictorOps.ApiKey
+		fields[string(catalog.ApiKeyNameApiKey)] = *connection.Spec.VictorOps.ApiKey
 	case catalog.MSTeam:
-		fields[string(catalog.URL)] = *connection.Spec.MSTeam.Webhook
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MSTeam.Webhook
 	case catalog.MatterMost:
-		fields[string(catalog.URL)] = *connection.Spec.MatterMost.Url
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MatterMost.Url
 	}
 	result.StringData = fields
 	return result
