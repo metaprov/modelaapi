@@ -1127,7 +1127,7 @@ func (in *WorkloadClassSpec) DeepCopyInto(out *WorkloadClassSpec) {
 	*out = *in
 	if in.Vcpu != nil {
 		in, out := &in.Vcpu, &out.Vcpu
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.Mem != nil {

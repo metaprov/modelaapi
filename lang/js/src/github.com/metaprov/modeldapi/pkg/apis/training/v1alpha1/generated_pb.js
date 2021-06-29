@@ -7441,7 +7441,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.FeatureImportance
       msg.setFeature(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setImportance(value);
       break;
     default:
@@ -7482,7 +7482,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.FeatureImportance
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       2,
       f
     );
@@ -7527,7 +7527,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.FeatureImportance
 
 
 /**
- * optional float importance = 2;
+ * optional double importance = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.FeatureImportance.prototype.getImportance = function() {

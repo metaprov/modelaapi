@@ -12056,7 +12056,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
       msg.setPublisherimage(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setVcpu(value);
       break;
     case 6:
@@ -12149,7 +12149,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       5,
       f
     );
@@ -12354,7 +12354,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
 
 
 /**
- * optional float vcpu = 5;
+ * optional double vcpu = 5;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getVcpu = function() {

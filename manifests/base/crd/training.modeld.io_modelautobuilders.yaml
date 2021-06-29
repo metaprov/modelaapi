@@ -583,8 +583,10 @@ spec:
                                     rule was automatically generated
                                   type: boolean
                                 max:
+                                  format: float
                                   type: number
                                 min:
+                                  format: float
                                   type: number
                                 strictMax:
                                   type: boolean
@@ -608,8 +610,10 @@ spec:
                                     rule was automatically generated
                                   type: boolean
                                 max:
+                                  format: float
                                   type: number
                                 min:
+                                  format: float
                                   type: number
                                 strictMax:
                                   type: boolean
@@ -637,8 +641,10 @@ spec:
                                     rule was automatically generated
                                   type: boolean
                                 max:
+                                  format: float
                                   type: number
                                 min:
+                                  format: float
                                   type: number
                                 strictMax:
                                   type: boolean

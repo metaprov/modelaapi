@@ -300,12 +300,12 @@ func (in *ColumnValidation) DeepCopyInto(out *ColumnValidation) {
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.ValueSet != nil {
@@ -1537,12 +1537,12 @@ func (in *DatasetValidation) DeepCopyInto(out *DatasetValidation) {
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.ValueSet != nil {
@@ -2845,12 +2845,12 @@ func (in *MultiColumnValidation) DeepCopyInto(out *MultiColumnValidation) {
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.Max != nil {
 		in, out := &in.Max, &out.Max
-		*out = new(float32)
+		*out = new(float64)
 		**out = **in
 	}
 	if in.ValueSet != nil {

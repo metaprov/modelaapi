@@ -491,8 +491,10 @@ type PreprocessingSpec struct {
 }
 
 type FeatureImportance struct {
-	Feature    string  `json:"feature,omitempty" protobuf:"bytes,1,opt,name=feature"`
-	Importance float32 `json:"importance,omitempty" protobuf:"bytes,2,opt,name=importance"`
+	Feature string `json:"feature,omitempty" protobuf:"bytes,1,opt,name=feature"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	Importance float64 `json:"importance,omitempty" protobuf:"bytes,2,opt,name=importance"`
 }
 
 type SuccessiveHalvingSpec struct {

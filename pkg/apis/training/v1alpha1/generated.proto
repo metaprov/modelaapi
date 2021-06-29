@@ -381,7 +381,9 @@ message EnsembleSpec {
 message FeatureImportance {
   optional string feature = 1;
 
-  optional float importance = 2;
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  optional double importance = 2;
 }
 
 // A definition for a single forecast

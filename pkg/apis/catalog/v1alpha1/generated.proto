@@ -688,8 +688,10 @@ message WorkloadClassSpec {
   optional string publisherImage = 4;
 
   // Vcpu is the number of cpu
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float vcpu = 5;
+  optional double vcpu = 5;
 
   // Memory is the amount of memory offered by thie template
   // +kubebuilder:validation:Optional

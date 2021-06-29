@@ -333,11 +333,15 @@ message ColumnValidation {
   // +kubebuilder:validation:Optional
   optional string column = 2;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float min = 3;
+  optional double min = 3;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float max = 4;
+  optional double max = 4;
 
   // +kubebuilder:validation:Optional
   repeated string valueSet = 5;
@@ -1223,11 +1227,15 @@ message DatasetValidation {
   // +kubebuilder:validation:Optional
   optional string type = 1;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float min = 2;
+  optional double min = 2;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float max = 3;
+  optional double max = 3;
 
   // +kubebuilder:validation:Optional
   repeated string valueSet = 4;
@@ -2113,11 +2121,15 @@ message MultiColumnValidation {
   // +kubebuilder:validation:Optional
   repeated string columns = 2;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float min = 3;
+  optional double min = 3;
 
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional float max = 4;
+  optional double max = 4;
 
   // +kubebuilder:validation:Optional
   repeated string valueSet = 5;

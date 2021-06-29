@@ -6353,11 +6353,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.dese
       msg.setColumn(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMin(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMax(value);
       break;
     case 5:
@@ -6421,14 +6421,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.seri
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       3,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       4,
       f
     );
@@ -6537,7 +6537,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
 
 
 /**
- * optional float min = 3;
+ * optional double min = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMin = function() {
@@ -6573,7 +6573,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
 
 
 /**
- * optional float max = 4;
+ * optional double max = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.getMax = function() {
@@ -19551,11 +19551,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.des
       msg.setType(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMin(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMax(value);
       break;
     case 4:
@@ -19612,14 +19612,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.ser
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       3,
       f
     );
@@ -19692,7 +19692,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
 
 
 /**
- * optional float min = 2;
+ * optional double min = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMin = function() {
@@ -19728,7 +19728,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.pro
 
 
 /**
- * optional float max = 3;
+ * optional double max = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetValidation.prototype.getMax = function() {
@@ -33478,11 +33478,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
       msg.addColumns(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMin(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMax(value);
       break;
     case 5:
@@ -33546,14 +33546,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       3,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeFloat(
+    writer.writeDouble(
       4,
       f
     );
@@ -33663,7 +33663,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
 
 
 /**
- * optional float min = 3;
+ * optional double min = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getMin = function() {
@@ -33699,7 +33699,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation
 
 
 /**
- * optional float max = 4;
+ * optional double max = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.MultiColumnValidation.prototype.getMax = function() {

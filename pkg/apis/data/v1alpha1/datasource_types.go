@@ -44,10 +44,14 @@ const (
 type DatasetValidation struct {
 	// +kubebuilder:validation:Optional
 	Type *DatasetValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Min *float32 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Max *float32 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
@@ -70,10 +74,14 @@ type MultiColumnValidation struct {
 	Type *MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Min *float32 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Max *float32 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional
@@ -124,10 +132,14 @@ type ColumnValidation struct {
 	Type *ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Min *float32 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Max *float32 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
 	// +kubebuilder:validation:Optional
 	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
 	// +kubebuilder:validation:Optional

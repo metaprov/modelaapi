@@ -1118,6 +1118,7 @@ spec:
                     feature:
                       type: string
                     importance:
+                      format: float
                       type: number
                   type: object
                 type: array

@@ -34,8 +34,10 @@ type WorkloadClassSpec struct {
 	// +kubebuilder:validation:Required
 	PublisherImage string `json:"publisherImage" protobuf:"bytes,4,opt,name=publisherImage"`
 	// Vcpu is the number of cpu
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Vcpu *float32 `json:"vcpu" protobuf:"bytes,5,opt,name=vcpu"`
+	Vcpu *float64 `json:"vcpu" protobuf:"bytes,5,opt,name=vcpu"`
 	// Memory is the amount of memory offered by thie template
 	// +kubebuilder:validation:Optional
 	Mem *resource.Quantity `json:"mem" protobuf:"bytes,6,opt,name=mem"`
