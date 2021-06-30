@@ -230,14 +230,6 @@ spec:
                     description: Optional notifier to use when the forecast is complete.
                     type: string
                 type: object
-              id:
-                default: -1
-                description: ID is the id of the study within the data product Note
-                  that multiplie models can have the same version Default is -1 -
-                  not assigned, the id is assigned as part of the study ingestion
-                  and it stored in the data product status.
-                format: int64
-                type: integer
               labRef:
                 description: LabRef is a reference to the lab where the trainers for
                   this study run. If no value is provided, the lab is taken from the
@@ -867,6 +859,10 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
+                  treeOnly:
+                    default: false
+                    description: If true, select only tree algorithms
+                    type: boolean
                   votingEnsemble:
                     default: false
                     description: VotingEnsample - If true, create a voting ensemble
@@ -1297,6 +1293,14 @@ spec:
               freeTrainers:
                 description: Free trainers
                 format: int32
+                type: integer
+              id:
+                default: -1
+                description: ID is the id of the study within the data product Note
+                  that multiplie models can have the same version Default is -1 -
+                  not assigned, the id is assigned as part of the study ingestion
+                  and it stored in the data product status.
+                format: int64
                 type: integer
               lastError:
                 default: ""

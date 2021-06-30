@@ -1072,9 +1072,6 @@ export namespace DataProductSpec {
 }
 
 export class DataProductStatus extends jspb.Message {
-  getLastmodelversion(): number;
-  setLastmodelversion(value: number): DataProductStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DataProductStatus;
 
@@ -1101,7 +1098,6 @@ export class DataProductStatus extends jspb.Message {
 
 export namespace DataProductStatus {
   export type AsObject = {
-    lastmodelversion: number,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     laststudyid: number,

@@ -3894,7 +3894,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.repeatedFields_ = [14,15,16];
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.repeatedFields_ = [14,15,16,19];
 
 
 
@@ -3947,7 +3947,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.toObject
     sitebindingsList: jspb.Message.toObjectList(msg.getSitebindingsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountRoleBinding.toObject, includeInstance),
     clearencelevel: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    avatar: (f = msg.getAvatar()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AvatarSpec.toObject(includeInstance, f)
+    avatar: (f = msg.getAvatar()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AvatarSpec.toObject(includeInstance, f),
+    favoritesList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4060,6 +4061,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.deserial
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AvatarSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AvatarSpec.deserializeBinaryFromReader);
       msg.setAvatar(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFavorites(value);
       break;
     default:
       reader.skipField();
@@ -4219,6 +4224,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
       18,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AvatarSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getFavoritesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      19,
+      f
     );
   }
 };
@@ -4877,6 +4889,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasAvatar = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * repeated string favorites = 19;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getFavoritesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 19));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setFavoritesList = function(value) {
+  return jspb.Message.setField(this, 19, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.addFavorites = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 19, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearFavoritesList = function() {
+  return this.setFavoritesList([]);
 };
 
 

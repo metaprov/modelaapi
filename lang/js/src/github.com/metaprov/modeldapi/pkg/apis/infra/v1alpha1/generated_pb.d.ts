@@ -188,6 +188,11 @@ export class AccountSpec extends jspb.Message {
   hasAvatar(): boolean;
   clearAvatar(): AccountSpec;
 
+  getFavoritesList(): Array<string>;
+  setFavoritesList(value: Array<string>): AccountSpec;
+  clearFavoritesList(): AccountSpec;
+  addFavorites(value: string, index?: number): AccountSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AccountSpec): AccountSpec.AsObject;
@@ -216,6 +221,7 @@ export namespace AccountSpec {
     sitebindingsList: Array<AccountRoleBinding.AsObject>,
     clearencelevel: string,
     avatar?: AvatarSpec.AsObject,
+    favoritesList: Array<string>,
   }
 }
 

@@ -383,11 +383,6 @@ spec:
                   - type
                   type: object
                 type: array
-              lastModelVersion:
-                description: LastModelVersion is used to automatically associate model
-                  version with final models.
-                format: int32
-                type: integer
               lastStudyID:
                 description: The last study id generated for this product.
                 format: int64

@@ -253,6 +253,10 @@ type ModelSearchSpec struct {
 	// Set the start time, by default this is set to the start time of the study
 	// +kubebuilder:validation:Optional
 	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
+	// If true, select only tree algorithms
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	TreeOnly *bool `json:"treeOnly,omitempty" protobuf:"bytes,16,opt,name=treeOnly"`
 }
 
 type PrunerSpec struct {
@@ -301,12 +305,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName" protobuf:"bytes,1,opt,name=versionName"`
-	// ID is the id of the study within the data product
-	// Note that multiplie models can have the same version
-	// Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
-	// +kubebuilder:default:=-1
-	// +kubebuilder:validation:Optional
-	ID *int64 `json:"id" protobuf:"bytes,2,opt,name=id"`
 	// Description is user provided description
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
@@ -478,12 +476,18 @@ type StudyStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError *string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
+	// ID is the id of the study within the data product
+	// Note that multiplie models can have the same version
+	// Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
+	// +kubebuilder:default:=-1
+	// +kubebuilder:validation:Optional
+	ID *int64 `json:"id" protobuf:"bytes,31,opt,name=id"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,31,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
 }
 
 // model cv results

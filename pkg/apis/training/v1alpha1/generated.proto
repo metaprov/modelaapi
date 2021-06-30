@@ -1239,6 +1239,11 @@ message ModelSearchSpec {
   // Set the start time, by default this is set to the start time of the study
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
+
+  // If true, select only tree algorithms
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool treeOnly = 16;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -2192,13 +2197,6 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 1;
 
-  // ID is the id of the study within the data product
-  // Note that multiplie models can have the same version
-  // Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
-  // +kubebuilder:default:=-1
-  // +kubebuilder:validation:Optional
-  optional int64 id = 2;
-
   // Description is user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
@@ -2419,12 +2417,19 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 30;
 
+  // ID is the id of the study within the data product
+  // Note that multiplie models can have the same version
+  // Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
+  // +kubebuilder:default:=-1
+  // +kubebuilder:validation:Optional
+  optional int64 id = 31;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 31;
+  repeated StudyCondition conditions = 32;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

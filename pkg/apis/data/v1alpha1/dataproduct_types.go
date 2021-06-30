@@ -174,20 +174,18 @@ type DataProductSpec struct {
 
 // DataProductStatus defines the observed state of DataProduct
 type DataProductStatus struct {
-	// LastModelVersion is used to automatically associate model version with final models.
-	LastModelVersion int32 `json:"lastModelVersion,omitempty" protobuf:"varint,1,opt,name=lastModelVersion"`
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// The last study id generated for this product.
-	LastStudyID *int64 `json:"lastStudyID,omitempty" protobuf:"bytes,4,opt,name=lastStudyID"`
+	LastStudyID *int64 `json:"lastStudyID,omitempty" protobuf:"bytes,3,opt,name=lastStudyID"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

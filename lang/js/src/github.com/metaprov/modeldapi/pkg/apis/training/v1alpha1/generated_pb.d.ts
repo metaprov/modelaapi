@@ -1846,6 +1846,9 @@ export class ModelSearchSpec extends jspb.Message {
   hasStartat(): boolean;
   clearStartat(): ModelSearchSpec;
 
+  getTreeonly(): boolean;
+  setTreeonly(value: boolean): ModelSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSearchSpec): ModelSearchSpec.AsObject;
@@ -1871,6 +1874,7 @@ export namespace ModelSearchSpec {
     votingensemble: boolean,
     stackingensemble: boolean,
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    treeonly: boolean,
   }
 }
 
@@ -3292,9 +3296,6 @@ export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
 
-  getId(): number;
-  setId(value: number): StudySpec;
-
   getDescription(): string;
   setDescription(value: string): StudySpec;
 
@@ -3385,7 +3386,6 @@ export class StudySpec extends jspb.Message {
 export namespace StudySpec {
   export type AsObject = {
     versionname: string,
-    id: number,
     description: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     datasetname: string,
@@ -3516,6 +3516,9 @@ export class StudyStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): StudyStatus;
 
+  getId(): number;
+  setId(value: number): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3560,6 +3563,7 @@ export namespace StudyStatus {
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     lastmodelid: number,
     lasterror: string,
+    id: number,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

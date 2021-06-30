@@ -100,6 +100,11 @@ spec:
                 description: Email account creation event to user (using the user
                   email)
                 type: boolean
+              favorites:
+                description: List of favorite data product
+                items:
+                  type: string
+                type: array
               firstName:
                 default: ""
                 description: First FileName is the user first name

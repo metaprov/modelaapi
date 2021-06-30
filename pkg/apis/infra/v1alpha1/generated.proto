@@ -162,6 +162,10 @@ message AccountSpec {
   // The avatar location
   // +kubebuilder:validation:Optional
   optional AvatarSpec avatar = 18;
+
+  // List of favorite data product
+  // +kubebuilder:validation:Optional
+  repeated string favorites = 19;
 }
 
 // AccountStatus defines the actual state of the api object

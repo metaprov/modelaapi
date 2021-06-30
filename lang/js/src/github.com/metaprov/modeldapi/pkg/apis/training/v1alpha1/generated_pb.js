@@ -18560,7 +18560,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.t
     allowlistList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
     votingensemble: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     stackingensemble: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
-    startat: (f = msg.getStartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    startat: (f = msg.getStartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    treeonly: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18659,6 +18660,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.d
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setStartat(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setTreeonly(value);
       break;
     default:
       reader.skipField();
@@ -18795,6 +18800,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.s
       15,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeBool(
+      16,
+      f
     );
   }
 };
@@ -19341,6 +19353,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasStartat = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool treeOnly = 16;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getTreeonly = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setTreeonly = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearTreeonly = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasTreeonly = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
@@ -32779,7 +32827,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    id: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     datasetname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -32840,10 +32887,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersionname(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -32970,13 +33013,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt64(
-      2,
       f
     );
   }
@@ -33171,42 +33207,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasVersionname = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int64 id = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearId = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasId = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -33980,7 +33980,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [31];
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [32];
 
 
 
@@ -34042,6 +34042,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     validationdataset: (f = msg.getValidationdataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     lastmodelid: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+    id: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.toObject, includeInstance)
   };
@@ -34206,6 +34207,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.deser
       msg.setLasterror(value);
       break;
     case 31:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setId(value);
+      break;
+    case 32:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -34451,10 +34456,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeInt64(
+      31,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      31,
+      32,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.serializeBinaryToWriter
     );
@@ -35516,12 +35528,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * repeated StudyCondition conditions = 31;
+ * optional int64 id = 31;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 31, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setId = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearId = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasId = function() {
+  return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * repeated StudyCondition conditions = 32;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, 31));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, 32));
 };
 
 
@@ -35530,7 +35578,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 31, value);
+  return jspb.Message.setRepeatedWrapperField(this, 32, value);
 };
 
 
@@ -35540,7 +35588,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 31, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 32, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
 };
 
 

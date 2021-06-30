@@ -772,24 +772,21 @@ message DataProductSpec {
 
 // DataProductStatus defines the observed state of DataProduct
 message DataProductStatus {
-  // LastModelVersion is used to automatically associate model version with final models.
-  optional int32 lastModelVersion = 1;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // The last study id generated for this product.
-  optional int64 lastStudyID = 4;
+  optional int64 lastStudyID = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 5;
+  repeated DataProductCondition conditions = 4;
 }
 
 // +kubebuilder:object:root=true
