@@ -10290,7 +10290,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     artifactsfolder: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     input: (f = msg.getInput()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannels.toObject(includeInstance, f),
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionChannels.toObject(includeInstance, f),
-    minreplicas: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    replicas: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     autoscaling: (f = msg.getAutoscaling()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
@@ -10385,7 +10385,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMinreplicas(value);
+      msg.setReplicas(value);
       break;
     case 12:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling;
@@ -10979,10 +10979,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional int32 minReplicas = 11;
+ * optional int32 replicas = 11;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getMinreplicas = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getReplicas = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -10991,7 +10991,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setMinreplicas = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setReplicas = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -11000,7 +11000,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearMinreplicas = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearReplicas = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -11009,7 +11009,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasMinreplicas = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasReplicas = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 

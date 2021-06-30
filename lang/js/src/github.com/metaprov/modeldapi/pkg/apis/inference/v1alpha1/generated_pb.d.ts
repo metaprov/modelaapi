@@ -1098,8 +1098,8 @@ export class PredictorSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): PredictorSpec;
 
-  getMinreplicas(): number;
-  setMinreplicas(value: number): PredictorSpec;
+  getReplicas(): number;
+  setReplicas(value: number): PredictorSpec;
 
   getAutoscaling(): AutoScaling | undefined;
   setAutoscaling(value?: AutoScaling): PredictorSpec;
@@ -1156,7 +1156,7 @@ export namespace PredictorSpec {
     artifactsfolder: string,
     input?: PredictionChannels.AsObject,
     output?: PredictionChannels.AsObject,
-    minreplicas: number,
+    replicas: number,
     autoscaling?: AutoScaling.AsObject,
     owner: string,
     workloadclassname: string,

@@ -204,13 +204,6 @@ spec:
                         type: string
                     type: object
                 type: object
-              minReplicas:
-                default: 1
-                description: Replicas defines the number of replicas when auto scaling
-                  is disabled.
-                format: int32
-                minimum: 1
-                type: integer
               models:
                 description: Models is the list of models
                 items:
@@ -558,6 +551,14 @@ spec:
                     minimum: 0
                     type: integer
                 type: object
+              replicas:
+                default: 1
+                description: Replicas defines the number of replicas when auto scaling
+                  is disabled.
+                format: int32
+                maximum: 10
+                minimum: 1
+                type: integer
               servingsiteRef:
                 description: The serving site that hosts this predictor and the models
                 properties:

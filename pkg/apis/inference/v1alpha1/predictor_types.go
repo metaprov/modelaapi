@@ -125,9 +125,10 @@ type PredictorSpec struct {
 	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,10,opt,name=output"`
 	// Replicas defines the number of replicas when auto scaling is disabled.
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
-	Replicas *int32 `json:"minReplicas,omitempty" protobuf:"varint,11,opt,name=minReplicas"`
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,11,opt,name=replicas"`
 	// AutoScaling defines the auto scaling policy
 	// +kubebuilder:validation:Optional
 	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,12,opt,name=autoScaling"`
