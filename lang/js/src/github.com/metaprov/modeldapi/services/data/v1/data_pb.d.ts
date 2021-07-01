@@ -2290,3 +2290,77 @@ export namespace DsStudyEndedResponse {
   }
 }
 
+export class SaveOptimizerDBRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): SaveOptimizerDBRequest;
+  hasProduct(): boolean;
+  clearProduct(): SaveOptimizerDBRequest;
+
+  getVersion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): SaveOptimizerDBRequest;
+  hasVersion(): boolean;
+  clearVersion(): SaveOptimizerDBRequest;
+
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): SaveOptimizerDBRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): SaveOptimizerDBRequest;
+
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): SaveOptimizerDBRequest;
+  hasDataset(): boolean;
+  clearDataset(): SaveOptimizerDBRequest;
+
+  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): SaveOptimizerDBRequest;
+  hasStudy(): boolean;
+  clearStudy(): SaveOptimizerDBRequest;
+
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): SaveOptimizerDBRequest;
+  hasConnection(): boolean;
+  clearConnection(): SaveOptimizerDBRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): SaveOptimizerDBRequest;
+  hasBucket(): boolean;
+  clearBucket(): SaveOptimizerDBRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): SaveOptimizerDBRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SaveOptimizerDBRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SaveOptimizerDBRequest): SaveOptimizerDBRequest.AsObject;
+  static serializeBinaryToWriter(message: SaveOptimizerDBRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SaveOptimizerDBRequest;
+  static deserializeBinaryFromReader(message: SaveOptimizerDBRequest, reader: jspb.BinaryReader): SaveOptimizerDBRequest;
+}
+
+export namespace SaveOptimizerDBRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class SaveOptimizerDBResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SaveOptimizerDBResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SaveOptimizerDBResponse): SaveOptimizerDBResponse.AsObject;
+  static serializeBinaryToWriter(message: SaveOptimizerDBResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SaveOptimizerDBResponse;
+  static deserializeBinaryFromReader(message: SaveOptimizerDBResponse, reader: jspb.BinaryReader): SaveOptimizerDBResponse;
+}
+
+export namespace SaveOptimizerDBResponse {
+  export type AsObject = {
+  }
+}
+

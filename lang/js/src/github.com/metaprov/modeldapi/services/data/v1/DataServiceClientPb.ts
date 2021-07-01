@@ -1275,5 +1275,45 @@ export class DataServiceClient {
     this.methodInfoStudyEnded);
   }
 
+  methodInfoSaveOptimizerDB = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse.deserializeBinary
+  );
+
+  saveOptimizerDB(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse>;
+
+  saveOptimizerDB(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse>;
+
+  saveOptimizerDB(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.SaveOptimizerDBResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/SaveOptimizerDB',
+        request,
+        metadata || {},
+        this.methodInfoSaveOptimizerDB,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/SaveOptimizerDB',
+    request,
+    metadata || {},
+    this.methodInfoSaveOptimizerDB);
+  }
+
 }
 

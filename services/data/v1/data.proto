@@ -487,6 +487,24 @@ message DsStudyEndedResponse {
 }
 
 
+message SaveOptimizerDBRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct            product      = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset      = 4;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study              study        = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection   = 6;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 7;
+    map<string,bytes>                                                           secret       = 8;
+
+}
+
+message SaveOptimizerDBResponse {    
+
+}
+
+
+
 service DataService {
     // Read from a flat file and create a dataset
     rpc ReadFile(DsReadFileRequest) returns (DsReadFromStoreResponse) {}
@@ -547,4 +565,5 @@ service DataService {
 
     rpc StudyEnded(DsStudyEndedRequest) returns (DsStudyEndedResponse) {}
 
+    rpc SaveOptimizerDB(SaveOptimizerDBRequest) returns (SaveOptimizerDBResponse) {} // save the optimizer database in the cloud
 }
