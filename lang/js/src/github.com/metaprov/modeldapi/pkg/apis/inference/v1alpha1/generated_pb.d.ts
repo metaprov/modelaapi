@@ -19,6 +19,12 @@ export class AutoScaling extends jspb.Message {
   getMaxreplicas(): number;
   setMaxreplicas(value: number): AutoScaling;
 
+  getCpuavgutilization(): number;
+  setCpuavgutilization(value: number): AutoScaling;
+
+  getMemavgutilization(): number;
+  setMemavgutilization(value: number): AutoScaling;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AutoScaling.AsObject;
   static toObject(includeInstance: boolean, msg: AutoScaling): AutoScaling.AsObject;
@@ -32,6 +38,8 @@ export namespace AutoScaling {
     enabled: boolean,
     minreplicas: number,
     maxreplicas: number,
+    cpuavgutilization: number,
+    memavgutilization: number,
   }
 }
 

@@ -877,7 +877,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.toOb
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     minreplicas: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    maxreplicas: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    maxreplicas: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    cpuavgutilization: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    memavgutilization: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -922,9 +924,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.dese
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMinreplicas(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxreplicas(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCpuavgutilization(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMemavgutilization(value);
       break;
     default:
       reader.skipField();
@@ -969,10 +979,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.seri
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeInt32(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -1052,11 +1076,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prot
 
 
 /**
- * optional int32 maxReplicas = 4;
+ * optional int32 maxReplicas = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.getMaxreplicas = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -1065,7 +1089,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.setMaxreplicas = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -1074,7 +1098,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.clearMaxreplicas = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -1083,7 +1107,79 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.hasMaxreplicas = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 cpuAvgUtilization = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.getCpuavgutilization = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.setCpuavgutilization = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.clearCpuavgutilization = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.hasCpuavgutilization = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 memAvgUtilization = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.getMemavgutilization = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.setMemavgutilization = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.clearMemavgutilization = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.AutoScaling.prototype.hasMemavgutilization = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

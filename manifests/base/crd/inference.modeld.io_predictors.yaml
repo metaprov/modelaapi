@@ -69,6 +69,13 @@ spec:
               autoScaling:
                 description: AutoScaling defines the auto scaling policy
                 properties:
+                  cpuAvgUtilization:
+                    default: 80
+                    description: Used with the horizontal auto builder
+                    format: int32
+                    maximum: 100
+                    minimum: 1
+                    type: integer
                   enabled:
                     type: boolean
                   maxReplicas:
@@ -76,6 +83,13 @@ spec:
                     description: Max num of replicates. Used during auto scaling
                     format: int32
                     maximum: 10
+                    minimum: 1
+                    type: integer
+                  memAvgUtilization:
+                    default: 80
+                    description: Used with the horizontal auto builder
+                    format: int32
+                    maximum: 100
                     minimum: 1
                     type: integer
                   minReplicas:

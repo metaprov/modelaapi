@@ -35,7 +35,21 @@ message AutoScaling {
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:default:=1
-  optional int32 maxReplicas = 4;
+  optional int32 maxReplicas = 3;
+
+  // Used with the horizontal auto builder
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:default:=80
+  optional int32 cpuAvgUtilization = 4;
+
+  // Used with the horizontal auto builder
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=100
+  // +kubebuilder:default:=80
+  optional int32 memAvgUtilization = 5;
 }
 
 message BotChannelSpec {

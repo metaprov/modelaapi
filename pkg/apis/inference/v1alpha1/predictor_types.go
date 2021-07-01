@@ -187,7 +187,19 @@ type AutoScaling struct {
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:default:=1
-	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,4,opt,name=maxReplicas"`
+	MaxReplicas *int32 `json:"maxReplicas,omitempty" protobuf:"varint,3,opt,name=maxReplicas"`
+	// Used with the horizontal auto builder
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:default:=80
+	CpuAvgUtilization *int32 `json:"cpuAvgUtilization,omitempty" protobuf:"varint,4,opt,name=cpuAvgUtilization"`
+	// Used with the horizontal auto builder
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:default:=80
+	MemAvgUtilization *int32 `json:"memAvgUtilization,omitempty" protobuf:"varint,5,opt,name=memAvgUtilization"`
 }
 
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
