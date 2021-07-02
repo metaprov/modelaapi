@@ -11100,7 +11100,9 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prot
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    training: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    testing: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    validation: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -11137,6 +11139,18 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTraining(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTesting(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setValidation(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11166,6 +11180,81 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prot
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTraining();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = message.getTesting();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getValidation();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 training = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.getTraining = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.setTraining = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int32 testing = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.getTesting = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.setTesting = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int32 validation = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.getValidation = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse.prototype.setValidation = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

@@ -20920,7 +20920,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,23,37];
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,23,38];
 
 
 
@@ -20991,7 +20991,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     mem: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f,
     trainingrows: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
     testingrows: (f = jspb.Message.getField(msg, 35)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
+    validationrows: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
+    lasterror: (f = jspb.Message.getField(msg, 37)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -21186,10 +21187,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setTestingrows(value);
       break;
     case 36:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setValidationrows(value);
+      break;
+    case 37:
       var value = /** @type {string} */ (reader.readString());
       msg.setLasterror(value);
       break;
-    case 37:
+    case 38:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -21478,17 +21483,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 36));
+  f = /** @type {number} */ (jspb.Message.getField(message, 36));
+  if (f != null) {
+    writer.writeInt32(
+      36,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 37));
   if (f != null) {
     writer.writeString(
-      36,
+      37,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      37,
+      38,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition.serializeBinaryToWriter
     );
@@ -22759,19 +22771,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional string lastError = 36;
- * @return {string}
+ * optional int32 validationRows = 36;
+ * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLasterror = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getValidationrows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 36, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setValidationrows = function(value) {
   return jspb.Message.setField(this, 36, value);
 };
 
@@ -22780,7 +22792,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearValidationrows = function() {
   return jspb.Message.setField(this, 36, undefined);
 };
 
@@ -22789,18 +22801,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasValidationrows = function() {
   return jspb.Message.getField(this, 36) != null;
 };
 
 
 /**
- * repeated ModelCondition conditions = 37;
+ * optional string lastError = 37;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLasterror = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLasterror = function(value) {
+  return jspb.Message.setField(this, 37, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLasterror = function() {
+  return jspb.Message.setField(this, 37, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLasterror = function() {
+  return jspb.Message.getField(this, 37) != null;
+};
+
+
+/**
+ * repeated ModelCondition conditions = 38;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition, 37));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition, 38));
 };
 
 
@@ -22809,7 +22857,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 37, value);
+  return jspb.Message.setRepeatedWrapperField(this, 38, value);
 };
 
 
@@ -22819,7 +22867,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 37, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 38, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
 };
 
 
@@ -34076,7 +34124,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [34];
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [35];
 
 
 
@@ -34141,6 +34189,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     id: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f,
     trainingrows: (f = jspb.Message.getField(msg, 32)) == null ? undefined : f,
     testingrows: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f,
+    validationrows: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.toObject, includeInstance)
   };
@@ -34317,6 +34366,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.deser
       msg.setTestingrows(value);
       break;
     case 34:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setValidationrows(value);
+      break;
+    case 35:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -34583,10 +34636,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 34));
+  if (f != null) {
+    writer.writeInt32(
+      34,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      34,
+      35,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition.serializeBinaryToWriter
     );
@@ -35756,12 +35816,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * repeated StudyCondition conditions = 34;
+ * optional int32 validationRows = 34;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getValidationrows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 34, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setValidationrows = function(value) {
+  return jspb.Message.setField(this, 34, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearValidationrows = function() {
+  return jspb.Message.setField(this, 34, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasValidationrows = function() {
+  return jspb.Message.getField(this, 34) != null;
+};
+
+
+/**
+ * repeated StudyCondition conditions = 35;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, 34));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, 35));
 };
 
 
@@ -35770,7 +35866,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 34, value);
+  return jspb.Message.setRepeatedWrapperField(this, 35, value);
 };
 
 
@@ -35780,7 +35876,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 34, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 35, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
 };
 
 

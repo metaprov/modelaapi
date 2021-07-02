@@ -1217,6 +1217,15 @@ export namespace DsSplitDatasetToRungsResponse {
 }
 
 export class DsSplitDatasetResponse extends jspb.Message {
+  getTraining(): number;
+  setTraining(value: number): DsSplitDatasetResponse;
+
+  getTesting(): number;
+  setTesting(value: number): DsSplitDatasetResponse;
+
+  getValidation(): number;
+  setValidation(value: number): DsSplitDatasetResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DsSplitDatasetResponse): DsSplitDatasetResponse.AsObject;
@@ -1227,6 +1236,9 @@ export class DsSplitDatasetResponse extends jspb.Message {
 
 export namespace DsSplitDatasetResponse {
   export type AsObject = {
+    training: number,
+    testing: number,
+    validation: number,
   }
 }
 

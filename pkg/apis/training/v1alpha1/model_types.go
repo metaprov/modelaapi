@@ -426,14 +426,17 @@ type ModelStatus struct {
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
 	TestingRows *int32 `json:"testingRows" protobuf:"varint,35,opt,name=testingRows"`
+	//Validation row contain the number of validation rows for cases that we have validation.
+	// +kubebuilder:validation:Optional
+	ValidationRows *int32 `json:"validationRows" protobuf:"varint,36,opt,name=validationRows"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,36,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,37,opt,name=lastError"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,37,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,38,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

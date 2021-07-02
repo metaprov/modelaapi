@@ -1393,6 +1393,11 @@ spec:
                     description: Path to the full data file (e.g. csv file).
                     type: string
                 type: object
+              validationRows:
+                description: Validation row contain the number of validation rows
+                  for cases that we have validation.
+                format: int32
+                type: integer
               weightsUri:
                 description: WeightsUri is the URI of the model binary file.
                 type: string

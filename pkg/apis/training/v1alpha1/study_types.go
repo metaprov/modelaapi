@@ -488,12 +488,15 @@ type StudyStatus struct {
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
 	TestingRows *int32 `json:"testingRows" protobuf:"varint,33,opt,name=testingRows"`
+	//Validation row contain the number of validation rows for cases that we have validation.
+	// +kubebuilder:validation:Optional
+	ValidationRows *int32 `json:"validationRows" protobuf:"varint,34,opt,name=validationRows"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
 }
 
 // model cv results

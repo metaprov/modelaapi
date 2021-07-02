@@ -274,7 +274,14 @@ message DsSplitDatasetToRungsRequest {
 }
 
 message DsSplitDatasetToRungsResponse {}
-message DsSplitDatasetResponse {}
+message DsSplitDatasetResponse {
+    int32 training    = 1;
+    int32 testing     = 2;
+    int32 validation  = 3;
+
+
+
+}
 
 // Used to create a profile before the dataset object exist
 message DsCreateColumnProfileRequest {
