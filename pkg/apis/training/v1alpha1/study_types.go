@@ -482,12 +482,18 @@ type StudyStatus struct {
 	// +kubebuilder:default:=-1
 	// +kubebuilder:validation:Optional
 	ID *int64 `json:"id" protobuf:"bytes,31,opt,name=id"`
+	//TrainingRows is the amount of rows in training
+	// +kubebuilder:validation:Optional
+	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,32,opt,name=trainingRows"`
+	//TestingRows is the amount of rows in testing
+	// +kubebuilder:validation:Optional
+	TestingRows *int32 `json:"testingRows" protobuf:"varint,33,opt,name=testingRows"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
 }
 
 // model cv results

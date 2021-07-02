@@ -1912,6 +1912,16 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.TrainingRows != nil {
+		in, out := &in.TrainingRows, &out.TrainingRows
+		*out = new(int32)
+		**out = **in
+	}
+	if in.TestingRows != nil {
+		in, out := &in.TestingRows, &out.TestingRows
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))
@@ -3043,6 +3053,16 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(int64)
+		**out = **in
+	}
+	if in.TrainingRows != nil {
+		in, out := &in.TrainingRows, &out.TrainingRows
+		*out = new(int32)
+		**out = **in
+	}
+	if in.TestingRows != nil {
+		in, out := &in.TestingRows, &out.TestingRows
+		*out = new(int32)
 		**out = **in
 	}
 	if in.Conditions != nil {

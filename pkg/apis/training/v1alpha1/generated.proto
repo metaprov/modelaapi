@@ -1524,15 +1524,23 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 mem = 33;
 
+  // TrainingRows is the amount of rows in training
+  // +kubebuilder:validation:Optional
+  optional int32 trainingRows = 34;
+
+  // TestingRows is the amount of rows in testing
+  // +kubebuilder:validation:Optional
+  optional int32 testingRows = 35;
+
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 34;
+  optional string lastError = 36;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 35;
+  repeated ModelCondition conditions = 37;
 }
 
 message ModelValidation {
@@ -2424,12 +2432,20 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int64 id = 31;
 
+  // TrainingRows is the amount of rows in training
+  // +kubebuilder:validation:Optional
+  optional int32 trainingRows = 32;
+
+  // TestingRows is the amount of rows in testing
+  // +kubebuilder:validation:Optional
+  optional int32 testingRows = 33;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 32;
+  repeated StudyCondition conditions = 34;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

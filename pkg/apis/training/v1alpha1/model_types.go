@@ -420,14 +420,20 @@ type ModelStatus struct {
 	// Mem is the avg memory consumed during training.
 	//+kubebuilder:validation:Optional
 	Mem *int32 `json:"mem,omitempty" protobuf:"varint,33,opt,name=mem"`
+	//TrainingRows is the amount of rows in training
+	// +kubebuilder:validation:Optional
+	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,34,opt,name=trainingRows"`
+	//TestingRows is the amount of rows in testing
+	// +kubebuilder:validation:Optional
+	TestingRows *int32 `json:"testingRows" protobuf:"varint,35,opt,name=testingRows"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,34,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,36,opt,name=lastError"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,37,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

@@ -1363,6 +1363,10 @@ spec:
                 description: models in testing
                 format: int32
                 type: integer
+              testingRows:
+                description: TestingRows is the amount of rows in testing
+                format: int32
+                type: integer
               testingStartTime:
                 description: Start of the testing phase
                 format: date-time
@@ -1397,6 +1401,10 @@ spec:
                 type: string
               trainingModels:
                 description: models which are currently training or testing.
+                format: int32
+                type: integer
+              trainingRows:
+                description: TrainingRows is the amount of rows in training
                 format: int32
                 type: integer
               trainingStartTime:

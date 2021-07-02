@@ -2154,6 +2154,12 @@ export class ModelStatus extends jspb.Message {
   getMem(): number;
   setMem(value: number): ModelStatus;
 
+  getTrainingrows(): number;
+  setTrainingrows(value: number): ModelStatus;
+
+  getTestingrows(): number;
+  setTestingrows(value: number): ModelStatus;
+
   getLasterror(): string;
   setLasterror(value: string): ModelStatus;
 
@@ -2205,6 +2211,8 @@ export namespace ModelStatus {
     observedgeneration: number,
     cpu: number,
     mem: number,
+    trainingrows: number,
+    testingrows: number,
     lasterror: string,
     conditionsList: Array<ModelCondition.AsObject>,
   }
@@ -3519,6 +3527,12 @@ export class StudyStatus extends jspb.Message {
   getId(): number;
   setId(value: number): StudyStatus;
 
+  getTrainingrows(): number;
+  setTrainingrows(value: number): StudyStatus;
+
+  getTestingrows(): number;
+  setTestingrows(value: number): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3564,6 +3578,8 @@ export namespace StudyStatus {
     lastmodelid: number,
     lasterror: string,
     id: number,
+    trainingrows: number,
+    testingrows: number,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

@@ -1272,6 +1272,10 @@ spec:
                   represented in RFC3339 form and is in UTC.
                 format: date-time
                 type: string
+              testingRows:
+                description: TestingRows is the amount of rows in testing
+                format: int32
+                type: integer
               testingStartTime:
                 description: TestingStartTime represents time when the model started
                   test on a trainer It is not guaranteed to be set in happens-before
@@ -1359,6 +1363,10 @@ spec:
                   training
                 format: date-time
                 type: string
+              trainingRows:
+                description: TrainingRows is the amount of rows in training
+                format: int32
+                type: integer
               trainingScore:
                 description: TrainingScore is the score on the full training set,
                   Evaluating on the training set
