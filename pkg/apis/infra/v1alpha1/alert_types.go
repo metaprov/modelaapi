@@ -93,6 +93,9 @@ type AlertSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	// The actual information about the alerts
+	// +kubebuilder:validation:Optional
+	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,7,opt,name=fields"`
 }
 
 // AlertStatus is the observed state of a Alert

@@ -357,16 +357,6 @@ message ColumnValidation {
   optional bool generated = 8;
 }
 
-message CompilerSpec {
-  // Compiler is the name of the compiler
-  // +kubebuilder:validation:Optional
-  optional string compiler = 1;
-
-  // Targets is the list of targets
-  // +kubebuilder:validation:Optional
-  repeated string targets = 2;
-}
-
 // data reference contain pointers to the actual data objects
 message DataLocation {
   // +kubebuilder:default:=""

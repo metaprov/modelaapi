@@ -6032,7 +6032,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.toObject =
     level: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -6093,6 +6094,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.deserializ
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 7:
+      var value = msg.getFieldsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -6165,6 +6172,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.serializeB
       6,
       f
     );
+  }
+  f = message.getFieldsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -6384,6 +6395,28 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 6) != null;
 };
+
+
+/**
+ * map<string, string> fields = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getFieldsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearFieldsMap = function() {
+  this.getFieldsMap().clear();
+  return this;};
 
 
 

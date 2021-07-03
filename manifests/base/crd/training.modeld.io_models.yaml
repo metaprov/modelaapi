@@ -104,7 +104,8 @@ spec:
                 description: Compilation denotes how to compile the model.
                 properties:
                   compiler:
-                    description: Set one or more targets
+                    default: none
+                    description: Set one or more targets Enable set the enable to
                     enum:
                     - tvm
                     - onyx
@@ -112,6 +113,7 @@ spec:
                     - none
                     type: string
                   enable:
+                    default: "false"
                     description: Enable set the enable to
                     type: boolean
                   targets:

@@ -254,6 +254,10 @@ message AlertSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 6;
+
+  // The actual information about the alerts
+  // +kubebuilder:validation:Optional
+  map<string, string> fields = 7;
 }
 
 // AlertStatus is the observed state of a Alert

@@ -215,12 +215,3 @@ type Attachment struct {
 	// Location is the location of the attachment
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }
-
-type CompilerSpec struct {
-	// Compiler is the name of the compiler
-	//+kubebuilder:validation:Optional
-	Compiler *catalog.CompilerName `json:"compiler,omitempty" protobuf:"bytes,1,opt,name=compiler"`
-	// Targets is the list of targets
-	//+kubebuilder:validation:Optional
-	Targets []catalog.HardwareTarget `json:"targets,omitempty" protobuf:"bytes,2,rep,name=targets"`
-}

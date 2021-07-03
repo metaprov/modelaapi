@@ -152,9 +152,14 @@ message CloudStatus {
 // Compiler spec is used when there is a specification for model compilation
 message CompilerSpec {
   // Enable set the enable to
+  // +kubebuilder:default:="false"
+  // +kubebuilder:validation:Optional
   optional bool enable = 1;
 
   // Set one or more targets
+  // Enable set the enable to
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
   optional string compiler = 2;
 
   // Set one or more targets for the compiler
