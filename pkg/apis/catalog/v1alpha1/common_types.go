@@ -1182,13 +1182,14 @@ const (
 	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modeld-b"
 )
 
-// +kubebuilder:validation:Enum="tvm";"onyx";"xla";
+// +kubebuilder:validation:Enum="tvm";"onyx";"xla";"none"
 type CompilerName string
 
 const (
 	CompilerNameTVM  CompilerName = "tvm"
 	CompilerNameOnyx CompilerName = "onyx"
 	CompilerNameXla  CompilerName = "xla"
+	CompilerNameNone CompilerName = "none"
 )
 
 // Measurement is a value for a specific metric

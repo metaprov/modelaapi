@@ -70,6 +70,7 @@ spec:
                     - tvm
                     - onyx
                     - xla
+                    - none
                     type: string
                   enable:
                     description: Enable set the enable to
