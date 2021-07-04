@@ -86,7 +86,8 @@ func (study *Study) Default() {
 	}
 
 	if study.Spec.Search == nil {
-
+		study.Spec.Search = &ModelSearchSpec{}
+		study.Spec.Search.Default()
 	}
 
 	if study.Spec.Search.VotingEnsemble == nil {
