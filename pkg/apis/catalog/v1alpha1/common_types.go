@@ -36,7 +36,7 @@ const (
 // Compiler spec is used when there is a specification for model compilation
 type CompilerSpec struct {
 	// Enable set the enable to
-	// +kubebuilder:default:="false"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enable *bool `json:"enable,omitempty" protobuf:"bytes,1,opt,name=enable"`
 	// Set one or more targets

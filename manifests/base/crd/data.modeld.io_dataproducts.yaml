@@ -119,7 +119,7 @@ spec:
                     - none
                     type: string
                   enable:
-                    default: "false"
+                    default: false
                     description: Enable set the enable to
                     type: boolean
                   targets:
