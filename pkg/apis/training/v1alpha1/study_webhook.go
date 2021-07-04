@@ -90,6 +90,11 @@ func (study *Study) Default() {
 		study.Spec.Search.Default()
 	}
 
+	if study.Spec.Search.Pruner == nil {
+		study.Spec.Search.Pruner = &PrunerSpec{}
+		study.Spec.Search.Pruner.Default()
+	}
+
 	if study.Spec.Search.VotingEnsemble == nil {
 		study.Spec.Search.VotingEnsemble = util.BoolPtr(false)
 	}
