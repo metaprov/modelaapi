@@ -490,8 +490,6 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			},
 		},
 	}
-
-	dataset.Default()
 	return dataset
 }
 
@@ -549,7 +547,6 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			Profiled: util.BoolPtr(true),
 		},
 	}
-	res.Default()
 	res.Spec.Location.Path = res.RootUri()
 	return res
 }

@@ -85,6 +85,10 @@ func (study *Study) Default() {
 		study.Spec.Objective = &o
 	}
 
+	if study.Spec.Search == nil {
+
+	}
+
 	if study.Spec.Search.VotingEnsemble == nil {
 		study.Spec.Search.VotingEnsemble = util.BoolPtr(false)
 	}
@@ -110,10 +114,6 @@ func (study *Study) Default() {
 			ForecastConnectionName: nil,
 			Forecast:               nil,
 		}
-	}
-
-	if study.Spec.Search == nil {
-		study.Spec.Search = &ModelSearchSpec{}
 	}
 
 	if study.Spec.Search.Pruner.SHOptions == nil {
@@ -282,5 +282,38 @@ func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 }
 
 //==============================================================================
-// StudyName Defaults
+// Defaults
 //==============================================================================
+
+func (svo *SuccessiveHalvingOptions) Default() {
+	svo.MaxBudget = util.Int32Ptr(8)
+	svo.EliminationRate = util.Int32Ptr(3)
+}
+
+func (ms *ModelSearchSpec) Default() {
+	name := RandomSearch
+	ms.Sampler = &name
+	ms.Pruner = &PrunerSpec{}
+	ms.Pruner.Default()
+	ms.MaxCost = util.Int32Ptr(100)
+	ms.MaxTime = util.Int32Ptr(30)
+	ms.MaxModels = util.Int32Ptr(10)
+	ms.MinScore = util.Float64Ptr(0)
+	ms.Trainers = util.Int32Ptr(1)
+	ms.Test = util.Int32Ptr(1)
+	ms.RetainTop = util.Int32Ptr(10)
+	ms.RetainFor = util.Int32Ptr(60)
+	ms.VotingEnsemble = util.BoolPtr(false)
+	ms.StackingEnsemble = util.BoolPtr(true)
+	ms.TreeOnly = util.BoolPtr(false)
+}
+
+func (pspec *PrunerSpec) Default() {
+	name := MedianPruner
+	pspec.Type = &name
+	pspec.StartupTrials = util.Int32Ptr(5)
+	pspec.WramupTrials = util.Int32Ptr(0)
+	pspec.MinimumTrials = util.Int32Ptr(1)
+	pspec.IntervalSteps = util.Int32Ptr(1)
+	pspec.Precentile = util.Int32Ptr(25)
+}
