@@ -61,6 +61,11 @@ func (datasource *DataSource) Default() {
 		}
 	}
 
+	// set default
+	if datasource.Spec.Schema.Validation == nil {
+		datasource.Spec.Schema.Validation = &ValidationSpec{}
+	}
+
 }
 
 // validation
