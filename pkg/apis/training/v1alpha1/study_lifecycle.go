@@ -248,6 +248,7 @@ func (study *Study) MarkSplitted() {
 		valLocation.Path = path.Join(study.Spec.Location.Path, "data", "validation.csv")
 		study.Status.ValidationDataset = valLocation
 	}
+	study.RefreshProgress()
 
 }
 
@@ -260,6 +261,7 @@ func (study *Study) MarkSplitFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.LastError = util.StrPtr("Failed to split." + err)
+	study.RefreshProgress()
 }
 
 // --------------- Training
@@ -280,6 +282,7 @@ func (study *Study) MarkSearching() {
 		study.Status.TrainingStartTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearching
+	study.RefreshProgress()
 }
 
 func (study *Study) MarkSearched() {
@@ -292,6 +295,7 @@ func (study *Study) MarkSearched() {
 		study.Status.TrainingEndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
+	study.RefreshProgress()
 }
 
 func (study *Study) MarkSearchFailed(err string) {
@@ -303,6 +307,7 @@ func (study *Study) MarkSearchFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.LastError = util.StrPtr("Failed to search models." + err)
+	study.RefreshProgress()
 }
 
 // --------------- Test
@@ -331,6 +336,7 @@ func (study *Study) MarkTested() {
 	now := metav1.Now()
 	study.Status.TestingEndTime = &now
 	study.Status.Phase = StudyPhaseTested
+	study.RefreshProgress()
 }
 
 func (study *Study) MarkTestingFailed(err string) {
@@ -342,6 +348,7 @@ func (study *Study) MarkTestingFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.LastError = util.StrPtr("Failed to test model." + err)
+	study.RefreshProgress()
 }
 
 func (study *Study) Tested() bool {
@@ -372,6 +379,7 @@ func (study *Study) MarkProfileFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.LastError = util.StrPtr("Failed to profile." + err)
+	study.RefreshProgress()
 }
 
 // --------------- Report
@@ -397,6 +405,7 @@ func (study *Study) MarkReported(name string) {
 		Status: v1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseReported
+	study.RefreshProgress()
 }
 
 // ------------------- Paused
@@ -418,6 +427,7 @@ func (study *Study) MarkAborted() {
 		Status: v1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseAborted
+	study.RefreshProgress()
 }
 
 func (study *Study) MarkPartitioned() bool {
@@ -438,6 +448,7 @@ func (study *Study) MarkSaved() {
 		Type:   StudySaved,
 		Status: v1.ConditionTrue,
 	})
+	study.RefreshProgress()
 }
 
 func (study *Study) Saved() bool {
@@ -466,6 +477,7 @@ func (study *Study) MarkReady() {
 		Status: v1.ConditionTrue,
 	})
 	study.Status.Phase = StudyPhaseCompleted
+	study.RefreshProgress()
 }
 
 func (study *Study) MarkEnsembleTrained() {
@@ -493,6 +505,7 @@ func (study *Study) MarkProfiled(url string) {
 		Type:   StudyProfiled,
 		Status: v1.ConditionTrue,
 	})
+	study.RefreshProgress()
 
 }
 
@@ -554,6 +567,7 @@ func (study *Study) MarkReportFailed(err string) {
 	})
 	study.Status.Phase = StudyPhaseFailed
 	study.Status.LastError = util.StrPtr("Failed to report." + err)
+	study.RefreshProgress()
 }
 
 func (study *Study) ReachedMaxModels() bool {
