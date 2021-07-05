@@ -25,6 +25,9 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
+    - jsonPath: .status.progress
+      name: Progress
+      type: number
     - jsonPath: .spec.owner
       name: Owner
       priority: 1
@@ -1329,6 +1332,11 @@ spec:
                 description: A reference to the profile uri which were produce during
                   processing
                 type: string
+              progress:
+                description: Study Progress in precent, the progress takes into account
+                  the different stages of the study.
+                format: int32
+                type: integer
               reportName:
                 description: The study report name
                 type: string

@@ -108,6 +108,7 @@ type StudyCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
@@ -491,12 +492,15 @@ type StudyStatus struct {
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
 	ValidationRows *int32 `json:"validationRows" protobuf:"varint,34,opt,name=validationRows"`
+	// Study Progress in precent, the progress takes into account the different stages of the study.
+	// +kubebuilder:validation:Optional
+	Progress *int32 `json:"progress" protobuf:"varint,35,opt,name=progress"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,35,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
 }
 
 // model cv results

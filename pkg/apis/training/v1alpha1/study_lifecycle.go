@@ -344,6 +344,10 @@ func (study *Study) MarkTestingFailed(err string) {
 	study.Status.LastError = util.StrPtr("Failed to test model." + err)
 }
 
+func (study *Study) Tested() bool {
+	return study.GetCond(StudyTested).Status == v1.ConditionTrue
+}
+
 // --------------- Profile
 
 func (study *Study) Profiled() bool {
@@ -613,4 +617,21 @@ func (study *Study) IsRunning() bool {
 
 func (study *Study) IsFailed() bool {
 	return study.Status.Phase == StudyPhaseFailed
+}
+
+func (study *Study) RefreshProgress() {
+	// if we completed the study, or failed or aborted, put progress at 100
+	if study.IsReady() || study.IsFailed() || study.Aborted() {
+		study.Status.Progress = util.Int32Ptr(100)
+	} else if study.Reported() {
+		study.Status.Progress = util.Int32Ptr(95)
+	} else if study.Profiled() {
+		study.Status.Progress = util.Int32Ptr(90)
+	} else if study.Tested() {
+		study.Status.Progress = util.Int32Ptr(80)
+	} else if study.Searched() {
+		study.Status.Progress = util.Int32Ptr(50)
+	} else if study.Splitted() {
+		study.Status.Progress = util.Int32Ptr(10)
+	}
 }

@@ -3075,6 +3075,11 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.Progress != nil {
+		in, out := &in.Progress, &out.Progress
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

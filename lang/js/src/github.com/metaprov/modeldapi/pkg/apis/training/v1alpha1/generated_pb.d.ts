@@ -3540,6 +3540,9 @@ export class StudyStatus extends jspb.Message {
   getValidationrows(): number;
   setValidationrows(value: number): StudyStatus;
 
+  getProgress(): number;
+  setProgress(value: number): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -3588,6 +3591,7 @@ export namespace StudyStatus {
     trainingrows: number,
     testingrows: number,
     validationrows: number,
+    progress: number,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }
