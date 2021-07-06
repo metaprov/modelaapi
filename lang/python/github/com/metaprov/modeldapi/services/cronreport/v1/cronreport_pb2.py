@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/cronreport/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto\x12\x34github.com.metaprov.modeldapi.services.cronreport.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"\xd2\x01\n\x16ListCronReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x17ListCronReportsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportList\"\x1a\n\x18\x43reateCronReportResponse\"m\n\x17\x43reateCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"m\n\x17UpdateCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"\x1a\n\x18UpdateCronReportResponse\"7\n\x14GetCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x15GetCronReportResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteCronReportResponse\"j\n\x14RunCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"\x17\n\x15RunCronReportResponse2\x82\n\n\x11\x43ronReportService\x12\xc7\x01\n\x0fListCronReports\x12L.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest\x1aM.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/cronreports\x12\xcd\x01\n\x10\x43reateCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/cronreports:\x01*\x12\xc8\x01\n\rGetCronReport\x12J.github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportRequest\x1aK.github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/cronreports/{name}\x12\xe8\x01\n\x10UpdateCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/cronreports/{cronreport.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/cronreports/{name}\x12\xc8\x01\n\tRunReport\x12J.github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest\x1aK.github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/cronreports/{name}:runB6Z4github.com/metaprov/modeldapi/services/cronreport/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto\x12\x34github.com.metaprov.modeldapi.services.cronreport.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\"\xd2\x01\n\x16ListCronReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x17ListCronReportsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportList\"\x1a\n\x18\x43reateCronReportResponse\"m\n\x17\x43reateCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"m\n\x17UpdateCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"\x1a\n\x18UpdateCronReportResponse\"7\n\x14GetCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x15GetCronReportResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteCronReportResponse\"9\n\x16PauseCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17PauseCronReportResponse\":\n\x17ResumeCronReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18ResumeCronReportResponse\"j\n\x14RunCronReportRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport\"\x17\n\x15RunCronReportResponse2\xb4\r\n\x11\x43ronReportService\x12\xc7\x01\n\x0fListCronReports\x12L.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest\x1aM.github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/cronreports\x12\xcd\x01\n\x10\x43reateCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/cronreports:\x01*\x12\xc8\x01\n\rGetCronReport\x12J.github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportRequest\x1aK.github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/cronreports/{name}\x12\xe8\x01\n\x10UpdateCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/cronreports/{cronreport.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/cronreports/{name}\x12\xc8\x01\n\tRunReport\x12J.github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest\x1aK.github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/cronreports/{name}:run\x12\xd4\x01\n\x0fPauseCronReport\x12L.github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest\x1aM.github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x1c/v1/cronreports/{name}:pause\x12\xd8\x01\n\x10ResumeCronReport\x12M.github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest\x1aN.github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/cronreports/{name}:resumeB6Z4github.com/metaprov/modeldapi/services/cronreport/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -400,6 +400,134 @@ _DELETECRONREPORTRESPONSE = _descriptor.Descriptor(
 )
 
 
+_PAUSECRONREPORTREQUEST = _descriptor.Descriptor(
+  name='PauseCronReportRequest',
+  full_name='github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1106,
+  serialized_end=1163,
+)
+
+
+_PAUSECRONREPORTRESPONSE = _descriptor.Descriptor(
+  name='PauseCronReportResponse',
+  full_name='github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1165,
+  serialized_end=1190,
+)
+
+
+_RESUMECRONREPORTREQUEST = _descriptor.Descriptor(
+  name='ResumeCronReportRequest',
+  full_name='github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1192,
+  serialized_end=1250,
+)
+
+
+_RESUMECRONREPORTRESPONSE = _descriptor.Descriptor(
+  name='ResumeCronReportResponse',
+  full_name='github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1252,
+  serialized_end=1278,
+)
+
+
 _RUNCRONREPORTREQUEST = _descriptor.Descriptor(
   name='RunCronReportRequest',
   full_name='github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest',
@@ -427,8 +555,8 @@ _RUNCRONREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1106,
-  serialized_end=1212,
+  serialized_start=1280,
+  serialized_end=1386,
 )
 
 
@@ -452,8 +580,8 @@ _RUNCRONREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1237,
+  serialized_start=1388,
+  serialized_end=1411,
 )
 
 _LISTCRONREPORTSREQUEST_LABELSENTRY.containing_type = _LISTCRONREPORTSREQUEST
@@ -473,6 +601,10 @@ DESCRIPTOR.message_types_by_name['GetCronReportRequest'] = _GETCRONREPORTREQUEST
 DESCRIPTOR.message_types_by_name['GetCronReportResponse'] = _GETCRONREPORTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteCronReportRequest'] = _DELETECRONREPORTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteCronReportResponse'] = _DELETECRONREPORTRESPONSE
+DESCRIPTOR.message_types_by_name['PauseCronReportRequest'] = _PAUSECRONREPORTREQUEST
+DESCRIPTOR.message_types_by_name['PauseCronReportResponse'] = _PAUSECRONREPORTRESPONSE
+DESCRIPTOR.message_types_by_name['ResumeCronReportRequest'] = _RESUMECRONREPORTREQUEST
+DESCRIPTOR.message_types_by_name['ResumeCronReportResponse'] = _RESUMECRONREPORTRESPONSE
 DESCRIPTOR.message_types_by_name['RunCronReportRequest'] = _RUNCRONREPORTREQUEST
 DESCRIPTOR.message_types_by_name['RunCronReportResponse'] = _RUNCRONREPORTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -555,6 +687,34 @@ DeleteCronReportResponse = _reflection.GeneratedProtocolMessageType('DeleteCronR
   })
 _sym_db.RegisterMessage(DeleteCronReportResponse)
 
+PauseCronReportRequest = _reflection.GeneratedProtocolMessageType('PauseCronReportRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSECRONREPORTREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.cronreport.v1.cronreport_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest)
+  })
+_sym_db.RegisterMessage(PauseCronReportRequest)
+
+PauseCronReportResponse = _reflection.GeneratedProtocolMessageType('PauseCronReportResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSECRONREPORTRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.cronreport.v1.cronreport_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportResponse)
+  })
+_sym_db.RegisterMessage(PauseCronReportResponse)
+
+ResumeCronReportRequest = _reflection.GeneratedProtocolMessageType('ResumeCronReportRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMECRONREPORTREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.cronreport.v1.cronreport_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest)
+  })
+_sym_db.RegisterMessage(ResumeCronReportRequest)
+
+ResumeCronReportResponse = _reflection.GeneratedProtocolMessageType('ResumeCronReportResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMECRONREPORTRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.cronreport.v1.cronreport_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportResponse)
+  })
+_sym_db.RegisterMessage(ResumeCronReportResponse)
+
 RunCronReportRequest = _reflection.GeneratedProtocolMessageType('RunCronReportRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNCRONREPORTREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.cronreport.v1.cronreport_pb2'
@@ -580,8 +740,8 @@ _CRONREPORTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1240,
-  serialized_end=2522,
+  serialized_start=1414,
+  serialized_end=3130,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCronReports',
@@ -641,6 +801,26 @@ _CRONREPORTSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RUNCRONREPORTREQUEST,
     output_type=_RUNCRONREPORTRESPONSE,
     serialized_options=b'\202\323\344\223\002\034\"\032/v1/cronreports/{name}:run',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PauseCronReport',
+    full_name='github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.PauseCronReport',
+    index=6,
+    containing_service=None,
+    input_type=_PAUSECRONREPORTREQUEST,
+    output_type=_PAUSECRONREPORTRESPONSE,
+    serialized_options=b'\202\323\344\223\002\036\"\034/v1/cronreports/{name}:pause',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ResumeCronReport',
+    full_name='github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.ResumeCronReport',
+    index=7,
+    containing_service=None,
+    input_type=_RESUMECRONREPORTREQUEST,
+    output_type=_RESUMECRONREPORTRESPONSE,
+    serialized_options=b'\202\323\344\223\002\037\"\035/v1/cronreports/{name}:resume',
     create_key=_descriptor._internal_create_key,
   ),
 ])

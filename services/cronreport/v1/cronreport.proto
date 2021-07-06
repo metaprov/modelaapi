@@ -52,6 +52,26 @@ message DeleteCronReportResponse {
 
 }
 
+message PauseCronReportRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseCronReportResponse {
+
+}
+
+message ResumeCronReportRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeCronReportResponse {
+
+}
+
+
+
 message RunCronReportRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
@@ -93,6 +113,16 @@ service CronReportService {
     rpc RunReport(RunCronReportRequest) returns (RunCronReportResponse) {
         option (google.api.http).post = "/v1/cronreports/{name}:run";
     }
+
+    rpc PauseCronReport(PauseCronReportRequest) returns (PauseCronReportResponse) {
+        option (google.api.http).post = "/v1/cronreports/{name}:pause";
+    }
+
+    rpc ResumeCronReport(ResumeCronReportRequest) returns (ResumeCronReportResponse) {
+        option (google.api.http).post = "/v1/cronreports/{name}:resume";
+    }
+
+ 
   
 
 }

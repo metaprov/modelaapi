@@ -44,6 +44,16 @@ class CronReportServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportResponse.FromString,
                 )
+        self.PauseCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportResponse.FromString,
+                )
+        self.ResumeCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportResponse.FromString,
+                )
 
 
 class CronReportServiceServicer(object):
@@ -85,6 +95,18 @@ class CronReportServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CronReportServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,6 +139,16 @@ def add_CronReportServiceServicer_to_server(servicer, server):
                     servicer.RunReport,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportResponse.SerializeToString,
+            ),
+            'PauseCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportResponse.SerializeToString,
+            ),
+            'ResumeCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -227,5 +259,39 @@ class CronReportService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/RunReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.RunCronReportResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.PauseCronReportResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronreport_dot_v1_dot_cronreport__pb2.ResumeCronReportResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

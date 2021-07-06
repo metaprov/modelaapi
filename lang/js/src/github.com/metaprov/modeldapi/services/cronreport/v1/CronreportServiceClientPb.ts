@@ -275,5 +275,85 @@ export class CronReportServiceClient {
     this.methodInfoRunReport);
   }
 
+  methodInfoPauseCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse,
+    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse.deserializeBinary
+  );
+
+  pauseCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
+
+  pauseCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
+
+  pauseCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+        request,
+        metadata || {},
+        this.methodInfoPauseCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+    request,
+    metadata || {},
+    this.methodInfoPauseCronReport);
+  }
+
+  methodInfoResumeCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse,
+    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse.deserializeBinary
+  );
+
+  resumeCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
+
+  resumeCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
+
+  resumeCronReport(
+    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+        request,
+        metadata || {},
+        this.methodInfoResumeCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+    request,
+    metadata || {},
+    this.methodInfoResumeCronReport);
+  }
+
 }
 

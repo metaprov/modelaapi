@@ -200,6 +200,78 @@ export namespace DeleteCronReportResponse {
   }
 }
 
+export class PauseCronReportRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PauseCronReportRequest;
+
+  getName(): string;
+  setName(value: string): PauseCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseCronReportRequest): PauseCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: PauseCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseCronReportRequest;
+  static deserializeBinaryFromReader(message: PauseCronReportRequest, reader: jspb.BinaryReader): PauseCronReportRequest;
+}
+
+export namespace PauseCronReportRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class PauseCronReportResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseCronReportResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseCronReportResponse): PauseCronReportResponse.AsObject;
+  static serializeBinaryToWriter(message: PauseCronReportResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseCronReportResponse;
+  static deserializeBinaryFromReader(message: PauseCronReportResponse, reader: jspb.BinaryReader): PauseCronReportResponse;
+}
+
+export namespace PauseCronReportResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResumeCronReportRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ResumeCronReportRequest;
+
+  getName(): string;
+  setName(value: string): ResumeCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeCronReportRequest): ResumeCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: ResumeCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeCronReportRequest;
+  static deserializeBinaryFromReader(message: ResumeCronReportRequest, reader: jspb.BinaryReader): ResumeCronReportRequest;
+}
+
+export namespace ResumeCronReportRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ResumeCronReportResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeCronReportResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeCronReportResponse): ResumeCronReportResponse.AsObject;
+  static serializeBinaryToWriter(message: ResumeCronReportResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeCronReportResponse;
+  static deserializeBinaryFromReader(message: ResumeCronReportResponse, reader: jspb.BinaryReader): ResumeCronReportResponse;
+}
+
+export namespace ResumeCronReportResponse {
+  export type AsObject = {
+  }
+}
+
 export class RunCronReportRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): RunCronReportRequest;
