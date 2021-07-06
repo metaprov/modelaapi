@@ -64,32 +64,6 @@ export namespace BotChannelSpec {
   }
 }
 
-export class BucketChannelSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): BucketChannelSpec;
-
-  getDatabaseconnectionname(): string;
-  setDatabaseconnectionname(value: string): BucketChannelSpec;
-
-  getInputkey(): string;
-  setInputkey(value: string): BucketChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BucketChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: BucketChannelSpec): BucketChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: BucketChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BucketChannelSpec;
-  static deserializeBinaryFromReader(message: BucketChannelSpec, reader: jspb.BinaryReader): BucketChannelSpec;
-}
-
-export namespace BucketChannelSpec {
-  export type AsObject = {
-    connectionname: string,
-    databaseconnectionname: string,
-    inputkey: string,
-  }
-}
-
 export class ChannelStatus extends jspb.Message {
   getName(): string;
   setName(value: string): ChannelStatus;
@@ -468,6 +442,32 @@ export namespace CurtainTemplateSpec {
   }
 }
 
+export class FlatFileChannelSpec extends jspb.Message {
+  getConnectionname(): string;
+  setConnectionname(value: string): FlatFileChannelSpec;
+
+  getDatabaseconnectionname(): string;
+  setDatabaseconnectionname(value: string): FlatFileChannelSpec;
+
+  getInputkey(): string;
+  setInputkey(value: string): FlatFileChannelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlatFileChannelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FlatFileChannelSpec): FlatFileChannelSpec.AsObject;
+  static serializeBinaryToWriter(message: FlatFileChannelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlatFileChannelSpec;
+  static deserializeBinaryFromReader(message: FlatFileChannelSpec, reader: jspb.BinaryReader): FlatFileChannelSpec;
+}
+
+export namespace FlatFileChannelSpec {
+  export type AsObject = {
+    connectionname: string,
+    databaseconnectionname: string,
+    inputkey: string,
+  }
+}
+
 export class ModelRecord extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelRecord;
@@ -659,10 +659,10 @@ export class PredictionChannel extends jspb.Message {
   hasBot(): boolean;
   clearBot(): PredictionChannel;
 
-  getBucket(): BucketChannelSpec | undefined;
-  setBucket(value?: BucketChannelSpec): PredictionChannel;
-  hasBucket(): boolean;
-  clearBucket(): PredictionChannel;
+  getFlatfile(): FlatFileChannelSpec | undefined;
+  setFlatfile(value?: FlatFileChannelSpec): PredictionChannel;
+  hasFlatfile(): boolean;
+  clearFlatfile(): PredictionChannel;
 
   getStreaming(): StreamingChannelSpec | undefined;
   setStreaming(value?: StreamingChannelSpec): PredictionChannel;
@@ -681,7 +681,7 @@ export namespace PredictionChannel {
   export type AsObject = {
     table?: TableChannelSpec.AsObject,
     bot?: BotChannelSpec.AsObject,
-    bucket?: BucketChannelSpec.AsObject,
+    flatfile?: FlatFileChannelSpec.AsObject,
     streaming?: StreamingChannelSpec.AsObject,
   }
 }

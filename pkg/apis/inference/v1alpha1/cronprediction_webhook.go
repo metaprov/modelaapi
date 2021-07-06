@@ -41,11 +41,11 @@ func (run *CronPrediction) ManifestUri() string {
 }
 
 func (run *CronPrediction) InputKey() string {
-	return run.Spec.Template.Spec.Input.Path
+	return run.Spec.Template.Spec.Input.FlatFile.Key
 }
 
 func (run *CronPrediction) OutputKey() string {
-	return run.Spec.Template.Spec.Output.Path
+	return run.Spec.Template.Spec.Output.FlatFile.Key
 }
 
 //==============================================================================

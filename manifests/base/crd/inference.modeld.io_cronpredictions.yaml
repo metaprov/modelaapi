@@ -122,7 +122,7 @@ spec:
                                   used by the prediction bot. Required
                                 type: string
                             type: object
-                          bucket:
+                          flatfile:
                             description: Bucket is a channel where predictions are
                               placed in a bucket folder and results are placed in
                               another folder
@@ -191,7 +191,7 @@ spec:
                                   used by the prediction bot. Required
                                 type: string
                             type: object
-                          bucket:
+                          flatfile:
                             description: Bucket is a channel where predictions are
                               placed in a bucket folder and results are placed in
                               another folder

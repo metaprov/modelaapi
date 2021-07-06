@@ -21,13 +21,13 @@ func (predictor *Predictor) Default() {
 		}
 	}
 
-	if predictor.Spec.Input.Online == nil {
-		predictor.Spec.Input.Online.Path = util.StrPtr("/predict")
+	if predictor.Spec.Path == nil {
+		predictor.Spec.Path = util.StrPtr("/predict")
 	}
 
-	if predictor.Spec.Input.Online.AccessType == nil {
+	if predictor.Spec.AccessType == nil {
 		defaultAccess := catalog.IngressAccessType
-		predictor.Spec.Input.Online.AccessType = &defaultAccess
+		predictor.Spec.AccessType = &defaultAccess
 	}
 
 	if predictor.Spec.Progressive == nil {

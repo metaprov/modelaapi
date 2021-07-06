@@ -61,22 +61,6 @@ message BotChannelSpec {
   optional string notifierName = 2;
 }
 
-// Look for prediction in a bucket key.
-// Request for prediction will be placed in the key.
-// Result will be placed in the output bucket
-message BucketChannelSpec {
-  // the connection to the cloud provider
-  // Required,
-  optional string connectionName = 1;
-
-  // Required,
-  optional string databaseConnectionName = 2;
-
-  // The location of the input or the output
-  // Required,
-  optional string inputKey = 3;
-}
-
 message ChannelStatus {
   optional string name = 1;
 
@@ -280,6 +264,22 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
+// Look for prediction in a flat file key.
+// Request for prediction will be placed in the key.
+// Result will be placed in the output bucket
+message FlatFileChannelSpec {
+  // the connection to the cloud provider
+  // Required,
+  optional string connectionName = 1;
+
+  // Required,
+  optional string databaseConnectionName = 2;
+
+  // The location of the input or the output
+  // Required,
+  optional string inputKey = 3;
+}
+
 // Model Record hold the state of a model that was in production. This support roll back of a model.
 message ModelRecord {
   // Model Name is the name of the model
@@ -391,19 +391,19 @@ message PredictionCacheSpec {
 message PredictionChannel {
   // Table is a channel that uses RDBMS for input and output
   // +kubebuilder:validation:Optional
-  optional TableChannelSpec table = 2;
+  optional TableChannelSpec table = 1;
 
   // Bot is a channel that uses chats for input and output
   // +kubebuilder:validation:Optional
-  optional BotChannelSpec bot = 3;
+  optional BotChannelSpec bot = 2;
 
   // Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
   // +kubebuilder:validation:Optional
-  optional BucketChannelSpec bucket = 4;
+  optional FlatFileChannelSpec flatfile = 3;
 
   // Define a streaming channel for the predictor
   // +kubebuilder:validation:Optional
-  optional StreamingChannelSpec streaming = 5;
+  optional StreamingChannelSpec streaming = 4;
 }
 
 // PredictionCondition describes the state of PredictionTemplate

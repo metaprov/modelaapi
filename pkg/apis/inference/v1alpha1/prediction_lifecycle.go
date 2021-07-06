@@ -39,11 +39,11 @@ func (prediction *Prediction) ManifestUri() string {
 }
 
 func (prediction *Prediction) InputKey() string {
-	return prediction.Spec.Input.Path
+	return prediction.Spec.Input.FlatFile.Key
 }
 
 func (prediction *Prediction) OutputKey() string {
-	return prediction.Spec.Output.Path
+	return prediction.Spec.Output.FlatFile.Key
 }
 
 //==============================================================================

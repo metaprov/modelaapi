@@ -154,16 +154,16 @@ type PredictionStatus struct {
 type PredictionChannel struct {
 	// Table is a channel that uses RDBMS for input and output
 	// +kubebuilder:validation:Optional
-	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
+	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,1,opt,name=table"`
 	// Bot is a channel that uses chats for input and output
 	// +kubebuilder:validation:Optional
-	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,3,opt,name=bot"`
+	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,2,opt,name=bot"`
 	// Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
 	// +kubebuilder:validation:Optional
-	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,4,opt,name=bucket"`
+	FlatFile *FlatFileChannelSpec `json:"flatfile,omitempty" protobuf:"bytes,3,opt,name=flatfile"`
 	// Define a streaming channel for the predictor
 	// +kubebuilder:validation:Optional
-	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,5,opt,name=streaming"`
+	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,4,opt,name=streaming"`
 }
 
 type StreamingChannelSpec struct {
@@ -196,10 +196,10 @@ type BotChannelSpec struct {
 	NotifierName string `json:"notifierName,omitempty" protobuf:"bytes,2,opt,name=notifierName"`
 }
 
-// Look for prediction in a bucket key.
+// Look for prediction in a flat file key.
 // Request for prediction will be placed in the key.
 // Result will be placed in the output bucket
-type BucketChannelSpec struct {
+type FlatFileChannelSpec struct {
 	// the connection to the cloud provider
 	// Required,
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
