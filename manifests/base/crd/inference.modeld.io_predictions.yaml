@@ -113,11 +113,11 @@ spec:
                     description: Bucket is a channel where predictions are placed
                       in a bucket folder and results are placed in another folder
                     properties:
+                      bucketName:
+                        description: Required,
+                        type: string
                       connectionName:
                         description: the connection to the cloud provider Required,
-                        type: string
-                      databaseConnectionName:
-                        description: Required,
                         type: string
                       inputKey:
                         description: The location of the input or the output Required,
@@ -176,11 +176,11 @@ spec:
                     description: Bucket is a channel where predictions are placed
                       in a bucket folder and results are placed in another folder
                     properties:
+                      bucketName:
+                        description: Required,
+                        type: string
                       connectionName:
                         description: the connection to the cloud provider Required,
-                        type: string
-                      databaseConnectionName:
-                        description: Required,
                         type: string
                       inputKey:
                         description: The location of the input or the output Required,

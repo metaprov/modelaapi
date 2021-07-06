@@ -446,8 +446,8 @@ export class FlatFileChannelSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): FlatFileChannelSpec;
 
-  getDatabaseconnectionname(): string;
-  setDatabaseconnectionname(value: string): FlatFileChannelSpec;
+  getBucketname(): string;
+  setBucketname(value: string): FlatFileChannelSpec;
 
   getInputkey(): string;
   setInputkey(value: string): FlatFileChannelSpec;
@@ -463,7 +463,7 @@ export class FlatFileChannelSpec extends jspb.Message {
 export namespace FlatFileChannelSpec {
   export type AsObject = {
     connectionname: string,
-    databaseconnectionname: string,
+    bucketname: string,
     inputkey: string,
   }
 }

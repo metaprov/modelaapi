@@ -273,7 +273,7 @@ message FlatFileChannelSpec {
   optional string connectionName = 1;
 
   // Required,
-  optional string databaseConnectionName = 2;
+  optional string bucketName = 2;
 
   // The location of the input or the output
   // Required,

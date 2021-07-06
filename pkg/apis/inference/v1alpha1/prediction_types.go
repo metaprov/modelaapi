@@ -204,7 +204,7 @@ type FlatFileChannelSpec struct {
 	// Required,
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// Required,
-	BucketName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,2,opt,name=databaseConnectionName"`
+	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
 	// The location of the input or the output
 	// Required,
 	Key string `json:"inputKey,omitempty" protobuf:"bytes,3,opt,name=inputKey"`
