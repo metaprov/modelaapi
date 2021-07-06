@@ -88,6 +88,9 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
+	// Paused request the labeling pipeline to suspend
+	// +kubebuilder:default:=600
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,10,opt,name=paused"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

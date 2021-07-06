@@ -72,6 +72,10 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
+              paused:
+                default: 600
+                description: Paused request the labeling pipeline to suspend
+                type: boolean
               recipeNames:
                 description: The recipe for this pipeline.
                 items:

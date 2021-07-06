@@ -3195,6 +3195,9 @@ export class LabelingPipelineSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): LabelingPipelineSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): LabelingPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineSpec): LabelingPipelineSpec.AsObject;
@@ -3214,6 +3217,7 @@ export namespace LabelingPipelineSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
+    paused: boolean,
   }
 }
 

@@ -2063,6 +2063,10 @@ message LabelingPipelineSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 9;
+
+  // Paused request the labeling pipeline to suspend
+  // +kubebuilder:default:=600
+  optional bool paused = 10;
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

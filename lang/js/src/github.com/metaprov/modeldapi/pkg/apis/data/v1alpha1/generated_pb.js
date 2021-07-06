@@ -32077,7 +32077,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    activedeadlineseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -32152,6 +32153,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -32240,6 +32245,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
   if (f != null) {
     writer.writeInt64(
       9,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -32555,6 +32567,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool paused = 10;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
