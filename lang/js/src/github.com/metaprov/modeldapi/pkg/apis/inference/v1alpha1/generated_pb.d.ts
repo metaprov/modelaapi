@@ -1,7 +1,6 @@
 import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
@@ -75,9 +74,6 @@ export class BucketChannelSpec extends jspb.Message {
   getInputkey(): string;
   setInputkey(value: string): BucketChannelSpec;
 
-  getScaninterval(): number;
-  setScaninterval(value: number): BucketChannelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BucketChannelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: BucketChannelSpec): BucketChannelSpec.AsObject;
@@ -91,7 +87,6 @@ export namespace BucketChannelSpec {
     connectionname: string,
     databaseconnectionname: string,
     inputkey: string,
-    scaninterval: number,
   }
 }
 
@@ -577,32 +572,6 @@ export namespace MonitorStatus {
   }
 }
 
-export class OnlineChannelSpec extends jspb.Message {
-  getPort(): number;
-  setPort(value: number): OnlineChannelSpec;
-
-  getPath(): string;
-  setPath(value: string): OnlineChannelSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): OnlineChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OnlineChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: OnlineChannelSpec): OnlineChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: OnlineChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OnlineChannelSpec;
-  static deserializeBinaryFromReader(message: OnlineChannelSpec, reader: jspb.BinaryReader): OnlineChannelSpec;
-}
-
-export namespace OnlineChannelSpec {
-  export type AsObject = {
-    port: number,
-    path: string,
-    accesstype: string,
-  }
-}
-
 export class OnlineFeaturestoreSpec extends jspb.Message {
   getActive(): boolean;
   setActive(value: boolean): OnlineFeaturestoreSpec;
@@ -679,43 +648,37 @@ export namespace PredictionCacheSpec {
   }
 }
 
-export class PredictionChannels extends jspb.Message {
-  getOnline(): OnlineChannelSpec | undefined;
-  setOnline(value?: OnlineChannelSpec): PredictionChannels;
-  hasOnline(): boolean;
-  clearOnline(): PredictionChannels;
-
+export class PredictionChannel extends jspb.Message {
   getTable(): TableChannelSpec | undefined;
-  setTable(value?: TableChannelSpec): PredictionChannels;
+  setTable(value?: TableChannelSpec): PredictionChannel;
   hasTable(): boolean;
-  clearTable(): PredictionChannels;
+  clearTable(): PredictionChannel;
 
   getBot(): BotChannelSpec | undefined;
-  setBot(value?: BotChannelSpec): PredictionChannels;
+  setBot(value?: BotChannelSpec): PredictionChannel;
   hasBot(): boolean;
-  clearBot(): PredictionChannels;
+  clearBot(): PredictionChannel;
 
   getBucket(): BucketChannelSpec | undefined;
-  setBucket(value?: BucketChannelSpec): PredictionChannels;
+  setBucket(value?: BucketChannelSpec): PredictionChannel;
   hasBucket(): boolean;
-  clearBucket(): PredictionChannels;
+  clearBucket(): PredictionChannel;
 
   getStreaming(): StreamingChannelSpec | undefined;
-  setStreaming(value?: StreamingChannelSpec): PredictionChannels;
+  setStreaming(value?: StreamingChannelSpec): PredictionChannel;
   hasStreaming(): boolean;
-  clearStreaming(): PredictionChannels;
+  clearStreaming(): PredictionChannel;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionChannels.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionChannels): PredictionChannels.AsObject;
-  static serializeBinaryToWriter(message: PredictionChannels, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionChannels;
-  static deserializeBinaryFromReader(message: PredictionChannels, reader: jspb.BinaryReader): PredictionChannels;
+  toObject(includeInstance?: boolean): PredictionChannel.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictionChannel): PredictionChannel.AsObject;
+  static serializeBinaryToWriter(message: PredictionChannel, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictionChannel;
+  static deserializeBinaryFromReader(message: PredictionChannel, reader: jspb.BinaryReader): PredictionChannel;
 }
 
-export namespace PredictionChannels {
+export namespace PredictionChannel {
   export type AsObject = {
-    online?: OnlineChannelSpec.AsObject,
     table?: TableChannelSpec.AsObject,
     bot?: BotChannelSpec.AsObject,
     bucket?: BucketChannelSpec.AsObject,
@@ -798,13 +761,13 @@ export class PredictionSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): PredictionSpec;
 
-  getInput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
+  getInput(): PredictionChannel | undefined;
+  setInput(value?: PredictionChannel): PredictionSpec;
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
-  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
+  getOutput(): PredictionChannel | undefined;
+  setOutput(value?: PredictionChannel): PredictionSpec;
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
@@ -851,8 +814,8 @@ export namespace PredictionSpec {
     predictorname: string,
     labeled: boolean,
     datasetname: string,
-    input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    input?: PredictionChannel.AsObject,
+    output?: PredictionChannel.AsObject,
     testsList: Array<string>,
     owner: string,
     workloadclassname: string,
@@ -1100,15 +1063,14 @@ export class PredictorSpec extends jspb.Message {
   getArtifactsfolder(): string;
   setArtifactsfolder(value: string): PredictorSpec;
 
-  getInput(): PredictionChannels | undefined;
-  setInput(value?: PredictionChannels): PredictorSpec;
-  hasInput(): boolean;
-  clearInput(): PredictorSpec;
+  getPort(): number;
+  setPort(value: number): PredictorSpec;
 
-  getOutput(): PredictionChannels | undefined;
-  setOutput(value?: PredictionChannels): PredictorSpec;
-  hasOutput(): boolean;
-  clearOutput(): PredictorSpec;
+  getPath(): string;
+  setPath(value: string): PredictorSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): PredictorSpec;
 
   getReplicas(): number;
   setReplicas(value: number): PredictorSpec;
@@ -1166,8 +1128,9 @@ export namespace PredictorSpec {
     modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,
-    input?: PredictionChannels.AsObject,
-    output?: PredictionChannels.AsObject,
+    port: number,
+    path: string,
+    accesstype: string,
     replicas: number,
     autoscaling?: AutoScaling.AsObject,
     owner: string,
@@ -1315,9 +1278,6 @@ export class TableChannelSpec extends jspb.Message {
   getTablename(): string;
   setTablename(value: string): TableChannelSpec;
 
-  getScaninterval(): number;
-  setScaninterval(value: number): TableChannelSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TableChannelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TableChannelSpec): TableChannelSpec.AsObject;
@@ -1331,7 +1291,6 @@ export namespace TableChannelSpec {
     connectionname: string,
     datasourcename: string,
     tablename: string,
-    scaninterval: number,
   }
 }
 

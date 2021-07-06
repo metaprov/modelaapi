@@ -98,18 +98,60 @@ spec:
                 description: Input is the location of the input file if not using
                   a dataset
                 properties:
-                  bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
-                    type: string
-                  datasourceName:
-                    default: ""
-                    description: Datasource name is a pointer to a data source for
-                      cases that the data location is not a simple bucket but a database
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
+                  bot:
+                    description: Bot is a channel that uses chats for input and output
+                    properties:
+                      connectionName:
+                        description: the connection to the messaging provider Required,
+                        type: string
+                      notifierName:
+                        description: The name of the notifier that will be used by
+                          the prediction bot. Required
+                        type: string
+                    type: object
+                  bucket:
+                    description: Bucket is a channel where predictions are placed
+                      in a bucket folder and results are placed in another folder
+                    properties:
+                      connectionName:
+                        description: the connection to the cloud provider Required,
+                        type: string
+                      databaseConnectionName:
+                        description: Required,
+                        type: string
+                      inputKey:
+                        description: The location of the input or the output Required,
+                        type: string
+                    type: object
+                  streaming:
+                    description: Define a streaming channel for the predictor
+                    properties:
+                      connectionName:
+                        description: StorageConnection name to the streaming provider
+                        type: string
+                      inputKey:
+                        default: ""
+                        description: the streaming topic (input or output)
+                        type: string
+                    type: object
+                  table:
+                    description: Table is a channel that uses RDBMS for input and
+                      output
+                    properties:
+                      connectionName:
+                        description: connection to the database provider
+                        type: string
+                      datasourceName:
+                        default: ""
+                        description: Options, this is the datasource containing the
+                          table schema
+                        type: string
+                      tableName:
+                        default: ""
+                        description: The table name. Optional Default to the predictor
+                          name
+                        type: string
+                    type: object
                 type: object
               labeled:
                 default: false
@@ -119,18 +161,60 @@ spec:
               output:
                 description: Output is the location of the output file.
                 properties:
-                  bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
-                    type: string
-                  datasourceName:
-                    default: ""
-                    description: Datasource name is a pointer to a data source for
-                      cases that the data location is not a simple bucket but a database
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
+                  bot:
+                    description: Bot is a channel that uses chats for input and output
+                    properties:
+                      connectionName:
+                        description: the connection to the messaging provider Required,
+                        type: string
+                      notifierName:
+                        description: The name of the notifier that will be used by
+                          the prediction bot. Required
+                        type: string
+                    type: object
+                  bucket:
+                    description: Bucket is a channel where predictions are placed
+                      in a bucket folder and results are placed in another folder
+                    properties:
+                      connectionName:
+                        description: the connection to the cloud provider Required,
+                        type: string
+                      databaseConnectionName:
+                        description: Required,
+                        type: string
+                      inputKey:
+                        description: The location of the input or the output Required,
+                        type: string
+                    type: object
+                  streaming:
+                    description: Define a streaming channel for the predictor
+                    properties:
+                      connectionName:
+                        description: StorageConnection name to the streaming provider
+                        type: string
+                      inputKey:
+                        default: ""
+                        description: the streaming topic (input or output)
+                        type: string
+                    type: object
+                  table:
+                    description: Table is a channel that uses RDBMS for input and
+                      output
+                    properties:
+                      connectionName:
+                        description: connection to the database provider
+                        type: string
+                      datasourceName:
+                        default: ""
+                        description: Options, this is the datasource containing the
+                          table schema
+                        type: string
+                      tableName:
+                        default: ""
+                        description: The table name. Optional Default to the predictor
+                          name
+                        type: string
+                    type: object
                 type: object
               owner:
                 default: no-one

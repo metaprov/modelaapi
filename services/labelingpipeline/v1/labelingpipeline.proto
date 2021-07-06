@@ -52,6 +52,23 @@ message DeleteLabelingPipelineResponse {
 
 }
 
+message PauseLabelingPipelineResponse {
+}
+
+message PauseLabelingPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeLabelingPipelineResponse {
+}
+
+message ResumeLabelingPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
 
 service LabelingPipelineService {
     rpc ListLabelingPipelines(ListLabelingPipelineRequest) returns (ListLabelingPipelineResponse) {
@@ -77,4 +94,19 @@ service LabelingPipelineService {
     }
 
     rpc DeleteLabelingPipeline(DeleteLabelingPipelineRequest) returns (DeleteLabelingPipelineResponse) {}
+
+    rpc PauseLabelingPipeline(PauseLabelingPipelineRequest) returns (PauseLabelingPipelineResponse) {
+        option (google.api.http) = {
+			put: "/v1/labelpipelines/{label.metadata.name}:pause"
+			body: "*"
+		};
+    }
+
+    rpc ResumeLabelingPipeline(ResumeLabelingPipelineRequest) returns (ResumeLabelingPipelineResponse) {
+        option (google.api.http) = {
+			put: "/v1/labelpipelines/{label.metadata.name}:resume"
+			body: "*"
+		};
+    }
+
 }

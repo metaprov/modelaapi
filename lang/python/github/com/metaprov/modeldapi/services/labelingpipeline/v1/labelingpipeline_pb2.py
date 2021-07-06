@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modeldapi/services/labelingpipeline/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modeldapi/services/labelingpipeline/v1/labelingpipeline.proto\x12:github.com.metaprov.modeldapi.services.labelingpipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xd4\x01\n\x1bListLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12s\n\x06labels\x18\x02 \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListLabelingPipelineResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineList\"u\n\x1d\x43reateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\" \n\x1e\x43reateLabelingPipelineResponse\"u\n\x1dUpdateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\" \n\x1eUpdateLabelingPipelineResponse\"=\n\x1aGetLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x1bGetLabelingPipelineResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteLabelingPipelineResponse2\xba\t\n\x17LabelingPipelineService\x12\xe6\x01\n\x15ListLabelingPipelines\x12W.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest\x1aX.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/labelpipelines\x12\xee\x01\n\x16\x43reateLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/labelpipelines:\x01*\x12\xe9\x01\n\x13GetLabelingPipeline\x12V.github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineRequest\x1aW.github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/labelpipelines/{name}\x12\x84\x02\n\x16UpdateLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/labelpipelines/{label.metadata.name}:\x01*\x12\xd1\x01\n\x16\x44\x65leteLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse\"\x00\x42<Z:github.com/metaprov/modeldapi/services/labelingpipeline/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modeldapi/services/labelingpipeline/v1/labelingpipeline.proto\x12:github.com.metaprov.modeldapi.services.labelingpipeline.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xd4\x01\n\x1bListLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12s\n\x06labels\x18\x02 \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x1cListLabelingPipelineResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineList\"u\n\x1d\x43reateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\" \n\x1e\x43reateLabelingPipelineResponse\"u\n\x1dUpdateLabelingPipelineRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\" \n\x1eUpdateLabelingPipelineResponse\"=\n\x1aGetLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x1bGetLabelingPipelineResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteLabelingPipelineResponse\"\x1f\n\x1dPauseLabelingPipelineResponse\"?\n\x1cPauseLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1eResumeLabelingPipelineResponse\"@\n\x1dResumeLabelingPipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xd2\r\n\x17LabelingPipelineService\x12\xe6\x01\n\x15ListLabelingPipelines\x12W.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest\x1aX.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/labelpipelines\x12\xee\x01\n\x16\x43reateLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/labelpipelines:\x01*\x12\xe9\x01\n\x13GetLabelingPipeline\x12V.github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineRequest\x1aW.github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/labelpipelines/{name}\x12\x84\x02\n\x16UpdateLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/labelpipelines/{label.metadata.name}:\x01*\x12\xd1\x01\n\x16\x44\x65leteLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse\"\x00\x12\x87\x02\n\x15PauseLabelingPipeline\x12X.github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest\x1aY.github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse\"9\x82\xd3\xe4\x93\x02\x33\x1a./v1/labelpipelines/{label.metadata.name}:pause:\x01*\x12\x8b\x02\n\x16ResumeLabelingPipeline\x12Y.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest\x1aZ.github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse\":\x82\xd3\xe4\x93\x02\x34\x1a//v1/labelpipelines/{label.metadata.name}:resume:\x01*B<Z:github.com/metaprov/modeldapi/services/labelingpipeline/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -392,6 +392,134 @@ _DELETELABELINGPIPELINERESPONSE = _descriptor.Descriptor(
   serialized_end=1182,
 )
 
+
+_PAUSELABELINGPIPELINERESPONSE = _descriptor.Descriptor(
+  name='PauseLabelingPipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1184,
+  serialized_end=1215,
+)
+
+
+_PAUSELABELINGPIPELINEREQUEST = _descriptor.Descriptor(
+  name='PauseLabelingPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1217,
+  serialized_end=1280,
+)
+
+
+_RESUMELABELINGPIPELINERESPONSE = _descriptor.Descriptor(
+  name='ResumeLabelingPipelineResponse',
+  full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1282,
+  serialized_end=1314,
+)
+
+
+_RESUMELABELINGPIPELINEREQUEST = _descriptor.Descriptor(
+  name='ResumeLabelingPipelineRequest',
+  full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1316,
+  serialized_end=1380,
+)
+
 _LISTLABELINGPIPELINEREQUEST_LABELSENTRY.containing_type = _LISTLABELINGPIPELINEREQUEST
 _LISTLABELINGPIPELINEREQUEST.fields_by_name['labels'].message_type = _LISTLABELINGPIPELINEREQUEST_LABELSENTRY
 _LISTLABELINGPIPELINERESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._LABELINGPIPELINELIST
@@ -408,6 +536,10 @@ DESCRIPTOR.message_types_by_name['GetLabelingPipelineRequest'] = _GETLABELINGPIP
 DESCRIPTOR.message_types_by_name['GetLabelingPipelineResponse'] = _GETLABELINGPIPELINERESPONSE
 DESCRIPTOR.message_types_by_name['DeleteLabelingPipelineRequest'] = _DELETELABELINGPIPELINEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteLabelingPipelineResponse'] = _DELETELABELINGPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['PauseLabelingPipelineResponse'] = _PAUSELABELINGPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['PauseLabelingPipelineRequest'] = _PAUSELABELINGPIPELINEREQUEST
+DESCRIPTOR.message_types_by_name['ResumeLabelingPipelineResponse'] = _RESUMELABELINGPIPELINERESPONSE
+DESCRIPTOR.message_types_by_name['ResumeLabelingPipelineRequest'] = _RESUMELABELINGPIPELINEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListLabelingPipelineRequest = _reflection.GeneratedProtocolMessageType('ListLabelingPipelineRequest', (_message.Message,), {
@@ -488,6 +620,34 @@ DeleteLabelingPipelineResponse = _reflection.GeneratedProtocolMessageType('Delet
   })
 _sym_db.RegisterMessage(DeleteLabelingPipelineResponse)
 
+PauseLabelingPipelineResponse = _reflection.GeneratedProtocolMessageType('PauseLabelingPipelineResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSELABELINGPIPELINERESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.labelingpipeline.v1.labelingpipeline_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse)
+  })
+_sym_db.RegisterMessage(PauseLabelingPipelineResponse)
+
+PauseLabelingPipelineRequest = _reflection.GeneratedProtocolMessageType('PauseLabelingPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSELABELINGPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.labelingpipeline.v1.labelingpipeline_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest)
+  })
+_sym_db.RegisterMessage(PauseLabelingPipelineRequest)
+
+ResumeLabelingPipelineResponse = _reflection.GeneratedProtocolMessageType('ResumeLabelingPipelineResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMELABELINGPIPELINERESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.labelingpipeline.v1.labelingpipeline_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse)
+  })
+_sym_db.RegisterMessage(ResumeLabelingPipelineResponse)
+
+ResumeLabelingPipelineRequest = _reflection.GeneratedProtocolMessageType('ResumeLabelingPipelineRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMELABELINGPIPELINEREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.labelingpipeline.v1.labelingpipeline_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest)
+  })
+_sym_db.RegisterMessage(ResumeLabelingPipelineRequest)
+
 
 DESCRIPTOR._options = None
 _LISTLABELINGPIPELINEREQUEST_LABELSENTRY._options = None
@@ -499,8 +659,8 @@ _LABELINGPIPELINESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1185,
-  serialized_end=2395,
+  serialized_start=1383,
+  serialized_end=3129,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListLabelingPipelines',
@@ -550,6 +710,26 @@ _LABELINGPIPELINESERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETELABELINGPIPELINEREQUEST,
     output_type=_DELETELABELINGPIPELINERESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='PauseLabelingPipeline',
+    full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.PauseLabelingPipeline',
+    index=5,
+    containing_service=None,
+    input_type=_PAUSELABELINGPIPELINEREQUEST,
+    output_type=_PAUSELABELINGPIPELINERESPONSE,
+    serialized_options=b'\202\323\344\223\0023\032./v1/labelpipelines/{label.metadata.name}:pause:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ResumeLabelingPipeline',
+    full_name='github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.ResumeLabelingPipeline',
+    index=6,
+    containing_service=None,
+    input_type=_RESUMELABELINGPIPELINEREQUEST,
+    output_type=_RESUMELABELINGPIPELINERESPONSE,
+    serialized_options=b'\202\323\344\223\0024\032//v1/labelpipelines/{label.metadata.name}:resume:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])

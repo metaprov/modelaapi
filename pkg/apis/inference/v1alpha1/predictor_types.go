@@ -119,19 +119,29 @@ type PredictorSpec struct {
 	ArtifactsFolder *string `json:"artifactsFolder,omitempty" protobuf:"bytes,8,opt,name=artifactsFolder"`
 	// set of input channel, the predictor will watch those channels for predictions
 	// +kubebuilder:validation:Optional
-	Input PredictionChannels `json:"input,omitempty" protobuf:"bytes,9,opt,name=input"`
-	// set of output channels, the predictor will output the result on any channel that is active in the output
+	// Service port specify the predictor port.
+	// Default: 8080
 	// +kubebuilder:validation:Optional
-	Output PredictionChannels `json:"output,omitempty" protobuf:"bytes,10,opt,name=output"`
+	// +kubebuilder:validation:Minimum=0
+	Port *int32 `json:"port,omitempty" protobuf:"varint,9,opt,name=port"`
+	// This is the path relative to the ingress path
+	// +kubebuilder:validation:MaxLength=256
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	Path *string `json:"path,omitempty" protobuf:"bytes,10,opt,name=path"`
+	// The access method specified how external clients will access the predictor
+	// Default: ClusterPort
+	// +kubebuilder:validation:Optional
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,11,opt,name=accessType"`
 	// Replicas defines the number of replicas when auto scaling is disabled.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Maximum=10
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:default:=1
-	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,11,opt,name=replicas"`
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,12,opt,name=replicas"`
 	// AutoScaling defines the auto scaling policy
 	// +kubebuilder:validation:Optional
-	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,12,opt,name=autoScaling"`
+	AutoScaling AutoScaling `json:"autoScaling,omitempty" protobuf:"bytes,13,opt,name=autoScaling"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -254,90 +264,6 @@ type PredictorHealth struct {
 	MedianResponseTime int32 `json:"medianResponseTime,omitempty" protobuf:"varint,4,opt,name=medianResponseTime"`
 	// Last 7 days predictions
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,5,rep,name=lastDailyPredictions"`
-}
-
-// The specific of a prediction channel
-type PredictionChannels struct {
-	// Online is a  deployment of the predictor as a microservice.
-	// +kubebuilder:validation:Optional
-	Online *OnlineChannelSpec `json:"online,omitempty" protobuf:"bytes,1,opt,name=online"`
-	// Table is a channel that uses RDBMS for input and output
-	// +kubebuilder:validation:Optional
-	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
-	// Bot is a channel that uses chats for input and output
-	// +kubebuilder:validation:Optional
-	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,3,opt,name=bot"`
-	// Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
-	// +kubebuilder:validation:Optional
-	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,4,opt,name=bucket"`
-	// Define a streaming channel for the predictor
-	// +kubebuilder:validation:Optional
-	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,5,opt,name=streaming"`
-}
-
-type OnlineChannelSpec struct {
-	// Service port specify the predictor port.
-	// Default: 8080
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=0
-	Port *int32 `json:"port,omitempty" protobuf:"varint,1,opt,name=port"`
-	// This is the path relative to the ingress path
-	// +kubebuilder:validation:MaxLength=256
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=""
-	Path *string `json:"path,omitempty" protobuf:"bytes,2,opt,name=path"`
-	// The access method specified how external clients will access the predictor
-	// Default: ClusterPort
-	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,3,opt,name=accessType"`
-}
-
-type StreamingChannelSpec struct {
-	// StorageConnection name to the streaming provider
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// the streaming topic (input or output)
-	// +kubebuilder:default:=""
-	Topic *string `json:"inputKey,omitempty" protobuf:"bytes,2,opt,name=inputKey"`
-}
-
-// A prediction table describes a dataset and a table that will be used to enter unseen data, and get prediction
-type TableChannelSpec struct {
-	// connection to the database provider
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Options, this is the datasource containing the table schema
-	// +kubebuilder:default:=""
-	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,2,opt,name=datasourceName"`
-	// The table name. Optional
-	// Default to the predictor name
-	// +kubebuilder:default:=""
-	TableName *string `json:"tableName,omitempty" protobuf:"bytes,3,opt,name=tableName"`
-	// In seconds, the interval.
-	ScanInterval *int32 `json:"scanInterval,omitempty" protobuf:"varint,4,opt,name=scanInterval"`
-}
-
-type BotChannelSpec struct {
-	// the connection to the messaging provider
-	// Required,
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// The name of the notifier that will be used by the prediction bot.
-	// Required
-	NotifierName string `json:"notifierName,omitempty" protobuf:"bytes,2,opt,name=notifierName"`
-}
-
-// Look for prediction in a bucket key.
-// Request for prediction will be placed in the key.
-// Result will be placed in the output bucket
-type BucketChannelSpec struct {
-	// the connection to the cloud provider
-	// Required,
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Required,
-	BucketName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,2,opt,name=databaseConnectionName"`
-	// The location of the input or the output
-	// Required,
-	Key string `json:"inputKey,omitempty" protobuf:"bytes,3,opt,name=inputKey"`
-	// In seconds, the interval.
-	ScanInterval int32 `json:"scanInterval,omitempty" protobuf:"varint,4,opt,name=scanInterval"`
 }
 
 type ChannelStatus struct {

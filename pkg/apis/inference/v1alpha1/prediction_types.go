@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -90,10 +89,10 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
-	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
+	Input *PredictionChannel `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
-	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	Output *PredictionChannel `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
 	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,rep,name=tests"`
 	// The owner account name
@@ -149,4 +148,64 @@ type PredictionStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+}
+
+// The specific of a prediction channel
+type PredictionChannel struct {
+	// Table is a channel that uses RDBMS for input and output
+	// +kubebuilder:validation:Optional
+	Table *TableChannelSpec `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
+	// Bot is a channel that uses chats for input and output
+	// +kubebuilder:validation:Optional
+	Bot *BotChannelSpec `json:"bot,omitempty" protobuf:"bytes,3,opt,name=bot"`
+	// Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
+	// +kubebuilder:validation:Optional
+	Bucket *BucketChannelSpec `json:"bucket,omitempty" protobuf:"bytes,4,opt,name=bucket"`
+	// Define a streaming channel for the predictor
+	// +kubebuilder:validation:Optional
+	Streaming *StreamingChannelSpec `json:"streaming,omitempty" protobuf:"bytes,5,opt,name=streaming"`
+}
+
+type StreamingChannelSpec struct {
+	// StorageConnection name to the streaming provider
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
+	// the streaming topic (input or output)
+	// +kubebuilder:default:=""
+	Topic *string `json:"inputKey,omitempty" protobuf:"bytes,2,opt,name=inputKey"`
+}
+
+// A prediction table describes a dataset and a table that will be used to enter unseen data, and get prediction
+type TableChannelSpec struct {
+	// connection to the database provider
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
+	// Options, this is the datasource containing the table schema
+	// +kubebuilder:default:=""
+	DataSourceName *string `json:"datasourceName,omitempty" protobuf:"bytes,2,opt,name=datasourceName"`
+	// The table name. Optional
+	// Default to the predictor name
+	// +kubebuilder:default:=""
+	TableName *string `json:"tableName,omitempty" protobuf:"bytes,3,opt,name=tableName"`
+}
+
+type BotChannelSpec struct {
+	// the connection to the messaging provider
+	// Required,
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
+	// The name of the notifier that will be used by the prediction bot.
+	// Required
+	NotifierName string `json:"notifierName,omitempty" protobuf:"bytes,2,opt,name=notifierName"`
+}
+
+// Look for prediction in a bucket key.
+// Request for prediction will be placed in the key.
+// Result will be placed in the output bucket
+type BucketChannelSpec struct {
+	// the connection to the cloud provider
+	// Required,
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
+	// Required,
+	BucketName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,2,opt,name=databaseConnectionName"`
+	// The location of the input or the output
+	// Required,
+	Key string `json:"inputKey,omitempty" protobuf:"bytes,3,opt,name=inputKey"`
 }

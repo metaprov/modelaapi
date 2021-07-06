@@ -10,7 +10,6 @@ syntax = "proto2";
 package github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -76,9 +75,6 @@ message BucketChannelSpec {
   // The location of the input or the output
   // Required,
   optional string inputKey = 3;
-
-  // In seconds, the interval.
-  optional int32 scanInterval = 4;
 }
 
 message ChannelStatus {
@@ -343,25 +339,6 @@ message MonitorStatus {
   repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult validationResults = 2;
 }
 
-message OnlineChannelSpec {
-  // Service port specify the predictor port.
-  // Default: 8080
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=0
-  optional int32 port = 1;
-
-  // This is the path relative to the ingress path
-  // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  optional string path = 2;
-
-  // The access method specified how external clients will access the predictor
-  // Default: ClusterPort
-  // +kubebuilder:validation:Optional
-  optional string accessType = 3;
-}
-
 // A OnlineFeaturestoreSpec speficy the connection information for an online feature store for this prediction.
 message OnlineFeaturestoreSpec {
   // Active indicate if the cache is active
@@ -411,11 +388,7 @@ message PredictionCacheSpec {
 }
 
 // The specific of a prediction channel
-message PredictionChannels {
-  // Online is a  deployment of the predictor as a microservice.
-  // +kubebuilder:validation:Optional
-  optional OnlineChannelSpec online = 1;
-
+message PredictionChannel {
   // Table is a channel that uses RDBMS for input and output
   // +kubebuilder:validation:Optional
   optional TableChannelSpec table = 2;
@@ -482,11 +455,11 @@ message PredictionSpec {
   optional string datasetName = 4;
 
   // Input is the location of the input file if not using a dataset
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
+  optional PredictionChannel input = 5;
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
+  optional PredictionChannel output = 6;
 
   // Tests is the list of metrics that we need to measure if we are running a labeled prediction
   repeated string tests = 7;
@@ -660,22 +633,33 @@ message PredictorSpec {
 
   // set of input channel, the predictor will watch those channels for predictions
   // +kubebuilder:validation:Optional
-  optional PredictionChannels input = 9;
-
-  // set of output channels, the predictor will output the result on any channel that is active in the output
+  // Service port specify the predictor port.
+  // Default: 8080
   // +kubebuilder:validation:Optional
-  optional PredictionChannels output = 10;
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 9;
+
+  // This is the path relative to the ingress path
+  // +kubebuilder:validation:MaxLength=256
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  optional string path = 10;
+
+  // The access method specified how external clients will access the predictor
+  // Default: ClusterPort
+  // +kubebuilder:validation:Optional
+  optional string accessType = 11;
 
   // Replicas defines the number of replicas when auto scaling is disabled.
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:default:=1
-  optional int32 replicas = 11;
+  optional int32 replicas = 12;
 
   // AutoScaling defines the auto scaling policy
   // +kubebuilder:validation:Optional
-  optional AutoScaling autoScaling = 12;
+  optional AutoScaling autoScaling = 13;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
@@ -799,8 +783,5 @@ message TableChannelSpec {
   // Default to the predictor name
   // +kubebuilder:default:=""
   optional string tableName = 3;
-
-  // In seconds, the interval.
-  optional int32 scanInterval = 4;
 }
 

@@ -39,6 +39,16 @@ class LabelingPipelineServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineResponse.FromString,
                 )
+        self.PauseLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineResponse.FromString,
+                )
+        self.ResumeLabelingPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineResponse.FromString,
+                )
 
 
 class LabelingPipelineServiceServicer(object):
@@ -74,6 +84,18 @@ class LabelingPipelineServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeLabelingPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LabelingPipelineServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +123,16 @@ def add_LabelingPipelineServiceServicer_to_server(servicer, server):
                     servicer.DeleteLabelingPipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineResponse.SerializeToString,
+            ),
+            'PauseLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineResponse.SerializeToString,
+            ),
+            'ResumeLabelingPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeLabelingPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +226,39 @@ class LabelingPipelineService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.DeleteLabelingPipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.PauseLabelingPipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeLabelingPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_labelingpipeline_dot_v1_dot_labelingpipeline__pb2.ResumeLabelingPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

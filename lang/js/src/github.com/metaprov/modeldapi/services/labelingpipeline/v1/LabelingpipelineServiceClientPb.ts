@@ -235,5 +235,85 @@ export class LabelingPipelineServiceClient {
     this.methodInfoDeleteLabelingPipeline);
   }
 
+  methodInfoPauseLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse.deserializeBinary
+  );
+
+  pauseLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse>;
+
+  pauseLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse>;
+
+  pauseLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline',
+        request,
+        metadata || {},
+        this.methodInfoPauseLabelingPipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline',
+    request,
+    metadata || {},
+    this.methodInfoPauseLabelingPipeline);
+  }
+
+  methodInfoResumeLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse.deserializeBinary
+  );
+
+  resumeLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse>;
+
+  resumeLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse>;
+
+  resumeLabelingPipeline(
+    request: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline',
+        request,
+        metadata || {},
+        this.methodInfoResumeLabelingPipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline',
+    request,
+    metadata || {},
+    this.methodInfoResumeLabelingPipeline);
+  }
+
 }
 

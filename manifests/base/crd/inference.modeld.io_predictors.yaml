@@ -61,6 +61,17 @@ spec:
           spec:
             description: PredictorSpec define the desired state of the predictor
             properties:
+              accessType:
+                description: 'The access method specified how external clients will
+                  access the predictor Default: ClusterPort'
+                enum:
+                - cluster-port
+                - node-port
+                - load-balancer
+                - ingress
+                - mesh
+                - none
+                type: string
               artifactsFolder:
                 default: ""
                 description: The key in the bucket for storing all the predictor artifacts.
@@ -125,99 +136,6 @@ spec:
                 description: The forward curtain recieve the prediction request before
                   the prediction.
                 type: string
-              input:
-                description: set of input channel, the predictor will watch those
-                  channels for predictions
-                properties:
-                  bot:
-                    description: Bot is a channel that uses chats for input and output
-                    properties:
-                      connectionName:
-                        description: the connection to the messaging provider Required,
-                        type: string
-                      notifierName:
-                        description: The name of the notifier that will be used by
-                          the prediction bot. Required
-                        type: string
-                    type: object
-                  bucket:
-                    description: Bucket is a channel where predictions are placed
-                      in a bucket folder and results are placed in another folder
-                    properties:
-                      connectionName:
-                        description: the connection to the cloud provider Required,
-                        type: string
-                      databaseConnectionName:
-                        description: Required,
-                        type: string
-                      inputKey:
-                        description: The location of the input or the output Required,
-                        type: string
-                      scanInterval:
-                        description: In seconds, the interval.
-                        format: int32
-                        type: integer
-                    type: object
-                  online:
-                    description: Online is a  deployment of the predictor as a microservice.
-                    properties:
-                      accessType:
-                        description: 'The access method specified how external clients
-                          will access the predictor Default: ClusterPort'
-                        enum:
-                        - cluster-port
-                        - node-port
-                        - load-balancer
-                        - ingress
-                        - mesh
-                        - none
-                        type: string
-                      path:
-                        default: ""
-                        description: This is the path relative to the ingress path
-                        maxLength: 256
-                        type: string
-                      port:
-                        description: 'Service port specify the predictor port. Default:
-                          8080'
-                        format: int32
-                        minimum: 0
-                        type: integer
-                    type: object
-                  streaming:
-                    description: Define a streaming channel for the predictor
-                    properties:
-                      connectionName:
-                        description: StorageConnection name to the streaming provider
-                        type: string
-                      inputKey:
-                        default: ""
-                        description: the streaming topic (input or output)
-                        type: string
-                    type: object
-                  table:
-                    description: Table is a channel that uses RDBMS for input and
-                      output
-                    properties:
-                      connectionName:
-                        description: connection to the database provider
-                        type: string
-                      datasourceName:
-                        default: ""
-                        description: Options, this is the datasource containing the
-                          table schema
-                        type: string
-                      scanInterval:
-                        description: In seconds, the interval.
-                        format: int32
-                        type: integer
-                      tableName:
-                        default: ""
-                        description: The table name. Optional Default to the predictor
-                          name
-                        type: string
-                    type: object
-                type: object
               models:
                 description: Models is the list of models
                 items:
@@ -401,103 +319,22 @@ spec:
                       type: object
                     type: array
                 type: object
-              output:
-                description: set of output channels, the predictor will output the
-                  result on any channel that is active in the output
-                properties:
-                  bot:
-                    description: Bot is a channel that uses chats for input and output
-                    properties:
-                      connectionName:
-                        description: the connection to the messaging provider Required,
-                        type: string
-                      notifierName:
-                        description: The name of the notifier that will be used by
-                          the prediction bot. Required
-                        type: string
-                    type: object
-                  bucket:
-                    description: Bucket is a channel where predictions are placed
-                      in a bucket folder and results are placed in another folder
-                    properties:
-                      connectionName:
-                        description: the connection to the cloud provider Required,
-                        type: string
-                      databaseConnectionName:
-                        description: Required,
-                        type: string
-                      inputKey:
-                        description: The location of the input or the output Required,
-                        type: string
-                      scanInterval:
-                        description: In seconds, the interval.
-                        format: int32
-                        type: integer
-                    type: object
-                  online:
-                    description: Online is a  deployment of the predictor as a microservice.
-                    properties:
-                      accessType:
-                        description: 'The access method specified how external clients
-                          will access the predictor Default: ClusterPort'
-                        enum:
-                        - cluster-port
-                        - node-port
-                        - load-balancer
-                        - ingress
-                        - mesh
-                        - none
-                        type: string
-                      path:
-                        default: ""
-                        description: This is the path relative to the ingress path
-                        maxLength: 256
-                        type: string
-                      port:
-                        description: 'Service port specify the predictor port. Default:
-                          8080'
-                        format: int32
-                        minimum: 0
-                        type: integer
-                    type: object
-                  streaming:
-                    description: Define a streaming channel for the predictor
-                    properties:
-                      connectionName:
-                        description: StorageConnection name to the streaming provider
-                        type: string
-                      inputKey:
-                        default: ""
-                        description: the streaming topic (input or output)
-                        type: string
-                    type: object
-                  table:
-                    description: Table is a channel that uses RDBMS for input and
-                      output
-                    properties:
-                      connectionName:
-                        description: connection to the database provider
-                        type: string
-                      datasourceName:
-                        default: ""
-                        description: Options, this is the datasource containing the
-                          table schema
-                        type: string
-                      scanInterval:
-                        description: In seconds, the interval.
-                        format: int32
-                        type: integer
-                      tableName:
-                        default: ""
-                        description: The table name. Optional Default to the predictor
-                          name
-                        type: string
-                    type: object
-                type: object
               owner:
                 default: no-one
                 description: The owner account name
                 type: string
+              path:
+                default: ""
+                description: This is the path relative to the ingress path
+                maxLength: 256
+                type: string
+              port:
+                description: 'set of input channel, the predictor will watch those
+                  channels for predictions Service port specify the predictor port.
+                  Default: 8080'
+                format: int32
+                minimum: 0
+                type: integer
               productRef:
                 description: The product that this predictor serve.
                 properties:
