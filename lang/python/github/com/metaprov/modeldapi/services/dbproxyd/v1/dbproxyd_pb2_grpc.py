@@ -895,6 +895,31 @@ class DatabaseProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ListCronReports = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
+                )
+        self.GetCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                )
+        self.CreateCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                )
+        self.UpdateCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                )
+        self.DeleteCronReport = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ListStudies = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.SerializeToString,
@@ -2190,6 +2215,36 @@ class DatabaseProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListCronReports(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCronReport(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListStudies(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -3336,6 +3391,31 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
             'DeleteReport': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteReport,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListCronReports': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCronReports,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.SerializeToString,
+            ),
+            'GetCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+            ),
+            'CreateCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+            ),
+            'UpdateCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+            ),
+            'DeleteCronReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCronReport,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListStudies': grpc.unary_unary_rpc_method_handler(
@@ -6544,6 +6624,91 @@ class DatabaseProxyService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCronReports(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCronReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

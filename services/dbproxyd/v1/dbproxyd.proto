@@ -1237,6 +1237,41 @@ message DeleteReportRequest {
 
 
 ////////////////////////////////////////////////////////////////
+// CronReport
+////////////////////////////////////////////////////////////////
+
+message ListCronReportsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListCronReportsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport items = 1;
+    string next_page_token = 2;
+}
+
+message GetCronReportRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateCronReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+}
+
+message UpdateCronReportRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+}
+
+message DeleteCronReportRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+////////////////////////////////////////////////////////////////
 // Study
 ////////////////////////////////////////////////////////////////
 
@@ -1736,6 +1771,12 @@ service DatabaseProxyService {
     rpc CreateReport(CreateReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
     rpc UpdateReport(UpdateReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
     rpc DeleteReport(DeleteReportRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListCronReports(ListCronReportsRequest) returns (ListCronReportsResponse) {}
+    rpc GetCronReport(GetCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc CreateCronReport(CreateCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc UpdateCronReport(UpdateCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc DeleteCronReport(DeleteCronReportRequest) returns (google.protobuf.Empty) {}
 
     rpc ListStudies(ListStudiesRequest) returns (ListStudiesResponse) {}
     rpc GetStudy(GetStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}

@@ -4833,6 +4833,140 @@ export namespace DeleteReportRequest {
   }
 }
 
+export class ListCronReportsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListCronReportsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListCronReportsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListCronReportsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCronReportsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCronReportsRequest): ListCronReportsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListCronReportsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCronReportsRequest;
+  static deserializeBinaryFromReader(message: ListCronReportsRequest, reader: jspb.BinaryReader): ListCronReportsRequest;
+}
+
+export namespace ListCronReportsRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListCronReportsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>): ListCronReportsResponse;
+  clearItemsList(): ListCronReportsResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListCronReportsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCronReportsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCronReportsResponse): ListCronReportsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListCronReportsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCronReportsResponse;
+  static deserializeBinaryFromReader(message: ListCronReportsResponse, reader: jspb.BinaryReader): ListCronReportsResponse;
+}
+
+export namespace ListCronReportsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class GetCronReportRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetCronReportRequest;
+
+  getName(): string;
+  setName(value: string): GetCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetCronReportRequest): GetCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: GetCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetCronReportRequest;
+  static deserializeBinaryFromReader(message: GetCronReportRequest, reader: jspb.BinaryReader): GetCronReportRequest;
+}
+
+export namespace GetCronReportRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateCronReportRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): CreateCronReportRequest;
+  hasItem(): boolean;
+  clearItem(): CreateCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateCronReportRequest): CreateCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateCronReportRequest;
+  static deserializeBinaryFromReader(message: CreateCronReportRequest, reader: jspb.BinaryReader): CreateCronReportRequest;
+}
+
+export namespace CreateCronReportRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+  }
+}
+
+export class UpdateCronReportRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport): UpdateCronReportRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateCronReportRequest): UpdateCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateCronReportRequest;
+  static deserializeBinaryFromReader(message: UpdateCronReportRequest, reader: jspb.BinaryReader): UpdateCronReportRequest;
+}
+
+export namespace UpdateCronReportRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.AsObject,
+  }
+}
+
+export class DeleteCronReportRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteCronReportRequest;
+
+  getName(): string;
+  setName(value: string): DeleteCronReportRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteCronReportRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteCronReportRequest): DeleteCronReportRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteCronReportRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteCronReportRequest;
+  static deserializeBinaryFromReader(message: DeleteCronReportRequest, reader: jspb.BinaryReader): DeleteCronReportRequest;
+}
+
+export namespace DeleteCronReportRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
 export class ListStudiesRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListStudiesRequest;

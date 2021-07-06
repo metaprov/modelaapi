@@ -36,6 +36,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConnectionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronPredictionRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCurtainRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateDataPipelineRunRequest', null, global);
@@ -80,6 +81,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConnectionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronPredictionRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCurtainRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteDataPipelineRunRequest', null, global);
@@ -124,6 +126,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetC
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConnectionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronPredictionRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCurtainRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetDataPipelineRunRequest', null, global);
@@ -175,6 +178,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronPredictionsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronPredictionsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCurtainsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCurtainsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListDataPipelineRunsRequest', null, global);
@@ -256,6 +261,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConnectionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronPredictionRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCurtainRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateDataPipelineRunRequest', null, global);
@@ -4828,6 +4834,132 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -41905,6 +42037,1008 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest.pro
  * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 page_size = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string page_token = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
+      msg.addItems(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport>}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.setItemsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
+      msg.setItem(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinaryFromReader);
+      msg.setItem(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getItem();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.setItem = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.clearItem = function() {
+  return this.setItem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest.prototype.hasItem = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

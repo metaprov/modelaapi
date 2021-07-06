@@ -7041,6 +7041,206 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteReport);
   }
 
+  methodInfoListCronReports = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse.deserializeBinary
+  );
+
+  listCronReports(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse>;
+
+  listCronReports(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse>;
+
+  listCronReports(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+        request,
+        metadata || {},
+        this.methodInfoListCronReports,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+    request,
+    metadata || {},
+    this.methodInfoListCronReports);
+  }
+
+  methodInfoGetCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinary
+  );
+
+  getCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  getCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  getCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+        request,
+        metadata || {},
+        this.methodInfoGetCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+    request,
+    metadata || {},
+    this.methodInfoGetCronReport);
+  }
+
+  methodInfoCreateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinary
+  );
+
+  createCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  createCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  createCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+        request,
+        metadata || {},
+        this.methodInfoCreateCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+    request,
+    metadata || {},
+    this.methodInfoCreateCronReport);
+  }
+
+  methodInfoUpdateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport.deserializeBinary
+  );
+
+  updateCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  updateCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
+
+  updateCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+        request,
+        metadata || {},
+        this.methodInfoUpdateCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+    request,
+    metadata || {},
+    this.methodInfoUpdateCronReport);
+  }
+
+  methodInfoDeleteCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteCronReport(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+        request,
+        metadata || {},
+        this.methodInfoDeleteCronReport,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+    request,
+    metadata || {},
+    this.methodInfoDeleteCronReport);
+  }
+
   methodInfoListStudies = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesResponse,
     (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesRequest) => {
