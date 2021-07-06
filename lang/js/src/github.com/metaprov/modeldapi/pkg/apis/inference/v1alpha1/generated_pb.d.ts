@@ -229,6 +229,9 @@ export class CronPredictionSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): CronPredictionSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): CronPredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CronPredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CronPredictionSpec): CronPredictionSpec.AsObject;
@@ -244,6 +247,7 @@ export namespace CronPredictionSpec {
     schedule: string,
     template?: PredictionTemplate.AsObject,
     priority: string,
+    paused: boolean,
   }
 }
 

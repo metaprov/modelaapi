@@ -514,6 +514,192 @@ func (*DeleteCronPredictionResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{9}
 }
 
+type PauseCronPredictionRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (x *PauseCronPredictionRequest) Reset() {
+	*x = PauseCronPredictionRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PauseCronPredictionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PauseCronPredictionRequest) ProtoMessage() {}
+
+func (x *PauseCronPredictionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PauseCronPredictionRequest.ProtoReflect.Descriptor instead.
+func (*PauseCronPredictionRequest) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *PauseCronPredictionRequest) GetNamespace() string {
+	if x != nil {
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *PauseCronPredictionRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type PauseCronPredictionResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *PauseCronPredictionResponse) Reset() {
+	*x = PauseCronPredictionResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PauseCronPredictionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PauseCronPredictionResponse) ProtoMessage() {}
+
+func (x *PauseCronPredictionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PauseCronPredictionResponse.ProtoReflect.Descriptor instead.
+func (*PauseCronPredictionResponse) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{11}
+}
+
+type ResumeCronPredictionRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (x *ResumeCronPredictionRequest) Reset() {
+	*x = ResumeCronPredictionRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResumeCronPredictionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeCronPredictionRequest) ProtoMessage() {}
+
+func (x *ResumeCronPredictionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeCronPredictionRequest.ProtoReflect.Descriptor instead.
+func (*ResumeCronPredictionRequest) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *ResumeCronPredictionRequest) GetNamespace() string {
+	if x != nil {
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *ResumeCronPredictionRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type ResumeCronPredictionResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResumeCronPredictionResponse) Reset() {
+	*x = ResumeCronPredictionResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResumeCronPredictionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeCronPredictionResponse) ProtoMessage() {}
+
+func (x *ResumeCronPredictionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeCronPredictionResponse.ProtoReflect.Descriptor instead.
+func (*ResumeCronPredictionResponse) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{13}
+}
+
 type RunCronPredictionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -525,7 +711,7 @@ type RunCronPredictionRequest struct {
 func (x *RunCronPredictionRequest) Reset() {
 	*x = RunCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -538,7 +724,7 @@ func (x *RunCronPredictionRequest) String() string {
 func (*RunCronPredictionRequest) ProtoMessage() {}
 
 func (x *RunCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -551,7 +737,7 @@ func (x *RunCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*RunCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RunCronPredictionRequest) GetItem() *v1alpha1.CronPrediction {
@@ -570,7 +756,7 @@ type RunCronPredictionResponse struct {
 func (x *RunCronPredictionResponse) Reset() {
 	*x = RunCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -583,7 +769,7 @@ func (x *RunCronPredictionResponse) String() string {
 func (*RunCronPredictionResponse) ProtoMessage() {}
 
 func (x *RunCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -596,7 +782,7 @@ func (x *RunCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*RunCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{15}
 }
 
 var File_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto protoreflect.FileDescriptor
@@ -682,6 +868,20 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1e, 0x0a, 0x1c, 0x44, 0x65, 0x6c,
 	0x65, 0x74, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x4e, 0x0a, 0x1a, 0x50, 0x61, 0x75,
+	0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1d, 0x0a, 0x1b, 0x50, 0x61, 0x75,
+	0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x4f, 0x0a, 0x1b, 0x52, 0x65, 0x73, 0x75,
+	0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1e, 0x0a, 0x1c, 0x52, 0x65, 0x73,
+	0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
 	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x79, 0x0a, 0x18, 0x52, 0x75, 0x6e,
 	0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5d, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
@@ -692,7 +892,7 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 	0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x04,
 	0x69, 0x74, 0x65, 0x6d, 0x22, 0x1b, 0x0a, 0x19, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x50,
 	0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x32, 0x9a, 0x0b, 0x0a, 0x15, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63,
+	0x65, 0x32, 0xfc, 0x0e, 0x0a, 0x15, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63,
 	0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xdf, 0x01, 0x0a, 0x13,
 	0x4c, 0x69, 0x73, 0x74, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
@@ -767,26 +967,56 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 	0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c, 0x2a,
 	0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x12, 0xe0, 0x01, 0x0a, 0x0d,
-	0x52, 0x75, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x52, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
-	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e,
-	0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
-	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x70,
-	0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x75, 0x6e,
-	0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20, 0x22, 0x1e,
-	0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
-	0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x72, 0x75, 0x6e, 0x42, 0x3a,
-	0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65,
-	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x12, 0xec, 0x01, 0x0a, 0x13,
+	0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f,
+	0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x50,
+	0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x55, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72,
+	0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x28, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x20, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72,
+	0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x6e,
+	0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x70, 0x61, 0x75, 0x73, 0x65, 0x12, 0xf0, 0x01, 0x0a, 0x14, 0x52,
+	0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x55, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f,
+	0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x56, 0x2e, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e,
+	0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x21, 0x2f, 0x76, 0x31, 0x2f,
+	0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x72, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x12, 0xe0, 0x01,
+	0x0a, 0x0d, 0x52, 0x75, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
+	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65,
+	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x75, 0x6e, 0x43, 0x72,
+	0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f,
+	0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x20,
+	0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x72, 0x75, 0x6e,
+	0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d,
+	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
+	0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70,
+	0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -801,7 +1031,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_goTypes = []interface{}{
 	(*ListCronPredictionsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest
 	(*ListCronPredictionsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse
@@ -813,33 +1043,41 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 	(*GetCronPredictionResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse
 	(*DeleteCronPredictionRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionRequest
 	(*DeleteCronPredictionResponse)(nil), // 9: github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionResponse
-	(*RunCronPredictionRequest)(nil),     // 10: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
-	(*RunCronPredictionResponse)(nil),    // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
-	nil,                                  // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
-	(*v1alpha1.CronPredictionList)(nil),  // 13: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
-	(*v1alpha1.CronPrediction)(nil),      // 14: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	(*PauseCronPredictionRequest)(nil),   // 10: github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionRequest
+	(*PauseCronPredictionResponse)(nil),  // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionResponse
+	(*ResumeCronPredictionRequest)(nil),  // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionRequest
+	(*ResumeCronPredictionResponse)(nil), // 13: github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionResponse
+	(*RunCronPredictionRequest)(nil),     // 14: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
+	(*RunCronPredictionResponse)(nil),    // 15: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
+	nil,                                  // 16: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
+	(*v1alpha1.CronPredictionList)(nil),  // 17: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	(*v1alpha1.CronPrediction)(nil),      // 18: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 }
 var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_depIdxs = []int32{
-	12, // 0: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
-	13, // 1: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
-	14, // 2: github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	14, // 3: github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	14, // 4: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	14, // 5: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	16, // 0: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
+	17, // 1: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	18, // 2: github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 3: github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 4: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 5: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
 	0,  // 6: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest
 	3,  // 7: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest
 	6,  // 8: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionRequest
 	4,  // 9: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest
 	8,  // 10: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionRequest
-	10, // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
-	1,  // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse
-	2,  // 13: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionResponse
-	7,  // 14: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse
-	5,  // 15: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionResponse
-	9,  // 16: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionResponse
-	11, // 17: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
-	12, // [12:18] is the sub-list for method output_type
-	6,  // [6:12] is the sub-list for method input_type
+	10, // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionRequest
+	12, // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionRequest
+	14, // 13: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
+	1,  // 14: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse
+	2,  // 15: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionResponse
+	7,  // 16: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse
+	5,  // 17: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionResponse
+	9,  // 18: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionResponse
+	11, // 19: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionResponse
+	13, // 20: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionResponse
+	15, // 21: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
+	14, // [14:22] is the sub-list for method output_type
+	6,  // [6:14] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
 	6,  // [6:6] is the sub-list for extension extendee
 	0,  // [0:6] is the sub-list for field type_name
@@ -974,7 +1212,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RunCronPredictionRequest); i {
+			switch v := v.(*PauseCronPredictionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -986,6 +1224,54 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 			}
 		}
 		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PauseCronPredictionResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResumeCronPredictionRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResumeCronPredictionResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RunCronPredictionRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1004,7 +1290,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -1035,6 +1321,8 @@ type CronPredictionServiceClient interface {
 	GetCronPrediction(ctx context.Context, in *GetCronPredictionRequest, opts ...grpc.CallOption) (*GetCronPredictionResponse, error)
 	UpdateCronPrediction(ctx context.Context, in *UpdateCronPredictionRequest, opts ...grpc.CallOption) (*UpdateCronPredictionResponse, error)
 	DeleteCronPrediction(ctx context.Context, in *DeleteCronPredictionRequest, opts ...grpc.CallOption) (*DeleteCronPredictionResponse, error)
+	PauseCronPrediction(ctx context.Context, in *PauseCronPredictionRequest, opts ...grpc.CallOption) (*PauseCronPredictionResponse, error)
+	ResumeCronPrediction(ctx context.Context, in *ResumeCronPredictionRequest, opts ...grpc.CallOption) (*ResumeCronPredictionResponse, error)
 	RunPrediction(ctx context.Context, in *RunCronPredictionRequest, opts ...grpc.CallOption) (*RunCronPredictionResponse, error)
 }
 
@@ -1091,6 +1379,24 @@ func (c *cronPredictionServiceClient) DeleteCronPrediction(ctx context.Context, 
 	return out, nil
 }
 
+func (c *cronPredictionServiceClient) PauseCronPrediction(ctx context.Context, in *PauseCronPredictionRequest, opts ...grpc.CallOption) (*PauseCronPredictionResponse, error) {
+	out := new(PauseCronPredictionResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cronPredictionServiceClient) ResumeCronPrediction(ctx context.Context, in *ResumeCronPredictionRequest, opts ...grpc.CallOption) (*ResumeCronPredictionResponse, error) {
+	out := new(ResumeCronPredictionResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cronPredictionServiceClient) RunPrediction(ctx context.Context, in *RunCronPredictionRequest, opts ...grpc.CallOption) (*RunCronPredictionResponse, error) {
 	out := new(RunCronPredictionResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction", in, out, opts...)
@@ -1107,6 +1413,8 @@ type CronPredictionServiceServer interface {
 	GetCronPrediction(context.Context, *GetCronPredictionRequest) (*GetCronPredictionResponse, error)
 	UpdateCronPrediction(context.Context, *UpdateCronPredictionRequest) (*UpdateCronPredictionResponse, error)
 	DeleteCronPrediction(context.Context, *DeleteCronPredictionRequest) (*DeleteCronPredictionResponse, error)
+	PauseCronPrediction(context.Context, *PauseCronPredictionRequest) (*PauseCronPredictionResponse, error)
+	ResumeCronPrediction(context.Context, *ResumeCronPredictionRequest) (*ResumeCronPredictionResponse, error)
 	RunPrediction(context.Context, *RunCronPredictionRequest) (*RunCronPredictionResponse, error)
 }
 
@@ -1128,6 +1436,12 @@ func (*UnimplementedCronPredictionServiceServer) UpdateCronPrediction(context.Co
 }
 func (*UnimplementedCronPredictionServiceServer) DeleteCronPrediction(context.Context, *DeleteCronPredictionRequest) (*DeleteCronPredictionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCronPrediction not implemented")
+}
+func (*UnimplementedCronPredictionServiceServer) PauseCronPrediction(context.Context, *PauseCronPredictionRequest) (*PauseCronPredictionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PauseCronPrediction not implemented")
+}
+func (*UnimplementedCronPredictionServiceServer) ResumeCronPrediction(context.Context, *ResumeCronPredictionRequest) (*ResumeCronPredictionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeCronPrediction not implemented")
 }
 func (*UnimplementedCronPredictionServiceServer) RunPrediction(context.Context, *RunCronPredictionRequest) (*RunCronPredictionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunPrediction not implemented")
@@ -1227,6 +1541,42 @@ func _CronPredictionService_DeleteCronPrediction_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CronPredictionService_PauseCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PauseCronPredictionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CronPredictionServiceServer).PauseCronPrediction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CronPredictionServiceServer).PauseCronPrediction(ctx, req.(*PauseCronPredictionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CronPredictionService_ResumeCronPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResumeCronPredictionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CronPredictionServiceServer).ResumeCronPrediction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CronPredictionServiceServer).ResumeCronPrediction(ctx, req.(*ResumeCronPredictionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CronPredictionService_RunPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RunCronPredictionRequest)
 	if err := dec(in); err != nil {
@@ -1268,6 +1618,14 @@ var _CronPredictionService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteCronPrediction",
 			Handler:    _CronPredictionService_DeleteCronPrediction_Handler,
+		},
+		{
+			MethodName: "PauseCronPrediction",
+			Handler:    _CronPredictionService_PauseCronPrediction_Handler,
+		},
+		{
+			MethodName: "ResumeCronPrediction",
+			Handler:    _CronPredictionService_ResumeCronPrediction_Handler,
 		},
 		{
 			MethodName: "RunPrediction",

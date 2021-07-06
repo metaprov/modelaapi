@@ -788,6 +788,9 @@ export class DataPipelineSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): DataPipelineSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -808,6 +811,7 @@ export namespace DataPipelineSpec {
     workloadclassname: string,
     defaultcompilerspec?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     priority: string,
+    paused: boolean,
   }
 }
 
@@ -2391,6 +2395,9 @@ export class FeaturePipelineSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): FeaturePipelineSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): FeaturePipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineSpec): FeaturePipelineSpec.AsObject;
@@ -2412,6 +2419,7 @@ export namespace FeaturePipelineSpec {
     workloadclassname: string,
     schedule: string,
     activedeadlineseconds: number,
+    paused: boolean,
   }
 }
 

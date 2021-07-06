@@ -39,6 +39,16 @@ class CronPredictionServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.FromString,
                 )
+        self.PauseCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionResponse.FromString,
+                )
+        self.ResumeCronPrediction = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionResponse.FromString,
+                )
         self.RunPrediction = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.RunCronPredictionRequest.SerializeToString,
@@ -79,6 +89,18 @@ class CronPredictionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeCronPrediction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RunPrediction(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -112,6 +134,16 @@ def add_CronPredictionServiceServicer_to_server(servicer, server):
                     servicer.DeleteCronPrediction,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.SerializeToString,
+            ),
+            'PauseCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionResponse.SerializeToString,
+            ),
+            'ResumeCronPrediction': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeCronPrediction,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionResponse.SerializeToString,
             ),
             'RunPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.RunPrediction,
@@ -210,6 +242,40 @@ class CronPredictionService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.DeleteCronPredictionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.PauseCronPredictionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeCronPrediction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_cronprediction_dot_v1_dot_cronprediction__pb2.ResumeCronPredictionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

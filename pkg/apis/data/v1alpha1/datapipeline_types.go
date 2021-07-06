@@ -95,6 +95,10 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,11,opt,name=priority"`
+	// Set to true to pause the cron prediction
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,12,opt,name=paused"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

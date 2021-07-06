@@ -79,6 +79,10 @@ type CronPredictionSpec struct {
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,5,opt,name=priority"`
+	// Set to true to pause the cron prediction
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,6,opt,name=paused"`
 }
 
 // CronPredictionStatus is the observed state of a PredictionTemplate

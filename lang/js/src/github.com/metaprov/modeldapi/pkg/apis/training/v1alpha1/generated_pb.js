@@ -4115,7 +4115,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.to
     owner: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     range: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportTemplate.toObject(includeInstance, f)
+    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportTemplate.toObject(includeInstance, f),
+    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4172,6 +4173,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.de
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportTemplate;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportTemplate.deserializeBinaryFromReader);
       msg.setTemplate(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -4236,6 +4241,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.se
       5,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportTemplate.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
     );
   }
 };
@@ -4419,6 +4431,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.pr
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.hasTemplate = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool paused = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -17078,7 +17126,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     approveraccountname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     notifiername: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     baselinemodelname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
+    priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17187,6 +17236,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     case 30:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -17330,6 +17383,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
   if (f != null) {
     writer.writeString(
       30,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeBool(
+      31,
       f
     );
   }
@@ -17902,6 +17962,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPriority = function() {
   return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional bool paused = 31;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 31) != null;
 };
 
 

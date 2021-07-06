@@ -598,6 +598,11 @@ message DataPipelineSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 11;
+
+  // Set to true to pause the cron prediction
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 12;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -1553,6 +1558,11 @@ message FeaturePipelineSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 11;
+
+  // Set to true to pause the data pipeline
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 12;
 }
 
 // FeatureStatus defines the observed state of Feature

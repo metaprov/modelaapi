@@ -39,6 +39,16 @@ class FeaturePipelineServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineResponse.FromString,
                 )
+        self.PauseFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/PauseFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineResponse.FromString,
+                )
+        self.ResumeFeaturePipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/ResumeFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineResponse.FromString,
+                )
 
 
 class FeaturePipelineServiceServicer(object):
@@ -74,6 +84,18 @@ class FeaturePipelineServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeFeaturePipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FeaturePipelineServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +123,16 @@ def add_FeaturePipelineServiceServicer_to_server(servicer, server):
                     servicer.DeleteFeaturePipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineResponse.SerializeToString,
+            ),
+            'PauseFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineResponse.SerializeToString,
+            ),
+            'ResumeFeaturePipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeFeaturePipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +226,39 @@ class FeaturePipelineService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/DeleteFeaturePipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.DeleteFeaturePipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/PauseFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.PauseFeaturePipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeFeaturePipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/ResumeFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurepipeline_dot_v1_dot_featurepipeline__pb2.ResumeFeaturePipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

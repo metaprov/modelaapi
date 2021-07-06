@@ -196,3 +196,75 @@ export namespace DeleteFeaturePipelineResponse {
   }
 }
 
+export class PauseFeaturePipelineResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseFeaturePipelineResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseFeaturePipelineResponse): PauseFeaturePipelineResponse.AsObject;
+  static serializeBinaryToWriter(message: PauseFeaturePipelineResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseFeaturePipelineResponse;
+  static deserializeBinaryFromReader(message: PauseFeaturePipelineResponse, reader: jspb.BinaryReader): PauseFeaturePipelineResponse;
+}
+
+export namespace PauseFeaturePipelineResponse {
+  export type AsObject = {
+  }
+}
+
+export class PauseFeaturePipelineRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PauseFeaturePipelineRequest;
+
+  getName(): string;
+  setName(value: string): PauseFeaturePipelineRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseFeaturePipelineRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseFeaturePipelineRequest): PauseFeaturePipelineRequest.AsObject;
+  static serializeBinaryToWriter(message: PauseFeaturePipelineRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseFeaturePipelineRequest;
+  static deserializeBinaryFromReader(message: PauseFeaturePipelineRequest, reader: jspb.BinaryReader): PauseFeaturePipelineRequest;
+}
+
+export namespace PauseFeaturePipelineRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ResumeFeaturePipelineResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeFeaturePipelineResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeFeaturePipelineResponse): ResumeFeaturePipelineResponse.AsObject;
+  static serializeBinaryToWriter(message: ResumeFeaturePipelineResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeFeaturePipelineResponse;
+  static deserializeBinaryFromReader(message: ResumeFeaturePipelineResponse, reader: jspb.BinaryReader): ResumeFeaturePipelineResponse;
+}
+
+export namespace ResumeFeaturePipelineResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResumeFeaturePipelineRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ResumeFeaturePipelineRequest;
+
+  getName(): string;
+  setName(value: string): ResumeFeaturePipelineRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeFeaturePipelineRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeFeaturePipelineRequest): ResumeFeaturePipelineRequest.AsObject;
+  static serializeBinaryToWriter(message: ResumeFeaturePipelineRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeFeaturePipelineRequest;
+  static deserializeBinaryFromReader(message: ResumeFeaturePipelineRequest, reader: jspb.BinaryReader): ResumeFeaturePipelineRequest;
+}
+
+export namespace ResumeFeaturePipelineRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+

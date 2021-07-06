@@ -2710,7 +2710,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSp
     owner: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionTemplate.toObject(includeInstance, f),
-    priority: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    priority: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2767,6 +2768,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSp
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -2830,6 +2835,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSp
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -3014,6 +3026,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.hasPriority = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool paused = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

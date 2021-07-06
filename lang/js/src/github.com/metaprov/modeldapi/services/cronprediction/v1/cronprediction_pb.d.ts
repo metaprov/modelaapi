@@ -200,6 +200,78 @@ export namespace DeleteCronPredictionResponse {
   }
 }
 
+export class PauseCronPredictionRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PauseCronPredictionRequest;
+
+  getName(): string;
+  setName(value: string): PauseCronPredictionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseCronPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseCronPredictionRequest): PauseCronPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: PauseCronPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseCronPredictionRequest;
+  static deserializeBinaryFromReader(message: PauseCronPredictionRequest, reader: jspb.BinaryReader): PauseCronPredictionRequest;
+}
+
+export namespace PauseCronPredictionRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class PauseCronPredictionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseCronPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseCronPredictionResponse): PauseCronPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: PauseCronPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseCronPredictionResponse;
+  static deserializeBinaryFromReader(message: PauseCronPredictionResponse, reader: jspb.BinaryReader): PauseCronPredictionResponse;
+}
+
+export namespace PauseCronPredictionResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResumeCronPredictionRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ResumeCronPredictionRequest;
+
+  getName(): string;
+  setName(value: string): ResumeCronPredictionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeCronPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeCronPredictionRequest): ResumeCronPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: ResumeCronPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeCronPredictionRequest;
+  static deserializeBinaryFromReader(message: ResumeCronPredictionRequest, reader: jspb.BinaryReader): ResumeCronPredictionRequest;
+}
+
+export namespace ResumeCronPredictionRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ResumeCronPredictionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeCronPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeCronPredictionResponse): ResumeCronPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: ResumeCronPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeCronPredictionResponse;
+  static deserializeBinaryFromReader(message: ResumeCronPredictionResponse, reader: jspb.BinaryReader): ResumeCronPredictionResponse;
+}
+
+export namespace ResumeCronPredictionResponse {
+  export type AsObject = {
+  }
+}
+
 export class RunCronPredictionRequest extends jspb.Message {
   getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
   setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): RunCronPredictionRequest;

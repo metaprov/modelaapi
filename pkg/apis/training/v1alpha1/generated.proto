@@ -164,6 +164,11 @@ message CronReportSpec {
 
   // Template refer to the prediction template
   optional ReportTemplate template = 5;
+
+  // Set to true to pause the cron report
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 6;
 }
 
 // CronReportStatus is the observed state of a ReportTemplate
@@ -1116,6 +1121,11 @@ message ModelPipelineSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 30;
+
+  // Set to true to pause the model pipeline
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 31;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

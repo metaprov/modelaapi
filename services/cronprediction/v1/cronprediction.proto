@@ -52,6 +52,26 @@ message DeleteCronPredictionResponse {
 
 }
 
+message PauseCronPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseCronPredictionResponse {
+
+}
+
+message ResumeCronPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeCronPredictionResponse {
+
+}
+
+
+
 message RunCronPredictionRequest {
     github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
@@ -90,9 +110,22 @@ service CronPredictionService {
         option (google.api.http).delete = "/v1/cronpredictions/{name}";
     }
 
+    rpc PauseCronPrediction(PauseCronPredictionRequest) returns (PauseCronPredictionResponse) {
+        option (google.api.http).post = "/v1/cronpredictions/{name}:pause";
+    }
+
+    rpc ResumeCronPrediction(ResumeCronPredictionRequest) returns (ResumeCronPredictionResponse) {
+        option (google.api.http).post = "/v1/cronpredictions/{name}:resume";
+    }
+
+
     rpc RunPrediction(RunCronPredictionRequest) returns (RunCronPredictionResponse) {
         option (google.api.http).post = "/v1/cronpredictions/{name}:run";
     }
+
+    
+
+    
   
 
 }

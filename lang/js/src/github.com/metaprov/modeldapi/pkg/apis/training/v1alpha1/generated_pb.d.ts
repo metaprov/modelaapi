@@ -264,6 +264,9 @@ export class CronReportSpec extends jspb.Message {
   hasTemplate(): boolean;
   clearTemplate(): CronReportSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): CronReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CronReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CronReportSpec): CronReportSpec.AsObject;
@@ -279,6 +282,7 @@ export namespace CronReportSpec {
     schedule: string,
     range: string,
     template?: ReportTemplate.AsObject,
+    paused: boolean,
   }
 }
 
@@ -1697,6 +1701,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): ModelPipelineSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1723,6 +1730,7 @@ export namespace ModelPipelineSpec {
     notifiername: string,
     baselinemodelname: string,
     priority: string,
+    paused: boolean,
   }
 }
 

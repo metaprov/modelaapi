@@ -541,10 +541,11 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			Location: &data.DataLocation{
 				BucketName: b.Spec.Location.BucketName,
 			},
-			Aborted:  util.BoolPtr(false),
-			Reported: util.BoolPtr(true),
-			Paused:   util.BoolPtr(false),
-			Profiled: util.BoolPtr(true),
+			Aborted:          util.BoolPtr(false),
+			Reported:         util.BoolPtr(true),
+			Paused:           util.BoolPtr(false),
+			Profiled:         util.BoolPtr(true),
+			ModelImagePushed: util.BoolPtr(true),
 		},
 	}
 	res.Spec.Location.Path = res.RootUri()

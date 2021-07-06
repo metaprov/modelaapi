@@ -87,6 +87,10 @@ type CronReportSpec struct {
 	Range *ReportRange `json:"range,omitempty" protobuf:"bytes,4,opt,name=range"`
 	// Template refer to the prediction template
 	Template ReportTemplate `json:"template" protobuf:"bytes,5,opt,name=template"`
+	// Set to true to pause the cron report
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,6,opt,name=paused"`
 }
 
 // CronReportStatus is the observed state of a ReportTemplate

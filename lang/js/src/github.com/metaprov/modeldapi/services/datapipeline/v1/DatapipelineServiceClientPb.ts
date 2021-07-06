@@ -235,6 +235,86 @@ export class DataPipelineServiceClient {
     this.methodInfoDeleteDataPipeline);
   }
 
+  methodInfoPauseDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse.deserializeBinary
+  );
+
+  pauseDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse>;
+
+  pauseDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse>;
+
+  pauseDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.PauseDataPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
+        request,
+        metadata || {},
+        this.methodInfoPauseDataPipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
+    request,
+    metadata || {},
+    this.methodInfoPauseDataPipeline);
+  }
+
+  methodInfoResumeDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse.deserializeBinary
+  );
+
+  resumeDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse>;
+
+  resumeDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse>;
+
+  resumeDataPipeline(
+    request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.ResumeDataPipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
+        request,
+        metadata || {},
+        this.methodInfoResumeDataPipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
+    request,
+    metadata || {},
+    this.methodInfoResumeDataPipeline);
+  }
+
   methodInfoRunDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineResponse,
     (request: github_com_metaprov_modeldapi_services_datapipeline_v1_datapipeline_pb.RunDataPipelineRequest) => {

@@ -235,6 +235,86 @@ export class CronPredictionServiceClient {
     this.methodInfoDeleteCronPrediction);
   }
 
+  methodInfoPauseCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse.deserializeBinary
+  );
+
+  pauseCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
+
+  pauseCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
+
+  pauseCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+        request,
+        metadata || {},
+        this.methodInfoPauseCronPrediction,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+    request,
+    metadata || {},
+    this.methodInfoPauseCronPrediction);
+  }
+
+  methodInfoResumeCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse.deserializeBinary
+  );
+
+  resumeCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
+
+  resumeCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
+
+  resumeCronPrediction(
+    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+        request,
+        metadata || {},
+        this.methodInfoResumeCronPrediction,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+    request,
+    metadata || {},
+    this.methodInfoResumeCronPrediction);
+  }
+
   methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse,
     (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest) => {

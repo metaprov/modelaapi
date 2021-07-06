@@ -235,5 +235,85 @@ export class FeaturePipelineServiceClient {
     this.methodInfoDeleteFeaturePipeline);
   }
 
+  methodInfoPauseFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse.deserializeBinary
+  );
+
+  pauseFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse>;
+
+  pauseFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse>;
+
+  pauseFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.PauseFeaturePipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/PauseFeaturePipeline',
+        request,
+        metadata || {},
+        this.methodInfoPauseFeaturePipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/PauseFeaturePipeline',
+    request,
+    metadata || {},
+    this.methodInfoPauseFeaturePipeline);
+  }
+
+  methodInfoResumeFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse,
+    (request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse.deserializeBinary
+  );
+
+  resumeFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse>;
+
+  resumeFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse>;
+
+  resumeFeaturePipeline(
+    request: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_featurepipeline_v1_featurepipeline_pb.ResumeFeaturePipelineResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/ResumeFeaturePipeline',
+        request,
+        metadata || {},
+        this.methodInfoResumeFeaturePipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.featurepipeline.v1.FeaturePipelineService/ResumeFeaturePipeline',
+    request,
+    metadata || {},
+    this.methodInfoResumeFeaturePipeline);
+  }
+
 }
 

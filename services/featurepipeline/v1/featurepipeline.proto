@@ -51,6 +51,24 @@ message DeleteFeaturePipelineResponse {
 
 }
 
+message PauseFeaturePipelineResponse {
+}
+
+message PauseFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeFeaturePipelineResponse {
+}
+
+message ResumeFeaturePipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
 
 service FeaturePipelineService {
     rpc ListFeaturePipelines(ListFeaturePipelineRequest) returns (ListFeaturePipelineResponse) {
@@ -76,6 +94,18 @@ service FeaturePipelineService {
     }
 
     rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (DeleteFeaturePipelineResponse) {}
+
+        
+    
+    rpc PauseFeaturePipeline(PauseFeaturePipelineRequest) returns (PauseFeaturePipelineResponse) {
+        option (google.api.http).post = "/v1/featurepipelines/{name}:pause";
+    }
+
+    rpc ResumeFeaturePipeline(ResumeFeaturePipelineRequest) returns (ResumeFeaturePipelineResponse) {
+        option (google.api.http).post = "/v1/featurepipelines/{name}:pause";
+    }
+    
+
 
 
 

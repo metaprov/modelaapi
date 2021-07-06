@@ -105,6 +105,10 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
+	// Set to true to pause the data pipeline
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,12,opt,name=paused"`
 }
 
 // FeatureStatus defines the observed state of Feature
