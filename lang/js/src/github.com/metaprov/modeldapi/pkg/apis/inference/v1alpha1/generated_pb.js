@@ -4746,7 +4746,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
   var f, obj = {
     connectionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     bucketname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    inputkey: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    key: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4793,7 +4793,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInputkey(value);
+      msg.setKey(value);
       break;
     default:
       reader.skipField();
@@ -4921,10 +4921,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
 
 
 /**
- * optional string inputKey = 3;
+ * optional string key = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.getInputkey = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.getKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -4933,7 +4933,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.setInputkey = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.setKey = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -4942,7 +4942,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.clearInputkey = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.clearKey = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -4951,7 +4951,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.hasInputkey = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.FlatFileChannelSpec.prototype.hasKey = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

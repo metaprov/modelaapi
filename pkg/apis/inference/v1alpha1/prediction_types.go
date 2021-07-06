@@ -207,5 +207,5 @@ type FlatFileChannelSpec struct {
 	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
 	// The location of the input or the output
 	// Required,
-	Key string `json:"inputKey,omitempty" protobuf:"bytes,3,opt,name=inputKey"`
+	Key string `json:"key,omitempty" protobuf:"bytes,3,opt,name=key"`
 }

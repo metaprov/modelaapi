@@ -277,7 +277,7 @@ message FlatFileChannelSpec {
 
   // The location of the input or the output
   // Required,
-  optional string inputKey = 3;
+  optional string key = 3;
 }
 
 // Model Record hold the state of a model that was in production. This support roll back of a model.

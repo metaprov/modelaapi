@@ -119,7 +119,7 @@ spec:
                       connectionName:
                         description: the connection to the cloud provider Required,
                         type: string
-                      inputKey:
+                      key:
                         description: The location of the input or the output Required,
                         type: string
                     type: object
@@ -182,7 +182,7 @@ spec:
                       connectionName:
                         description: the connection to the cloud provider Required,
                         type: string
-                      inputKey:
+                      key:
                         description: The location of the input or the output Required,
                         type: string
                     type: object

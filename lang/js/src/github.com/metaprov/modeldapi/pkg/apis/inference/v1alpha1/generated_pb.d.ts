@@ -449,8 +449,8 @@ export class FlatFileChannelSpec extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): FlatFileChannelSpec;
 
-  getInputkey(): string;
-  setInputkey(value: string): FlatFileChannelSpec;
+  getKey(): string;
+  setKey(value: string): FlatFileChannelSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FlatFileChannelSpec.AsObject;
@@ -464,7 +464,7 @@ export namespace FlatFileChannelSpec {
   export type AsObject = {
     connectionname: string,
     bucketname: string,
-    inputkey: string,
+    key: string,
   }
 }
 

@@ -134,7 +134,7 @@ spec:
                                 description: the connection to the cloud provider
                                   Required,
                                 type: string
-                              inputKey:
+                              key:
                                 description: The location of the input or the output
                                   Required,
                                 type: string
@@ -203,7 +203,7 @@ spec:
                                 description: the connection to the cloud provider
                                   Required,
                                 type: string
-                              inputKey:
+                              key:
                                 description: The location of the input or the output
                                   Required,
                                 type: string
