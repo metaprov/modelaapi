@@ -89,7 +89,7 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
 	// Paused request the labeling pipeline to suspend
-	// +kubebuilder:default:=600
+	// +kubebuilder:default:=false
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,10,opt,name=paused"`
 }
 

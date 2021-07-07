@@ -2069,7 +2069,7 @@ message LabelingPipelineSpec {
   optional int64 activeDeadlineSeconds = 9;
 
   // Paused request the labeling pipeline to suspend
-  // +kubebuilder:default:=600
+  // +kubebuilder:default:=false
   optional bool paused = 10;
 }
 
