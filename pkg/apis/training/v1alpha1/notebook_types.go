@@ -115,6 +115,10 @@ type NotebookSpec struct {
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,13,opt,name=priority"`
+	// Set to true to pause the notebook
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,14,opt,name=paused"`
 }
 
 // NotebookStatus is the observed state of the notebook resource

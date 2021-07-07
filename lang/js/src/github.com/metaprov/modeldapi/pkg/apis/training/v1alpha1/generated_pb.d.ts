@@ -2688,6 +2688,9 @@ export class NotebookSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): NotebookSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): NotebookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookSpec): NotebookSpec.AsObject;
@@ -2711,6 +2714,7 @@ export namespace NotebookSpec {
     activedeadlineseconds: number,
     schedule: string,
     priority: string,
+    paused: boolean,
   }
 }
 

@@ -26902,7 +26902,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.toOb
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     schedule: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f
+    priority: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -26992,6 +26993,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPaused(value);
       break;
     default:
       reader.skipField();
@@ -27112,6 +27117,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
   if (f != null) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -27586,6 +27598,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasPriority = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool paused = 14;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getPaused = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setPaused = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearPaused = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.hasPaused = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

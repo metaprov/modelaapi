@@ -90,6 +90,10 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
+              paused:
+                default: false
+                description: Set to true to pause the notebook
+                type: boolean
               priority:
                 default: medium
                 description: The priority of this notebook run. The defualt is medium.

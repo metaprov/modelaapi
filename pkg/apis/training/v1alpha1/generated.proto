@@ -1838,6 +1838,11 @@ message NotebookSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 13;
+
+  // Set to true to pause the notebook
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 14;
 }
 
 // NotebookStatus is the observed state of the notebook resource
