@@ -1601,6 +1601,9 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): ModelPipelineRunStatus;
 
+  getProgress(): number;
+  setProgress(value: number): ModelPipelineRunStatus;
+
   getConditionsList(): Array<ModelPipelineRunCondition>;
   setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
   clearConditionsList(): ModelPipelineRunStatus;
@@ -1634,6 +1637,7 @@ export namespace ModelPipelineRunStatus {
     observedgeneration: number,
     evalmetrics: string,
     lasterror: string,
+    progress: number,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
   }
 }

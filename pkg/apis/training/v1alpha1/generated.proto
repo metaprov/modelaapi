@@ -1041,10 +1041,14 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 18;
 
+  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // +kubebuilder:validation:Optional
+  optional int32 progress = 19;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 19;
+  repeated ModelPipelineRunCondition conditions = 20;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.

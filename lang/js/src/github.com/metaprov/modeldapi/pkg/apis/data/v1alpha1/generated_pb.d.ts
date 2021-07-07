@@ -725,6 +725,9 @@ export class DataPipelineRunStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): DataPipelineRunStatus;
 
+  getProgress(): number;
+  setProgress(value: number): DataPipelineRunStatus;
+
   getConditionsList(): Array<DataPipelineRunCondition>;
   setConditionsList(value: Array<DataPipelineRunCondition>): DataPipelineRunStatus;
   clearConditionsList(): DataPipelineRunStatus;
@@ -747,6 +750,7 @@ export namespace DataPipelineRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lasterror: string,
+    progress: number,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
 }

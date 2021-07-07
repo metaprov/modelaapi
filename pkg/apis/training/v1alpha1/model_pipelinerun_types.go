@@ -250,8 +250,11 @@ type ModelPipelineRunStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,18,opt,name=lastError"`
+	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+	// +kubebuilder:validation:Optional
+	Progress *int32 `json:"progress" protobuf:"varint,19,opt,name=progress"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,19,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
 }

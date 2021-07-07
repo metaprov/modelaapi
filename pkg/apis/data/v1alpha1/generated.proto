@@ -545,10 +545,14 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
+  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // +kubebuilder:validation:Optional
+  optional int32 progress = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 8;
+  repeated DataPipelineRunCondition conditions = 9;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline

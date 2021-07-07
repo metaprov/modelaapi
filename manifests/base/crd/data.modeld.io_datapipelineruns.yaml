@@ -168,6 +168,11 @@ spec:
               phase:
                 description: the phase of the run
                 type: string
+              progress:
+                description: Pipeline progress Progress in precent, the progress takes
+                  into account the different stages of the pipeline
+                format: int32
+                type: integer
               recipeRuns:
                 description: RecipeRuns is the names of the recipe runs that occur
                   during running of the pipeline.
