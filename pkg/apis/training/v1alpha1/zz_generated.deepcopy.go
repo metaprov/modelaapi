@@ -1887,15 +1887,22 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainResult != nil {
-		in, out := &in.TrainResult, &out.TrainResult
+	if in.CV != nil {
+		in, out := &in.CV, &out.CV
 		*out = make([]catalogv1alpha1.Measurement, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.TestResult != nil {
-		in, out := &in.TestResult, &out.TestResult
+	if in.Train != nil {
+		in, out := &in.Train, &out.Train
+		*out = make([]catalogv1alpha1.Measurement, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
+	if in.Test != nil {
+		in, out := &in.Test, &out.Test
 		*out = make([]catalogv1alpha1.Measurement, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
@@ -1939,6 +1946,11 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	}
 	if in.ValidationRows != nil {
 		in, out := &in.ValidationRows, &out.ValidationRows
+		*out = new(int32)
+		**out = **in
+	}
+	if in.Progress != nil {
+		in, out := &in.Progress, &out.Progress
 		*out = new(int32)
 		**out = **in
 	}

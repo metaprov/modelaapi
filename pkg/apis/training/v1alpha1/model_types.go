@@ -312,39 +312,31 @@ type ModelStatus struct {
 	// StartTime represents time when the model is first handled by the model controller
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-
 	// TrainStartTime represents time when the model started training.
 	// +kubebuilder:validation:Optional
 	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,2,opt,name=trainingStartTime"`
-
 	// TrainCompletionTime represents time when the model ended training
 	// +kubebuilder:validation:Optional
 	TrainingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
-
 	// TestingStartTime represents time when the model started test on a trainer
 	// It is not guaranteed to be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
 	TestingStartTime *metav1.Time `json:"testingStartTime,omitempty" protobuf:"bytes,4,opt,name=testingStartTime"`
-
 	// TestingEndTime represents time when the model ended testing
 	// be set in happens-before order across separate operations.
 	// It is represented in RFC3339 form and is in UTC.
 	// +kubebuilder:validation:Optional
 	TestingEndTime *metav1.Time `json:"testingEndTime,omitempty" protobuf:"bytes,5,opt,name=testingEndTime"`
-
 	// CompletionTime represent the time that the model is marked as ready
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,6,opt,name=endTime"`
-
 	// CVScrore is the score using on the training set.
 	// +kubebuilder:validation:Optional
 	CVScore float64 `json:"cvScore,omitempty" protobuf:"bytes,7,opt,name=cvScore"`
-
 	// TrainingScore is the score on the full training set, Evaluating on the training set
 	// +kubebuilder:validation:Optional
 	TrainingScore float64 `json:"trainingScore,omitempty" protobuf:"bytes,8,opt,name=trainingScore"`
-
 	// TestScore is the score
 	// +kubebuilder:validation:Optional
 	TestScore float64 `json:"testScore,omitempty" protobuf:"bytes,9,opt,name=testScore"`
@@ -354,89 +346,95 @@ type ModelStatus struct {
 	// Best is true if this is the best model
 	// +kubebuilder:validation:Optional
 	Best bool `json:"best,omitempty" protobuf:"bytes,11,opt,name=best"`
-	// TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
+	// CV results is the results of performing cross validation on the training set during search.
 	// +kubebuilder:validation:Optional
-	TrainResult []catalog.Measurement `json:"trainResult,omitempty" protobuf:"bytes,12,rep,name=trainResult"`
+	CV []catalog.Measurement `json:"cv,omitempty" protobuf:"bytes,12,rep,name=cv"`
+	// TrainResult is the results of training the model (pipeline) on the full training set
+	// +kubebuilder:validation:Optional
+	Train []catalog.Measurement `json:"train,omitempty" protobuf:"bytes,13,rep,name=train"`
 	// TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
 	// +kubebuilder:validation:Optional
-	TestResult []catalog.Measurement `json:"testResult,omitempty" protobuf:"bytes,13,rep,name=testResult"`
+	Test []catalog.Measurement `json:"test,omitempty" protobuf:"bytes,14,rep,name=test"`
 	// Phase is the phase of the model
 	// +kubebuilder:validation:Optional
-	Phase ModelPhase `json:"phase" protobuf:"bytes,14,opt,name=phase"`
+	Phase ModelPhase `json:"phase" protobuf:"bytes,15,opt,name=phase"`
 	// ReportName is a reference to the model report
 	// +kubebuilder:validation:Optional
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,15,opt,name=reportName"`
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,16,opt,name=reportName"`
 	// ManifestUri is the URI of the manifest in the product bucket.
 	// +kubebuilder:validation:Optional
-	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,16,opt,name=manifestUri"`
+	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,17,opt,name=manifestUri"`
 	// WeightsUri is the URI of the model binary file.
 	// +kubebuilder:validation:Optional
-	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,17,opt,name=weightsUri"`
+	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,18,opt,name=weightsUri"`
 	// LabelEncoderUri is the URI of the label encoder binary file, if there is one.
 	// +kubebuilder:validation:Optional
-	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,18,opt,name=labelsEncoderUri"`
+	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,19,opt,name=labelsEncoderUri"`
 	// LogsUri is the URI of the log file
 	// +kubebuilder:validation:Optional
-	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,19,opt,name=logsUri"`
+	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,20,opt,name=logsUri"`
 	// ProfileUri is a reference to the visualization uri which were produce during processing
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,20,opt,name=profileUri"`
+	ProfileUri string `json:"profileUri" protobuf:"bytes,21,opt,name=profileUri"`
 	// MisclassUri is a reference to the mis-classification file which were produce during processing
 	// +kubebuilder:validation:Optional
-	MisclassUri string `json:"misclassUri" protobuf:"bytes,21,opt,name=misclassUri"`
+	MisclassUri string `json:"misclassUri" protobuf:"bytes,22,opt,name=misclassUri"`
 	// ImageName is the image name of the model
 	// +kubebuilder:validation:Optional
-	ImageName string `json:"imageName" protobuf:"bytes,22,opt,name=imageName"`
+	ImageName string `json:"imageName" protobuf:"bytes,23,opt,name=imageName"`
 	// +kubebuilder:validation:Optional
 	// Importance is list of feature importance based on the alg of this model, sorted by importance
-	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,23,rep,name=importance"`
+	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,24,rep,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
-	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,24,opt,name=forecastUri"`
+	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,25,opt,name=forecastUri"`
 	// Python version is the result of python vewrsion call.
 	// +kubebuilder:validation:Optional
-	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,25,opt,name=pythonVersion"`
+	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,26,opt,name=pythonVersion"`
 	// Python packages is the result of running pip freeze
 	// +kubebuilder:validation:Optional
-	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,26,opt,name=pythonPackages"`
+	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,27,opt,name=pythonPackages"`
 	// TrainDatasetLocation is the location of the train dataset
 	// +kubebuilder:validation:Optional
-	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,27,opt,name=trainDataset"`
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,28,opt,name=trainDataset"`
 	// TestDatasetLocation is the location of the test dataset used to test this model
 	// +kubebuilder:validation:Optional
-	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,28,opt,name=testDataset"`
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,29,opt,name=testDataset"`
 	// ValidationDatasetLocation is the location of the dataset used for validation
 	// +kubebuilder:validation:Optional
-	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,29,opt,name=validationDataset"`
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,30,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
 	// +kubebuilder:validation:Optional
-	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,30,opt,name=resourceConsumed"`
+	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,31,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,31,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,32,opt,name=observedGeneration"`
 	// CPU is the avg cpu consumed during training.
 	//+kubebuilder:validation:Optional
-	CPU *int32 `json:"cpu,omitempty" protobuf:"varint,32,opt,name=cpu"`
+	CPU *int32 `json:"cpu,omitempty" protobuf:"varint,33,opt,name=cpu"`
 	// Mem is the avg memory consumed during training.
 	//+kubebuilder:validation:Optional
-	Mem *int32 `json:"mem,omitempty" protobuf:"varint,33,opt,name=mem"`
+	Mem *int32 `json:"mem,omitempty" protobuf:"varint,34,opt,name=mem"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
-	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,34,opt,name=trainingRows"`
+	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,35,opt,name=trainingRows"`
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
-	TestingRows *int32 `json:"testingRows" protobuf:"varint,35,opt,name=testingRows"`
+	TestingRows *int32 `json:"testingRows" protobuf:"varint,36,opt,name=testingRows"`
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
-	ValidationRows *int32 `json:"validationRows" protobuf:"varint,36,opt,name=validationRows"`
+	ValidationRows *int32 `json:"validationRows" protobuf:"varint,37,opt,name=validationRows"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,37,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,38,opt,name=lastError"`
+	// Model Progress in precent, the progress takes into account the different stages of the model.
+	// +kubebuilder:validation:Optional
+	Progress *int32 `json:"progress" protobuf:"varint,39,opt,name=progress"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,38,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,40,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

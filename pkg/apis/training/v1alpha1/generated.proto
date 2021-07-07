@@ -1450,115 +1450,123 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional bool best = 11;
 
-  // TrainResult is the results of training the model (pipeline) on the full training set, and test it on the training set
+  // CV results is the results of performing cross validation on the training set during search.
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement trainResult = 12;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement cv = 12;
+
+  // TrainResult is the results of training the model (pipeline) on the full training set
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement train = 13;
 
   // TestResult is the results of training the model (pipeline) on the full training set, and test it on the test set
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement testResult = 13;
+  repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement test = 14;
 
   // Phase is the phase of the model
   // +kubebuilder:validation:Optional
-  optional string phase = 14;
+  optional string phase = 15;
 
   // ReportName is a reference to the model report
   // +kubebuilder:validation:Optional
-  optional string reportName = 15;
+  optional string reportName = 16;
 
   // ManifestUri is the URI of the manifest in the product bucket.
   // +kubebuilder:validation:Optional
-  optional string manifestUri = 16;
+  optional string manifestUri = 17;
 
   // WeightsUri is the URI of the model binary file.
   // +kubebuilder:validation:Optional
-  optional string weightsUri = 17;
+  optional string weightsUri = 18;
 
   // LabelEncoderUri is the URI of the label encoder binary file, if there is one.
   // +kubebuilder:validation:Optional
-  optional string labelsEncoderUri = 18;
+  optional string labelsEncoderUri = 19;
 
   // LogsUri is the URI of the log file
   // +kubebuilder:validation:Optional
-  optional string logsUri = 19;
+  optional string logsUri = 20;
 
   // ProfileUri is a reference to the visualization uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 20;
+  optional string profileUri = 21;
 
   // MisclassUri is a reference to the mis-classification file which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string misclassUri = 21;
+  optional string misclassUri = 22;
 
   // ImageName is the image name of the model
   // +kubebuilder:validation:Optional
-  optional string imageName = 22;
+  optional string imageName = 23;
 
   // +kubebuilder:validation:Optional
   // Importance is list of feature importance based on the alg of this model, sorted by importance
-  repeated FeatureImportance importance = 23;
+  repeated FeatureImportance importance = 24;
 
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 24;
+  optional string forecastUri = 25;
 
   // Python version is the result of python vewrsion call.
   // +kubebuilder:validation:Optional
-  optional string pythonVersion = 25;
+  optional string pythonVersion = 26;
 
   // Python packages is the result of running pip freeze
   // +kubebuilder:validation:Optional
-  map<string, string> pythonPackages = 26;
+  map<string, string> pythonPackages = 27;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 27;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 28;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 28;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 29;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 29;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 30;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption resourceConsumed = 30;
+  optional ResourceConsumption resourceConsumed = 31;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 31;
+  optional int64 observedGeneration = 32;
 
   // CPU is the avg cpu consumed during training.
   // +kubebuilder:validation:Optional
-  optional int32 cpu = 32;
+  optional int32 cpu = 33;
 
   // Mem is the avg memory consumed during training.
   // +kubebuilder:validation:Optional
-  optional int32 mem = 33;
+  optional int32 mem = 34;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 34;
+  optional int32 trainingRows = 35;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 35;
+  optional int32 testingRows = 36;
 
   // Validation row contain the number of validation rows for cases that we have validation.
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 36;
+  optional int32 validationRows = 37;
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 37;
+  optional string lastError = 38;
+
+  // Model Progress in precent, the progress takes into account the different stages of the model.
+  // +kubebuilder:validation:Optional
+  optional int32 progress = 39;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 38;
+  repeated ModelCondition conditions = 40;
 }
 
 message ModelValidation {

@@ -1099,6 +1099,65 @@ spec:
                 description: CPU is the avg cpu consumed during training.
                 format: int32
                 type: integer
+              cv:
+                description: CV results is the results of performing cross validation
+                  on the training set during search.
+                items:
+                  description: Measurement is a value for a specific metric
+                  properties:
+                    metric:
+                      description: The metric type name (e.g. F1 / Accuracy)
+                      enum:
+                      - accuracy
+                      - average-precision
+                      - balanced-accuracy
+                      - brier-score-loss
+                      - f1
+                      - f1-macro
+                      - f1-micro
+                      - f1-weighted
+                      - log-loss
+                      - precision
+                      - precision-micro
+                      - precision-macro
+                      - precision-weighted
+                      - recall
+                      - recall-macro
+                      - recall-micro
+                      - recall-weighted
+                      - auc
+                      - fp
+                      - fn
+                      - tn
+                      - tp
+                      - explained_variance
+                      - mae
+                      - mse
+                      - msle
+                      - median-absolute-error
+                      - r2
+                      - adjusted-mutual-info-score
+                      - adjusted-rand-score
+                      - completeness-score
+                      - fowlkes-mallows-score
+                      - homogeneity-score
+                      - mutual-info-score
+                      - normalized-mutual-info-score
+                      - v-measure-score
+                      - rmse
+                      - unknown
+                      - mape
+                      - smape
+                      - mdape
+                      type: string
+                    value:
+                      description: The value for this model
+                      type: number
+                  required:
+                  - metric
+                  - value
+                  type: object
+                type: array
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
@@ -1160,6 +1219,11 @@ spec:
                 description: ProfileUri is a reference to the visualization uri which
                   were produce during processing
                 type: string
+              progress:
+                description: Model Progress in precent, the progress takes into account
+                  the different stages of the model.
+                format: int32
+                type: integer
               pythonPackages:
                 additionalProperties:
                   type: string
@@ -1190,24 +1254,7 @@ spec:
                   by the model controller
                 format: date-time
                 type: string
-              testDataset:
-                description: TestDatasetLocation is the location of the test dataset
-                  used to test this model
-                properties:
-                  bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
-                    type: string
-                  datasourceName:
-                    default: ""
-                    description: Datasource name is a pointer to a data source for
-                      cases that the data location is not a simple bucket but a database
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
-                type: object
-              testResult:
+              test:
                 description: TestResult is the results of training the model (pipeline)
                   on the full training set, and test it on the test set
                 items:
@@ -1266,6 +1313,23 @@ spec:
                   - value
                   type: object
                 type: array
+              testDataset:
+                description: TestDatasetLocation is the location of the test dataset
+                  used to test this model
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                type: object
               testScore:
                 description: TestScore is the score
                 type: number
@@ -1286,25 +1350,9 @@ spec:
                   and is in UTC.
                 format: date-time
                 type: string
-              trainDataset:
-                description: TrainDatasetLocation is the location of the train dataset
-                properties:
-                  bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
-                    type: string
-                  datasourceName:
-                    default: ""
-                    description: Datasource name is a pointer to a data source for
-                      cases that the data location is not a simple bucket but a database
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
-                type: object
-              trainResult:
+              train:
                 description: TrainResult is the results of training the model (pipeline)
-                  on the full training set, and test it on the training set
+                  on the full training set
                 items:
                   description: Measurement is a value for a specific metric
                   properties:
@@ -1361,6 +1409,22 @@ spec:
                   - value
                   type: object
                 type: array
+              trainDataset:
+                description: TrainDatasetLocation is the location of the train dataset
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  datasourceName:
+                    default: ""
+                    description: Datasource name is a pointer to a data source for
+                      cases that the data location is not a simple bucket but a database
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                type: object
               trainingEndTime:
                 description: TrainCompletionTime represents time when the model ended
                   training
