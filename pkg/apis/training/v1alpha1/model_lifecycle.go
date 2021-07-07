@@ -207,7 +207,7 @@ func (model *Model) CombinedImageName() string {
 
 // return the result for a metric
 func (model *Model) GetTestResult(metric catalog.Metric) float64 {
-	for _, v := range model.Status.TrainResult {
+	for _, v := range model.Status.Train {
 		if *v.Metric == metric {
 			return *v.Value
 		}
@@ -357,7 +357,7 @@ func (model *Model) MarkTraining() {
 func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
-	model.Status.TrainResult = ms
+	model.Status.Train = ms
 	model.Status.Phase = ModelPhaseTrained
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTrained,
@@ -377,7 +377,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	model.Status.TrainingEndTime = &now
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
-	model.Status.TrainResult = make([]catalog.Measurement, 0)
+	model.Status.Train = make([]catalog.Measurement, 0)
 	model.Status.LastError = "Failed to train." + err
 
 }
