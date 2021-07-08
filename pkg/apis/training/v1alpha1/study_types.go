@@ -120,6 +120,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.testedModels"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
 // Study represent a search for the best machine learning model using automl.

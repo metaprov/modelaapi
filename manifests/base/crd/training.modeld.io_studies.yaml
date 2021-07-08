@@ -65,6 +65,9 @@ spec:
       name: CompletionTime
       priority: 1
       type: date
+    - jsonPath: .status.lastError
+      name: Last Error
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

@@ -26,6 +26,9 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
+    - jsonPath: .status.progress
+      name: Progress
+      type: string
     - jsonPath: .status.best
       name: Best
       type: boolean
@@ -56,6 +59,9 @@ spec:
       type: number
     - jsonPath: .status.testScore
       name: Test Score
+      type: number
+    - jsonPath: .status.lastError
+      name: Last Error
       type: number
     - jsonPath: .metadata.creationTimestamp
       name: Age

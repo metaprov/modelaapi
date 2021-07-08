@@ -139,6 +139,7 @@ func (this *ModelPipelineRun) MarkDataStageRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
+	this.Status.Progress = util.Int32Ptr(10)
 }
 
 func (this *ModelPipelineRun) IsDataStageRunning() bool {
@@ -155,6 +156,7 @@ func (this *ModelPipelineRun) MarkDataStageCompleted() {
 		Type:   MPRDataStageCompleted,
 		Status: v1.ConditionTrue,
 	})
+	this.Status.Progress = util.Int32Ptr(15)
 }
 
 func (this *ModelPipelineRun) IsDataStageCompleted() bool {
@@ -170,6 +172,8 @@ func (this *ModelPipelineRun) MarkDataStageFailed(err error) {
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
+	this.Status.Progress = util.Int32Ptr(100)
+	this.Status.LastError = err.Error()
 }
 
 func (this *ModelPipelineRun) IsDataStageFailed() bool {
@@ -189,6 +193,7 @@ func (this *ModelPipelineRun) MarkTrainingStageRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
+	this.Status.Progress = util.Int32Ptr(20)
 }
 
 func (this *ModelPipelineRun) IsTrainingStageRunning() bool {
@@ -205,6 +210,7 @@ func (this *ModelPipelineRun) MarkTrainingStageCompleted() {
 		Type:   MPRTrainingStageCmpleted,
 		Status: v1.ConditionTrue,
 	})
+	this.Status.Progress = util.Int32Ptr(50)
 }
 
 func (this *ModelPipelineRun) IsTrainingStageCompleted() bool {
@@ -220,6 +226,8 @@ func (this *ModelPipelineRun) MarkTrainingStageFailed(err error) {
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
+	this.Status.Progress = util.Int32Ptr(100)
+	this.Status.LastError = err.Error()
 }
 
 func (this *ModelPipelineRun) IsTrainingStageFailed() bool {
@@ -239,6 +247,7 @@ func (this *ModelPipelineRun) MarkUATStageRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
+	this.Status.Progress = util.Int32Ptr(55)
 }
 
 func (this *ModelPipelineRun) IsUATStageRunning() bool {
@@ -255,6 +264,7 @@ func (this *ModelPipelineRun) MarkUATStageCompleted() {
 		Type:   MPRUATCompleted,
 		Status: v1.ConditionTrue,
 	})
+	this.Status.Progress = util.Int32Ptr(70)
 }
 
 func (this *ModelPipelineRun) IsUatStageCompleted() bool {
@@ -270,6 +280,8 @@ func (this *ModelPipelineRun) MarkUatStageFailed(err error) {
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
+	this.Status.Progress = util.Int32Ptr(100)
+	this.Status.LastError = err.Error()
 }
 
 func (this *ModelPipelineRun) IsUATStageFailed() bool {
@@ -289,6 +301,7 @@ func (this *ModelPipelineRun) MarkCapacityStageRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
+	this.Status.Progress = util.Int32Ptr(75)
 }
 
 func (this *ModelPipelineRun) IsCapacityStageRunning() bool {
@@ -305,6 +318,7 @@ func (this *ModelPipelineRun) MarkCapcityStageCompleted() {
 		Type:   MPRCapacityStageCompleted,
 		Status: v1.ConditionTrue,
 	})
+	this.Status.Progress = util.Int32Ptr(80)
 }
 
 func (this *ModelPipelineRun) IsCapacityStageCompleted() bool {
@@ -320,6 +334,8 @@ func (this *ModelPipelineRun) MarkCapacityStageFailed(err error) {
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
+	this.Status.Progress = util.Int32Ptr(100)
+	this.Status.LastError = err.Error()
 }
 
 func (this *ModelPipelineRun) IsCapacityStageFailed() bool {
@@ -340,6 +356,7 @@ func (this *ModelPipelineRun) MarkProdStageRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(catalog.Running),
 	})
+	this.Status.Progress = util.Int32Ptr(80)
 }
 
 func (this *ModelPipelineRun) IsProdStageRunning() bool {
@@ -356,6 +373,7 @@ func (this *ModelPipelineRun) MarkProdStageCompleted() {
 		Type:   MPRModelReleased,
 		Status: v1.ConditionTrue,
 	})
+	this.Status.Progress = util.Int32Ptr(100)
 }
 
 func (this *ModelPipelineRun) IsProdStageCompleted() bool {
@@ -371,6 +389,8 @@ func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
 	})
+	this.Status.Progress = util.Int32Ptr(100)
+	this.Status.LastError = err.Error()
 }
 
 func (this *ModelPipelineRun) IsProdStageFailed() bool {

@@ -26,6 +26,9 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
+    - jsonPath: .status.progress
+      name: Progress
+      type: number
     - jsonPath: .status.pipelineName
       name: Pipeline
       type: string
@@ -40,6 +43,9 @@ spec:
       name: CompletionTime
       priority: 1
       type: date
+    - jsonPath: .status.lastError
+      name: Last Error
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

@@ -126,6 +126,8 @@ func (r *DataPipelineRun) MarkRunning() {
 		Status: v1.ConditionFalse,
 		Reason: string(DataPipelineRunPhaseRunning),
 	})
+	r.Status.Progress = util.Int32Ptr(10)
+
 }
 
 func (in *DataPipelineRun) MarkComplete() {
@@ -138,6 +140,7 @@ func (in *DataPipelineRun) MarkComplete() {
 	if in.Status.EndTime == nil {
 		in.Status.EndTime = &now
 	}
+	in.Status.Progress = util.Int32Ptr(100)
 }
 
 func (in *DataPipelineRun) MarkFailed(err error) {
@@ -152,6 +155,9 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 	if in.Status.EndTime == nil {
 		in.Status.EndTime = &now
 	}
+	in.Status.Progress = util.Int32Ptr(100)
+	in.Status.LastError = err.Error()
+
 }
 
 func (run *DataPipelineRun) ToYamlFile() ([]byte, error) {
