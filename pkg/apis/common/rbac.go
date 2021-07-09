@@ -57,6 +57,7 @@ const (
 	NotebookRunKind      KindName = "NotebookRun"
 	ModelPipelineKind    KindName = "ModelPipeline"
 	ModelPipelineRunKind KindName = "ModelPipelineRun"
+	ModelCompilerRunKind KindName = "ModelCompilerRun"
 	ModelAutobuilderKind KindName = "ModelAutobuilder"
 	ReportKind           KindName = "Report"
 	CronReportKind       KindName = "CronReport"
