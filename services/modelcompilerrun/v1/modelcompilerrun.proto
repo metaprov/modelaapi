@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modeldapi/services/modelcompilerrun/v1";
+package github.com.metaprov.modeldapi.services.modelcompilerrun.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+
+
+message ListModelCompilerRunsRequest {
+    string namespace = 1;
+    map<string,string> labels =3;
+}
+
+message ListModelCompilerRunsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRunList items = 1;
+}
+
+message ModelCompilerRunResponse {}
+
+message CreateModelCompilerRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+}
+
+message CreateModelCompilerRunResponse {
+
+}
+
+message UpdateModelCompilerRunRequest {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+}
+
+message UpdateModelCompilerRunResponse {
+
+}
+
+message GetModelCompilerRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetModelCompilerRunResponse {
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+    string yaml = 2;
+}
+
+
+
+message DeleteModelCompilerRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteModelCompilerRunResponse {
+
+}
+
+
+service ModelCompilerRunService {
+    rpc ListModelCompilerRuns(ListModelCompilerRunsRequest) returns (ListModelCompilerRunsResponse) {
+        option (google.api.http).get = "/api/v1alpha1/modelcompilerruns";
+    }
+    rpc CreateModelCompilerRun(CreateModelCompilerRunRequest) returns (CreateModelCompilerRunResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/modelcompilerruns"
+			body: "*"
+		};
+    }
+    rpc GetModelCompilerRun(GetModelCompilerRunRequest) returns (GetModelCompilerRunResponse) {
+        option (google.api.http).get = "/api/v1alpha1/modelcompilerruns/{name}";
+    }
+    rpc UpdateModelCompilerRun(UpdateModelCompilerRunRequest) returns (UpdateModelCompilerRunResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/modelcompilerruns/{modelcompilerrun.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteModelCompilerRun(DeleteModelCompilerRunRequest) returns (DeleteModelCompilerRunResponse) {
+        option (google.api.http).delete = "/api/v1/modelcompilerruns/{modelcompilerrun.metadata.name}";
+    }
+
+}

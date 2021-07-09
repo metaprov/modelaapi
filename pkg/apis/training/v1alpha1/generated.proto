@@ -787,6 +787,124 @@ message ModelAutobuilderStatus {
   repeated ModelAutobuilderCondition conditions = 21;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Progress",type="number",JSONPath=".status.progress"
+// +kubebuilder:printcolumn:name="Model",type="string",JSONPath=".status.modelName"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.versionName"
+// +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
+// +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
+// +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=modelpipelineruns,shortName=mpr,singular=modelpipelinerun,categories={train,modeld,all}
+// ModelCompilerRun represent a execution of a pipeline
+message ModelCompilerRun {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ModelCompilerRunSpec spec = 2;
+
+  // +kubebuilder:validation:Optional
+  optional ModelCompilerRunStatus status = 3;
+}
+
+// ModelCompilerRunCondition describes the state of a ModelCompilerRun at a certain point.
+message ModelCompilerRunCondition {
+  // Type of  condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, Unknown.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+
+  // The reason for the condition's last transition.
+  optional string reason = 5;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 6;
+}
+
+// +kubebuilder:object:root=true
+// ModelCompilerRunList represent list of pipelineruns
+message ModelCompilerRunList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ModelCompilerRun items = 2;
+}
+
+// ModelCompilerRunSpec is the desired state of the ModelCompilerRun resource
+message ModelCompilerRunSpec {
+  // VersionName is the data product version of the run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 1;
+
+  // Description is the user provided description
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // DatasetName is the name of the dataset that we trained on.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string modelName = 3;
+
+  // The owner of the ruyn.
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 4;
+
+  // The priority of this pipeline run. The defualt is medium.
+  // +kubebuilder:default:=medium
+  // +kubebuilder:validation:Optional
+  optional string priority = 5;
+
+  // The compiler name
+  // +kubebuilder:default:=tvm
+  optional string compiler = 6;
+
+  // Set one or more targets for the compiler
+  optional string target = 7;
+}
+
+// ModelCompilerRunStatus is the observed state of the ModelCompilerRun resource .
+message ModelCompilerRunStatus {
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
+
+  // The phase of the pipeline run
+  // +kubebuilder:validation:Optional
+  optional string phase = 15;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 16;
+
+  // Folder for pipeline run artifacts. This is assigned by the system
+  // The folder contains all the pipeline artifacts - metadata, logs
+  // +kubebuilder:validation:Optional
+  optional string evalMetrics = 17;
+
+  // Last error
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string lastError = 18;
+
+  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // +kubebuilder:validation:Optional
+  optional int32 progress = 19;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated ModelCompilerRunCondition conditions = 20;
+}
+
 // ModelCondition describes the state of a model at a certain point.
 message ModelCondition {
   // Type of account condition.

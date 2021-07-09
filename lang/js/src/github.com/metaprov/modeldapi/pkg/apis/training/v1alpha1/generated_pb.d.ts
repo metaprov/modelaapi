@@ -1184,6 +1184,194 @@ export namespace ModelAutobuilderStatus {
   }
 }
 
+export class ModelCompilerRun extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ModelCompilerRun;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelCompilerRun;
+
+  getSpec(): ModelCompilerRunSpec | undefined;
+  setSpec(value?: ModelCompilerRunSpec): ModelCompilerRun;
+  hasSpec(): boolean;
+  clearSpec(): ModelCompilerRun;
+
+  getStatus(): ModelCompilerRunStatus | undefined;
+  setStatus(value?: ModelCompilerRunStatus): ModelCompilerRun;
+  hasStatus(): boolean;
+  clearStatus(): ModelCompilerRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelCompilerRun.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelCompilerRun): ModelCompilerRun.AsObject;
+  static serializeBinaryToWriter(message: ModelCompilerRun, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelCompilerRun;
+  static deserializeBinaryFromReader(message: ModelCompilerRun, reader: jspb.BinaryReader): ModelCompilerRun;
+}
+
+export namespace ModelCompilerRun {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ModelCompilerRunSpec.AsObject,
+    status?: ModelCompilerRunStatus.AsObject,
+  }
+}
+
+export class ModelCompilerRunCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ModelCompilerRunCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ModelCompilerRunCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelCompilerRunCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ModelCompilerRunCondition;
+
+  getReason(): string;
+  setReason(value: string): ModelCompilerRunCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ModelCompilerRunCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelCompilerRunCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelCompilerRunCondition): ModelCompilerRunCondition.AsObject;
+  static serializeBinaryToWriter(message: ModelCompilerRunCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelCompilerRunCondition;
+  static deserializeBinaryFromReader(message: ModelCompilerRunCondition, reader: jspb.BinaryReader): ModelCompilerRunCondition;
+}
+
+export namespace ModelCompilerRunCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ModelCompilerRunList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelCompilerRunList;
+  hasMetadata(): boolean;
+  clearMetadata(): ModelCompilerRunList;
+
+  getItemsList(): Array<ModelCompilerRun>;
+  setItemsList(value: Array<ModelCompilerRun>): ModelCompilerRunList;
+  clearItemsList(): ModelCompilerRunList;
+  addItems(value?: ModelCompilerRun, index?: number): ModelCompilerRun;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelCompilerRunList.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelCompilerRunList): ModelCompilerRunList.AsObject;
+  static serializeBinaryToWriter(message: ModelCompilerRunList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelCompilerRunList;
+  static deserializeBinaryFromReader(message: ModelCompilerRunList, reader: jspb.BinaryReader): ModelCompilerRunList;
+}
+
+export namespace ModelCompilerRunList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ModelCompilerRun.AsObject>,
+  }
+}
+
+export class ModelCompilerRunSpec extends jspb.Message {
+  getVersionname(): string;
+  setVersionname(value: string): ModelCompilerRunSpec;
+
+  getDescription(): string;
+  setDescription(value: string): ModelCompilerRunSpec;
+
+  getModelname(): string;
+  setModelname(value: string): ModelCompilerRunSpec;
+
+  getOwner(): string;
+  setOwner(value: string): ModelCompilerRunSpec;
+
+  getPriority(): string;
+  setPriority(value: string): ModelCompilerRunSpec;
+
+  getCompiler(): string;
+  setCompiler(value: string): ModelCompilerRunSpec;
+
+  getTarget(): string;
+  setTarget(value: string): ModelCompilerRunSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelCompilerRunSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelCompilerRunSpec): ModelCompilerRunSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelCompilerRunSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelCompilerRunSpec;
+  static deserializeBinaryFromReader(message: ModelCompilerRunSpec, reader: jspb.BinaryReader): ModelCompilerRunSpec;
+}
+
+export namespace ModelCompilerRunSpec {
+  export type AsObject = {
+    versionname: string,
+    description: string,
+    modelname: string,
+    owner: string,
+    priority: string,
+    compiler: string,
+    target: string,
+  }
+}
+
+export class ModelCompilerRunStatus extends jspb.Message {
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelCompilerRunStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): ModelCompilerRunStatus;
+
+  getCompletiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelCompilerRunStatus;
+  hasCompletiontime(): boolean;
+  clearCompletiontime(): ModelCompilerRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): ModelCompilerRunStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ModelCompilerRunStatus;
+
+  getEvalmetrics(): string;
+  setEvalmetrics(value: string): ModelCompilerRunStatus;
+
+  getLasterror(): string;
+  setLasterror(value: string): ModelCompilerRunStatus;
+
+  getProgress(): number;
+  setProgress(value: number): ModelCompilerRunStatus;
+
+  getConditionsList(): Array<ModelCompilerRunCondition>;
+  setConditionsList(value: Array<ModelCompilerRunCondition>): ModelCompilerRunStatus;
+  clearConditionsList(): ModelCompilerRunStatus;
+  addConditions(value?: ModelCompilerRunCondition, index?: number): ModelCompilerRunCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelCompilerRunStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelCompilerRunStatus): ModelCompilerRunStatus.AsObject;
+  static serializeBinaryToWriter(message: ModelCompilerRunStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelCompilerRunStatus;
+  static deserializeBinaryFromReader(message: ModelCompilerRunStatus, reader: jspb.BinaryReader): ModelCompilerRunStatus;
+}
+
+export namespace ModelCompilerRunStatus {
+  export type AsObject = {
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
+    observedgeneration: number,
+    evalmetrics: string,
+    lasterror: string,
+    progress: number,
+    conditionsList: Array<ModelCompilerRunCondition.AsObject>,
+  }
+}
+
 export class ModelCondition extends jspb.Message {
   getType(): string;
   setType(value: string): ModelCondition;

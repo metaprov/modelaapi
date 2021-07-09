@@ -50,8 +50,8 @@ type PredictorCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Serving Site",type="integer",JSONPath=".spec.servingsiteRef.name",description=""
-// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.input.online.port",description=""
-// +kubebuilder:printcolumn:name="Access",type="integer",JSONPath=".spec.input.online.accessType",description=""
+// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
+// +kubebuilder:printcolumn:name="Access",type="integer",JSONPath=".spec.accessType",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modeld}
 type Predictor struct {
