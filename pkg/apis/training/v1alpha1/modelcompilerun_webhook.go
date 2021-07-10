@@ -19,7 +19,7 @@ func (pr *ModelCompilerRun) Default() {
 	pr.Status.Folder = "modeld/live/tenants/default-tenant/dataproducts/" + pr.Namespace +
 		"/dataproductversions/" +
 		*pr.Spec.VersionName +
-		"/pipelines/" + *pr.Spec.PipelineName + "/pipelineruns/" + pr.Name
+		"/modelcompilerruns/" + *pr.Spec.ModelName + "/modelcompilerruns/" + pr.Name
 }
 
 // validation
