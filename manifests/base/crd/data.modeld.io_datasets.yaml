@@ -256,6 +256,11 @@ spec:
                 description: A reference to the visualization uri which were produce
                   during processing
                 type: string
+              progress:
+                default: 0
+                description: Processing progress
+                format: int32
+                type: integer
               reportName:
                 description: Reference to the report object that was generated for
                   the dataset

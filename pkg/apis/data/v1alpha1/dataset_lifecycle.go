@@ -197,6 +197,8 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 		Message: "Failed to validate." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 func (dataset *Dataset) MarkValidated() {
@@ -205,6 +207,7 @@ func (dataset *Dataset) MarkValidated() {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseValidationSuccess
+	dataset.Status.Progress = util.Int32Ptr(40)
 
 }
 
@@ -215,6 +218,7 @@ func (dataset *Dataset) MarkValidating() {
 		Reason: string(DatasetPhaseValidationRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseValidationRunning
+	dataset.Status.Progress = util.Int32Ptr(10)
 }
 
 // ------------------------- injest
@@ -226,6 +230,7 @@ func (dataset *Dataset) MarkIngesting() {
 		Reason: string(DatasetPhaseIngestRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseIngestRunning
+	dataset.Status.Progress = util.Int32Ptr(50)
 
 }
 
@@ -235,6 +240,7 @@ func (dataset *Dataset) MarkIngested() {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseIngestSuccess
+	dataset.Status.Progress = util.Int32Ptr(60)
 
 }
 
@@ -246,6 +252,8 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 		Message: "Failed to ingest." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 // -------------------- generating
@@ -257,6 +265,7 @@ func (dataset *Dataset) MarkGenerting() {
 		Reason: string(DatasetPhaseGenerating),
 	})
 	dataset.Status.Phase = DatasetPhaseGenerating
+	dataset.Status.Progress = util.Int32Ptr(60)
 
 }
 
@@ -266,6 +275,7 @@ func (dataset *Dataset) MarkGenerated() {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseGenSuccess
+	dataset.Status.Progress = util.Int32Ptr(70)
 
 }
 
@@ -277,6 +287,8 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 		Message: "Failed to generate dataset." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 // ------------------------- report
@@ -288,6 +300,7 @@ func (dataset *Dataset) MarkReporting() {
 		Reason: string(DatasetPhaseReportRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseReportRunning
+	dataset.Status.Progress = util.Int32Ptr(80)
 }
 
 func (dataset *Dataset) MarkReported() {
@@ -296,6 +309,7 @@ func (dataset *Dataset) MarkReported() {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseReportSuccess
+	dataset.Status.Progress = util.Int32Ptr(90)
 }
 
 func (dataset *Dataset) MarkReportFailed(msg string) {
@@ -306,6 +320,8 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 		Message: "Failed to report." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 // ----------------- profile
@@ -317,6 +333,7 @@ func (dataset *Dataset) MarkProfiling() {
 		Reason: string(DatasetPhaseProfileRunning),
 	})
 	dataset.Status.Phase = DatasetPhaseProfileRunning
+	dataset.Status.Progress = util.Int32Ptr(70)
 }
 
 func (dataset *Dataset) MarkProfiled(uri string) {
@@ -326,6 +343,7 @@ func (dataset *Dataset) MarkProfiled(uri string) {
 	})
 	dataset.Status.ProfileUri = uri
 	dataset.Status.Phase = DatasetPhaseProfileSuccess
+	dataset.Status.Progress = util.Int32Ptr(80)
 }
 
 func (dataset *Dataset) MarkProfiledFailed(msg string) {
@@ -336,6 +354,8 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 		Message: "Failed to profiled." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 func (r *Dataset) OpName() string {
@@ -349,6 +369,7 @@ func (dataset *Dataset) MarkReady() {
 		Status: v1.ConditionTrue,
 	})
 	dataset.Status.Phase = DatasetPhaseReady
+	dataset.Status.Progress = util.Int32Ptr(100)
 }
 
 // --------------------- Archive

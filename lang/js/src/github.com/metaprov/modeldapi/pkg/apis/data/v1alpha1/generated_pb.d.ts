@@ -1730,6 +1730,9 @@ export class DatasetStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): DatasetStatus;
 
+  getProgress(): number;
+  setProgress(value: number): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -1755,6 +1758,7 @@ export namespace DatasetStatus {
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasterror: string,
+    progress: number,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }

@@ -1476,6 +1476,11 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		in, out := &in.LastStudyTime, &out.LastStudyTime
 		*out = (*in).DeepCopy()
 	}
+	if in.Progress != nil {
+		in, out := &in.Progress, &out.Progress
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DatasetCondition, len(*in))
