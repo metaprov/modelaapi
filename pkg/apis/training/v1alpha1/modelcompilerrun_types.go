@@ -47,8 +47,8 @@ type ModelCompilerRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelpipelineruns,shortName=mpr,singular=modelpipelinerun,categories={train,modeld,all}
-// ModelCompilerRun represent a execution of a pipeline
+// +kubebuilder:resource:path=modelcompilerruns,shortName=mcr,singular=modelcompilerrun,categories={train,modeld,all}
+// ModelCompilerRun represent a single compilation of a model into a target hardware.
 type ModelCompilerRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

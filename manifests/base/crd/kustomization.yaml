@@ -47,6 +47,7 @@ resources:
   - team.modeld.io_runbooks.yaml
   - training.modeld.io_modelautobuilders.yaml
   - training.modeld.io_modelpipelineruns.yaml
+  - training.modeld.io_modelcompilerruns.yaml
   - training.modeld.io_modelpipelines.yaml
   - training.modeld.io_models.yaml
   - training.modeld.io_notebookruns.yaml
