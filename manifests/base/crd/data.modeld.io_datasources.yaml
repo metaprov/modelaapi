@@ -182,7 +182,7 @@ spec:
                       NA.
                     type: string
                   quote:
-                    description: The quata char.
+                    description: The quote char.
                     enum:
                     - double-quote
                     - single-quote
@@ -199,10 +199,6 @@ spec:
                     type: boolean
                 type: object
               owner:
-                default: no-one
-                description: The owner account name
-                type: string
-              ownerName:
                 default: no-one
                 description: The account name of the owner of this dataset
                 type: string

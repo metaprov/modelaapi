@@ -111,11 +111,6 @@ spec:
                         type: string
                     type: object
                 type: object
-              observedGeneration:
-                description: ObservedGeneration is the Last generation that was acted
-                  on
-                format: int64
-                type: integer
               output:
                 description: Output is the desired output
                 properties:

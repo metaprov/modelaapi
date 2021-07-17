@@ -63,10 +63,6 @@ spec:
           spec:
             description: AlertSpec defines the desired state of Alert
             properties:
-              description:
-                default: ""
-                description: User provided description
-                type: string
               entityRef:
                 description: The subject entity
                 properties:
@@ -110,6 +106,10 @@ spec:
                 type: object
               level:
                 description: Scopes is the list of scopes for this token.
+                type: string
+              message:
+                default: ""
+                description: Alert Message
                 type: string
               notifierName:
                 default: ""

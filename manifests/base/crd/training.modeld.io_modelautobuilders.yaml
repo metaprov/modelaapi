@@ -235,7 +235,7 @@ spec:
                           with NA.
                         type: string
                       quote:
-                        description: The quata char.
+                        description: The quote char.
                         enum:
                         - double-quote
                         - single-quote
@@ -253,10 +253,6 @@ spec:
                         type: boolean
                     type: object
                   owner:
-                    default: no-one
-                    description: The owner account name
-                    type: string
-                  ownerName:
                     default: no-one
                     description: The account name of the owner of this dataset
                     type: string
@@ -970,7 +966,7 @@ spec:
                 description: Specify the number of trainers. Default 1 trainer.
                 format: int32
                 type: integer
-              workloadClassName:
+              workload:
                 default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
                   to run this pipeline.

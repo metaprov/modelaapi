@@ -129,7 +129,7 @@ spec:
                 default: no-one
                 description: The account name of the owner of this dataset
                 type: string
-              report:
+              reported:
                 default: true
                 description: If true, a dataset report should be generated for this
                   dataset.
@@ -314,16 +314,17 @@ spec:
                           format: int32
                           type: integer
                         distinctValueCount:
-                          description: The ratio between distinc to total
+                          description: The ratio between distinct count to total count
                           type: number
                         highCorr:
-                          description: This column has high corrolation with another
+                          description: This column has high correlation with another
                             feature and should be dropped. The value is set during
                             the profile process.
                           type: boolean
                         highCred:
                           description: This column has high cardinality and should
-                            be ignored. The value is set during the profile process.
+                            use high cred encoder The value is set during the profile
+                            process.
                           type: boolean
                         ignored:
                           description: Should this column be ignored, as specified

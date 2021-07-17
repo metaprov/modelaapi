@@ -63,7 +63,7 @@ spec:
                 description: Description is a user provided description
                 maxLength: 256
                 type: string
-              limitRangeSpec:
+              limitRange:
                 description: LimitRangeSpec defines a min/max usage limit for resources
                   that match on kind.
                 properties:
@@ -142,7 +142,7 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
-              quotaSpec:
+              quota:
                 description: QuotaSpec is quoute specification for the lab namespace.
                 properties:
                   hard:

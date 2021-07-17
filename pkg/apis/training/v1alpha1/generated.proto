@@ -74,7 +74,7 @@ message CategoricalPipelineSpec {
   // Must have at least on value.
   repeated string columns = 1;
 
-  // Categorical varaible imputer
+  // Categorical variable imputer
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string imputer = 2;
@@ -703,7 +703,7 @@ message ModelAutobuilderSpec {
   // WorkloadClassName is the name of the workload class used to run this pipeline.
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 18;
+  optional string workload = 18;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
@@ -1656,14 +1656,6 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 32;
 
-  // CPU is the avg cpu consumed during training.
-  // +kubebuilder:validation:Optional
-  optional int32 cpu = 33;
-
-  // Mem is the avg memory consumed during training.
-  // +kubebuilder:validation:Optional
-  optional int32 mem = 34;
-
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
   optional int32 trainingRows = 35;
@@ -2234,14 +2226,6 @@ message ReportSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 10;
-
-  // From is the start time of the report. Used only for summary report
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time from = 11;
-
-  // To is the end time of the report . Use only for summary report. If empty, the system will use the current time.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time to = 12;
 }
 
 // ReportStatus defines the observed state of the report.
@@ -2747,11 +2731,6 @@ message TrainingSpec {
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 folds = 6;
-
-  // Retry attempt is the number of training retry for this model,
-  // +kubebuilder:default:=5
-  // +kubebuilder:validation:Optional
-  optional int32 retry = 7;
 
   // Evaluation metrics are the scores
   // +kubebuilder:validation:Optional

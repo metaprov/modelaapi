@@ -57,10 +57,6 @@ spec:
           spec:
             description: CommitSpec defines the desired state of Commit
             properties:
-              description:
-                default: ""
-                description: User provided description
-                type: string
               entityRef:
                 description: The subject entity
                 properties:
@@ -97,23 +93,19 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
-              notifierName:
+              message:
                 default: ""
-                description: NotifierName is the name of the notifier used to fire
-                  the alert.
+                description: User provided commit message
                 type: string
               owner:
                 default: no-one
-                type: string
-              subject:
-                default: ""
                 type: string
             type: object
           status:
             description: CommitStatus is the observed state of a Commit
             properties:
               at:
-                description: The time when the alert was fired
+                description: The time when the commit was completed
                 format: date-time
                 type: string
               conditions:

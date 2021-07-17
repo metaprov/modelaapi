@@ -662,11 +662,6 @@ export class DataPipelineRunSpec extends jspb.Message {
   getDatapipelinename(): string;
   setDatapipelinename(value: string): DataPipelineRunSpec;
 
-  getDatalocation(): DataLocation | undefined;
-  setDatalocation(value?: DataLocation): DataPipelineRunSpec;
-  hasDatalocation(): boolean;
-  clearDatalocation(): DataPipelineRunSpec;
-
   getOwner(): string;
   setOwner(value: string): DataPipelineRunSpec;
 
@@ -688,7 +683,6 @@ export namespace DataPipelineRunSpec {
   export type AsObject = {
     versionname: string,
     datapipelinename: string,
-    datalocation?: DataLocation.AsObject,
     owner: string,
     workloadclassname: string,
     priority: string,
@@ -784,11 +778,6 @@ export class DataPipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): DataPipelineSpec;
 
-  getDefaultcompilerspec(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setDefaultcompilerspec(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataPipelineSpec;
-  hasDefaultcompilerspec(): boolean;
-  clearDefaultcompilerspec(): DataPipelineSpec;
-
   getPriority(): string;
   setPriority(value: string): DataPipelineSpec;
 
@@ -813,7 +802,6 @@ export namespace DataPipelineSpec {
     schedule: string,
     owner: string,
     workloadclassname: string,
-    defaultcompilerspec?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     priority: string,
     paused: boolean,
   }
@@ -1338,8 +1326,8 @@ export namespace DataSourceList {
 }
 
 export class DataSourceSpec extends jspb.Message {
-  getOwnername(): string;
-  setOwnername(value: string): DataSourceSpec;
+  getOwner(): string;
+  setOwner(value: string): DataSourceSpec;
 
   getVersionname(): string;
   setVersionname(value: string): DataSourceSpec;
@@ -1375,9 +1363,6 @@ export class DataSourceSpec extends jspb.Message {
   hasApi(): boolean;
   clearApi(): DataSourceSpec;
 
-  getOwner(): string;
-  setOwner(value: string): DataSourceSpec;
-
   getDatasettype(): string;
   setDatasettype(value: string): DataSourceSpec;
 
@@ -1396,7 +1381,7 @@ export class DataSourceSpec extends jspb.Message {
 
 export namespace DataSourceSpec {
   export type AsObject = {
-    ownername: string,
+    owner: string,
     versionname: string,
     description: string,
     schema?: Schema.AsObject,
@@ -1405,7 +1390,6 @@ export namespace DataSourceSpec {
     table?: TableSpec.AsObject,
     stream?: StreamSpec.AsObject,
     api?: ApiSpec.AsObject,
-    owner: string,
     datasettype: string,
     sample?: SampleSpec.AsObject,
   }
@@ -1592,8 +1576,8 @@ export class DatasetSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
 
-  getReport(): boolean;
-  setReport(value: boolean): DatasetSpec;
+  getReported(): boolean;
+  setReported(value: boolean): DatasetSpec;
 
   getValidate(): boolean;
   setValidate(value: boolean): DatasetSpec;
@@ -1645,7 +1629,7 @@ export namespace DatasetSpec {
     versionname: string,
     datasourcename: string,
     description: string,
-    report: boolean,
+    reported: boolean,
     validate: boolean,
     labeled: boolean,
     syntatic: boolean,
@@ -3755,9 +3739,6 @@ export class RecipeSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): RecipeSpec;
 
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): RecipeSpec;
-
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): RecipeSpec;
 
@@ -3781,7 +3762,6 @@ export namespace RecipeSpec {
     stepsList: Array<RecipeStep.AsObject>,
     output?: RecipeOutputSpec.AsObject,
     sample?: SampleSpec.AsObject,
-    observedgeneration: number,
     workloadclassname: string,
     activedeadlineseconds: number,
   }

@@ -61,39 +61,6 @@ spec:
                 description: DatasetSelector is used to select datasets for processing
                   in the pipeline
                 type: object
-              defaultCompilerSpec:
-                description: This is the default compiler spec
-                properties:
-                  compiler:
-                    default: none
-                    description: Set one or more targets Enable set the enable to
-                    enum:
-                    - tvm
-                    - onyx
-                    - xla
-                    - none
-                    type: string
-                  enable:
-                    default: false
-                    description: Enable set the enable to
-                    type: boolean
-                  targets:
-                    description: Set one or more targets for the compiler
-                    items:
-                      enum:
-                      - amd-epyc-2
-                      - arma-53
-                      - arma-72
-                      - intel-cascade-lake
-                      - intel-broadwell
-                      - intel-skylake
-                      - tesla-v100
-                      - tesla-k80
-                      - t4
-                      - raspberry-pi8-modeld-b
-                      type: string
-                    type: array
-                type: object
               description:
                 default: ""
                 description: Description of the data pipeline

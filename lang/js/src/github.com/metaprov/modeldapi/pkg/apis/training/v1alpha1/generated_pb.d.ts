@@ -1042,8 +1042,8 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelAutobuilderSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): ModelAutobuilderSpec;
+  getWorkload(): string;
+  setWorkload(value: string): ModelAutobuilderSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
@@ -1077,7 +1077,7 @@ export namespace ModelAutobuilderSpec {
     sampler: string,
     aborted: boolean,
     owner: string,
-    workloadclassname: string,
+    workload: string,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -2353,12 +2353,6 @@ export class ModelStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelStatus;
 
-  getCpu(): number;
-  setCpu(value: number): ModelStatus;
-
-  getMem(): number;
-  setMem(value: number): ModelStatus;
-
   getTrainingrows(): number;
   setTrainingrows(value: number): ModelStatus;
 
@@ -2421,8 +2415,6 @@ export namespace ModelStatus {
     validationdataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     resourceconsumed?: ResourceConsumption.AsObject,
     observedgeneration: number,
-    cpu: number,
-    mem: number,
     trainingrows: number,
     testingrows: number,
     validationrows: number,
@@ -3296,16 +3288,6 @@ export class ReportSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ReportSpec;
 
-  getFrom(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFrom(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportSpec;
-  hasFrom(): boolean;
-  clearFrom(): ReportSpec;
-
-  getTo(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTo(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportSpec;
-  hasTo(): boolean;
-  clearTo(): ReportSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReportSpec): ReportSpec.AsObject;
@@ -3325,8 +3307,6 @@ export namespace ReportSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
-    from?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    to?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 
@@ -3957,9 +3937,6 @@ export class TrainingSpec extends jspb.Message {
   getFolds(): number;
   setFolds(value: number): TrainingSpec;
 
-  getRetry(): number;
-  setRetry(value: number): TrainingSpec;
-
   getEvalmetricsList(): Array<string>;
   setEvalmetricsList(value: Array<string>): TrainingSpec;
   clearEvalmetricsList(): TrainingSpec;
@@ -4001,7 +3978,6 @@ export namespace TrainingSpec {
     cvtype: string,
     cv: boolean,
     folds: number,
-    retry: number,
     evalmetricsList: Array<string>,
     earlystop: boolean,
     checkpointinterval: number,

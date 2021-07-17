@@ -299,11 +299,11 @@ message ColumnStatistics {
   // This value is derived from the schema.
   optional bool nullable = 20;
 
-  // This column has high cardinality and should be ignored.
+  // This column has high cardinality and should use high cred encoder
   // The value is set during the profile process.
   optional bool highCred = 21;
 
-  // This column has high corrolation with another feature and should be dropped.
+  // This column has high correlation with another feature and should be dropped.
   // The value is set during the profile process.
   optional bool highCorr = 22;
 
@@ -316,7 +316,7 @@ message ColumnStatistics {
   // Completeness is the ratio between non null to null
   optional double completeness = 24;
 
-  // The ratio between distinc to total
+  // The ratio between distinct count to total count
   optional double distinctValueCount = 25;
 
   // The ratio between most freq value to total
@@ -495,10 +495,6 @@ message DataPipelineRunSpec {
   // +kubebuilder:validation:Optional
   optional string datapipelineName = 2;
 
-  // The location of data artifacts that are generated during the run
-  // +kubebuilder:validation:Optional
-  optional DataLocation dataLocation = 3;
-
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
@@ -596,19 +592,15 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
 
-  // This is the default compiler spec
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
-
   // The priority of this data pipeline. The defualt is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 11;
+  optional string priority = 9;
 
   // Set to true to pause the cron prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 12;
+  optional bool paused = 10;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -925,7 +917,7 @@ message DataSourceSpec {
   // The account name of the owner of this dataset
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string ownerName = 1;
+  optional string owner = 1;
 
   // The version of the flat file.
   // +kubebuilder:validation:MaxLength=63
@@ -960,11 +952,6 @@ message DataSourceSpec {
   // Api define the specification of the api
   // +kubebuilder:validation:Optional
   optional ApiSpec api = 9;
-
-  // The owner account name
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 10;
 
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
@@ -1092,7 +1079,7 @@ message DatasetSpec {
   // If true, a dataset report should be generated for this dataset.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool report = 7;
+  optional bool reported = 7;
 
   // If true, we should validate the dataset
   // +kubebuilder:default:=true
@@ -1818,7 +1805,7 @@ message FlatFileSpec {
   // +kubebuilder:validation:Optional
   optional string delimiter = 5;
 
-  // The quata char.
+  // The quote char.
   // +kubebuilder:validation:Optional
   optional string quote = 6;
 
@@ -2390,10 +2377,6 @@ message RecipeSpec {
   // Sample specify the sampling paramters when viewing the recipe
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 7;
-
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 8;
 
   // WorkloadClassName is the name of the workload used to execute this recipe
   // +kubebuilder:default:=""

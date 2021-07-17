@@ -416,7 +416,7 @@ spec:
                         type: string
                       imputer:
                         default: auto
-                        description: Categorical varaible imputer
+                        description: Categorical variable imputer
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -1179,12 +1179,6 @@ spec:
                     - high
                     - urgent
                     type: string
-                  retry:
-                    default: 5
-                    description: Retry attempt is the number of training retry for
-                      this model,
-                    format: int32
-                    type: integer
                   seed:
                     default: 42
                     description: Used as the random state for an estimator if needed

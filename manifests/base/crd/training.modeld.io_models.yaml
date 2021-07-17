@@ -533,7 +533,7 @@ spec:
                         type: string
                       imputer:
                         default: auto
-                        description: Categorical varaible imputer
+                        description: Categorical variable imputer
                         enum:
                         - remove-rows-with-missing-values
                         - mean
@@ -986,12 +986,6 @@ spec:
                     - high
                     - urgent
                     type: string
-                  retry:
-                    default: 5
-                    description: Retry attempt is the number of training retry for
-                      this model,
-                    format: int32
-                    type: integer
                   seed:
                     default: 42
                     description: Used as the random state for an estimator if needed
@@ -1101,10 +1095,6 @@ spec:
               cost:
                 description: Cost is the cost of training the model
                 type: number
-              cpu:
-                description: CPU is the avg cpu consumed during training.
-                format: int32
-                type: integer
               cv:
                 description: CV results is the results of performing cross validation
                   on the training set during search.
@@ -1205,10 +1195,6 @@ spec:
                 description: ManifestUri is the URI of the manifest in the product
                   bucket.
                 type: string
-              mem:
-                description: Mem is the avg memory consumed during training.
-                format: int32
-                type: integer
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing

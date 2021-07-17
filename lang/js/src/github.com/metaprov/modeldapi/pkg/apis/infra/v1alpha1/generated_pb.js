@@ -6028,7 +6028,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     subject: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    message: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     level: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -6076,7 +6076,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.deserializ
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setMessage(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -6217,10 +6217,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
 
 
 /**
- * optional string description = 2;
+ * optional string message = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getMessage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -6229,7 +6229,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setDescription = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setMessage = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -6238,7 +6238,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearMessage = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -6247,7 +6247,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasDescription = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -13064,11 +13064,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    subject: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    message: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13107,22 +13105,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.deseriali
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubject(value);
+      msg.setMessage(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 4:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setEntityref(value);
       break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotifiername(value);
-      break;
-    case 6:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -13162,32 +13152,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getEntityref();
   if (f != null) {
     writer.writeMessage(
-      4,
+      2,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      5,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
+      3,
       f
     );
   }
@@ -13195,10 +13171,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.serialize
 
 
 /**
- * optional string subject = 1;
+ * optional string message = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getMessage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -13207,7 +13183,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setSubject = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setMessage = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -13216,7 +13192,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearMessage = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -13225,54 +13201,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasSubject = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string description = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+ * optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getEntityref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -13281,7 +13221,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -13299,52 +13239,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasEntityref = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string notifierName = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasNotifiername = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional string owner = 6;
+ * optional string owner = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -13353,7 +13257,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -13362,7 +13266,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -13371,7 +13275,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -23008,8 +22912,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.toObject = f
   var f, obj = {
     description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    quotaspec: (f = msg.getQuotaspec()) && k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.toObject(includeInstance, f),
-    limitrangespec: (f = msg.getLimitrangespec()) && k8s_io_api_core_v1_generated_pb.LimitRangeSpec.toObject(includeInstance, f),
+    quota: (f = msg.getQuota()) && k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.toObject(includeInstance, f),
+    limitrange: (f = msg.getLimitrange()) && k8s_io_api_core_v1_generated_pb.LimitRangeSpec.toObject(includeInstance, f),
     clustername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
@@ -23060,12 +22964,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.deserializeB
     case 3:
       var value = new k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.deserializeBinaryFromReader);
-      msg.setQuotaspec(value);
+      msg.setQuota(value);
       break;
     case 4:
       var value = new k8s_io_api_core_v1_generated_pb.LimitRangeSpec;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.LimitRangeSpec.deserializeBinaryFromReader);
-      msg.setLimitrangespec(value);
+      msg.setLimitrange(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -23119,7 +23023,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.serializeBin
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getQuotaspec();
+  f = message.getQuota();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -23127,7 +23031,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.serializeBin
       k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.serializeBinaryToWriter
     );
   }
-  f = message.getLimitrangespec();
+  f = message.getLimitrange();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -23226,10 +23130,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.ha
 
 
 /**
- * optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
+ * optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 3;
  * @return {?proto.k8s.io.api.core.v1.ResourceQuotaSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getQuotaspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getQuota = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ResourceQuotaSpec} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec, 3));
 };
@@ -23239,7 +23143,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.ge
  * @param {?proto.k8s.io.api.core.v1.ResourceQuotaSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setQuotaspec = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setQuota = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -23248,8 +23152,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.se
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearQuotaspec = function() {
-  return this.setQuotaspec(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearQuota = function() {
+  return this.setQuota(undefined);
 };
 
 
@@ -23257,16 +23161,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasQuotaspec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasQuota = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
+ * optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 4;
  * @return {?proto.k8s.io.api.core.v1.LimitRangeSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getLimitrangespec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getLimitrange = function() {
   return /** @type{?proto.k8s.io.api.core.v1.LimitRangeSpec} */ (
     jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.LimitRangeSpec, 4));
 };
@@ -23276,7 +23180,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.ge
  * @param {?proto.k8s.io.api.core.v1.LimitRangeSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setLimitrangespec = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setLimitrange = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -23285,8 +23189,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.se
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearLimitrangespec = function() {
-  return this.setLimitrangespec(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearLimitrange = function() {
+  return this.setLimitrange(undefined);
 };
 
 
@@ -23294,7 +23198,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasLimitrangespec = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasLimitrange = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

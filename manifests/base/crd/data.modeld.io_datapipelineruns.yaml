@@ -66,23 +66,6 @@ spec:
           spec:
             description: DataPipelineRunSpec defines the desired state of a schema
             properties:
-              dataLocation:
-                description: The location of data artifacts that are generated during
-                  the run
-                properties:
-                  bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
-                    type: string
-                  datasourceName:
-                    default: ""
-                    description: Datasource name is a pointer to a data source for
-                      cases that the data location is not a simple bucket but a database
-                    type: string
-                  path:
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
-                type: object
               datapipelineName:
                 default: ""
                 description: The data product

@@ -235,10 +235,10 @@ message AlertSpec {
   // +kubebuilder:validation:Optional
   optional string subject = 1;
 
-  // User provided description
+  // Alert Message
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string message = 2;
 
   // Scopes is the list of scopes for this token.
   optional string level = 3;
@@ -627,26 +627,17 @@ message CommitList {
 
 // CommitSpec defines the desired state of Commit
 message CommitSpec {
+  // User provided commit message
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string subject = 1;
-
-  // User provided description
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string message = 1;
 
   // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
-
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 5;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6;
+  optional string owner = 3;
 }
 
 // CommitStatus is the observed state of a Commit
@@ -655,7 +646,7 @@ message CommitStatus {
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
-  // The time when the alert was fired
+  // The time when the commit was completed
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
@@ -1200,10 +1191,10 @@ message LabSpec {
 
   // QuotaSpec is quoute specification for the lab namespace.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
+  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 3;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
+  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 4;
 
   // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
   // +kubebuilder:validation:Optional

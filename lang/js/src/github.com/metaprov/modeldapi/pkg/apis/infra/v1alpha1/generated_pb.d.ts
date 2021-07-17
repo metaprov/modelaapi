@@ -353,8 +353,8 @@ export class AlertSpec extends jspb.Message {
   getSubject(): string;
   setSubject(value: string): AlertSpec;
 
-  getDescription(): string;
-  setDescription(value: string): AlertSpec;
+  getMessage(): string;
+  setMessage(value: string): AlertSpec;
 
   getLevel(): string;
   setLevel(value: string): AlertSpec;
@@ -384,7 +384,7 @@ export class AlertSpec extends jspb.Message {
 export namespace AlertSpec {
   export type AsObject = {
     subject: string,
-    description: string,
+    message: string,
     level: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
@@ -1094,19 +1094,13 @@ export namespace CommitList {
 }
 
 export class CommitSpec extends jspb.Message {
-  getSubject(): string;
-  setSubject(value: string): CommitSpec;
-
-  getDescription(): string;
-  setDescription(value: string): CommitSpec;
+  getMessage(): string;
+  setMessage(value: string): CommitSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): CommitSpec;
   hasEntityref(): boolean;
   clearEntityref(): CommitSpec;
-
-  getNotifiername(): string;
-  setNotifiername(value: string): CommitSpec;
 
   getOwner(): string;
   setOwner(value: string): CommitSpec;
@@ -1121,10 +1115,8 @@ export class CommitSpec extends jspb.Message {
 
 export namespace CommitSpec {
   export type AsObject = {
-    subject: string,
-    description: string,
+    message: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    notifiername: string,
     owner: string,
   }
 }
@@ -2186,15 +2178,15 @@ export class LabSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): LabSpec;
 
-  getQuotaspec(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
-  setQuotaspec(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): LabSpec;
-  hasQuotaspec(): boolean;
-  clearQuotaspec(): LabSpec;
+  getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
+  setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): LabSpec;
+  hasQuota(): boolean;
+  clearQuota(): LabSpec;
 
-  getLimitrangespec(): k8s_io_api_core_v1_generated_pb.LimitRangeSpec | undefined;
-  setLimitrangespec(value?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec): LabSpec;
-  hasLimitrangespec(): boolean;
-  clearLimitrangespec(): LabSpec;
+  getLimitrange(): k8s_io_api_core_v1_generated_pb.LimitRangeSpec | undefined;
+  setLimitrange(value?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec): LabSpec;
+  hasLimitrange(): boolean;
+  clearLimitrange(): LabSpec;
 
   getClustername(): string;
   setClustername(value: string): LabSpec;
@@ -2214,8 +2206,8 @@ export namespace LabSpec {
   export type AsObject = {
     description: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    quotaspec?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
-    limitrangespec?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
+    quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
+    limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
     clustername: string,
     owner: string,
   }

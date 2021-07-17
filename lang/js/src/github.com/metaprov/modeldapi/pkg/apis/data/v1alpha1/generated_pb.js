@@ -8918,7 +8918,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.t
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     datapipelinename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
@@ -8965,11 +8964,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.d
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatapipelinename(value);
-      break;
-    case 3:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
-      msg.setDatalocation(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -9024,14 +9018,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.s
     writer.writeString(
       2,
       f
-    );
-  }
-  f = message.getDatalocation();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -9127,43 +9113,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDatapipelinename = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional DataLocation dataLocation = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getDatalocation = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setDatalocation = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearDatalocation = function() {
-  return this.setDatalocation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasDatalocation = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -9877,9 +9826,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     schedule: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    defaultcompilerspec: (f = msg.getDefaultcompilerspec()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    priority: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f
+    priority: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9952,16 +9900,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
       break;
-    case 10:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
-      msg.setDefaultcompilerspec(value);
-      break;
-    case 11:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
       break;
-    case 12:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
       break;
@@ -10049,25 +9992,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
       f
     );
   }
-  f = message.getDefaultcompilerspec();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
   if (f != null) {
     writer.writeString(
-      11,
+      9,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 10));
   if (f != null) {
     writer.writeBool(
-      12,
+      10,
       f
     );
   }
@@ -10352,48 +10287,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec defaultCompilerSpec = 10;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getDefaultcompilerspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec, 10));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setDefaultcompilerspec = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearDefaultcompilerspec = function() {
-  return this.setDefaultcompilerspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasDefaultcompilerspec = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional string priority = 11;
+ * optional string priority = 9;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -10402,7 +10300,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 11, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
@@ -10411,7 +10309,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 11, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -10420,16 +10318,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional bool paused = 12;
+ * optional bool paused = 10;
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getPaused = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -10438,7 +10336,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setPaused = function(value) {
-  return jspb.Message.setField(this, 12, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -10447,7 +10345,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearPaused = function() {
-  return jspb.Message.setField(this, 12, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -10456,7 +10354,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasPaused = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -15130,7 +15028,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ownername: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
@@ -15139,7 +15037,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     table: (f = msg.getTable()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec.toObject(includeInstance, f),
     stream: (f = msg.getStream()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.StreamSpec.toObject(includeInstance, f),
     api: (f = msg.getApi()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     datasettype: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f)
   };
@@ -15180,7 +15077,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOwnername(value);
+      msg.setOwner(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -15218,10 +15115,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec.deserializeBinaryFromReader);
       msg.setApi(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
       break;
     case 17:
       var value = /** @type {string} */ (reader.readString());
@@ -15329,13 +15222,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 10));
-  if (f != null) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 17));
   if (f != null) {
     writer.writeString(
@@ -15355,10 +15241,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
 
 
 /**
- * optional string ownerName = 1;
+ * optional string owner = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -15367,7 +15253,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setOwnername = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setOwner = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -15376,7 +15262,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearOwner = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -15385,7 +15271,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasOwnername = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -15680,42 +15566,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasApi = function() {
   return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional string owner = 10;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 10, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 10, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -17333,7 +17183,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     datasourcename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    report: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    reported: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     validate: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     labeled: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     syntatic: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
@@ -17398,7 +17248,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReport(value);
+      msg.setReported(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -17728,10 +17578,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional bool report = 7;
+ * optional bool reported = 7;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getReport = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getReported = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -17740,7 +17590,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setReport = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setReported = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -17749,7 +17599,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearReport = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearReported = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -17758,7 +17608,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasReport = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasReported = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -37205,7 +37055,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.toObject =
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeStep.toObject, includeInstance),
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeOutputSpec.toObject(includeInstance, f),
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
@@ -37275,10 +37124,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.deserializ
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setObservedgeneration(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -37368,13 +37213,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.serializeB
       7,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeInt64(
-      8,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 9));
@@ -37648,42 +37486,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasSample = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional int64 observedGeneration = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 
