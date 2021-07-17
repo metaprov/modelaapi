@@ -23,8 +23,8 @@ var _ webhook.Defaulter = &DataSource{}
 
 func (datasource *DataSource) Default() {
 
-	if datasource.Spec.OwnerName == nil {
-		datasource.Spec.OwnerName = util.StrPtr("")
+	if datasource.Spec.Owner == nil {
+		datasource.Spec.Owner = util.StrPtr("")
 	}
 
 	if datasource.Spec.Description != nil {
