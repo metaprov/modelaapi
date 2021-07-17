@@ -650,7 +650,7 @@ spec:
                       - ridge-classifier
                       - quadratic-discriminant
                       - linear-discriminant
-                      - light-gbm
+                      - lightgbm-classifier
                       - catboost-classifier
                       - stacking-ensemble
                       type: string

@@ -746,7 +746,7 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"light-gbm";"catboost-classifier";"stacking-ensemble";
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";
 type ClassicEstimatorName string
 
 const (
@@ -796,7 +796,7 @@ const (
 	RidgeClassifier             ClassicEstimatorName = "ridge-classifier"
 	QuadraticDiscriminant       ClassicEstimatorName = "quadratic-discriminant"
 	LinearDiscriminant          ClassicEstimatorName = "linear-discriminant"
-	LightGBM                    ClassicEstimatorName = "light-gbm"
+	LightGBMClassifier          ClassicEstimatorName = "lightgbm-classifier"
 	CatBoostClassifier          ClassicEstimatorName = "catboost-classifier"
 	StackingEnsemble            ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
 	UnknownEstimatorName        ClassicEstimatorName = "unknown"
