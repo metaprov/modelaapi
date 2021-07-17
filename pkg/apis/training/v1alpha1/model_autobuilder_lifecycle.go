@@ -426,7 +426,7 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 			Namespace: b.Namespace,
 		},
 		Spec: data.DataSourceSpec{
-			OwnerName:   nil,
+			Owner:       nil,
 			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			Schema:      &data.Schema{Columns: columns},
@@ -535,7 +535,6 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 				CvType:      nil,
 				CV:          nil,
 				Folds:       nil,
-				Retry:       nil,
 				EvalMetrics: nil,
 			},
 			Location: &data.DataLocation{

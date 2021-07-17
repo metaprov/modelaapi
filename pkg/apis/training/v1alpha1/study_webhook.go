@@ -147,7 +147,6 @@ func (study *Study) Default() {
 			CvType:             &cvtype,
 			CV:                 util.BoolPtr(true),
 			Folds:              util.Int32Ptr(5),
-			Retry:              util.Int32Ptr(5),
 			EarlyStop:          util.BoolPtr(false),
 			CheckpointInterval: util.Int32Ptr(10),
 			Seed:               util.Float64Ptr(42),
