@@ -291,7 +291,7 @@ type FlatFileSpec struct {
 	// Default to comma
 	// +kubebuilder:validation:Optional
 	Delimiter *Delimiter `json:"delimiter,omitempty" protobuf:"bytes,5,opt,name=delimiter"`
-	//The quata char.
+	//The quote char.
 	// +kubebuilder:validation:Optional
 	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,6,opt,name=quote"`
 	// the char used to escape the delimiter when quoting
@@ -540,7 +540,7 @@ type DataSourceSpec struct {
 	// The account name of the owner of this dataset
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	OwnerName *string `json:"ownerName,omitempty" protobuf:"bytes,1,opt,name=ownerName"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The version of the flat file.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:default:=""
@@ -567,10 +567,6 @@ type DataSourceSpec struct {
 	// Api define the specification of the api
 	// +kubebuilder:validation:Optional
 	Api *ApiSpec `json:"api,omitempty" protobuf:"bytes,9,opt,name=api"`
-	// The owner account name
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,10,opt,name=owner"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional

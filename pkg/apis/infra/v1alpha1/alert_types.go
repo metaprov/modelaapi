@@ -78,10 +78,10 @@ type AlertSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Subject *string `json:"subject,omitempty" protobuf:"bytes,1,opt,name=subject"`
-	// User provided description
+	// Alert Message
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Message *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Message *string `json:"message,omitempty" protobuf:"bytes,2,opt,name=message"`
 	// Scopes is the list of scopes for this token.
 	Level *AlertLevel `json:"level,omitempty" protobuf:"bytes,3,opt,name=level"`
 	// The subject entity

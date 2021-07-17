@@ -63,22 +63,15 @@ type CommitList struct {
 
 // CommitSpec defines the desired state of Commit
 type CommitSpec struct {
+	// User provided commit message
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Subject *string `json:"subject,omitempty" protobuf:"bytes,1,opt,name=subject"`
-	// User provided description
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Message *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	Message *string `json:"message,omitempty" protobuf:"bytes,1,opt,name=message"`
 	// The subject entity
-	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	// NotifierName is the name of the notifier used to fire the alert.
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
 }
 
 // CommitStatus is the observed state of a Commit
@@ -86,7 +79,7 @@ type CommitStatus struct {
 	// Phase is the phase of the model
 	// +kubebuilder:validation:Optional
 	Phase CommitPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
-	// The time when the alert was fired
+	// The time when the commit was completed
 	// +kubebuilder:validation:Optional
 	At metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 	// ObservedGeneration is the Last generation that was acted on

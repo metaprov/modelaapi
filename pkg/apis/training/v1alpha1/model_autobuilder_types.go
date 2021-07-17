@@ -164,7 +164,7 @@ type ModelAutobuilderSpec struct {
 	// WorkloadClassName is the name of the workload class used to run this pipeline.
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,18,opt,name=workloadClassName"`
+	Workload *string `json:"workload,omitempty" protobuf:"bytes,18,opt,name=workload"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional

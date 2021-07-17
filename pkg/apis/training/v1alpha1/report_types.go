@@ -164,12 +164,6 @@ type ReportSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
-	// From is the start time of the report. Used only for summary report
-	// +kubebuilder:validation:Optional
-	From *metav1.Time `json:"from,omitempty" protobuf:"bytes,11,opt,name=from"`
-	// To is the end time of the report . Use only for summary report. If empty, the system will use the current time.
-	// +kubebuilder:validation:Optional
-	To *metav1.Time `json:"to,omitempty" protobuf:"bytes,12,opt,name=to"`
 }
 
 // ReportStatus defines the observed state of the report.

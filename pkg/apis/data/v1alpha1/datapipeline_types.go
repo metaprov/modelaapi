@@ -88,17 +88,14 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
-	// This is the default compiler spec
-	//+kubebuilder:validation:Optional
-	DefaultCompilerSpec *catalog.CompilerSpec `json:"defaultCompilerSpec,omitempty" protobuf:"bytes,10,opt,name=defaultCompilerSpec"`
 	// The priority of this data pipeline. The defualt is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,11,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,9,opt,name=priority"`
 	// Set to true to pause the cron prediction
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,12,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,10,opt,name=paused"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

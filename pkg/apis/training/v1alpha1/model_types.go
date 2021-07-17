@@ -411,12 +411,6 @@ type ModelStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,32,opt,name=observedGeneration"`
-	// CPU is the avg cpu consumed during training.
-	//+kubebuilder:validation:Optional
-	CPU *int32 `json:"cpu,omitempty" protobuf:"varint,33,opt,name=cpu"`
-	// Mem is the avg memory consumed during training.
-	//+kubebuilder:validation:Optional
-	Mem *int32 `json:"mem,omitempty" protobuf:"varint,34,opt,name=mem"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
 	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,35,opt,name=trainingRows"`
@@ -554,10 +548,6 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
 	Folds *int32 `json:"folds,omitempty" protobuf:"varint,6,opt,name=folds"`
-	// Retry attempt is the number of training retry for this model,
-	// +kubebuilder:default:=5
-	// +kubebuilder:validation:Optional
-	Retry *int32 `json:"retry,omitempty" protobuf:"varint,7,opt,name=retry"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
 	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`
@@ -596,7 +586,7 @@ type CategoricalPipelineSpec struct {
 	// The columns for this pipeline. Use * to denotes all the columns.
 	// Must have at least on value.
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,1,rep,name=columns"`
-	// Categorical varaible imputer
+	// Categorical variable imputer
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,2,opt,name=imputer"`

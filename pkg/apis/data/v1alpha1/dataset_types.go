@@ -107,7 +107,7 @@ type DatasetSpec struct {
 	// If true, a dataset report should be generated for this dataset.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"report,omitempty" protobuf:"varint,7,opt,name=report"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,7,opt,name=reported"`
 	// If true, we should validate the dataset
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -248,10 +248,10 @@ type ColumnStatistics struct {
 	// Is this column is nullable.
 	// This value is derived from the schema.
 	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
-	// This column has high cardinality and should be ignored.
+	// This column has high cardinality and should use high cred encoder
 	// The value is set during the profile process.
 	HighCred bool `json:"highCred,omitempty" protobuf:"varint,21,opt,name=highCred"`
-	// This column has high corrolation with another feature and should be dropped.
+	// This column has high correlation with another feature and should be dropped.
 	// The value is set during the profile process.
 	HighCorr bool `json:"highCorr,omitempty" protobuf:"varint,22,opt,name=highCorr"`
 	// Mark that this column is skewed and would require a power transform
@@ -261,7 +261,7 @@ type ColumnStatistics struct {
 	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
 	// Completeness is the ratio between non null to null
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
-	// The ratio between distinc to total
+	// The ratio between distinct count to total count
 	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,25,opt,name=distinctValueCount"`
 	// The ratio between most freq value to total
 	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,26,opt,name=mostFreqValuesRatio"`

@@ -80,9 +80,6 @@ type DataPipelineRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	DataPipelineName *string `json:"datapipelineName,omitempty" protobuf:"bytes,2,opt,name=datapipelineName"`
-	// The location of data artifacts that are generated during the run
-	// +kubebuilder:validation:Optional
-	DataLocation *DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,3,opt,name=dataLocation"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
