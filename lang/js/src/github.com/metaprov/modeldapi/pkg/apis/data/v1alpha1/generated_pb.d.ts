@@ -1343,10 +1343,10 @@ export class DataSourceSpec extends jspb.Message {
   getType(): string;
   setType(value: string): DataSourceSpec;
 
-  getFile(): FlatFileSpec | undefined;
-  setFile(value?: FlatFileSpec): DataSourceSpec;
-  hasFile(): boolean;
-  clearFile(): DataSourceSpec;
+  getFlatfile(): FlatFileSpec | undefined;
+  setFlatfile(value?: FlatFileSpec): DataSourceSpec;
+  hasFlatfile(): boolean;
+  clearFlatfile(): DataSourceSpec;
 
   getTable(): TableSpec | undefined;
   setTable(value?: TableSpec): DataSourceSpec;
@@ -1386,7 +1386,7 @@ export namespace DataSourceSpec {
     description: string,
     schema?: Schema.AsObject,
     type: string,
-    file?: FlatFileSpec.AsObject,
+    flatfile?: FlatFileSpec.AsObject,
     table?: TableSpec.AsObject,
     stream?: StreamSpec.AsObject,
     api?: ApiSpec.AsObject,

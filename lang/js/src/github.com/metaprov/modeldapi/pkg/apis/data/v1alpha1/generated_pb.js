@@ -15033,7 +15033,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
     type: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    file: (f = msg.getFile()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject(includeInstance, f),
+    flatfile: (f = msg.getFlatfile()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject(includeInstance, f),
     table: (f = msg.getTable()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec.toObject(includeInstance, f),
     stream: (f = msg.getStream()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.StreamSpec.toObject(includeInstance, f),
     api: (f = msg.getApi()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.ApiSpec.toObject(includeInstance, f),
@@ -15099,7 +15099,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
     case 6:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.deserializeBinaryFromReader);
-      msg.setFile(value);
+      msg.setFlatfile(value);
       break;
     case 7:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec;
@@ -15190,7 +15190,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       f
     );
   }
-  f = message.getFile();
+  f = message.getFlatfile();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -15422,10 +15422,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
 
 
 /**
- * optional FlatFileSpec file = 6;
+ * optional FlatFileSpec flatfile = 6;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getFile = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getFlatfile = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec, 6));
 };
@@ -15435,7 +15435,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setFile = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setFlatfile = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -15444,8 +15444,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearFile = function() {
-  return this.setFile(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearFlatfile = function() {
+  return this.setFlatfile(undefined);
 };
 
 
@@ -15453,7 +15453,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFile = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFlatfile = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

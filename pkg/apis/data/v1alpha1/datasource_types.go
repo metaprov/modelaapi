@@ -575,7 +575,7 @@ type DataSourceSpec struct {
 	Type *DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	FlatFile *FlatFileSpec `json:"file,omitempty" protobuf:"bytes,6,opt,name=file"`
+	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,6,opt,name=flatfile"`
 	// Table access specification if the data source is a table
 	// +kubebuilder:validation:Optional
 	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,7,opt,name=table"`

@@ -171,7 +171,7 @@ spec:
                     description: User provided description of the data source
                     maxLength: 512
                     type: string
-                  file:
+                  flatfile:
                     description: FlatFile access specification
                     properties:
                       commentChars:

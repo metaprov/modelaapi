@@ -939,7 +939,7 @@ message DataSourceSpec {
 
   // FlatFile access specification
   // +kubebuilder:validation:Optional
-  optional FlatFileSpec file = 6;
+  optional FlatFileSpec flatfile = 6;
 
   // Table access specification if the data source is a table
   // +kubebuilder:validation:Optional
