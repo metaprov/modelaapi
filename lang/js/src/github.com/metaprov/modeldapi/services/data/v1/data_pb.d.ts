@@ -1412,6 +1412,16 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasProduct(): boolean;
   clearProduct(): DsInferSchemaRequest;
 
+  getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
+  setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): DsInferSchemaRequest;
+  hasFlatfile(): boolean;
+  clearFlatfile(): DsInferSchemaRequest;
+
+  getTable(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec | undefined;
+  setTable(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec): DsInferSchemaRequest;
+  hasTable(): boolean;
+  clearTable(): DsInferSchemaRequest;
+
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsInferSchemaRequest;
   hasBucket(): boolean;
@@ -1439,6 +1449,8 @@ export class DsInferSchemaRequest extends jspb.Message {
 export namespace DsInferSchemaRequest {
   export type AsObject = {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    table?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.AsObject,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,

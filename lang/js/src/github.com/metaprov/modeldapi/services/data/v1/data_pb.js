@@ -12591,10 +12591,12 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    table: (f = msg.getTable()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.toObject(includeInstance, f),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    key: jspb.Message.getFieldWithDefault(msg, 5, "")
+    key: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -12637,22 +12639,32 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.deseri
       msg.setProduct(value);
       break;
     case 2:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      msg.setFlatfile(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.deserializeBinaryFromReader);
+      msg.setTable(value);
+      break;
+    case 4:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 3:
+    case 5:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 4:
+    case 6:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 5:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
@@ -12693,10 +12705,26 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.serial
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
     );
   }
-  f = message.getBucket();
+  f = message.getFlatfile();
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getTable();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
+      4,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
@@ -12704,19 +12732,19 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.serial
   f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
-      3,
+      5,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      7,
       f
     );
   }
@@ -12761,12 +12789,86 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getFlatfile = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setFlatfile = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.clearFlatfile = function() {
+  return this.setFlatfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasFlatfile = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getTable = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setTable = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.clearTable = function() {
+  return this.setTable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasTable = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 2));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 4));
 };
 
 
@@ -12775,7 +12877,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -12793,17 +12895,17 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 3));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
 };
 
 
@@ -12812,7 +12914,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -12830,19 +12932,19 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * map<string, bytes> secret = 4;
+ * map<string, bytes> secret = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };
 
@@ -12857,11 +12959,11 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
 
 
 /**
- * optional string key = 5;
+ * optional string key = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -12870,7 +12972,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

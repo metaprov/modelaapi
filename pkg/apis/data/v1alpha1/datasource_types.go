@@ -271,14 +271,32 @@ const (
 )
 
 // DatabaseServerType is the type of the database server
-// +kubebuilder:validation:Enum="sqlserver";"mysql";"postgress";"sqlite"
+// +kubebuilder:validation:Enum="sqlserver";"mysql";"postgress";"sqlite";"oracle";"presto";"redshift";"apache-hive";"snowflake";"sybase";"vertica";"cockroach-db";"elasticsearch";"informix";"sap-hana";"teradata";"gcp-spanner";"apache-spark";"clickhouse";"greenplum";"couchbase";"exasol"
 type DatabaseServerType string
 
 const (
-	MsSqlServer DatabaseServerType = "sqlserver"
-	MySql       DatabaseServerType = "mysql"
-	Postgress   DatabaseServerType = "postgress"
-	SqlLite     DatabaseServerType = "sqlite"
+	MsSqlServer    DatabaseServerType = "sqlserver"
+	MySql          DatabaseServerType = "mysql"
+	Postgres       DatabaseServerType = "postgres"
+	SqlLite        DatabaseServerType = "sqlite"
+	Oracle         DatabaseServerType = "oracle"
+	Presto         DatabaseServerType = "presto"
+	AmazonRedShift DatabaseServerType = "redshift"
+	ApacheHive     DatabaseServerType = "apache-hive"
+	Snowflake      DatabaseServerType = "snowflake"
+	Sybase         DatabaseServerType = "sybase"
+	Vertica        DatabaseServerType = "vertica"
+	CockroachDB    DatabaseServerType = "cockroach-db"
+	ElasticSearch  DatabaseServerType = "elasticsearch"
+	Informix       DatabaseServerType = "informix"
+	SAPHana        DatabaseServerType = "sap-hana"
+	Teradata       DatabaseServerType = "teradata"
+	GcpSpanner     DatabaseServerType = "gcp-spanner"
+	ApacheSpark    DatabaseServerType = "apache-spark"
+	ClickHouse     DatabaseServerType = "clickhouse"
+	GreenPlum      DatabaseServerType = "greenplum"
+	Couchbase      DatabaseServerType = "couchbase"
+	Exasol         DatabaseServerType = "exasol"
 )
 
 type FlatFileSpec struct {

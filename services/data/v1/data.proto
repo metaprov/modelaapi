@@ -319,10 +319,12 @@ message DsDatasetProfileResponse {
 
 message DsInferSchemaRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
-    map<string,bytes> secret =4;
-    string key = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 3;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;    
+    map<string,bytes> secret =6;
+    string key = 7;
 }
 
 message DsInferSchemaResponse {
