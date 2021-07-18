@@ -1422,6 +1422,9 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasTable(): boolean;
   clearTable(): DsInferSchemaRequest;
 
+  getSourcetype(): string;
+  setSourcetype(value: string): DsInferSchemaRequest;
+
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsInferSchemaRequest;
   hasBucket(): boolean;
@@ -1451,6 +1454,7 @@ export namespace DsInferSchemaRequest {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
     table?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.AsObject,
+    sourcetype: string,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
