@@ -58,6 +58,8 @@ message InferSchemaRequest {
     string tenant    = 3;
     string bucket    = 4;
     string key       = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 6;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 7;
 }
 
 message InferSchemaResponse {

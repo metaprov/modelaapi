@@ -1787,7 +1787,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.to
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
     tenant: jspb.Message.getFieldWithDefault(msg, 3, ""),
     bucket: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    key: jspb.Message.getFieldWithDefault(msg, 5, "")
+    key: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    table: (f = msg.getTable()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1843,6 +1845,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.de
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      msg.setFlatfile(value);
+      break;
+    case 7:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.deserializeBinaryFromReader);
+      msg.setTable(value);
       break;
     default:
       reader.skipField();
@@ -1906,6 +1918,22 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.se
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getFlatfile();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getTable();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.serializeBinaryToWriter
     );
   }
 };
@@ -1998,6 +2026,80 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  */
 proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setKey = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 6;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getFlatfile = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setFlatfile = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.clearFlatfile = function() {
+  return this.setFlatfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.hasFlatfile = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 7;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec}
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getTable = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setTable = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.clearTable = function() {
+  return this.setTable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.hasTable = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
