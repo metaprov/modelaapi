@@ -37,7 +37,7 @@ spec:
     - jsonPath: .status.startTime
       name: StartTime
       type: date
-    - jsonPath: .status.completionTime
+    - jsonPath: .status.endTime
       name: CompletionTime
       type: date
     - jsonPath: .metadata.creationTimestamp

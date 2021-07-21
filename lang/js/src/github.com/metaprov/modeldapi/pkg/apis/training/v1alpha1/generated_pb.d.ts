@@ -2368,6 +2368,12 @@ export class ModelStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): ModelStatus;
 
+  getSizeinbytes(): number;
+  setSizeinbytes(value: number): ModelStatus;
+
+  getLatency(): number;
+  setLatency(value: number): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2420,6 +2426,8 @@ export namespace ModelStatus {
     validationrows: number,
     lasterror: string,
     progress: number,
+    sizeinbytes: number,
+    latency: number,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

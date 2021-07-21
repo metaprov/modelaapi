@@ -427,10 +427,16 @@ type ModelStatus struct {
 	// Model Progress in precent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,39,opt,name=progress"`
+	// Size is the maximum model size
+	// +kubebuilder:validation:Optional
+	SizeInBytes int32 `json:"sizeInBytes" protobuf:"varint,40,opt,name=sizeInBytes"`
+	// Prediction Latency
+	// +kubebuilder:validation:Optional
+	Latency float64 `json:"latency" protobuf:"varint,41,opt,name=latency"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,40,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,42,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

@@ -1188,6 +1188,9 @@ spec:
                 default: ""
                 description: Last error
                 type: string
+              latency:
+                description: Prediction Latency
+                type: number
               logsUri:
                 description: LogsUri is the URI of the log file
                 type: string
@@ -1241,6 +1244,10 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              sizeInBytes:
+                description: Size is the maximum model size
+                format: int32
+                type: integer
               startTime:
                 description: StartTime represents time when the model is first handled
                   by the model controller
