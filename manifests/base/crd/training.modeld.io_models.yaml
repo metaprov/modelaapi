@@ -1234,6 +1234,10 @@ spec:
               pythonVersion:
                 description: Python version is the result of python vewrsion call.
                 type: string
+              releasedAt:
+                description: Released at the time when the model was released
+                format: date-time
+                type: string
               reportName:
                 description: ReportName is a reference to the model report
                 type: string

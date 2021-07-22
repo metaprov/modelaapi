@@ -357,6 +357,35 @@ func (model *Model) MarkTraining() {
 	model.Status.Progress = util.Int32Ptr(10)
 }
 
+func (model *Model) MarkReleasing() {
+	model.Status.Phase = ModelPhaseReleasing
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelReleased,
+		Status: v1.ConditionFalse,
+		Reason: ReasonFailed,
+	})
+}
+
+func (model *Model) IsReleasing() bool {
+	return model.Status.Phase == ModelPhaseReleasing
+}
+
+func (model *Model) MarkLive() {
+	now := metav1.Now()
+	model.Status.StartTime = &now
+	model.Status.ReleasedAt = &now
+	model.Status.Phase = ModelPhaseLive
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelReleased,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) IsLive() bool {
+	cond := model.GetCond(ModelReleased)
+	return cond.Status == v1.ConditionTrue
+}
+
 func (model *Model) MarkTrained(ms []catalog.Measurement) {
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
@@ -651,21 +680,6 @@ func (model *Model) Aborted() bool {
 	cond := model.GetCond(ModelAborted)
 	return cond.Status == v1.ConditionTrue
 
-}
-
-// -------------------- Serving
-
-func (model *Model) MarkServing() {
-	model.Status.Phase = ModelPhaseReleased
-	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelReleased,
-		Status: v1.ConditionTrue,
-	})
-}
-
-func (model *Model) Serving() bool {
-	cond := model.GetCond(ModelReleased)
-	return cond.Status == v1.ConditionTrue
 }
 
 func (model *Model) Failed() bool {

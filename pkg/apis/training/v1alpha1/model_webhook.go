@@ -191,7 +191,7 @@ func (model *Model) validateDelete() error {
 
 	path := field.NewPath("")
 
-	if model.Serving() {
+	if model.IsLive() {
 		err := field.Invalid(path.Child("rpc"), model, "can't delete serving model")
 		allErrors = append(allErrors, err)
 	}

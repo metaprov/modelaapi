@@ -2384,6 +2384,11 @@ export class ModelStatus extends jspb.Message {
   getPredictorname(): string;
   setPredictorname(value: string): ModelStatus;
 
+  getReleasedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReleasedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasReleasedat(): boolean;
+  clearReleasedat(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2440,6 +2445,7 @@ export namespace ModelStatus {
     latency: number,
     url: string,
     predictorname: string,
+    releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

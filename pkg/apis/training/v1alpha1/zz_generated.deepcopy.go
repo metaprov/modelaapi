@@ -2112,6 +2112,10 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.ReleasedAt != nil {
+		in, out := &in.ReleasedAt, &out.ReleasedAt
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

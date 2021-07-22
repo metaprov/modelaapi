@@ -92,7 +92,8 @@ const (
 	ModelPhaseForecasted  ModelPhase = "Forecasted"
 	ModelPhaseUat         ModelPhase = "UAT"
 	ModelPhaseDeployed    ModelPhase = "Deployed"
-	ModelPhaseReleased    ModelPhase = "Released"
+	ModelPhaseReleasing   ModelPhase = "Releasing"
+	ModelPhaseLive        ModelPhase = "Live"
 	ModelPhaseMaintenance ModelPhase = "Maintenance"
 	ModelPhaseRetired     ModelPhase = "Retired"
 )
@@ -131,7 +132,7 @@ const (
 	// The model is under testing
 	ModelUat ModelConditionType = "UAT"
 	// The model is in production
-	ModelDeployed ModelConditionType = "Deployed"
+	ModelLive ModelConditionType = "Live"
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
 	// The model is in maintance
@@ -442,10 +443,13 @@ type ModelStatus struct {
 	// If the model is released, this is the name of the predictor
 	// +kubebuilder:validation:Optional
 	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,43,opt,name=predictorName"`
+	// Released at the time when the model was released
+	// +kubebuilder:validation:Optional
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,44,opt,name=releasedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,44,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,45,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

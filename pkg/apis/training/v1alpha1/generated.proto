@@ -1697,10 +1697,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string predictorName = 43;
 
+  // Released at the time when the model was released
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 44;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 44;
+  repeated ModelCondition conditions = 45;
 }
 
 message ModelValidation {
