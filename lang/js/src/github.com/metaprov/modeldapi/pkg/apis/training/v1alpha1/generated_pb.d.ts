@@ -2165,6 +2165,9 @@ export class ModelSpec extends jspb.Message {
   getForecasted(): boolean;
   setForecasted(value: boolean): ModelSpec;
 
+  getReleased(): boolean;
+  setReleased(value: boolean): ModelSpec;
+
   getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
   hasLocation(): boolean;
@@ -2220,6 +2223,7 @@ export namespace ModelSpec {
     profiled: boolean,
     archived: boolean,
     forecasted: boolean,
+    released: boolean,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
@@ -2374,6 +2378,12 @@ export class ModelStatus extends jspb.Message {
   getLatency(): number;
   setLatency(value: number): ModelStatus;
 
+  getUrl(): string;
+  setUrl(value: string): ModelStatus;
+
+  getPredictorname(): string;
+  setPredictorname(value: string): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2428,6 +2438,8 @@ export namespace ModelStatus {
     progress: number,
     sizeinbytes: number,
     latency: number,
+    url: string,
+    predictorname: string,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

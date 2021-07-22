@@ -284,23 +284,27 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,24,opt,name=forecasted"`
+	// Indicates that the model should be released to production
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Released *bool `json:"released,omitempty" protobuf:"varint,25,opt,name=released"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,25,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,26,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,26,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,27,opt,name=forecastingSpec"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,27,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,28,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,28,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,29,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,29,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,30,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {
@@ -433,10 +437,15 @@ type ModelStatus struct {
 	// Prediction Latency
 	// +kubebuilder:validation:Optional
 	Latency float64 `json:"latency" protobuf:"varint,41,opt,name=latency"`
+	// The URL to the released version
+	URL string `json:"url,omitempty" protobuf:"bytes,42,opt,name=url"`
+	// If the model is released, this is the name of the predictor
+	// +kubebuilder:validation:Optional
+	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,43,opt,name=predictorName"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,42,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,44,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

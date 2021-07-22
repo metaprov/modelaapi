@@ -721,6 +721,10 @@ spec:
                 description: Pushed indicate if the model image should be pushed into
                   the remote docker registry.
                 type: boolean
+              released:
+                default: false
+                description: Indicates that the model should be released to production
+                type: boolean
               reported:
                 default: false
                 description: Reported is set when a report should be created for this
@@ -1210,6 +1214,9 @@ spec:
               phase:
                 description: Phase is the phase of the model
                 type: string
+              predictorName:
+                description: If the model is released, this is the name of the predictor
+                type: string
               profileUri:
                 description: ProfileUri is a reference to the visualization uri which
                   were produce during processing
@@ -1441,6 +1448,9 @@ spec:
                 description: TrainStartTime represents time when the model started
                   training.
                 format: date-time
+                type: string
+              url:
+                description: The URL to the released version
                 type: string
               validationDataset:
                 description: ValidationDatasetLocation is the location of the dataset

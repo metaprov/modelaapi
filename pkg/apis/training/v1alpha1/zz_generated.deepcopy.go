@@ -1986,6 +1986,11 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.Released != nil {
+		in, out := &in.Released, &out.Released
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)

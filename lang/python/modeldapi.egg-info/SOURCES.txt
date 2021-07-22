@@ -321,6 +321,7 @@ k8s/io/pkg/util/intstr/generated_pb2_grpc.py
 k8s/io/rbac/v1/generated_pb2_grpc.py
 modeldapi/__init__.py
 modeldapi/version.py
+modeldapi/vim
 modeldapi.egg-info/PKG-INFO
 modeldapi.egg-info/SOURCES.txt
 modeldapi.egg-info/dependency_links.txt

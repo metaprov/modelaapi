@@ -1499,27 +1499,32 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool forecasted = 24;
 
+  // Indicates that the model should be released to production
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool released = 25;
+
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 25;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 26;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 26;
+  optional ForecastingSpec forecastingSpec = 27;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 27;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 28;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 28;
+  optional int64 activeDeadlineSeconds = 29;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 29;
+  optional string estimatorType = 30;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -1685,10 +1690,17 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional double latency = 41;
 
+  // The URL to the released version
+  optional string url = 42;
+
+  // If the model is released, this is the name of the predictor
+  // +kubebuilder:validation:Optional
+  optional string predictorName = 43;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 42;
+  repeated ModelCondition conditions = 44;
 }
 
 message ModelValidation {
