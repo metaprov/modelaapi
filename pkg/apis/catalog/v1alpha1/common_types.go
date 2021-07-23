@@ -472,6 +472,7 @@ const (
 
 // Compare two scores in the metrics
 func (metric Metric) Compare(i float64, j float64) bool {
+	/* Since we are assigning minus score to rmse.
 	if metric == MaxError ||
 		metric == MAE ||
 		metric == MSE ||
@@ -484,6 +485,7 @@ func (metric Metric) Compare(i float64, j float64) bool {
 		return i > j
 
 	}
+	*/
 	return i <= j
 
 }
