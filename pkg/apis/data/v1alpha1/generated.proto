@@ -1793,6 +1793,40 @@ message FeaturesetStatus {
   repeated FeaturesetCondition conditions = 2;
 }
 
+message FileValidation {
+  // +kubebuilder:validation:Optional
+  optional string type = 1;
+
+  // +kubebuilder:validation:Optional
+  optional string bucketName = 2;
+
+  // +kubebuilder:validation:Optional
+  optional string column = 3;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double min = 4;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double max = 5;
+
+  // +kubebuilder:validation:Optional
+  repeated string valueSet = 6;
+
+  // +kubebuilder:validation:Optional
+  optional bool strictMin = 7;
+
+  // +kubebuilder:validation:Optional
+  optional bool strictMax = 8;
+
+  // Generated indicate weather this validation rule was automatically generated
+  // +kubebuilder:validation:Optional
+  optional bool generated = 9;
+}
+
 message FlatFileSpec {
   // The text file type
   // Default: csv
@@ -2537,20 +2571,24 @@ message TimeSeriesSchema {
 }
 
 message ValidationSpec {
-  // MultiDatasetAssertions contains assertions for multi datasets
+  // MultiDatasetValidation contains validations for multi datasets
   // +kubebuilder:validation:Optional
   repeated MultiDatasetValidation multiDatasetValidations = 1;
 
-  // DatasetAssertions contains assertions for datasets
+  // DatasetValidations contains validations for the whole dataset
   // +kubebuilder:validation:Optional
   repeated DatasetValidation datasetValidations = 2;
 
-  // MultiColumnAssertions defines assertions for combined columns from the dataset
+  // MultiColumnValidations defines validations for combined columns from the dataset
   // +kubebuilder:validation:Optional
   repeated MultiColumnValidation multiColumnValidations = 3;
 
-  // MultiColumnAssertions defines assertions for combined columns from the dataset
+  // Column Validations defines assertions for columns from the dataset
   // +kubebuilder:validation:Optional
   repeated ColumnValidation columnValidations = 4;
+
+  // File Validations defines assertions for actual files
+  // +kubebuilder:validation:Optional
+  repeated FileValidation fileValidations = 5;
 }
 

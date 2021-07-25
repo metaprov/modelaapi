@@ -508,8 +508,8 @@ spec:
                       on new datasets
                     properties:
                       columnValidations:
-                        description: MultiColumnAssertions defines assertions for
-                          combined columns from the dataset
+                        description: Column Validations defines assertions for columns
+                          from the dataset
                         items:
                           properties:
                             column:
@@ -537,7 +537,8 @@ spec:
                           type: object
                         type: array
                       datasetValidations:
-                        description: DatasetAssertions contains assertions for datasets
+                        description: DatasetValidations contains validations for the
+                          whole dataset
                         items:
                           properties:
                             generated:
@@ -562,8 +563,39 @@ spec:
                               type: array
                           type: object
                         type: array
+                      fileValidations:
+                        description: File Validations defines assertions for actual
+                          files
+                        items:
+                          properties:
+                            bucketName:
+                              type: string
+                            column:
+                              type: string
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            min:
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            type:
+                              type: string
+                            valueSet:
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        type: array
                       multiColumnValidations:
-                        description: MultiColumnAssertions defines assertions for
+                        description: MultiColumnValidations defines validations for
                           combined columns from the dataset
                         items:
                           properties:
@@ -594,7 +626,7 @@ spec:
                           type: object
                         type: array
                       multiDatasetValidations:
-                        description: MultiDatasetAssertions contains assertions for
+                        description: MultiDatasetValidation contains validations for
                           multi datasets
                         items:
                           properties:

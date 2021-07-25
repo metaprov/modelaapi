@@ -2765,6 +2765,58 @@ export namespace FeaturesetStatus {
   }
 }
 
+export class FileValidation extends jspb.Message {
+  getType(): string;
+  setType(value: string): FileValidation;
+
+  getBucketname(): string;
+  setBucketname(value: string): FileValidation;
+
+  getColumn(): string;
+  setColumn(value: string): FileValidation;
+
+  getMin(): number;
+  setMin(value: number): FileValidation;
+
+  getMax(): number;
+  setMax(value: number): FileValidation;
+
+  getValuesetList(): Array<string>;
+  setValuesetList(value: Array<string>): FileValidation;
+  clearValuesetList(): FileValidation;
+  addValueset(value: string, index?: number): FileValidation;
+
+  getStrictmin(): boolean;
+  setStrictmin(value: boolean): FileValidation;
+
+  getStrictmax(): boolean;
+  setStrictmax(value: boolean): FileValidation;
+
+  getGenerated(): boolean;
+  setGenerated(value: boolean): FileValidation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FileValidation.AsObject;
+  static toObject(includeInstance: boolean, msg: FileValidation): FileValidation.AsObject;
+  static serializeBinaryToWriter(message: FileValidation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileValidation;
+  static deserializeBinaryFromReader(message: FileValidation, reader: jspb.BinaryReader): FileValidation;
+}
+
+export namespace FileValidation {
+  export type AsObject = {
+    type: string,
+    bucketname: string,
+    column: string,
+    min: number,
+    max: number,
+    valuesetList: Array<string>,
+    strictmin: boolean,
+    strictmax: boolean,
+    generated: boolean,
+  }
+}
+
 export class FlatFileSpec extends jspb.Message {
   getFiletype(): string;
   setFiletype(value: string): FlatFileSpec;
@@ -4068,6 +4120,11 @@ export class ValidationSpec extends jspb.Message {
   clearColumnvalidationsList(): ValidationSpec;
   addColumnvalidations(value?: ColumnValidation, index?: number): ColumnValidation;
 
+  getFilevalidationsList(): Array<FileValidation>;
+  setFilevalidationsList(value: Array<FileValidation>): ValidationSpec;
+  clearFilevalidationsList(): ValidationSpec;
+  addFilevalidations(value?: FileValidation, index?: number): FileValidation;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidationSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ValidationSpec): ValidationSpec.AsObject;
@@ -4082,6 +4139,7 @@ export namespace ValidationSpec {
     datasetvalidationsList: Array<DatasetValidation.AsObject>,
     multicolumnvalidationsList: Array<MultiColumnValidation.AsObject>,
     columnvalidationsList: Array<ColumnValidation.AsObject>,
+    filevalidationsList: Array<FileValidation.AsObject>,
   }
 }
 

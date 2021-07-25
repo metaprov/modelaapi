@@ -127,6 +127,16 @@ const (
 	ColumnValidationPairCramersBetween       ColumnValidationName = "pair-cramers-between"
 )
 
+type FileValidationName string
+
+const (
+	FileSizeBetween            FileValidationName = "file-size-between"
+	FileExist                  FileValidationName = "file-exist"
+	FileRegexMatchCountBetween FileValidationName = "file-regex-match-count-between"
+	FileValidJson              FileValidationName = "file-valid-json"
+	FileValidCsv               FileValidationName = "file-valid-csv"
+)
+
 type ColumnValidation struct {
 	// +kubebuilder:validation:Optional
 	Type *ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
@@ -149,6 +159,32 @@ type ColumnValidation struct {
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
+}
+
+type FileValidation struct {
+	// +kubebuilder:validation:Optional
+	Type *FileValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
+	// +kubebuilder:validation:Optional
+	Path *string `json:"column,omitempty" protobuf:"bytes,3,opt,name=column"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,4,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,5,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,6,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,7,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,8,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,rep,name=generated"`
 }
 
 // Condition on the dataset
@@ -346,18 +382,21 @@ type FlatFileSpec struct {
 }
 
 type ValidationSpec struct {
-	// MultiDatasetAssertions contains assertions for multi datasets
+	// MultiDatasetValidation contains validations for multi datasets
 	// +kubebuilder:validation:Optional
 	MultiDatasetValidations []MultiDatasetValidation `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,opt,name=multiDatasetValidations"`
-	// DatasetAssertions contains assertions for datasets
+	// DatasetValidations contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
 	DatasetValidations []DatasetValidation `json:"datasetValidations,omitempty" protobuf:"bytes,2,opt,name=datasetValidations"`
-	// MultiColumnAssertions defines assertions for combined columns from the dataset
+	// MultiColumnValidations defines validations for combined columns from the dataset
 	// +kubebuilder:validation:Optional
 	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,opt,name=multiColumnValidations"`
-	// MultiColumnAssertions defines assertions for combined columns from the dataset
+	// Column Validations defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
 	ColumnValidations []ColumnValidation `json:"columnValidations,omitempty" protobuf:"bytes,4,opt,name=columnValidations"`
+	// File Validations defines assertions for actual files
+	// +kubebuilder:validation:Optional
+	FileValidations []FileValidation `json:"fileValidations,omitempty" protobuf:"bytes,5,opt,name=fileValidations"`
 }
 
 type Schema struct {
