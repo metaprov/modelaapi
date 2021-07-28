@@ -59,7 +59,7 @@ $GOPATH/bin/informer-gen \
 #  -O zz_generated.deepcopy \
 #  --go-header-file hack/custom-boilerplate.go.txt
 
-# Generate conversation
+# Generate review
 $GOPATH/bin/conversion-gen  \
   --input-dirs "${ROOT_PKG}/pkg/apis/catalog/v1alpha1" \
   --input-dirs "${ROOT_PKG}/pkg/apis/data/v1alpha1" \

@@ -11,8 +11,8 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &Conversation{}
+var _ webhook.Defaulter = &Review{}
 
-func (conv *Conversation) Default() {
+func (conv *Review) Default() {
 
 }

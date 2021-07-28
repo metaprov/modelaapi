@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	"fmt"
+
 	team "github.com/metaprov/modeldapi/pkg/apis/team"
 	"github.com/metaprov/modeldapi/pkg/util"
 	"gopkg.in/yaml.v2"
@@ -25,11 +26,11 @@ import (
 //  Finalizer
 //==============================================================================
 
-func (conv *Conversation) HasFinalizer() bool {
+func (conv *Review) HasFinalizer() bool {
 	return util.HasFin(&conv.ObjectMeta, team.GroupName)
 }
-func (conv *Conversation) AddFinalizer() { util.AddFin(&conv.ObjectMeta, team.GroupName) }
-func (conv *Conversation) RemoveFinalizer() {
+func (conv *Review) AddFinalizer() { util.AddFin(&conv.ObjectMeta, team.GroupName) }
+func (conv *Review) RemoveFinalizer() {
 	util.RemoveFin(&conv.ObjectMeta, team.GroupName)
 }
 
@@ -38,24 +39,24 @@ func (conv *Conversation) RemoveFinalizer() {
 //==============================================================================
 
 // Return the on disk rep location
-func (conv *Conversation) RepPath(root string) (string, error) {
+func (conv *Review) RepPath(root string) (string, error) {
 	return fmt.Sprintf("%s/connections/%s.yaml", root, conv.ObjectMeta.Name), nil
 }
 
-func (conv *Conversation) ToYamlFile() ([]byte, error) {
+func (conv *Review) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(conv)
 }
 
-func (conv *Conversation) RootUri() string {
+func (conv *Review) RootUri() string {
 	return fmt.Sprintf("tenants/%s/connections/%s", conv.Namespace, conv.Name)
 }
 
-func (conv *Conversation) ManifestUri() string {
-	return fmt.Sprintf("%s/%s-conversation.yaml", conv.RootUri(), conv.Name)
+func (conv *Review) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-review.yaml", conv.RootUri(), conv.Name)
 }
 
 // Merge or update condition
-func (conv *Conversation) CreateOrUpdateCond(cond ConversationCondition) {
+func (conv *Review) CreateOrUpdateCond(cond ReviewCondition) {
 	i := conv.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -74,7 +75,7 @@ func (conv *Conversation) CreateOrUpdateCond(cond ConversationCondition) {
 	conv.Status.Conditions[i] = current
 }
 
-func (conv *Conversation) GetCondIdx(t ConversationConditionType) int {
+func (conv *Review) GetCondIdx(t ReviewConditionType) int {
 	for i, v := range conv.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -83,14 +84,14 @@ func (conv *Conversation) GetCondIdx(t ConversationConditionType) int {
 	return -1
 }
 
-func (conv *Conversation) GetCond(t ConversationConditionType) ConversationCondition {
+func (conv *Review) GetCond(t ReviewConditionType) ReviewCondition {
 	for _, v := range conv.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ConversationCondition{
+	return ReviewCondition{
 		Type:    t,
 		Status:  corev1.ConditionUnknown,
 		Reason:  "",
@@ -99,33 +100,33 @@ func (conv *Conversation) GetCond(t ConversationConditionType) ConversationCondi
 
 }
 
-func (conv *Conversation) Key() string {
+func (conv *Review) Key() string {
 	return fmt.Sprintf("%s/%s/%s", "connections", conv.Namespace, conv.Name)
 }
 
-func ParseCommentYaml(content []byte) (*Conversation, error) {
+func ParseCommentYaml(content []byte) (*Review, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*Conversation)
+	r := requiredObj.(*Review)
 	return r, nil
 }
 
-func (conv *Conversation) MarkReady() {
-	conv.CreateOrUpdateCond(ConversationCondition{
-		Type:   ConversationReady,
+func (conv *Review) MarkReady() {
+	conv.CreateOrUpdateCond(ReviewCondition{
+		Type:   ReviewReady,
 		Status: corev1.ConditionTrue,
 	})
 }
 
-func (conv *Conversation) MarkArchived() {
-	conv.CreateOrUpdateCond(ConversationCondition{
-		Type:   ConversationSaved,
+func (conv *Review) MarkArchived() {
+	conv.CreateOrUpdateCond(ReviewCondition{
+		Type:   ReviewSaved,
 		Status: corev1.ConditionTrue,
 	})
 }
 
-func (conv *Conversation) Archived() bool {
-	return conv.GetCond(ConversationSaved).Status == corev1.ConditionTrue
+func (conv *Review) Archived() bool {
+	return conv.GetCond(ReviewSaved).Status == corev1.ConditionTrue
 }

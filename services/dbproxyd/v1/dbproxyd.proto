@@ -1442,34 +1442,34 @@ message DeletePredictorRequest {
 
 
 ////////////////////////////////////////////////////////////////
-// Conversation
+// Review
 ////////////////////////////////////////////////////////////////
 
-message ListConversationsRequest {
+message ListReviewsRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListConversationsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 1;
+message ListReviewsResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 1;
     string next_page_token = 2;
 }
 
-message GetConversationRequest {
+message GetReviewRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateConversationRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+message CreateReviewRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
-message UpdateConversationRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
+message UpdateReviewRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
-message DeleteConversationRequest {
+message DeleteReviewRequest {
     string namespace = 1;
     string name = 2;
 }
@@ -1815,11 +1815,11 @@ service DatabaseProxyService {
     rpc UpdateCurtain(UpdateCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
     rpc DeleteCurtain(DeleteCurtainRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListConversations(ListConversationsRequest) returns (ListConversationsResponse) {}
-    rpc GetConversation(GetConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
-    rpc CreateConversation(CreateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
-    rpc UpdateConversation(UpdateConversationRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation) {}
-    rpc DeleteConversation(DeleteConversationRequest) returns (google.protobuf.Empty) {}
+    rpc ListReviews(ListReviewsRequest) returns (ListReviewsResponse) {}
+    rpc GetReview(GetReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc CreateReview(CreateReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc UpdateReview(UpdateReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc DeleteReview(DeleteReviewRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {}
     rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}

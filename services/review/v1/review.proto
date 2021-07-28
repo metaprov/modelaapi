@@ -1,0 +1,86 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/review/v1";
+package github.com.metaprov.modeldapi.services.review.v1;
+
+import "google/protobuf/empty.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "google/api/annotations.proto";
+
+message GetReviewRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message GetReviewResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    string yaml = 2;
+}
+
+message CreateReviewRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+}
+
+message CreateReviewResponse {
+}
+
+
+
+message UpdateReviewRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+}
+
+message UpdateReviewResponse {
+}
+
+
+message DeleteReviewRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message DeleteReviewResponse {
+}
+
+message ListReviewRequest {
+    string             namespace  = 1;
+    map<string,string> labels     = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+}
+
+message ListReviewResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList items = 1;
+    string next_page_token = 2;
+}
+
+
+
+service ReviewService {
+    rpc ListReviews(ListReviewRequest) returns (ListReviewResponse) {
+        option (google.api.http).get = "/api/v1alpha1/reviews/{namespace}";
+    }
+    rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {
+        option (google.api.http) = {
+			post: "/api/v1alpha1/reviews"
+			body: "*"
+		};
+    }
+    rpc GetReview(GetReviewRequest) returns (GetReviewResponse) {
+        option (google.api.http).get = "/api/v1alpha1/reviews/{namespace}/{name}";
+    }
+    rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {
+        option (google.api.http) = {
+			put: "/api/v1alpha1/reviews/{review.metadata.namespace}/{review.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteReview(DeleteReviewRequest) returns (DeleteReviewResponse) {
+        option (google.api.http).delete = "/api/v1/reviews/{namespace}/{name}";
+    }
+
+
+
+}

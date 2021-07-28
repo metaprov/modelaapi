@@ -17,7 +17,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
-// Commnet represents a single comment in the conversation
+// Commnet represents a single comment in the review
 message Comment {
   // ID is the comment ID. Used when replying to a comment.
   optional string id = 1;
@@ -42,79 +42,6 @@ message Comment {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool sent = 6;
-}
-
-// +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:subresource:status
-// +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
-// Conversation represents a comment about any conversation
-message Conversation {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional ConversationSpec spec = 2;
-
-  optional ConversationStatus status = 3;
-}
-
-// ConversationCondition describes the state of the conversation
-message ConversationCondition {
-  optional string type = 1;
-
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// ConversationList is a list of Conversations
-message ConversationList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated Conversation items = 2;
-}
-
-// ConversationSpec defines the desired state of a Conversation
-message ConversationSpec {
-  // The target of the conversation
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
-
-  // Messages are the messages of the conversation.
-  repeated Comment messages = 2;
-
-  // The owner account name
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 3;
-
-  // The notifier is used for alerts about new msgs in the conversation
-  // +kubebuilder:default:="default-slack-notifier"
-  // +kubebuilder:validation:Optional
-  optional string notifierName = 4;
-}
-
-// ConversationStatus is the current status of the conversation
-message ConversationStatus {
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
-
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated ConversationCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -214,6 +141,79 @@ message RaisedAlert {
 
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+}
+
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modeld}
+// Review represents a comment about any review
+message Review {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ReviewSpec spec = 2;
+
+  optional ReviewStatus status = 3;
+}
+
+// ReviewCondition describes the state of the review
+message ReviewCondition {
+  optional string type = 1;
+
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// ReviewList is a list of Reviews
+message ReviewList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Review items = 2;
+}
+
+// ReviewSpec defines the desired state of a Review
+message ReviewSpec {
+  // The target of the review
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+
+  // Messages are the messages of the review.
+  repeated Comment messages = 2;
+
+  // The owner account name
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 3;
+
+  // The notifier is used for alerts about new msgs in the review
+  // +kubebuilder:default:="default-slack-notifier"
+  // +kubebuilder:validation:Optional
+  optional string notifierName = 4;
+}
+
+// ReviewStatus is the current status of the review
+message ReviewStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated ReviewCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true

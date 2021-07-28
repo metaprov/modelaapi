@@ -267,11 +267,11 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.WebhookSpec":                        schema_pkg_apis_infra_v1alpha1_WebhookSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Alert":                               schema_pkg_apis_team_v1alpha1_Alert(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Comment":                             schema_pkg_apis_team_v1alpha1_Comment(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Conversation":                        schema_pkg_apis_team_v1alpha1_Conversation(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationCondition":               schema_pkg_apis_team_v1alpha1_ConversationCondition(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationList":                    schema_pkg_apis_team_v1alpha1_ConversationList(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationSpec":                    schema_pkg_apis_team_v1alpha1_ConversationSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationStatus":                  schema_pkg_apis_team_v1alpha1_ConversationStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Review":                              schema_pkg_apis_team_v1alpha1_Review(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewCondition":                     schema_pkg_apis_team_v1alpha1_ReviewCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewList":                          schema_pkg_apis_team_v1alpha1_ReviewList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewSpec":                          schema_pkg_apis_team_v1alpha1_ReviewSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewStatus":                        schema_pkg_apis_team_v1alpha1_ReviewStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.PostMortem":                          schema_pkg_apis_team_v1alpha1_PostMortem(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.PostMortemCondition":                 schema_pkg_apis_team_v1alpha1_PostMortemCondition(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.PostMortemList":                      schema_pkg_apis_team_v1alpha1_PostMortemList(ref),
@@ -12533,7 +12533,7 @@ func schema_pkg_apis_team_v1alpha1_Comment(ref common.ReferenceCallback) common.
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Commnet represents a single comment in the conversation",
+				Description: "Commnet represents a single comment in the review",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"id": {
@@ -12577,11 +12577,11 @@ func schema_pkg_apis_team_v1alpha1_Comment(ref common.ReferenceCallback) common.
 	}
 }
 
-func schema_pkg_apis_team_v1alpha1_Conversation(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_team_v1alpha1_Review(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Conversation represents a comment about any conversation",
+				Description: "Review represents a comment about any review",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -12607,13 +12607,13 @@ func schema_pkg_apis_team_v1alpha1_Conversation(ref common.ReferenceCallback) co
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationSpec"),
+							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationStatus"),
+							Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewStatus"),
 						},
 					},
 				},
@@ -12621,15 +12621,15 @@ func schema_pkg_apis_team_v1alpha1_Conversation(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationSpec", "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewSpec", "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
-func schema_pkg_apis_team_v1alpha1_ConversationCondition(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_team_v1alpha1_ReviewCondition(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationCondition describes the state of the conversation",
+				Description: "ReviewCondition describes the state of the review",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"type": {
@@ -12675,11 +12675,11 @@ func schema_pkg_apis_team_v1alpha1_ConversationCondition(ref common.ReferenceCal
 	}
 }
 
-func schema_pkg_apis_team_v1alpha1_ConversationList(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_team_v1alpha1_ReviewList(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationList is a list of Conversations",
+				Description: "ReviewList is a list of Reviews",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -12709,7 +12709,7 @@ func schema_pkg_apis_team_v1alpha1_ConversationList(ref common.ReferenceCallback
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Conversation"),
+										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Review"),
 									},
 								},
 							},
@@ -12720,26 +12720,26 @@ func schema_pkg_apis_team_v1alpha1_ConversationList(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Conversation", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.Review", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
-func schema_pkg_apis_team_v1alpha1_ConversationSpec(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_team_v1alpha1_ReviewSpec(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationSpec defines the desired state of a Conversation",
+				Description: "ReviewSpec defines the desired state of a Review",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"entityRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "The target of the conversation",
+							Description: "The target of the review",
 							Ref:         ref("k8s.io/api/core/v1.ObjectReference"),
 						},
 					},
 					"messages": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Messages are the messages of the conversation.",
+							Description: "Messages are the messages of the review.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
@@ -12767,11 +12767,11 @@ func schema_pkg_apis_team_v1alpha1_ConversationSpec(ref common.ReferenceCallback
 	}
 }
 
-func schema_pkg_apis_team_v1alpha1_ConversationStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
+func schema_pkg_apis_team_v1alpha1_ReviewStatus(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationStatus is the current status of the conversation",
+				Description: "ReviewStatus is the current status of the review",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"conditions": {
@@ -12781,7 +12781,7 @@ func schema_pkg_apis_team_v1alpha1_ConversationStatus(ref common.ReferenceCallba
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationCondition"),
+										Ref:     ref("github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewCondition"),
 									},
 								},
 							},
@@ -12791,7 +12791,7 @@ func schema_pkg_apis_team_v1alpha1_ConversationStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ConversationCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1.ReviewCondition"},
 	}
 }
 

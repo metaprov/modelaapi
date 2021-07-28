@@ -64,9 +64,9 @@ const (
 	StudyKind            KindName = "Study"
 
 	// team
-	ConversationKind KindName = "Conversation"
-	PostMortemKind   KindName = "PostMortem"
-	RunBookKind      KindName = "RunBook"
+	ReviewKind     KindName = "Review"
+	PostMortemKind KindName = "PostMortem"
+	RunBookKind    KindName = "RunBook"
 
 	// k8s core kinds
 	SecretKind     KindName = "Secret"

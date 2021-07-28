@@ -108,11 +108,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Alert), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Alert.Parser, new[]{ "Name", "At" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment.Parser, new[]{ "Id", "AuthorRef", "ReplyTo", "Content", "PostedAt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec.Parser, new[]{ "EntityRef", "Messages", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec.Parser, new[]{ "EntityRef", "Messages", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortem), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortem.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortemCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortemCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortemList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.PostMortemList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
@@ -369,7 +369,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
   }
 
   /// <summary>
-  /// Commnet represents a single comment in the conversation
+  /// Commnet represents a single comment in the review
   /// </summary>
   public sealed partial class Comment : pb::IMessage<Comment>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -764,18 +764,18 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
   /// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
   /// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
   /// +kubebuilder:subresource:status
-  /// +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
-  /// Conversation represents a comment about any conversation
+  /// +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modeld}
+  /// Review represents a comment about any review
   /// </summary>
-  public sealed partial class Conversation : pb::IMessage<Conversation>
+  public sealed partial class Review : pb::IMessage<Review>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Conversation> _parser = new pb::MessageParser<Conversation>(() => new Conversation());
+    private static readonly pb::MessageParser<Review> _parser = new pb::MessageParser<Review>(() => new Review());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Conversation> Parser { get { return _parser; } }
+    public static pb::MessageParser<Review> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -788,14 +788,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Conversation() {
+    public Review() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Conversation(Conversation other) : this() {
+    public Review(Review other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       spec_ = other.spec_ != null ? other.spec_.Clone() : null;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -803,8 +803,8 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Conversation Clone() {
-      return new Conversation(this);
+    public Review Clone() {
+      return new Review(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -820,9 +820,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec spec_;
+    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec Spec {
+    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -831,9 +831,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus status_;
+    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus Status {
+    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -842,11 +842,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Conversation);
+      return Equals(other as Review);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Conversation other) {
+    public bool Equals(Review other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -939,7 +939,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Conversation other) {
+    public void MergeFrom(Review other) {
       if (other == null) {
         return;
       }
@@ -951,13 +951,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec();
+          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus();
+          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -984,14 +984,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec();
+              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus();
+              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -1019,14 +1019,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationSpec();
+              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationStatus();
+              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -1039,17 +1039,17 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
   }
 
   /// <summary>
-  /// ConversationCondition describes the state of the conversation
+  /// ReviewCondition describes the state of the review
   /// </summary>
-  public sealed partial class ConversationCondition : pb::IMessage<ConversationCondition>
+  public sealed partial class ReviewCondition : pb::IMessage<ReviewCondition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ConversationCondition> _parser = new pb::MessageParser<ConversationCondition>(() => new ConversationCondition());
+    private static readonly pb::MessageParser<ReviewCondition> _parser = new pb::MessageParser<ReviewCondition>(() => new ReviewCondition());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConversationCondition> Parser { get { return _parser; } }
+    public static pb::MessageParser<ReviewCondition> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1062,14 +1062,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationCondition() {
+    public ReviewCondition() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationCondition(ConversationCondition other) : this() {
+    public ReviewCondition(ReviewCondition other) : this() {
       type_ = other.type_;
       status_ = other.status_;
       lastTransitionTime_ = other.lastTransitionTime_ != null ? other.lastTransitionTime_.Clone() : null;
@@ -1079,8 +1079,8 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationCondition Clone() {
-      return new ConversationCondition(this);
+    public ReviewCondition Clone() {
+      return new ReviewCondition(this);
     }
 
     /// <summary>Field number for the "type" field.</summary>
@@ -1197,11 +1197,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConversationCondition);
+      return Equals(other as ReviewCondition);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConversationCondition other) {
+    public bool Equals(ReviewCondition other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1320,7 +1320,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConversationCondition other) {
+    public void MergeFrom(ReviewCondition other) {
       if (other == null) {
         return;
       }
@@ -1425,17 +1425,17 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
   /// <summary>
   /// +kubebuilder:object:root=true
-  /// ConversationList is a list of Conversations
+  /// ReviewList is a list of Reviews
   /// </summary>
-  public sealed partial class ConversationList : pb::IMessage<ConversationList>
+  public sealed partial class ReviewList : pb::IMessage<ReviewList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ConversationList> _parser = new pb::MessageParser<ConversationList>(() => new ConversationList());
+    private static readonly pb::MessageParser<ReviewList> _parser = new pb::MessageParser<ReviewList>(() => new ReviewList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConversationList> Parser { get { return _parser; } }
+    public static pb::MessageParser<ReviewList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1448,22 +1448,22 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationList() {
+    public ReviewList() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationList(ConversationList other) : this() {
+    public ReviewList(ReviewList other) : this() {
       metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       items_ = other.items_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationList Clone() {
-      return new ConversationList(this);
+    public ReviewList Clone() {
+      return new ReviewList(this);
     }
 
     /// <summary>Field number for the "metadata" field.</summary>
@@ -1479,21 +1479,21 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Conversation> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Review> Items {
       get { return items_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConversationList);
+      return Equals(other as ReviewList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConversationList other) {
+    public bool Equals(ReviewList other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1565,7 +1565,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConversationList other) {
+    public void MergeFrom(ReviewList other) {
       if (other == null) {
         return;
       }
@@ -1634,17 +1634,17 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
   }
 
   /// <summary>
-  /// ConversationSpec defines the desired state of a Conversation
+  /// ReviewSpec defines the desired state of a Review
   /// </summary>
-  public sealed partial class ConversationSpec : pb::IMessage<ConversationSpec>
+  public sealed partial class ReviewSpec : pb::IMessage<ReviewSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ConversationSpec> _parser = new pb::MessageParser<ConversationSpec>(() => new ConversationSpec());
+    private static readonly pb::MessageParser<ReviewSpec> _parser = new pb::MessageParser<ReviewSpec>(() => new ReviewSpec());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConversationSpec> Parser { get { return _parser; } }
+    public static pb::MessageParser<ReviewSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1657,14 +1657,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationSpec() {
+    public ReviewSpec() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationSpec(ConversationSpec other) : this() {
+    public ReviewSpec(ReviewSpec other) : this() {
       entityRef_ = other.entityRef_ != null ? other.entityRef_.Clone() : null;
       messages_ = other.messages_.Clone();
       owner_ = other.owner_;
@@ -1672,15 +1672,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationSpec Clone() {
-      return new ConversationSpec(this);
+    public ReviewSpec Clone() {
+      return new ReviewSpec(this);
     }
 
     /// <summary>Field number for the "entityRef" field.</summary>
     public const int EntityRefFieldNumber = 1;
     private global::K8S.Io.Api.Core.V1.ObjectReference entityRef_;
     /// <summary>
-    /// The target of the conversation
+    /// The target of the review
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::K8S.Io.Api.Core.V1.ObjectReference EntityRef {
@@ -1696,7 +1696,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
         = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment.Parser);
     private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment> messages_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment>();
     /// <summary>
-    /// Messages are the messages of the conversation.
+    /// Messages are the messages of the review.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.Comment> Messages {
@@ -1733,11 +1733,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConversationSpec);
+      return Equals(other as ReviewSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConversationSpec other) {
+    public bool Equals(ReviewSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1822,7 +1822,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConversationSpec other) {
+    public void MergeFrom(ReviewSpec other) {
       if (other == null) {
         return;
       }
@@ -1902,17 +1902,17 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
   }
 
   /// <summary>
-  /// ConversationStatus is the current status of the conversation
+  /// ReviewStatus is the current status of the review
   /// </summary>
-  public sealed partial class ConversationStatus : pb::IMessage<ConversationStatus>
+  public sealed partial class ReviewStatus : pb::IMessage<ReviewStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ConversationStatus> _parser = new pb::MessageParser<ConversationStatus>(() => new ConversationStatus());
+    private static readonly pb::MessageParser<ReviewStatus> _parser = new pb::MessageParser<ReviewStatus>(() => new ReviewStatus());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ConversationStatus> Parser { get { return _parser; } }
+    public static pb::MessageParser<ReviewStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1925,43 +1925,43 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationStatus() {
+    public ReviewStatus() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationStatus(ConversationStatus other) : this() {
+    public ReviewStatus(ReviewStatus other) : this() {
       conditions_ = other.conditions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ConversationStatus Clone() {
-      return new ConversationStatus(this);
+    public ReviewStatus Clone() {
+      return new ReviewStatus(this);
     }
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ConversationCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1.ReviewCondition> Conditions {
       get { return conditions_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ConversationStatus);
+      return Equals(other as ReviewStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ConversationStatus other) {
+    public bool Equals(ReviewStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2020,7 +2020,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Team.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ConversationStatus other) {
+    public void MergeFrom(ReviewStatus other) {
       if (other == null) {
         return;
       }

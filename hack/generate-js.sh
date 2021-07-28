@@ -75,7 +75,7 @@ protoc \
     github.com/metaprov/modeldapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto \
     github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto \
-    github.com/metaprov/modeldapi/services/conversation/v1/conversation.proto \
+    github.com/metaprov/modeldapi/services/review/v1/review.proto \
     github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto \
     github.com/metaprov/modeldapi/services/prediction/v1/prediction.proto \
     github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto \

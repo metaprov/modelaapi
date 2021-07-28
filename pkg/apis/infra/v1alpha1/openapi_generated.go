@@ -24,11 +24,11 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountList":              schema_pkg_apis_infra_v1alpha1_AccountList(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountSpec":              schema_pkg_apis_infra_v1alpha1_AccountSpec(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.AccountStatus":            schema_pkg_apis_infra_v1alpha1_AccountStatus(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation":             schema_pkg_apis_infra_v1alpha1_Comment(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition":    schema_pkg_apis_infra_v1alpha1_CommentCondition(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationList":         schema_pkg_apis_infra_v1alpha1_CommentList(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec":         schema_pkg_apis_infra_v1alpha1_CommentSpec(ref),
-		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus":       schema_pkg_apis_infra_v1alpha1_CommentStatus(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Review":                   schema_pkg_apis_infra_v1alpha1_Comment(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewCondition":          schema_pkg_apis_infra_v1alpha1_CommentCondition(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewList":               schema_pkg_apis_infra_v1alpha1_CommentList(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewSpec":               schema_pkg_apis_infra_v1alpha1_CommentSpec(ref),
+		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewStatus":             schema_pkg_apis_infra_v1alpha1_CommentStatus(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.StorageConnection":        schema_pkg_apis_infra_v1alpha1_Connection(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionCondition":      schema_pkg_apis_infra_v1alpha1_ConnectionCondition(ref),
 		"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConnectionList":           schema_pkg_apis_infra_v1alpha1_ConnectionList(ref),
@@ -421,7 +421,7 @@ func schema_pkg_apis_infra_v1alpha1_Comment(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "Conversation represent a comment about any entity",
+				Description: "Review represent a comment about any entity",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -445,12 +445,12 @@ func schema_pkg_apis_infra_v1alpha1_Comment(ref common.ReferenceCallback) common
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus"),
+							Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewStatus"),
 						},
 					},
 				},
@@ -458,7 +458,7 @@ func schema_pkg_apis_infra_v1alpha1_Comment(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewSpec", "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -522,7 +522,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentList(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationList is a list of Comments",
+				Description: "ReviewList is a list of Comments",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {
@@ -550,7 +550,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentList(ref common.ReferenceCallback) co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Review"),
 									},
 								},
 							},
@@ -561,7 +561,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentList(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Conversation", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.Review", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -569,7 +569,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentSpec(ref common.ReferenceCallback) co
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "ConversationSpec defines the desired state of BucketName",
+				Description: "ReviewSpec defines the desired state of BucketName",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"entityRef": {
@@ -631,7 +631,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentStatus(ref common.ReferenceCallback) 
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition"),
+										Ref: ref("github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewCondition"),
 									},
 								},
 							},
@@ -641,7 +641,7 @@ func schema_pkg_apis_infra_v1alpha1_CommentStatus(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ConversationCondition"},
+			"github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1.ReviewCondition"},
 	}
 }
 

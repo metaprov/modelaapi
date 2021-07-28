@@ -34,7 +34,6 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateApiTokenRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCommitRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConnectionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateCurtainRequest', null, global);
@@ -66,6 +65,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateRecipeRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReportRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateStudyRequest', null, global);
@@ -79,7 +79,6 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteApiTokenRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCommitRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConnectionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteCurtainRequest', null, global);
@@ -111,6 +110,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteRecipeRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReportRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteStudyRequest', null, global);
@@ -124,7 +124,6 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetA
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetApiTokenRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCommitRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConnectionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetCurtainRequest', null, global);
@@ -156,6 +155,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetP
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetRecipeRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReportRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetStudyRequest', null, global);
@@ -174,8 +174,6 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCommitsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConnectionsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConnectionsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronPredictionsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronPredictionsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListCronReportsRequest', null, global);
@@ -238,6 +236,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListRecipesResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReportsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReportsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListRunbooksRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListRunbooksResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListServingsitesRequest', null, global);
@@ -259,7 +259,6 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateApiTokenRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCommitRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConnectionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateCurtainRequest', null, global);
@@ -291,6 +290,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateRecipeRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReportRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateStudyRequest', null, global);
@@ -5601,16 +5601,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5622,16 +5622,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5643,16 +5643,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5664,16 +5664,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5685,16 +5685,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5706,16 +5706,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -48069,8 +48069,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48079,11 +48079,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -48101,23 +48101,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48149,9 +48149,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48159,11 +48159,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -48193,16 +48193,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -48211,16 +48211,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * optional int32 page_size = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.getPageSize = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.setPageSize = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -48229,16 +48229,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * optional string page_token = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.getPageToken = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.getPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRequest.prototype.setPageToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -48249,7 +48249,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsReques
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.repeatedFields_ = [1];
 
 
 
@@ -48266,8 +48266,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -48276,14 +48276,14 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.toObject, includeInstance),
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -48298,23 +48298,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48322,8 +48322,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -48343,9 +48343,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48353,18 +48353,18 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -48378,39 +48378,39 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review>}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, 1));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation>} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation, opt_index);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.clearItemsList = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
 
@@ -48419,16 +48419,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsRespon
  * optional string next_page_token = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.getNextPageToken = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.getNextPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListConversationsResponse.prototype.setNextPageToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListReviewsResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -48449,8 +48449,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48459,11 +48459,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -48480,23 +48480,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48524,9 +48524,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48534,11 +48534,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -48561,16 +48561,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -48579,16 +48579,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetConversationRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetReviewRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -48609,8 +48609,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48619,13 +48619,13 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48639,23 +48639,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48663,8 +48663,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -48680,9 +48680,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48690,47 +48690,47 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, 1));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -48739,7 +48739,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateConversationRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateReviewRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -48760,8 +48760,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48770,13 +48770,13 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -48790,23 +48790,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48814,8 +48814,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -48831,9 +48831,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48841,47 +48841,47 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, 1));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -48890,7 +48890,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateConversationRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateReviewRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -48911,8 +48911,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -48921,11 +48921,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -48942,23 +48942,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -48986,9 +48986,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -48996,11 +48996,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -49023,16 +49023,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -49041,16 +49041,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationReque
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteConversationRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteReviewRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

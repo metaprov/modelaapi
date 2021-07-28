@@ -56,7 +56,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd.proto \
     github.com/metaprov/modeldapi/services/common/v1/common.proto \
     github.com/metaprov/modeldapi/services/connection/v1/connection.proto \
-    github.com/metaprov/modeldapi/services/conversation/v1/conversation.proto \
+    github.com/metaprov/modeldapi/services/review/v1/review.proto \
     github.com/metaprov/modeldapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modeldapi/services/data/v1/data.proto \
     github.com/metaprov/modeldapi/services/datapipeline/v1/datapipeline.proto \

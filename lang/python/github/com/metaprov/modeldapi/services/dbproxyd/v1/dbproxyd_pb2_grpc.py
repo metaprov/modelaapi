@@ -1070,29 +1070,29 @@ class DatabaseProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.ListConversations = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListConversations',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsResponse.FromString,
+        self.ListReviews = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
                 )
-        self.GetConversation = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetConversation',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConversationRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        self.GetReview = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
-        self.CreateConversation = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateConversation',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConversationRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        self.CreateReview = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
-        self.UpdateConversation = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConversation',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConversationRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        self.UpdateReview = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
-        self.DeleteConversation = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConversation',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConversationRequest.SerializeToString,
+        self.DeleteReview = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListPostMortems = channel.unary_unary(
@@ -2425,31 +2425,31 @@ class DatabaseProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListConversations(self, request, context):
+    def ListReviews(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetConversation(self, request, context):
+    def GetReview(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateConversation(self, request, context):
+    def CreateReview(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateConversation(self, request, context):
+    def UpdateReview(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteConversation(self, request, context):
+    def DeleteReview(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -3568,29 +3568,29 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'ListConversations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListConversations,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsResponse.SerializeToString,
+            'ListReviews': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListReviews,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.SerializeToString,
             ),
-            'GetConversation': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetConversation,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConversationRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            'GetReview': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReview,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
-            'CreateConversation': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateConversation,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConversationRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            'CreateReview': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateReview,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
-            'UpdateConversation': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateConversation,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConversationRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.SerializeToString,
+            'UpdateReview': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateReview,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
-            'DeleteConversation': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteConversation,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConversationRequest.FromString,
+            'DeleteReview': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteReview,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListPostMortems': grpc.unary_unary_rpc_method_handler(
@@ -7224,7 +7224,7 @@ class DatabaseProxyService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListConversations(request,
+    def ListReviews(request,
             target,
             options=(),
             channel_credentials=None,
@@ -7234,14 +7234,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListConversations',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConversationsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetConversation(request,
+    def GetReview(request,
             target,
             options=(),
             channel_credentials=None,
@@ -7251,14 +7251,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetConversation',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConversationRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateConversation(request,
+    def CreateReview(request,
             target,
             options=(),
             channel_credentials=None,
@@ -7268,14 +7268,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateConversation',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConversationRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateConversation(request,
+    def UpdateReview(request,
             target,
             options=(),
             channel_credentials=None,
@@ -7285,14 +7285,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConversation',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConversationRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Conversation.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteConversation(request,
+    def DeleteReview(request,
             target,
             options=(),
             channel_credentials=None,
@@ -7302,8 +7302,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConversation',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConversationRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -48,164 +48,6 @@ export namespace Comment {
   }
 }
 
-export class Conversation extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Conversation;
-  hasMetadata(): boolean;
-  clearMetadata(): Conversation;
-
-  getSpec(): ConversationSpec | undefined;
-  setSpec(value?: ConversationSpec): Conversation;
-  hasSpec(): boolean;
-  clearSpec(): Conversation;
-
-  getStatus(): ConversationStatus | undefined;
-  setStatus(value?: ConversationStatus): Conversation;
-  hasStatus(): boolean;
-  clearStatus(): Conversation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Conversation.AsObject;
-  static toObject(includeInstance: boolean, msg: Conversation): Conversation.AsObject;
-  static serializeBinaryToWriter(message: Conversation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Conversation;
-  static deserializeBinaryFromReader(message: Conversation, reader: jspb.BinaryReader): Conversation;
-}
-
-export namespace Conversation {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: ConversationSpec.AsObject,
-    status?: ConversationStatus.AsObject,
-  }
-}
-
-export class ConversationCondition extends jspb.Message {
-  getType(): string;
-  setType(value: string): ConversationCondition;
-
-  getStatus(): string;
-  setStatus(value: string): ConversationCondition;
-
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConversationCondition;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): ConversationCondition;
-
-  getReason(): string;
-  setReason(value: string): ConversationCondition;
-
-  getMessage(): string;
-  setMessage(value: string): ConversationCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationCondition.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationCondition): ConversationCondition.AsObject;
-  static serializeBinaryToWriter(message: ConversationCondition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationCondition;
-  static deserializeBinaryFromReader(message: ConversationCondition, reader: jspb.BinaryReader): ConversationCondition;
-}
-
-export namespace ConversationCondition {
-  export type AsObject = {
-    type: string,
-    status: string,
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    reason: string,
-    message: string,
-  }
-}
-
-export class ConversationList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ConversationList;
-  hasMetadata(): boolean;
-  clearMetadata(): ConversationList;
-
-  getItemsList(): Array<Conversation>;
-  setItemsList(value: Array<Conversation>): ConversationList;
-  clearItemsList(): ConversationList;
-  addItems(value?: Conversation, index?: number): Conversation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationList.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationList): ConversationList.AsObject;
-  static serializeBinaryToWriter(message: ConversationList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationList;
-  static deserializeBinaryFromReader(message: ConversationList, reader: jspb.BinaryReader): ConversationList;
-}
-
-export namespace ConversationList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<Conversation.AsObject>,
-  }
-}
-
-export class ConversationSpec extends jspb.Message {
-  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ConversationSpec;
-  hasEntityref(): boolean;
-  clearEntityref(): ConversationSpec;
-
-  getMessagesList(): Array<Comment>;
-  setMessagesList(value: Array<Comment>): ConversationSpec;
-  clearMessagesList(): ConversationSpec;
-  addMessages(value?: Comment, index?: number): Comment;
-
-  getOwner(): string;
-  setOwner(value: string): ConversationSpec;
-
-  getNotifiername(): string;
-  setNotifiername(value: string): ConversationSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationSpec): ConversationSpec.AsObject;
-  static serializeBinaryToWriter(message: ConversationSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationSpec;
-  static deserializeBinaryFromReader(message: ConversationSpec, reader: jspb.BinaryReader): ConversationSpec;
-}
-
-export namespace ConversationSpec {
-  export type AsObject = {
-    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    messagesList: Array<Comment.AsObject>,
-    owner: string,
-    notifiername: string,
-  }
-}
-
-export class ConversationStatus extends jspb.Message {
-  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConversationStatus;
-  hasLastupdated(): boolean;
-  clearLastupdated(): ConversationStatus;
-
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): ConversationStatus;
-
-  getConditionsList(): Array<ConversationCondition>;
-  setConditionsList(value: Array<ConversationCondition>): ConversationStatus;
-  clearConditionsList(): ConversationStatus;
-  addConditions(value?: ConversationCondition, index?: number): ConversationCondition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConversationStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ConversationStatus): ConversationStatus.AsObject;
-  static serializeBinaryToWriter(message: ConversationStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConversationStatus;
-  static deserializeBinaryFromReader(message: ConversationStatus, reader: jspb.BinaryReader): ConversationStatus;
-}
-
-export namespace ConversationStatus {
-  export type AsObject = {
-    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    observedgeneration: number,
-    conditionsList: Array<ConversationCondition.AsObject>,
-  }
-}
-
 export class PostMortem extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PostMortem;
@@ -401,6 +243,164 @@ export namespace RaisedAlert {
   export type AsObject = {
     name: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class Review extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Review;
+  hasMetadata(): boolean;
+  clearMetadata(): Review;
+
+  getSpec(): ReviewSpec | undefined;
+  setSpec(value?: ReviewSpec): Review;
+  hasSpec(): boolean;
+  clearSpec(): Review;
+
+  getStatus(): ReviewStatus | undefined;
+  setStatus(value?: ReviewStatus): Review;
+  hasStatus(): boolean;
+  clearStatus(): Review;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Review.AsObject;
+  static toObject(includeInstance: boolean, msg: Review): Review.AsObject;
+  static serializeBinaryToWriter(message: Review, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Review;
+  static deserializeBinaryFromReader(message: Review, reader: jspb.BinaryReader): Review;
+}
+
+export namespace Review {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ReviewSpec.AsObject,
+    status?: ReviewStatus.AsObject,
+  }
+}
+
+export class ReviewCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ReviewCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ReviewCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReviewCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ReviewCondition;
+
+  getReason(): string;
+  setReason(value: string): ReviewCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ReviewCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewCondition): ReviewCondition.AsObject;
+  static serializeBinaryToWriter(message: ReviewCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewCondition;
+  static deserializeBinaryFromReader(message: ReviewCondition, reader: jspb.BinaryReader): ReviewCondition;
+}
+
+export namespace ReviewCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ReviewList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ReviewList;
+  hasMetadata(): boolean;
+  clearMetadata(): ReviewList;
+
+  getItemsList(): Array<Review>;
+  setItemsList(value: Array<Review>): ReviewList;
+  clearItemsList(): ReviewList;
+  addItems(value?: Review, index?: number): Review;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewList.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewList): ReviewList.AsObject;
+  static serializeBinaryToWriter(message: ReviewList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewList;
+  static deserializeBinaryFromReader(message: ReviewList, reader: jspb.BinaryReader): ReviewList;
+}
+
+export namespace ReviewList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Review.AsObject>,
+  }
+}
+
+export class ReviewSpec extends jspb.Message {
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReviewSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): ReviewSpec;
+
+  getMessagesList(): Array<Comment>;
+  setMessagesList(value: Array<Comment>): ReviewSpec;
+  clearMessagesList(): ReviewSpec;
+  addMessages(value?: Comment, index?: number): Comment;
+
+  getOwner(): string;
+  setOwner(value: string): ReviewSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): ReviewSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewSpec): ReviewSpec.AsObject;
+  static serializeBinaryToWriter(message: ReviewSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewSpec;
+  static deserializeBinaryFromReader(message: ReviewSpec, reader: jspb.BinaryReader): ReviewSpec;
+}
+
+export namespace ReviewSpec {
+  export type AsObject = {
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    messagesList: Array<Comment.AsObject>,
+    owner: string,
+    notifiername: string,
+  }
+}
+
+export class ReviewStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReviewStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ReviewStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): ReviewStatus;
+
+  getConditionsList(): Array<ReviewCondition>;
+  setConditionsList(value: Array<ReviewCondition>): ReviewStatus;
+  clearConditionsList(): ReviewStatus;
+  addConditions(value?: ReviewCondition, index?: number): ReviewCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReviewStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ReviewStatus): ReviewStatus.AsObject;
+  static serializeBinaryToWriter(message: ReviewStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReviewStatus;
+  static deserializeBinaryFromReader(message: ReviewStatus, reader: jspb.BinaryReader): ReviewStatus;
+}
+
+export namespace ReviewStatus {
+  export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    conditionsList: Array<ReviewCondition.AsObject>,
   }
 }
 

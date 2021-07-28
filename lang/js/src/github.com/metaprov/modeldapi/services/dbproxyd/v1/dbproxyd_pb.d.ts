@@ -5637,25 +5637,25 @@ export namespace DeletePredictorRequest {
   }
 }
 
-export class ListConversationsRequest extends jspb.Message {
+export class ListReviewsRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListConversationsRequest;
+  setNamespace(value: string): ListReviewsRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListConversationsRequest;
+  setPageSize(value: number): ListReviewsRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListConversationsRequest;
+  setPageToken(value: string): ListReviewsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListConversationsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListConversationsRequest): ListConversationsRequest.AsObject;
-  static serializeBinaryToWriter(message: ListConversationsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListConversationsRequest;
-  static deserializeBinaryFromReader(message: ListConversationsRequest, reader: jspb.BinaryReader): ListConversationsRequest;
+  toObject(includeInstance?: boolean): ListReviewsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReviewsRequest): ListReviewsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListReviewsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReviewsRequest;
+  static deserializeBinaryFromReader(message: ListReviewsRequest, reader: jspb.BinaryReader): ListReviewsRequest;
 }
 
-export namespace ListConversationsRequest {
+export namespace ListReviewsRequest {
   export type AsObject = {
     namespace: string,
     pageSize: number,
@@ -5663,108 +5663,108 @@ export namespace ListConversationsRequest {
   }
 }
 
-export class ListConversationsResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation>;
-  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation>): ListConversationsResponse;
-  clearItemsList(): ListConversationsResponse;
-  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation, index?: number): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation;
+export class ListReviewsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review>): ListReviewsResponse;
+  clearItemsList(): ListReviewsResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review, index?: number): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListConversationsResponse;
+  setNextPageToken(value: string): ListReviewsResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListConversationsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListConversationsResponse): ListConversationsResponse.AsObject;
-  static serializeBinaryToWriter(message: ListConversationsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListConversationsResponse;
-  static deserializeBinaryFromReader(message: ListConversationsResponse, reader: jspb.BinaryReader): ListConversationsResponse;
+  toObject(includeInstance?: boolean): ListReviewsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListReviewsResponse): ListReviewsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListReviewsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListReviewsResponse;
+  static deserializeBinaryFromReader(message: ListReviewsResponse, reader: jspb.BinaryReader): ListReviewsResponse;
 }
 
-export namespace ListConversationsResponse {
+export namespace ListReviewsResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject>,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject>,
     nextPageToken: string,
   }
 }
 
-export class GetConversationRequest extends jspb.Message {
+export class GetReviewRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): GetConversationRequest;
+  setNamespace(value: string): GetReviewRequest;
 
   getName(): string;
-  setName(value: string): GetConversationRequest;
+  setName(value: string): GetReviewRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetConversationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetConversationRequest): GetConversationRequest.AsObject;
-  static serializeBinaryToWriter(message: GetConversationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetConversationRequest;
-  static deserializeBinaryFromReader(message: GetConversationRequest, reader: jspb.BinaryReader): GetConversationRequest;
+  toObject(includeInstance?: boolean): GetReviewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetReviewRequest): GetReviewRequest.AsObject;
+  static serializeBinaryToWriter(message: GetReviewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetReviewRequest;
+  static deserializeBinaryFromReader(message: GetReviewRequest, reader: jspb.BinaryReader): GetReviewRequest;
 }
 
-export namespace GetConversationRequest {
+export namespace GetReviewRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class CreateConversationRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation): CreateConversationRequest;
+export class CreateReviewRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review): CreateReviewRequest;
   hasItem(): boolean;
-  clearItem(): CreateConversationRequest;
+  clearItem(): CreateReviewRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateConversationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateConversationRequest): CreateConversationRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateConversationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateConversationRequest;
-  static deserializeBinaryFromReader(message: CreateConversationRequest, reader: jspb.BinaryReader): CreateConversationRequest;
+  toObject(includeInstance?: boolean): CreateReviewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateReviewRequest): CreateReviewRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateReviewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateReviewRequest;
+  static deserializeBinaryFromReader(message: CreateReviewRequest, reader: jspb.BinaryReader): CreateReviewRequest;
 }
 
-export namespace CreateConversationRequest {
+export namespace CreateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
   }
 }
 
-export class UpdateConversationRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation): UpdateConversationRequest;
+export class UpdateReviewRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review): UpdateReviewRequest;
   hasItem(): boolean;
-  clearItem(): UpdateConversationRequest;
+  clearItem(): UpdateReviewRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateConversationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateConversationRequest): UpdateConversationRequest.AsObject;
-  static serializeBinaryToWriter(message: UpdateConversationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateConversationRequest;
-  static deserializeBinaryFromReader(message: UpdateConversationRequest, reader: jspb.BinaryReader): UpdateConversationRequest;
+  toObject(includeInstance?: boolean): UpdateReviewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateReviewRequest): UpdateReviewRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateReviewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateReviewRequest;
+  static deserializeBinaryFromReader(message: UpdateReviewRequest, reader: jspb.BinaryReader): UpdateReviewRequest;
 }
 
-export namespace UpdateConversationRequest {
+export namespace UpdateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Conversation.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
   }
 }
 
-export class DeleteConversationRequest extends jspb.Message {
+export class DeleteReviewRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): DeleteConversationRequest;
+  setNamespace(value: string): DeleteReviewRequest;
 
   getName(): string;
-  setName(value: string): DeleteConversationRequest;
+  setName(value: string): DeleteReviewRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteConversationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteConversationRequest): DeleteConversationRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteConversationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteConversationRequest;
-  static deserializeBinaryFromReader(message: DeleteConversationRequest, reader: jspb.BinaryReader): DeleteConversationRequest;
+  toObject(includeInstance?: boolean): DeleteReviewRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteReviewRequest): DeleteReviewRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteReviewRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteReviewRequest;
+  static deserializeBinaryFromReader(message: DeleteReviewRequest, reader: jspb.BinaryReader): DeleteReviewRequest;
 }
 
-export namespace DeleteConversationRequest {
+export namespace DeleteReviewRequest {
   export type AsObject = {
     namespace: string,
     name: string,

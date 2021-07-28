@@ -1100,7 +1100,7 @@ public final class Generated {
   }
   /**
    * <pre>
-   * Commnet represents a single comment in the conversation
+   * Commnet represents a single comment in the review
    * </pre>
    *
    * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment}
@@ -1716,7 +1716,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * Commnet represents a single comment in the conversation
+     * Commnet represents a single comment in the review
      * </pre>
      *
      * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment}
@@ -2638,8 +2638,8 @@ public final class Generated {
 
   }
 
-  public interface ConversationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation)
+  public interface ReviewOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2658,34 +2658,34 @@ public final class Generated {
     k8s.io.apimachinery.pkg.apis.meta.v1.Generated.ObjectMetaOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      * @return Whether the spec field is set.
      */
     boolean hasSpec();
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      * @return The spec.
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getSpec();
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getSpec();
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder getSpecOrBuilder();
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder getSpecOrBuilder();
 
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      * @return The status.
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getStatus();
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getStatus();
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder getStatusOrBuilder();
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder getStatusOrBuilder();
   }
   /**
    * <pre>
@@ -2693,29 +2693,29 @@ public final class Generated {
    * +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(&#64;.type==&#92;"Ready&#92;")].status",description=""
    * +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
    * +kubebuilder:subresource:status
-   * +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
-   * Conversation represents a comment about any conversation
+   * +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modeld}
+   * Review represents a comment about any review
    * </pre>
    *
-   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
+   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review}
    */
-  public static final class Conversation extends
+  public static final class Review extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation)
-      ConversationOrBuilder {
+      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review)
+      ReviewOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Conversation.newBuilder() to construct.
-    private Conversation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Review.newBuilder() to construct.
+    private Review(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Conversation() {
+    private Review() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Conversation();
+      return new Review();
     }
 
     @java.lang.Override
@@ -2723,7 +2723,7 @@ public final class Generated {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Conversation(
+    private Review(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2756,11 +2756,11 @@ public final class Generated {
               break;
             }
             case 18: {
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder subBuilder = null;
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = spec_.toBuilder();
               }
-              spec_ = input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.PARSER, extensionRegistry);
+              spec_ = input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(spec_);
                 spec_ = subBuilder.buildPartial();
@@ -2769,11 +2769,11 @@ public final class Generated {
               break;
             }
             case 26: {
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder subBuilder = null;
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = status_.toBuilder();
               }
-              status_ = input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.PARSER, extensionRegistry);
+              status_ = input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(status_);
                 status_ = subBuilder.buildPartial();
@@ -2802,15 +2802,15 @@ public final class Generated {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor;
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_fieldAccessorTable
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder.class);
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder.class);
     }
 
     private int bitField0_;
@@ -2841,9 +2841,9 @@ public final class Generated {
     }
 
     public static final int SPEC_FIELD_NUMBER = 2;
-    private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec spec_;
+    private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec spec_;
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      * @return Whether the spec field is set.
      */
     @java.lang.Override
@@ -2851,25 +2851,25 @@ public final class Generated {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      * @return The spec.
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getSpec() {
-      return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance() : spec_;
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getSpec() {
+      return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance() : spec_;
     }
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder getSpecOrBuilder() {
-      return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance() : spec_;
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder getSpecOrBuilder() {
+      return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance() : spec_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 3;
-    private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus status_;
+    private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus status_;
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -2877,19 +2877,19 @@ public final class Generated {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      * @return The status.
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getStatus() {
-      return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance() : status_;
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getStatus() {
+      return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance() : status_;
     }
     /**
-     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+     * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder getStatusOrBuilder() {
-      return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance() : status_;
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder getStatusOrBuilder() {
+      return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2946,10 +2946,10 @@ public final class Generated {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation)) {
+      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review)) {
         return super.equals(obj);
       }
-      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation) obj;
+      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review) obj;
 
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
@@ -2994,69 +2994,69 @@ public final class Generated {
       return hash;
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(byte[] data)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseDelimitedFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseDelimitedFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3069,7 +3069,7 @@ public final class Generated {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation prototype) {
+    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3090,30 +3090,30 @@ public final class Generated {
      * +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(&#64;.type==&#92;"Ready&#92;")].status",description=""
      * +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
      * +kubebuilder:subresource:status
-     * +kubebuilder:resource:path=conversations,shortName=cv,singular=conversation,categories={team,modeld}
-     * Conversation represents a comment about any conversation
+     * +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modeld}
+     * Review represents a comment about any review
      * </pre>
      *
-     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation}
+     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation)
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review)
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_fieldAccessorTable
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder.class);
+                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder.class);
       }
 
-      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.newBuilder()
+      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3158,17 +3158,17 @@ public final class Generated {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor;
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getDefaultInstanceForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.getDefaultInstance();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getDefaultInstanceForType() {
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.getDefaultInstance();
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation build() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation result = buildPartial();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review build() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3176,8 +3176,8 @@ public final class Generated {
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation buildPartial() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation(this);
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review buildPartial() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -3243,16 +3243,16 @@ public final class Generated {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation) {
-          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation)other);
+        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review) {
+          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation other) {
-        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.getDefaultInstance()) return this;
+      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review other) {
+        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.getDefaultInstance()) return this;
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
         }
@@ -3277,11 +3277,11 @@ public final class Generated {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation parsedMessage = null;
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation) e.getUnfinishedMessage();
+          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3412,31 +3412,31 @@ public final class Generated {
         return metadataBuilder_;
       }
 
-      private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec spec_;
+      private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec spec_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder> specBuilder_;
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder> specBuilder_;
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        * @return Whether the spec field is set.
        */
       public boolean hasSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        * @return The spec.
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getSpec() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getSpec() {
         if (specBuilder_ == null) {
-          return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance() : spec_;
+          return spec_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance() : spec_;
         } else {
           return specBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
-      public Builder setSpec(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec value) {
+      public Builder setSpec(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec value) {
         if (specBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3450,10 +3450,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
       public Builder setSpec(
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder builderForValue) {
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder builderForValue) {
         if (specBuilder_ == null) {
           spec_ = builderForValue.build();
           onChanged();
@@ -3464,15 +3464,15 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
-      public Builder mergeSpec(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec value) {
+      public Builder mergeSpec(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec value) {
         if (specBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
               spec_ != null &&
-              spec_ != github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance()) {
+              spec_ != github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance()) {
             spec_ =
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.newBuilder(spec_).mergeFrom(value).buildPartial();
           } else {
             spec_ = value;
           }
@@ -3484,7 +3484,7 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
       public Builder clearSpec() {
         if (specBuilder_ == null) {
@@ -3497,33 +3497,33 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder getSpecBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder getSpecBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getSpecFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder getSpecOrBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder getSpecOrBuilder() {
         if (specBuilder_ != null) {
           return specBuilder_.getMessageOrBuilder();
         } else {
           return spec_ == null ?
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance() : spec_;
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance() : spec_;
         }
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec spec = 2;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec spec = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder> 
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder> 
           getSpecFieldBuilder() {
         if (specBuilder_ == null) {
           specBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder>(
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder>(
                   getSpec(),
                   getParentForChildren(),
                   isClean());
@@ -3532,31 +3532,31 @@ public final class Generated {
         return specBuilder_;
       }
 
-      private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus status_;
+      private github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus status_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder> statusBuilder_;
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder> statusBuilder_;
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        * @return The status.
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getStatus() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getStatus() {
         if (statusBuilder_ == null) {
-          return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance() : status_;
+          return status_ == null ? github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance() : status_;
         } else {
           return statusBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
-      public Builder setStatus(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus value) {
+      public Builder setStatus(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus value) {
         if (statusBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3570,10 +3570,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
       public Builder setStatus(
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder builderForValue) {
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
           onChanged();
@@ -3584,15 +3584,15 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
-      public Builder mergeStatus(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus value) {
+      public Builder mergeStatus(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus value) {
         if (statusBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
               status_ != null &&
-              status_ != github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance()) {
+              status_ != github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance()) {
             status_ =
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.newBuilder(status_).mergeFrom(value).buildPartial();
           } else {
             status_ = value;
           }
@@ -3604,7 +3604,7 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -3617,33 +3617,33 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder getStatusBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder getStatusBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder getStatusOrBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
           return statusBuilder_.getMessageOrBuilder();
         } else {
           return status_ == null ?
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance() : status_;
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance() : status_;
         }
       }
       /**
-       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus status = 3;</code>
+       * <code>optional .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus status = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder> 
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder> 
           getStatusFieldBuilder() {
         if (statusBuilder_ == null) {
           statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder>(
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder>(
                   getStatus(),
                   getParentForChildren(),
                   isClean());
@@ -3664,48 +3664,48 @@ public final class Generated {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation)
+      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review)
     }
 
-    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation)
-    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review)
+    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation();
+      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review();
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getDefaultInstance() {
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Conversation>
-        PARSER = new com.google.protobuf.AbstractParser<Conversation>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Review>
+        PARSER = new com.google.protobuf.AbstractParser<Review>() {
       @java.lang.Override
-      public Conversation parsePartialFrom(
+      public Review parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Conversation(input, extensionRegistry);
+        return new Review(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Conversation> parser() {
+    public static com.google.protobuf.Parser<Review> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Conversation> getParserForType() {
+    public com.google.protobuf.Parser<Review> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getDefaultInstanceForType() {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ConversationConditionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition)
+  public interface ReviewConditionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3829,21 +3829,21 @@ public final class Generated {
   }
   /**
    * <pre>
-   * ConversationCondition describes the state of the conversation
+   * ReviewCondition describes the state of the review
    * </pre>
    *
-   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition}
+   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition}
    */
-  public static final class ConversationCondition extends
+  public static final class ReviewCondition extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition)
-      ConversationConditionOrBuilder {
+      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition)
+      ReviewConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ConversationCondition.newBuilder() to construct.
-    private ConversationCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ReviewCondition.newBuilder() to construct.
+    private ReviewCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ConversationCondition() {
+    private ReviewCondition() {
       type_ = "";
       status_ = "";
       reason_ = "";
@@ -3854,7 +3854,7 @@ public final class Generated {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ConversationCondition();
+      return new ReviewCondition();
     }
 
     @java.lang.Override
@@ -3862,7 +3862,7 @@ public final class Generated {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ConversationCondition(
+    private ReviewCondition(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3939,15 +3939,15 @@ public final class Generated {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor;
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_fieldAccessorTable
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder.class);
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder.class);
     }
 
     private int bitField0_;
@@ -4269,10 +4269,10 @@ public final class Generated {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition)) {
+      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition)) {
         return super.equals(obj);
       }
-      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition) obj;
+      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition) obj;
 
       if (hasType() != other.hasType()) return false;
       if (hasType()) {
@@ -4335,69 +4335,69 @@ public final class Generated {
       return hash;
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(byte[] data)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseDelimitedFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseDelimitedFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4410,7 +4410,7 @@ public final class Generated {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition prototype) {
+    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4427,29 +4427,29 @@ public final class Generated {
     }
     /**
      * <pre>
-     * ConversationCondition describes the state of the conversation
+     * ReviewCondition describes the state of the review
      * </pre>
      *
-     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition}
+     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition)
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder {
+        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition)
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_fieldAccessorTable
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder.class);
+                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder.class);
       }
 
-      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.newBuilder()
+      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4488,17 +4488,17 @@ public final class Generated {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor;
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getDefaultInstanceForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.getDefaultInstance();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getDefaultInstanceForType() {
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.getDefaultInstance();
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition build() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition result = buildPartial();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition build() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4506,8 +4506,8 @@ public final class Generated {
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition buildPartial() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition(this);
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition buildPartial() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -4573,16 +4573,16 @@ public final class Generated {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition) {
-          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition)other);
+        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition) {
+          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition other) {
-        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.getDefaultInstance()) return this;
+      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition other) {
+        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.getDefaultInstance()) return this;
         if (other.hasType()) {
           bitField0_ |= 0x00000001;
           type_ = other.type_;
@@ -4621,11 +4621,11 @@ public final class Generated {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition parsedMessage = null;
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition) e.getUnfinishedMessage();
+          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5188,48 +5188,48 @@ public final class Generated {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition)
+      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition)
     }
 
-    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition)
-    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition)
+    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition();
+      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition();
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getDefaultInstance() {
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ConversationCondition>
-        PARSER = new com.google.protobuf.AbstractParser<ConversationCondition>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReviewCondition>
+        PARSER = new com.google.protobuf.AbstractParser<ReviewCondition>() {
       @java.lang.Override
-      public ConversationCondition parsePartialFrom(
+      public ReviewCondition parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConversationCondition(input, extensionRegistry);
+        return new ReviewCondition(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ConversationCondition> parser() {
+    public static com.google.protobuf.Parser<ReviewCondition> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ConversationCondition> getParserForType() {
+    public com.google.protobuf.Parser<ReviewCondition> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getDefaultInstanceForType() {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ConversationListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList)
+  public interface ReviewListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5248,47 +5248,47 @@ public final class Generated {
     k8s.io.apimachinery.pkg.apis.meta.v1.Generated.ListMetaOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
-    java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> 
+    java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> 
         getItemsList();
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getItems(int index);
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getItems(int index);
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     int getItemsCount();
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
-    java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder> 
+    java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder> 
         getItemsOrBuilderList();
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder getItemsOrBuilder(
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder getItemsOrBuilder(
         int index);
   }
   /**
    * <pre>
    * +kubebuilder:object:root=true
-   * ConversationList is a list of Conversations
+   * ReviewList is a list of Reviews
    * </pre>
    *
-   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList}
+   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList}
    */
-  public static final class ConversationList extends
+  public static final class ReviewList extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList)
-      ConversationListOrBuilder {
+      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList)
+      ReviewListOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ConversationList.newBuilder() to construct.
-    private ConversationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ReviewList.newBuilder() to construct.
+    private ReviewList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ConversationList() {
+    private ReviewList() {
       items_ = java.util.Collections.emptyList();
     }
 
@@ -5296,7 +5296,7 @@ public final class Generated {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ConversationList();
+      return new ReviewList();
     }
 
     @java.lang.Override
@@ -5304,7 +5304,7 @@ public final class Generated {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ConversationList(
+    private ReviewList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5338,11 +5338,11 @@ public final class Generated {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                items_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation>();
+                items_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review>();
                 mutable_bitField0_ |= 0x00000002;
               }
               items_.add(
-                  input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.PARSER, extensionRegistry));
+                  input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.PARSER, extensionRegistry));
               break;
             }
             default: {
@@ -5369,15 +5369,15 @@ public final class Generated {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor;
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_fieldAccessorTable
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.Builder.class);
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.Builder.class);
     }
 
     private int bitField0_;
@@ -5408,41 +5408,41 @@ public final class Generated {
     }
 
     public static final int ITEMS_FIELD_NUMBER = 2;
-    private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> items_;
+    private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> items_;
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> getItemsList() {
+    public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> getItemsList() {
       return items_;
     }
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder> 
+    public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder> 
         getItemsOrBuilderList() {
       return items_;
     }
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     @java.lang.Override
     public int getItemsCount() {
       return items_.size();
     }
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getItems(int index) {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getItems(int index) {
       return items_.get(index);
     }
     /**
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder getItemsOrBuilder(
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder getItemsOrBuilder(
         int index) {
       return items_.get(index);
     }
@@ -5494,10 +5494,10 @@ public final class Generated {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList)) {
+      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList)) {
         return super.equals(obj);
       }
-      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList) obj;
+      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList) obj;
 
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
@@ -5530,69 +5530,69 @@ public final class Generated {
       return hash;
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(byte[] data)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseDelimitedFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseDelimitedFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5605,7 +5605,7 @@ public final class Generated {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList prototype) {
+    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5623,29 +5623,29 @@ public final class Generated {
     /**
      * <pre>
      * +kubebuilder:object:root=true
-     * ConversationList is a list of Conversations
+     * ReviewList is a list of Reviews
      * </pre>
      *
-     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList}
+     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList)
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList)
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_fieldAccessorTable
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.Builder.class);
+                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.Builder.class);
       }
 
-      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.newBuilder()
+      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5683,17 +5683,17 @@ public final class Generated {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor;
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList getDefaultInstanceForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.getDefaultInstance();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList getDefaultInstanceForType() {
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.getDefaultInstance();
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList build() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList result = buildPartial();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList build() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5701,8 +5701,8 @@ public final class Generated {
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList buildPartial() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList(this);
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList buildPartial() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -5761,16 +5761,16 @@ public final class Generated {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList) {
-          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList)other);
+        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList) {
+          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList other) {
-        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList.getDefaultInstance()) return this;
+      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList other) {
+        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList.getDefaultInstance()) return this;
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
         }
@@ -5815,11 +5815,11 @@ public final class Generated {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList parsedMessage = null;
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList) e.getUnfinishedMessage();
+          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5950,22 +5950,22 @@ public final class Generated {
         return metadataBuilder_;
       }
 
-      private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> items_ =
+      private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> items_ =
         java.util.Collections.emptyList();
       private void ensureItemsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          items_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation>(items_);
+          items_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review>(items_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder> itemsBuilder_;
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder> itemsBuilder_;
 
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> getItemsList() {
+      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> getItemsList() {
         if (itemsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(items_);
         } else {
@@ -5973,7 +5973,7 @@ public final class Generated {
         }
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public int getItemsCount() {
         if (itemsBuilder_ == null) {
@@ -5983,9 +5983,9 @@ public final class Generated {
         }
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation getItems(int index) {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review getItems(int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);
         } else {
@@ -5993,10 +5993,10 @@ public final class Generated {
         }
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder setItems(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation value) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6010,10 +6010,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder setItems(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder builderForValue) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.set(index, builderForValue.build());
@@ -6024,9 +6024,9 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public Builder addItems(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation value) {
+      public Builder addItems(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6040,10 +6040,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder addItems(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation value) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review value) {
         if (itemsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6057,10 +6057,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder addItems(
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder builderForValue) {
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(builderForValue.build());
@@ -6071,10 +6071,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder addItems(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder builderForValue) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder builderForValue) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           items_.add(index, builderForValue.build());
@@ -6085,10 +6085,10 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder addAllItems(
-          java.lang.Iterable<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation> values) {
+          java.lang.Iterable<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review> values) {
         if (itemsBuilder_ == null) {
           ensureItemsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6100,7 +6100,7 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder clearItems() {
         if (itemsBuilder_ == null) {
@@ -6113,7 +6113,7 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
       public Builder removeItems(int index) {
         if (itemsBuilder_ == null) {
@@ -6126,16 +6126,16 @@ public final class Generated {
         return this;
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder getItemsBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder getItemsBuilder(
           int index) {
         return getItemsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder getItemsOrBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder getItemsOrBuilder(
           int index) {
         if (itemsBuilder_ == null) {
           return items_.get(index);  } else {
@@ -6143,9 +6143,9 @@ public final class Generated {
         }
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder> 
+      public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder> 
            getItemsOrBuilderList() {
         if (itemsBuilder_ != null) {
           return itemsBuilder_.getMessageOrBuilderList();
@@ -6154,33 +6154,33 @@ public final class Generated {
         }
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder addItemsBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder addItemsBuilder() {
         return getItemsFieldBuilder().addBuilder(
-            github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.getDefaultInstance());
+            github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.getDefaultInstance());
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder addItemsBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder addItemsBuilder(
           int index) {
         return getItemsFieldBuilder().addBuilder(
-            index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.getDefaultInstance());
+            index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.getDefaultInstance());
       }
       /**
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation items = 2;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 2;</code>
        */
-      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder> 
+      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder> 
            getItemsBuilderList() {
         return getItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder> 
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder> 
           getItemsFieldBuilder() {
         if (itemsBuilder_ == null) {
           itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Conversation.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationOrBuilder>(
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Review.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewOrBuilder>(
                   items_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -6202,53 +6202,53 @@ public final class Generated {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList)
+      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList)
     }
 
-    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationList)
-    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList)
+    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList();
+      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList();
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList getDefaultInstance() {
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ConversationList>
-        PARSER = new com.google.protobuf.AbstractParser<ConversationList>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReviewList>
+        PARSER = new com.google.protobuf.AbstractParser<ReviewList>() {
       @java.lang.Override
-      public ConversationList parsePartialFrom(
+      public ReviewList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConversationList(input, extensionRegistry);
+        return new ReviewList(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ConversationList> parser() {
+    public static com.google.protobuf.Parser<ReviewList> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ConversationList> getParserForType() {
+    public com.google.protobuf.Parser<ReviewList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationList getDefaultInstanceForType() {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ConversationSpecOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec)
+  public interface ReviewSpecOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6257,7 +6257,7 @@ public final class Generated {
     boolean hasEntityRef();
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6266,7 +6266,7 @@ public final class Generated {
     k8s.io.api.core.v1.Generated.ObjectReference getEntityRef();
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6275,7 +6275,7 @@ public final class Generated {
 
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6284,7 +6284,7 @@ public final class Generated {
         getMessagesList();
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6292,7 +6292,7 @@ public final class Generated {
     github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Comment getMessages(int index);
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6300,7 +6300,7 @@ public final class Generated {
     int getMessagesCount();
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6309,7 +6309,7 @@ public final class Generated {
         getMessagesOrBuilderList();
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6354,21 +6354,21 @@ public final class Generated {
   }
   /**
    * <pre>
-   * ConversationSpec defines the desired state of a Conversation
+   * ReviewSpec defines the desired state of a Review
    * </pre>
    *
-   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec}
+   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec}
    */
-  public static final class ConversationSpec extends
+  public static final class ReviewSpec extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec)
-      ConversationSpecOrBuilder {
+      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec)
+      ReviewSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ConversationSpec.newBuilder() to construct.
-    private ConversationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ReviewSpec.newBuilder() to construct.
+    private ReviewSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ConversationSpec() {
+    private ReviewSpec() {
       messages_ = java.util.Collections.emptyList();
       owner_ = "";
     }
@@ -6377,7 +6377,7 @@ public final class Generated {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ConversationSpec();
+      return new ReviewSpec();
     }
 
     @java.lang.Override
@@ -6385,7 +6385,7 @@ public final class Generated {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ConversationSpec(
+    private ReviewSpec(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6456,15 +6456,15 @@ public final class Generated {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor;
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_fieldAccessorTable
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder.class);
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder.class);
     }
 
     private int bitField0_;
@@ -6472,7 +6472,7 @@ public final class Generated {
     private k8s.io.api.core.v1.Generated.ObjectReference entityRef_;
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6484,7 +6484,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6496,7 +6496,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * The target of the conversation
+     * The target of the review
      * </pre>
      *
      * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -6510,7 +6510,7 @@ public final class Generated {
     private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.Comment> messages_;
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6521,7 +6521,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6533,7 +6533,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6544,7 +6544,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6555,7 +6555,7 @@ public final class Generated {
     }
     /**
      * <pre>
-     * Messages are the messages of the conversation.
+     * Messages are the messages of the review.
      * </pre>
      *
      * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -6685,10 +6685,10 @@ public final class Generated {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec)) {
+      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec)) {
         return super.equals(obj);
       }
-      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec) obj;
+      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec) obj;
 
       if (hasEntityRef() != other.hasEntityRef()) return false;
       if (hasEntityRef()) {
@@ -6730,69 +6730,69 @@ public final class Generated {
       return hash;
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(byte[] data)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseDelimitedFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseDelimitedFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6805,7 +6805,7 @@ public final class Generated {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec prototype) {
+    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6822,29 +6822,29 @@ public final class Generated {
     }
     /**
      * <pre>
-     * ConversationSpec defines the desired state of a Conversation
+     * ReviewSpec defines the desired state of a Review
      * </pre>
      *
-     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec}
+     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec)
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpecOrBuilder {
+        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec)
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_fieldAccessorTable
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.Builder.class);
+                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.Builder.class);
       }
 
-      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.newBuilder()
+      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6884,17 +6884,17 @@ public final class Generated {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor;
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getDefaultInstanceForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getDefaultInstanceForType() {
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance();
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec build() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec result = buildPartial();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec build() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6902,8 +6902,8 @@ public final class Generated {
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec buildPartial() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec(this);
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec buildPartial() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -6966,16 +6966,16 @@ public final class Generated {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec) {
-          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec)other);
+        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec) {
+          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec other) {
-        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec other) {
+        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec.getDefaultInstance()) return this;
         if (other.hasEntityRef()) {
           mergeEntityRef(other.getEntityRef());
         }
@@ -7025,11 +7025,11 @@ public final class Generated {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec parsedMessage = null;
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec) e.getUnfinishedMessage();
+          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7045,7 +7045,7 @@ public final class Generated {
           k8s.io.api.core.v1.Generated.ObjectReference, k8s.io.api.core.v1.Generated.ObjectReference.Builder, k8s.io.api.core.v1.Generated.ObjectReferenceOrBuilder> entityRefBuilder_;
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7056,7 +7056,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7071,7 +7071,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7091,7 +7091,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7109,7 +7109,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7133,7 +7133,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7150,7 +7150,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7162,7 +7162,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7177,7 +7177,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * The target of the conversation
+       * The target of the review
        * </pre>
        *
        * <code>optional .k8s.io.api.core.v1.ObjectReference entityRef = 1;</code>
@@ -7210,7 +7210,7 @@ public final class Generated {
 
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7224,7 +7224,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7238,7 +7238,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7252,7 +7252,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7273,7 +7273,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7291,7 +7291,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7311,7 +7311,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7332,7 +7332,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7350,7 +7350,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7368,7 +7368,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7387,7 +7387,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7404,7 +7404,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7421,7 +7421,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7432,7 +7432,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7446,7 +7446,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7461,7 +7461,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7472,7 +7472,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7484,7 +7484,7 @@ public final class Generated {
       }
       /**
        * <pre>
-       * Messages are the messages of the conversation.
+       * Messages are the messages of the review.
        * </pre>
        *
        * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment messages = 2;</code>
@@ -7640,48 +7640,48 @@ public final class Generated {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec)
+      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec)
     }
 
-    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec)
-    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewSpec)
+    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec();
+      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec();
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getDefaultInstance() {
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ConversationSpec>
-        PARSER = new com.google.protobuf.AbstractParser<ConversationSpec>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReviewSpec>
+        PARSER = new com.google.protobuf.AbstractParser<ReviewSpec>() {
       @java.lang.Override
-      public ConversationSpec parsePartialFrom(
+      public ReviewSpec parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConversationSpec(input, extensionRegistry);
+        return new ReviewSpec(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ConversationSpec> parser() {
+    public static com.google.protobuf.Parser<ReviewSpec> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ConversationSpec> getParserForType() {
+    public com.google.protobuf.Parser<ReviewSpec> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationSpec getDefaultInstanceForType() {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ConversationStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus)
+  public interface ReviewStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7689,24 +7689,24 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
-    java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> 
+    java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> 
         getConditionsList();
     /**
      * <pre>
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getConditions(int index);
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getConditions(int index);
     /**
      * <pre>
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     int getConditionsCount();
     /**
@@ -7714,37 +7714,37 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
-    java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder> 
+    java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder> 
         getConditionsOrBuilderList();
     /**
      * <pre>
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder getConditionsOrBuilder(
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder getConditionsOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * ConversationStatus is the current status of the conversation
+   * ReviewStatus is the current status of the review
    * </pre>
    *
-   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus}
+   * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus}
    */
-  public static final class ConversationStatus extends
+  public static final class ReviewStatus extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus)
-      ConversationStatusOrBuilder {
+      // @@protoc_insertion_point(message_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus)
+      ReviewStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ConversationStatus.newBuilder() to construct.
-    private ConversationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ReviewStatus.newBuilder() to construct.
+    private ReviewStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ConversationStatus() {
+    private ReviewStatus() {
       conditions_ = java.util.Collections.emptyList();
     }
 
@@ -7752,7 +7752,7 @@ public final class Generated {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ConversationStatus();
+      return new ReviewStatus();
     }
 
     @java.lang.Override
@@ -7760,7 +7760,7 @@ public final class Generated {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ConversationStatus(
+    private ReviewStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7781,11 +7781,11 @@ public final class Generated {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                conditions_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition>();
+                conditions_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition>();
                 mutable_bitField0_ |= 0x00000001;
               }
               conditions_.add(
-                  input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.PARSER, extensionRegistry));
+                  input.readMessage(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.PARSER, extensionRegistry));
               break;
             }
             default: {
@@ -7812,28 +7812,28 @@ public final class Generated {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor;
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_fieldAccessorTable
+      return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder.class);
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder.class);
     }
 
     public static final int CONDITIONS_FIELD_NUMBER = 1;
-    private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> conditions_;
+    private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> conditions_;
     /**
      * <pre>
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> getConditionsList() {
+    public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> getConditionsList() {
       return conditions_;
     }
     /**
@@ -7841,10 +7841,10 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder> 
+    public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder> 
         getConditionsOrBuilderList() {
       return conditions_;
     }
@@ -7853,7 +7853,7 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     @java.lang.Override
     public int getConditionsCount() {
@@ -7864,10 +7864,10 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getConditions(int index) {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getConditions(int index) {
       return conditions_.get(index);
     }
     /**
@@ -7875,10 +7875,10 @@ public final class Generated {
      * +optional
      * </pre>
      *
-     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+     * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
      */
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder getConditionsOrBuilder(
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder getConditionsOrBuilder(
         int index) {
       return conditions_.get(index);
     }
@@ -7923,10 +7923,10 @@ public final class Generated {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus)) {
+      if (!(obj instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus)) {
         return super.equals(obj);
       }
-      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus) obj;
+      github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus other = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus) obj;
 
       if (!getConditionsList()
           .equals(other.getConditionsList())) return false;
@@ -7950,69 +7950,69 @@ public final class Generated {
       return hash;
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(byte[] data)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseDelimitedFrom(java.io.InputStream input)
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseDelimitedFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parseFrom(
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8025,7 +8025,7 @@ public final class Generated {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus prototype) {
+    public static Builder newBuilder(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8042,29 +8042,29 @@ public final class Generated {
     }
     /**
      * <pre>
-     * ConversationStatus is the current status of the conversation
+     * ReviewStatus is the current status of the review
      * </pre>
      *
-     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus}
+     * Protobuf type {@code github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus)
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatusOrBuilder {
+        // @@protoc_insertion_point(builder_implements:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus)
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_fieldAccessorTable
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.Builder.class);
+                github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.class, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.Builder.class);
       }
 
-      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.newBuilder()
+      // Construct using github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8095,17 +8095,17 @@ public final class Generated {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor;
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor;
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getDefaultInstanceForType() {
-        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getDefaultInstanceForType() {
+        return github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance();
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus build() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus result = buildPartial();
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus build() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8113,8 +8113,8 @@ public final class Generated {
       }
 
       @java.lang.Override
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus buildPartial() {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus(this);
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus buildPartial() {
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus result = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus(this);
         int from_bitField0_ = bitField0_;
         if (conditionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -8163,16 +8163,16 @@ public final class Generated {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus) {
-          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus)other);
+        if (other instanceof github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus) {
+          return mergeFrom((github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus other) {
-        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus.getDefaultInstance()) return this;
+      public Builder mergeFrom(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus other) {
+        if (other == github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus.getDefaultInstance()) return this;
         if (conditionsBuilder_ == null) {
           if (!other.conditions_.isEmpty()) {
             if (conditions_.isEmpty()) {
@@ -8214,11 +8214,11 @@ public final class Generated {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus parsedMessage = null;
+        github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus) e.getUnfinishedMessage();
+          parsedMessage = (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8229,26 +8229,26 @@ public final class Generated {
       }
       private int bitField0_;
 
-      private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> conditions_ =
+      private java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> conditions_ =
         java.util.Collections.emptyList();
       private void ensureConditionsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          conditions_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition>(conditions_);
+          conditions_ = new java.util.ArrayList<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition>(conditions_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder> conditionsBuilder_;
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder> conditionsBuilder_;
 
       /**
        * <pre>
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> getConditionsList() {
+      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> getConditionsList() {
         if (conditionsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(conditions_);
         } else {
@@ -8260,7 +8260,7 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public int getConditionsCount() {
         if (conditionsBuilder_ == null) {
@@ -8274,9 +8274,9 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition getConditions(int index) {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition getConditions(int index) {
         if (conditionsBuilder_ == null) {
           return conditions_.get(index);
         } else {
@@ -8288,10 +8288,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder setConditions(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition value) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition value) {
         if (conditionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8309,10 +8309,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder setConditions(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder builderForValue) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
           ensureConditionsIsMutable();
           conditions_.set(index, builderForValue.build());
@@ -8327,9 +8327,9 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public Builder addConditions(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition value) {
+      public Builder addConditions(github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition value) {
         if (conditionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8347,10 +8347,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder addConditions(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition value) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition value) {
         if (conditionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8368,10 +8368,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder addConditions(
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder builderForValue) {
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
           ensureConditionsIsMutable();
           conditions_.add(builderForValue.build());
@@ -8386,10 +8386,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder addConditions(
-          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder builderForValue) {
+          int index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder builderForValue) {
         if (conditionsBuilder_ == null) {
           ensureConditionsIsMutable();
           conditions_.add(index, builderForValue.build());
@@ -8404,10 +8404,10 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder addAllConditions(
-          java.lang.Iterable<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition> values) {
+          java.lang.Iterable<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition> values) {
         if (conditionsBuilder_ == null) {
           ensureConditionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -8423,7 +8423,7 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder clearConditions() {
         if (conditionsBuilder_ == null) {
@@ -8440,7 +8440,7 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
       public Builder removeConditions(int index) {
         if (conditionsBuilder_ == null) {
@@ -8457,9 +8457,9 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder getConditionsBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder getConditionsBuilder(
           int index) {
         return getConditionsFieldBuilder().getBuilder(index);
       }
@@ -8468,9 +8468,9 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder getConditionsOrBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder getConditionsOrBuilder(
           int index) {
         if (conditionsBuilder_ == null) {
           return conditions_.get(index);  } else {
@@ -8482,9 +8482,9 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder> 
+      public java.util.List<? extends github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder> 
            getConditionsOrBuilderList() {
         if (conditionsBuilder_ != null) {
           return conditionsBuilder_.getMessageOrBuilderList();
@@ -8497,41 +8497,41 @@ public final class Generated {
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder addConditionsBuilder() {
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder addConditionsBuilder() {
         return getConditionsFieldBuilder().addBuilder(
-            github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.getDefaultInstance());
+            github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.getDefaultInstance());
       }
       /**
        * <pre>
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder addConditionsBuilder(
+      public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder addConditionsBuilder(
           int index) {
         return getConditionsFieldBuilder().addBuilder(
-            index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.getDefaultInstance());
+            index, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.getDefaultInstance());
       }
       /**
        * <pre>
        * +optional
        * </pre>
        *
-       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition conditions = 1;</code>
+       * <code>repeated .github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewCondition conditions = 1;</code>
        */
-      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder> 
+      public java.util.List<github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder> 
            getConditionsBuilderList() {
         return getConditionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder> 
+          github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder> 
           getConditionsFieldBuilder() {
         if (conditionsBuilder_ == null) {
           conditionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationConditionOrBuilder>(
+              github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewCondition.Builder, github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewConditionOrBuilder>(
                   conditions_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -8553,41 +8553,41 @@ public final class Generated {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus)
+      // @@protoc_insertion_point(builder_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus)
     }
 
-    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus)
-    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewStatus)
+    private static final github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus();
+      DEFAULT_INSTANCE = new github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus();
     }
 
-    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getDefaultInstance() {
+    public static github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<ConversationStatus>
-        PARSER = new com.google.protobuf.AbstractParser<ConversationStatus>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReviewStatus>
+        PARSER = new com.google.protobuf.AbstractParser<ReviewStatus>() {
       @java.lang.Override
-      public ConversationStatus parsePartialFrom(
+      public ReviewStatus parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConversationStatus(input, extensionRegistry);
+        return new ReviewStatus(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ConversationStatus> parser() {
+    public static com.google.protobuf.Parser<ReviewStatus> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ConversationStatus> getParserForType() {
+    public com.google.protobuf.Parser<ReviewStatus> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ConversationStatus getDefaultInstanceForType() {
+    public github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Generated.ReviewStatus getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -23573,30 +23573,30 @@ public final class Generated {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Comment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor;
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_fieldAccessorTable;
+      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor;
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_fieldAccessorTable;
+      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor;
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_fieldAccessorTable;
+      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor;
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_fieldAccessorTable;
+      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor;
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_fieldAccessorTable;
+      internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_PostMortem_descriptor;
   private static final 
@@ -23675,26 +23675,26 @@ public final class Generated {
       "\0132#.k8s.io.api.core.v1.ObjectReference\022\017" +
       "\n\007replyTo\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022<\n\010post" +
       "edAt\030\005 \001(\0132*.k8s.io.apimachinery.pkg.api" +
-      "s.meta.v1.Time\"\202\002\n\014Conversation\022B\n\010metad" +
+      "s.meta.v1.Time\"\202\002\n\014Review\022B\n\010metad" +
       "ata\030\001 \001(\01320.k8s.io.apimachinery.pkg.apis" +
       ".meta.v1.ObjectMeta\022T\n\004spec\030\002 \001(\0132F.gith" +
       "ub.com.metaprov.modeldapi.pkg.apis.team." +
-      "v1alpha1.ConversationSpec\022X\n\006status\030\003 \001(" +
+      "v1alpha1.ReviewSpec\022X\n\006status\030\003 \001(" +
       "\0132H.github.com.metaprov.modeldapi.pkg.ap" +
-      "is.team.v1alpha1.ConversationStatus\"\236\001\n\025" +
-      "ConversationCondition\022\014\n\004type\030\001 \001(\t\022\016\n\006s" +
+      "is.team.v1alpha1.ReviewStatus\"\236\001\n\025" +
+      "ReviewCondition\022\014\n\004type\030\001 \001(\t\022\016\n\006s" +
       "tatus\030\002 \001(\t\022F\n\022lastTransitionTime\030\003 \001(\0132" +
       "*.k8s.io.apimachinery.pkg.apis.meta.v1.T" +
       "ime\022\016\n\006reason\030\004 \001(\t\022\017\n\007message\030\005 \001(\t\"\247\001\n" +
-      "\020ConversationList\022@\n\010metadata\030\001 \001(\0132..k8" +
+      "\020ReviewList\022@\n\010metadata\030\001 \001(\0132..k8" +
       "s.io.apimachinery.pkg.apis.meta.v1.ListM" +
       "eta\022Q\n\005items\030\002 \003(\0132B.github.com.metaprov" +
       ".modeldapi.pkg.apis.team.v1alpha1.Conver" +
-      "sation\"\252\001\n\020ConversationSpec\0226\n\tentityRef" +
+      "sation\"\252\001\n\020ReviewSpec\0226\n\tentityRef" +
       "\030\001 \001(\0132#.k8s.io.api.core.v1.ObjectRefere" +
       "nce\022O\n\010messages\030\002 \003(\0132=.github.com.metap" +
       "rov.modeldapi.pkg.apis.team.v1alpha1.Com" +
-      "ment\022\r\n\005owner\030\003 \001(\t\"u\n\022ConversationStatu" +
+      "ment\022\r\n\005owner\030\003 \001(\t\"u\n\022ReviewStatu" +
       "s\022_\n\nconditions\030\001 \003(\0132K.github.com.metap" +
       "rov.modeldapi.pkg.apis.team.v1alpha1.Con" +
       "versationCondition\"\374\001\n\nPostMortem\022B\n\010met" +
@@ -23771,35 +23771,35 @@ public final class Generated {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Comment_descriptor,
         new java.lang.String[] { "Id", "AuthorRef", "ReplyTo", "Content", "PostedAt", });
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor =
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_fieldAccessorTable = new
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Conversation_descriptor,
+        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_Review_descriptor,
         new java.lang.String[] { "Metadata", "Spec", "Status", });
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor =
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_fieldAccessorTable = new
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationCondition_descriptor,
+        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewCondition_descriptor,
         new java.lang.String[] { "Type", "Status", "LastTransitionTime", "Reason", "Message", });
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor =
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_fieldAccessorTable = new
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationList_descriptor,
+        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewList_descriptor,
         new java.lang.String[] { "Metadata", "Items", });
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor =
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_fieldAccessorTable = new
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationSpec_descriptor,
+        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewSpec_descriptor,
         new java.lang.String[] { "EntityRef", "Messages", "Owner", });
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor =
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_fieldAccessorTable = new
+    internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ConversationStatus_descriptor,
+        internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_ReviewStatus_descriptor,
         new java.lang.String[] { "Conditions", });
     internal_static_github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_PostMortem_descriptor =
       getDescriptor().getMessageTypes().get(7);
