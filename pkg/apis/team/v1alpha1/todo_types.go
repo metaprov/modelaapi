@@ -45,7 +45,7 @@ type TodoCondition struct {
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=Todos,singular=Todo,categories={infra,modeld}
+// +kubebuilder:resource:path=todos,singular=todo,categories={infra,modeld}
 type Todo struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
