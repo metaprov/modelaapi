@@ -70,29 +70,29 @@ class DatabaseProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.ListTaskCards = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsResponse.FromString,
+        self.ListTodos = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
                 )
-        self.GetTaskCard = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTaskCardRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        self.GetTodo = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
-        self.CreateTaskCard = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTaskCardRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        self.CreateTodo = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
-        self.UpdateTaskCard = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTaskCardRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        self.UpdateTodo = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
-        self.DeleteTaskCard = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTaskCardRequest.SerializeToString,
+        self.DeleteTodo = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListCommits = channel.unary_unary(
@@ -1211,31 +1211,31 @@ class DatabaseProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListTaskCards(self, request, context):
+    def ListTodos(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetTaskCard(self, request, context):
+    def GetTodo(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateTaskCard(self, request, context):
+    def CreateTodo(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateTaskCard(self, request, context):
+    def UpdateTodo(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteTaskCard(self, request, context):
+    def DeleteTodo(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2568,29 +2568,29 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'ListTaskCards': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListTaskCards,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsResponse.SerializeToString,
+            'ListTodos': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTodos,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.SerializeToString,
             ),
-            'GetTaskCard': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetTaskCard,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTaskCardRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.SerializeToString,
+            'GetTodo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTodo,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
-            'CreateTaskCard': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateTaskCard,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTaskCardRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.SerializeToString,
+            'CreateTodo': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateTodo,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
-            'UpdateTaskCard': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateTaskCard,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTaskCardRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.SerializeToString,
+            'UpdateTodo': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTodo,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
-            'DeleteTaskCard': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteTaskCard,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTaskCardRequest.FromString,
+            'DeleteTodo': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteTodo,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCommits': grpc.unary_unary_rpc_method_handler(
@@ -3824,7 +3824,7 @@ class DatabaseProxyService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListTaskCards(request,
+    def ListTodos(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3834,14 +3834,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTaskCardsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetTaskCard(request,
+    def GetTodo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3851,14 +3851,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTaskCardRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateTaskCard(request,
+    def CreateTodo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3868,14 +3868,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTaskCardRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateTaskCard(request,
+    def UpdateTodo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3885,14 +3885,14 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTaskCardRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.TaskCard.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteTaskCard(request,
+    def DeleteTodo(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3902,8 +3902,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTaskCardRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

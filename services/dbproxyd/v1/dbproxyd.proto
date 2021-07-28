@@ -78,34 +78,34 @@ message DeleteAlertRequest {
 
 
 //////////////////////////////////////////////////////
-/// TaskCard
+/// Todo
 //////////////////////////////////////////////////////
 
-message ListTaskCardsRequest {
+message ListTodosRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListTaskCardsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard items = 1;
+message ListTodosResponse {
+    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo items = 1;
     string next_page_token = 2;
 }
 
-message GetTaskCardRequest {
+message GetTodoRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreateTaskCardRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 1;
+message CreateTodoRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
 }
 
-message UpdateTaskCardRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 2;
+message UpdateTodoRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 2;
 }
 
-message DeleteTaskCardRequest {
+message DeleteTodoRequest {
     string namespace = 1;
     string name = 2;
 }
@@ -1558,11 +1558,11 @@ service DatabaseProxyService {
     rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
     rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListTaskCards(ListTaskCardsRequest) returns (ListTaskCardsResponse) {}
-    rpc GetTaskCard(GetTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) {}
-    rpc CreateTaskCard(CreateTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) { }
-    rpc UpdateTaskCard(UpdateTaskCardRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard) {}
-    rpc DeleteTaskCard(DeleteTaskCardRequest) returns (google.protobuf.Empty) {}
+    rpc ListTodos(ListTodosRequest) returns (ListTodosResponse) {}
+    rpc GetTodo(GetTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) {}
+    rpc CreateTodo(CreateTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) { }
+    rpc UpdateTodo(UpdateTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) {}
+    rpc DeleteTodo(DeleteTodoRequest) returns (google.protobuf.Empty) {}
     
     // commits
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}

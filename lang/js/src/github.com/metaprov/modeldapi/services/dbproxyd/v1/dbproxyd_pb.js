@@ -69,8 +69,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateStudyRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTenantRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateVirtualBucketRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateVirtualClusterRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateVirtualVolumeRequest', null, global);
@@ -114,8 +114,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteStudyRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTenantRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteVirtualBucketRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteVirtualClusterRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteVirtualVolumeRequest', null, global);
@@ -159,8 +159,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetR
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetStudyRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTenantRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetVirtualBucketRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetVirtualClusterRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetVirtualVolumeRequest', null, global);
@@ -244,10 +244,10 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListServingsitesResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListStudiesRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListStudiesResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTenantsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTenantsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListVirtualBucketsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListVirtualBucketsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListVirtualClustersRequest', null, global);
@@ -294,8 +294,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateRunbookRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateServingsiteRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateStudyRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTenantRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateVirtualBucketRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateVirtualClusterRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateVirtualVolumeRequest', null, global);
@@ -561,16 +561,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -582,16 +582,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.repeatedFields_, null);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -603,16 +603,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -624,16 +624,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -645,16 +645,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -666,16 +666,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest = function(opt_data) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest';
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -7989,8 +7989,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7999,11 +7999,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.pr
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -8021,23 +8021,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.to
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8069,9 +8069,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.de
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8079,11 +8079,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.pr
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -8113,16 +8113,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.se
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8131,16 +8131,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.pr
  * optional int32 page_size = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.getPageSize = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.setPageSize = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -8149,16 +8149,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.pr
  * optional string page_token = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.getPageToken = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.getPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.prototype.setPageToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -8169,7 +8169,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsRequest.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.repeatedFields_ = [1];
 
 
 
@@ -8186,8 +8186,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8196,14 +8196,14 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.toObject, includeInstance),
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -8218,23 +8218,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8242,8 +8242,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -8263,9 +8263,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8273,18 +8273,18 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -8298,39 +8298,39 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.s
 
 
 /**
- * repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard items = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard>}
+ * repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo>}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard, 1));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard>} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo>} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard=} opt_value
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard}
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard, opt_index);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.clearItemsList = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
 
@@ -8339,16 +8339,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.p
  * optional string next_page_token = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.getNextPageToken = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.getNextPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTaskCardsResponse.prototype.setNextPageToken = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.ListTodosResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -8369,8 +8369,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8379,11 +8379,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prot
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -8400,23 +8400,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.toOb
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8444,9 +8444,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.dese
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8454,11 +8454,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prot
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -8481,16 +8481,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.seri
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8499,16 +8499,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prot
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTaskCardRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.GetTodoRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -8529,8 +8529,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8539,13 +8539,13 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8559,23 +8559,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8583,8 +8583,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -8600,9 +8600,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8610,47 +8610,47 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard, 1));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -8659,7 +8659,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTaskCardRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.CreateTodoRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8680,8 +8680,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8690,13 +8690,13 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8710,23 +8710,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8734,8 +8734,8 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -8751,9 +8751,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8761,47 +8761,47 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard item = 2;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard}
+ * optional github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard, 2));
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TaskCard|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest} returns this
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -8810,7 +8810,7 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTaskCardRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.UpdateTodoRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -8831,8 +8831,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8841,11 +8841,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -8862,23 +8862,23 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest;
-  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest;
+  return proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest}
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8906,9 +8906,9 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8916,11 +8916,11 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest} message
+ * @param {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -8943,16 +8943,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.s
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8961,16 +8961,16 @@ proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.p
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.getName = function() {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest} returns this
+ * @return {!proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTaskCardRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modeldapi.services.dbproxyd.v1.DeleteTodoRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

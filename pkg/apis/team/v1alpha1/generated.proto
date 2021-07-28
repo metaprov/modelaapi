@@ -296,3 +296,94 @@ message TimeLineEvent {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=Todos,singular=Todo,categories={infra,modeld}
+message Todo {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional TodoSpec spec = 2;
+
+  optional TodoStatus status = 3;
+}
+
+// TodoCondition describes the state of the license at a certain point.
+message TodoCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// TodoList is a list of Todos
+message TodoList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Todo items = 2;
+}
+
+// TodoSpec defines the desired state of Todo
+message TodoSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string task = 1;
+
+  // The modeld entity that the task refer to.
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Required
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 3;
+
+  // Assigned to is the user name assigned to this task
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string assignedTo = 4;
+
+  // Flagged donete that task was flagged
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool flagged = 5;
+
+  // Reminder is the time to send a reminder
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 6;
+
+  // Flagged donete that task was flagged
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 7;
+}
+
+// TodoStatus is the observed state of a Todo
+message TodoStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated TodoCondition conditions = 3;
+}
+

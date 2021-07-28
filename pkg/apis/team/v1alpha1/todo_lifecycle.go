@@ -16,7 +16,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (alert *TaskCard) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (alert *Todo) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(alert).
 		Complete()
@@ -30,14 +30,14 @@ func (alert *TaskCard) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (alert *TaskCard) HasFinalizer() bool {
+func (alert *Todo) HasFinalizer() bool {
 	return util.HasFin(&alert.ObjectMeta, metav1.GroupName)
 }
-func (alert *TaskCard) AddFinalizer()    { util.AddFin(&alert.ObjectMeta, metav1.GroupName) }
-func (alert *TaskCard) RemoveFinalizer() { util.RemoveFin(&alert.ObjectMeta, metav1.GroupName) }
+func (alert *Todo) AddFinalizer()    { util.AddFin(&alert.ObjectMeta, metav1.GroupName) }
+func (alert *Todo) RemoveFinalizer() { util.RemoveFin(&alert.ObjectMeta, metav1.GroupName) }
 
 // Merge or update condition
-func (alert *TaskCard) CreateOrUpdateCond(cond TaskCardCondition) {
+func (alert *Todo) CreateOrUpdateCond(cond TodoCondition) {
 	i := alert.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -56,7 +56,7 @@ func (alert *TaskCard) CreateOrUpdateCond(cond TaskCardCondition) {
 	alert.Status.Conditions[i] = current
 }
 
-func (alert *TaskCard) GetCondIdx(t TaskCardConditionType) int {
+func (alert *Todo) GetCondIdx(t TodoConditionType) int {
 	for i, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -65,14 +65,14 @@ func (alert *TaskCard) GetCondIdx(t TaskCardConditionType) int {
 	return -1
 }
 
-func (alert *TaskCard) GetCond(t TaskCardConditionType) TaskCardCondition {
+func (alert *Todo) GetCond(t TodoConditionType) TodoCondition {
 	for _, v := range alert.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return TaskCardCondition{
+	return TodoCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -81,25 +81,25 @@ func (alert *TaskCard) GetCond(t TaskCardConditionType) TaskCardCondition {
 
 }
 
-func (alert *TaskCard) IsReady() bool {
-	return alert.GetCond(TaskCardDone).Status == v1.ConditionTrue
+func (alert *Todo) IsReady() bool {
+	return alert.GetCond(TodoDone).Status == v1.ConditionTrue
 }
 
-func (alert *TaskCard) RootUri() string {
+func (alert *Todo) RootUri() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", alert.Namespace, alert.Name)
 }
 
-func (alert *TaskCard) ManifestUri() string {
+func (alert *Todo) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", alert.RootUri(), alert.Name)
 }
 
-func (alert *TaskCard) ToYamlFile() ([]byte, error) {
+func (alert *Todo) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(alert)
 }
 
-func (alert *TaskCard) MarkArchived() {
-	alert.CreateOrUpdateCond(TaskCardCondition{
-		Type:   TaskCardSaved,
+func (alert *Todo) MarkArchived() {
+	alert.CreateOrUpdateCond(TodoCondition{
+		Type:   TodoSaved,
 		Status: v1.ConditionTrue,
 	})
 }

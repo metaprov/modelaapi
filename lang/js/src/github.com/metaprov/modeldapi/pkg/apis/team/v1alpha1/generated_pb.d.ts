@@ -582,3 +582,173 @@ export namespace TimeLineEvent {
   }
 }
 
+export class Todo extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Todo;
+  hasMetadata(): boolean;
+  clearMetadata(): Todo;
+
+  getSpec(): TodoSpec | undefined;
+  setSpec(value?: TodoSpec): Todo;
+  hasSpec(): boolean;
+  clearSpec(): Todo;
+
+  getStatus(): TodoStatus | undefined;
+  setStatus(value?: TodoStatus): Todo;
+  hasStatus(): boolean;
+  clearStatus(): Todo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Todo.AsObject;
+  static toObject(includeInstance: boolean, msg: Todo): Todo.AsObject;
+  static serializeBinaryToWriter(message: Todo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Todo;
+  static deserializeBinaryFromReader(message: Todo, reader: jspb.BinaryReader): Todo;
+}
+
+export namespace Todo {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: TodoSpec.AsObject,
+    status?: TodoStatus.AsObject,
+  }
+}
+
+export class TodoCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): TodoCondition;
+
+  getStatus(): string;
+  setStatus(value: string): TodoCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): TodoCondition;
+
+  getReason(): string;
+  setReason(value: string): TodoCondition;
+
+  getMessage(): string;
+  setMessage(value: string): TodoCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TodoCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: TodoCondition): TodoCondition.AsObject;
+  static serializeBinaryToWriter(message: TodoCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TodoCondition;
+  static deserializeBinaryFromReader(message: TodoCondition, reader: jspb.BinaryReader): TodoCondition;
+}
+
+export namespace TodoCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class TodoList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): TodoList;
+  hasMetadata(): boolean;
+  clearMetadata(): TodoList;
+
+  getItemsList(): Array<Todo>;
+  setItemsList(value: Array<Todo>): TodoList;
+  clearItemsList(): TodoList;
+  addItems(value?: Todo, index?: number): Todo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TodoList.AsObject;
+  static toObject(includeInstance: boolean, msg: TodoList): TodoList.AsObject;
+  static serializeBinaryToWriter(message: TodoList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TodoList;
+  static deserializeBinaryFromReader(message: TodoList, reader: jspb.BinaryReader): TodoList;
+}
+
+export namespace TodoList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Todo.AsObject>,
+  }
+}
+
+export class TodoSpec extends jspb.Message {
+  getTask(): string;
+  setTask(value: string): TodoSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): TodoSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): TodoSpec;
+
+  getAssignedto(): string;
+  setAssignedto(value: string): TodoSpec;
+
+  getFlagged(): boolean;
+  setFlagged(value: boolean): TodoSpec;
+
+  getReminder(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReminder(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoSpec;
+  hasReminder(): boolean;
+  clearReminder(): TodoSpec;
+
+  getDuedate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setDuedate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoSpec;
+  hasDuedate(): boolean;
+  clearDuedate(): TodoSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TodoSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TodoSpec): TodoSpec.AsObject;
+  static serializeBinaryToWriter(message: TodoSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TodoSpec;
+  static deserializeBinaryFromReader(message: TodoSpec, reader: jspb.BinaryReader): TodoSpec;
+}
+
+export namespace TodoSpec {
+  export type AsObject = {
+    task: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    assignedto: string,
+    flagged: boolean,
+    reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class TodoStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): TodoStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): TodoStatus;
+
+  getConditionsList(): Array<TodoCondition>;
+  setConditionsList(value: Array<TodoCondition>): TodoStatus;
+  clearConditionsList(): TodoStatus;
+  addConditions(value?: TodoCondition, index?: number): TodoCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TodoStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: TodoStatus): TodoStatus.AsObject;
+  static serializeBinaryToWriter(message: TodoStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TodoStatus;
+  static deserializeBinaryFromReader(message: TodoStatus, reader: jspb.BinaryReader): TodoStatus;
+}
+
+export namespace TodoStatus {
+  export type AsObject = {
+    phase: string,
+    observedgeneration: number,
+    conditionsList: Array<TodoCondition.AsObject>,
+  }
+}
+

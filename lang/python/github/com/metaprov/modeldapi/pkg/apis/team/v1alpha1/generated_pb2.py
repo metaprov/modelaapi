@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z\010v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nDgithub.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x12\x34github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xbb\x01\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x36\n\tauthorRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0f\n\x07replyTo\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12<\n\x08postedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0c\n\x04sent\x18\x06 \x01(\x08\"\x82\x02\n\x0c\x43onversation\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus\"\x9e\x01\n\x15\x43onversationCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa7\x01\n\x10\x43onversationList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\xc0\x01\n\x10\x43onversationSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12O\n\x08messages\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x14\n\x0cnotifierName\x18\x04 \x01(\t\"\xd2\x01\n\x12\x43onversationStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition\"\xfc\x01\n\nPostMortem\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12R\n\x04spec\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec\x12V\n\x06status\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus\"\x9c\x01\n\x13PostMortemCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa3\x01\n\x0ePostMortemList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12O\n\x05items\x18\x02 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x96\x03\n\x0ePostMortemSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x38\n\x0blocationRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\thandledBy\x18\x03 \x03(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12P\n\x05\x61lert\x18\x04 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RaisedAlert\x12U\n\x08timeline\x18\x05 \x03(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TimeLineEvent\x12\x11\n\trootCause\x18\x06 \x01(\t\x12\x0f\n\x07summary\x18\x07 \x01(\t\x12\r\n\x05owner\x18\x08 \x01(\t\"\x8d\x01\n\x10PostMortemStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12]\n\nconditions\x18\x02 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition\"S\n\x0bRaisedAlert\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\xf3\x01\n\x07RunBook\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus\"\xdd\x01\n\x10RunBookCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x42\n\x0elastUpdateTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x9d\x01\n\x0bRunBookList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x8c\x01\n\x0bRunBookSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\tauthorRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\r\n\x05owner\x18\x03 \x01(\t\"\x87\x01\n\rRunBookStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12Z\n\nconditions\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition\"X\n\rTimeLineEvent\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.TimeB\nZ\x08v1alpha1'
+  serialized_pb=b'\nDgithub.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto\x12\x34github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xbb\x01\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x36\n\tauthorRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0f\n\x07replyTo\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12<\n\x08postedAt\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0c\n\x04sent\x18\x06 \x01(\x08\"\x82\x02\n\x0c\x43onversation\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationStatus\"\x9e\x01\n\x15\x43onversationCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa7\x01\n\x10\x43onversationList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Conversation\"\xc0\x01\n\x10\x43onversationSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12O\n\x08messages\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Comment\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x14\n\x0cnotifierName\x18\x04 \x01(\t\"\xd2\x01\n\x12\x43onversationStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ConversationCondition\"\xfc\x01\n\nPostMortem\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12R\n\x04spec\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemSpec\x12V\n\x06status\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemStatus\"\x9c\x01\n\x13PostMortemCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa3\x01\n\x0ePostMortemList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12O\n\x05items\x18\x02 \x03(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem\"\x96\x03\n\x0ePostMortemSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x38\n\x0blocationRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\thandledBy\x18\x03 \x03(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12P\n\x05\x61lert\x18\x04 \x03(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RaisedAlert\x12U\n\x08timeline\x18\x05 \x03(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TimeLineEvent\x12\x11\n\trootCause\x18\x06 \x01(\t\x12\x0f\n\x07summary\x18\x07 \x01(\t\x12\r\n\x05owner\x18\x08 \x01(\t\"\x8d\x01\n\x10PostMortemStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12]\n\nconditions\x18\x02 \x03(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemCondition\"S\n\x0bRaisedAlert\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\xf3\x01\n\x07RunBook\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookStatus\"\xdd\x01\n\x10RunBookCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x42\n\x0elastUpdateTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\x9d\x01\n\x0bRunBookList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook\"\x8c\x01\n\x0bRunBookSpec\x12\x36\n\tentityRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\tauthorRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\r\n\x05owner\x18\x03 \x01(\t\"\x87\x01\n\rRunBookStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12Z\n\nconditions\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookCondition\"X\n\rTimeLineEvent\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\xea\x01\n\x04Todo\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12L\n\x04spec\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec\x12P\n\x06status\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus\"\x96\x01\n\rTodoCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x97\x01\n\x08TodoList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12I\n\x05items\x18\x02 \x03(\x0b\x32:.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo\"\x86\x02\n\x08TodoSpec\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x36\n\tentityRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x14\n\x0cnotifierName\x18\x03 \x01(\t\x12\x12\n\nassignedTo\x18\x04 \x01(\t\x12\x0f\n\x07\x66lagged\x18\x05 \x01(\x08\x12<\n\x08reminder\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12;\n\x07\x64ueDate\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\x90\x01\n\nTodoStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12W\n\nconditions\x18\x03 \x03(\x0b\x32\x43.github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoConditionB\nZ\x08v1alpha1'
   ,
   dependencies=[k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -920,6 +920,271 @@ _TIMELINEEVENT = _descriptor.Descriptor(
   serialized_end=3728,
 )
 
+
+_TODO = _descriptor.Descriptor(
+  name='Todo',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo.metadata', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='spec', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo.spec', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo.status', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3731,
+  serialized_end=3965,
+)
+
+
+_TODOCONDITION = _descriptor.Descriptor(
+  name='TodoCondition',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition.type', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lastTransitionTime', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition.lastTransitionTime', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reason', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition.reason', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition.message', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3968,
+  serialized_end=4118,
+)
+
+
+_TODOLIST = _descriptor.Descriptor(
+  name='TodoList',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList.metadata', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='items', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList.items', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4121,
+  serialized_end=4272,
+)
+
+
+_TODOSPEC = _descriptor.Descriptor(
+  name='TodoSpec',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='task', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.task', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='entityRef', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.entityRef', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notifierName', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.notifierName', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='assignedTo', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.assignedTo', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='flagged', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.flagged', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reminder', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.reminder', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dueDate', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec.dueDate', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4275,
+  serialized_end=4537,
+)
+
+
+_TODOSTATUS = _descriptor.Descriptor(
+  name='TodoStatus',
+  full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='phase', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus.phase', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='observedGeneration', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus.observedGeneration', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus.conditions', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4540,
+  serialized_end=4684,
+)
+
 _COMMENT.fields_by_name['authorRef'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._OBJECTREFERENCE
 _COMMENT.fields_by_name['postedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
 _CONVERSATION.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
@@ -956,6 +1221,16 @@ _RUNBOOKSPEC.fields_by_name['entityRef'].message_type = k8s_dot_io_dot_api_dot_c
 _RUNBOOKSPEC.fields_by_name['authorRef'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._OBJECTREFERENCE
 _RUNBOOKSTATUS.fields_by_name['conditions'].message_type = _RUNBOOKCONDITION
 _TIMELINEEVENT.fields_by_name['at'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_TODO.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
+_TODO.fields_by_name['spec'].message_type = _TODOSPEC
+_TODO.fields_by_name['status'].message_type = _TODOSTATUS
+_TODOCONDITION.fields_by_name['lastTransitionTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_TODOLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
+_TODOLIST.fields_by_name['items'].message_type = _TODO
+_TODOSPEC.fields_by_name['entityRef'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._OBJECTREFERENCE
+_TODOSPEC.fields_by_name['reminder'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_TODOSPEC.fields_by_name['dueDate'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_TODOSTATUS.fields_by_name['conditions'].message_type = _TODOCONDITION
 DESCRIPTOR.message_types_by_name['Comment'] = _COMMENT
 DESCRIPTOR.message_types_by_name['Conversation'] = _CONVERSATION
 DESCRIPTOR.message_types_by_name['ConversationCondition'] = _CONVERSATIONCONDITION
@@ -974,6 +1249,11 @@ DESCRIPTOR.message_types_by_name['RunBookList'] = _RUNBOOKLIST
 DESCRIPTOR.message_types_by_name['RunBookSpec'] = _RUNBOOKSPEC
 DESCRIPTOR.message_types_by_name['RunBookStatus'] = _RUNBOOKSTATUS
 DESCRIPTOR.message_types_by_name['TimeLineEvent'] = _TIMELINEEVENT
+DESCRIPTOR.message_types_by_name['Todo'] = _TODO
+DESCRIPTOR.message_types_by_name['TodoCondition'] = _TODOCONDITION
+DESCRIPTOR.message_types_by_name['TodoList'] = _TODOLIST
+DESCRIPTOR.message_types_by_name['TodoSpec'] = _TODOSPEC
+DESCRIPTOR.message_types_by_name['TodoStatus'] = _TODOSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Comment = _reflection.GeneratedProtocolMessageType('Comment', (_message.Message,), {
@@ -1101,6 +1381,41 @@ TimeLineEvent = _reflection.GeneratedProtocolMessageType('TimeLineEvent', (_mess
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TimeLineEvent)
   })
 _sym_db.RegisterMessage(TimeLineEvent)
+
+Todo = _reflection.GeneratedProtocolMessageType('Todo', (_message.Message,), {
+  'DESCRIPTOR' : _TODO,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo)
+  })
+_sym_db.RegisterMessage(Todo)
+
+TodoCondition = _reflection.GeneratedProtocolMessageType('TodoCondition', (_message.Message,), {
+  'DESCRIPTOR' : _TODOCONDITION,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoCondition)
+  })
+_sym_db.RegisterMessage(TodoCondition)
+
+TodoList = _reflection.GeneratedProtocolMessageType('TodoList', (_message.Message,), {
+  'DESCRIPTOR' : _TODOLIST,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList)
+  })
+_sym_db.RegisterMessage(TodoList)
+
+TodoSpec = _reflection.GeneratedProtocolMessageType('TodoSpec', (_message.Message,), {
+  'DESCRIPTOR' : _TODOSPEC,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoSpec)
+  })
+_sym_db.RegisterMessage(TodoSpec)
+
+TodoStatus = _reflection.GeneratedProtocolMessageType('TodoStatus', (_message.Message,), {
+  'DESCRIPTOR' : _TODOSTATUS,
+  '__module__' : 'github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoStatus)
+  })
+_sym_db.RegisterMessage(TodoStatus)
 
 
 DESCRIPTOR._options = None

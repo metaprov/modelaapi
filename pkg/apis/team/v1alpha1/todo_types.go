@@ -6,26 +6,26 @@ import (
 )
 
 // ModelPhase is the current phase of a model
-type TaskCardPhase string
+type TodoPhase string
 
 const (
-	TaskCardPhasePending TaskCardPhase = "Pending"
-	TaskCardPhaseDone    TaskCardPhase = "Done"
+	TodoPhasePending TodoPhase = "Pending"
+	TodoPhaseDone    TodoPhase = "Done"
 )
 
-// TaskCard condition
-type TaskCardConditionType string
+// Todo condition
+type TodoConditionType string
 
-/// TaskCard Condition
+/// Todo Condition
 const (
-	TaskCardDone  TaskCardConditionType = "Done"
-	TaskCardSaved TaskCardConditionType = "Saved"
+	TodoDone  TodoConditionType = "Done"
+	TodoSaved TodoConditionType = "Saved"
 )
 
-// TaskCardCondition describes the state of the license at a certain point.
-type TaskCardCondition struct {
+// TodoCondition describes the state of the license at a certain point.
+type TodoCondition struct {
 	// Type of account condition.
-	Type TaskCardConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=TaskCardConditionType"`
+	Type TodoConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=TodoConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -45,24 +45,24 @@ type TaskCardCondition struct {
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=taskcards,singular=taskcard,categories={infra,modeld}
-type TaskCard struct {
+// +kubebuilder:resource:path=Todos,singular=Todo,categories={infra,modeld}
+type Todo struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              TaskCardSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	Status            TaskCardStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              TodoSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            TodoStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// TaskCardList is a list of TaskCards
-type TaskCardList struct {
+// TodoList is a list of Todos
+type TodoList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []TaskCard `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []Todo `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// TaskCardSpec defines the desired state of TaskCard
-type TaskCardSpec struct {
+// TodoSpec defines the desired state of Todo
+type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Task *string `json:"task,omitempty" protobuf:"bytes,1,opt,name=task"`
@@ -86,16 +86,16 @@ type TaskCardSpec struct {
 	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,7,opt,name=dueDate"`
 }
 
-// TaskCardStatus is the observed state of a TaskCard
-type TaskCardStatus struct {
+// TodoStatus is the observed state of a Todo
+type TodoStatus struct {
 	// Phase is the phase of the model
 	// +kubebuilder:validation:Optional
-	Phase TaskCardPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
+	Phase TodoPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []TaskCardCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []TodoCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

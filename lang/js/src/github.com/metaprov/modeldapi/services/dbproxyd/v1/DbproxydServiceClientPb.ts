@@ -441,204 +441,204 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAlert);
   }
 
-  methodInfoListTaskCards = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse,
-    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest) => {
+  methodInfoListTodos = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse.deserializeBinary
   );
 
-  listTaskCards(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse>;
+  listTodos(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse>;
 
-  listTaskCards(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
+  listTodos(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse>;
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse>;
 
-  listTaskCards(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsRequest,
+  listTodos(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTaskCardsResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
         request,
         metadata || {},
-        this.methodInfoListTaskCards,
+        this.methodInfoListTodos,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTaskCards',
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
     request,
     metadata || {},
-    this.methodInfoListTaskCards);
+    this.methodInfoListTodos);
   }
 
-  methodInfoGetTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
-    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest) => {
+  methodInfoGetTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinary
   );
 
-  getTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+  getTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  getTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
+  getTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  getTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTaskCardRequest,
+  getTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
         request,
         metadata || {},
-        this.methodInfoGetTaskCard,
+        this.methodInfoGetTodo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTaskCard',
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
     request,
     metadata || {},
-    this.methodInfoGetTaskCard);
+    this.methodInfoGetTodo);
   }
 
-  methodInfoCreateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
-    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest) => {
+  methodInfoCreateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinary
   );
 
-  createTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+  createTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  createTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
+  createTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  createTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTaskCardRequest,
+  createTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
         request,
         metadata || {},
-        this.methodInfoCreateTaskCard,
+        this.methodInfoCreateTodo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTaskCard',
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
     request,
     metadata || {},
-    this.methodInfoCreateTaskCard);
+    this.methodInfoCreateTodo);
   }
 
-  methodInfoUpdateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard,
-    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest) => {
+  methodInfoUpdateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.deserializeBinary
+    github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinary
   );
 
-  updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+  updateTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
+  updateTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
-  updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTaskCardRequest,
+  updateTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard) => void) {
+               response: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
         request,
         metadata || {},
-        this.methodInfoUpdateTaskCard,
+        this.methodInfoUpdateTodo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTaskCard',
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
     request,
     metadata || {},
-    this.methodInfoUpdateTaskCard);
+    this.methodInfoUpdateTodo);
   }
 
-  methodInfoDeleteTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteTodo = new grpcWeb.AbstractClientBase.MethodInfo(
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest) => {
+    (request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
-  deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+  deleteTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
-  deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+  deleteTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
-  deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTaskCardRequest,
+  deleteTodo(
+    request: github_com_metaprov_modeldapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
+          '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
         request,
         metadata || {},
-        this.methodInfoDeleteTaskCard,
+        this.methodInfoDeleteTodo,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTaskCard',
+      '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
     request,
     metadata || {},
-    this.methodInfoDeleteTaskCard);
+    this.methodInfoDeleteTodo);
   }
 
   methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(

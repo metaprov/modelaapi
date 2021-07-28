@@ -17,26 +17,26 @@ import (
 )
 
 // validation
-var _ webhook.Defaulter = &TaskCard{}
+var _ webhook.Defaulter = &Todo{}
 
-func (alert *TaskCard) Default() {
+func (alert *Todo) Default() {
 
 }
 
 // validation
-var _ webhook.Validator = &TaskCard{}
+var _ webhook.Validator = &Todo{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (alert *TaskCard) ValidateCreate() error {
+func (alert *Todo) ValidateCreate() error {
 	return alert.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (alert *TaskCard) ValidateUpdate(old runtime.Object) error {
+func (alert *Todo) ValidateUpdate(old runtime.Object) error {
 	return alert.validate()
 }
 
-func (alert *TaskCard) validate() error {
+func (alert *Todo) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, alert.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, alert.validateSpec(field.NewPath("spec"))...)
@@ -44,16 +44,16 @@ func (alert *TaskCard) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modeld.io", Kind: "TaskCard"}, alert.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modeld.io", Kind: "Todo"}, alert.Name, allErrs)
 }
 
-func (alert *TaskCard) validateMeta(fldPath *field.Path) field.ErrorList {
+func (alert *Todo) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, alert.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (alert *TaskCard) validateName(fldPath *field.Path) field.ErrorList {
+func (alert *Todo) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(alert.Name)
 	if err != nil {
@@ -62,7 +62,7 @@ func (alert *TaskCard) validateName(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (alert *TaskCard) validateSpec(fldPath *field.Path) field.ErrorList {
+func (alert *Todo) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,14 +74,14 @@ func (alert *TaskCard) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (alert *TaskCard) ValidateDelete() error {
+func (alert *Todo) ValidateDelete() error {
 	return nil
 }
 
-func (task *TaskCard) MarkDone() {
-	task.CreateOrUpdateCond(TaskCardCondition{
-		Type:   TaskCardDone,
+func (task *Todo) MarkDone() {
+	task.CreateOrUpdateCond(TodoCondition{
+		Type:   TodoDone,
 		Status: corev1.ConditionTrue,
 	})
-	task.Status.Phase = TaskCardPhaseDone
+	task.Status.Phase = TodoPhaseDone
 }

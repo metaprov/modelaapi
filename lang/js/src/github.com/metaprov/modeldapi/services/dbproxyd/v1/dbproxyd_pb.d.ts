@@ -277,25 +277,25 @@ export namespace DeleteAlertRequest {
   }
 }
 
-export class ListTaskCardsRequest extends jspb.Message {
+export class ListTodosRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListTaskCardsRequest;
+  setNamespace(value: string): ListTodosRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListTaskCardsRequest;
+  setPageSize(value: number): ListTodosRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListTaskCardsRequest;
+  setPageToken(value: string): ListTodosRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTaskCardsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTaskCardsRequest): ListTaskCardsRequest.AsObject;
-  static serializeBinaryToWriter(message: ListTaskCardsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTaskCardsRequest;
-  static deserializeBinaryFromReader(message: ListTaskCardsRequest, reader: jspb.BinaryReader): ListTaskCardsRequest;
+  toObject(includeInstance?: boolean): ListTodosRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTodosRequest): ListTodosRequest.AsObject;
+  static serializeBinaryToWriter(message: ListTodosRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTodosRequest;
+  static deserializeBinaryFromReader(message: ListTodosRequest, reader: jspb.BinaryReader): ListTodosRequest;
 }
 
-export namespace ListTaskCardsRequest {
+export namespace ListTodosRequest {
   export type AsObject = {
     namespace: string,
     pageSize: number,
@@ -303,108 +303,108 @@ export namespace ListTaskCardsRequest {
   }
 }
 
-export class ListTaskCardsResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>;
-  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard>): ListTaskCardsResponse;
-  clearItemsList(): ListTaskCardsResponse;
-  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard, index?: number): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard;
+export class ListTodosResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
+  setItemsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo>): ListTodosResponse;
+  clearItemsList(): ListTodosResponse;
+  addItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo, index?: number): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListTaskCardsResponse;
+  setNextPageToken(value: string): ListTodosResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTaskCardsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTaskCardsResponse): ListTaskCardsResponse.AsObject;
-  static serializeBinaryToWriter(message: ListTaskCardsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTaskCardsResponse;
-  static deserializeBinaryFromReader(message: ListTaskCardsResponse, reader: jspb.BinaryReader): ListTaskCardsResponse;
+  toObject(includeInstance?: boolean): ListTodosResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTodosResponse): ListTodosResponse.AsObject;
+  static serializeBinaryToWriter(message: ListTodosResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTodosResponse;
+  static deserializeBinaryFromReader(message: ListTodosResponse, reader: jspb.BinaryReader): ListTodosResponse;
 }
 
-export namespace ListTaskCardsResponse {
+export namespace ListTodosResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject>,
+    itemsList: Array<github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject>,
     nextPageToken: string,
   }
 }
 
-export class GetTaskCardRequest extends jspb.Message {
+export class GetTodoRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): GetTaskCardRequest;
+  setNamespace(value: string): GetTodoRequest;
 
   getName(): string;
-  setName(value: string): GetTaskCardRequest;
+  setName(value: string): GetTodoRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTaskCardRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTaskCardRequest): GetTaskCardRequest.AsObject;
-  static serializeBinaryToWriter(message: GetTaskCardRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTaskCardRequest;
-  static deserializeBinaryFromReader(message: GetTaskCardRequest, reader: jspb.BinaryReader): GetTaskCardRequest;
+  toObject(includeInstance?: boolean): GetTodoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTodoRequest): GetTodoRequest.AsObject;
+  static serializeBinaryToWriter(message: GetTodoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTodoRequest;
+  static deserializeBinaryFromReader(message: GetTodoRequest, reader: jspb.BinaryReader): GetTodoRequest;
 }
 
-export namespace GetTaskCardRequest {
+export namespace GetTodoRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class CreateTaskCardRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): CreateTaskCardRequest;
+export class CreateTodoRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
   hasItem(): boolean;
-  clearItem(): CreateTaskCardRequest;
+  clearItem(): CreateTodoRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateTaskCardRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateTaskCardRequest): CreateTaskCardRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateTaskCardRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateTaskCardRequest;
-  static deserializeBinaryFromReader(message: CreateTaskCardRequest, reader: jspb.BinaryReader): CreateTaskCardRequest;
+  toObject(includeInstance?: boolean): CreateTodoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTodoRequest): CreateTodoRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateTodoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTodoRequest;
+  static deserializeBinaryFromReader(message: CreateTodoRequest, reader: jspb.BinaryReader): CreateTodoRequest;
 }
 
-export namespace CreateTaskCardRequest {
+export namespace CreateTodoRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
   }
 }
 
-export class UpdateTaskCardRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): UpdateTaskCardRequest;
+export class UpdateTodoRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo): UpdateTodoRequest;
   hasItem(): boolean;
-  clearItem(): UpdateTaskCardRequest;
+  clearItem(): UpdateTodoRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateTaskCardRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateTaskCardRequest): UpdateTaskCardRequest.AsObject;
-  static serializeBinaryToWriter(message: UpdateTaskCardRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateTaskCardRequest;
-  static deserializeBinaryFromReader(message: UpdateTaskCardRequest, reader: jspb.BinaryReader): UpdateTaskCardRequest;
+  toObject(includeInstance?: boolean): UpdateTodoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateTodoRequest): UpdateTodoRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateTodoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateTodoRequest;
+  static deserializeBinaryFromReader(message: UpdateTodoRequest, reader: jspb.BinaryReader): UpdateTodoRequest;
 }
 
-export namespace UpdateTaskCardRequest {
+export namespace UpdateTodoRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
   }
 }
 
-export class DeleteTaskCardRequest extends jspb.Message {
+export class DeleteTodoRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): DeleteTaskCardRequest;
+  setNamespace(value: string): DeleteTodoRequest;
 
   getName(): string;
-  setName(value: string): DeleteTaskCardRequest;
+  setName(value: string): DeleteTodoRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteTaskCardRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteTaskCardRequest): DeleteTaskCardRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteTaskCardRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteTaskCardRequest;
-  static deserializeBinaryFromReader(message: DeleteTaskCardRequest, reader: jspb.BinaryReader): DeleteTaskCardRequest;
+  toObject(includeInstance?: boolean): DeleteTodoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteTodoRequest): DeleteTodoRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteTodoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteTodoRequest;
+  static deserializeBinaryFromReader(message: DeleteTodoRequest, reader: jspb.BinaryReader): DeleteTodoRequest;
 }
 
-export namespace DeleteTaskCardRequest {
+export namespace DeleteTodoRequest {
   export type AsObject = {
     namespace: string,
     name: string,

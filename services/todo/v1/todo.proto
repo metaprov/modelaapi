@@ -1,0 +1,106 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/todo/v1";
+
+package github.com.metaprov.modeldapi.services.todo.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListTodosRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListTodosResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList items = 1;   
+}
+
+message TodoResponse {}
+
+message CreateTodoRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo  item = 1;
+    string password = 2;    
+}
+
+message CreateTodoResponse {
+
+}
+
+message UpdateTodoRequest {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+}
+
+message UpdateTodoResponse {
+
+}
+
+message GetTodoRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetTodoResponse {
+    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetTodoNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetTodoNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteTodoRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteTodoResponse {}
+
+
+message TodoCreateResponse {}
+
+message TodoGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message TodoLogoutRequest {
+    string token = 1; // jwt token
+}
+
+service TodoService {
+    rpc ListTodos(ListTodosRequest) returns (ListTodosResponse) {
+        option (google.api.http).get = "/v1/todos";
+    }
+    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse) {
+        option (google.api.http) = {
+			post: "/v1/todos"
+			body: "todo"
+		};
+    }
+    rpc GetTodo(GetTodoRequest) returns (GetTodoResponse) {
+        option (google.api.http).get = "/v1/{namespace}/todos/{name}";
+    }
+    rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {
+        option (google.api.http) = {
+			put: "/v1/{todo.metadata.namespace}/todos//{todo.metadata.name}"
+			body: "todo"
+		};
+    }
+
+    rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/todos/{name}";
+    }
+
+}
