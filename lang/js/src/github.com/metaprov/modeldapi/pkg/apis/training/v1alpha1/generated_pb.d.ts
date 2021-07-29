@@ -1641,6 +1641,9 @@ export class ModelPipelineRunSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): ModelPipelineRunSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): ModelPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunSpec): ModelPipelineRunSpec.AsObject;
@@ -1657,6 +1660,7 @@ export namespace ModelPipelineRunSpec {
     pipelinename: string,
     owner: string,
     priority: string,
+    paused: boolean,
   }
 }
 
@@ -1893,9 +1897,6 @@ export class ModelPipelineSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): ModelPipelineSpec;
 
-  getPaused(): boolean;
-  setPaused(value: boolean): ModelPipelineSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1922,7 +1923,6 @@ export namespace ModelPipelineSpec {
     notifiername: string,
     baselinemodelname: string,
     priority: string,
-    paused: boolean,
   }
 }
 
@@ -3670,15 +3670,6 @@ export class StudyStatus extends jspb.Message {
   getTestedmodels(): number;
   setTestedmodels(value: number): StudyStatus;
 
-  getTrainers(): number;
-  setTrainers(value: number): StudyStatus;
-
-  getFreetrainers(): number;
-  setFreetrainers(value: number): StudyStatus;
-
-  getBudytrainers(): number;
-  setBudytrainers(value: number): StudyStatus;
-
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasStarttime(): boolean;
@@ -3787,9 +3778,6 @@ export namespace StudyStatus {
     testingmodels: number,
     failedtestingmodels: number,
     testedmodels: number,
-    trainers: number,
-    freetrainers: number,
-    budytrainers: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

@@ -134,6 +134,10 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,6,opt,name=priority"`
+	// Set to true to pause the model pipeline run
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,7,opt,name=paused"`
 }
 
 type StageStatusPhase string

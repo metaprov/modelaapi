@@ -83,6 +83,10 @@ spec:
                 default: no-one
                 description: The owner of the ruyn.
                 type: string
+              paused:
+                default: false
+                description: Set to true to pause the model pipeline run
+                type: boolean
               pipelineName:
                 default: ""
                 description: PipelineName is the name of the ModelPipeline for this

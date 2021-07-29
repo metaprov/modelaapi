@@ -110,10 +110,6 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
-	// Set to true to pause the model pipeline
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,31,opt,name=paused"`
 }
 
 //DataStageSpec is the desired state of the data preprocesing step of the pipeline.

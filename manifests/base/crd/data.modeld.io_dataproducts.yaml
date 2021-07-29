@@ -67,36 +67,6 @@ spec:
           spec:
             description: DataProductSpec defines the desired state of a data product
             properties:
-              attachments:
-                description: List of documents attached to the this data product
-                items:
-                  properties:
-                    description:
-                      default: ""
-                      description: Description is the description of the attachment
-                      type: string
-                    location:
-                      description: Location is the location of the attachment
-                      properties:
-                        bucketName:
-                          default: ""
-                          description: Bucketname is the name of the bucket
-                          type: string
-                        datasourceName:
-                          default: ""
-                          description: Datasource name is a pointer to a data source
-                            for cases that the data location is not a simple bucket
-                            but a database
-                          type: string
-                        path:
-                          description: Path to the full data file (e.g. csv file).
-                          type: string
-                      type: object
-                    name:
-                      description: Name is the name of the attachment.
-                      type: string
-                  type: object
-                type: array
               clearenceLevel:
                 default: unclassified
                 description: The clearance level of this data product

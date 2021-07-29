@@ -418,15 +418,6 @@ type StudyStatus struct {
 	// Tested models
 	// +kubebuilder:validation:Optional
 	TestedModels int32 `json:"testedModels,omitempty" protobuf:"varint,9,opt,name=testedModels"`
-	// Total number of trainers in this study
-	// +kubebuilder:validation:Optional
-	Trainers int32 `json:"trainers,omitempty" protobuf:"varint,10,opt,name=trainers"`
-	// Free trainers
-	// +kubebuilder:validation:Optional
-	FreeTrainers int32 `json:"freeTrainers,omitempty" protobuf:"varint,11,opt,name=freeTrainers"`
-	// TotalTrainers training
-	// +kubebuilder:validation:Optional
-	BusyTrainers int32 `json:"busyTrainers,omitempty" protobuf:"varint,12,opt,name=budyTrainers"`
 	// Study start time
 	// +kubebuilder:validation:Optional
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`

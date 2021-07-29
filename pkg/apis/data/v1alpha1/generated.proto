@@ -36,19 +36,6 @@ message ApiSpec {
   optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
 }
 
-message Attachment {
-  // Name is the name of the attachment.
-  optional string name = 1;
-
-  // Description is the description of the attachment
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 2;
-
-  // Location is the location of the attachment
-  optional DataLocation location = 3;
-}
-
 message Column {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:MaxLength=63
@@ -743,10 +730,6 @@ message DataProductSpec {
   // OnCallAccountName is the name of the account on call.
   // +kubebuilder:validation:Optional
   optional string onCallAccountName = 17;
-
-  // List of documents attached to the this data product
-  // +kubebuilder:validation:Optional
-  repeated Attachment attachments = 18;
 
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional

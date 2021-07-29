@@ -158,9 +158,6 @@ type DataProductSpec struct {
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
-	Attachments []Attachment `json:"attachments,omitempty" protobuf:"bytes,18,rep,name=attachments"`
-	// List of documents attached to the this data product
-	//+kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
 	// The clearance level of this data product
 	// +kubebuilder:default:=unclassified
@@ -203,15 +200,4 @@ type KPI struct {
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Value is the desired value
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
-}
-
-type Attachment struct {
-	// Name is the name of the attachment.
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Description is the description of the attachment
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
-	// Location is the location of the attachment
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

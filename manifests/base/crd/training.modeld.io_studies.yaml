@@ -1251,10 +1251,6 @@ spec:
               bestModelScore:
                 description: The Best model score, so far.
                 type: number
-              busyTrainers:
-                description: TotalTrainers training
-                format: int32
-                type: integer
               conditions:
                 description: This is the set of partition levels Represents the latest
                   available observations of a study state.
@@ -1291,10 +1287,6 @@ spec:
                 type: integer
               failedTrainingModels:
                 description: models that failed during training.
-                format: int32
-                type: integer
-              freeTrainers:
-                description: Free trainers
                 format: int32
                 type: integer
               id:
@@ -1397,10 +1389,6 @@ spec:
                 type: object
               trainedModels:
                 description: models that were successful during training
-                format: int32
-                type: integer
-              trainers:
-                description: Total number of trainers in this study
                 format: int32
                 type: integer
               trainingEndTime:

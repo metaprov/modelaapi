@@ -55,34 +55,6 @@ export namespace ApiSpec {
   }
 }
 
-export class Attachment extends jspb.Message {
-  getName(): string;
-  setName(value: string): Attachment;
-
-  getDescription(): string;
-  setDescription(value: string): Attachment;
-
-  getLocation(): DataLocation | undefined;
-  setLocation(value?: DataLocation): Attachment;
-  hasLocation(): boolean;
-  clearLocation(): Attachment;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Attachment.AsObject;
-  static toObject(includeInstance: boolean, msg: Attachment): Attachment.AsObject;
-  static serializeBinaryToWriter(message: Attachment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Attachment;
-  static deserializeBinaryFromReader(message: Attachment, reader: jspb.BinaryReader): Attachment;
-}
-
-export namespace Attachment {
-  export type AsObject = {
-    name: string,
-    description: string,
-    location?: DataLocation.AsObject,
-  }
-}
-
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -995,11 +967,6 @@ export class DataProductSpec extends jspb.Message {
   getOncallaccountname(): string;
   setOncallaccountname(value: string): DataProductSpec;
 
-  getAttachmentsList(): Array<Attachment>;
-  setAttachmentsList(value: Array<Attachment>): DataProductSpec;
-  clearAttachmentsList(): DataProductSpec;
-  addAttachments(value?: Attachment, index?: number): Attachment;
-
   getCompilation(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
   setCompilation(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
   hasCompilation(): boolean;
@@ -1036,7 +1003,6 @@ export namespace DataProductSpec {
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
     oncallaccountname: string,
-    attachmentsList: Array<Attachment.AsObject>,
     compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     clearencelevel: string,
     priority: string,

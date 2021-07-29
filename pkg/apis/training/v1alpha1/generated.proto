@@ -1051,6 +1051,11 @@ message ModelPipelineRunSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 6;
+
+  // Set to true to pause the model pipeline run
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 7;
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
@@ -1247,11 +1252,6 @@ message ModelPipelineSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 30;
-
-  // Set to true to pause the model pipeline
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool paused = 31;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
@@ -2507,18 +2507,6 @@ message StudyStatus {
   // Tested models
   // +kubebuilder:validation:Optional
   optional int32 testedModels = 9;
-
-  // Total number of trainers in this study
-  // +kubebuilder:validation:Optional
-  optional int32 trainers = 10;
-
-  // Free trainers
-  // +kubebuilder:validation:Optional
-  optional int32 freeTrainers = 11;
-
-  // TotalTrainers training
-  // +kubebuilder:validation:Optional
-  optional int32 budyTrainers = 12;
 
   // Study start time
   // +kubebuilder:validation:Optional
