@@ -1,0 +1,80 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/featurehistogram/v1";
+package github.com.metaprov.modeldapi.services.featurehistogram.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+
+message ListFeatureHistogramsRequest {
+    string namespace = 1;
+    map<string,string> labels =2;
+}
+
+message ListFeatureHistogramsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramList items = 1;
+}
+
+message CreateFeatureHistogramRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+}
+
+message CreateFeatureHistogramResponse {
+
+}
+
+message UpdateFeatureHistogramRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+}
+
+message UpdateFeatureHistogramResponse {
+
+}
+
+message GetFeatureHistogramRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetFeatureHistogramResponse {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    string yaml = 2;
+}
+
+
+message DeleteFeatureHistogramRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteFeatureHistogramResponse {
+
+}
+
+
+service FeatureHistogramService {
+    rpc ListFeatureHistograms(ListFeatureHistogramsRequest) returns (ListFeatureHistogramsResponse) {
+        option (google.api.http).get = "/v1/featurehistograms";
+    }
+    rpc CreateFeatureHistogram(CreateFeatureHistogramRequest) returns (CreateFeatureHistogramResponse) {
+        option (google.api.http) = {
+			post: "/v1/featurehistograms"
+			body: "*"
+		};
+    }
+    rpc GetFeatureHistogram(GetFeatureHistogramRequest) returns (GetFeatureHistogramResponse) {
+        option (google.api.http).get = "/v1/featurehistograms/{name}";
+    }
+    rpc UpdateFeatureHistogram(UpdateFeatureHistogramRequest) returns (UpdateFeatureHistogramResponse) {
+        option (google.api.http) = {
+			put: "/v1/featurehistograms/{featurehistogram.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteFeatureHistogram(DeleteFeatureHistogramRequest) returns (DeleteFeatureHistogramResponse) {}
+
+
+
+}

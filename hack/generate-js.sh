@@ -56,6 +56,7 @@ protoc \
     github.com/metaprov/modeldapi/services/datasource/v1/datasource.proto \
     github.com/metaprov/modeldapi/services/entity/v1/entity.proto \
     github.com/metaprov/modeldapi/services/feature/v1/feature.proto \
+    github.com/metaprov/modeldapi/services/featurehistogram/v1/featurehistogram.proto \
     github.com/metaprov/modeldapi/services/featurepipeline/v1/featurepipeline.proto \
     github.com/metaprov/modeldapi/services/featurepipelinerun/v1/featurepipelinerun.proto \
     github.com/metaprov/modeldapi/services/featureset/v1/featureset.proto \

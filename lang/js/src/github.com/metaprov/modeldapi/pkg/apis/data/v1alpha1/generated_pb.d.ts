@@ -2065,6 +2065,266 @@ export namespace FeatureCondition {
   }
 }
 
+export class FeatureHistogram extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): FeatureHistogram;
+  hasMetadata(): boolean;
+  clearMetadata(): FeatureHistogram;
+
+  getSpec(): FeatureHistogramSpec | undefined;
+  setSpec(value?: FeatureHistogramSpec): FeatureHistogram;
+  hasSpec(): boolean;
+  clearSpec(): FeatureHistogram;
+
+  getStatus(): FeatureHistogramStatus | undefined;
+  setStatus(value?: FeatureHistogramStatus): FeatureHistogram;
+  hasStatus(): boolean;
+  clearStatus(): FeatureHistogram;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureHistogram.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureHistogram): FeatureHistogram.AsObject;
+  static serializeBinaryToWriter(message: FeatureHistogram, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureHistogram;
+  static deserializeBinaryFromReader(message: FeatureHistogram, reader: jspb.BinaryReader): FeatureHistogram;
+}
+
+export namespace FeatureHistogram {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: FeatureHistogramSpec.AsObject,
+    status?: FeatureHistogramStatus.AsObject,
+  }
+}
+
+export class FeatureHistogramCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): FeatureHistogramCondition;
+
+  getStatus(): string;
+  setStatus(value: string): FeatureHistogramCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): FeatureHistogramCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): FeatureHistogramCondition;
+
+  getReason(): string;
+  setReason(value: string): FeatureHistogramCondition;
+
+  getMessage(): string;
+  setMessage(value: string): FeatureHistogramCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureHistogramCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureHistogramCondition): FeatureHistogramCondition.AsObject;
+  static serializeBinaryToWriter(message: FeatureHistogramCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureHistogramCondition;
+  static deserializeBinaryFromReader(message: FeatureHistogramCondition, reader: jspb.BinaryReader): FeatureHistogramCondition;
+}
+
+export namespace FeatureHistogramCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class FeatureHistogramList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): FeatureHistogramList;
+  hasMetadata(): boolean;
+  clearMetadata(): FeatureHistogramList;
+
+  getItemsList(): Array<FeatureHistogram>;
+  setItemsList(value: Array<FeatureHistogram>): FeatureHistogramList;
+  clearItemsList(): FeatureHistogramList;
+  addItems(value?: FeatureHistogram, index?: number): FeatureHistogram;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureHistogramList.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureHistogramList): FeatureHistogramList.AsObject;
+  static serializeBinaryToWriter(message: FeatureHistogramList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureHistogramList;
+  static deserializeBinaryFromReader(message: FeatureHistogramList, reader: jspb.BinaryReader): FeatureHistogramList;
+}
+
+export namespace FeatureHistogramList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<FeatureHistogram.AsObject>,
+  }
+}
+
+export class FeatureHistogramSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): FeatureHistogramSpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): FeatureHistogramSpec;
+
+  getDescription(): string;
+  setDescription(value: string): FeatureHistogramSpec;
+
+  getKeycolumn(): string;
+  setKeycolumn(value: string): FeatureHistogramSpec;
+
+  getTimestampcolumn(): string;
+  setTimestampcolumn(value: string): FeatureHistogramSpec;
+
+  getFeaturecolumn(): string;
+  setFeaturecolumn(value: string): FeatureHistogramSpec;
+
+  getEntityname(): string;
+  setEntityname(value: string): FeatureHistogramSpec;
+
+  getFeaturepipelinename(): string;
+  setFeaturepipelinename(value: string): FeatureHistogramSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureHistogramSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureHistogramSpec;
+  static deserializeBinaryFromReader(message: FeatureHistogramSpec, reader: jspb.BinaryReader): FeatureHistogramSpec;
+}
+
+export namespace FeatureHistogramSpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    description: string,
+    keycolumn: string,
+    timestampcolumn: string,
+    featurecolumn: string,
+    entityname: string,
+    featurepipelinename: string,
+  }
+}
+
+export class FeatureHistogramStatus extends jspb.Message {
+  getMin(): number;
+  setMin(value: number): FeatureHistogramStatus;
+
+  getMax(): number;
+  setMax(value: number): FeatureHistogramStatus;
+
+  getMean(): number;
+  setMean(value: number): FeatureHistogramStatus;
+
+  getStddev(): number;
+  setStddev(value: number): FeatureHistogramStatus;
+
+  getSkewness(): number;
+  setSkewness(value: number): FeatureHistogramStatus;
+
+  getKurtosis(): number;
+  setKurtosis(value: number): FeatureHistogramStatus;
+
+  getZeros(): number;
+  setZeros(value: number): FeatureHistogramStatus;
+
+  getP25(): number;
+  setP25(value: number): FeatureHistogramStatus;
+
+  getP50(): number;
+  setP50(value: number): FeatureHistogramStatus;
+
+  getP75(): number;
+  setP75(value: number): FeatureHistogramStatus;
+
+  getMissing(): number;
+  setMissing(value: number): FeatureHistogramStatus;
+
+  getInvalid(): number;
+  setInvalid(value: number): FeatureHistogramStatus;
+
+  getTarget(): boolean;
+  setTarget(value: boolean): FeatureHistogramStatus;
+
+  getImportance(): number;
+  setImportance(value: number): FeatureHistogramStatus;
+
+  getDistinc(): number;
+  setDistinc(value: number): FeatureHistogramStatus;
+
+  getIgnored(): boolean;
+  setIgnored(value: boolean): FeatureHistogramStatus;
+
+  getNullable(): boolean;
+  setNullable(value: boolean): FeatureHistogramStatus;
+
+  getHighcred(): boolean;
+  setHighcred(value: boolean): FeatureHistogramStatus;
+
+  getHighcorr(): boolean;
+  setHighcorr(value: boolean): FeatureHistogramStatus;
+
+  getSkew(): boolean;
+  setSkew(value: boolean): FeatureHistogramStatus;
+
+  getCompleteness(): number;
+  setCompleteness(value: number): FeatureHistogramStatus;
+
+  getDistinctvaluecount(): number;
+  setDistinctvaluecount(value: number): FeatureHistogramStatus;
+
+  getMostfreqvaluesratio(): number;
+  setMostfreqvaluesratio(value: number): FeatureHistogramStatus;
+
+  getIndexofpeculiarity(): number;
+  setIndexofpeculiarity(value: number): FeatureHistogramStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeatureHistogramStatus;
+
+  getConditionsList(): Array<FeatureHistogramCondition>;
+  setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
+  clearConditionsList(): FeatureHistogramStatus;
+  addConditions(value?: FeatureHistogramCondition, index?: number): FeatureHistogramCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureHistogramStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureHistogramStatus): FeatureHistogramStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureHistogramStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureHistogramStatus;
+  static deserializeBinaryFromReader(message: FeatureHistogramStatus, reader: jspb.BinaryReader): FeatureHistogramStatus;
+}
+
+export namespace FeatureHistogramStatus {
+  export type AsObject = {
+    min: number,
+    max: number,
+    mean: number,
+    stddev: number,
+    skewness: number,
+    kurtosis: number,
+    zeros: number,
+    p25: number,
+    p50: number,
+    p75: number,
+    missing: number,
+    invalid: number,
+    target: boolean,
+    importance: number,
+    distinc: number,
+    ignored: boolean,
+    nullable: boolean,
+    highcred: boolean,
+    highcorr: boolean,
+    skew: boolean,
+    completeness: number,
+    distinctvaluecount: number,
+    mostfreqvaluesratio: number,
+    indexofpeculiarity: number,
+    observedgeneration: number,
+    conditionsList: Array<FeatureHistogramCondition.AsObject>,
+  }
+}
+
 export class FeatureList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): FeatureList;

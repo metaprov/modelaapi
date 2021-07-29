@@ -13,8 +13,8 @@ spec:
     categories:
     - data
     - modeld
-    kind: Feature
-    listKind: FeatureList
+    kind: FeatureHistogram
+    listKind: FeatureHistogramList
     plural: features
     singular: feature
   scope: Namespaced
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Feature represent a single feature in the feature store.
+        description: FeatureHistogram represent a single feature in the feature store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: FeatureSpec contain the desired state of a Feature
+            description: FeatureHistogramSpec contain the desired state of a FeatureHistogram
             properties:
               description:
                 default: ""
@@ -89,15 +89,15 @@ spec:
                 type: string
             type: object
           status:
-            description: FeatureStatus defines the observed state of Feature
+            description: FeatureHistogramStatus defines the observed state of FeatureHistogram
             properties:
               completeness:
                 description: Completeness is the ratio between non null to null
                 type: number
               conditions:
                 items:
-                  description: FeatureCondition describes the state of a deployment
-                    at a certain point.
+                  description: FeatureHistogramCondition describes the state of a
+                    deployment at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status
