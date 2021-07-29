@@ -39,8 +39,11 @@ type FeatureHistogramCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Column",type="string",JSONPath=".spec.column"
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.dataset"
+// +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=features,singular=feature,categories={data,modeld}
+// +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modeld}
 // +kubebuilder:subresource:status
 type FeatureHistogram struct {
 	metav1.TypeMeta   `json:",inline"`

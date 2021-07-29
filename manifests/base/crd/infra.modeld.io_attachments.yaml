@@ -23,24 +23,18 @@ spec:
     - jsonPath: .status.phase
       name: Status
       type: string
-    - jsonPath: .spec.level
-      name: Level
-      type: string
-    - jsonPath: .spec.subject
-      name: Subject
-      type: string
     - jsonPath: .spec.entityRef.name
       name: Entity Namespace
       type: string
     - jsonPath: .spec.entityRef.namespace
       name: Entity Name
       type: string
-    - jsonPath: .spec.notifierName
-      name: Notifier
+    - jsonPath: .spec.bucketName
+      name: Bucket
       type: string
-    - jsonPath: .status.at
-      name: At
-      type: date
+    - jsonPath: .spec.path
+      name: Path
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
