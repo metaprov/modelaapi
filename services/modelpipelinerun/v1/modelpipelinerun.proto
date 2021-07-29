@@ -143,7 +143,7 @@ service ModelPipelineRunService {
         option (google.api.http).post = "/v1/modelpipelineruns/{name}:pause";
     }
 
-    rpc ResumeModelPipeline(ResumeModelPipelineRunRequest) returns (ResumeModelPipelineRunResponse) {
+    rpc ResumeModelPipelineRun(ResumeModelPipelineRunRequest) returns (ResumeModelPipelineRunResponse) {
         option (google.api.http).post = "/v1/modelpipelineruns/{name}:resume";
     }
 
