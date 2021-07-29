@@ -65,6 +65,26 @@ message RunModelPipelineResponse {
 
 
 
+message PauseModelPipelineResponse {
+}
+
+message PauseModelPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeModelPipelineResponse {
+}
+
+message ResumeModelPipelineRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
+
 service ModelPipelineService {
     rpc ListModelPipelines(ListModelPipelinesRequest) returns (ListModelPipelinesResponse) {
         option (google.api.http).get = "/api/v1alpha1/modelpipelines";
@@ -93,6 +113,15 @@ service ModelPipelineService {
 
     rpc RunModelPipeline(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
         option (google.api.http).post = "/api/v1/modelpipelines/{namespace}/{name}:run";
+    }
+
+        
+    rpc PauseModelPipeline(PauseModelPipelineRequest) returns (PauseModelPipelineResponse) {
+        option (google.api.http).post = "/v1/modelpipelines/{name}:pause";
+    }
+
+    rpc ResumeModelPipeline(ResumeModelPipelineRequest) returns (ResumeModelPipelineResponse) {
+        option (google.api.http).post = "/v1/modelpipelines/{name}:resume";
     }
 
 }

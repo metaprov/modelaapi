@@ -1252,6 +1252,11 @@ message ModelPipelineSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 30;
+
+  // Pause the pipeline cron job.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 31;
 }
 
 // ModelPipelineStatus define the observed state of the pipeline

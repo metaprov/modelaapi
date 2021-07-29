@@ -362,6 +362,10 @@ spec:
                 description: The owner of the run, set to the owner of the pipeline
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              paused:
+                default: false
+                description: Pause the pipeline cron job.
+                type: boolean
               priority:
                 default: medium
                 description: The priority of this pipeline. The default is medium.

@@ -44,6 +44,16 @@ class ModelPipelineServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineResponse.FromString,
                 )
+        self.PauseModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineResponse.FromString,
+                )
+        self.ResumeModelPipeline = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineResponse.FromString,
+                )
 
 
 class ModelPipelineServiceServicer(object):
@@ -85,6 +95,18 @@ class ModelPipelineServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseModelPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeModelPipeline(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ModelPipelineServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,6 +139,16 @@ def add_ModelPipelineServiceServicer_to_server(servicer, server):
                     servicer.RunModelPipeline,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineResponse.SerializeToString,
+            ),
+            'PauseModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineResponse.SerializeToString,
+            ),
+            'ResumeModelPipeline': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeModelPipeline,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -227,5 +259,39 @@ class ModelPipelineService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.RunModelPipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.PauseModelPipelineResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeModelPipeline(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipeline_dot_v1_dot_modelpipeline__pb2.ResumeModelPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

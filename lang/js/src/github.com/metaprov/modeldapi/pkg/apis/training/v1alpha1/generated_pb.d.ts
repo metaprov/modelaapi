@@ -1897,6 +1897,9 @@ export class ModelPipelineSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): ModelPipelineSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): ModelPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineSpec): ModelPipelineSpec.AsObject;
@@ -1923,6 +1926,7 @@ export namespace ModelPipelineSpec {
     notifiername: string,
     baselinemodelname: string,
     priority: string,
+    paused: boolean,
   }
 }
 
