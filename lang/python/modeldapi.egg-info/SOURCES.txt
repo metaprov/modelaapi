@@ -56,6 +56,8 @@ github/com/metaprov/modeldapi/services/apitoken/__init__.py
 github/com/metaprov/modeldapi/services/apitoken/v1/__init__.py
 github/com/metaprov/modeldapi/services/apitoken/v1/apitoken_pb2.py
 github/com/metaprov/modeldapi/services/apitoken/v1/apitoken_pb2_grpc.py
+github/com/metaprov/modeldapi/services/attachment/v1/attachment_pb2.py
+github/com/metaprov/modeldapi/services/attachment/v1/attachment_pb2_grpc.py
 github/com/metaprov/modeldapi/services/catalog/__init__.py
 github/com/metaprov/modeldapi/services/catalog/v1/__init__.py
 github/com/metaprov/modeldapi/services/catalog/v1/catalog_pb2.py
@@ -130,6 +132,8 @@ github/com/metaprov/modeldapi/services/feature/__init__.py
 github/com/metaprov/modeldapi/services/feature/v1/__init__.py
 github/com/metaprov/modeldapi/services/feature/v1/feature_pb2.py
 github/com/metaprov/modeldapi/services/feature/v1/feature_pb2_grpc.py
+github/com/metaprov/modeldapi/services/featurehistogram/v1/featurehistogram_pb2.py
+github/com/metaprov/modeldapi/services/featurehistogram/v1/featurehistogram_pb2_grpc.py
 github/com/metaprov/modeldapi/services/featurepipeline/__init__.py
 github/com/metaprov/modeldapi/services/featurepipeline/v1/__init__.py
 github/com/metaprov/modeldapi/services/featurepipeline/v1/featurepipeline_pb2.py
