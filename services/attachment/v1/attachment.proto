@@ -1,0 +1,148 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/attachment/v1";
+
+package github.com.metaprov.modeldapi.services.attachment.v1;
+import "google/api/annotations.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+
+message ListAttachmentsRequest {
+    string             namespace = 1;
+    map<string,string> labels    = 2;   
+}
+
+message ListAttachmentsResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AttachmentList items = 1;   
+}
+
+message AttachmentResponse {}
+
+message CreateAttachmentRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment  item = 1;
+    string password = 2;    
+}
+
+message CreateAttachmentResponse {
+
+}
+
+message UpdateAttachmentRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+}
+
+message UpdateAttachmentResponse {
+
+}
+
+message GetAttachmentRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAttachmentResponse {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+    string yaml = 2;
+}
+
+
+
+message GetAttachmentNamespacesRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message GetAttachmentNamespacesResponse {
+    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+}
+
+
+
+
+message DeleteAttachmentRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteAttachmentResponse {}
+
+
+message AttachmentCreateResponse {}
+message LogoutResponse {}
+message ResetPasswordResponse {}
+
+message AttachmentLoginRequest {
+    string namespace = 1;
+    string name      = 2;
+    string password  = 3;
+}
+
+message AttachmentLoginResponse {
+    string token = 1; // jwt token
+}
+
+
+message AttachmentGetByNameRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message AttachmentLogoutRequest {
+    string token = 1; // jwt token
+}
+
+
+
+
+
+message ChangePasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string old       = 3;
+    string new       = 4;
+    string confirmedNew = 5;
+}
+
+message ChangePasswordResponse {}
+
+message ResetPasswordRequest {
+    string namespace = 1;
+    string name      = 2;
+    string new       = 3;
+    string confirmedNew = 4;
+}
+
+message ResetPasswordReponse {
+
+}
+
+
+
+
+
+service AttachmentService {
+    rpc ListAttachments(ListAttachmentsRequest) returns (ListAttachmentsResponse) {
+        option (google.api.http).get = "/v1/attachments";
+    }
+    rpc CreateAttachment(CreateAttachmentRequest) returns (CreateAttachmentResponse) {
+        option (google.api.http) = {
+			post: "/v1/attachments"
+			body: "attachment"
+		};
+    }
+    rpc GetAttachment(GetAttachmentRequest) returns (GetAttachmentResponse) {
+        option (google.api.http).get = "/v1/{namespace}/attachments/{name}";
+    }
+    rpc UpdateAttachment(UpdateAttachmentRequest) returns (UpdateAttachmentResponse) {
+        option (google.api.http) = {
+			put: "/v1/{attachment.metadata.namespace}/attachments//{attachment.metadata.name}"
+			body: "attachment"
+		};
+    }
+
+    rpc DeleteAttachment(DeleteAttachmentRequest) returns (DeleteAttachmentResponse) {
+        option (google.api.http).delete = "/api/{namespace}/v1/attachments/{name}";
+    }
+
+}

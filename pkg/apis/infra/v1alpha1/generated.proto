@@ -467,6 +467,102 @@ message ApiTokenStatus {
   repeated ApiTokenCondition conditions = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
+message Attachment {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional AttachmentSpec spec = 2;
+
+  optional AttachmentStatus status = 3;
+}
+
+// AttachmentCondition describes the state of the license at a certain point.
+message AttachmentCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// AttachmentList is a list of Attachments
+message AttachmentList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Attachment items = 2;
+}
+
+// AttachmentSpec defines the desired state of Attachment
+message AttachmentSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string subject = 1;
+
+  // Attachment Message
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string message = 2;
+
+  // Scopes is the list of scopes for this token.
+  optional string level = 3;
+
+  // The subject entity
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Required
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 5;
+
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 6;
+
+  // The actual information about the alerts
+  // +kubebuilder:validation:Optional
+  map<string, string> fields = 7;
+}
+
+// AttachmentStatus is the observed state of a Attachment
+message AttachmentStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // The time when the alert was fired
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 3;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated AttachmentCondition conditions = 4;
+}
+
 message AvatarSpec {
   // +kubebuilder:default:=""
   // Bucketname is the name of the bucket holding the bucket name

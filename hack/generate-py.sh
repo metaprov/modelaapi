@@ -48,6 +48,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/account/v1/account.proto \
     github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto \
     github.com/metaprov/modeldapi/services/alert/v1/alert.proto \
+    github.com/metaprov/modeldapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modeldapi/services/todo/v1/todo.proto \
     github.com/metaprov/modeldapi/services/commit/v1/commit.proto \
     github.com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem.proto \

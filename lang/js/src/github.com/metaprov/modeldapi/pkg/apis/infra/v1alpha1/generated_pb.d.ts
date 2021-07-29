@@ -789,6 +789,178 @@ export namespace ApiTokenStatus {
   }
 }
 
+export class Attachment extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Attachment;
+  hasMetadata(): boolean;
+  clearMetadata(): Attachment;
+
+  getSpec(): AttachmentSpec | undefined;
+  setSpec(value?: AttachmentSpec): Attachment;
+  hasSpec(): boolean;
+  clearSpec(): Attachment;
+
+  getStatus(): AttachmentStatus | undefined;
+  setStatus(value?: AttachmentStatus): Attachment;
+  hasStatus(): boolean;
+  clearStatus(): Attachment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Attachment.AsObject;
+  static toObject(includeInstance: boolean, msg: Attachment): Attachment.AsObject;
+  static serializeBinaryToWriter(message: Attachment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Attachment;
+  static deserializeBinaryFromReader(message: Attachment, reader: jspb.BinaryReader): Attachment;
+}
+
+export namespace Attachment {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: AttachmentSpec.AsObject,
+    status?: AttachmentStatus.AsObject,
+  }
+}
+
+export class AttachmentCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): AttachmentCondition;
+
+  getStatus(): string;
+  setStatus(value: string): AttachmentCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): AttachmentCondition;
+
+  getReason(): string;
+  setReason(value: string): AttachmentCondition;
+
+  getMessage(): string;
+  setMessage(value: string): AttachmentCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttachmentCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: AttachmentCondition): AttachmentCondition.AsObject;
+  static serializeBinaryToWriter(message: AttachmentCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttachmentCondition;
+  static deserializeBinaryFromReader(message: AttachmentCondition, reader: jspb.BinaryReader): AttachmentCondition;
+}
+
+export namespace AttachmentCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class AttachmentList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): AttachmentList;
+  hasMetadata(): boolean;
+  clearMetadata(): AttachmentList;
+
+  getItemsList(): Array<Attachment>;
+  setItemsList(value: Array<Attachment>): AttachmentList;
+  clearItemsList(): AttachmentList;
+  addItems(value?: Attachment, index?: number): Attachment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttachmentList.AsObject;
+  static toObject(includeInstance: boolean, msg: AttachmentList): AttachmentList.AsObject;
+  static serializeBinaryToWriter(message: AttachmentList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttachmentList;
+  static deserializeBinaryFromReader(message: AttachmentList, reader: jspb.BinaryReader): AttachmentList;
+}
+
+export namespace AttachmentList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Attachment.AsObject>,
+  }
+}
+
+export class AttachmentSpec extends jspb.Message {
+  getSubject(): string;
+  setSubject(value: string): AttachmentSpec;
+
+  getMessage(): string;
+  setMessage(value: string): AttachmentSpec;
+
+  getLevel(): string;
+  setLevel(value: string): AttachmentSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AttachmentSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): AttachmentSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): AttachmentSpec;
+
+  getOwner(): string;
+  setOwner(value: string): AttachmentSpec;
+
+  getFieldsMap(): jspb.Map<string, string>;
+  clearFieldsMap(): AttachmentSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttachmentSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AttachmentSpec): AttachmentSpec.AsObject;
+  static serializeBinaryToWriter(message: AttachmentSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttachmentSpec;
+  static deserializeBinaryFromReader(message: AttachmentSpec, reader: jspb.BinaryReader): AttachmentSpec;
+}
+
+export namespace AttachmentSpec {
+  export type AsObject = {
+    subject: string,
+    message: string,
+    level: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    owner: string,
+    fieldsMap: Array<[string, string]>,
+  }
+}
+
+export class AttachmentStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): AttachmentStatus;
+
+  getAt(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setAt(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
+  hasAt(): boolean;
+  clearAt(): AttachmentStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): AttachmentStatus;
+
+  getConditionsList(): Array<AttachmentCondition>;
+  setConditionsList(value: Array<AttachmentCondition>): AttachmentStatus;
+  clearConditionsList(): AttachmentStatus;
+  addConditions(value?: AttachmentCondition, index?: number): AttachmentCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AttachmentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: AttachmentStatus): AttachmentStatus.AsObject;
+  static serializeBinaryToWriter(message: AttachmentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AttachmentStatus;
+  static deserializeBinaryFromReader(message: AttachmentStatus, reader: jspb.BinaryReader): AttachmentStatus;
+}
+
+export namespace AttachmentStatus {
+  export type AsObject = {
+    phase: string,
+    at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    conditionsList: Array<AttachmentCondition.AsObject>,
+  }
+}
+
 export class AvatarSpec extends jspb.Message {
   getBucketname(): string;
   setBucketname(value: string): AvatarSpec;
