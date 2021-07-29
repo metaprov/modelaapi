@@ -884,28 +884,22 @@ export namespace AttachmentList {
 }
 
 export class AttachmentSpec extends jspb.Message {
-  getSubject(): string;
-  setSubject(value: string): AttachmentSpec;
+  getOwner(): string;
+  setOwner(value: string): AttachmentSpec;
 
-  getMessage(): string;
-  setMessage(value: string): AttachmentSpec;
-
-  getLevel(): string;
-  setLevel(value: string): AttachmentSpec;
+  getDescription(): string;
+  setDescription(value: string): AttachmentSpec;
 
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AttachmentSpec;
   hasEntityref(): boolean;
   clearEntityref(): AttachmentSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): AttachmentSpec;
+  getBucketname(): string;
+  setBucketname(value: string): AttachmentSpec;
 
-  getOwner(): string;
-  setOwner(value: string): AttachmentSpec;
-
-  getFieldsMap(): jspb.Map<string, string>;
-  clearFieldsMap(): AttachmentSpec;
+  getPath(): string;
+  setPath(value: string): AttachmentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AttachmentSpec.AsObject;
@@ -917,13 +911,11 @@ export class AttachmentSpec extends jspb.Message {
 
 export namespace AttachmentSpec {
   export type AsObject = {
-    subject: string,
-    message: string,
-    level: string,
-    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    notifiername: string,
     owner: string,
-    fieldsMap: Array<[string, string]>,
+    description: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    bucketname: string,
+    path: string,
   }
 }
 

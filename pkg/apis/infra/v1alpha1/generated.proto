@@ -514,33 +514,25 @@ message AttachmentList {
 
 // AttachmentSpec defines the desired state of Attachment
 message AttachmentSpec {
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string subject = 1;
-
-  // Attachment Message
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string message = 2;
-
-  // Scopes is the list of scopes for this token.
-  optional string level = 3;
-
-  // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
-
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Required
-  // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 5;
-
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6;
+  optional string owner = 1;
 
-  // The actual information about the alerts
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  map<string, string> fields = 7;
+  optional string description = 2;
+
+  // Entity ref
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
+
+  // +kubebuilder:default:=""
+  // Bucketname is the name of the bucket
+  // +kubebuilder:validation:Optional
+  optional string bucketName = 4;
+
+  // Path to the full data file (e.g. csv file).
+  // +kubebuilder:validation:Optional
+  optional string path = 5;
 }
 
 // AttachmentStatus is the observed state of a Attachment

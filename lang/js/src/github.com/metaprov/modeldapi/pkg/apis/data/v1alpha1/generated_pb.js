@@ -22444,11 +22444,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    keycolumn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    timestampcolumn: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    featurecolumn: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    entityname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    featurepipelinename: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    column: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    datasetname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    bins: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -22499,23 +22497,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setKeycolumn(value);
+      msg.setColumn(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTimestampcolumn(value);
+      msg.setDatasetname(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFeaturecolumn(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEntityname(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFeaturepipelinename(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBins(value);
       break;
     default:
       reader.skipField();
@@ -22581,24 +22571,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       7,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeString(
-      9,
       f
     );
   }
@@ -22714,10 +22690,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
 
 
 /**
- * optional string keyColumn = 5;
+ * optional string column = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getKeycolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getColumn = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -22726,7 +22702,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setKeycolumn = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setColumn = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -22735,7 +22711,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearKeycolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearColumn = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -22744,16 +22720,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasKeycolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string timestampColumn = 6;
+ * optional string datasetName = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getTimestampcolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getDatasetname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -22762,7 +22738,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setTimestampcolumn = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setDatasetname = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -22771,7 +22747,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearTimestampcolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearDatasetname = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -22780,25 +22756,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasTimestampcolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasDatasetname = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string featureColumn = 7;
- * @return {string}
+ * optional int32 bins = 7;
+ * @return {number}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getFeaturecolumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getBins = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setFeaturecolumn = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setBins = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -22807,7 +22783,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearFeaturecolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearBins = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -22816,80 +22792,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasFeaturecolumn = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasBins = function() {
   return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional string entityName = 8;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getEntityname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setEntityname = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearEntityname = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasEntityname = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional string featurePipelineName = 9;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.getFeaturepipelinename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.setFeaturepipelinename = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.clearFeaturepipelinename = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.prototype.hasFeaturepipelinename = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -22899,7 +22803,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [29];
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [1,4];
 
 
 
@@ -22932,31 +22836,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    mean: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
-    skewness: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
-    kurtosis: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
-    zeros: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
-    p25: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
-    p50: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
-    p75: (f = jspb.Message.getOptionalFloatingPointField(msg, 12)) == null ? undefined : f,
-    missing: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    invalid: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    target: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    importance: (f = jspb.Message.getOptionalFloatingPointField(msg, 17)) == null ? undefined : f,
-    distinc: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    ignored: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
-    nullable: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
-    highcred: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
-    highcorr: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
-    skew: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
-    completeness: (f = jspb.Message.getOptionalFloatingPointField(msg, 24)) == null ? undefined : f,
-    distinctvaluecount: (f = jspb.Message.getOptionalFloatingPointField(msg, 25)) == null ? undefined : f,
-    mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 26)) == null ? undefined : f,
-    indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 27)) == null ? undefined : f,
-    observedgeneration: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
+    valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
+    missing: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    invalid: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.toObject, includeInstance)
   };
@@ -22995,107 +22877,21 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addValues(values[i]);
+      }
+      break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMin(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMax(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMean(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStddev(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSkewness(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setKurtosis(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setZeros(value);
-      break;
-    case 10:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP25(value);
-      break;
-    case 11:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP50(value);
-      break;
-    case 12:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP75(value);
-      break;
-    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMissing(value);
       break;
-    case 15:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInvalid(value);
       break;
-    case 16:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTarget(value);
-      break;
-    case 17:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setImportance(value);
-      break;
-    case 18:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setDistinc(value);
-      break;
-    case 19:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIgnored(value);
-      break;
-    case 20:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNullable(value);
-      break;
-    case 21:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHighcred(value);
-      break;
-    case 22:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHighcorr(value);
-      break;
-    case 23:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSkew(value);
-      break;
-    case 24:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setCompleteness(value);
-      break;
-    case 25:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setDistinctvaluecount(value);
-      break;
-    case 26:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMostfreqvaluesratio(value);
-      break;
-    case 27:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setIndexofpeculiarity(value);
-      break;
-    case 28:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setObservedgeneration(value);
-      break;
-    case 29:
+    case 4:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -23129,185 +22925,31 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getValuesList();
+  if (f.length > 0) {
+    writer.writeRepeatedDouble(
+      1,
+      f
+    );
+  }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeDouble(
-      4,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeDouble(
-      5,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeDouble(
-      6,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeDouble(
-      7,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeDouble(
-      8,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 10));
-  if (f != null) {
-    writer.writeDouble(
-      10,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 11));
-  if (f != null) {
-    writer.writeDouble(
-      11,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 12));
-  if (f != null) {
-    writer.writeDouble(
-      12,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeInt32(
-      14,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 15));
-  if (f != null) {
-    writer.writeInt32(
-      15,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
-  if (f != null) {
-    writer.writeBool(
-      16,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 17));
-  if (f != null) {
-    writer.writeDouble(
-      17,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 18));
-  if (f != null) {
-    writer.writeInt32(
-      18,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 19));
-  if (f != null) {
-    writer.writeBool(
-      19,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 20));
-  if (f != null) {
-    writer.writeBool(
-      20,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 21));
-  if (f != null) {
-    writer.writeBool(
-      21,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 22));
-  if (f != null) {
-    writer.writeBool(
-      22,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 23));
-  if (f != null) {
-    writer.writeBool(
-      23,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 24));
-  if (f != null) {
-    writer.writeDouble(
-      24,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 25));
-  if (f != null) {
-    writer.writeDouble(
-      25,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 26));
-  if (f != null) {
-    writer.writeDouble(
-      26,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 27));
-  if (f != null) {
-    writer.writeDouble(
-      27,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 28));
-  if (f != null) {
-    writer.writeInt64(
-      28,
       f
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      29,
+      4,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.serializeBinaryToWriter
     );
@@ -23316,371 +22958,48 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 /**
- * optional double min = 2;
- * @return {number}
+ * repeated double values = 1;
+ * @return {!Array<number>}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMin = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getValuesList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setValuesList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {number} value
+ * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMin = function(value) {
-  return jspb.Message.setField(this, 2, value);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addValues = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMin = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearValuesList = function() {
+  return this.setValuesList([]);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMin = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional double max = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMax = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMax = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMax = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional double mean = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMean = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMean = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMean = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMean = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional double stddev = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getStddev = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setStddev = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearStddev = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasStddev = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional double skewness = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getSkewness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setSkewness = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearSkewness = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasSkewness = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional double kurtosis = 7;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getKurtosis = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setKurtosis = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearKurtosis = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasKurtosis = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional double zeros = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getZeros = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setZeros = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearZeros = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasZeros = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional double p25 = 10;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getP25 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setP25 = function(value) {
-  return jspb.Message.setField(this, 10, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearP25 = function() {
-  return jspb.Message.setField(this, 10, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasP25 = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional double p50 = 11;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getP50 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setP50 = function(value) {
-  return jspb.Message.setField(this, 11, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearP50 = function() {
-  return jspb.Message.setField(this, 11, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasP50 = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional double p75 = 12;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getP75 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setP75 = function(value) {
-  return jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearP75 = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasP75 = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional int32 missing = 14;
+ * optional int32 missing = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMissing = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -23689,7 +23008,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMissing = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -23698,7 +23017,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMissing = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -23707,16 +23026,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMissing = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 invalid = 15;
+ * optional int32 invalid = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getInvalid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -23725,7 +23044,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setInvalid = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -23734,7 +23053,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearInvalid = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -23743,485 +23062,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasInvalid = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool target = 16;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getTarget = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setTarget = function(value) {
-  return jspb.Message.setField(this, 16, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearTarget = function() {
-  return jspb.Message.setField(this, 16, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasTarget = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional double importance = 17;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getImportance = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 17, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setImportance = function(value) {
-  return jspb.Message.setField(this, 17, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearImportance = function() {
-  return jspb.Message.setField(this, 17, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasImportance = function() {
-  return jspb.Message.getField(this, 17) != null;
-};
-
-
-/**
- * optional int32 distinc = 18;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getDistinc = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setDistinc = function(value) {
-  return jspb.Message.setField(this, 18, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearDistinc = function() {
-  return jspb.Message.setField(this, 18, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasDistinc = function() {
-  return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional bool ignored = 19;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getIgnored = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setIgnored = function(value) {
-  return jspb.Message.setField(this, 19, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearIgnored = function() {
-  return jspb.Message.setField(this, 19, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasIgnored = function() {
-  return jspb.Message.getField(this, 19) != null;
-};
-
-
-/**
- * optional bool nullable = 20;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getNullable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setNullable = function(value) {
-  return jspb.Message.setField(this, 20, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearNullable = function() {
-  return jspb.Message.setField(this, 20, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasNullable = function() {
-  return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
- * optional bool highCred = 21;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getHighcred = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setHighcred = function(value) {
-  return jspb.Message.setField(this, 21, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearHighcred = function() {
-  return jspb.Message.setField(this, 21, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasHighcred = function() {
-  return jspb.Message.getField(this, 21) != null;
-};
-
-
-/**
- * optional bool highCorr = 22;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getHighcorr = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setHighcorr = function(value) {
-  return jspb.Message.setField(this, 22, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearHighcorr = function() {
-  return jspb.Message.setField(this, 22, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasHighcorr = function() {
-  return jspb.Message.getField(this, 22) != null;
-};
-
-
-/**
- * optional bool skew = 23;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getSkew = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setSkew = function(value) {
-  return jspb.Message.setField(this, 23, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearSkew = function() {
-  return jspb.Message.setField(this, 23, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasSkew = function() {
-  return jspb.Message.getField(this, 23) != null;
-};
-
-
-/**
- * optional double completeness = 24;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getCompleteness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setCompleteness = function(value) {
-  return jspb.Message.setField(this, 24, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearCompleteness = function() {
-  return jspb.Message.setField(this, 24, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasCompleteness = function() {
-  return jspb.Message.getField(this, 24) != null;
-};
-
-
-/**
- * optional double distinctValueCount = 25;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getDistinctvaluecount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 25, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setDistinctvaluecount = function(value) {
-  return jspb.Message.setField(this, 25, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearDistinctvaluecount = function() {
-  return jspb.Message.setField(this, 25, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasDistinctvaluecount = function() {
-  return jspb.Message.getField(this, 25) != null;
-};
-
-
-/**
- * optional double mostFreqValuesRatio = 26;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMostfreqvaluesratio = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 26, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMostfreqvaluesratio = function(value) {
-  return jspb.Message.setField(this, 26, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMostfreqvaluesratio = function() {
-  return jspb.Message.setField(this, 26, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMostfreqvaluesratio = function() {
-  return jspb.Message.getField(this, 26) != null;
-};
-
-
-/**
- * optional double indexOfPeculiarity = 27;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getIndexofpeculiarity = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 27, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setIndexofpeculiarity = function(value) {
-  return jspb.Message.setField(this, 27, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearIndexofpeculiarity = function() {
-  return jspb.Message.setField(this, 27, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasIndexofpeculiarity = function() {
-  return jspb.Message.getField(this, 27) != null;
-};
-
-
-/**
- * optional int64 observedGeneration = 28;
- * @return {number}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 28, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 28, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 28, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 28) != null;
-};
-
-
-/**
- * repeated FeatureHistogramCondition conditions = 29;
+ * repeated FeatureHistogramCondition conditions = 4;
  * @return {!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 29));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 4));
 };
 
 
@@ -24230,7 +23081,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 29, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -24240,7 +23091,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 29, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
 };
 
 

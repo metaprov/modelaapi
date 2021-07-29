@@ -76,89 +76,26 @@ type FeatureHistogramSpec struct {
 	// Type name of the column key, this column is the key column in the entity.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	KeyColumn *string `json:"keyColumn,omitempty" protobuf:"bytes,5,opt,name=keyColumn"`
-	// The name of the time stamp column
+	Column *string `json:"column,omitempty" protobuf:"bytes,5,opt,name=column"`
+	// The name of the dataset
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TimestampColumn *string `json:"timestampColumn,omitempty" protobuf:"bytes,6,opt,name=timestampColumn"`
-	// The name of the feature column
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	FeatureHistogramColumn *string `json:"featureColumn,omitempty" protobuf:"bytes,7,opt,name=featureColumn"`
-	// The name of the entity containing this feature
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
-	// The name of the feature pipeline that is producing this feature
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	FeatureHistogramPipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,9,opt,name=featurePipelineName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
+	// Bins is the number of bins in the histogram
+	Bins *int32 `json:"bins,omitempty" protobuf:"bytes,7,opt,name=bins"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
 type FeatureHistogramStatus struct {
-	// Min is the minimum value of the attribute
-	Min float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
-	// Max is the maximum value of the attribute
-	Max float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	// Mean is the mean value of the attribute
-	Mean float64 `json:"mean,omitempty" protobuf:"bytes,4,opt,name=mean"`
-	// StdDev is the standard deviation value of the attribute
-	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,5,opt,name=stddev"`
-	// Skewness is the standard deviation value of the attribute
-	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,6,opt,name=skewness"`
-	// Kurtosis is the standard deviation value of the attribute
-	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,7,opt,name=kurtosis"`
-	// Zeros is the numbers of zeros in the feature
-	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,8,opt,name=zeros"`
-	// Pct25 is the 25 precent point
-	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
-	// Pct50 is the median
-	P50 float64 `json:"p50,omitempty" protobuf:"bytes,11,opt,name=p50"`
-	// Pct75 is the 75% point
-	P75 float64 `json:"p75,omitempty" protobuf:"bytes,12,opt,name=p75"`
+	Values []float64 `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
 	// The number of missing values
 	// +kubebuilder:validation:Minimum=0
-	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
+	Missing int32 `json:"missing,omitempty" protobuf:"varint,2,opt,name=missing"`
 	// The number of invalid values
 	// +kubebuilder:validation:Minimum=0
-	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,15,opt,name=invalid"`
-	// Is this the target attribute, the value is derived from the schema
-	Target bool `json:"target,omitempty" protobuf:"varint,16,opt,name=target"`
-	// The feature importance
-	Importance float64 `json:"importance,omitempty" protobuf:"bytes,17,opt,name=importance"`
-	//
-	Distinct int32 `json:"distinc,omitempty" protobuf:"varint,18,opt,name=distinc"`
-	// Should this column be ignored, as specified by the user.
-	// This value is derived from the schema
-	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
-	// Is this column is nullable.
-	// This value is derived from the schema.
-	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
-	// This column has high cardinality and should be ignored.
-	// The value is set during the profile process.
-	HighCred bool `json:"highCred,omitempty" protobuf:"varint,21,opt,name=highCred"`
-	// This column has high corrolation with another feature and should be dropped.
-	// The value is set during the profile process.
-	HighCorr bool `json:"highCorr,omitempty" protobuf:"varint,22,opt,name=highCorr"`
-	// Mark that this column is skewed and would require a power transform
-	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
-	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
-	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
-	// Completeness is the ratio between non null to null
-	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
-	// The ratio between distinc to total
-	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,25,opt,name=distinctValueCount"`
-	// The ratio between most freq value to total
-	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,26,opt,name=mostFreqValuesRatio"`
-	// Used for text attributes
-	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,27,opt,name=indexOfPeculiarity"`
-	// ObservedGeneration is the Last generation that was acted on
-	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,28,opt,name=observedGeneration"`
+	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,3,opt,name=invalid"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,29,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }

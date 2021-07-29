@@ -64,38 +64,23 @@ type AttachmentList struct {
 	Items           []Attachment `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-type AttachmentLevel string
-
-const (
-	Normal  AttachmentLevel = "normal"
-	Warning AttachmentLevel = "warning "
-	Error   AttachmentLevel = "error"
-	Failure AttachmentLevel = "failure"
-)
-
 // AttachmentSpec defines the desired state of Attachment
 type AttachmentSpec struct {
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Subject *string `json:"subject,omitempty" protobuf:"bytes,1,opt,name=subject"`
-	// Attachment Message
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Message *string `json:"message,omitempty" protobuf:"bytes,2,opt,name=message"`
-	// Scopes is the list of scopes for this token.
-	Level *AttachmentLevel `json:"level,omitempty" protobuf:"bytes,3,opt,name=level"`
-	// The subject entity
-	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Required
-	// NotifierName is the name of the notifier used to fire the alert.
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,5,opt,name=notifierName"`
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
-	// The actual information about the alerts
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,7,opt,name=fields"`
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// Entity ref
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
+	// +kubebuilder:default:=""
+	// Bucketname is the name of the bucket
+	// +kubebuilder:validation:Optional
+	BucketName string `json:"bucketName" protobuf:"bytes,4,opt,name=bucketName"`
+	// Path to the full data file (e.g. csv file).
+	// +kubebuilder:validation:Optional
+	Path string `json:"path" protobuf:"bytes,5,opt,name=path"`
 }
 
 // AttachmentStatus is the observed state of a Attachment

@@ -2135,20 +2135,14 @@ export class FeatureHistogramSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): FeatureHistogramSpec;
 
-  getKeycolumn(): string;
-  setKeycolumn(value: string): FeatureHistogramSpec;
+  getColumn(): string;
+  setColumn(value: string): FeatureHistogramSpec;
 
-  getTimestampcolumn(): string;
-  setTimestampcolumn(value: string): FeatureHistogramSpec;
+  getDatasetname(): string;
+  setDatasetname(value: string): FeatureHistogramSpec;
 
-  getFeaturecolumn(): string;
-  setFeaturecolumn(value: string): FeatureHistogramSpec;
-
-  getEntityname(): string;
-  setEntityname(value: string): FeatureHistogramSpec;
-
-  getFeaturepipelinename(): string;
-  setFeaturepipelinename(value: string): FeatureHistogramSpec;
+  getBins(): number;
+  setBins(value: number): FeatureHistogramSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
@@ -2163,89 +2157,23 @@ export namespace FeatureHistogramSpec {
     owner: string,
     versionname: string,
     description: string,
-    keycolumn: string,
-    timestampcolumn: string,
-    featurecolumn: string,
-    entityname: string,
-    featurepipelinename: string,
+    column: string,
+    datasetname: string,
+    bins: number,
   }
 }
 
 export class FeatureHistogramStatus extends jspb.Message {
-  getMin(): number;
-  setMin(value: number): FeatureHistogramStatus;
-
-  getMax(): number;
-  setMax(value: number): FeatureHistogramStatus;
-
-  getMean(): number;
-  setMean(value: number): FeatureHistogramStatus;
-
-  getStddev(): number;
-  setStddev(value: number): FeatureHistogramStatus;
-
-  getSkewness(): number;
-  setSkewness(value: number): FeatureHistogramStatus;
-
-  getKurtosis(): number;
-  setKurtosis(value: number): FeatureHistogramStatus;
-
-  getZeros(): number;
-  setZeros(value: number): FeatureHistogramStatus;
-
-  getP25(): number;
-  setP25(value: number): FeatureHistogramStatus;
-
-  getP50(): number;
-  setP50(value: number): FeatureHistogramStatus;
-
-  getP75(): number;
-  setP75(value: number): FeatureHistogramStatus;
+  getValuesList(): Array<number>;
+  setValuesList(value: Array<number>): FeatureHistogramStatus;
+  clearValuesList(): FeatureHistogramStatus;
+  addValues(value: number, index?: number): FeatureHistogramStatus;
 
   getMissing(): number;
   setMissing(value: number): FeatureHistogramStatus;
 
   getInvalid(): number;
   setInvalid(value: number): FeatureHistogramStatus;
-
-  getTarget(): boolean;
-  setTarget(value: boolean): FeatureHistogramStatus;
-
-  getImportance(): number;
-  setImportance(value: number): FeatureHistogramStatus;
-
-  getDistinc(): number;
-  setDistinc(value: number): FeatureHistogramStatus;
-
-  getIgnored(): boolean;
-  setIgnored(value: boolean): FeatureHistogramStatus;
-
-  getNullable(): boolean;
-  setNullable(value: boolean): FeatureHistogramStatus;
-
-  getHighcred(): boolean;
-  setHighcred(value: boolean): FeatureHistogramStatus;
-
-  getHighcorr(): boolean;
-  setHighcorr(value: boolean): FeatureHistogramStatus;
-
-  getSkew(): boolean;
-  setSkew(value: boolean): FeatureHistogramStatus;
-
-  getCompleteness(): number;
-  setCompleteness(value: number): FeatureHistogramStatus;
-
-  getDistinctvaluecount(): number;
-  setDistinctvaluecount(value: number): FeatureHistogramStatus;
-
-  getMostfreqvaluesratio(): number;
-  setMostfreqvaluesratio(value: number): FeatureHistogramStatus;
-
-  getIndexofpeculiarity(): number;
-  setIndexofpeculiarity(value: number): FeatureHistogramStatus;
-
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): FeatureHistogramStatus;
 
   getConditionsList(): Array<FeatureHistogramCondition>;
   setConditionsList(value: Array<FeatureHistogramCondition>): FeatureHistogramStatus;
@@ -2262,31 +2190,9 @@ export class FeatureHistogramStatus extends jspb.Message {
 
 export namespace FeatureHistogramStatus {
   export type AsObject = {
-    min: number,
-    max: number,
-    mean: number,
-    stddev: number,
-    skewness: number,
-    kurtosis: number,
-    zeros: number,
-    p25: number,
-    p50: number,
-    p75: number,
+    valuesList: Array<number>,
     missing: number,
     invalid: number,
-    target: boolean,
-    importance: number,
-    distinc: number,
-    ignored: boolean,
-    nullable: boolean,
-    highcred: boolean,
-    highcorr: boolean,
-    skew: boolean,
-    completeness: number,
-    distinctvaluecount: number,
-    mostfreqvaluesratio: number,
-    indexofpeculiarity: number,
-    observedgeneration: number,
     conditionsList: Array<FeatureHistogramCondition.AsObject>,
   }
 }
