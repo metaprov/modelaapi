@@ -54,23 +54,6 @@ message DeleteModelPipelineResponse {
 }
 
 
-message PauseModelPipelineResponse {
-}
-
-message PauseModelPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-
-message ResumeModelPipelineResponse {
-}
-
-message ResumeModelPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
 
 message RunModelPipelineRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
@@ -106,16 +89,7 @@ service ModelPipelineService {
         option (google.api.http).delete = "/api/v1/modelpipelines/{modelpipeline.metadata.name}";
     }
 
-       
-    rpc PauseModelPipeline(PauseModelPipelineRequest) returns (PauseModelPipelineResponse) {
-        option (google.api.http).post = "/v1/modelpipelines/{name}:pause";
-    }
-
-    rpc ResumeModelPipeline(ResumeModelPipelineRequest) returns (ResumeModelPipelineResponse) {
-        option (google.api.http).post = "/v1/modelpipelines/{name}:resume";
-    }
-    
-
+ 
 
     rpc RunModelPipeline(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
         option (google.api.http).post = "/api/v1/modelpipelines/{namespace}/{name}:run";

@@ -298,3 +298,75 @@ export namespace DenyModelPipelineRunResponse {
   }
 }
 
+export class PauseModelPipelineRunResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseModelPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseModelPipelineRunResponse): PauseModelPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: PauseModelPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseModelPipelineRunResponse;
+  static deserializeBinaryFromReader(message: PauseModelPipelineRunResponse, reader: jspb.BinaryReader): PauseModelPipelineRunResponse;
+}
+
+export namespace PauseModelPipelineRunResponse {
+  export type AsObject = {
+  }
+}
+
+export class PauseModelPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PauseModelPipelineRunRequest;
+
+  getName(): string;
+  setName(value: string): PauseModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PauseModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PauseModelPipelineRunRequest): PauseModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: PauseModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PauseModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: PauseModelPipelineRunRequest, reader: jspb.BinaryReader): PauseModelPipelineRunRequest;
+}
+
+export namespace PauseModelPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class ResumeModelPipelineRunResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeModelPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeModelPipelineRunResponse): ResumeModelPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: ResumeModelPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeModelPipelineRunResponse;
+  static deserializeBinaryFromReader(message: ResumeModelPipelineRunResponse, reader: jspb.BinaryReader): ResumeModelPipelineRunResponse;
+}
+
+export namespace ResumeModelPipelineRunResponse {
+  export type AsObject = {
+  }
+}
+
+export class ResumeModelPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ResumeModelPipelineRunRequest;
+
+  getName(): string;
+  setName(value: string): ResumeModelPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResumeModelPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ResumeModelPipelineRunRequest): ResumeModelPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: ResumeModelPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResumeModelPipelineRunRequest;
+  static deserializeBinaryFromReader(message: ResumeModelPipelineRunRequest, reader: jspb.BinaryReader): ResumeModelPipelineRunRequest;
+}
+
+export namespace ResumeModelPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+

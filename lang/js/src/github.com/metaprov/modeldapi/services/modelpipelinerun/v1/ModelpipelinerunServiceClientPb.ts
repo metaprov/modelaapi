@@ -315,5 +315,85 @@ export class ModelPipelineRunServiceClient {
     this.methodInfoDenyModelPipelineRun);
   }
 
+  methodInfoPauseModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse.deserializeBinary
+  );
+
+  pauseModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse>;
+
+  pauseModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse>;
+
+  pauseModelPipelineRun(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.PauseModelPipelineRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoPauseModelPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoPauseModelPipelineRun);
+  }
+
+  methodInfoResumeModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse.deserializeBinary
+  );
+
+  resumeModelPipeline(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse>;
+
+  resumeModelPipeline(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse>;
+
+  resumeModelPipeline(
+    request: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_modelpipelinerun_v1_modelpipelinerun_pb.ResumeModelPipelineRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipeline',
+        request,
+        metadata || {},
+        this.methodInfoResumeModelPipeline,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipeline',
+    request,
+    metadata || {},
+    this.methodInfoResumeModelPipeline);
+  }
+
 }
 

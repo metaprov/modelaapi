@@ -81,6 +81,25 @@ message DenyModelPipelineRunResponse {
 
 }
 
+message PauseModelPipelineRunResponse {
+}
+
+message PauseModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeModelPipelineRunResponse {
+}
+
+message ResumeModelPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
 
 
 
@@ -119,6 +138,13 @@ service ModelPipelineRunService {
         option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}:approve";
     }
 
+          
+    rpc PauseModelPipelineRun(PauseModelPipelineRunRequest) returns (PauseModelPipelineRunResponse) {
+        option (google.api.http).post = "/v1/modelpipelineruns/{name}:pause";
+    }
 
+    rpc ResumeModelPipeline(ResumeModelPipelineRunRequest) returns (ResumeModelPipelineRunResponse) {
+        option (google.api.http).post = "/v1/modelpipelineruns/{name}:resume";
+    }
 
 }
