@@ -477,7 +477,7 @@ message ApiTokenStatus {
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modeld}
+// +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modeld}
 message Attachment {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

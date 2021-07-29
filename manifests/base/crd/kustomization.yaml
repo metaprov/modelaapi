@@ -29,6 +29,7 @@ resources:
   - inference.modeld.io_cronpredictions.yaml
   - inference.modeld.io_predictors.yaml
   - infra.modeld.io_accounts.yaml
+  - infra.modeld.io_attachments.yaml
   - infra.modeld.io_alerts.yaml
   - infra.modeld.io_commits.yaml
   - infra.modeld.io_apitokens.yaml
