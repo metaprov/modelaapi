@@ -75,11 +75,6 @@ func (s *Study) ModelsWaiting() bool {
 	return s.Status.WaitingToTestModels > 0 || s.Status.WaitingToTrainModels > 0
 }
 
-// True if there are trainers waiting to train
-func (s *Study) TrainersWaiting() bool {
-	return s.Status.FreeTrainers > 0
-}
-
 // Enabled if we reached max candidates
 
 //==============================================================================
@@ -163,10 +158,6 @@ func (study *Study) ManifestUri() string {
 //    dataproducts/*/studies/*/study-<name>-report.pdf
 func (study *Study) ReportUri() string {
 	return fmt.Sprintf("%s/%s-report.pdf", study.RootUri(), study.Name)
-}
-
-func (study *Study) TotalTrainers() int32 {
-	return study.Status.Trainers
 }
 
 // divide the model list into retained model and not retained model

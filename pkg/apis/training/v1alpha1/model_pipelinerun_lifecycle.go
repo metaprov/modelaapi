@@ -197,8 +197,8 @@ func (this *ModelPipelineRun) MarkTrainingStageRunning() {
 }
 
 func (this *ModelPipelineRun) IsTrainingStageRunning() bool {
-	return this.GetCond(MPRTrainingStageCmpleted).Status == v1.ConditionFalse &&
-		this.GetCond(MPRTrainingStageCmpleted).Reason == string(catalog.Running)
+	return this.GetCond(MPRTrainingStageCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingStageCompleted).Reason == string(catalog.Running)
 }
 
 func (this *ModelPipelineRun) MarkTrainingStageCompleted() {
@@ -207,21 +207,21 @@ func (this *ModelPipelineRun) MarkTrainingStageCompleted() {
 	this.Status.Stage = ModelPipelineStageTraining
 
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:   MPRTrainingStageCmpleted,
+		Type:   MPRTrainingStageCompleted,
 		Status: v1.ConditionTrue,
 	})
 	this.Status.Progress = util.Int32Ptr(50)
 }
 
 func (this *ModelPipelineRun) IsTrainingStageCompleted() bool {
-	return this.GetCond(MPRTrainingStageCmpleted).Status == v1.ConditionTrue
+	return this.GetCond(MPRTrainingStageCompleted).Status == v1.ConditionTrue
 }
 
 func (this *ModelPipelineRun) MarkTrainingStageFailed(err error) {
 	this.Status.DataStatus.RecordError(err)
 	this.Status.Stage = ModelPipelineStageTraining
 	this.CreateOrUpdateCond(ModelPipelineRunCondition{
-		Type:    MPRTrainingStageCmpleted,
+		Type:    MPRTrainingStageCompleted,
 		Status:  v1.ConditionFalse,
 		Reason:  string(catalog.Failed),
 		Message: err.Error(),
@@ -231,8 +231,8 @@ func (this *ModelPipelineRun) MarkTrainingStageFailed(err error) {
 }
 
 func (this *ModelPipelineRun) IsTrainingStageFailed() bool {
-	return this.GetCond(MPRTrainingStageCmpleted).Status == v1.ConditionFalse &&
-		this.GetCond(MPRTrainingStageCmpleted).Reason == string(catalog.Failed)
+	return this.GetCond(MPRTrainingStageCompleted).Status == v1.ConditionFalse &&
+		this.GetCond(MPRTrainingStageCompleted).Reason == string(catalog.Failed)
 }
 
 ////////////////////////////////////////////////////////////

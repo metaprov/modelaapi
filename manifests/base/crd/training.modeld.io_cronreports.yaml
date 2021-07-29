@@ -17,7 +17,7 @@ spec:
     listKind: CronReportList
     plural: cronreports
     shortNames:
-    - cpred
+    - crep
     singular: cronreport
   scope: Namespaced
   versions:

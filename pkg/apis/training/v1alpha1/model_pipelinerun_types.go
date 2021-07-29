@@ -57,13 +57,13 @@ type PipelineRunConditionType string
 const (
 	MPRSaved                  PipelineRunConditionType = "Saved"
 	MPRDataStageCompleted     PipelineRunConditionType = "DataStageCompleted"
-	MPRTrainingStageCmpleted  PipelineRunConditionType = "TrainingStageCompleted"
+	MPRTrainingStageCompleted PipelineRunConditionType = "TrainingStageCompleted"
 	MPRUATCompleted           PipelineRunConditionType = "UATStageCompleted"
 	MPRCapacityStageCompleted PipelineRunConditionType = "CapacityStageCompleted"
 	MPRModelDeployed          PipelineRunConditionType = "ModelDeployed"
 	MPRModelReleased          PipelineRunConditionType = "ModelReleased"
 	MPRModelMonitored         PipelineRunConditionType = "Monitored"
-	MPRRetraing               PipelineRunConditionType = "Retrained"
+	MPRRetrained              PipelineRunConditionType = "Retrained"
 )
 
 // ModelPipelineRunCondition describes the state of a ModelPipelineRun at a certain point.
@@ -126,11 +126,11 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	PipelineName *string `json:"pipelineName,omitempty" protobuf:"bytes,4,opt,name=pipelineName"`
-	// The owner of the ruyn.
+	// The owner of the run.
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
-	// The priority of this pipeline run. The defualt is medium.
+	// The priority of this pipeline run. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,6,opt,name=priority"`
@@ -159,7 +159,7 @@ type ModelValidationResult struct {
 	Column string `json:"column" protobuf:"bytes,4,opt,name=column"`
 	// Error is a string.
 	Error string `json:"error" protobuf:"bytes,5,opt,name=error"`
-	// Metric is the measurment
+	// Metric is the measurement
 	Metric *catalog.Metric `json:"metric" protobuf:"bytes,6,opt,name=metric"`
 	// Actual value is the actual value
 	ActualValue *float64 `json:"actualValue" protobuf:"bytes,7,opt,name=actualValue"`

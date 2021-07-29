@@ -105,7 +105,7 @@ message ClassicalEstimatorSpec {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=cronreports,shortName=cpred,singular=cronreport,categories={training,modeld}
+// +kubebuilder:resource:path=cronreports,shortName=crep,singular=cronreport,categories={training,modeld}
 // CronReport represents a run of the summary report.
 message CronReport {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -239,7 +239,7 @@ message DataSplit {
   optional int32 seed = 7;
 }
 
-// DataStageSpec is the desired state of the data preprocesing step of the pipeline.
+// DataStageSpec is the desired state of the data preprocessing step of the pipeline.
 // Data preprocessing will be done via
 message DataStageSpec {
   // Enabled indicates that the stage is enabled
@@ -336,7 +336,7 @@ message DeepEstimatorSpec {
   optional string loss = 8;
 }
 
-// DeploymentStageSpec define the testing and relesing the resulting model to production.
+// DeploymentStageSpec define the testing and releasing the resulting model to production.
 message DeploymentStageSpec {
   // Enabled indicates that we want to release the model into production
   // +kubebuilder:default:=true
@@ -349,7 +349,7 @@ message DeploymentStageSpec {
   optional string servingSiteName = 2;
 
   // ManualApproval dentoes if we need manual approval before advancing from deployed to released
-  // By default a user is needed to apporve the release to production
+  // By default a user is needed to approve the release to production
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 3;
@@ -856,7 +856,7 @@ message ModelCompilerRunSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // The priority of this pipeline run. The defualt is medium.
+  // The priority of this pipeline run. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 5;
@@ -1042,12 +1042,12 @@ message ModelPipelineRunSpec {
   // +kubebuilder:validation:Optional
   optional string pipelineName = 4;
 
-  // The owner of the ruyn.
+  // The owner of the run.
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
 
-  // The priority of this pipeline run. The defualt is medium.
+  // The priority of this pipeline run. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 6;
@@ -1248,7 +1248,7 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string baselineModelName = 18;
 
-  // The priority of this pipeline. The defualt is medium.
+  // The priority of this pipeline. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 30;
@@ -1762,7 +1762,7 @@ message ModelValidationResult {
   // Error is a string.
   optional string error = 5;
 
-  // Metric is the measurment
+  // Metric is the measurement
   optional string metric = 6;
 
   // Actual value is the actual value
@@ -1980,7 +1980,7 @@ message NotebookSpec {
   // +kubebuilder:validation:Optional
   optional string schedule = 12;
 
-  // The priority of this notebook run. The defualt is medium.
+  // The priority of this notebook run. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 13;
@@ -2148,7 +2148,7 @@ message ReleaseStageSpec {
   optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec template = 4;
 
   // ManualApproval dentoes if we need manual approval before advancing from deployed to released
-  // By default a user is needed to apporve the release to production
+  // By default a user is needed to approve the release to production
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool manualApproval = 5;

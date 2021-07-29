@@ -96,7 +96,7 @@ spec:
                 type: boolean
               priority:
                 default: medium
-                description: The priority of this notebook run. The defualt is medium.
+                description: The priority of this notebook run. The default is medium.
                 enum:
                 - low
                 - medium

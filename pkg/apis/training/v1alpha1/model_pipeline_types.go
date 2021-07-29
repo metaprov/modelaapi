@@ -106,13 +106,13 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,18,opt,name=baselineModelName"`
-	// The priority of this pipeline. The defualt is medium.
+	// The priority of this pipeline. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
 }
 
-//DataStageSpec is the desired state of the data preprocesing step of the pipeline.
+//DataStageSpec is the desired state of the data preprocessing step of the pipeline.
 //Data preprocessing will be done via
 type DataStageSpec struct {
 	// Enabled indicates that the stage is enabled
@@ -202,7 +202,7 @@ type CapacityStageSpec struct {
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
 }
 
-//DeploymentStageSpec define the testing and relesing the resulting model to production.
+//DeploymentStageSpec define the testing and releasing the resulting model to production.
 type DeploymentStageSpec struct {
 	// Enabled indicates that we want to release the model into production
 	// +kubebuilder:default:=true
@@ -213,7 +213,7 @@ type DeploymentStageSpec struct {
 	// +kubebuilder:validation:Optional
 	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,2,opt,name=servingSiteName"`
 	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
-	// By default a user is needed to apporve the release to production
+	// By default a user is needed to approve the release to production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"varint,3,opt,name=manualApproval"`
@@ -243,7 +243,7 @@ type ReleaseStageSpec struct {
 	// +kubebuilder:validation:Optional
 	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
-	// By default a user is needed to apporve the release to production
+	// By default a user is needed to approve the release to production
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ManualApproval *bool `json:"manualApproval,omitempty" protobuf:"varint,5,opt,name=manualApproval"`

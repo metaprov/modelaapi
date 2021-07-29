@@ -691,13 +691,13 @@ func (model *Model) Failed() bool {
 func (model *Model) MarkMaintain() {
 	model.Status.Phase = ModelPhaseMaintenance
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelMaintaince,
+		Type:   ModelMaintenance,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (model *Model) Maintain() bool {
-	cond := model.GetCond(ModelMaintaince)
+	cond := model.GetCond(ModelMaintenance)
 	return cond.Status == v1.ConditionTrue
 }
 

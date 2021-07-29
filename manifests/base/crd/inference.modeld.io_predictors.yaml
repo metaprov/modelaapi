@@ -7706,7 +7706,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision

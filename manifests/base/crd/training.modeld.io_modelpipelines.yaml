@@ -223,7 +223,7 @@ spec:
                     default: true
                     description: ManualApproval dentoes if we need manual approval
                       before advancing from deployed to released By default a user
-                      is needed to apporve the release to production
+                      is needed to approve the release to production
                     type: boolean
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
@@ -364,7 +364,7 @@ spec:
                 type: string
               priority:
                 default: medium
-                description: The priority of this pipeline. The defualt is medium.
+                description: The priority of this pipeline. The default is medium.
                 enum:
                 - low
                 - medium
@@ -383,7 +383,7 @@ spec:
                     default: true
                     description: ManualApproval dentoes if we need manual approval
                       before advancing from deployed to released By default a user
-                      is needed to apporve the release to production
+                      is needed to approve the release to production
                     type: boolean
                   predictorName:
                     description: PredictorName is the release predictor. The predictor

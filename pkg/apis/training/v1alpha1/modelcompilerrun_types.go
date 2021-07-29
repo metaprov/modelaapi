@@ -83,7 +83,7 @@ type ModelCompilerRunSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// The priority of this pipeline run. The defualt is medium.
+	// The priority of this pipeline run. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,5,opt,name=priority"`

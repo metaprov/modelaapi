@@ -81,7 +81,7 @@ spec:
                 type: string
               owner:
                 default: no-one
-                description: The owner of the ruyn.
+                description: The owner of the run.
                 type: string
               paused:
                 default: false
@@ -94,7 +94,7 @@ spec:
                 type: string
               priority:
                 default: medium
-                description: The priority of this pipeline run. The defualt is medium.
+                description: The priority of this pipeline run. The default is medium.
                 enum:
                 - low
                 - medium
@@ -162,7 +162,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -316,7 +316,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -442,7 +442,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -569,7 +569,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -698,7 +698,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -833,7 +833,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -964,7 +964,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision
@@ -1086,7 +1086,7 @@ spec:
                           description: Error is a string.
                           type: string
                         metric:
-                          description: Metric is the measurment
+                          description: Metric is the measurement
                           enum:
                           - accuracy
                           - average-precision

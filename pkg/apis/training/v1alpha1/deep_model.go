@@ -44,7 +44,7 @@ const (
 	IinitializerRandom_normal    IinitializerName = "random-normal"
 	IinitializerRandom_uniform   IinitializerName = "random-uniform"
 	IinitializerTruncated_normal IinitializerName = "truncated-normal"
-	IinitializerVariance_scaling IinitializerName = "varieance-scaling"
+	IinitializerVariance_scaling IinitializerName = "variance-scaling"
 	IinitializerOrthogonal       IinitializerName = "orthogonal"
 	IinitializerIdentity         IinitializerName = "identity"
 	IinitializerLecun_uniform    IinitializerName = "lecun-uniform"
@@ -91,7 +91,7 @@ const (
 	LayerNameInput         NNLayerName = "input"
 	LayerNameReshape       NNLayerName = "reshape"
 	LayerNamePermute       NNLayerName = "permute"
-	RepeatVector           NNLayerName = "repeat-verctor"
+	RepeatVector           NNLayerName = "repeat-vector"
 	Lambda                 NNLayerName = "lambda"
 	ActivityRegularization NNLayerName = "activity-regularization"
 	Masking                NNLayerName = "masking"
@@ -123,7 +123,7 @@ const (
 	LayerNameUpSampling3D NNLayerName = "upsampling-3d"
 
 	LayerNameZeroPadding1D NNLayerName = "zero-padding-1D"
-	LayerNameZeroPadding2D NNLayerName = "zaero-padding-2D"
+	LayerNameZeroPadding2D NNLayerName = "zero-padding-2D"
 	LayerNameZeroPadding3D NNLayerName = "zero-padding-3D"
 
 	// VirtualClustering
@@ -144,8 +144,8 @@ const (
 	LayerNameGlobalAverageVirtualClustering2D NNLayerName = "global-average-pooling-2D"
 	LayerNameGlobalAverageVirtualClustering3D NNLayerName = "global-average-pooling-3D"
 
-	LayerNameLocallyConnected1D NNLayerName = "locallly-conntected-1d"
-	LayerNameLocallyConnected2D NNLayerName = "localy-connected-2d"
+	LayerNameLocallyConnected1D NNLayerName = "locally-connected-1d"
+	LayerNameLocallyConnected2D NNLayerName = "locally-connected-2d"
 
 	LayerNameSimpleRNN     NNLayerName = "simple-rnn"
 	LayerNameGRU           NNLayerName = "gru"

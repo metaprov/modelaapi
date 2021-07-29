@@ -136,7 +136,7 @@ const (
 	// The model is stale
 	ModelStale ModelConditionType = "Stale"
 	// The model is in maintance
-	ModelMaintaince ModelConditionType = "Maintenance"
+	ModelMaintenance ModelConditionType = "Maintenance"
 	// The model is in retired
 	ModelRetired ModelConditionType = "Retired"
 )

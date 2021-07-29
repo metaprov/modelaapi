@@ -111,7 +111,7 @@ type NotebookSpec struct {
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
-	// The priority of this notebook run. The defualt is medium.
+	// The priority of this notebook run. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,13,opt,name=priority"`

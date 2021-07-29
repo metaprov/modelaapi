@@ -95,7 +95,7 @@ spec:
                 type: string
               priority:
                 default: medium
-                description: The priority of this pipeline run. The defualt is medium.
+                description: The priority of this pipeline run. The default is medium.
                 enum:
                 - low
                 - medium
