@@ -427,7 +427,11 @@ type SampleSpec struct {
 	// Filter formula. Valid only if the sample is a filter.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Filter *string `json:"string,omitempty" protobuf:"bytes,5,opt,name=filter"`
+	Filter *string `json:"filter,omitempty" protobuf:"bytes,5,opt,name=filter"`
+	// Column is used for stratified sampling.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Column *string `json:"column,omitempty" protobuf:"bytes,6,opt,name=column"`
 }
 
 // RecipeInputSpec specify the input for a recipe

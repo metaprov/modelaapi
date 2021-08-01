@@ -2565,6 +2565,11 @@ message SampleSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string filter = 5;
+
+  // Column is used for stratified sampling.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string column = 6;
 }
 
 message Schema {

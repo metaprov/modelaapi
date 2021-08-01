@@ -4049,6 +4049,9 @@ export class SampleSpec extends jspb.Message {
   getFilter(): string;
   setFilter(value: string): SampleSpec;
 
+  getColumn(): string;
+  setColumn(value: string): SampleSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SampleSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SampleSpec): SampleSpec.AsObject;
@@ -4064,6 +4067,7 @@ export namespace SampleSpec {
     rows: number,
     percent: number,
     filter: string,
+    column: string,
   }
 }
 

@@ -1372,14 +1372,15 @@ const (
 )
 
 // SamplingType defines how the recipe file is sampled.
-// +kubebuilder:validation:Enum="header";"random";"filter";"anomaly"
+// +kubebuilder:validation:Enum="header";"random";"filter";"anomaly";"stratified"
 type SamplingType string
 
 const (
-	Header  SamplingType = "header"
-	Random  SamplingType = "random"
-	Filter  SamplingType = "filter"
-	Anomaly SamplingType = "anomaly"
+	Header     SamplingType = "header"
+	Random     SamplingType = "random"
+	Filter     SamplingType = "filter"
+	Anomaly    SamplingType = "anomaly"
+	Stratified SamplingType = "stratified"
 )
 
 // +kubebuilder:validation:Enum="unclassified";"confidential";"secret";"top-secret"

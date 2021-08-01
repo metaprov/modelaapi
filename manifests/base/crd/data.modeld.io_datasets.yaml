@@ -137,10 +137,18 @@ spec:
               sample:
                 description: Sample spec defines how many rows to use for analysis
                 properties:
+                  column:
+                    default: ""
+                    description: Column is used for stratified sampling.
+                    type: string
                   enabled:
                     default: false
                     description: Enabled specify if the sample is enabled
                     type: boolean
+                  filter:
+                    default: ""
+                    description: Filter formula. Valid only if the sample is a filter.
+                    type: string
                   percent:
                     default: 100
                     description: Pct is the percent of rows to use for analysis.
@@ -153,10 +161,6 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
-                  string:
-                    default: ""
-                    description: Filter formula. Valid only if the sample is a filter.
-                    type: string
                   type:
                     default: random
                     description: Type is the sampling type Default is random
@@ -165,6 +169,7 @@ spec:
                     - random
                     - filter
                     - anomaly
+                    - stratified
                     type: string
                 type: object
               syntacticRows:

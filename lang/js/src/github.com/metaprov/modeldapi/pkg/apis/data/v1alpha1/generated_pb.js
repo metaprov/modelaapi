@@ -40163,7 +40163,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.toObject =
     type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     rows: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     percent: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    filter: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    filter: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -40219,6 +40220,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.deserializ
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFilter(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
       break;
     default:
       reader.skipField();
@@ -40281,6 +40286,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.serializeB
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -40464,6 +40476,42 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.hasFilter = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string column = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.setColumn = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.clearColumn = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.hasColumn = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
