@@ -277,7 +277,7 @@ type WebHookNameAndAction string
 const (
 	CommitEvent             WebHookNameAndAction = "commit"
 	PullRequestassigned     WebHookNameAndAction = "pull_request_assigned"
-	PullRequestUnassigned   WebHookNameAndAction = "pull_request_unsassigned"
+	PullRequestUnassigned   WebHookNameAndAction = "pull_request_unassigned"
 	PullRequestLabeled      WebHookNameAndAction = "pull_request_labeled"
 	PullRequestUnlabeled    WebHookNameAndAction = "pull_request_unlabeled"
 	PullRequestOpened       WebHookNameAndAction = "pull_request_opened"
@@ -365,7 +365,7 @@ func (metric Metric) IsClassification() bool {
 		metric == ZeroOne ||
 		metric == HammingLoss ||
 		metric == HingeLoss ||
-		metric == JaccardScore ||
+		metric == JacquardScore ||
 		metric == MatthewsCorrCoef
 
 }
@@ -424,7 +424,7 @@ const (
 	ZeroOne           Metric = "zero-one"
 	HammingLoss       Metric = "hamming-loss"
 	HingeLoss         Metric = "hinge-loss"
-	JaccardScore      Metric = "jaccard-loss"
+	JacquardScore     Metric = "jacquard-loss"
 	MatthewsCorrCoef  Metric = "matthews-corr-coef"
 	Fp                Metric = "fp"
 	Fn                Metric = "fn"

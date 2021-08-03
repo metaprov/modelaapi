@@ -53,7 +53,7 @@ func (entity *Entity) Age() string {
 //==============================================================================
 
 // Parse an data
-func ParseEntity(content string, user string, commit string) (*Entity, error) {
+func ParseEntity(content string) (*Entity, error) {
 	this := &Entity{}
 	err := yaml.Unmarshal([]byte(content), this)
 	if err != nil {
