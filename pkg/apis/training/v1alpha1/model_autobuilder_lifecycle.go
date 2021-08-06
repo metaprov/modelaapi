@@ -355,8 +355,8 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 			},
 			StakeHolders: nil,
 			DataLocation: data.DataLocation{
-				BucketName: "default-digitalocean-bucket",
-				Path:       "modeld/live/tenants/default-tenant/dataproducts/" + b.DataProductName(),
+				BucketName: util.StrPtr("default-digitalocean-bucket"),
+				Path:       util.StrPtr("modeld/live/tenants/default-tenant/dataproducts/" + b.DataProductName()),
 			},
 			ImageLocation: &data.ImageLocation{
 				Name:                   util.StrPtr(b.Name),
@@ -457,7 +457,11 @@ func (b *ModelAutobuilder) SchemaName() string {
 
 // Answer the last component in the path
 func (b *ModelAutobuilder) FileName() string {
-	return b.Spec.Location.Path
+	if b.Spec.Location.Path != nil {
+		return ""
+
+	}
+	return *b.Spec.Location.Path
 }
 
 func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
@@ -485,7 +489,7 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			Labeled:        util.BoolPtr(true),
 			Origin:         b.Spec.Location,
 			Location: &data.DataLocation{
-				Path:       rawPath,
+				Path:       util.StrPtr(rawPath),
 				BucketName: b.Spec.Location.BucketName,
 			},
 		},
@@ -547,7 +551,7 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			ModelImagePushed: util.BoolPtr(true),
 		},
 	}
-	res.Spec.Location.Path = res.RootUri()
+	res.Spec.Location.Path = util.StrPtr(res.RootUri())
 	return res
 }
 

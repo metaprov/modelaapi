@@ -40,14 +40,6 @@ func (run *CronPrediction) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-run.yaml", run.RootUri(), run.Name)
 }
 
-func (run *CronPrediction) InputKey() string {
-	return run.Spec.Template.Spec.Input.FlatFile.Key
-}
-
-func (run *CronPrediction) OutputKey() string {
-	return run.Spec.Template.Spec.Output.FlatFile.Key
-}
-
 //==============================================================================
 // Validate
 //==============================================================================

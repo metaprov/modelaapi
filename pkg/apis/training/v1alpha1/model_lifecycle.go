@@ -775,7 +775,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.Published = study.Spec.ModelPublished
 	model.Spec.Location = &data.DataLocation{
 		BucketName: study.Spec.Location.BucketName,
-		Path:       path.Join(study.Spec.Location.Path, "models", model.Name),
+		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),
 	}
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation

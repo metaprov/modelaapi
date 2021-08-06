@@ -224,19 +224,19 @@ func (study *Study) MarkSplitted() {
 	// set the training location
 	trainingLocation := data.DataLocation{}
 	trainingLocation.BucketName = study.Spec.Location.BucketName
-	trainingLocation.Path = path.Join(study.Spec.Location.Path, "data", "training.csv")
+	trainingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "training.csv"))
 	study.Status.TrainDatasetLocation = trainingLocation
 
 	// set the testing location
 	testingLocation := data.DataLocation{}
 	testingLocation.BucketName = study.Spec.Location.BucketName
-	testingLocation.Path = path.Join(study.Spec.Location.Path, "data", "testing.csv")
+	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.csv"))
 	study.Status.TestDatasetLocation = testingLocation
 
 	if *study.Spec.Split.Validation > 0 {
 		valLocation := data.DataLocation{}
 		valLocation.BucketName = study.Spec.Location.BucketName
-		valLocation.Path = path.Join(study.Spec.Location.Path, "data", "validation.csv")
+		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.csv"))
 		study.Status.ValidationDataset = valLocation
 	}
 	study.RefreshProgress()

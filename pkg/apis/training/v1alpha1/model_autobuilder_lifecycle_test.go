@@ -25,8 +25,8 @@ func autoBuilder() *ModelAutobuilder {
 			DataProductName:        util.StrPtr("iris-product"),
 			DataProductVersionName: util.StrPtr("v0.0.1"),
 			Location: &data.DataLocation{
-				Path:       "modeld/depot/iris.csv",
-				BucketName: "default-digitalocean-bucket",
+				Path:       util.StrPtr("modeld/depot/iris.csv"),
+				BucketName: util.StrPtr("default-digitalocean-bucket"),
 			},
 			Task:           &task,
 			Objective:      nil,

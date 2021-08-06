@@ -88,7 +88,9 @@ func NewReport(
 	result.Default()
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = ns
-	result.Spec.Location = &data.DataLocation{Path: key, BucketName: bucketName}
+	result.Spec.Location = &data.DataLocation{
+		Path:       util.StrPtr(key),
+		BucketName: util.StrPtr(bucketName)}
 	result.Spec.EntityRef.Name = entity
 	result.Spec.ReportType = &reportType
 	result.ObjectMeta.Labels = make(map[string]string)

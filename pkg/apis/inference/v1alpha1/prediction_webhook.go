@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -13,15 +14,17 @@ var _ webhook.Defaulter = &Prediction{}
 
 func (pre *Prediction) Default() {
 	// if no input bucket defined,
+
 	if pre.Spec.Output == nil {
-		pre.Spec.Output = &PredictionChannel{FlatFile: &FlatFileChannelSpec{}}
+		pre.Spec.Output = &data.DataOutputSpec{}
+		pre.Spec.Output.Location = &data.DataLocation{}
 	}
-	if pre.Spec.Output.FlatFile.BucketName == "" {
-		pre.Spec.Output.FlatFile.BucketName = pre.Spec.Input.FlatFile.BucketName
+
+	if pre.Spec.Output == nil {
+		pre.Spec.Output = &data.DataOutputSpec{}
+		pre.Spec.Output.Location = &data.DataLocation{}
 	}
-	if pre.Spec.Output.FlatFile.Key == "" { // place the output at the same location as the input
-		pre.Spec.Output.FlatFile.Key = pre.Spec.Input.FlatFile.Key + ".out.json"
-	}
+
 }
 
 // validation

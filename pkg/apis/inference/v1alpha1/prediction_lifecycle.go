@@ -38,14 +38,6 @@ func (prediction *Prediction) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
 }
 
-func (prediction *Prediction) InputKey() string {
-	return prediction.Spec.Input.FlatFile.Key
-}
-
-func (prediction *Prediction) OutputKey() string {
-	return prediction.Spec.Output.FlatFile.Key
-}
-
 //==============================================================================
 // Validate
 //==============================================================================
