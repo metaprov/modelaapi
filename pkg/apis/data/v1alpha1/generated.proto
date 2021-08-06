@@ -346,19 +346,27 @@ message ColumnValidation {
 
 // data reference contain pointers to the actual data objects
 message DataLocation {
-  // +kubebuilder:default:=""
-  // Datasource name is a pointer to a data source for cases that the data location is not a simple bucket but a database
+  // +kubebuilder:default:="object"
+  // data location type is the type of the data location
   // +kubebuilder:validation:Optional
-  optional string datasourceName = 1;
+  optional string type = 1;
+
+  // ConnectionName is the name of the connection to access the database
+  // +kubebuilder:validation:Optional
+  optional string connectionName = 2;
 
   // +kubebuilder:default:=""
   // Bucketname is the name of the bucket
   // +kubebuilder:validation:Optional
-  optional string bucketName = 2;
+  optional string bucketName = 3;
 
   // Path to the full data file (e.g. csv file).
   // +kubebuilder:validation:Optional
-  optional string path = 3;
+  optional string path = 4;
+
+  // Sql or table or topic name.
+  // +kubebuilder:validation:Optional
+  optional string sqlOrTable = 5;
 }
 
 // DataOutputSpec is the definition of the out file.
@@ -381,6 +389,10 @@ message DataOutputSpec {
   // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
   optional string action = 4;
+
+  // Create the data source table on the target, if not exist.
+  // +kubebuilder:validation:Optional
+  optional bool createTableIfNotExist = 5;
 }
 
 // +kubebuilder:object:root=true

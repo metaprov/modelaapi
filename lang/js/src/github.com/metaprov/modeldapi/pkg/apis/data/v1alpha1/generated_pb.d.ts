@@ -382,14 +382,20 @@ export namespace ColumnValidation {
 }
 
 export class DataLocation extends jspb.Message {
-  getDatasourcename(): string;
-  setDatasourcename(value: string): DataLocation;
+  getType(): string;
+  setType(value: string): DataLocation;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): DataLocation;
 
   getBucketname(): string;
   setBucketname(value: string): DataLocation;
 
   getPath(): string;
   setPath(value: string): DataLocation;
+
+  getSqlortable(): string;
+  setSqlortable(value: string): DataLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataLocation.AsObject;
@@ -401,9 +407,11 @@ export class DataLocation extends jspb.Message {
 
 export namespace DataLocation {
   export type AsObject = {
-    datasourcename: string,
+    type: string,
+    connectionname: string,
     bucketname: string,
     path: string,
+    sqlortable: string,
   }
 }
 
@@ -422,6 +430,9 @@ export class DataOutputSpec extends jspb.Message {
   getAction(): string;
   setAction(value: string): DataOutputSpec;
 
+  getCreatetableifnotexist(): boolean;
+  setCreatetableifnotexist(value: boolean): DataOutputSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataOutputSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataOutputSpec): DataOutputSpec.AsObject;
@@ -436,6 +447,7 @@ export namespace DataOutputSpec {
     location?: DataLocation.AsObject,
     format: string,
     action: string,
+    createtableifnotexist: boolean,
   }
 }
 

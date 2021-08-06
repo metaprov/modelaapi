@@ -10,6 +10,7 @@ syntax = "proto2";
 package github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -49,16 +50,6 @@ message AutoScaling {
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=80
   optional int32 memAvgUtilization = 5;
-}
-
-message BotChannelSpec {
-  // the connection to the messaging provider
-  // Required,
-  optional string connectionName = 1;
-
-  // The name of the notifier that will be used by the prediction bot.
-  // Required
-  optional string notifierName = 2;
 }
 
 message ChannelStatus {
@@ -264,22 +255,6 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
-// Look for prediction in a flat file key.
-// Request for prediction will be placed in the key.
-// Result will be placed in the output bucket
-message FlatFileChannelSpec {
-  // the connection to the cloud provider
-  // Required,
-  optional string connectionName = 1;
-
-  // Required,
-  optional string bucketName = 2;
-
-  // The location of the input or the output
-  // Required,
-  optional string key = 3;
-}
-
 // Model Record hold the state of a model that was in production. This support roll back of a model.
 message ModelRecord {
   // Model Name is the name of the model
@@ -387,25 +362,6 @@ message PredictionCacheSpec {
   optional string serviceName = 2;
 }
 
-// The specific of a prediction channel
-message PredictionChannel {
-  // Table is a channel that uses RDBMS for input and output
-  // +kubebuilder:validation:Optional
-  optional TableChannelSpec table = 1;
-
-  // Bot is a channel that uses chats for input and output
-  // +kubebuilder:validation:Optional
-  optional BotChannelSpec bot = 2;
-
-  // Bucket is a channel where predictions are placed in a bucket folder and results are placed in another folder
-  // +kubebuilder:validation:Optional
-  optional FlatFileChannelSpec flatfile = 3;
-
-  // Define a streaming channel for the predictor
-  // +kubebuilder:validation:Optional
-  optional StreamingChannelSpec streaming = 4;
-}
-
 // PredictionCondition describes the state of PredictionTemplate
 message PredictionCondition {
   // Type of  condition.
@@ -447,7 +403,7 @@ message PredictionSpec {
 
   // Labeled , true if this is labeled prediction request.
   // +kubebuilder:default:=false
-  // Used usally for unit testing
+  // Used usually for unit testing
   optional bool labeled = 3;
 
   // +kubebuilder:validation:Optional
@@ -455,11 +411,11 @@ message PredictionSpec {
   optional string datasetName = 4;
 
   // Input is the location of the input file if not using a dataset
-  optional PredictionChannel input = 5;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional
-  optional PredictionChannel output = 6;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 6;
 
   // Tests is the list of metrics that we need to measure if we are running a labeled prediction
   repeated string tests = 7;
@@ -489,15 +445,7 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional bool xai = 12;
 
-  // Update strategy
-  // +kubebuilder:validation:Optional
-  optional string updateStrategy = 13;
-
-  // Create the data source table on the target, if not exist.
-  // +kubebuilder:validation:Optional
-  optional bool createTableIfNotExist = 14;
-
-  // The priority of this prediction. The defualt is medium.
+  // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 15;
@@ -759,29 +707,5 @@ message ProgressiveSpec {
   // What metric to use when comparing the candidate to the current
   // +kubebuilder:validation:Optional
   repeated string canaryMetrics = 3;
-}
-
-message StreamingChannelSpec {
-  // StorageConnection name to the streaming provider
-  optional string connectionName = 1;
-
-  // the streaming topic (input or output)
-  // +kubebuilder:default:=""
-  optional string inputKey = 2;
-}
-
-// A prediction table describes a dataset and a table that will be used to enter unseen data, and get prediction
-message TableChannelSpec {
-  // connection to the database provider
-  optional string connectionName = 1;
-
-  // Options, this is the datasource containing the table schema
-  // +kubebuilder:default:=""
-  optional string datasourceName = 2;
-
-  // The table name. Optional
-  // Default to the predictor name
-  // +kubebuilder:default:=""
-  optional string tableName = 3;
 }
 

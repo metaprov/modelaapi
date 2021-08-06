@@ -278,19 +278,34 @@ type DatasetTemplate struct {
 	Spec              DatasetSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 }
 
+type DataLocationType string
+
+const (
+	DataLocationObjectStorage DataLocationType = "object"
+	DataLocationSQLTable      DataLocationType = "table"
+	DataLocationSQLView       DataLocationType = "view"
+	DataLocationStream        DataLocationType = "stream" // if the data reside in a stream
+)
+
 // data reference contain pointers to the actual data objects
 type DataLocation struct {
-	// +kubebuilder:default:=""
-	// Datasource name is a pointer to a data source for cases that the data location is not a simple bucket but a database
+	// +kubebuilder:default:="object"
+	// data location type is the type of the data location
 	// +kubebuilder:validation:Optional
-	DatasourceName string `json:"datasourceName" protobuf:"bytes,1,opt,name=datasourceName"`
+	Type *DataLocationType `json:"type" protobuf:"bytes,1,opt,name=type"`
+	// ConnectionName is the name of the connection to access the database
+	// +kubebuilder:validation:Optional
+	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// +kubebuilder:default:=""
 	// Bucketname is the name of the bucket
 	// +kubebuilder:validation:Optional
-	BucketName string `json:"bucketName" protobuf:"bytes,2,opt,name=bucketName"`
+	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
 	// Path to the full data file (e.g. csv file).
 	// +kubebuilder:validation:Optional
-	Path string `json:"path" protobuf:"bytes,3,opt,name=path"`
+	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
+	// Sql or table or topic name.
+	// +kubebuilder:validation:Optional
+	SqlOrTable *string `json:"sqlOrTable" protobuf:"bytes,5,opt,name=sqlOrTable"`
 }
 
 // Signatures contains the sha256 signatures of the datasets

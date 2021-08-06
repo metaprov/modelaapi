@@ -85,9 +85,6 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
-              createTableIfNotExist:
-                description: Create the data source table on the target, if not exist.
-                type: boolean
               datasetName:
                 default: ""
                 type: string
@@ -98,121 +95,86 @@ spec:
                 description: Input is the location of the input file if not using
                   a dataset
                 properties:
-                  bot:
-                    description: Bot is a channel that uses chats for input and output
-                    properties:
-                      connectionName:
-                        description: the connection to the messaging provider Required,
-                        type: string
-                      notifierName:
-                        description: The name of the notifier that will be used by
-                          the prediction bot. Required
-                        type: string
-                    type: object
-                  flatfile:
-                    description: Bucket is a channel where predictions are placed
-                      in a bucket folder and results are placed in another folder
-                    properties:
-                      bucketName:
-                        description: Required,
-                        type: string
-                      connectionName:
-                        description: the connection to the cloud provider Required,
-                        type: string
-                      key:
-                        description: The location of the input or the output Required,
-                        type: string
-                    type: object
-                  streaming:
-                    description: Define a streaming channel for the predictor
-                    properties:
-                      connectionName:
-                        description: StorageConnection name to the streaming provider
-                        type: string
-                      inputKey:
-                        default: ""
-                        description: the streaming topic (input or output)
-                        type: string
-                    type: object
-                  table:
-                    description: Table is a channel that uses RDBMS for input and
-                      output
-                    properties:
-                      connectionName:
-                        description: connection to the database provider
-                        type: string
-                      datasourceName:
-                        default: ""
-                        description: Options, this is the datasource containing the
-                          table schema
-                        type: string
-                      tableName:
-                        default: ""
-                        description: The table name. Optional Default to the predictor
-                          name
-                        type: string
-                    type: object
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  path:
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sqlOrTable:
+                    description: Sql or table or topic name.
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
                 type: object
               labeled:
                 default: false
                 description: Labeled , true if this is labeled prediction request.
-                  Used usally for unit testing
+                  Used usually for unit testing
                 type: boolean
               output:
                 description: Output is the location of the output file.
                 properties:
-                  bot:
-                    description: Bot is a channel that uses chats for input and output
-                    properties:
-                      connectionName:
-                        description: the connection to the messaging provider Required,
-                        type: string
-                      notifierName:
-                        description: The name of the notifier that will be used by
-                          the prediction bot. Required
-                        type: string
-                    type: object
-                  flatfile:
-                    description: Bucket is a channel where predictions are placed
-                      in a bucket folder and results are placed in another folder
+                  action:
+                    default: upsert
+                    description: Action define how the new data will be created
+                    enum:
+                    - upsert
+                    - insert
+                    - update
+                    type: string
+                  createTableIfNotExist:
+                    description: Create the data source table on the target, if not
+                      exist.
+                    type: boolean
+                  datasetName:
+                    default: ""
+                    description: DatasetName is the name of the dataset that will
+                      be created. if nil, the system will not create the dataset.
+                    type: string
+                  format:
+                    default: csv
+                    description: Format is the format of the output data
+                    enum:
+                    - csv
+                    - json
+                    - parquet
+                    - tde
+                    - sql
+                    - table
+                    - fwf
+                    - excel
+                    - sas
+                    - spss
+                    - auto
+                    type: string
+                  location:
+                    description: Location of the generated data
                     properties:
                       bucketName:
-                        description: Required,
+                        default: ""
+                        description: Bucketname is the name of the bucket
                         type: string
                       connectionName:
-                        description: the connection to the cloud provider Required,
+                        description: ConnectionName is the name of the connection
+                          to access the database
                         type: string
-                      key:
-                        description: The location of the input or the output Required,
+                      path:
+                        description: Path to the full data file (e.g. csv file).
                         type: string
-                    type: object
-                  streaming:
-                    description: Define a streaming channel for the predictor
-                    properties:
-                      connectionName:
-                        description: StorageConnection name to the streaming provider
+                      sqlOrTable:
+                        description: Sql or table or topic name.
                         type: string
-                      inputKey:
-                        default: ""
-                        description: the streaming topic (input or output)
-                        type: string
-                    type: object
-                  table:
-                    description: Table is a channel that uses RDBMS for input and
-                      output
-                    properties:
-                      connectionName:
-                        description: connection to the database provider
-                        type: string
-                      datasourceName:
-                        default: ""
-                        description: Options, this is the datasource containing the
-                          table schema
-                        type: string
-                      tableName:
-                        default: ""
-                        description: The table name. Optional Default to the predictor
-                          name
+                      type:
+                        default: object
+                        description: data location type is the type of the data location
                         type: string
                     type: object
                 type: object
@@ -228,7 +190,7 @@ spec:
                 type: string
               priority:
                 default: medium
-                description: The priority of this prediction. The defualt is medium.
+                description: The priority of this prediction. The default is medium.
                 enum:
                 - low
                 - medium
@@ -285,13 +247,6 @@ spec:
                   - mdape
                   type: string
                 type: array
-              updateStrategy:
-                description: Update strategy
-                enum:
-                - upsert
-                - insert
-                - update
-                type: string
               versionName:
                 default: ""
                 description: VersionName is the data product version of the data pipeline

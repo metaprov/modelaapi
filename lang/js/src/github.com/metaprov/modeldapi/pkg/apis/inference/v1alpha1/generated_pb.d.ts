@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
+import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
@@ -39,28 +40,6 @@ export namespace AutoScaling {
     maxreplicas: number,
     cpuavgutilization: number,
     memavgutilization: number,
-  }
-}
-
-export class BotChannelSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): BotChannelSpec;
-
-  getNotifiername(): string;
-  setNotifiername(value: string): BotChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BotChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: BotChannelSpec): BotChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: BotChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BotChannelSpec;
-  static deserializeBinaryFromReader(message: BotChannelSpec, reader: jspb.BinaryReader): BotChannelSpec;
-}
-
-export namespace BotChannelSpec {
-  export type AsObject = {
-    connectionname: string,
-    notifiername: string,
   }
 }
 
@@ -442,32 +421,6 @@ export namespace CurtainTemplateSpec {
   }
 }
 
-export class FlatFileChannelSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): FlatFileChannelSpec;
-
-  getBucketname(): string;
-  setBucketname(value: string): FlatFileChannelSpec;
-
-  getKey(): string;
-  setKey(value: string): FlatFileChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlatFileChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FlatFileChannelSpec): FlatFileChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: FlatFileChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlatFileChannelSpec;
-  static deserializeBinaryFromReader(message: FlatFileChannelSpec, reader: jspb.BinaryReader): FlatFileChannelSpec;
-}
-
-export namespace FlatFileChannelSpec {
-  export type AsObject = {
-    connectionname: string,
-    bucketname: string,
-    key: string,
-  }
-}
-
 export class ModelRecord extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelRecord;
@@ -648,44 +601,6 @@ export namespace PredictionCacheSpec {
   }
 }
 
-export class PredictionChannel extends jspb.Message {
-  getTable(): TableChannelSpec | undefined;
-  setTable(value?: TableChannelSpec): PredictionChannel;
-  hasTable(): boolean;
-  clearTable(): PredictionChannel;
-
-  getBot(): BotChannelSpec | undefined;
-  setBot(value?: BotChannelSpec): PredictionChannel;
-  hasBot(): boolean;
-  clearBot(): PredictionChannel;
-
-  getFlatfile(): FlatFileChannelSpec | undefined;
-  setFlatfile(value?: FlatFileChannelSpec): PredictionChannel;
-  hasFlatfile(): boolean;
-  clearFlatfile(): PredictionChannel;
-
-  getStreaming(): StreamingChannelSpec | undefined;
-  setStreaming(value?: StreamingChannelSpec): PredictionChannel;
-  hasStreaming(): boolean;
-  clearStreaming(): PredictionChannel;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PredictionChannel.AsObject;
-  static toObject(includeInstance: boolean, msg: PredictionChannel): PredictionChannel.AsObject;
-  static serializeBinaryToWriter(message: PredictionChannel, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PredictionChannel;
-  static deserializeBinaryFromReader(message: PredictionChannel, reader: jspb.BinaryReader): PredictionChannel;
-}
-
-export namespace PredictionChannel {
-  export type AsObject = {
-    table?: TableChannelSpec.AsObject,
-    bot?: BotChannelSpec.AsObject,
-    flatfile?: FlatFileChannelSpec.AsObject,
-    streaming?: StreamingChannelSpec.AsObject,
-  }
-}
-
 export class PredictionCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PredictionCondition;
@@ -761,13 +676,13 @@ export class PredictionSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): PredictionSpec;
 
-  getInput(): PredictionChannel | undefined;
-  setInput(value?: PredictionChannel): PredictionSpec;
+  getInput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
-  getOutput(): PredictionChannel | undefined;
-  setOutput(value?: PredictionChannel): PredictionSpec;
+  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
+  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
@@ -791,12 +706,6 @@ export class PredictionSpec extends jspb.Message {
   getXai(): boolean;
   setXai(value: boolean): PredictionSpec;
 
-  getUpdatestrategy(): string;
-  setUpdatestrategy(value: string): PredictionSpec;
-
-  getCreatetableifnotexist(): boolean;
-  setCreatetableifnotexist(value: boolean): PredictionSpec;
-
   getPriority(): string;
   setPriority(value: string): PredictionSpec;
 
@@ -814,16 +723,14 @@ export namespace PredictionSpec {
     predictorname: string,
     labeled: boolean,
     datasetname: string,
-    input?: PredictionChannel.AsObject,
-    output?: PredictionChannel.AsObject,
+    input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
     includefeatures: boolean,
     xai: boolean,
-    updatestrategy: string,
-    createtableifnotexist: boolean,
     priority: string,
   }
 }
@@ -1243,54 +1150,6 @@ export namespace ProgressiveSpec {
     warmup: number,
     trafficincrement: number,
     canarymetricsList: Array<string>,
-  }
-}
-
-export class StreamingChannelSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): StreamingChannelSpec;
-
-  getInputkey(): string;
-  setInputkey(value: string): StreamingChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StreamingChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: StreamingChannelSpec): StreamingChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: StreamingChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StreamingChannelSpec;
-  static deserializeBinaryFromReader(message: StreamingChannelSpec, reader: jspb.BinaryReader): StreamingChannelSpec;
-}
-
-export namespace StreamingChannelSpec {
-  export type AsObject = {
-    connectionname: string,
-    inputkey: string,
-  }
-}
-
-export class TableChannelSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): TableChannelSpec;
-
-  getDatasourcename(): string;
-  setDatasourcename(value: string): TableChannelSpec;
-
-  getTablename(): string;
-  setTablename(value: string): TableChannelSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TableChannelSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TableChannelSpec): TableChannelSpec.AsObject;
-  static serializeBinaryToWriter(message: TableChannelSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TableChannelSpec;
-  static deserializeBinaryFromReader(message: TableChannelSpec, reader: jspb.BinaryReader): TableChannelSpec;
-}
-
-export namespace TableChannelSpec {
-  export type AsObject = {
-    connectionname: string,
-    datasourcename: string,
-    tablename: string,
   }
 }
 

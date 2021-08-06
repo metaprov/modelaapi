@@ -132,6 +132,9 @@ type DataOutputSpec struct {
 	// +kubebuilder:default:="upsert"
 	// +kubebuilder:validation:Optional
 	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`
+	// Create the data source table on the target, if not exist.
+	// +kubebuilder:validation:Optional
+	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"varint,5,opt,name=createTableIfNotExist"`
 }
 
 type RecipePartSpec struct {

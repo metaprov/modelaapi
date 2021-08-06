@@ -1006,7 +1006,7 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Task != nil {
 		in, out := &in.Task, &out.Task
@@ -1675,7 +1675,7 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
@@ -1999,7 +1999,7 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Forecasting != nil {
 		in, out := &in.Forecasting, &out.Forecasting
@@ -2093,9 +2093,9 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 			(*out)[key] = val
 		}
 	}
-	out.TrainDatasetLocation = in.TrainDatasetLocation
-	out.TestDatasetLocation = in.TestDatasetLocation
-	out.ValidationDataset = in.ValidationDataset
+	in.TrainDatasetLocation.DeepCopyInto(&out.TrainDatasetLocation)
+	in.TestDatasetLocation.DeepCopyInto(&out.TestDatasetLocation)
+	in.ValidationDataset.DeepCopyInto(&out.ValidationDataset)
 	out.ResourceConsumed = in.ResourceConsumed
 	if in.TrainingRows != nil {
 		in, out := &in.TrainingRows, &out.TrainingRows
@@ -2516,7 +2516,7 @@ func (in *NotebookSpec) DeepCopyInto(out *NotebookSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
@@ -2898,7 +2898,7 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ReportType != nil {
 		in, out := &in.ReportType, &out.ReportType
@@ -3167,7 +3167,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Hierarchy != nil {
 		in, out := &in.Hierarchy, &out.Hierarchy
@@ -3233,9 +3233,9 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	out.TrainDatasetLocation = in.TrainDatasetLocation
-	out.TestDatasetLocation = in.TestDatasetLocation
-	out.ValidationDataset = in.ValidationDataset
+	in.TrainDatasetLocation.DeepCopyInto(&out.TrainDatasetLocation)
+	in.TestDatasetLocation.DeepCopyInto(&out.TestDatasetLocation)
+	in.ValidationDataset.DeepCopyInto(&out.ValidationDataset)
 	if in.LastModelID != nil {
 		in, out := &in.LastModelID, &out.LastModelID
 		*out = new(int64)

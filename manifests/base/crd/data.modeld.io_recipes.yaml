@@ -100,14 +100,19 @@ spec:
                         default: ""
                         description: Bucketname is the name of the bucket
                         type: string
-                      datasourceName:
-                        default: ""
-                        description: Datasource name is a pointer to a data source
-                          for cases that the data location is not a simple bucket
-                          but a database
+                      connectionName:
+                        description: ConnectionName is the name of the connection
+                          to access the database
                         type: string
                       path:
                         description: Path to the full data file (e.g. csv file).
+                        type: string
+                      sqlOrTable:
+                        description: Sql or table or topic name.
+                        type: string
+                      type:
+                        default: object
+                        description: data location type is the type of the data location
                         type: string
                     type: object
                 type: object
@@ -131,14 +136,19 @@ spec:
                         default: ""
                         description: Bucketname is the name of the bucket
                         type: string
-                      datasourceName:
-                        default: ""
-                        description: Datasource name is a pointer to a data source
-                          for cases that the data location is not a simple bucket
-                          but a database
+                      connectionName:
+                        description: ConnectionName is the name of the connection
+                          to access the database
                         type: string
                       path:
                         description: Path to the full data file (e.g. csv file).
+                        type: string
+                      sqlOrTable:
+                        description: Sql or table or topic name.
+                        type: string
+                      type:
+                        default: object
+                        description: data location type is the type of the data location
                         type: string
                     type: object
                 type: object
