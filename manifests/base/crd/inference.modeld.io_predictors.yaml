@@ -462,7 +462,7 @@ spec:
                     type: string
                 type: object
               task:
-                default: ""
+                default: unknown
                 description: Task is the task of the predictor
                 enum:
                 - forecasting

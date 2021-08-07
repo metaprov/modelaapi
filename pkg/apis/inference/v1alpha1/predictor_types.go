@@ -169,7 +169,7 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,20,opt,name=type"`
 	// Task is the task of the predictor
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:="unknown"
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
 	// The prediction treshold

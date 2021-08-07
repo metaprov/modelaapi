@@ -650,7 +650,7 @@ message PredictorSpec {
   optional string type = 20;
 
   // Task is the task of the predictor
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:="unknown"
   // +kubebuilder:validation:Optional
   optional string task = 21;
 
