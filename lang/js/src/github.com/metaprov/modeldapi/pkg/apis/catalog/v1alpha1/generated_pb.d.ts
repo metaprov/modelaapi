@@ -783,6 +783,17 @@ export class ModelDeploymentStatus extends jspb.Message {
   hasReleasedat(): boolean;
   clearReleasedat(): ModelDeploymentStatus;
 
+  getTrainingdatasetname(): string;
+  setTrainingdatasetname(value: string): ModelDeploymentStatus;
+
+  getApprovedby(): string;
+  setApprovedby(value: string): ModelDeploymentStatus;
+
+  getApprovedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelDeploymentStatus;
+  hasApprovedat(): boolean;
+  clearApprovedat(): ModelDeploymentStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelDeploymentStatus.AsObject;
   static toObject(includeInstance: boolean, msg: ModelDeploymentStatus): ModelDeploymentStatus.AsObject;
@@ -805,6 +816,9 @@ export namespace ModelDeploymentStatus {
     phase: string,
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingdatasetname: string,
+    approvedby: string,
+    approvedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
 

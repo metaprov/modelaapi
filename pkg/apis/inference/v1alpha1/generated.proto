@@ -52,12 +52,6 @@ message AutoScaling {
   optional int32 memAvgUtilization = 5;
 }
 
-message ChannelStatus {
-  optional string name = 1;
-
-  optional string error = 2;
-}
-
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
@@ -297,7 +291,7 @@ message MonitorSpec {
   // +kubebuilder:validation:Optional
   optional string schedule = 3;
 
-  // NotifierName is the name of notifer to alert in case of
+  // NotifierName is the name of notifier to alert in case of
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string notifierName = 4;
@@ -307,8 +301,8 @@ message MonitorSpec {
 }
 
 message MonitorStatus {
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 1;
+  // Last Prediction time
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 1;
 
   // Validation results contains the latest result
   repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult validationResults = 2;
@@ -521,16 +515,29 @@ message PredictorCondition {
 }
 
 message PredictorHealth {
-  optional int32 totalPredictions = 1;
+  // True if there is system is a problem with the service
+  optional bool service = 1;
 
-  optional int32 totalRequests = 2;
+  // True if there is a data drift
+  optional bool dataDrift = 2;
 
-  optional int32 totalP95Requests = 3;
+  // True if there is a concept drift
+  optional bool conceptDrift = 3;
 
-  optional int32 medianResponseTime = 4;
+  // Total prediction for this predictor
+  optional int32 totalPredictions = 4;
+
+  // Daily Avg
+  optional int32 avg = 5;
+
+  // P95 response time
+  optional int32 totalP95Requests = 6;
+
+  // Median response time
+  optional int32 medianResponseTime = 7;
 
   // Last 7 days predictions
-  repeated int32 lastDailyPredictions = 5;
+  repeated int32 lastDailyPredictions = 8;
 }
 
 // +kubebuilder:object:root=true
@@ -627,12 +634,12 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional OnlineFeaturestoreSpec store = 17;
 
-  // The forward curtain recieve the prediction request before the prediction.
+  // The forward curtain receive the prediction request before the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string forewardCurtain = 18;
 
-  // The backward curtain recieve the curtain after the prediction.
+  // The backward curtain receive the curtain after the prediction.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string backwardCurtain = 19;
@@ -642,8 +649,18 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional string type = 20;
 
+  // Task is the task of the predictor
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string task = 21;
+
+  // The prediction treshold
+  // +kubebuilder:validation:Optional
+  optional double predictionTreshold = 22;
+
   // Monitor spec specify the monitor for this predictor.
-  optional MonitorSpec monitor = 21;
+  // +kubebuilder:validation:Optional
+  optional MonitorSpec monitor = 23;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -668,9 +685,6 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 7;
 
-  // The channels
-  repeated ChannelStatus statuses = 8;
-
   // Prev model spec stores the prev working model, The field is used in case of a roll back
   // +kubebuilder:validation:Optional
   repeated ModelRecord history = 9;
@@ -683,10 +697,22 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
 
+  // The target column
+  // +kubebuilder:validation:Optional
+  optional string targetColumn = 12;
+
+  // For binary classification, the name of the positive class
+  // +kubebuilder:validation:Optional
+  optional string positiveLabel = 13;
+
+  // For binary classification, the name of the negative class
+  // +kubebuilder:validation:Optional
+  optional string negativeLabel = 14;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 12;
+  repeated PredictorCondition conditions = 15;
 }
 
 message ProgressiveSpec {

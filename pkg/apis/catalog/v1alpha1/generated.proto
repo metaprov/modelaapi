@@ -464,6 +464,17 @@ message ModelDeploymentStatus {
   // ReleasedAt is the time that this model was released
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 12;
+
+  // The dataset where this model was trained on
+  optional string trainingDatasetName = 13;
+
+  // The account name of the approver
+  // +kubebuilder:validation:Optional
+  optional string approvedBy = 14;
+
+  // The time of approval
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 15;
 }
 
 // Pretrained model contain the metadata about a pretrained model

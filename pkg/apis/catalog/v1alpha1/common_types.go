@@ -1305,6 +1305,14 @@ type ModelDeploymentStatus struct {
 	// ReleasedAt is the time that this model was released
 	// +kubebuilder:validation:Optional
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,12,opt,name=releasedAt"`
+	// The dataset where this model was trained on
+	TrainingDatasetName string `json:"trainingDatasetName,omitempty" protobuf:"bytes,13,opt,name=trainingDatasetName"`
+	// The account name of the approver
+	// +kubebuilder:validation:Optional
+	ApprovedBy string `json:"approvedBy,omitempty" protobuf:"bytes,14,opt,name=approvedBy"`
+	// The time of approval
+	// +kubebuilder:validation:Optional
+	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,15,opt,name=approvedAt"`
 }
 
 type ModelDeploymentPhase string

@@ -43,28 +43,6 @@ export namespace AutoScaling {
   }
 }
 
-export class ChannelStatus extends jspb.Message {
-  getName(): string;
-  setName(value: string): ChannelStatus;
-
-  getError(): string;
-  setError(value: string): ChannelStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ChannelStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ChannelStatus): ChannelStatus.AsObject;
-  static serializeBinaryToWriter(message: ChannelStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ChannelStatus;
-  static deserializeBinaryFromReader(message: ChannelStatus, reader: jspb.BinaryReader): ChannelStatus;
-}
-
-export namespace ChannelStatus {
-  export type AsObject = {
-    name: string,
-    error: string,
-  }
-}
-
 export class CronPrediction extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronPrediction;
@@ -500,10 +478,10 @@ export namespace MonitorSpec {
 }
 
 export class MonitorStatus extends jspb.Message {
-  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
-  hasLasttransitiontime(): boolean;
-  clearLasttransitiontime(): MonitorStatus;
+  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MonitorStatus;
+  hasLastprediction(): boolean;
+  clearLastprediction(): MonitorStatus;
 
   getValidationresultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
   setValidationresultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): MonitorStatus;
@@ -520,7 +498,7 @@ export class MonitorStatus extends jspb.Message {
 
 export namespace MonitorStatus {
   export type AsObject = {
-    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     validationresultsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
   }
 }
@@ -874,11 +852,20 @@ export namespace PredictorCondition {
 }
 
 export class PredictorHealth extends jspb.Message {
+  getService(): boolean;
+  setService(value: boolean): PredictorHealth;
+
+  getDatadrift(): boolean;
+  setDatadrift(value: boolean): PredictorHealth;
+
+  getConceptdrift(): boolean;
+  setConceptdrift(value: boolean): PredictorHealth;
+
   getTotalpredictions(): number;
   setTotalpredictions(value: number): PredictorHealth;
 
-  getTotalrequests(): number;
-  setTotalrequests(value: number): PredictorHealth;
+  getAvg(): number;
+  setAvg(value: number): PredictorHealth;
 
   getTotalp95requests(): number;
   setTotalp95requests(value: number): PredictorHealth;
@@ -901,8 +888,11 @@ export class PredictorHealth extends jspb.Message {
 
 export namespace PredictorHealth {
   export type AsObject = {
+    service: boolean,
+    datadrift: boolean,
+    conceptdrift: boolean,
     totalpredictions: number,
-    totalrequests: number,
+    avg: number,
     totalp95requests: number,
     medianresponsetime: number,
     lastdailypredictionsList: Array<number>,
@@ -1012,6 +1002,12 @@ export class PredictorSpec extends jspb.Message {
   getType(): string;
   setType(value: string): PredictorSpec;
 
+  getTask(): string;
+  setTask(value: string): PredictorSpec;
+
+  getPredictiontreshold(): number;
+  setPredictiontreshold(value: number): PredictorSpec;
+
   getMonitor(): MonitorSpec | undefined;
   setMonitor(value?: MonitorSpec): PredictorSpec;
   hasMonitor(): boolean;
@@ -1047,6 +1043,8 @@ export namespace PredictorSpec {
     forewardcurtain: string,
     backwardcurtain: string,
     type: string,
+    task: string,
+    predictiontreshold: number,
     monitor?: MonitorSpec.AsObject,
   }
 }
@@ -1076,11 +1074,6 @@ export class PredictorStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictorStatus;
 
-  getStatusesList(): Array<ChannelStatus>;
-  setStatusesList(value: Array<ChannelStatus>): PredictorStatus;
-  clearStatusesList(): PredictorStatus;
-  addStatuses(value?: ChannelStatus, index?: number): ChannelStatus;
-
   getHistoryList(): Array<ModelRecord>;
   setHistoryList(value: Array<ModelRecord>): PredictorStatus;
   clearHistoryList(): PredictorStatus;
@@ -1095,6 +1088,15 @@ export class PredictorStatus extends jspb.Message {
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictorStatus;
   hasLastupdated(): boolean;
   clearLastupdated(): PredictorStatus;
+
+  getTargetcolumn(): string;
+  setTargetcolumn(value: string): PredictorStatus;
+
+  getPositivelabel(): string;
+  setPositivelabel(value: string): PredictorStatus;
+
+  getNegativelabel(): string;
+  setNegativelabel(value: string): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1117,10 +1119,12 @@ export namespace PredictorStatus {
     monitorlastlatency: number,
     health?: PredictorHealth.AsObject,
     observedgeneration: number,
-    statusesList: Array<ChannelStatus.AsObject>,
     historyList: Array<ModelRecord.AsObject>,
     monitorstatus?: MonitorStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    targetcolumn: string,
+    positivelabel: string,
+    negativelabel: string,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

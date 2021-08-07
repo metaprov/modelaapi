@@ -156,11 +156,11 @@ type PredictorSpec struct {
 	// Store is the specification of the online data store.
 	// +kubebuilder:validation:Optional
 	Store *OnlineFeaturestoreSpec `json:"store,omitempty" protobuf:"bytes,17,opt,name=store"`
-	// The forward curtain recieve the prediction request before the prediction.
+	// The forward curtain receive the prediction request before the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ForewardCurtainName *string `json:"forwardCurtain,omitempty" protobuf:"bytes,18,opt,name=forewardCurtain"`
-	// The backward curtain recieve the curtain after the prediction.
+	// The backward curtain receive the curtain after the prediction.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	BackwardCurtainName *string `json:"backwardCurtain,omitempty" protobuf:"bytes,19,opt,name=backwardCurtain"`
@@ -168,8 +168,16 @@ type PredictorSpec struct {
 	// +kubebuilder:default:="online"
 	// +kubebuilder:validation:Optional
 	Type *PredictorType `json:"type,omitempty" protobuf:"bytes,20,opt,name=type"`
+	// Task is the task of the predictor
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
+	// The prediction treshold
+	// +kubebuilder:validation:Optional
+	PredictionTreshold *float64 `json:"predictionTreshold,omitempty" protobuf:"bytes,22,opt,name=predictionTreshold"`
 	// Monitor spec specify the monitor for this predictor.
-	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,21,opt,name=monitor"`
+	// +kubebuilder:validation:Optional
+	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
@@ -228,7 +236,6 @@ type PredictorStatus struct {
 	// Model one status
 	// +kubebuilder:validation:Optional
 	ModelStatuses []catalog.ModelDeploymentStatus `json:"modelStatus,omitempty" protobuf:"bytes,1,rep,name=modelStatus"`
-
 	// When was the last check attempt
 	MonitorLastAttemptAt metav1.Timestamp `json:"monitorLastAttemptAt,omitempty" protobuf:"bytes,3,opt,name=monitorLastAttemptAt"`
 	// What was the last score
@@ -240,8 +247,6 @@ type PredictorStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
-	// The channels
-	Channels []ChannelStatus `json:"statuses,omitempty" protobuf:"bytes,8,rep,name=statuses"`
 	// Prev model spec stores the prev working model, The field is used in case of a roll back
 	//+kubebuilder:validation:Optional
 	History []ModelRecord `json:"history,omitempty" protobuf:"bytes,9,opt,name=history"`
@@ -251,24 +256,38 @@ type PredictorStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+	// The target column
+	//+kubebuilder:validation:Optional
+	TargetColumn string `json:"targetColumn,omitempty" protobuf:"bytes,12,opt,name=targetColumn"`
+	// For binary classification, the name of the positive class
+	//+kubebuilder:validation:Optional
+	PositiveLabel string `json:"positiveLabel,omitempty" protobuf:"bytes,13,opt,name=positiveLabel"`
+	// For binary classification, the name of the negative class
+	//+kubebuilder:validation:Optional
+	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,14,opt,name=negativeLabel"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 type PredictorHealth struct {
-	TotalPredictions   int32 `json:"totalPredictions,omitempty" protobuf:"varint,1,opt,name=totalPredictions"`
-	TotalRequests      int32 `json:"totalRequests,omitempty" protobuf:"varint,2,opt,name=totalRequests"`
-	TotalP95Requests   int32 `json:"totalP95Requests,omitempty" protobuf:"varint,3,opt,name=totalP95Requests"`
-	MedianResponseTime int32 `json:"medianResponseTime,omitempty" protobuf:"varint,4,opt,name=medianResponseTime"`
+	// True if there is system is a problem with the service
+	Service bool `json:"service,omitempty" protobuf:"varint,1,opt,name=service"`
+	// True if there is a data drift
+	DataDrift bool `json:"dataDrift,omitempty" protobuf:"varint,2,opt,name=dataDrift"`
+	// True if there is a concept drift
+	ConceptDrift bool `json:"conceptDrift,omitempty" protobuf:"varint,3,opt,name=conceptDrift"`
+	// Total prediction for this predictor
+	TotalPredictions int32 `json:"totalPredictions,omitempty" protobuf:"varint,4,opt,name=totalPredictions"`
+	// Daily Avg
+	DailyAvg int32 `json:"avg,omitempty" protobuf:"varint,5,opt,name="`
+	// P95 response time
+	P95ResponseTime int32 `json:"totalP95Requests,omitempty" protobuf:"varint,6,opt,name=totalP95Requests"`
+	// Median response time
+	MedianResponseTime int32 `json:"medianResponseTime,omitempty" protobuf:"varint,7,opt,name=medianResponseTime"`
 	// Last 7 days predictions
-	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,5,rep,name=lastDailyPredictions"`
-}
-
-type ChannelStatus struct {
-	Name  string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	Error string `json:"error,omitempty" protobuf:"bytes,2,opt,name=error"`
+	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
 }
 
 // Specify the model monitor.
@@ -283,17 +302,17 @@ type MonitorSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
-	// NotifierName is the name of notifer to alert in case of
+	// NotifierName is the name of notifier to alert in case of
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NotiferName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 	// List of model validation
 	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
 }
 
 type MonitorStatus struct {
-	// Last time the condition transitioned from one status to another.
-	LastTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,1,opt,name=lastTransitionTime"`
+	// Last Prediction time
+	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,1,opt,name=lastPrediction"`
 	// Validation results contains the latest result
 	ValidationResult []training.ModelValidationResult `json:"validationResults,omitempty" protobuf:"bytes,2,opt,name=validationResults"`
 }

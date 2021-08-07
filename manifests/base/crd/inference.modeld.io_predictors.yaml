@@ -112,7 +112,7 @@ spec:
                 type: object
               backwardCurtain:
                 default: ""
-                description: The backward curtain recieve the curtain after the prediction.
+                description: The backward curtain receive the curtain after the prediction.
                 type: string
               cache:
                 description: Cache is the specification of prediction cache
@@ -133,7 +133,7 @@ spec:
                 type: string
               forwardCurtain:
                 default: ""
-                description: The forward curtain recieve the prediction request before
+                description: The forward curtain receive the prediction request before
                   the prediction.
                 type: string
               models:
@@ -208,8 +208,8 @@ spec:
                     type: boolean
                   notifierName:
                     default: ""
-                    description: NotifierName is the name of notifer to alert in case
-                      of
+                    description: NotifierName is the name of notifier to alert in
+                      case of
                     type: string
                   samplePrecent:
                     default: 0
@@ -335,6 +335,9 @@ spec:
                 format: int32
                 minimum: 0
                 type: integer
+              predictionTreshold:
+                description: The prediction treshold
+                type: number
               productRef:
                 description: The product that this predictor serve.
                 properties:
@@ -458,6 +461,36 @@ spec:
                     description: the name of the cache service
                     type: string
                 type: object
+              task:
+                default: ""
+                description: Task is the task of the predictor
+                enum:
+                - forecasting
+                - binary-classification
+                - multi-classification
+                - multi-label-classification
+                - text-classification
+                - regression
+                - forecasting
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - topic-modeling
+                - auto
+                - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
+                type: string
               template:
                 description: A template for the predictor pod. The system will create
                   the deployment based on this template.
@@ -7540,6 +7573,16 @@ spec:
               health:
                 description: The Health of the predictor
                 properties:
+                  avg:
+                    description: Daily Avg
+                    format: int32
+                    type: integer
+                  conceptDrift:
+                    description: True if there is a concept drift
+                    type: boolean
+                  dataDrift:
+                    description: True if there is a data drift
+                    type: boolean
                   lastDailyPredictions:
                     description: Last 7 days predictions
                     items:
@@ -7547,15 +7590,18 @@ spec:
                       type: integer
                     type: array
                   medianResponseTime:
+                    description: Median response time
                     format: int32
                     type: integer
+                  service:
+                    description: True if there is system is a problem with the service
+                    type: boolean
                   totalP95Requests:
+                    description: P95 response time
                     format: int32
                     type: integer
                   totalPredictions:
-                    format: int32
-                    type: integer
-                  totalRequests:
+                    description: Total prediction for this predictor
                     format: int32
                     type: integer
                 type: object
@@ -7601,6 +7647,13 @@ spec:
                 description: Model one status
                 items:
                   properties:
+                    approvedAt:
+                      description: The time of approval
+                      format: date-time
+                      type: string
+                    approvedBy:
+                      description: The account name of the approver
+                      type: string
                     dailyPredictionAvg:
                       format: int32
                       type: integer
@@ -7643,6 +7696,9 @@ spec:
                     serviceName:
                       description: The service name that serves this model
                       type: string
+                    trainingDatasetName:
+                      description: The dataset where this model was trained on
+                      type: string
                   type: object
                 type: array
               monitorLastAttemptAt:
@@ -7674,9 +7730,8 @@ spec:
               monitorStatus:
                 description: Monitor status holds the status of the last monitor action.
                 properties:
-                  lastTransitionTime:
-                    description: Last time the condition transitioned from one status
-                      to another.
+                  lastPrediction:
+                    description: Last Prediction time
                     format: date-time
                     type: string
                   validationResults:
@@ -7772,21 +7827,20 @@ spec:
                       type: object
                     type: array
                 type: object
+              negativeLabel:
+                description: For binary classification, the name of the negative class
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
                 format: int64
                 type: integer
-              statuses:
-                description: The channels
-                items:
-                  properties:
-                    error:
-                      type: string
-                    name:
-                      type: string
-                  type: object
-                type: array
+              positiveLabel:
+                description: For binary classification, the name of the positive class
+                type: string
+              targetColumn:
+                description: The target column
+                type: string
             type: object
         required:
         - spec
