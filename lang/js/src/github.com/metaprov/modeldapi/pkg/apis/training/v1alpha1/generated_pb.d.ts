@@ -1644,6 +1644,9 @@ export class ModelPipelineRunSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): ModelPipelineRunSpec;
 
+  getAborted(): boolean;
+  setAborted(value: boolean): ModelPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunSpec): ModelPipelineRunSpec.AsObject;
@@ -1661,6 +1664,7 @@ export namespace ModelPipelineRunSpec {
     owner: string,
     priority: string,
     paused: boolean,
+    aborted: boolean,
   }
 }
 

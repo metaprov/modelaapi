@@ -138,6 +138,10 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,7,opt,name=paused"`
+	// Set to true to abort the model pipeline run
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,8,opt,name=aborted"`
 }
 
 type StageStatusPhase string

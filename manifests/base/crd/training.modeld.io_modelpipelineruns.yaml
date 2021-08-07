@@ -70,6 +70,10 @@ spec:
             description: ModelPipelineRunSpec is the desired state of the ModelPipelineRun
               resource
             properties:
+              aborted:
+                default: false
+                description: Set to true to abort the model pipeline run
+                type: boolean
               datasetName:
                 default: ""
                 description: DatasetName is the name of the dataset that we trained

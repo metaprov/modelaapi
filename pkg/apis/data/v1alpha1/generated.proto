@@ -509,6 +509,16 @@ message DataPipelineRunSpec {
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 6;
+
+  // Set to true to pause the pipeline run
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool paused = 7;
+
+  // Set to true to abort the  pipeline run
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool aborted = 8;
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun

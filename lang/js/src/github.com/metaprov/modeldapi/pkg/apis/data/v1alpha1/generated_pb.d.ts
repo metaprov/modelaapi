@@ -655,6 +655,12 @@ export class DataPipelineRunSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): DataPipelineRunSpec;
 
+  getPaused(): boolean;
+  setPaused(value: boolean): DataPipelineRunSpec;
+
+  getAborted(): boolean;
+  setAborted(value: boolean): DataPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineRunSpec): DataPipelineRunSpec.AsObject;
@@ -670,6 +676,8 @@ export namespace DataPipelineRunSpec {
     owner: string,
     workloadclassname: string,
     priority: string,
+    paused: boolean,
+    aborted: boolean,
   }
 }
 

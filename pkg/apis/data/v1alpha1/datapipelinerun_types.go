@@ -85,14 +85,22 @@ type DataPipelineRunSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// WorkloadClassName is the name of the workload class used to run this pip0eline. This is assigned by the datapipelineeun
+	// WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipelineeun
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
-	// The priority of this data pipeline. The defualt is medium.
+	// The priority of this data pipeline. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,6,opt,name=priority"`
+	// Set to true to pause the pipeline run
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,7,opt,name=paused"`
+	// Set to true to abort the  pipeline run
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,8,opt,name=aborted"`
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
