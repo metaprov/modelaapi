@@ -369,7 +369,22 @@ message DataLocation {
   // Sql or table or topic name.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string sqlOrTable = 5;
+  optional string table = 5;
+
+  // Database , the database.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string database = 6;
+
+  // SQL statement, in case we choose the view type
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string sql = 7;
+
+  // Topic is the name of the topic in case of streaming
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string topic = 8;
 }
 
 // DataOutputSpec is the definition of the out file.

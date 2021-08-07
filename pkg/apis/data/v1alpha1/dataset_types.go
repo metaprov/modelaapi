@@ -285,6 +285,7 @@ const (
 	DataLocationSQLTable      DataLocationType = "table"
 	DataLocationSQLView       DataLocationType = "view"
 	DataLocationStream        DataLocationType = "stream" // if the data reside in a stream
+	DataLocationWebApi        DataLocationType = "web"    // if the data reside in a stream
 )
 
 // data reference contain pointers to the actual data objects
@@ -308,7 +309,19 @@ type DataLocation struct {
 	// Sql or table or topic name.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	SqlOrTable *string `json:"sqlOrTable" protobuf:"bytes,5,opt,name=sqlOrTable"`
+	Table *string `json:"table" protobuf:"bytes,5,opt,name=table"`
+	// Database , the database.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Database *string `json:"database" protobuf:"bytes,6,opt,name=database"`
+	// SQL statement, in case we choose the view type
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Sql *string `json:"sql" protobuf:"bytes,7,opt,name=sql"`
+	// Topic is the name of the topic in case of streaming
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Topic *string `json:"topic" protobuf:"bytes,8,opt,name=topic"`
 }
 
 // Signatures contains the sha256 signatures of the datasets

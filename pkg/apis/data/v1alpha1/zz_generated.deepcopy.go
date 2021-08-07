@@ -342,8 +342,23 @@ func (in *DataLocation) DeepCopyInto(out *DataLocation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.SqlOrTable != nil {
-		in, out := &in.SqlOrTable, &out.SqlOrTable
+	if in.Table != nil {
+		in, out := &in.Table, &out.Table
+		*out = new(string)
+		**out = **in
+	}
+	if in.Database != nil {
+		in, out := &in.Database, &out.Database
+		*out = new(string)
+		**out = **in
+	}
+	if in.Sql != nil {
+		in, out := &in.Sql, &out.Sql
+		*out = new(string)
+		**out = **in
+	}
+	if in.Topic != nil {
+		in, out := &in.Topic, &out.Topic
 		*out = new(string)
 		**out = **in
 	}

@@ -394,8 +394,17 @@ export class DataLocation extends jspb.Message {
   getPath(): string;
   setPath(value: string): DataLocation;
 
-  getSqlortable(): string;
-  setSqlortable(value: string): DataLocation;
+  getTable(): string;
+  setTable(value: string): DataLocation;
+
+  getDatabase(): string;
+  setDatabase(value: string): DataLocation;
+
+  getSql(): string;
+  setSql(value: string): DataLocation;
+
+  getTopic(): string;
+  setTopic(value: string): DataLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataLocation.AsObject;
@@ -411,7 +420,10 @@ export namespace DataLocation {
     connectionname: string,
     bucketname: string,
     path: string,
-    sqlortable: string,
+    table: string,
+    database: string,
+    sql: string,
+    topic: string,
   }
 }
 

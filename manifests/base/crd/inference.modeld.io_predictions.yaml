@@ -104,13 +104,25 @@ spec:
                     description: ConnectionName is the name of the connection to access
                       the database
                     type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
                   path:
                     default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
-                  sqlOrTable:
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
                     default: ""
                     description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
                     type: string
                   type:
                     default: object
@@ -170,13 +182,25 @@ spec:
                         description: ConnectionName is the name of the connection
                           to access the database
                         type: string
+                      database:
+                        default: ""
+                        description: Database , the database.
+                        type: string
                       path:
                         default: ""
                         description: Path to the full data file (e.g. csv file).
                         type: string
-                      sqlOrTable:
+                      sql:
+                        default: ""
+                        description: SQL statement, in case we choose the view type
+                        type: string
+                      table:
                         default: ""
                         description: Sql or table or topic name.
+                        type: string
+                      topic:
+                        default: ""
+                        description: Topic is the name of the topic in case of streaming
                         type: string
                       type:
                         default: object

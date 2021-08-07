@@ -6630,7 +6630,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject
     connectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     bucketname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     path: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    sqlortable: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    table: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    database: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    sql: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    topic: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6685,7 +6688,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.deserial
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSqlortable(value);
+      msg.setTable(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabase(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSql(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTopic(value);
       break;
     default:
       reader.skipField();
@@ -6748,6 +6763,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.serializ
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -6899,10 +6935,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototyp
 
 
 /**
- * optional string sqlOrTable = 5;
+ * optional string table = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getSqlortable = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getTable = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -6911,7 +6947,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototyp
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setSqlortable = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setTable = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -6920,7 +6956,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototyp
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearSqlortable = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearTable = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -6929,8 +6965,116 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasSqlortable = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasTable = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string database = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getDatabase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setDatabase = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearDatabase = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasDatabase = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string sql = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getSql = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setSql = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearSql = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasSql = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string topic = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.getTopic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.setTopic = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.clearTopic = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.prototype.hasTopic = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
