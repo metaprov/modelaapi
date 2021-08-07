@@ -285,13 +285,16 @@ spec:
                     description: Bucketname is the name of the bucket
                     type: string
                   connectionName:
+                    default: ""
                     description: ConnectionName is the name of the connection to access
                       the database
                     type: string
                   path:
+                    default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
                   sqlOrTable:
+                    default: ""
                     description: Sql or table or topic name.
                     type: string
                   type:
@@ -1348,13 +1351,16 @@ spec:
                     description: Bucketname is the name of the bucket
                     type: string
                   connectionName:
+                    default: ""
                     description: ConnectionName is the name of the connection to access
                       the database
                     type: string
                   path:
+                    default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
                   sqlOrTable:
+                    default: ""
                     description: Sql or table or topic name.
                     type: string
                   type:
@@ -1391,13 +1397,16 @@ spec:
                     description: Bucketname is the name of the bucket
                     type: string
                   connectionName:
+                    default: ""
                     description: ConnectionName is the name of the connection to access
                       the database
                     type: string
                   path:
+                    default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
                   sqlOrTable:
+                    default: ""
                     description: Sql or table or topic name.
                     type: string
                   type:
@@ -1434,13 +1443,16 @@ spec:
                     description: Bucketname is the name of the bucket
                     type: string
                   connectionName:
+                    default: ""
                     description: ConnectionName is the name of the connection to access
                       the database
                     type: string
                   path:
+                    default: ""
                     description: Path to the full data file (e.g. csv file).
                     type: string
                   sqlOrTable:
+                    default: ""
                     description: Sql or table or topic name.
                     type: string
                   type:

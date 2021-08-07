@@ -352,6 +352,7 @@ message DataLocation {
   optional string type = 1;
 
   // ConnectionName is the name of the connection to access the database
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string connectionName = 2;
 
@@ -361,10 +362,12 @@ message DataLocation {
   optional string bucketName = 3;
 
   // Path to the full data file (e.g. csv file).
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string path = 4;
 
   // Sql or table or topic name.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string sqlOrTable = 5;
 }

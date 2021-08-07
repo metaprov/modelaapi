@@ -294,6 +294,7 @@ type DataLocation struct {
 	// +kubebuilder:validation:Optional
 	Type *DataLocationType `json:"type" protobuf:"bytes,1,opt,name=type"`
 	// ConnectionName is the name of the connection to access the database
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName" protobuf:"bytes,2,opt,name=connectionName"`
 	// +kubebuilder:default:=""
@@ -301,9 +302,11 @@ type DataLocation struct {
 	// +kubebuilder:validation:Optional
 	BucketName *string `json:"bucketName" protobuf:"bytes,3,opt,name=bucketName"`
 	// Path to the full data file (e.g. csv file).
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path" protobuf:"bytes,4,opt,name=path"`
 	// Sql or table or topic name.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	SqlOrTable *string `json:"sqlOrTable" protobuf:"bytes,5,opt,name=sqlOrTable"`
 }
