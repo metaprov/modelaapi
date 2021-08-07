@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/metaprov/modeldapi/services/datapipelinerun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nOgithub.com/metaprov/modeldapi/services/datapipelinerun/v1/datapipelinerun.proto\x12\x39github.com.metaprov.modeldapi.services.datapipelinerun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xd1\x01\n\x1aListDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListDataPipelineRunResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunList\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x1f\n\x1d\x43reateDataPipelineRunResponse\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x1f\n\x1dUpdateDataPipelineRunResponse\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetDataPipelineRunResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteDataPipelineRunResponse2\xe5\t\n\x16\x44\x61taPipelineRunService\x12\xe3\x01\n\x14ListDataPipelineRuns\x12U.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunRequest\x1aV.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/datapipelineruns\x12\xeb\x01\n\x15\x43reateDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/datapipelineruns:\x01*\x12\xe6\x01\n\x12GetDataPipelineRun\x12T.github.com.metaprov.modeldapi.services.datapipelinerun.v1.GetDataPipelineRunRequest\x1aU.github.com.metaprov.modeldapi.services.datapipelinerun.v1.GetDataPipelineRunResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/datapipelineruns/{name}\x12\x8b\x02\n\x15UpdateDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunResponse\"?\x82\xd3\xe4\x93\x02\x39\x1a\x34/v1/datapipelineruns/{datapipelinerun.metadata.name}:\x01*\x12\xff\x01\n\x15\x44\x65leteDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.DeleteDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.DeleteDataPipelineRunResponse\"3\x82\xd3\xe4\x93\x02-*+/api/v1/datapipelineruns/{namespace}/{name}B;Z9github.com/metaprov/modeldapi/services/datapipelinerun/v1b\x06proto3'
+  serialized_pb=b'\nOgithub.com/metaprov/modeldapi/services/datapipelinerun/v1/datapipelinerun.proto\x12\x39github.com.metaprov.modeldapi.services.datapipelinerun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\"\xd1\x01\n\x1aListDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListDataPipelineRunResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunList\"s\n\x1c\x43reateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x1f\n\x1d\x43reateDataPipelineRunResponse\"s\n\x1cUpdateDataPipelineRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\"\x1f\n\x1dUpdateDataPipelineRunResponse\"<\n\x19GetDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetDataPipelineRunResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteDataPipelineRunResponse\"\x1e\n\x1c\x41\x62ortDataPipelineRunResponse\">\n\x1b\x41\x62ortDataPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xda\x0b\n\x16\x44\x61taPipelineRunService\x12\xe3\x01\n\x14ListDataPipelineRuns\x12U.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunRequest\x1aV.github.com.metaprov.modeldapi.services.datapipelinerun.v1.ListDataPipelineRunResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/datapipelineruns\x12\xeb\x01\n\x15\x43reateDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.CreateDataPipelineRunResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/datapipelineruns:\x01*\x12\xe6\x01\n\x12GetDataPipelineRun\x12T.github.com.metaprov.modeldapi.services.datapipelinerun.v1.GetDataPipelineRunRequest\x1aU.github.com.metaprov.modeldapi.services.datapipelinerun.v1.GetDataPipelineRunResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/datapipelineruns/{name}\x12\x8b\x02\n\x15UpdateDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.UpdateDataPipelineRunResponse\"?\x82\xd3\xe4\x93\x02\x39\x1a\x34/v1/datapipelineruns/{datapipelinerun.metadata.name}:\x01*\x12\xff\x01\n\x15\x44\x65leteDataPipelineRun\x12W.github.com.metaprov.modeldapi.services.datapipelinerun.v1.DeleteDataPipelineRunRequest\x1aX.github.com.metaprov.modeldapi.services.datapipelinerun.v1.DeleteDataPipelineRunResponse\"3\x82\xd3\xe4\x93\x02-*+/api/v1/datapipelineruns/{namespace}/{name}\x12\xf2\x01\n\x14\x41\x62ortDataPipelineRun\x12V.github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunRequest\x1aW.github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunResponse\")\x82\xd3\xe4\x93\x02#\"!/v1/datapipelineruns/{name}:abortB;Z9github.com/metaprov/modeldapi/services/datapipelinerun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -392,6 +392,70 @@ _DELETEDATAPIPELINERUNRESPONSE = _descriptor.Descriptor(
   serialized_end=1162,
 )
 
+
+_ABORTDATAPIPELINERUNRESPONSE = _descriptor.Descriptor(
+  name='AbortDataPipelineRunResponse',
+  full_name='github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1164,
+  serialized_end=1194,
+)
+
+
+_ABORTDATAPIPELINERUNREQUEST = _descriptor.Descriptor(
+  name='AbortDataPipelineRunRequest',
+  full_name='github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunRequest.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1196,
+  serialized_end=1258,
+)
+
 _LISTDATAPIPELINERUNREQUEST_LABELSENTRY.containing_type = _LISTDATAPIPELINERUNREQUEST
 _LISTDATAPIPELINERUNREQUEST.fields_by_name['labels'].message_type = _LISTDATAPIPELINERUNREQUEST_LABELSENTRY
 _LISTDATAPIPELINERUNRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPIPELINERUNLIST
@@ -408,6 +472,8 @@ DESCRIPTOR.message_types_by_name['GetDataPipelineRunRequest'] = _GETDATAPIPELINE
 DESCRIPTOR.message_types_by_name['GetDataPipelineRunResponse'] = _GETDATAPIPELINERUNRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteDataPipelineRunRequest'] = _DELETEDATAPIPELINERUNREQUEST
 DESCRIPTOR.message_types_by_name['DeleteDataPipelineRunResponse'] = _DELETEDATAPIPELINERUNRESPONSE
+DESCRIPTOR.message_types_by_name['AbortDataPipelineRunResponse'] = _ABORTDATAPIPELINERUNRESPONSE
+DESCRIPTOR.message_types_by_name['AbortDataPipelineRunRequest'] = _ABORTDATAPIPELINERUNREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListDataPipelineRunRequest = _reflection.GeneratedProtocolMessageType('ListDataPipelineRunRequest', (_message.Message,), {
@@ -488,6 +554,20 @@ DeleteDataPipelineRunResponse = _reflection.GeneratedProtocolMessageType('Delete
   })
 _sym_db.RegisterMessage(DeleteDataPipelineRunResponse)
 
+AbortDataPipelineRunResponse = _reflection.GeneratedProtocolMessageType('AbortDataPipelineRunResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ABORTDATAPIPELINERUNRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.datapipelinerun.v1.datapipelinerun_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunResponse)
+  })
+_sym_db.RegisterMessage(AbortDataPipelineRunResponse)
+
+AbortDataPipelineRunRequest = _reflection.GeneratedProtocolMessageType('AbortDataPipelineRunRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ABORTDATAPIPELINERUNREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.datapipelinerun.v1.datapipelinerun_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.datapipelinerun.v1.AbortDataPipelineRunRequest)
+  })
+_sym_db.RegisterMessage(AbortDataPipelineRunRequest)
+
 
 DESCRIPTOR._options = None
 _LISTDATAPIPELINERUNREQUEST_LABELSENTRY._options = None
@@ -499,8 +579,8 @@ _DATAPIPELINERUNSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1165,
-  serialized_end=2418,
+  serialized_start=1261,
+  serialized_end=2759,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataPipelineRuns',
@@ -550,6 +630,16 @@ _DATAPIPELINERUNSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEDATAPIPELINERUNREQUEST,
     output_type=_DELETEDATAPIPELINERUNRESPONSE,
     serialized_options=b'\202\323\344\223\002-*+/api/v1/datapipelineruns/{namespace}/{name}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='AbortDataPipelineRun',
+    full_name='github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService.AbortDataPipelineRun',
+    index=5,
+    containing_service=None,
+    input_type=_ABORTDATAPIPELINERUNREQUEST,
+    output_type=_ABORTDATAPIPELINERUNRESPONSE,
+    serialized_options=b'\202\323\344\223\002#\"!/v1/datapipelineruns/{name}:abort',
     create_key=_descriptor._internal_create_key,
   ),
 ])

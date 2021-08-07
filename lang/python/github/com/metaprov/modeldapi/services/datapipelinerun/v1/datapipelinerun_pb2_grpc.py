@@ -39,6 +39,11 @@ class DataPipelineRunServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunResponse.FromString,
                 )
+        self.AbortDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.FromString,
+                )
 
 
 class DataPipelineRunServiceServicer(object):
@@ -74,6 +79,12 @@ class DataPipelineRunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AbortDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataPipelineRunServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +112,11 @@ def add_DataPipelineRunServiceServicer_to_server(servicer, server):
                     servicer.DeleteDataPipelineRun,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunResponse.SerializeToString,
+            ),
+            'AbortDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.AbortDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +210,22 @@ class DataPipelineRunService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.DeleteDataPipelineRunResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AbortDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

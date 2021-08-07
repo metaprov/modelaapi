@@ -49,6 +49,16 @@ message DeleteDataPipelineRunResponse {
 }
 
 
+message AbortDataPipelineRunResponse {
+}
+
+message AbortDataPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+
 service DataPipelineRunService {
     rpc ListDataPipelineRuns(ListDataPipelineRunRequest) returns (ListDataPipelineRunResponse) {
         option (google.api.http).get = "/v1/datapipelineruns";
@@ -74,4 +84,10 @@ service DataPipelineRunService {
     rpc DeleteDataPipelineRun(DeleteDataPipelineRunRequest) returns (DeleteDataPipelineRunResponse) {
         option (google.api.http).delete = "/api/v1/datapipelineruns/{namespace}/{name}";
     }
+
+    rpc AbortDataPipelineRun(AbortDataPipelineRunRequest) returns (AbortDataPipelineRunResponse) {
+        option (google.api.http).post = "/v1/datapipelineruns/{name}:abort";
+    }
+
+    
 }

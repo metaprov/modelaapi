@@ -196,3 +196,39 @@ export namespace DeleteDataPipelineRunResponse {
   }
 }
 
+export class AbortDataPipelineRunResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AbortDataPipelineRunResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AbortDataPipelineRunResponse): AbortDataPipelineRunResponse.AsObject;
+  static serializeBinaryToWriter(message: AbortDataPipelineRunResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AbortDataPipelineRunResponse;
+  static deserializeBinaryFromReader(message: AbortDataPipelineRunResponse, reader: jspb.BinaryReader): AbortDataPipelineRunResponse;
+}
+
+export namespace AbortDataPipelineRunResponse {
+  export type AsObject = {
+  }
+}
+
+export class AbortDataPipelineRunRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): AbortDataPipelineRunRequest;
+
+  getName(): string;
+  setName(value: string): AbortDataPipelineRunRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AbortDataPipelineRunRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AbortDataPipelineRunRequest): AbortDataPipelineRunRequest.AsObject;
+  static serializeBinaryToWriter(message: AbortDataPipelineRunRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AbortDataPipelineRunRequest;
+  static deserializeBinaryFromReader(message: AbortDataPipelineRunRequest, reader: jspb.BinaryReader): AbortDataPipelineRunRequest;
+}
+
+export namespace AbortDataPipelineRunRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+

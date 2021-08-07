@@ -85,7 +85,7 @@ spec:
                 type: boolean
               priority:
                 default: medium
-                description: The priority of this data pipeline. The defualt is medium.
+                description: The priority of this data pipeline. The default is medium.
                 enum:
                 - low
                 - medium
@@ -99,7 +99,7 @@ spec:
               workloadClassName:
                 default: nano-cpu-250m-mem-256mi
                 description: WorkloadClassName is the name of the workload class used
-                  to run this pip0eline. This is assigned by the datapipelineeun
+                  to run this pipeline. This is assigned by the datapipelineeun
                 type: string
             type: object
           status:

@@ -235,5 +235,45 @@ export class DataPipelineRunServiceClient {
     this.methodInfoDeleteDataPipelineRun);
   }
 
+  methodInfoAbortDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse,
+    (request: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse.deserializeBinary
+  );
+
+  abortDataPipelineRun(
+    request: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse>;
+
+  abortDataPipelineRun(
+    request: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse>;
+
+  abortDataPipelineRun(
+    request: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
+        request,
+        metadata || {},
+        this.methodInfoAbortDataPipelineRun,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
+    request,
+    metadata || {},
+    this.methodInfoAbortDataPipelineRun);
+  }
+
 }
 

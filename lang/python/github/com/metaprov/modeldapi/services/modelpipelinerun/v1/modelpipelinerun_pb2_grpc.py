@@ -49,6 +49,11 @@ class ModelPipelineRunServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
                 )
+        self.AbortModelPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
+                )
         self.PauseModelPipelineRun = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.SerializeToString,
@@ -106,6 +111,12 @@ class ModelPipelineRunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AbortModelPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def PauseModelPipelineRun(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -155,6 +166,11 @@ def add_ModelPipelineRunServiceServicer_to_server(servicer, server):
                     servicer.DenyModelPipelineRun,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.SerializeToString,
+            ),
+            'AbortModelPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.AbortModelPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.SerializeToString,
             ),
             'PauseModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseModelPipelineRun,
@@ -292,6 +308,23 @@ class ModelPipelineRunService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AbortModelPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
