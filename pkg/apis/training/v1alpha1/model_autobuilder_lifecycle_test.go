@@ -75,7 +75,6 @@ func TestDataSource(t *testing.T) {
 	file := obj.CreateDataSource([]data.Column{})
 	assert.Equal(t, file.Name, "iris")
 	assert.Equal(t, file.Spec.VersionName, "v0.0.1")
-	assert.Equal(t, file.Spec.Type, data.FlatFileDataSource)
 }
 
 func TestDataset(t *testing.T) {

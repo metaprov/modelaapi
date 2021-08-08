@@ -419,7 +419,6 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 	csv := data.FlatFileTypeCsv
 	del := data.DelimiterComma
 	enc := catalog.FileEncodingUtf8
-	tp := data.FlatFileDataSource
 	ds := &data.DataSource{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      b.DatasourceName(),
@@ -430,7 +429,6 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			Schema:      &data.Schema{Columns: columns},
-			Type:        &tp,
 			FlatFile: &data.FlatFileSpec{
 				FileType:     &csv,
 				Delimiter:    &del,
@@ -444,7 +442,6 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 				MaxRows:      nil,
 				Strict:       nil,
 			},
-			Table: nil,
 		},
 	}
 	return ds
