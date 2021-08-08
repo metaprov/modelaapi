@@ -208,15 +208,6 @@ export class InferSchemaRequest extends jspb.Message {
   getTenant(): string;
   setTenant(value: string): InferSchemaRequest;
 
-  getBucket(): string;
-  setBucket(value: string): InferSchemaRequest;
-
-  getKey(): string;
-  setKey(value: string): InferSchemaRequest;
-
-  getSourcetype(): string;
-  setSourcetype(value: string): InferSchemaRequest;
-
   getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
   setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): InferSchemaRequest;
   hasFlatfile(): boolean;
@@ -240,9 +231,6 @@ export namespace InferSchemaRequest {
     name: string,
     namespace: string,
     tenant: string,
-    bucket: string,
-    key: string,
-    sourcetype: string,
     flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
