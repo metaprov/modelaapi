@@ -12593,8 +12593,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.toObje
     product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    sourcetype: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     key: jspb.Message.getFieldWithDefault(msg, 8, "")
@@ -12648,15 +12646,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.deseri
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourcetype(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setBucket(value);
       break;
     case 6:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
@@ -12724,21 +12713,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.serial
       3,
       f,
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
-    );
-  }
-  f = message.getSourcetype();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getBucket();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
   f = message.getConnection();
@@ -12871,61 +12845,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string sourcetype = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getSourcetype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setSourcetype = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getBucket = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.clearBucket = function() {
-  return this.setBucket(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
