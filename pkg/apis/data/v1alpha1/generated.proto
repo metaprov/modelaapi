@@ -25,17 +25,6 @@ message AggregationSpec {
   repeated FeatureAggrSpec aggregations = 2;
 }
 
-message ApiSpec {
-  // URI is the uri of the api
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string topic = 1;
-
-  // Connection refer to a connection object that point to secret
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
-}
-
 message Column {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:MaxLength=63
@@ -957,24 +946,9 @@ message DataSourceSpec {
   // The data source schema
   optional Schema schema = 4;
 
-  // The data source type.
-  optional string type = 5;
-
   // FlatFile access specification
   // +kubebuilder:validation:Optional
   optional FlatFileSpec flatfile = 6;
-
-  // Table access specification if the data source is a table
-  // +kubebuilder:validation:Optional
-  optional TableSpec table = 7;
-
-  // Stream define the specification of the stream
-  // +kubebuilder:validation:Optional
-  optional StreamSpec stream = 8;
-
-  // Api define the specification of the api
-  // +kubebuilder:validation:Optional
-  optional ApiSpec api = 9;
 
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
@@ -2654,33 +2628,6 @@ message StakeHolder {
 
   // The roles assigned to the stake holder
   repeated string roles = 2;
-}
-
-message StreamSpec {
-  // Topic is the stream topic
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string topic = 1;
-
-  // Connection refer to a connection object that point to secret
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 2;
-}
-
-message TableSpec {
-  // The actual query. this is required.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string query = 1;
-
-  // TableName refer to whole table
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string tableName = 2;
-
-  // Connection refer to a connection object that point to secret
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference connectionRef = 3;
 }
 
 message TimeSeriesSchema {

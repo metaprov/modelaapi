@@ -60,7 +60,7 @@ message InferSchemaRequest {
     string key       = 5;
     string sourcetype = 6;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 7;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 8;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 8;
 }
 
 message InferSchemaResponse {

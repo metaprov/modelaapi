@@ -12592,7 +12592,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.toObje
   var f, obj = {
     product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
-    table: (f = msg.getTable()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.toObject(includeInstance, f),
+    location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     sourcetype: jspb.Message.getFieldWithDefault(msg, 4, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
@@ -12645,9 +12645,9 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.deseri
       msg.setFlatfile(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.deserializeBinaryFromReader);
-      msg.setTable(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -12718,12 +12718,12 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.serial
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
     );
   }
-  f = message.getTable();
+  f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
   f = message.getSourcetype();
@@ -12838,20 +12838,20 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec table = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec}
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getTable = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec, 3));
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.TableSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setTable = function(value) {
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.setLocation = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -12860,8 +12860,8 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.clearTable = function() {
-  return this.setTable(undefined);
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
 };
 
 
@@ -12869,7 +12869,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasTable = function() {
+proto.github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

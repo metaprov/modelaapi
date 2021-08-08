@@ -1417,10 +1417,10 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasFlatfile(): boolean;
   clearFlatfile(): DsInferSchemaRequest;
 
-  getTable(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec | undefined;
-  setTable(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec): DsInferSchemaRequest;
-  hasTable(): boolean;
-  clearTable(): DsInferSchemaRequest;
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsInferSchemaRequest;
+  hasLocation(): boolean;
+  clearLocation(): DsInferSchemaRequest;
 
   getSourcetype(): string;
   setSourcetype(value: string): DsInferSchemaRequest;
@@ -1453,7 +1453,7 @@ export namespace DsInferSchemaRequest {
   export type AsObject = {
     product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
-    table?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.TableSpec.AsObject,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     sourcetype: string,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,

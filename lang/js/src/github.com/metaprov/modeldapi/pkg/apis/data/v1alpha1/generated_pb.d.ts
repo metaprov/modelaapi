@@ -31,30 +31,6 @@ export namespace AggregationSpec {
   }
 }
 
-export class ApiSpec extends jspb.Message {
-  getTopic(): string;
-  setTopic(value: string): ApiSpec;
-
-  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ApiSpec;
-  hasConnectionref(): boolean;
-  clearConnectionref(): ApiSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ApiSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ApiSpec): ApiSpec.AsObject;
-  static serializeBinaryToWriter(message: ApiSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ApiSpec;
-  static deserializeBinaryFromReader(message: ApiSpec, reader: jspb.BinaryReader): ApiSpec;
-}
-
-export namespace ApiSpec {
-  export type AsObject = {
-    topic: string,
-    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -1338,28 +1314,10 @@ export class DataSourceSpec extends jspb.Message {
   hasSchema(): boolean;
   clearSchema(): DataSourceSpec;
 
-  getType(): string;
-  setType(value: string): DataSourceSpec;
-
   getFlatfile(): FlatFileSpec | undefined;
   setFlatfile(value?: FlatFileSpec): DataSourceSpec;
   hasFlatfile(): boolean;
   clearFlatfile(): DataSourceSpec;
-
-  getTable(): TableSpec | undefined;
-  setTable(value?: TableSpec): DataSourceSpec;
-  hasTable(): boolean;
-  clearTable(): DataSourceSpec;
-
-  getStream(): StreamSpec | undefined;
-  setStream(value?: StreamSpec): DataSourceSpec;
-  hasStream(): boolean;
-  clearStream(): DataSourceSpec;
-
-  getApi(): ApiSpec | undefined;
-  setApi(value?: ApiSpec): DataSourceSpec;
-  hasApi(): boolean;
-  clearApi(): DataSourceSpec;
 
   getDatasettype(): string;
   setDatasettype(value: string): DataSourceSpec;
@@ -1383,11 +1341,7 @@ export namespace DataSourceSpec {
     versionname: string,
     description: string,
     schema?: Schema.AsObject,
-    type: string,
     flatfile?: FlatFileSpec.AsObject,
-    table?: TableSpec.AsObject,
-    stream?: StreamSpec.AsObject,
-    api?: ApiSpec.AsObject,
     datasettype: string,
     sample?: SampleSpec.AsObject,
   }
@@ -4190,58 +4144,6 @@ export namespace StakeHolder {
   export type AsObject = {
     accountname: string,
     rolesList: Array<string>,
-  }
-}
-
-export class StreamSpec extends jspb.Message {
-  getTopic(): string;
-  setTopic(value: string): StreamSpec;
-
-  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StreamSpec;
-  hasConnectionref(): boolean;
-  clearConnectionref(): StreamSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StreamSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: StreamSpec): StreamSpec.AsObject;
-  static serializeBinaryToWriter(message: StreamSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StreamSpec;
-  static deserializeBinaryFromReader(message: StreamSpec, reader: jspb.BinaryReader): StreamSpec;
-}
-
-export namespace StreamSpec {
-  export type AsObject = {
-    topic: string,
-    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-  }
-}
-
-export class TableSpec extends jspb.Message {
-  getQuery(): string;
-  setQuery(value: string): TableSpec;
-
-  getTablename(): string;
-  setTablename(value: string): TableSpec;
-
-  getConnectionref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setConnectionref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TableSpec;
-  hasConnectionref(): boolean;
-  clearConnectionref(): TableSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TableSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TableSpec): TableSpec.AsObject;
-  static serializeBinaryToWriter(message: TableSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TableSpec;
-  static deserializeBinaryFromReader(message: TableSpec, reader: jspb.BinaryReader): TableSpec;
-}
-
-export namespace TableSpec {
-  export type AsObject = {
-    query: string,
-    tablename: string,
-    connectionref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

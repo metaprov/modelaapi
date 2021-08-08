@@ -211,51 +211,6 @@ type DataSourceCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,6,opt,name=message"`
 }
 
-type TableSpec struct {
-	// The actual query. this is required.
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Query *string `json:"query,omitempty" protobuf:"bytes,1,opt,name=query"`
-	// TableName refer to whole table
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	TableName *string `json:"tableName,omitempty" protobuf:"bytes,2,opt,name=tableName"`
-	// Connection refer to a connection object that point to secret
-	// +kubebuilder:validation:Optional
-	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,3,opt,name=connectionRef"`
-}
-
-type StreamSpec struct {
-	// Topic is the stream topic
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Topic *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
-	// Connection refer to a connection object that point to secret
-	// +kubebuilder:validation:Optional
-	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
-}
-
-type ApiSpec struct {
-	// URI is the uri of the api
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	URI *string `json:"topic,omitempty" protobuf:"bytes,1,opt,name=topic"`
-	// Connection refer to a connection object that point to secret
-	// +kubebuilder:validation:Optional
-	Connection v1.ObjectReference `json:"connectionRef,omitempty" protobuf:"bytes,2,opt,name=connectionRef"`
-}
-
-// the data source type
-// +kubebuilder:validation:Enum="flatfile";"table";"stream";"api"
-type DataSourceType string
-
-const (
-	FlatFileDataSource DataSourceType = "flatfile"
-	TableDataSource    DataSourceType = "table"
-	StreamDataSource   DataSourceType = "stream"
-	ApiDataSource      DataSourceType = "api"
-)
-
 // +kubebuilder:validation:Enum="double-quote";"single-quote";
 type QuoteChar string
 
@@ -610,20 +565,9 @@ type DataSourceSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
 	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
-	// The data source type.
-	Type *DataSourceType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
 	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,6,opt,name=flatfile"`
-	// Table access specification if the data source is a table
-	// +kubebuilder:validation:Optional
-	Table *TableSpec `json:"table,omitempty" protobuf:"bytes,7,opt,name=table"`
-	// Stream define the specification of the stream
-	// +kubebuilder:validation:Optional
-	Stream *StreamSpec `json:"stream,omitempty" protobuf:"bytes,8,opt,name=stream"`
-	// Api define the specification of the api
-	// +kubebuilder:validation:Optional
-	Api *ApiSpec `json:"api,omitempty" protobuf:"bytes,9,opt,name=api"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
