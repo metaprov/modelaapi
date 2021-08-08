@@ -199,14 +199,11 @@ export namespace DeleteDataSourceResponse {
 }
 
 export class InferSchemaRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): InferSchemaRequest;
-
   getNamespace(): string;
   setNamespace(value: string): InferSchemaRequest;
 
-  getTenant(): string;
-  setTenant(value: string): InferSchemaRequest;
+  getName(): string;
+  setName(value: string): InferSchemaRequest;
 
   getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
   setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): InferSchemaRequest;
@@ -228,9 +225,8 @@ export class InferSchemaRequest extends jspb.Message {
 
 export namespace InferSchemaRequest {
   export type AsObject = {
-    name: string,
     namespace: string,
-    tenant: string,
+    name: string,
     flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }

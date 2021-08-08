@@ -1407,10 +1407,10 @@ export namespace DsDatasetProfileResponse {
 }
 
 export class DsInferSchemaRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsInferSchemaRequest;
-  hasProduct(): boolean;
-  clearProduct(): DsInferSchemaRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsInferSchemaRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsInferSchemaRequest;
 
   getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
   setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): DsInferSchemaRequest;
@@ -1430,9 +1430,6 @@ export class DsInferSchemaRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsInferSchemaRequest;
 
-  getKey(): string;
-  setKey(value: string): DsInferSchemaRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsInferSchemaRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsInferSchemaRequest): DsInferSchemaRequest.AsObject;
@@ -1443,12 +1440,11 @@ export class DsInferSchemaRequest extends jspb.Message {
 
 export namespace DsInferSchemaRequest {
   export type AsObject = {
-    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
     location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
-    key: string,
   }
 }
 
