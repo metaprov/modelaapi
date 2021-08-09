@@ -98,13 +98,6 @@ spec:
                       datasetName:
                         default: ""
                         type: string
-                      detectOutliers:
-                        default: false
-                        description: Generate XAI
-                        type: boolean
-                      includeFeatures:
-                        description: Include the features in the results
-                        type: boolean
                       input:
                         description: Input is the location of the input file if not
                           using a dataset
@@ -172,6 +165,10 @@ spec:
                               will be created. if nil, the system will not create
                               the dataset.
                             type: string
+                          detectOutliers:
+                            default: false
+                            description: Detect outlier in the prediction
+                            type: boolean
                           format:
                             default: csv
                             description: Format is the format of the output data
@@ -188,6 +185,9 @@ spec:
                             - spss
                             - auto
                             type: string
+                          includeFeatures:
+                            description: Include the features in the results
+                            type: boolean
                           location:
                             description: Location of the generated data
                             properties:
@@ -229,6 +229,10 @@ spec:
                                   data location
                                 type: string
                             type: object
+                          xai:
+                            default: false
+                            description: Generate XAI
+                            type: boolean
                         type: object
                       owner:
                         default: no-one
@@ -310,10 +314,6 @@ spec:
                         description: A reference to the workload class that is used
                           for training
                         type: string
-                      xai:
-                        default: false
-                        description: Generate XAI
-                        type: boolean
                     type: object
                 required:
                 - spec

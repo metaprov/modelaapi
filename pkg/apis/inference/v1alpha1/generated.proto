@@ -430,20 +430,6 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 11;
 
-  // Include the features in the results
-  // +kubebuilder:validation:Optional
-  optional bool includeFeatures = 12;
-
-  // Generate XAI
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool xai = 13;
-
-  // Generate XAI
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool detectOutliers = 14;
-
   // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional

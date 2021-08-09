@@ -109,17 +109,6 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
-	// Include the features in the results
-	// +kubebuilder:validation:Optional
-	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,12,opt,name=includeFeatures"`
-	// Generate XAI
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	XAI *bool `json:"xai,omitempty" protobuf:"varint,13,opt,name=xai"`
-	// Generate XAI
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,14,opt,name=detectOutliers"`
 	// The priority of this prediction. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional

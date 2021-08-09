@@ -6395,9 +6395,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    includefeatures: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
-    xai: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
-    detectoutliers: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
@@ -6476,18 +6473,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
     case 11:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
-      break;
-    case 12:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludefeatures(value);
-      break;
-    case 13:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setXai(value);
-      break;
-    case 14:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDetectoutliers(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -6591,27 +6576,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
   if (f != null) {
     writer.writeInt64(
       11,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
-  if (f != null) {
-    writer.writeBool(
-      12,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
-  if (f != null) {
-    writer.writeBool(
-      13,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeBool(
-      14,
       f
     );
   }
@@ -6985,114 +6949,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional bool includeFeatures = 12;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getIncludefeatures = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setIncludefeatures = function(value) {
-  return jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearIncludefeatures = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasIncludefeatures = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional bool xai = 13;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getXai = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setXai = function(value) {
-  return jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearXai = function() {
-  return jspb.Message.setField(this, 13, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasXai = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional bool detectOutliers = 14;
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getDetectoutliers = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setDetectoutliers = function(value) {
-  return jspb.Message.setField(this, 14, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearDetectoutliers = function() {
-  return jspb.Message.setField(this, 14, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasDetectoutliers = function() {
-  return jspb.Message.getField(this, 14) != null;
 };
 
 

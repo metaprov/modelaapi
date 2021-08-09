@@ -651,21 +651,6 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 		*out = new(int64)
 		**out = **in
 	}
-	if in.IncludeFeatures != nil {
-		in, out := &in.IncludeFeatures, &out.IncludeFeatures
-		*out = new(bool)
-		**out = **in
-	}
-	if in.XAI != nil {
-		in, out := &in.XAI, &out.XAI
-		*out = new(bool)
-		**out = **in
-	}
-	if in.DetectOutliers != nil {
-		in, out := &in.DetectOutliers, &out.DetectOutliers
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
 		*out = new(catalogv1alpha1.PriorityLevel)

@@ -6849,7 +6849,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.toObje
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     format: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     action: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    createtableifnotexist: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
+    createtableifnotexist: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    includefeatures: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    xai: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    detectoutliers: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6906,6 +6909,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.deseri
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCreatetableifnotexist(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIncludefeatures(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setXai(value);
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDetectoutliers(value);
       break;
     default:
       reader.skipField();
@@ -6969,6 +6984,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.serial
   if (f != null) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
       f
     );
   }
@@ -7153,6 +7189,114 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.protot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasCreatetableifnotexist = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool includeFeatures = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getIncludefeatures = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setIncludefeatures = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearIncludefeatures = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasIncludefeatures = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool xai = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getXai = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setXai = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearXai = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasXai = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool detectOutliers = 8;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.getDetectoutliers = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.setDetectoutliers = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.clearDetectoutliers = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec.prototype.hasDetectoutliers = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

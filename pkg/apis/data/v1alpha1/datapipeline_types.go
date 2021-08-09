@@ -135,6 +135,17 @@ type DataOutputSpec struct {
 	// Create the data source table on the target, if not exist.
 	// +kubebuilder:validation:Optional
 	CreateTableIfNotExist *bool `json:"createTableIfNotExist,omitempty" protobuf:"varint,5,opt,name=createTableIfNotExist"`
+	// Include the features in the results
+	// +kubebuilder:validation:Optional
+	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,6,opt,name=includeFeatures"`
+	// Generate XAI
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	XAI *bool `json:"xai,omitempty" protobuf:"varint,7,opt,name=xai"`
+	// Detect outlier in the prediction
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,8,opt,name=detectOutliers"`
 }
 
 type RecipePartSpec struct {

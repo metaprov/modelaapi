@@ -421,6 +421,15 @@ export class DataOutputSpec extends jspb.Message {
   getCreatetableifnotexist(): boolean;
   setCreatetableifnotexist(value: boolean): DataOutputSpec;
 
+  getIncludefeatures(): boolean;
+  setIncludefeatures(value: boolean): DataOutputSpec;
+
+  getXai(): boolean;
+  setXai(value: boolean): DataOutputSpec;
+
+  getDetectoutliers(): boolean;
+  setDetectoutliers(value: boolean): DataOutputSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataOutputSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataOutputSpec): DataOutputSpec.AsObject;
@@ -436,6 +445,9 @@ export namespace DataOutputSpec {
     format: string,
     action: string,
     createtableifnotexist: boolean,
+    includefeatures: boolean,
+    xai: boolean,
+    detectoutliers: boolean,
   }
 }
 

@@ -85,6 +85,10 @@ spec:
                     description: DatasetName is the name of the dataset that will
                       be created. if nil, the system will not create the dataset.
                     type: string
+                  detectOutliers:
+                    default: false
+                    description: Detect outlier in the prediction
+                    type: boolean
                   format:
                     default: csv
                     description: Format is the format of the output data
@@ -101,6 +105,9 @@ spec:
                     - spss
                     - auto
                     type: string
+                  includeFeatures:
+                    description: Include the features in the results
+                    type: boolean
                   location:
                     description: Location of the generated data
                     properties:
@@ -138,6 +145,10 @@ spec:
                         description: data location type is the type of the data location
                         type: string
                     type: object
+                  xai:
+                    default: false
+                    description: Generate XAI
+                    type: boolean
                 type: object
               owner:
                 default: no-one

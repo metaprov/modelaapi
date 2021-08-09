@@ -678,15 +678,6 @@ export class PredictionSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): PredictionSpec;
 
-  getIncludefeatures(): boolean;
-  setIncludefeatures(value: boolean): PredictionSpec;
-
-  getXai(): boolean;
-  setXai(value: boolean): PredictionSpec;
-
-  getDetectoutliers(): boolean;
-  setDetectoutliers(value: boolean): PredictionSpec;
-
   getPriority(): string;
   setPriority(value: string): PredictionSpec;
 
@@ -710,9 +701,6 @@ export namespace PredictionSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
-    includefeatures: boolean,
-    xai: boolean,
-    detectoutliers: boolean,
     priority: string,
   }
 }

@@ -400,6 +400,20 @@ message DataOutputSpec {
   // Create the data source table on the target, if not exist.
   // +kubebuilder:validation:Optional
   optional bool createTableIfNotExist = 5;
+
+  // Include the features in the results
+  // +kubebuilder:validation:Optional
+  optional bool includeFeatures = 6;
+
+  // Generate XAI
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool xai = 7;
+
+  // Detect outlier in the prediction
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool detectOutliers = 8;
 }
 
 // +kubebuilder:object:root=true
