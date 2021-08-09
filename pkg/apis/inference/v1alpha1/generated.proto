@@ -409,35 +409,44 @@ message PredictionSpec {
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 6;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
+
+  // Output is the location of the output file.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec outputActions = 7;
 
   // Tests is the list of metrics that we need to measure if we are running a labeled prediction
-  repeated string tests = 7;
+  repeated string tests = 8;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 9;
 
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional string workloadClassName = 10;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 11;
 
   // Include the features in the results
   // +kubebuilder:validation:Optional
-  optional bool includeFeatures = 11;
+  optional bool includeFeatures = 12;
 
   // Generate XAI
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool xai = 12;
+  optional bool xai = 13;
+
+  // Generate XAI
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool detectOutliers = 14;
 
   // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium

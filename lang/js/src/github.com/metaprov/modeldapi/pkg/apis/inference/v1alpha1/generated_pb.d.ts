@@ -659,10 +659,15 @@ export class PredictionSpec extends jspb.Message {
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
-  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
+  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
+
+  getOutputactions(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
+  setOutputactions(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
+  hasOutputactions(): boolean;
+  clearOutputactions(): PredictionSpec;
 
   getTestsList(): Array<string>;
   setTestsList(value: Array<string>): PredictionSpec;
@@ -684,6 +689,9 @@ export class PredictionSpec extends jspb.Message {
   getXai(): boolean;
   setXai(value: boolean): PredictionSpec;
 
+  getDetectoutliers(): boolean;
+  setDetectoutliers(value: boolean): PredictionSpec;
+
   getPriority(): string;
   setPriority(value: string): PredictionSpec;
 
@@ -702,13 +710,15 @@ export namespace PredictionSpec {
     labeled: boolean,
     datasetname: string,
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
+    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    outputactions?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
     includefeatures: boolean,
     xai: boolean,
+    detectoutliers: boolean,
     priority: string,
   }
 }

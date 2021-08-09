@@ -93,29 +93,36 @@ type PredictionSpec struct {
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
-	Output *data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
+	// Output is the location of the output file.
+	// +kubebuilder:validation:Optional
+	OutputAction *data.DataOutputSpec `json:"outputActions,omitempty" protobuf:"bytes,7,opt,name=outputActions"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
-	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,7,rep,name=tests"`
+	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,8,rep,name=tests"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 	// A reference to the workload class that is used for training
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
 	// Include the features in the results
 	// +kubebuilder:validation:Optional
-	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,11,opt,name=includeFeatures"`
+	IncludeFeatures *bool `json:"includeFeatures,omitempty" protobuf:"varint,12,opt,name=includeFeatures"`
 	// Generate XAI
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	XAI *bool `json:"xai,omitempty" protobuf:"varint,12,opt,name=xai"`
+	XAI *bool `json:"xai,omitempty" protobuf:"varint,13,opt,name=xai"`
+	// Generate XAI
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	DetectOutliers *bool `json:"detectOutliers,omitempty" protobuf:"varint,14,opt,name=detectOutliers"`
 	// The priority of this prediction. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional

@@ -628,6 +628,11 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	if in.Output != nil {
 		in, out := &in.Output, &out.Output
+		*out = new(datav1alpha1.DataLocation)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.OutputAction != nil {
+		in, out := &in.OutputAction, &out.OutputAction
 		*out = new(datav1alpha1.DataOutputSpec)
 		(*in).DeepCopyInto(*out)
 	}
@@ -658,6 +663,11 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 	}
 	if in.XAI != nil {
 		in, out := &in.XAI, &out.XAI
+		*out = new(bool)
+		**out = **in
+	}
+	if in.DetectOutliers != nil {
+		in, out := &in.DetectOutliers, &out.DetectOutliers
 		*out = new(bool)
 		**out = **in
 	}
