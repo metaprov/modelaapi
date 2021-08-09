@@ -6390,7 +6390,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     labeled: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     datasetname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     input: (f = msg.getInput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    outputactions: (f = msg.getOutputactions()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.toObject(includeInstance, f),
+    output: (f = msg.getOutput()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.toObject(includeInstance, f),
     testsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
@@ -6459,7 +6459,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
     case 7:
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.deserializeBinaryFromReader);
-      msg.setOutputactions(value);
+      msg.setOutput(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -6558,7 +6558,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
-  f = message.getOutputactions();
+  f = message.getOutput();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -6807,10 +6807,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec outputActions = 7;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec output = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getOutputactions = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getOutput = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec, 7));
 };
@@ -6820,7 +6820,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setOutputactions = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setOutput = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -6829,8 +6829,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearOutputactions = function() {
-  return this.setOutputactions(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearOutput = function() {
+  return this.setOutput(undefined);
 };
 
 
@@ -6838,7 +6838,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasOutputactions = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasOutput = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

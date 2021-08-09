@@ -626,8 +626,8 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 		*out = new(datav1alpha1.DataLocation)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.OutputAction != nil {
-		in, out := &in.OutputAction, &out.OutputAction
+	if in.Output != nil {
+		in, out := &in.Output, &out.Output
 		*out = new(datav1alpha1.DataOutputSpec)
 		(*in).DeepCopyInto(*out)
 	}

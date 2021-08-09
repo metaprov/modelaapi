@@ -138,7 +138,7 @@ spec:
                 description: Labeled , true if this is labeled prediction request.
                   Used usually for unit testing
                 type: boolean
-              outputActions:
+              output:
                 description: Output is the location of the output file.
                 properties:
                   action:
