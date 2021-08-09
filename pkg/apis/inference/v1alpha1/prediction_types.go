@@ -93,9 +93,6 @@ type PredictionSpec struct {
 	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
-	Output *data.DataLocation `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
-	// Output is the location of the output file.
-	// +kubebuilder:validation:Optional
 	OutputAction *data.DataOutputSpec `json:"outputActions,omitempty" protobuf:"bytes,7,opt,name=outputActions"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
 	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,8,rep,name=tests"`

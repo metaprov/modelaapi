@@ -659,11 +659,6 @@ export class PredictionSpec extends jspb.Message {
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
-  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
-  hasOutput(): boolean;
-  clearOutput(): PredictionSpec;
-
   getOutputactions(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
   setOutputactions(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
   hasOutputactions(): boolean;
@@ -710,7 +705,6 @@ export namespace PredictionSpec {
     labeled: boolean,
     datasetname: string,
     input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     outputactions?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,
     owner: string,

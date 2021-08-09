@@ -151,46 +151,6 @@ spec:
                         description: Labeled , true if this is labeled prediction
                           request. Used usually for unit testing
                         type: boolean
-                      output:
-                        description: Output is the location of the output file.
-                        properties:
-                          bucketName:
-                            default: ""
-                            description: Bucketname is the name of the bucket
-                            type: string
-                          connectionName:
-                            default: ""
-                            description: ConnectionName is the name of the connection
-                              to access the database
-                            type: string
-                          database:
-                            default: ""
-                            description: Database , the database.
-                            type: string
-                          path:
-                            default: ""
-                            description: Path to the full data file (e.g. csv file).
-                            type: string
-                          sql:
-                            default: ""
-                            description: SQL statement, in case we choose the view
-                              type
-                            type: string
-                          table:
-                            default: ""
-                            description: Sql or table or topic name.
-                            type: string
-                          topic:
-                            default: ""
-                            description: Topic is the name of the topic in case of
-                              streaming
-                            type: string
-                          type:
-                            default: object
-                            description: data location type is the type of the data
-                              location
-                            type: string
-                        type: object
                       outputActions:
                         description: Output is the location of the output file.
                         properties:

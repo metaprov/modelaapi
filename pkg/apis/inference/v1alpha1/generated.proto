@@ -409,10 +409,6 @@ message PredictionSpec {
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation output = 6;
-
-  // Output is the location of the output file.
-  // +kubebuilder:validation:Optional
   optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataOutputSpec outputActions = 7;
 
   // Tests is the list of metrics that we need to measure if we are running a labeled prediction
