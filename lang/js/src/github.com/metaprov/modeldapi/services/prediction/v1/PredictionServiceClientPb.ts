@@ -275,5 +275,45 @@ export class PredictionServiceClient {
     this.methodInfoDownload);
   }
 
+  methodInfoAbort = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse,
+    (request: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse.deserializeBinary
+  );
+
+  abort(
+    request: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse>;
+
+  abort(
+    request: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse>;
+
+  abort(
+    request: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_prediction_v1_prediction_pb.AbortPredictionResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.prediction.v1.PredictionService/Abort',
+        request,
+        metadata || {},
+        this.methodInfoAbort,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.prediction.v1.PredictionService/Abort',
+    request,
+    metadata || {},
+    this.methodInfoAbort);
+  }
+
 }
 

@@ -113,7 +113,11 @@ type PredictionSpec struct {
 	// The priority of this prediction. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,15,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,12,opt,name=priority"`
+	// Aborted is set when we want to abort the prediction
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

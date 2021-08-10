@@ -88,6 +88,10 @@ spec:
                   spec:
                     description: PredictionSpec represent the desired state of Prediction
                     properties:
+                      aborted:
+                        default: false
+                        description: Aborted is set when we want to abort the prediction
+                        type: boolean
                       activeDeadlineSeconds:
                         default: 600
                         description: ActiveDeadlineSeconds is the deadline of a job

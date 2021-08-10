@@ -242,3 +242,39 @@ export namespace DownloadPredictionResponse {
   }
 }
 
+export class AbortPredictionRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): AbortPredictionRequest;
+
+  getName(): string;
+  setName(value: string): AbortPredictionRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AbortPredictionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AbortPredictionRequest): AbortPredictionRequest.AsObject;
+  static serializeBinaryToWriter(message: AbortPredictionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AbortPredictionRequest;
+  static deserializeBinaryFromReader(message: AbortPredictionRequest, reader: jspb.BinaryReader): AbortPredictionRequest;
+}
+
+export namespace AbortPredictionRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class AbortPredictionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AbortPredictionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AbortPredictionResponse): AbortPredictionResponse.AsObject;
+  static serializeBinaryToWriter(message: AbortPredictionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AbortPredictionResponse;
+  static deserializeBinaryFromReader(message: AbortPredictionResponse, reader: jspb.BinaryReader): AbortPredictionResponse;
+}
+
+export namespace AbortPredictionResponse {
+  export type AsObject = {
+  }
+}
+

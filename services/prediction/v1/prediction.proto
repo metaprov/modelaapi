@@ -64,6 +64,16 @@ message DownloadPredictionResponse {
 
 }
 
+message AbortPredictionRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message AbortPredictionResponse {
+    
+
+}
 
 
 
@@ -98,6 +108,11 @@ service PredictionService {
     rpc Download(DownloadPredictionRequest) returns (DownloadPredictionResponse) {
         option (google.api.http).get = "/api/v1alpha1/{namespace}/predictions/{name}:download";
     }
+
+    rpc Abort(AbortPredictionRequest) returns (AbortPredictionResponse) {
+        option (google.api.http).post = "/api/v1alpha1/{namespace}/predictions/{name}:abort";
+    }
+
 
     
 }

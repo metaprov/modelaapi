@@ -681,6 +681,9 @@ export class PredictionSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): PredictionSpec;
 
+  getAborted(): boolean;
+  setAborted(value: boolean): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -702,6 +705,7 @@ export namespace PredictionSpec {
     workloadclassname: string,
     activedeadlineseconds: number,
     priority: string,
+    aborted: boolean,
   }
 }
 

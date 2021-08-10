@@ -433,7 +433,12 @@ message PredictionSpec {
   // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 15;
+  optional string priority = 12;
+
+  // Aborted is set when we want to abort the prediction
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool aborted = 13;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

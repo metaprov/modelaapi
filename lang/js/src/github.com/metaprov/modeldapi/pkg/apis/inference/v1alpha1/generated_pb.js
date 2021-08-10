@@ -6395,7 +6395,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    priority: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
+    priority: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6474,9 +6475,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
-    case 15:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAborted(value);
       break;
     default:
       reader.skipField();
@@ -6579,10 +6584,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
   if (f != null) {
     writer.writeString(
-      15,
+      12,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeBool(
+      13,
       f
     );
   }
@@ -6953,11 +6965,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional string priority = 15;
+ * optional string priority = 12;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -6966,7 +6978,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -6975,7 +6987,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -6984,7 +6996,43 @@ proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool aborted = 13;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getAborted = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setAborted = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearAborted = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasAborted = function() {
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
