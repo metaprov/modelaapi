@@ -137,36 +137,35 @@ const (
 	UnknownTask                   MLTask = "unknown"
 )
 
-// +kubebuilder:validation:Enum="alicloud";"athena";"azure";"big-query";"bitbucket";"cassandra";"digitalocean";"smtp";"gcp";"github";"hetzner";"linode";"mysql";"minio";"mongo-db";"ms-sql-server";"odbc";"oracle";"ovh";"postgres";"presto";"redshift";"aws";"slack";"snowflake";"sqlite";"image-registry";"license";"gitlab";"lm";"openstack";"hipchat";"pagerduty";"pushover";"opengenie";"webook";"victorops";"wechat";"flock";"msteam";"mattermost";"docker-hub";"unknown";
 // ProviderName is the machine learning task name
 type ProviderName string
 
 const (
 	// Databases
-	AmazonAthena     ProviderName = "amazon-athena"
-	GcpBigQuery      ProviderName = "gcp-big-query"
-	ApacheCassandra  ProviderName = "apache-cassandra"
-	AzureSqlDatabase ProviderName = "azure-sql-database"
-	MongoDb          ProviderName = "mongo-db"
+	AmazonAthena     ProviderName = "athena"
+	GcpBigQuery      ProviderName = "bigquery"
+	ApacheCassandra  ProviderName = "cassandra"
+	AzureSqlDatabase ProviderName = "azuresqldatabase"
+	MongoDb          ProviderName = "mongodb"
 	MySql            ProviderName = "mysql"
 	Odbc             ProviderName = "odbc"
 	Oracle           ProviderName = "oracle"
 	Postgres         ProviderName = "postgres"
 	Presto           ProviderName = "presto"
-	AmazonRedshift   ProviderName = "amazon-redshift"
-	ApacheHive       ProviderName = "apache-hive"
+	AmazonRedshift   ProviderName = "redshift"
+	ApacheHive       ProviderName = "hive"
 	Snowflake        ProviderName = "snowflake"
 	Sybase           ProviderName = "sybase"
 	Vertica          ProviderName = "vertica"
 	CockrouchDB      ProviderName = "cockrouchdb"
-	ElasticSearch    ProviderName = "elastic-search"
+	ElasticSearch    ProviderName = "elasticsearch"
 	Informix         ProviderName = "informix"
-	SAPHana          ProviderName = "sap-hana"
+	SAPHana          ProviderName = "hana"
 	Teradata         ProviderName = "teradata"
-	GcpSpanner       ProviderName = "gcp-spanner"
-	ApacheSpark      ProviderName = "apache-spark"
-	MSSqlServer      ProviderName = "ms-sql-server"
-	Clickhouse       ProviderName = "click-house"
+	GcpSpanner       ProviderName = "spanner"
+	ApacheSpark      ProviderName = "spark"
+	MSSqlServer      ProviderName = "mssqlserver"
+	Clickhouse       ProviderName = "clickhouse"
 	Greenplum        ProviderName = "greenplum"
 	Couchbase        ProviderName = "couchbase"
 	Exasol           ProviderName = "exasol"
@@ -184,7 +183,7 @@ const (
 	Openstack    ProviderName = "openstack"
 
 	// Docker Image Registry
-	Dockerhub     ProviderName = "docker-hub"
+	Dockerhub     ProviderName = "dockerhub"
 	ImageRegistry ProviderName = "image-registry"
 
 	// Git Repository
@@ -196,6 +195,7 @@ const (
 	SmtpProvider    ProviderName = "smtp"
 	Slack           ProviderName = "slack"
 	Hipchat         ProviderName = "hipchat"
+	Discord         ProviderName = "discord"
 	PageDuty        ProviderName = "pagerduty"
 	PushOver        ProviderName = "pushover"
 	OpsGenie        ProviderName = "opsgenie"

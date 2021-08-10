@@ -76,13 +76,13 @@ type ConnectionSpec struct {
 	AmazonAthena *AmazonAthenaSpec `json:"athena,omitempty" protobuf:"bytes,5,opt,name=athena"`
 
 	// +kubebuilder:validation:Optional
-	GcpBigQuery *GcpBigQuerySpec `json:"bigQuery,omitempty" protobuf:"bytes,6,opt,name=bigQuery"`
+	GcpBigQuery *GcpBigQuerySpec `json:"bigquery,omitempty" protobuf:"bytes,6,opt,name=bigquery"`
 
 	// +kubebuilder:validation:Optional
 	Cassandra *ApacheCassandraSpec `json:"cassandra,omitempty" protobuf:"bytes,7,opt,name=cassandra"`
 
 	// +kubebuilder:validation:Optional
-	AzureSQLDatabase *AzureSQLDatabaseSpec `json:"azureSqlDatabase,omitempty" protobuf:"bytes,8,opt,name=azureSqlDatabase"`
+	AzureSQLDatabase *AzureSQLDatabaseSpec `json:"azuresqldatabase,omitempty" protobuf:"bytes,8,opt,name=azuresqldatabase"`
 
 	// +kubebuilder:validation:Optional
 	MongoDb *MongoDbSpec `json:"mongodb,omitempty" protobuf:"bytes,9,opt,name=mongodb"`
@@ -118,10 +118,10 @@ type ConnectionSpec struct {
 	Vertica *VerticaSpec `json:"vertica,omitempty" protobuf:"bytes,19,opt,name=vertica"`
 
 	// +kubebuilder:validation:Optional
-	CockroachDB *CockroachDBSpec `json:"cockroachDB,omitempty" protobuf:"bytes,20,opt,name=cockroachDB"`
+	CockroachDB *CockroachDBSpec `json:"cockroachdb,omitempty" protobuf:"bytes,20,opt,name=cockroachdb"`
 
 	// +kubebuilder:validation:Optional
-	ElasticSearch *ElasticSearchSpec `json:"elasticSearch,omitempty" protobuf:"bytes,21,opt,name=elasticSearch"`
+	ElasticSearch *ElasticSearchSpec `json:"elasticsearch,omitempty" protobuf:"bytes,21,opt,name=elasticsearch"`
 
 	// +kubebuilder:validation:Optional
 	Informix *InformixSpec `json:"informix,omitempty" protobuf:"bytes,22,opt,name=informix"`
@@ -160,10 +160,10 @@ type ConnectionSpec struct {
 	// Cloud storage
 
 	// +kubebuilder:validation:Optional
-	AzureStorage *AzureStorageSpec `json:"azureStorage,omitempty" protobuf:"bytes,33,opt,name=azureStorage"`
+	AzureStorage *AzureStorageSpec `json:"azurestorage,omitempty" protobuf:"bytes,33,opt,name=azurestorage"`
 
 	// +kubebuilder:validation:Optional
-	AliCloud *AliCloudSpec `json:"aliCloud,omitempty" protobuf:"bytes,34,opt,name=aliCloud"`
+	AliCloud *AliCloudSpec `json:"alicloud,omitempty" protobuf:"bytes,34,opt,name=alicloud"`
 
 	// +kubebuilder:validation:Optional
 	Bitbucket *BitbucketSpec `json:"bitbuckt,omitempty" protobuf:"bytes,35,opt,name=bitbucket"`
@@ -217,10 +217,10 @@ type ConnectionSpec struct {
 	Hipchat *HipchatSpec `json:"hipchat,omitempty" protobuf:"bytes,52,opt,name=hipchat"`
 
 	// +kubebuilder:validation:Optional
-	VictorOps *VictorOpSpec `json:"victorOp,omitempty" protobuf:"bytes,53,opt,name=victorOp"`
+	VictorOps *VictorOpSpec `json:"victorop,omitempty" protobuf:"bytes,53,opt,name=victorop"`
 
 	// +kubebuilder:validation:Optional
-	PagerDuty *PagerDutySpec `json:"pagerDuty,omitempty" protobuf:"bytes,54,opt,name=pagerDuty"`
+	PagerDuty *PagerDutySpec `json:"pagerduty,omitempty" protobuf:"bytes,54,opt,name=pagerduty"`
 
 	// +kubebuilder:validation:Optional
 	Pushover *PushoverSpec `json:"pushover,omitempty" protobuf:"bytes,55,opt,name=pushover"`
