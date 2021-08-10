@@ -9,6 +9,7 @@ import (
 type PipelinePhase string
 
 const (
+	PipelinePhasePending            PipelinePhase = "Pending"
 	PipelinePhaseTraining           PipelinePhase = "Training"
 	PipelinePhasePublishing         PipelinePhase = "Publishing"
 	PipelinePhaseSmokeTest          PipelinePhase = "SmokeTest"
@@ -247,6 +248,7 @@ type ModelPipelineRunStatus struct {
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,14,opt,name=completionTime"`
 	// The phase of the pipeline run
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase PipelinePhase `json:"phase" protobuf:"bytes,15,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on

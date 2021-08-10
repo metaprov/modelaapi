@@ -9,6 +9,8 @@ import (
 type CompilerPhase string
 
 const (
+	CompilerPhasePending   CompilerPhase = "Pending"
+	CompilerPhaseAborted   CompilerPhase = "Aborted"
 	CompilerPhaseTraining  CompilerPhase = "Training"
 	CompilerPhaseCompleted CompilerPhase = "Completed"
 	CompilerPhaseFailed    CompilerPhase = "Failed"

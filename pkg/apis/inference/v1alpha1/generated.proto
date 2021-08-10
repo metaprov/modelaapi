@@ -445,6 +445,7 @@ message PredictionStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // Phase is the current phase of the prediction
+  // +kubebuilder:default:="Pending"
   optional string phase = 3;
 
   // Results is the results of running the prediction with a labeled dataset

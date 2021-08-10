@@ -12,6 +12,7 @@ import (
 type ModelAutobuilderPhase string
 
 const (
+	ModelAutobuilderPhasePending            ModelAutobuilderPhase = "Pending"
 	ModelAutobuilderPhaseDataSourceRunning  ModelAutobuilderPhase = "DataSourceRunning"
 	ModelAutobuilderPhaseDataSourceReady    ModelAutobuilderPhase = "DataSourceReady"
 	ModelAutobuilderPhaseDatasetRunning     ModelAutobuilderPhase = "DatasetRunning"
@@ -21,6 +22,7 @@ const (
 	ModelAutobuilderPhasePredictorRunning   ModelAutobuilderPhase = "PredictorRunning"
 	ModelAutobuilderPhasePredictorCompleted ModelAutobuilderPhase = "PredictorCompleted"
 	ModelAutobuilderPhaseCompleted          ModelAutobuilderPhase = "Completed"
+	ModelAutobuilderPhaseAborted            ModelAutobuilderPhase = "Aborted"
 	ModelAutobuilderPhaseFailed             ModelAutobuilderPhase = "Failed"
 )
 
@@ -188,6 +190,7 @@ type ModelAutobuilderStatus struct {
 	// the name of the image repository
 	ImageRepoName string `json:"imageRepoName,omitempty" protobuf:"bytes,8,opt,name=imageRepoName"`
 	// The phase of the auto ml run
+	// +kubebuilder:default:="Pending"
 	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,9,opt,name=phase"`
 	// number of rows in the dataset
 	// +kubebuilder:validation:Optional

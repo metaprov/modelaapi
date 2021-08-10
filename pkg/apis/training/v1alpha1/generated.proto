@@ -735,6 +735,7 @@ message ModelAutobuilderStatus {
   optional string imageRepoName = 8;
 
   // The phase of the auto ml run
+  // +kubebuilder:default:="Pending"
   optional string phase = 9;
 
   // number of rows in the dataset
@@ -1156,6 +1157,7 @@ message ModelPipelineRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
 
   // The phase of the pipeline run
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 15;
 
@@ -2559,6 +2561,7 @@ message StudyStatus {
   optional string reportName = 23;
 
   // The phase of the study
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 24;
 

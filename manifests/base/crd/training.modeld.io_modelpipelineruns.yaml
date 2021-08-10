@@ -778,6 +778,7 @@ spec:
                 format: int64
                 type: integer
               phase:
+                default: Pending
                 description: The phase of the pipeline run
                 type: string
               progress:

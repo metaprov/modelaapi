@@ -184,6 +184,7 @@ spec:
                     type: string
                 type: object
               phase:
+                default: Pending
                 description: the phase of the run
                 type: string
               progress:

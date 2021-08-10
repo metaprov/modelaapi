@@ -14,8 +14,10 @@ import (
 type FeautrePipelineRunPhase string
 
 const (
+	FeaturePipelineRunPhasePending   FeautrePipelineRunPhase = "Pending"
 	FeaturePipelineRunPhaseRunning   FeautrePipelineRunPhase = "Running"
 	FeaturePipelineRunPhaseCompleted FeautrePipelineRunPhase = "Completed"
+	FeaturePipelineRunPhaseAborted   FeautrePipelineRunPhase = "Aborted"
 	FeaturePipelineRunPhaseFailed    FeautrePipelineRunPhase = "Failed"
 )
 

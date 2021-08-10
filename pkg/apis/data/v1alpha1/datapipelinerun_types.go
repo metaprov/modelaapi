@@ -14,6 +14,7 @@ import (
 type DataPipelineRunPhase string
 
 const (
+	DataPipelineRunPhasePending   DataPipelineRunPhase = "Pending"
 	DataPipelineRunPhaseRunning   DataPipelineRunPhase = "Running"
 	DataPipelineRunPhaseCompleted DataPipelineRunPhase = "Completed"
 	DataPipelineRunPhaseFailed    DataPipelineRunPhase = "Failed"
@@ -112,6 +113,7 @@ type DataPipelineRunStatus struct {
 	//+kubebuilder:validation:Optional
 	Output DataLocation `json:"output" protobuf:"bytes,2,opt,name=output"`
 	// the phase of the run
+	// +kubebuilder:default:=Pending
 	//+kubebuilder:validation:Optional
 	Phase DataPipelineRunPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// StartTime is the start time of the pipeline

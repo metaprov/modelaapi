@@ -9,8 +9,9 @@ import (
 type DatasetPhase string
 
 const (
+	DatasetPhasePending           DatasetPhase = "Pending"    // when generating
 	DatasetPhaseGenerating        DatasetPhase = "Generating" // when generating
-	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when syntatic gen success
+	DatasetPhaseGenSuccess        DatasetPhase = "GenSuccess" // when syntactic gen success
 	DatasetPhaseIngestRunning     DatasetPhase = "Ingesting"
 	DatasetPhaseIngestSuccess     DatasetPhase = "Ingested"
 	DatasetPhaseReportRunning     DatasetPhase = "Reporting"
@@ -20,6 +21,7 @@ const (
 	DatasetPhaseValidationRunning DatasetPhase = "Validating"
 	DatasetPhaseValidationSuccess DatasetPhase = "Validated"
 	DatasetPhaseFailed            DatasetPhase = "Failed"
+	DatasetPhaseAborted           DatasetPhase = "Aborted"
 	DatasetPhaseReady             DatasetPhase = "Ready"
 )
 
@@ -154,6 +156,7 @@ type DatasetStatus struct {
 	// +kubebuilder:validation:Optional
 	Statistics DatasetStatistics `json:"statistics,omitempty" protobuf:"bytes,1,opt,name=statistics"`
 	// The phase of the dataset processing
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase DatasetPhase `json:"phase,omitempty" protobuf:"bytes,2,opt,name=phase"`
 	// Reference to the report object that was generated for the dataset

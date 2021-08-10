@@ -9,6 +9,7 @@ type RecipeRunPhase string
 
 const (
 	RecipeRunPhasePending RecipeRunPhase = "Pending"
+	RecipeRunPhaseAborted RecipeRunPhase = "Aborted"
 	RecipeRunPhaseRunning RecipeRunPhase = "Running"
 	RecipeRunPhaseSucceed RecipeRunPhase = "Completed"
 	RecipeRunPhaseFailed  RecipeRunPhase = "Failed"
@@ -97,6 +98,7 @@ type RecipeRunStatus struct {
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
 	// The phase of the dataset processing
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase RecipeRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on

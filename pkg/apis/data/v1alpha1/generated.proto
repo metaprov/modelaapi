@@ -553,6 +553,7 @@ message DataPipelineRunStatus {
   optional DataLocation output = 2;
 
   // the phase of the run
+  // +kubebuilder:default:=Pending
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
@@ -1167,6 +1168,7 @@ message DatasetStatus {
   optional DatasetStatistics statistics = 1;
 
   // The phase of the dataset processing
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 2;
 
@@ -2469,6 +2471,7 @@ message RecipeRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // The phase of the dataset processing
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 

@@ -28,9 +28,11 @@ const (
 type NotebookRunPhase string
 
 const (
-	NotebookRunPhaseRunning   NotebookRunPhase = "NotebookRunning"
-	NotebookRunPhaseCompleted NotebookRunPhase = "NotebookCompleted"
-	NotebookRunPhaseFailed    NotebookRunPhase = "NoteobookFailed"
+	NotebookRunPhasePending   NotebookRunPhase = "Pending"
+	NotebookRunPhaseAborted   NotebookRunPhase = "Aborted"
+	NotebookRunPhaseRunning   NotebookRunPhase = "Running"
+	NotebookRunPhaseCompleted NotebookRunPhase = "Completed"
+	NotebookRunPhaseFailed    NotebookRunPhase = "Failed"
 )
 
 // NotebookRunCondition describes the state of a notebook run.

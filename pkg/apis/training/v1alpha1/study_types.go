@@ -449,6 +449,7 @@ type StudyStatus struct {
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,23,opt,name=reportName"`
 	// The phase of the study
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase StudyPhase `json:"phase" protobuf:"bytes,24,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
