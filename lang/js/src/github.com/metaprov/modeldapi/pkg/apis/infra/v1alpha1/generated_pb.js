@@ -16923,7 +16923,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional GcpBigQuerySpec bigQuery = 6;
+ * optional GcpBigQuerySpec bigquery = 6;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getBigquery = function() {
@@ -16997,7 +16997,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional AzureSQLDatabaseSpec azureSqlDatabase = 8;
+ * optional AzureSQLDatabaseSpec azuresqldatabase = 8;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAzuresqldatabase = function() {
@@ -17441,7 +17441,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional CockroachDBSpec cockroachDB = 20;
+ * optional CockroachDBSpec cockroachdb = 20;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getCockroachdb = function() {
@@ -17478,7 +17478,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional ElasticSearchSpec elasticSearch = 21;
+ * optional ElasticSearchSpec elasticsearch = 21;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getElasticsearch = function() {
@@ -17922,7 +17922,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional AzureStorageSpec azureStorage = 33;
+ * optional AzureStorageSpec azurestorage = 33;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAzurestorage = function() {
@@ -17959,7 +17959,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional AliCloudSpec aliCloud = 34;
+ * optional AliCloudSpec alicloud = 34;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAlicloud = function() {
@@ -18625,7 +18625,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional VictorOpSpec victorOp = 53;
+ * optional VictorOpSpec victorop = 53;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getVictorop = function() {
@@ -18662,7 +18662,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional PagerDutySpec pagerDuty = 54;
+ * optional PagerDutySpec pagerduty = 54;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPagerduty = function() {

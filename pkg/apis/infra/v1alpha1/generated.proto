@@ -813,13 +813,13 @@ message ConnectionSpec {
   optional AmazonAthenaSpec athena = 5;
 
   // +kubebuilder:validation:Optional
-  optional GcpBigQuerySpec bigQuery = 6;
+  optional GcpBigQuerySpec bigquery = 6;
 
   // +kubebuilder:validation:Optional
   optional ApacheCassandraSpec cassandra = 7;
 
   // +kubebuilder:validation:Optional
-  optional AzureSQLDatabaseSpec azureSqlDatabase = 8;
+  optional AzureSQLDatabaseSpec azuresqldatabase = 8;
 
   // +kubebuilder:validation:Optional
   optional MongoDbSpec mongodb = 9;
@@ -855,10 +855,10 @@ message ConnectionSpec {
   optional VerticaSpec vertica = 19;
 
   // +kubebuilder:validation:Optional
-  optional CockroachDBSpec cockroachDB = 20;
+  optional CockroachDBSpec cockroachdb = 20;
 
   // +kubebuilder:validation:Optional
-  optional ElasticSearchSpec elasticSearch = 21;
+  optional ElasticSearchSpec elasticsearch = 21;
 
   // +kubebuilder:validation:Optional
   optional InformixSpec informix = 22;
@@ -894,10 +894,10 @@ message ConnectionSpec {
   optional SqliteSpec sqlite = 32;
 
   // +kubebuilder:validation:Optional
-  optional AzureStorageSpec azureStorage = 33;
+  optional AzureStorageSpec azurestorage = 33;
 
   // +kubebuilder:validation:Optional
-  optional AliCloudSpec aliCloud = 34;
+  optional AliCloudSpec alicloud = 34;
 
   // +kubebuilder:validation:Optional
   optional BitbucketSpec bitbucket = 35;
@@ -951,10 +951,10 @@ message ConnectionSpec {
   optional HipchatSpec hipchat = 52;
 
   // +kubebuilder:validation:Optional
-  optional VictorOpSpec victorOp = 53;
+  optional VictorOpSpec victorop = 53;
 
   // +kubebuilder:validation:Optional
-  optional PagerDutySpec pagerDuty = 54;
+  optional PagerDutySpec pagerduty = 54;
 
   // +kubebuilder:validation:Optional
   optional PushoverSpec pushover = 55;

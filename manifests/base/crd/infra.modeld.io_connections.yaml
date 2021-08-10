@@ -58,7 +58,7 @@ spec:
           spec:
             description: ConnectionSpec defines the desired state of Connection
             properties:
-              aliCloud:
+              alicloud:
                 properties:
                   accessKey:
                     default: ""
@@ -112,7 +112,7 @@ spec:
                       are stored in the secret
                     type: string
                 type: object
-              azureSqlDatabase:
+              azuresqldatabase:
                 description: CassandraSpec defines the connection to cassandra
                 properties:
                   database:
@@ -137,7 +137,7 @@ spec:
                     default: ""
                     type: string
                 type: object
-              azureStorage:
+              azurestorage:
                 properties:
                   accessKey:
                     default: ""
@@ -147,7 +147,7 @@ spec:
                     default: ""
                     type: string
                 type: object
-              bigQuery:
+              bigquery:
                 description: BigQuerySpec defines the connection to big query
                 properties:
                   host:
@@ -247,7 +247,7 @@ spec:
                     default: ""
                     type: string
                 type: object
-              cockroachDB:
+              cockroachdb:
                 properties:
                   database:
                     default: ""
@@ -320,7 +320,7 @@ spec:
                     description: Token for digital ocean
                     type: string
                 type: object
-              elasticSearch:
+              elasticsearch:
                 properties:
                   host:
                     default: ""
@@ -713,7 +713,7 @@ spec:
               owner:
                 default: no-one
                 type: string
-              pagerDuty:
+              pagerduty:
                 properties:
                   apiID:
                     default: ""
@@ -778,50 +778,6 @@ spec:
                 type: object
               provider:
                 description: Provider specifies the name api provider (E.g. aws)
-                enum:
-                - alicloud
-                - athena
-                - azure
-                - big-query
-                - bitbucket
-                - cassandra
-                - digitalocean
-                - smtp
-                - gcp
-                - github
-                - hetzner
-                - linode
-                - mysql
-                - minio
-                - mongo-db
-                - ms-sql-server
-                - odbc
-                - oracle
-                - ovh
-                - postgres
-                - presto
-                - redshift
-                - aws
-                - slack
-                - snowflake
-                - sqlite
-                - image-registry
-                - license
-                - gitlab
-                - lm
-                - openstack
-                - hipchat
-                - pagerduty
-                - pushover
-                - opengenie
-                - webook
-                - victorops
-                - wechat
-                - flock
-                - msteam
-                - mattermost
-                - docker-hub
-                - unknown
                 type: string
               pushover:
                 properties:
@@ -1080,7 +1036,7 @@ spec:
                     default: ""
                     type: string
                 type: object
-              victorOp:
+              victorop:
                 properties:
                   apiID:
                     default: ""
