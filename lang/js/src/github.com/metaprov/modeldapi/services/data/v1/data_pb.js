@@ -13079,10 +13079,10 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.proto
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    key: jspb.Message.getFieldWithDefault(msg, 5, "")
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -13125,24 +13125,25 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.deser
       msg.setBucket(value);
       break;
     case 2:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      msg.setFlatfile(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      msg.setLocation(value);
+      break;
+    case 4:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 3:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.deserializeBinaryFromReader);
-      msg.setDatasource(value);
-      break;
-    case 4:
+    case 5:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
       break;
     default:
       reader.skipField();
@@ -13181,32 +13182,33 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.seria
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getConnection();
+  f = message.getFlatfile();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
     );
   }
-  f = message.getDatasource();
+  f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -13249,12 +13251,86 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.proto
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getFlatfile = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.setFlatfile = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.clearFlatfile = function() {
+  return this.setFlatfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.hasFlatfile = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.setLocation = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.clearLocation = function() {
+  return this.setLocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.hasLocation = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 4;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 4));
 };
 
 
@@ -13263,7 +13339,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.proto
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -13281,56 +13357,19 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec datasource = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getDatasource = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.setDatasource = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.clearDatasource = function() {
-  return this.setDatasource(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.hasDatasource = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * map<string, bytes> secret = 4;
+ * map<string, bytes> secret = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
 };
 
@@ -13342,24 +13381,6 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.proto
 proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
-
-
-/**
- * optional string key = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
 
 
 

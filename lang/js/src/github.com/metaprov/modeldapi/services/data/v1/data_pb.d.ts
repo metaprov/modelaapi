@@ -1474,21 +1474,23 @@ export class DsGetTableViewRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsGetTableViewRequest;
 
+  getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
+  setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): DsGetTableViewRequest;
+  hasFlatfile(): boolean;
+  clearFlatfile(): DsGetTableViewRequest;
+
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsGetTableViewRequest;
+  hasLocation(): boolean;
+  clearLocation(): DsGetTableViewRequest;
+
   getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetTableViewRequest;
   hasConnection(): boolean;
   clearConnection(): DsGetTableViewRequest;
 
-  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec | undefined;
-  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec): DsGetTableViewRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): DsGetTableViewRequest;
-
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsGetTableViewRequest;
-
-  getKey(): string;
-  setKey(value: string): DsGetTableViewRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGetTableViewRequest.AsObject;
@@ -1501,10 +1503,10 @@ export class DsGetTableViewRequest extends jspb.Message {
 export namespace DsGetTableViewRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
-    key: string,
   }
 }
 

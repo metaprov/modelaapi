@@ -332,11 +332,12 @@ message DsInferSchemaResponse {
 
 
 message DsGetTableViewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 2;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec     datasource = 3;
-    map<string,bytes> secret =4;
-    string key = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket     bucket     = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec       flatfile   = 2;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation       location   = 3;  
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection        connection = 4;    
+    map<string,bytes> secret = 5;
+    
 }
 
 message DsGetTableViewResponse {
