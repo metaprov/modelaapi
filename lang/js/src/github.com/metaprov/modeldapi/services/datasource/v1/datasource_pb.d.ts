@@ -253,18 +253,15 @@ export namespace InferSchemaResponse {
 }
 
 export class GetTableViewRequest extends jspb.Message {
-  getSource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setSource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetTableViewRequest;
-  hasSource(): boolean;
-  clearSource(): GetTableViewRequest;
+  getFlatfilespec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
+  setFlatfilespec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): GetTableViewRequest;
+  hasFlatfilespec(): boolean;
+  clearFlatfilespec(): GetTableViewRequest;
 
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GetTableViewRequest;
-  hasBucket(): boolean;
-  clearBucket(): GetTableViewRequest;
-
-  getKey(): string;
-  setKey(value: string): GetTableViewRequest;
+  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
+  hasLocation(): boolean;
+  clearLocation(): GetTableViewRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTableViewRequest.AsObject;
@@ -276,9 +273,8 @@ export class GetTableViewRequest extends jspb.Message {
 
 export namespace GetTableViewRequest {
   export type AsObject = {
-    source?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    key: string,
+    flatfilespec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 

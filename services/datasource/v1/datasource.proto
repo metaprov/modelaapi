@@ -65,9 +65,8 @@ message InferSchemaResponse {
 }
 
 message GetTableViewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource     source = 1; // contain the csv or table definition
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2; // contain the csv or table definition
-    string key       = 3; // the key holding the file.
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec   flatfilespec = 1; // contain the csv or table definition
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation   location = 2; // contain the csv or table definition
 }
 
 message GetTableViewResponse {
