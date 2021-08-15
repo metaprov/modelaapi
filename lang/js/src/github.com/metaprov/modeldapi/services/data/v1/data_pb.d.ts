@@ -2380,3 +2380,145 @@ export namespace SaveOptimizerDBResponse {
   }
 }
 
+export class DsGetDatabasesRequest extends jspb.Message {
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetDatabasesRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsGetDatabasesRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGetDatabasesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGetDatabasesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGetDatabasesRequest): DsGetDatabasesRequest.AsObject;
+  static serializeBinaryToWriter(message: DsGetDatabasesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGetDatabasesRequest;
+  static deserializeBinaryFromReader(message: DsGetDatabasesRequest, reader: jspb.BinaryReader): DsGetDatabasesRequest;
+}
+
+export namespace DsGetDatabasesRequest {
+  export type AsObject = {
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class DsGetDatabasesResponse extends jspb.Message {
+  getDatabasesList(): Array<string>;
+  setDatabasesList(value: Array<string>): DsGetDatabasesResponse;
+  clearDatabasesList(): DsGetDatabasesResponse;
+  addDatabases(value: string, index?: number): DsGetDatabasesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGetDatabasesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGetDatabasesResponse): DsGetDatabasesResponse.AsObject;
+  static serializeBinaryToWriter(message: DsGetDatabasesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGetDatabasesResponse;
+  static deserializeBinaryFromReader(message: DsGetDatabasesResponse, reader: jspb.BinaryReader): DsGetDatabasesResponse;
+}
+
+export namespace DsGetDatabasesResponse {
+  export type AsObject = {
+    databasesList: Array<string>,
+  }
+}
+
+export class DsGetTablesRequest extends jspb.Message {
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGetTablesRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsGetTablesRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsGetTablesRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): DsGetTablesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGetTablesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGetTablesRequest): DsGetTablesRequest.AsObject;
+  static serializeBinaryToWriter(message: DsGetTablesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGetTablesRequest;
+  static deserializeBinaryFromReader(message: DsGetTablesRequest, reader: jspb.BinaryReader): DsGetTablesRequest;
+}
+
+export namespace DsGetTablesRequest {
+  export type AsObject = {
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    databasename: string,
+  }
+}
+
+export class DsGetTablesResponse extends jspb.Message {
+  getTablesList(): Array<string>;
+  setTablesList(value: Array<string>): DsGetTablesResponse;
+  clearTablesList(): DsGetTablesResponse;
+  addTables(value: string, index?: number): DsGetTablesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsGetTablesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsGetTablesResponse): DsGetTablesResponse.AsObject;
+  static serializeBinaryToWriter(message: DsGetTablesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsGetTablesResponse;
+  static deserializeBinaryFromReader(message: DsGetTablesResponse, reader: jspb.BinaryReader): DsGetTablesResponse;
+}
+
+export namespace DsGetTablesResponse {
+  export type AsObject = {
+    tablesList: Array<string>,
+  }
+}
+
+export class DsExecuteSqlRequest extends jspb.Message {
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): DsExecuteSqlRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): DsExecuteSqlRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): DsExecuteSqlRequest;
+
+  getSql(): string;
+  setSql(value: string): DsExecuteSqlRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsExecuteSqlRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsExecuteSqlRequest): DsExecuteSqlRequest.AsObject;
+  static serializeBinaryToWriter(message: DsExecuteSqlRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsExecuteSqlRequest;
+  static deserializeBinaryFromReader(message: DsExecuteSqlRequest, reader: jspb.BinaryReader): DsExecuteSqlRequest;
+}
+
+export namespace DsExecuteSqlRequest {
+  export type AsObject = {
+    connectionnamespace: string,
+    connectionname: string,
+    databasename: string,
+    sql: string,
+  }
+}
+
+export class DsExecuteSqlResponse extends jspb.Message {
+  getTableview(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
+  setTableview(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): DsExecuteSqlResponse;
+  hasTableview(): boolean;
+  clearTableview(): DsExecuteSqlResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsExecuteSqlResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsExecuteSqlResponse): DsExecuteSqlResponse.AsObject;
+  static serializeBinaryToWriter(message: DsExecuteSqlResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsExecuteSqlResponse;
+  static deserializeBinaryFromReader(message: DsExecuteSqlResponse, reader: jspb.BinaryReader): DsExecuteSqlResponse;
+}
+
+export namespace DsExecuteSqlResponse {
+  export type AsObject = {
+    tableview?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+  }
+}
+

@@ -174,6 +174,21 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBResponse.FromString,
                 )
+        self.GetDatabases = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesResponse.FromString,
+                )
+        self.GetTables = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesResponse.FromString,
+                )
+        self.ExecuteSql = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.FromString,
+                )
 
 
 class DataServiceServicer(object):
@@ -395,6 +410,24 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDatabases(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTables(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExecuteSql(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -557,6 +590,21 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.SaveOptimizerDB,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBResponse.SerializeToString,
+            ),
+            'GetDatabases': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDatabases,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesResponse.SerializeToString,
+            ),
+            'GetTables': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTables,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesResponse.SerializeToString,
+            ),
+            'ExecuteSql': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExecuteSql,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1109,5 +1157,56 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/SaveOptimizerDB',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.SaveOptimizerDBResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDatabases(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetDatabasesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTables(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsGetTablesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExecuteSql(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -79,6 +79,21 @@ class DatasetServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.FromString,
                 )
+        self.GetDatabases = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatabases',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.FromString,
+                )
+        self.GetTables = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetTables',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.FromString,
+                )
+        self.ExecuteSql = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ExecuteSql',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.FromString,
+                )
 
 
 class DatasetServiceServicer(object):
@@ -166,6 +181,24 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDatabases(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTables(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExecuteSql(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DatasetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -233,6 +266,21 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     servicer.DownloadDataset,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.SerializeToString,
+            ),
+            'GetDatabases': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDatabases,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.SerializeToString,
+            ),
+            'GetTables': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTables,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.SerializeToString,
+            ),
+            'ExecuteSql': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExecuteSql,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -462,5 +510,56 @@ class DatasetService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.DownloadDatasetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDatabases(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatabases',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetDatabasesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTables(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetTables',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.GetTablesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExecuteSql(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ExecuteSql',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataset_dot_v1_dot_dataset__pb2.ExecuteSqlResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

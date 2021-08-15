@@ -1315,5 +1315,125 @@ export class DataServiceClient {
     this.methodInfoSaveOptimizerDB);
   }
 
+  methodInfoGetDatabases = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse.deserializeBinary
+  );
+
+  getDatabases(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse>;
+
+  getDatabases(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse>;
+
+  getDatabases(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetDatabasesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases',
+        request,
+        metadata || {},
+        this.methodInfoGetDatabases,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases',
+    request,
+    metadata || {},
+    this.methodInfoGetDatabases);
+  }
+
+  methodInfoGetTables = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse.deserializeBinary
+  );
+
+  getTables(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse>;
+
+  getTables(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse>;
+
+  getTables(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsGetTablesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables',
+        request,
+        metadata || {},
+        this.methodInfoGetTables,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables',
+    request,
+    metadata || {},
+    this.methodInfoGetTables);
+  }
+
+  methodInfoExecuteSql = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse.deserializeBinary
+  );
+
+  executeSql(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse>;
+
+  executeSql(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse>;
+
+  executeSql(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsExecuteSqlResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql',
+        request,
+        metadata || {},
+        this.methodInfoExecuteSql,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql',
+    request,
+    metadata || {},
+    this.methodInfoExecuteSql);
+  }
+
 }
 

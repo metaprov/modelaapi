@@ -166,6 +166,40 @@ message DownloadDatasetResponse {
     bytes raw = 1;
 }
 
+message GetDatabasesRequest {
+    string connectionNamespace = 1;
+    string connectionName      = 2;        
+}
+
+message GetDatabasesResponse {
+    repeated string databases = 1;
+}
+
+
+message GetTablesRequest {
+    string connectionNamespace = 1;
+    string connectionName      = 2;    
+    string databaseName        = 3;    
+}
+
+message GetTablesResponse {
+    repeated string tables = 1;
+}
+
+message ExecuteSqlRequest {
+    string connectionNamespace = 1;
+    string connectionName      = 2;    
+    string databaseName        = 3;  
+    string sql                 = 4;  
+}
+
+message ExecuteSqlResponse {
+    github.com.metaprov.modeldapi.services.common.v1.TableView tableview = 1;
+}
+
+
+
+
 
 
 service DatasetService {
@@ -230,5 +264,21 @@ service DatasetService {
     rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
         option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:download";
     }
+
+    rpc GetDatabases(GetDatabasesRequest) returns (GetDatabasesResponse) {
+        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:databases";
+    }
+
+    rpc GetTables(GetTablesRequest) returns (GetTablesResponse) {
+        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:tables";
+    }
+
+    rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql";
+    }
+
+
+
+
 
 }

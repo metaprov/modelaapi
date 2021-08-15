@@ -621,3 +621,141 @@ export namespace DownloadDatasetResponse {
   }
 }
 
+export class GetDatabasesRequest extends jspb.Message {
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): GetDatabasesRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): GetDatabasesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatabasesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatabasesRequest): GetDatabasesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDatabasesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatabasesRequest;
+  static deserializeBinaryFromReader(message: GetDatabasesRequest, reader: jspb.BinaryReader): GetDatabasesRequest;
+}
+
+export namespace GetDatabasesRequest {
+  export type AsObject = {
+    connectionnamespace: string,
+    connectionname: string,
+  }
+}
+
+export class GetDatabasesResponse extends jspb.Message {
+  getDatabasesList(): Array<string>;
+  setDatabasesList(value: Array<string>): GetDatabasesResponse;
+  clearDatabasesList(): GetDatabasesResponse;
+  addDatabases(value: string, index?: number): GetDatabasesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDatabasesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDatabasesResponse): GetDatabasesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetDatabasesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDatabasesResponse;
+  static deserializeBinaryFromReader(message: GetDatabasesResponse, reader: jspb.BinaryReader): GetDatabasesResponse;
+}
+
+export namespace GetDatabasesResponse {
+  export type AsObject = {
+    databasesList: Array<string>,
+  }
+}
+
+export class GetTablesRequest extends jspb.Message {
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): GetTablesRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): GetTablesRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): GetTablesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTablesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTablesRequest): GetTablesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetTablesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTablesRequest;
+  static deserializeBinaryFromReader(message: GetTablesRequest, reader: jspb.BinaryReader): GetTablesRequest;
+}
+
+export namespace GetTablesRequest {
+  export type AsObject = {
+    connectionnamespace: string,
+    connectionname: string,
+    databasename: string,
+  }
+}
+
+export class GetTablesResponse extends jspb.Message {
+  getTablesList(): Array<string>;
+  setTablesList(value: Array<string>): GetTablesResponse;
+  clearTablesList(): GetTablesResponse;
+  addTables(value: string, index?: number): GetTablesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTablesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTablesResponse): GetTablesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetTablesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTablesResponse;
+  static deserializeBinaryFromReader(message: GetTablesResponse, reader: jspb.BinaryReader): GetTablesResponse;
+}
+
+export namespace GetTablesResponse {
+  export type AsObject = {
+    tablesList: Array<string>,
+  }
+}
+
+export class ExecuteSqlRequest extends jspb.Message {
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): ExecuteSqlRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): ExecuteSqlRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): ExecuteSqlRequest;
+
+  getSql(): string;
+  setSql(value: string): ExecuteSqlRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSqlRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSqlRequest): ExecuteSqlRequest.AsObject;
+  static serializeBinaryToWriter(message: ExecuteSqlRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSqlRequest;
+  static deserializeBinaryFromReader(message: ExecuteSqlRequest, reader: jspb.BinaryReader): ExecuteSqlRequest;
+}
+
+export namespace ExecuteSqlRequest {
+  export type AsObject = {
+    connectionnamespace: string,
+    connectionname: string,
+    databasename: string,
+    sql: string,
+  }
+}
+
+export class ExecuteSqlResponse extends jspb.Message {
+  getTableview(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
+  setTableview(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): ExecuteSqlResponse;
+  hasTableview(): boolean;
+  clearTableview(): ExecuteSqlResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExecuteSqlResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExecuteSqlResponse): ExecuteSqlResponse.AsObject;
+  static serializeBinaryToWriter(message: ExecuteSqlResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExecuteSqlResponse;
+  static deserializeBinaryFromReader(message: ExecuteSqlResponse, reader: jspb.BinaryReader): ExecuteSqlResponse;
+}
+
+export namespace ExecuteSqlResponse {
+  export type AsObject = {
+    tableview?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+  }
+}
+
