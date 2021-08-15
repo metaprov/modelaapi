@@ -38,7 +38,8 @@ const (
 
 	// infra
 	AccountKind        KindName = "Account"
-	ConnectionKind     KindName = "StorageConnection"
+	ConnectionKind     KindName = "Connection"
+	CommitKind         KindName = "Commit"
 	LabKind            KindName = "Lab"
 	LicenseKind        KindName = "License"
 	NotifierKind       KindName = "Notifier"
