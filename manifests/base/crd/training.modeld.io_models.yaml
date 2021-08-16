@@ -1074,14 +1074,6 @@ spec:
                 description: VersionName is the product version name for this model
                 maxLength: 63
                 type: string
-            required:
-            - datasetName
-            - id
-            - modelVersion
-            - objective
-            - studyName
-            - task
-            - versionName
             type: object
           status:
             description: ModelStatus defines the observed state of the Model

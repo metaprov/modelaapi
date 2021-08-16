@@ -46,16 +46,16 @@ type ModelValidation struct {
 	Type ModelValidationName `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ModelValidationName"`
 	// PrevModel compare to model
 	// +kubebuilder:validation:Optional
-	PrevModel *string `json:"prevModel" protobuf:"bytes,2,opt,name=prevModel"`
+	PrevModel *string `json:"prevModel,omitempty" protobuf:"bytes,2,opt,name=prevModel"`
 	// Labeled dataset used to test the model, when measuring a performance metric
 	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName" protobuf:"bytes,3,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
 	// +kubebuilder:validation:Optional
-	DriftFreq catalog.Freq `json:"driftFreq" protobuf:"bytes,4,opt,name=driftFreq"`
+	DriftFreq catalog.Freq `json:"driftFreq,omitempty" protobuf:"bytes,4,opt,name=driftFreq"`
 	// +kubebuilder:validation:Optional
-	DriftInterval *int32 `json:"driftInterval" protobuf:"bytes,5,opt,name=driftInterval"`
+	DriftInterval *int32 `json:"driftInterval,omitempty" protobuf:"bytes,5,opt,name=driftInterval"`
 	// +kubebuilder:validation:Optional
-	Column *string `json:"column" protobuf:"bytes,6,opt,name=column"`
+	Column *string `json:"column,omitempty" protobuf:"bytes,6,opt,name=column"`
 	// +kubebuilder:validation:Optional
 	Metric *catalog.Metric `json:"metric,omitempty" protobuf:"bytes,7,opt,name=metric"`
 	// +kubebuilder:validation:Optional
@@ -201,29 +201,29 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
-	VersionName *string `json:"versionName" protobuf:"bytes,2,opt,name=versionName"`
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// ID is the generate id of the model. It is assigned to every model within the data product
 	// +kubebuilder:validation:Required
-	ID *int64 `json:"id" protobuf:"varint,3,opt,name=id"`
+	ID *int64 `json:"id,omitempty" protobuf:"varint,3,opt,name=id"`
 	// ModelVersion composed of studyid-modelid.
 	// +kubebuilder:validation:Required
-	ModelVersion *string `json:"modelVersion" protobuf:"bytes,4,opt,name=modelVersion"`
+	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	StudyName *string `json:"studyName" protobuf:"bytes,5,opt,name=studyName"`
+	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
-	DatasetName *string `json:"datasetName" protobuf:"bytes,6,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
 	// +kubebuilder:validation:Required
-	Task *catalog.MLTask `json:"task" protobuf:"bytes,7,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
 	// +kubebuilder:validation:Required
-	Objective *catalog.Metric `json:"objective" protobuf:"bytes,8,opt,name=objective"`
+	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,8,opt,name=objective"`
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
@@ -431,13 +431,13 @@ type ModelStatus struct {
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,38,opt,name=lastError"`
 	// Model Progress in precent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,39,opt,name=progress"`
+	Progress *int32 `json:"progress,omitempty" protobuf:"varint,39,opt,name=progress"`
 	// Size is the maximum model size
 	// +kubebuilder:validation:Optional
-	SizeInBytes int32 `json:"sizeInBytes" protobuf:"varint,40,opt,name=sizeInBytes"`
+	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,40,opt,name=sizeInBytes"`
 	// Prediction Latency
 	// +kubebuilder:validation:Optional
-	Latency float64 `json:"latency" protobuf:"varint,41,opt,name=latency"`
+	Latency float64 `json:"latency,omitempty" protobuf:"varint,41,opt,name=latency"`
 	// The URL to the released version
 	URL string `json:"url,omitempty" protobuf:"bytes,42,opt,name=url"`
 	// If the model is released, this is the name of the predictor
