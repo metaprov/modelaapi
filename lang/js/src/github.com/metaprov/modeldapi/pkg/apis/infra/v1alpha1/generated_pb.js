@@ -20646,7 +20646,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.toOb
     password: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     projectid: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     oauthtype: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    serviceaccountkeypath: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20708,6 +20709,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.dese
       msg.setOauthtype(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServiceaccountkeypath(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
@@ -20786,6 +20791,13 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.seri
   if (f != null) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -21009,10 +21021,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prot
 
 
 /**
- * optional string url = 7;
+ * optional string serviceAccountKeyPath = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.getUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.getServiceaccountkeypath = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -21021,7 +21033,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.setServiceaccountkeypath = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -21030,7 +21042,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.clearUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.clearServiceaccountkeypath = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -21039,8 +21051,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.hasUrl = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.hasServiceaccountkeypath = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string url = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

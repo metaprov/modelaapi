@@ -1093,9 +1093,12 @@ message GcpBigQuerySpec {
   // +kubebuilder:default:=""
   optional string oauthType = 6;
 
+  // +kubebuilder:default:=""
+  optional string serviceAccountKeyPath = 7;
+
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 7;
+  optional string url = 8;
 }
 
 message GcpSpannerSpec {

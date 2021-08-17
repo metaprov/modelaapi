@@ -280,9 +280,11 @@ type GcpBigQuerySpec struct {
 	ProjectID *string `json:"projectID,omitempty" protobuf:"bytes,5,opt,name=projectID"`
 	// +kubebuilder:default:=""
 	OAuthType *string `json:"oauthType,omitempty" protobuf:"bytes,6,opt,name=oauthType"`
+	// +kubebuilder:default:=""
+	ServiceAccountKeyPath *string `json:"serviceAccountKeyPath,omitempty" protobuf:"bytes,7,opt,name=serviceAccountKeyPath"`
 	// URL override the other settings
 	// +kubebuilder:default:=""
-	URL *string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
+	URL *string `json:"url,omitempty" protobuf:"bytes,8,opt,name=url"`
 }
 
 // CassandraSpec defines the connection to cassandra

@@ -1958,6 +1958,9 @@ export class GcpBigQuerySpec extends jspb.Message {
   getOauthtype(): string;
   setOauthtype(value: string): GcpBigQuerySpec;
 
+  getServiceaccountkeypath(): string;
+  setServiceaccountkeypath(value: string): GcpBigQuerySpec;
+
   getUrl(): string;
   setUrl(value: string): GcpBigQuerySpec;
 
@@ -1977,6 +1980,7 @@ export namespace GcpBigQuerySpec {
     password: string,
     projectid: string,
     oauthtype: string,
+    serviceaccountkeypath: string,
     url: string,
   }
 }

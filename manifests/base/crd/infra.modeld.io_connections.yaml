@@ -166,6 +166,9 @@ spec:
                   projectID:
                     default: ""
                     type: string
+                  serviceAccountKeyPath:
+                    default: ""
+                    type: string
                   url:
                     default: ""
                     description: URL override the other settings

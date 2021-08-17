@@ -1892,6 +1892,11 @@ func (in *GcpBigQuerySpec) DeepCopyInto(out *GcpBigQuerySpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ServiceAccountKeyPath != nil {
+		in, out := &in.ServiceAccountKeyPath, &out.ServiceAccountKeyPath
+		*out = new(string)
+		**out = **in
+	}
 	if in.URL != nil {
 		in, out := &in.URL, &out.URL
 		*out = new(string)
