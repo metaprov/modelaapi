@@ -25,10 +25,10 @@ spec:
     - jsonPath: .spec.entityRef.kind
       name: Entity Kind
       type: string
-    - jsonPath: .spec.entityRef.name
+    - jsonPath: .spec.entityRef.namespace
       name: Entity Namespace
       type: string
-    - jsonPath: .spec.entityRef.namespace
+    - jsonPath: .spec.entityRef.name
       name: Entity Name
       type: string
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
