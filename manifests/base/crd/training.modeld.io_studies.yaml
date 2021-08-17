@@ -1006,6 +1006,10 @@ spec:
                     - loocv
                     - stratified
                     type: string
+                  dist:
+                    default: false
+                    description: Dist indicate the training should be be distributed
+                    type: boolean
                   earlyStop:
                     default: false
                     description: Early stopping, stop the training after X models
@@ -1190,6 +1194,15 @@ spec:
                         description: The name of the time column
                         type: string
                     type: object
+                  gpu:
+                    default: false
+                    description: Gpu indicate that training should be done on a gpu.
+                    type: boolean
+                  nodeCount:
+                    default: 1
+                    description: In case of dist node, how many nodes to use.
+                    format: int32
+                    type: integer
                   priority:
                     default: medium
                     description: Priority specify the priority of the model in the

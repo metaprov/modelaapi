@@ -3986,6 +3986,15 @@ export class TrainingSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): TrainingSpec;
 
+  getGpu(): boolean;
+  setGpu(value: boolean): TrainingSpec;
+
+  getDist(): boolean;
+  setDist(value: boolean): TrainingSpec;
+
+  getNodecount(): number;
+  setNodecount(value: number): TrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -4007,6 +4016,9 @@ export namespace TrainingSpec {
     sh?: SuccessiveHalvingSpec.AsObject,
     seed: number,
     workloadclassname: string,
+    gpu: boolean,
+    dist: boolean,
+    nodecount: number,
   }
 }
 

@@ -623,8 +623,8 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 8;
 
-  // The priority of this data pipeline. The defualt is medium.
-  // +kubebuilder:default:=medium
+  // The priority of this data pipeline. The default is medium.
+  // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
   optional string priority = 9;
 

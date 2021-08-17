@@ -161,7 +161,7 @@ spec:
                 type: boolean
               priority:
                 default: medium
-                description: The priority of this data pipeline. The defualt is medium.
+                description: The priority of this data pipeline. The default is medium.
                 enum:
                 - low
                 - medium

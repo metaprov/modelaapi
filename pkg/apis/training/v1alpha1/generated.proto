@@ -1256,7 +1256,7 @@ message ModelPipelineSpec {
   optional string baselineModelName = 18;
 
   // The priority of this pipeline. The default is medium.
-  // +kubebuilder:default:=medium
+  // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
   optional string priority = 30;
 
@@ -2794,6 +2794,21 @@ message TrainingSpec {
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 14;
+
+  // Gpu indicate that training should be done on a gpu.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool gpu = 15;
+
+  // Dist indicate the training should be be distributed
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool dist = 16;
+
+  // In case of dist node, how many nodes to use.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 nodeCount = 17;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

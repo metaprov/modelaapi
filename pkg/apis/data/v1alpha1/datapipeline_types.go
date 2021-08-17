@@ -88,8 +88,8 @@ type DataPipelineSpec struct {
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
-	// The priority of this data pipeline. The defualt is medium.
-	// +kubebuilder:default:=medium
+	// The priority of this data pipeline. The default is medium.
+	// +kubebuilder:default:="medium"
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,9,opt,name=priority"`
 	// Set to true to pause the cron prediction

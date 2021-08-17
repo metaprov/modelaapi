@@ -598,6 +598,18 @@ type TrainingSpec struct {
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
+	// Gpu indicate that training should be done on a gpu.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,15,opt,name=gpu"`
+	// Dist indicate the training should be be distributed
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Dist *bool `json:"dist,omitempty" protobuf:"varint,16,opt,name=dist"`
+	// In case of dist node, how many nodes to use.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,17,opt,name=nodeCount"`
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns

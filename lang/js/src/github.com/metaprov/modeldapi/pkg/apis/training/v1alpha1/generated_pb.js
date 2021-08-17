@@ -39499,7 +39499,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     sh: (f = msg.getSh()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.toObject(includeInstance, f),
     seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
+    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    gpu: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    dist: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+    nodecount: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -39581,6 +39584,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGpu(value);
+      break;
+    case 16:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDist(value);
+      break;
+    case 17:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setNodecount(value);
       break;
     default:
       reader.skipField();
@@ -39687,6 +39702,27 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
   if (f != null) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeBool(
+      15,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeBool(
+      16,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeInt32(
+      17,
       f
     );
   }
@@ -40089,6 +40125,114 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool gpu = 15;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getGpu = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setGpu = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearGpu = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasGpu = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool dist = 16;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getDist = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setDist = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearDist = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasDist = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional int32 nodeCount = 17;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getNodecount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setNodecount = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearNodecount = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasNodecount = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

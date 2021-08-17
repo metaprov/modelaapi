@@ -107,7 +107,7 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:validation:Optional
 	BaselineModelName *string `json:"baselineModelName,omitempty" protobuf:"bytes,18,opt,name=baselineModelName"`
 	// The priority of this pipeline. The default is medium.
-	// +kubebuilder:default:=medium
+	// +kubebuilder:default:="medium"
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,30,opt,name=priority"`
 	// Pause the pipeline cron job.
