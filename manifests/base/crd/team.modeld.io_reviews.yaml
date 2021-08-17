@@ -22,6 +22,15 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
+    - jsonPath: .spec.entityRef.kind
+      name: Entity Kind
+      type: string
+    - jsonPath: .spec.entityRef.name
+      name: Entity Namespace
+      type: string
+    - jsonPath: .spec.entityRef.namespace
+      name: Entity Name
+      type: string
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
