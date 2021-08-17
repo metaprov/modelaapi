@@ -148,10 +148,16 @@ type ModelPipelineRunSpec struct {
 type StageStatusPhase string
 
 const (
-	StageStatusPhaseRunning   StageStatusPhase = "Running"
-	StageStatusPhaseTested    StageStatusPhase = "Tested"
-	StageStatusPhaseCompleted StageStatusPhase = "Completed"
-	StageStatusPhaseFailed    StageStatusPhase = "Failed"
+	StageStatusPhaseRunning            StageStatusPhase = "Running"
+	StageStatusPhaseTraining           StageStatusPhase = "Training"   // search and train for the best model
+	StageStatusPhasePublishing         StageStatusPhase = "Publishing" // publish the model
+	StageStatusPhaseUnitTests          StageStatusPhase = "UnitTesting"
+	StageStatusPhaseReleasing          StageStatusPhase = "Releasing"
+	StageStatusPhaseWaitingForApproval StageStatusPhase = "WaitingForApproval"
+	StageStatusPhaseApproved           StageStatusPhase = "Approved"
+	StageStatusPhaseDenied             StageStatusPhase = "Denied"
+	StageStatusPhaseCompleted          StageStatusPhase = "Completed"
+	StageStatusPhaseFailed             StageStatusPhase = "Failed"
 )
 
 type ModelValidationResult struct {
