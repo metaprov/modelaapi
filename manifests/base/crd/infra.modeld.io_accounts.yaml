@@ -31,8 +31,8 @@ spec:
     - jsonPath: .spec.userName
       name: Username
       type: string
-    - jsonPath: .spec.groupName
-      name: Groupname
+    - jsonPath: .spec.memberOf
+      name: Team
       type: string
     - jsonPath: .spec.phone
       name: Phone
@@ -109,10 +109,6 @@ spec:
                 default: ""
                 description: First FileName is the user first name
                 maxLength: 64
-                type: string
-              groupName:
-                default: ""
-                description: GroupName is a reference to the group account
                 type: string
               labBindings:
                 description: LabBinding is the RBAC roles that the user have within

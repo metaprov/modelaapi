@@ -117,11 +117,6 @@ func (in *AccountSpec) DeepCopyInto(out *AccountSpec) {
 		*out = new(v1.ObjectReference)
 		**out = **in
 	}
-	if in.GroupName != nil {
-		in, out := &in.GroupName, &out.GroupName
-		*out = new(string)
-		**out = **in
-	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(AccountType)

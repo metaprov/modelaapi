@@ -24,7 +24,7 @@ option go_package = "v1alpha1";
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
-// +kubebuilder:printcolumn:name="Groupname",type="string",JSONPath=".spec.groupName",description=""
+// +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -76,11 +76,6 @@ message AccountSpec {
   // TenantRef is the account tenant
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
-
-  // GroupName is a reference to the group account
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string groupName = 2;
 
   // Type is the type of account - user, group. default is user
   // +kubebuilder:default:=user
@@ -189,8 +184,8 @@ message AccountStatus {
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
 // +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
 // +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
-// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
-// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -1226,7 +1221,7 @@ message InformixSpec {
 // Lab is a namespace used for training and data analysis operations.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=labs,singular=lab,categories={infra,modeld,all}
@@ -1629,7 +1624,6 @@ message MySqlSpec {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
-// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description=""
 // +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
 // +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -2224,7 +2218,6 @@ message VictorOpSpec {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
-// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".status.provider",description="cloud provider"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modeld,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem

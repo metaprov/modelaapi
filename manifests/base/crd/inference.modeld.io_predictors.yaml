@@ -31,13 +31,19 @@ spec:
       type: string
     - jsonPath: .spec.servingsiteRef.name
       name: Serving Site
-      type: integer
+      type: string
     - jsonPath: .spec.port
       name: Port
       type: integer
     - jsonPath: .spec.accessType
       name: Access
+      type: string
+    - jsonPath: .spec.replicas
+      name: Replicas
       type: integer
+    - jsonPath: .spec.type
+      name: Type
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date

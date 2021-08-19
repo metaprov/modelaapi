@@ -15106,7 +15106,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
     flatfile: (f = msg.getFlatfile()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject(includeInstance, f),
-    datasettype: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    datasettype: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f)
   };
 
@@ -15161,16 +15161,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Schema.deserializeBinaryFromReader);
       msg.setSchema(value);
       break;
-    case 6:
+    case 5:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
       break;
-    case 17:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasettype(value);
       break;
-    case 18:
+    case 7:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
@@ -15236,22 +15236,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
   f = message.getFlatfile();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeString(
-      17,
+      6,
       f
     );
   }
   f = message.getSample();
   if (f != null) {
     writer.writeMessage(
-      18,
+      7,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
     );
@@ -15405,12 +15405,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
 
 
 /**
- * optional FlatFileSpec flatfile = 6;
+ * optional FlatFileSpec flatfile = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getFlatfile = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec, 6));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec, 5));
 };
 
 
@@ -15419,7 +15419,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setFlatfile = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -15437,16 +15437,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFlatfile = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string datasetType = 17;
+ * optional string datasetType = 6;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getDatasettype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -15455,7 +15455,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setDatasettype = function(value) {
-  return jspb.Message.setField(this, 17, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -15464,7 +15464,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearDatasettype = function() {
-  return jspb.Message.setField(this, 17, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -15473,17 +15473,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasDatasettype = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional SampleSpec sample = 18;
+ * optional SampleSpec sample = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getSample = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec, 18));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.SampleSpec, 7));
 };
 
 
@@ -15492,7 +15492,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setSample = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -15510,7 +15510,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasSample = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

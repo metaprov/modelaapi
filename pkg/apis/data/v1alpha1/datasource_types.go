@@ -536,7 +536,7 @@ type Column struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.datasetType"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modeld,all}
@@ -567,13 +567,13 @@ type DataSourceSpec struct {
 	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,6,opt,name=flatfile"`
+	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,5,opt,name=flatfile"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
-	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,17,opt,name=datasetType"`
+	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,6,opt,name=datasetType"`
 	// Sample spec defines how many rows to use for analysis for datasets from this datasource.
-	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
+	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

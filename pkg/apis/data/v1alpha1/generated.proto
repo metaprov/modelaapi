@@ -901,7 +901,7 @@ message DataProductVersionStatus {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type"
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.datasetType"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modeld,all}
@@ -963,15 +963,15 @@ message DataSourceSpec {
 
   // FlatFile access specification
   // +kubebuilder:validation:Optional
-  optional FlatFileSpec flatfile = 6;
+  optional FlatFileSpec flatfile = 5;
 
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string datasetType = 17;
+  optional string datasetType = 6;
 
   // Sample spec defines how many rows to use for analysis for datasets from this datasource.
-  optional SampleSpec sample = 18;
+  optional SampleSpec sample = 7;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

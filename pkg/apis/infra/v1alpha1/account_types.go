@@ -54,7 +54,7 @@ type AccountCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
-// +kubebuilder:printcolumn:name="Groupname",type="string",JSONPath=".spec.groupName",description=""
+// +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
@@ -79,10 +79,6 @@ type AccountSpec struct {
 	// TenantRef is the account tenant
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
-	// GroupName is a reference to the group account
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	GroupName *string `json:"groupName,omitempty" protobuf:"bytes,2,opt,name=groupName"`
 	// Type is the type of account - user, group. default is user
 	// +kubebuilder:default:=user
 	// +kubebuilder:validation:Optional

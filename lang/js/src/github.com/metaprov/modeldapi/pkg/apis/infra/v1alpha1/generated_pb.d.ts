@@ -129,9 +129,6 @@ export class AccountSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): AccountSpec;
 
-  getGroupname(): string;
-  setGroupname(value: string): AccountSpec;
-
   getType(): string;
   setType(value: string): AccountSpec;
 
@@ -204,7 +201,6 @@ export class AccountSpec extends jspb.Message {
 export namespace AccountSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    groupname: string,
     type: string,
     username: string,
     firstname: string,

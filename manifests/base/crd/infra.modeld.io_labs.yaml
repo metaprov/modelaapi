@@ -24,7 +24,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
       name: Ready
       type: string
-    - jsonPath: .spec.ownerName
+    - jsonPath: .spec.owner
       name: Owner
       type: string
     - jsonPath: .spec.clusterName

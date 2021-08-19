@@ -102,15 +102,15 @@ type ServingSiteStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// active predictors
-	ActivePredictors int32 `json:"activePredictors,omitempty" protobuf:"varint,3,rep,name=activePredictors"`
+	ActivePredictors int32 `json:"activePredictors,omitempty" protobuf:"varint,3,opt,name=activePredictors"`
 	// inactive predictors
-	InactivePredictors int32 `json:"inactivePredictors,omitempty" protobuf:"varint,4,rep,name=inactivePredictors"`
+	InactivePredictors int32 `json:"inactivePredictors,omitempty" protobuf:"varint,4,opt,name=inactivePredictors"`
 	// total predictors service failed
-	TotalPredictorServiceFailed int32 `json:"totalPredictorServiceFailed,omitempty" protobuf:"varint,5,rep,name=totalPredictorServiceFailed"`
+	TotalPredictorServiceFailed int32 `json:"totalPredictorServiceFailed,omitempty" protobuf:"varint,5,opt,name=totalPredictorServiceFailed"`
 	// total predictors with data drift failed
-	TotalPredictorDataDriftFailed int32 `json:"totalPredictorDataDriftFailed,omitempty" protobuf:"varint,6,rep,name=totalPredictorDataDriftFailed"`
+	TotalPredictorDataDriftFailed int32 `json:"totalPredictorDataDriftFailed,omitempty" protobuf:"varint,6,opt,name=totalPredictorDataDriftFailed"`
 	// total predictors accuracy failed
-	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,rep,name=totalPredictorAccuracyFailed"`
+	TotalPredictorAccuracyFailed int32 `json:"totalPredictorAccuracyFailed,omitempty" protobuf:"varint,7,opt,name=totalPredictorAccuracyFailed"`
 	// Last 7 days predictions
 	LastDailyPredictions []int32 `json:"lastDailyPredictions,omitempty" protobuf:"bytes,8,rep,name=lastDailyPredictions"`
 	// +patchMergeKey=type

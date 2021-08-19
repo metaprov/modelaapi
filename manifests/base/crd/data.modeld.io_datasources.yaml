@@ -32,7 +32,7 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
-    - jsonPath: .spec.type
+    - jsonPath: .spec.datasetType
       name: Type
       type: string
     - jsonPath: .metadata.creationTimestamp

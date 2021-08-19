@@ -3928,7 +3928,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    groupname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     firstname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -3989,10 +3988,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.deserial
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setTenantref(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGroupname(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -4101,13 +4096,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.serializ
       1,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
@@ -4270,42 +4258,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasTenantref = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string groupName = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.getGroupname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.setGroupname = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.clearGroupname = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountSpec.prototype.hasGroupname = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
