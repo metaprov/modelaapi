@@ -125,7 +125,7 @@ func (account *Account) Populate(name string) {
 	}
 	ut := User
 	account.Spec = AccountSpec{
-		GroupName: util.StrPtr("team"),
+		MemberOf:  util.StrPtr("team"),
 		Type:      &ut,
 		UserName:  util.StrPtr(name),
 		FirstName: &name,
