@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/publisherd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xbb\n\n\x13PublishModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x81\x01\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry\x12\x17\n\x0fmodelWeightsUri\x18\x10 \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18\x11 \x01(\t\x12\x17\n\x0flabelEncoderUri\x18\x12 \x01(\t\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\")\n\x14PublishModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xf2\x07\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12T\n\x06\x62ucket\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\n \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x12\x17\n\x0fmodelWeightsUri\x18\x0b \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18\x0c \x01(\t\x12\x17\n\x0flabelEncoderUri\x18\r \x01(\t\x12\x13\n\x0bmodelReport\x18\x0e \x01(\x0c\x12\x15\n\rdatasetReport\x18\x0f \x01(\x0c\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x12\n\x10TarModelResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xb1\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse\"\x00\x12\xaa\x01\n\x0fPublishCombined\x12I.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest\x1aJ.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xbb\n\n\x13PublishModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x81\x01\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry\x12\x17\n\x0fmodelWeightsUri\x18\x10 \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18\x11 \x01(\t\x12\x17\n\x0flabelEncoderUri\x18\x12 \x01(\t\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\")\n\x14PublishModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xf8\x07\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12T\n\x06\x62ucket\x18\x08 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\t \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\n \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x12\x17\n\x0fmodelWeightsUri\x18\x0b \x01(\t\x12\x1e\n\x16preprocessorWeightsUri\x18\x0c \x01(\t\x12\x17\n\x0flabelEncoderUri\x18\r \x01(\t\x12\x16\n\x0emodelReportUri\x18\x0e \x01(\t\x12\x18\n\x10\x64\x61tasetReportUri\x18\x0f \x01(\t\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x12\n\x10TarModelResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xb1\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse\"\x00\x12\xaa\x01\n\x0fPublishCombined\x12I.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest\x1aJ.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -577,16 +577,16 @@ _TARMODELREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modelReport', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.modelReport', index=13,
-      number=14, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
+      name='modelReportUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.modelReportUri', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasetReport', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.datasetReport', index=14,
-      number=15, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
+      name='datasetReportUri', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.datasetReportUri', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -603,7 +603,7 @@ _TARMODELREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2160,
-  serialized_end=3170,
+  serialized_end=3176,
 )
 
 
@@ -627,8 +627,8 @@ _TARMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3172,
-  serialized_end=3190,
+  serialized_start=3178,
+  serialized_end=3196,
 )
 
 
@@ -652,8 +652,8 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3192,
-  serialized_end=3209,
+  serialized_start=3198,
+  serialized_end=3215,
 )
 
 
@@ -677,8 +677,8 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3211,
-  serialized_end=3229,
+  serialized_start=3217,
+  serialized_end=3235,
 )
 
 _PUBLISHNOTEBOOKREQUEST_SECRETENTRY.containing_type = _PUBLISHNOTEBOOKREQUEST
@@ -819,8 +819,8 @@ _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3232,
-  serialized_end=3921,
+  serialized_start=3238,
+  serialized_end=3927,
   methods=[
   _descriptor.MethodDescriptor(
     name='PublishTar',

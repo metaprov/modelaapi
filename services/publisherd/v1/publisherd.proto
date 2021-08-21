@@ -63,8 +63,8 @@ message TarModelRequest {
     string    modelWeightsUri        = 11;
     string    preprocessorWeightsUri = 12;
     string    labelEncoderUri        = 13; 
-    bytes     modelReport            = 14;    // the model report
-    bytes     datasetReport          = 15;    // the dataset report
+    string    modelReportUri         = 14;
+    string    datasetReportUri       = 15;    // the dataset report
 }
 
 message TarModelResponse {

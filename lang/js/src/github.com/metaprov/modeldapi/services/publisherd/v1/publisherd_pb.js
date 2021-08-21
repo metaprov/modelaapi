@@ -1701,8 +1701,8 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.toObj
     modelweightsuri: jspb.Message.getFieldWithDefault(msg, 11, ""),
     preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 12, ""),
     labelencoderuri: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    modelreport: msg.getModelreport_asB64(),
-    datasetreport: msg.getDatasetreport_asB64()
+    modelreporturi: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    datasetreporturi: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -1802,12 +1802,12 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.deser
       msg.setLabelencoderuri(value);
       break;
     case 14:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setModelreport(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelreporturi(value);
       break;
     case 15:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setDatasetreport(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetreporturi(value);
       break;
     default:
       reader.skipField();
@@ -1934,16 +1934,16 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.seria
       f
     );
   }
-  f = message.getModelreport_asU8();
+  f = message.getModelreporturi();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       14,
       f
     );
   }
-  f = message.getDatasetreport_asU8();
+  f = message.getDatasetreporturi();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       15,
       f
     );
@@ -2342,86 +2342,38 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
 
 
 /**
- * optional bytes modelReport = 14;
+ * optional string modelReportUri = 14;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelreport = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelreporturi = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
 /**
- * optional bytes modelReport = 14;
- * This is a type-conversion wrapper around `getModelreport()`
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelreport_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getModelreport()));
-};
-
-
-/**
- * optional bytes modelReport = 14;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getModelreport()`
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelreport_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getModelreport()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setModelreport = function(value) {
-  return jspb.Message.setProto3BytesField(this, 14, value);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setModelreporturi = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
 /**
- * optional bytes datasetReport = 15;
+ * optional string datasetReportUri = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getDatasetreport = function() {
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getDatasetreporturi = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
 /**
- * optional bytes datasetReport = 15;
- * This is a type-conversion wrapper around `getDatasetreport()`
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getDatasetreport_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getDatasetreport()));
-};
-
-
-/**
- * optional bytes datasetReport = 15;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getDatasetreport()`
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getDatasetreport_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getDatasetreport()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setDatasetreport = function(value) {
-  return jspb.Message.setProto3BytesField(this, 15, value);
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setDatasetreporturi = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

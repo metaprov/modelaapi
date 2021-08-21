@@ -249,15 +249,11 @@ export class TarModelRequest extends jspb.Message {
   getLabelencoderuri(): string;
   setLabelencoderuri(value: string): TarModelRequest;
 
-  getModelreport(): Uint8Array | string;
-  getModelreport_asU8(): Uint8Array;
-  getModelreport_asB64(): string;
-  setModelreport(value: Uint8Array | string): TarModelRequest;
+  getModelreporturi(): string;
+  setModelreporturi(value: string): TarModelRequest;
 
-  getDatasetreport(): Uint8Array | string;
-  getDatasetreport_asU8(): Uint8Array;
-  getDatasetreport_asB64(): string;
-  setDatasetreport(value: Uint8Array | string): TarModelRequest;
+  getDatasetreporturi(): string;
+  setDatasetreporturi(value: string): TarModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TarModelRequest.AsObject;
@@ -282,8 +278,8 @@ export namespace TarModelRequest {
     modelweightsuri: string,
     preprocessorweightsuri: string,
     labelencoderuri: string,
-    modelreport: Uint8Array | string,
-    datasetreport: Uint8Array | string,
+    modelreporturi: string,
+    datasetreporturi: string,
   }
 }
 
