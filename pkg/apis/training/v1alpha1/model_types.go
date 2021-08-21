@@ -363,6 +363,7 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	Test []catalog.Measurement `json:"test,omitempty" protobuf:"bytes,14,rep,name=test"`
 	// Phase is the phase of the model
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase ModelPhase `json:"phase" protobuf:"bytes,15,opt,name=phase"`
 	// ReportName is a reference to the model report

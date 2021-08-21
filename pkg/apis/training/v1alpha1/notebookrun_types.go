@@ -100,6 +100,7 @@ type NotebookRunSpec struct {
 // NotebookRunStatus define that observed state of NotebookRun resource
 type NotebookRunStatus struct {
 	// The phase of the notebook
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase NotebookRunPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// StartTime is the times that this prediction job started

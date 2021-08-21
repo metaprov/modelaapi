@@ -101,6 +101,7 @@ type AlertSpec struct {
 // AlertStatus is the observed state of a Alert
 type AlertStatus struct {
 	// Phase is the phase of the model
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase AlertPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the alert was fired

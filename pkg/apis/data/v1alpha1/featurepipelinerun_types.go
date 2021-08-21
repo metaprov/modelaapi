@@ -101,6 +101,7 @@ type FeaturePipelineRunStatus struct {
 	//+option
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
 	// The phase of the dataset processing
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase FeautrePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on

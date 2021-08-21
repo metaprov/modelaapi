@@ -179,6 +179,7 @@ type ReportStatus struct {
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
 	// Phase is the phase of the report
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase ReportPhase `json:"phase,omitempty" protobuf:"bytes,4,opt,name=phase"`
 	// URI is the report uri in the bucket

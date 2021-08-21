@@ -104,6 +104,7 @@ type ModelCompilerRunStatus struct {
 	// +kubebuilder:validation:Optional
 	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,14,opt,name=completionTime"`
 	// The phase of the pipeline run
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase CompilerPhase `json:"phase" protobuf:"bytes,15,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on

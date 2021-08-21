@@ -14,6 +14,7 @@ import (
 type LabelingPipelineRunPhase string
 
 const (
+	LabelingPipelineRunPhasePending   LabelingPipelineRunPhase = "Pending"
 	LabelingPipelineRunPhaseRunning   LabelingPipelineRunPhase = "Running"
 	LabelingPipelineRunPhaseCompleted LabelingPipelineRunPhase = "Completed"
 	LabelingPipelineRunPhaseFailed    LabelingPipelineRunPhase = "Failed"
@@ -92,6 +93,7 @@ type LabelingPipelineRunSpec struct {
 // LabelPipelineRunStatus defines the observed state of Label
 type LabelingPipelineRunStatus struct {
 	// The phase of the labeling pipeline run
+	// +kubebuilder:default:="Pending"
 	Phase LabelingPipelineRunPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The Start time of the run
 	StartTime *metav1.Time `json:"startTime" protobuf:"bytes,2,opt,name=startTime"`

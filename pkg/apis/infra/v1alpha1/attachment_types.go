@@ -84,6 +84,7 @@ type AttachmentSpec struct {
 // AttachmentStatus is the observed state of a Attachment
 type AttachmentStatus struct {
 	// Phase is the phase of the model
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase AttachmentPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the alert was fired

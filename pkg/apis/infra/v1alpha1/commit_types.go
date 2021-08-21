@@ -77,6 +77,7 @@ type CommitSpec struct {
 // CommitStatus is the observed state of a Commit
 type CommitStatus struct {
 	// Phase is the phase of the model
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase CommitPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the commit was completed
