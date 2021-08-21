@@ -35,6 +35,46 @@ export class PublisherdServiceClient {
     this.options_ = options;
   }
 
+  methodInfoPublishTar = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse,
+    (request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse.deserializeBinary
+  );
+
+  publishTar(
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
+
+  publishTar(
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
+
+  publishTar(
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar',
+        request,
+        metadata || {},
+        this.methodInfoPublishTar,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar',
+    request,
+    metadata || {},
+    this.methodInfoPublishTar);
+  }
+
   methodInfoPublishCombined = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse,
     (request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest) => {

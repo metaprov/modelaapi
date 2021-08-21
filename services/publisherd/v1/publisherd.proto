@@ -51,6 +51,8 @@ message ShutdownRequest {}
 message ShutdownResponse {}
 
 service PublisherdService {
+    rpc PublishTar(PublishModelRequest) returns (PublishModelResponse) {}
+
     rpc PublishCombined(PublishModelRequest) returns (PublishModelResponse) {}
 
     // Publish a notebook.
