@@ -879,6 +879,7 @@ message ModelCompilerRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
 
   // The phase of the pipeline run
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 15;
 
@@ -1602,6 +1603,7 @@ message ModelStatus {
   repeated github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement test = 14;
 
   // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 15;
 
@@ -1908,6 +1910,7 @@ message NotebookRunSpec {
 // NotebookRunStatus define that observed state of NotebookRun resource
 message NotebookRunStatus {
   // The phase of the notebook
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
@@ -2279,6 +2282,7 @@ message ReportStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
 
   // Phase is the phase of the report
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 4;
 

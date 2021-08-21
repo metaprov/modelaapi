@@ -1598,6 +1598,7 @@ message FeaturePipelineRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
 
   // The phase of the dataset processing
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
@@ -2146,6 +2147,7 @@ message LabelingPipelineRunSpec {
 // LabelPipelineRunStatus defines the observed state of Label
 message LabelingPipelineRunStatus {
   // The phase of the labeling pipeline run
+  // +kubebuilder:default:="Pending"
   optional string phase = 1;
 
   // The Start time of the run

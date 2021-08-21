@@ -258,6 +258,7 @@ message AlertSpec {
 // AlertStatus is the observed state of a Alert
 message AlertStatus {
   // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
@@ -531,6 +532,7 @@ message AttachmentSpec {
 // AttachmentStatus is the observed state of a Attachment
 message AttachmentStatus {
   // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
@@ -724,6 +726,7 @@ message CommitSpec {
 // CommitStatus is the observed state of a Commit
 message CommitStatus {
   // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
