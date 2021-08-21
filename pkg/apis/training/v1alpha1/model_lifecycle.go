@@ -192,6 +192,10 @@ func (model *Model) ReportUri() string {
 	return fmt.Sprintf("%s/model-%s-report.pdf", model.RootUri(), model.Name)
 }
 
+func (model *Model) TarUri() string {
+	return fmt.Sprintf("%s/model.tar.gz", model.RootUri())
+}
+
 func (model *Model) ForecastUri() string {
 	return fmt.Sprintf("%s/model-%s-forecast.csv", model.RootUri(), model.Name)
 }
