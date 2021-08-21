@@ -43,15 +43,40 @@ message PublishModelRequest {
     bool      kaniko                 = 19;
 }
 
+
+
 message PublishModelResponse {
     string ImageName     = 1;
+}
+
+message TarModelRequest {
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model             model               = 3;
+    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study             study               = 4;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
+    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
+    string                                                                     provider            = 7; // the image registry provider
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 9;
+    map<string,bytes>  cloudSecret   = 10; // the image registry login details.
+    string    modelWeightsUri        = 11;
+    string    preprocessorWeightsUri = 12;
+    string    labelEncoderUri        = 13; 
+    bytes     modelReport            = 14;    // the model report
+    bytes     datasetReport          = 15;    // the dataset report
+}
+
+message TarModelResponse {
+
 }
 
 message ShutdownRequest {}
 message ShutdownResponse {}
 
 service PublisherdService {
-    rpc PublishTar(PublishModelRequest) returns (PublishModelResponse) {}
+    // publish tar file including the reports
+    rpc PublishTar(TarModelRequest) returns (TarModelResponse) {}
 
     rpc PublishCombined(PublishModelRequest) returns (PublishModelResponse) {}
 

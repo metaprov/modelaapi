@@ -16,8 +16,8 @@ class PublisherdServiceStub(object):
         """
         self.PublishTar = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.FromString,
                 )
         self.PublishCombined = channel.unary_unary(
                 '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishCombined',
@@ -40,7 +40,8 @@ class PublisherdServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def PublishTar(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """publish tar file including the reports
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -69,8 +70,8 @@ def add_PublisherdServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'PublishTar': grpc.unary_unary_rpc_method_handler(
                     servicer.PublishTar,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.SerializeToString,
             ),
             'PublishCombined': grpc.unary_unary_rpc_method_handler(
                     servicer.PublishCombined,
@@ -109,8 +110,8 @@ class PublisherdService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

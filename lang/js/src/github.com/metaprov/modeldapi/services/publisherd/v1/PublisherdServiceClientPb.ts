@@ -36,28 +36,28 @@ export class PublisherdServiceClient {
   }
 
   methodInfoPublishTar = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse,
-    (request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest) => {
+    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse,
+    (request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse.deserializeBinary
+    github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse.deserializeBinary
   );
 
   publishTar(
-    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse>;
 
   publishTar(
-    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
+               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse>;
 
   publishTar(
-    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    request: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void) {
+               response: github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_pb.TarModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

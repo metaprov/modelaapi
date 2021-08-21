@@ -193,6 +193,114 @@ export namespace PublishModelResponse {
   }
 }
 
+export class TarModelRequest extends jspb.Message {
+  getDataproduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TarModelRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): TarModelRequest;
+
+  getDataproductversion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setDataproductversion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TarModelRequest;
+  hasDataproductversion(): boolean;
+  clearDataproductversion(): TarModelRequest;
+
+  getModel(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): TarModelRequest;
+  hasModel(): boolean;
+  clearModel(): TarModelRequest;
+
+  getStudy(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): TarModelRequest;
+  hasStudy(): boolean;
+  clearStudy(): TarModelRequest;
+
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): TarModelRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): TarModelRequest;
+
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TarModelRequest;
+  hasDataset(): boolean;
+  clearDataset(): TarModelRequest;
+
+  getProvider(): string;
+  setProvider(value: string): TarModelRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TarModelRequest;
+  hasBucket(): boolean;
+  clearBucket(): TarModelRequest;
+
+  getCloudconn(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setCloudconn(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TarModelRequest;
+  hasCloudconn(): boolean;
+  clearCloudconn(): TarModelRequest;
+
+  getCloudsecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearCloudsecretMap(): TarModelRequest;
+
+  getModelweightsuri(): string;
+  setModelweightsuri(value: string): TarModelRequest;
+
+  getPreprocessorweightsuri(): string;
+  setPreprocessorweightsuri(value: string): TarModelRequest;
+
+  getLabelencoderuri(): string;
+  setLabelencoderuri(value: string): TarModelRequest;
+
+  getModelreport(): Uint8Array | string;
+  getModelreport_asU8(): Uint8Array;
+  getModelreport_asB64(): string;
+  setModelreport(value: Uint8Array | string): TarModelRequest;
+
+  getDatasetreport(): Uint8Array | string;
+  getDatasetreport_asU8(): Uint8Array;
+  getDatasetreport_asB64(): string;
+  setDatasetreport(value: Uint8Array | string): TarModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TarModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TarModelRequest): TarModelRequest.AsObject;
+  static serializeBinaryToWriter(message: TarModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TarModelRequest;
+  static deserializeBinaryFromReader(message: TarModelRequest, reader: jspb.BinaryReader): TarModelRequest;
+}
+
+export namespace TarModelRequest {
+  export type AsObject = {
+    dataproduct?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    dataproductversion?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    model?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    provider: string,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    cloudconn?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    cloudsecretMap: Array<[string, Uint8Array | string]>,
+    modelweightsuri: string,
+    preprocessorweightsuri: string,
+    labelencoderuri: string,
+    modelreport: Uint8Array | string,
+    datasetreport: Uint8Array | string,
+  }
+}
+
+export class TarModelResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TarModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TarModelResponse): TarModelResponse.AsObject;
+  static serializeBinaryToWriter(message: TarModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TarModelResponse;
+  static deserializeBinaryFromReader(message: TarModelResponse, reader: jspb.BinaryReader): TarModelResponse;
+}
+
+export namespace TarModelResponse {
+  export type AsObject = {
+  }
+}
+
 export class ShutdownRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShutdownRequest.AsObject;
