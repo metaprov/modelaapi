@@ -2307,6 +2307,9 @@ export class ModelStatus extends jspb.Message {
   getReportname(): string;
   setReportname(value: string): ModelStatus;
 
+  getReporturi(): string;
+  setReporturi(value: string): ModelStatus;
+
   getManifesturi(): string;
   setManifesturi(value: string): ModelStatus;
 
@@ -2428,6 +2431,7 @@ export namespace ModelStatus {
     testList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     phase: string,
     reportname: string,
+    reporturi: string,
     manifesturi: string,
     weightsuri: string,
     labelsencoderuri: string,

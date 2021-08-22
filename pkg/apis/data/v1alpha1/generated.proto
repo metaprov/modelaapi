@@ -1106,7 +1106,7 @@ message DatasetSpec {
   // Syntactic indicates if we want to generate this dataset based on the data source
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool syntatic = 11;
+  optional bool syntactic = 11;
 
   // If syntactic is true, indicates how many rows to generate
   // +kubebuilder:default:=0
@@ -1176,21 +1176,25 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional string reportName = 3;
 
+  // ReportURI is the uri of dataset report
+  // +kubebuilder:validation:Optional
+  optional string reportUri = 4;
+
   // A reference to the visualization uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 4;
+  optional string profileUri = 5;
 
   // Based on the actual data, treat this dataset as imbalanced.
   // +kubebuilder:validation:Optional
-  optional bool imbalanced = 5;
+  optional bool imbalanced = 6;
 
   // Sha256 sig of the files
   // +kubebuilder:validation:Optional
-  optional Signatures sigs = 6;
+  optional Signatures sigs = 7;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 7;
+  optional int64 observedGeneration = 8;
 
   // List of data problems, as reported by the validation process
   // +kubebuilder:validation:Optional

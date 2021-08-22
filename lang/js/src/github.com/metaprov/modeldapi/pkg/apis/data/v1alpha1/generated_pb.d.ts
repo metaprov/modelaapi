@@ -1549,8 +1549,8 @@ export class DatasetSpec extends jspb.Message {
   getLabeled(): boolean;
   setLabeled(value: boolean): DatasetSpec;
 
-  getSyntatic(): boolean;
-  setSyntatic(value: boolean): DatasetSpec;
+  getSyntactic(): boolean;
+  setSyntactic(value: boolean): DatasetSpec;
 
   getSyntacticrows(): number;
   setSyntacticrows(value: number): DatasetSpec;
@@ -1596,7 +1596,7 @@ export namespace DatasetSpec {
     reported: boolean,
     validate: boolean,
     labeled: boolean,
-    syntatic: boolean,
+    syntactic: boolean,
     syntacticrows: number,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
@@ -1651,6 +1651,9 @@ export class DatasetStatus extends jspb.Message {
   getReportname(): string;
   setReportname(value: string): DatasetStatus;
 
+  getReporturi(): string;
+  setReporturi(value: string): DatasetStatus;
+
   getProfileuri(): string;
   setProfileuri(value: string): DatasetStatus;
 
@@ -1699,6 +1702,7 @@ export namespace DatasetStatus {
     statistics?: DatasetStatistics.AsObject,
     phase: string,
     reportname: string,
+    reporturi: string,
     profileuri: string,
     imbalanced: boolean,
     sigs?: Signatures.AsObject,

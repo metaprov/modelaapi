@@ -1268,6 +1268,9 @@ spec:
               reportName:
                 description: ReportName is a reference to the model report
                 type: string
+              reportUri:
+                description: ReportURI is the uri of report
+                type: string
               resourceConsumed:
                 description: ResourceConsumed is the avg resource consumed during
                   the training of the model

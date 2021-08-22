@@ -17058,7 +17058,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     reported: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     validate: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
     labeled: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
-    syntatic: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+    syntactic: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     syntacticrows: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     origin: (f = msg.getOrigin()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
@@ -17132,7 +17132,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       break;
     case 11:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSyntatic(value);
+      msg.setSyntactic(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readInt32());
@@ -17558,10 +17558,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional bool syntatic = 11;
+ * optional bool syntactic = 11;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getSyntatic = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getSyntactic = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
@@ -17570,7 +17570,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setSyntatic = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setSyntactic = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -17579,7 +17579,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearSyntatic = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearSyntactic = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -17588,7 +17588,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasSyntatic = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasSyntactic = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
@@ -18194,10 +18194,11 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     statistics: (f = msg.getStatistics()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatistics.toObject(includeInstance, f),
     phase: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     reportname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    profileuri: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    imbalanced: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    reporturi: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    profileuri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    imbalanced: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     sigs: (f = msg.getSigs()) && proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures.toObject(includeInstance, f),
-    observedgeneration: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     validationresultsList: jspb.Message.toObjectList(msg.getValidationresultsList(),
     proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult.toObject, includeInstance),
     laststudytime: (f = msg.getLaststudytime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -18256,18 +18257,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProfileuri(value);
+      msg.setReporturi(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfileuri(value);
+      break;
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setImbalanced(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures.deserializeBinaryFromReader);
       msg.setSigs(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
       break;
@@ -18352,25 +18357,32 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeBool(
-      5,
+      6,
       f
     );
   }
   f = message.getSigs();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
   if (f != null) {
     writer.writeInt64(
-      7,
+      8,
       f
     );
   }
@@ -18525,10 +18537,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * optional string profileUri = 4;
+ * optional string reportUri = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getProfileuri = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getReporturi = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -18537,7 +18549,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setProfileuri = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setReporturi = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -18546,7 +18558,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearProfileuri = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearReporturi = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -18555,25 +18567,25 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasProfileuri = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasReporturi = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool imbalanced = 5;
- * @return {boolean}
+ * optional string profileUri = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getImbalanced = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getProfileuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setImbalanced = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setProfileuri = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -18582,7 +18594,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearImbalanced = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearProfileuri = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -18591,18 +18603,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasImbalanced = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasProfileuri = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional Signatures sigs = 6;
+ * optional bool imbalanced = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getImbalanced = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setImbalanced = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearImbalanced = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasImbalanced = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional Signatures sigs = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getSigs = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures, 6));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Signatures, 7));
 };
 
 
@@ -18611,7 +18659,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setSigs = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -18629,16 +18677,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasSigs = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int64 observedGeneration = 7;
+ * optional int64 observedGeneration = 8;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getObservedgeneration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -18647,7 +18695,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setObservedgeneration = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -18656,7 +18704,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearObservedgeneration = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -18665,7 +18713,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasObservedgeneration = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

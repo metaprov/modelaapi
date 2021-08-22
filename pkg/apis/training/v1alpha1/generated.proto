@@ -1611,73 +1611,77 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string reportName = 16;
 
+  // ReportURI is the uri of report
+  // +kubebuilder:validation:Optional
+  optional string reportUri = 17;
+
   // ManifestUri is the URI of the manifest in the product bucket.
   // +kubebuilder:validation:Optional
-  optional string manifestUri = 17;
+  optional string manifestUri = 18;
 
   // WeightsUri is the URI of the model binary file.
   // +kubebuilder:validation:Optional
-  optional string weightsUri = 18;
+  optional string weightsUri = 19;
 
   // LabelEncoderUri is the URI of the label encoder binary file, if there is one.
   // +kubebuilder:validation:Optional
-  optional string labelsEncoderUri = 19;
+  optional string labelsEncoderUri = 20;
 
   // LogsUri is the URI of the log file
   // +kubebuilder:validation:Optional
-  optional string logsUri = 20;
+  optional string logsUri = 21;
 
   // ProfileUri is a reference to the visualization uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 21;
+  optional string profileUri = 22;
 
   // MisclassUri is a reference to the mis-classification file which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string misclassUri = 22;
+  optional string misclassUri = 23;
 
   // ImageName is the image name of the model
   // +kubebuilder:validation:Optional
-  optional string imageName = 23;
+  optional string imageName = 24;
 
   // +kubebuilder:validation:Optional
   // Importance is list of feature importance based on the alg of this model, sorted by importance
-  repeated FeatureImportance importance = 24;
+  repeated FeatureImportance importance = 25;
 
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 25;
+  optional string forecastUri = 26;
 
   // Python version is the result of python vewrsion call.
   // +kubebuilder:validation:Optional
-  optional string pythonVersion = 26;
+  optional string pythonVersion = 27;
 
   // Python packages is the result of running pip freeze
   // +kubebuilder:validation:Optional
-  map<string, string> pythonPackages = 27;
+  map<string, string> pythonPackages = 28;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 28;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 29;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 29;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 30;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 30;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 31;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption resourceConsumed = 31;
+  optional ResourceConsumption resourceConsumed = 32;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 32;
+  optional int64 observedGeneration = 33;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 35;
+  optional int32 trainingRows = 34;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional

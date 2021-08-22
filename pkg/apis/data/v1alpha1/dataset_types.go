@@ -121,7 +121,7 @@ type DatasetSpec struct {
 	// Syntactic indicates if we want to generate this dataset based on the data source
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Syntactic *bool `json:"syntatic,omitempty" protobuf:"varint,11,opt,name=syntatic"`
+	Syntactic *bool `json:"syntactic,omitempty" protobuf:"varint,11,opt,name=syntactic"`
 	// If syntactic is true, indicates how many rows to generate
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -162,19 +162,21 @@ type DatasetStatus struct {
 	// Reference to the report object that was generated for the dataset
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,3,opt,name=reportName"`
+	// ReportURI is the uri of dataset report
+	// +kubebuilder:validation:Optional
+	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,4,opt,name=reportUri"`
 	// A reference to the visualization uri which were produce during processing
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,4,opt,name=profileUri"`
+	ProfileUri string `json:"profileUri" protobuf:"bytes,5,opt,name=profileUri"`
 	// Based on the actual data, treat this dataset as imbalanced.
 	//+kubebuilder:validation:Optional
-	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,5,opt,name=imbalanced"`
+	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
 	// Sha256 sig of the files
 	//+kubebuilder:validation:Optional
-	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,6,opt,name=sigs"`
+	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,7,opt,name=sigs"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,7,opt,name=observedGeneration"`
-
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
 	// List of data problems, as reported by the validation process
 	//+kubebuilder:validation:Optional
 	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,9,rep,name=validationResults"`

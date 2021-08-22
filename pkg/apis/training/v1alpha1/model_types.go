@@ -369,57 +369,60 @@ type ModelStatus struct {
 	// ReportName is a reference to the model report
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,16,opt,name=reportName"`
+	// ReportURI is the uri of report
+	// +kubebuilder:validation:Optional
+	ReportUri string `json:"reportUri,omitempty" protobuf:"bytes,17,opt,name=reportUri"`
 	// ManifestUri is the URI of the manifest in the product bucket.
 	// +kubebuilder:validation:Optional
-	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,17,opt,name=manifestUri"`
+	ManifestUri string `json:"manifestUri,omitempty" protobuf:"bytes,18,opt,name=manifestUri"`
 	// WeightsUri is the URI of the model binary file.
 	// +kubebuilder:validation:Optional
-	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,18,opt,name=weightsUri"`
+	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,19,opt,name=weightsUri"`
 	// LabelEncoderUri is the URI of the label encoder binary file, if there is one.
 	// +kubebuilder:validation:Optional
-	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,19,opt,name=labelsEncoderUri"`
+	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,20,opt,name=labelsEncoderUri"`
 	// LogsUri is the URI of the log file
 	// +kubebuilder:validation:Optional
-	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,20,opt,name=logsUri"`
+	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,21,opt,name=logsUri"`
 	// ProfileUri is a reference to the visualization uri which were produce during processing
 	// +kubebuilder:validation:Optional
-	ProfileUri string `json:"profileUri" protobuf:"bytes,21,opt,name=profileUri"`
+	ProfileUri string `json:"profileUri" protobuf:"bytes,22,opt,name=profileUri"`
 	// MisclassUri is a reference to the mis-classification file which were produce during processing
 	// +kubebuilder:validation:Optional
-	MisclassUri string `json:"misclassUri" protobuf:"bytes,22,opt,name=misclassUri"`
+	MisclassUri string `json:"misclassUri" protobuf:"bytes,23,opt,name=misclassUri"`
 	// ImageName is the image name of the model
 	// +kubebuilder:validation:Optional
-	ImageName string `json:"imageName" protobuf:"bytes,23,opt,name=imageName"`
+	ImageName string `json:"imageName" protobuf:"bytes,24,opt,name=imageName"`
 	// +kubebuilder:validation:Optional
 	// Importance is list of feature importance based on the alg of this model, sorted by importance
-	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,24,rep,name=importance"`
+	Importance []FeatureImportance `json:"importance,,omitempty" protobuf:"bytes,25,rep,name=importance"`
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
-	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,25,opt,name=forecastUri"`
+	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,26,opt,name=forecastUri"`
 	// Python version is the result of python vewrsion call.
 	// +kubebuilder:validation:Optional
-	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,26,opt,name=pythonVersion"`
+	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,27,opt,name=pythonVersion"`
 	// Python packages is the result of running pip freeze
 	// +kubebuilder:validation:Optional
-	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,27,opt,name=pythonPackages"`
+	PythonPackages map[string]string `json:"pythonPackages,omitempty" protobuf:"bytes,28,opt,name=pythonPackages"`
 	// TrainDatasetLocation is the location of the train dataset
 	// +kubebuilder:validation:Optional
-	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,28,opt,name=trainDataset"`
+	TrainDatasetLocation data.DataLocation `json:"trainDataset,omitempty" protobuf:"bytes,29,opt,name=trainDataset"`
 	// TestDatasetLocation is the location of the test dataset used to test this model
 	// +kubebuilder:validation:Optional
-	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,29,opt,name=testDataset"`
+	TestDatasetLocation data.DataLocation `json:"testDataset,omitempty" protobuf:"bytes,30,opt,name=testDataset"`
 	// ValidationDatasetLocation is the location of the dataset used for validation
 	// +kubebuilder:validation:Optional
-	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,30,opt,name=validationDataset"`
+	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,31,opt,name=validationDataset"`
 	//ResourceConsumed is the avg resource consumed during the training of the model
 	// +kubebuilder:validation:Optional
-	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,31,opt,name=resourceConsumed"`
+	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,32,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,32,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,33,opt,name=observedGeneration"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
-	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,35,opt,name=trainingRows"`
+	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,34,opt,name=trainingRows"`
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
 	TestingRows *int32 `json:"testingRows" protobuf:"varint,36,opt,name=testingRows"`

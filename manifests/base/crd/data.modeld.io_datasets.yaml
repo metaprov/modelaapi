@@ -214,16 +214,16 @@ spec:
                     - stratified
                     type: string
                 type: object
+              syntactic:
+                default: false
+                description: Syntactic indicates if we want to generate this dataset
+                  based on the data source
+                type: boolean
               syntacticRows:
                 default: 0
                 description: If syntactic is true, indicates how many rows to generate
                 format: int32
                 type: integer
-              syntatic:
-                default: false
-                description: Syntactic indicates if we want to generate this dataset
-                  based on the data source
-                type: boolean
               type:
                 default: tabular
                 description: DatasetType is the type of dataset
@@ -312,6 +312,9 @@ spec:
               reportName:
                 description: Reference to the report object that was generated for
                   the dataset
+                type: string
+              reportUri:
+                description: ReportURI is the uri of dataset report
                 type: string
               sigs:
                 description: Sha256 sig of the files
