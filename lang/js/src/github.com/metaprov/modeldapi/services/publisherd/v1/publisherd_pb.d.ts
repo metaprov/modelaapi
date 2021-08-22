@@ -131,15 +131,6 @@ export class PublishModelRequest extends jspb.Message {
   getDockerregistrysecretMap(): jspb.Map<string, Uint8Array | string>;
   clearDockerregistrysecretMap(): PublishModelRequest;
 
-  getModelweightsuri(): string;
-  setModelweightsuri(value: string): PublishModelRequest;
-
-  getPreprocessorweightsuri(): string;
-  setPreprocessorweightsuri(value: string): PublishModelRequest;
-
-  getLabelencoderuri(): string;
-  setLabelencoderuri(value: string): PublishModelRequest;
-
   getKaniko(): boolean;
   setKaniko(value: boolean): PublishModelRequest;
 
@@ -168,9 +159,6 @@ export namespace PublishModelRequest {
     cloudsecretMap: Array<[string, Uint8Array | string]>,
     dockerconnection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     dockerregistrysecretMap: Array<[string, Uint8Array | string]>,
-    modelweightsuri: string,
-    preprocessorweightsuri: string,
-    labelencoderuri: string,
     kaniko: boolean,
   }
 }
@@ -224,9 +212,6 @@ export class TarModelRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): TarModelRequest;
 
-  getProvider(): string;
-  setProvider(value: string): TarModelRequest;
-
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TarModelRequest;
   hasBucket(): boolean;
@@ -239,21 +224,6 @@ export class TarModelRequest extends jspb.Message {
 
   getCloudsecretMap(): jspb.Map<string, Uint8Array | string>;
   clearCloudsecretMap(): TarModelRequest;
-
-  getModelweightsuri(): string;
-  setModelweightsuri(value: string): TarModelRequest;
-
-  getPreprocessorweightsuri(): string;
-  setPreprocessorweightsuri(value: string): TarModelRequest;
-
-  getLabelencoderuri(): string;
-  setLabelencoderuri(value: string): TarModelRequest;
-
-  getModelreporturi(): string;
-  setModelreporturi(value: string): TarModelRequest;
-
-  getDatasetreporturi(): string;
-  setDatasetreporturi(value: string): TarModelRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TarModelRequest.AsObject;
@@ -271,19 +241,16 @@ export namespace TarModelRequest {
     study?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    provider: string,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     cloudconn?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     cloudsecretMap: Array<[string, Uint8Array | string]>,
-    modelweightsuri: string,
-    preprocessorweightsuri: string,
-    labelencoderuri: string,
-    modelreporturi: string,
-    datasetreporturi: string,
   }
 }
 
 export class TarModelResponse extends jspb.Message {
+  getTaruri(): string;
+  setTaruri(value: string): TarModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TarModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TarModelResponse): TarModelResponse.AsObject;
@@ -294,6 +261,7 @@ export class TarModelResponse extends jspb.Message {
 
 export namespace TarModelResponse {
   export type AsObject = {
+    taruri: string,
   }
 }
 

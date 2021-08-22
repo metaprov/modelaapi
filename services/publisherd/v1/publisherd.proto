@@ -36,10 +36,7 @@ message PublishModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 12;
     map<string,bytes>  cloudSecret   = 13; // the image registry login details.
     github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           dockerConnection   = 14;
-    map<string,bytes>  dockerRegistrySecret    = 15; // the image registry login details.
-    string    modelWeightsUri        = 16;
-    string    preprocessorWeightsUri = 17;
-    string    labelEncoderUri        = 18;
+    map<string,bytes>  dockerRegistrySecret    = 15; // the image registry login details.    
     bool      kaniko                 = 19;
 }
 
@@ -56,19 +53,13 @@ message TarModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study             study               = 4;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
-    string                                                                     provider            = 7; // the image registry provider
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 8;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 9;
-    map<string,bytes>  cloudSecret   = 10; // the image registry login details.
-    string    modelWeightsUri        = 11;
-    string    preprocessorWeightsUri = 12;
-    string    labelEncoderUri        = 13; 
-    string    modelReportUri         = 14;
-    string    datasetReportUri       = 15;    // the dataset report
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket              = 7;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn           = 8;
+    map<string,bytes>                                                          cloudSecret         = 9; 
 }
 
 message TarModelResponse {
-
+    string tarUri     = 1; // the uri of the tar file
 }
 
 message ShutdownRequest {}

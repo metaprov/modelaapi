@@ -708,9 +708,6 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.t
     cloudsecretMap: (f = msg.getCloudsecretMap()) ? f.toObject(includeInstance, undefined) : [],
     dockerconnection: (f = msg.getDockerconnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     dockerregistrysecretMap: (f = msg.getDockerregistrysecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 18, ""),
     kaniko: jspb.Message.getBooleanFieldWithDefault(msg, 19, false)
   };
 
@@ -820,18 +817,6 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.d
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelweightsuri(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPreprocessorweightsuri(value);
-      break;
-    case 18:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLabelencoderuri(value);
       break;
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -973,27 +958,6 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.s
   f = message.getDockerregistrysecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getModelweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
-  f = message.getPreprocessorweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
-      f
-    );
-  }
-  f = message.getLabelencoderuri();
-  if (f.length > 0) {
-    writer.writeString(
-      18,
-      f
-    );
   }
   f = message.getKaniko();
   if (f) {
@@ -1455,60 +1419,6 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.p
 
 
 /**
- * optional string modelWeightsUri = 16;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getModelweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setModelweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
-};
-
-
-/**
- * optional string preprocessorWeightsUri = 17;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getPreprocessorweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setPreprocessorweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional string labelEncoderUri = 18;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.getLabelencoderuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.prototype.setLabelencoderuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 18, value);
-};
-
-
-/**
  * optional bool kaniko = 19;
  * @return {boolean}
  */
@@ -1694,15 +1604,9 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.toObj
     study: (f = msg.getStudy()) && github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    provider: jspb.Message.getFieldWithDefault(msg, 7, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     cloudconn: (f = msg.getCloudconn()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    cloudsecretMap: (f = msg.getCloudsecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    modelweightsuri: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    preprocessorweightsuri: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    labelencoderuri: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    modelreporturi: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    datasetreporturi: jspb.Message.getFieldWithDefault(msg, 15, "")
+    cloudsecretMap: (f = msg.getCloudsecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -1770,44 +1674,20 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.deser
       msg.setDataset(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
-      break;
-    case 8:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 9:
+    case 8:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setCloudconn(value);
       break;
-    case 10:
+    case 9:
       var value = msg.getCloudsecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelweightsuri(value);
-      break;
-    case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPreprocessorweightsuri(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLabelencoderuri(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setModelreporturi(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatasetreporturi(value);
       break;
     default:
       reader.skipField();
@@ -1886,17 +1766,10 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.seria
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
     );
   }
-  f = message.getProvider();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
-  }
   f = message.getBucket();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
@@ -1904,49 +1777,14 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.seria
   f = message.getCloudconn();
   if (f != null) {
     writer.writeMessage(
-      9,
+      8,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getCloudsecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(10, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getModelweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      11,
-      f
-    );
-  }
-  f = message.getPreprocessorweightsuri();
-  if (f.length > 0) {
-    writer.writeString(
-      12,
-      f
-    );
-  }
-  f = message.getLabelencoderuri();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = message.getModelreporturi();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getDatasetreporturi();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -2174,30 +2012,12 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
 
 
 /**
- * optional string provider = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getProvider = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setProvider = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 8;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 8));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 7));
 };
 
 
@@ -2206,7 +2026,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -2224,17 +2044,17 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection cloudConn = 9;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection cloudConn = 8;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getCloudconn = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 9));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 8));
 };
 
 
@@ -2243,7 +2063,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
  * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setCloudconn = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -2261,19 +2081,19 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.hasCloudconn = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * map<string, bytes> cloudSecret = 10;
+ * map<string, bytes> cloudSecret = 9;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getCloudsecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 10, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
 };
 
@@ -2285,96 +2105,6 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.proto
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.clearCloudsecretMap = function() {
   this.getCloudsecretMap().clear();
   return this;};
-
-
-/**
- * optional string modelWeightsUri = 11;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setModelweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
-};
-
-
-/**
- * optional string preprocessorWeightsUri = 12;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getPreprocessorweightsuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setPreprocessorweightsuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
-};
-
-
-/**
- * optional string labelEncoderUri = 13;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getLabelencoderuri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setLabelencoderuri = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
- * optional string modelReportUri = 14;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getModelreporturi = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setModelreporturi = function(value) {
-  return jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional string datasetReportUri = 15;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.getDatasetreporturi = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.prototype.setDatasetreporturi = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
-};
 
 
 
@@ -2409,7 +2139,7 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.prot
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    taruri: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2446,6 +2176,10 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTaruri(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2475,6 +2209,31 @@ proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.prot
  */
 proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTaruri();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string tarUri = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.prototype.getTaruri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse.prototype.setTaruri = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
