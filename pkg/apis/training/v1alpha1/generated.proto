@@ -1639,49 +1639,53 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string misclassUri = 23;
 
+  // TarUri is a reference to the model tar file.
+  // +kubebuilder:validation:Optional
+  optional string tarUri = 24;
+
   // ImageName is the image name of the model
   // +kubebuilder:validation:Optional
-  optional string imageName = 24;
+  optional string imageName = 25;
 
   // +kubebuilder:validation:Optional
   // Importance is list of feature importance based on the alg of this model, sorted by importance
-  repeated FeatureImportance importance = 25;
+  repeated FeatureImportance importance = 26;
 
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 26;
+  optional string forecastUri = 27;
 
   // Python version is the result of python vewrsion call.
   // +kubebuilder:validation:Optional
-  optional string pythonVersion = 27;
+  optional string pythonVersion = 28;
 
   // Python packages is the result of running pip freeze
   // +kubebuilder:validation:Optional
-  map<string, string> pythonPackages = 28;
+  map<string, string> pythonPackages = 29;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 29;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 30;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 30;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 31;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 31;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 32;
 
   // ResourceConsumed is the avg resource consumed during the training of the model
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption resourceConsumed = 32;
+  optional ResourceConsumption resourceConsumed = 33;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 33;
+  optional int64 observedGeneration = 34;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 34;
+  optional int32 trainingRows = 35;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional

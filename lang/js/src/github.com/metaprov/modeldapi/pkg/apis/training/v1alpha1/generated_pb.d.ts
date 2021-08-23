@@ -2328,6 +2328,9 @@ export class ModelStatus extends jspb.Message {
   getMisclassuri(): string;
   setMisclassuri(value: string): ModelStatus;
 
+  getTaruri(): string;
+  setTaruri(value: string): ModelStatus;
+
   getImagename(): string;
   setImagename(value: string): ModelStatus;
 
@@ -2438,6 +2441,7 @@ export namespace ModelStatus {
     logsuri: string,
     profileuri: string,
     misclassuri: string,
+    taruri: string,
     imagename: string,
     importanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,

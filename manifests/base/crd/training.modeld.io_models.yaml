@@ -1294,6 +1294,9 @@ spec:
                   by the model controller
                 format: date-time
                 type: string
+              tarUri:
+                description: TarUri is a reference to the model tar file.
+                type: string
               test:
                 description: TestResult is the results of training the model (pipeline)
                   on the full training set, and test it on the test set
