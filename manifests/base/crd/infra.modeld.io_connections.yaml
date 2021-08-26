@@ -476,6 +476,13 @@ spec:
                     default: ""
                     type: string
                 type: object
+              facebook:
+                description: Social media
+                properties:
+                  token:
+                    default: ""
+                    type: string
+                type: object
               ftp:
                 properties:
                   host:
@@ -663,6 +670,29 @@ spec:
                     default: ""
                     type: string
                 type: object
+              kafka:
+                properties:
+                  channel:
+                    default: ""
+                    type: string
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
               linode:
                 properties:
                   token:
@@ -769,6 +799,26 @@ spec:
                     type: integer
                   url:
                     default: ""
+                    type: string
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              neo4j:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
                     type: string
                   username:
                     default: ""
@@ -933,6 +983,24 @@ spec:
                     default: ""
                     type: string
                 type: object
+              rabbitmq:
+                description: Message broker
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    default: 21
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  username:
+                    default: ""
+                    type: string
+                type: object
               redshift:
                 properties:
                   database:
@@ -974,6 +1042,26 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  username:
+                    default: ""
+                    type: string
+                type: object
+              singlestore:
+                properties:
+                  host:
+                    default: ""
+                    type: string
+                  password:
+                    default: ""
+                    type: string
+                  port:
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  url:
+                    default: ""
+                    description: URL Override the other
+                    type: string
                   username:
                     default: ""
                     type: string
@@ -1169,6 +1257,12 @@ spec:
                     description: URL Override the other
                     type: string
                   username:
+                    default: ""
+                    type: string
+                type: object
+              twitter:
+                properties:
+                  token:
                     default: ""
                     type: string
                 type: object

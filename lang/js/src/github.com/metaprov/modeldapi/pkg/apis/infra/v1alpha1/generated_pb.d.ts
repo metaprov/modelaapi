@@ -1678,6 +1678,11 @@ export class ConnectionSpec extends jspb.Message {
   hasSqlite(): boolean;
   clearSqlite(): ConnectionSpec;
 
+  getSinglestore(): SingleStoreSpec | undefined;
+  setSinglestore(value?: SingleStoreSpec): ConnectionSpec;
+  hasSinglestore(): boolean;
+  clearSinglestore(): ConnectionSpec;
+
   getGsheets(): GoogleSheetsSpec | undefined;
   setGsheets(value?: GoogleSheetsSpec): ConnectionSpec;
   hasGsheets(): boolean;
@@ -1692,11 +1697,6 @@ export class ConnectionSpec extends jspb.Message {
   setAlicloud(value?: AliCloudSpec): ConnectionSpec;
   hasAlicloud(): boolean;
   clearAlicloud(): ConnectionSpec;
-
-  getBitbucket(): BitbucketSpec | undefined;
-  setBitbucket(value?: BitbucketSpec): ConnectionSpec;
-  hasBitbucket(): boolean;
-  clearBitbucket(): ConnectionSpec;
 
   getDigitalocean(): DigitalOceanSpec | undefined;
   setDigitalocean(value?: DigitalOceanSpec): ConnectionSpec;
@@ -1778,6 +1778,11 @@ export class ConnectionSpec extends jspb.Message {
   hasGitlab(): boolean;
   clearGitlab(): ConnectionSpec;
 
+  getBitbucket(): BitbucketSpec | undefined;
+  setBitbucket(value?: BitbucketSpec): ConnectionSpec;
+  hasBitbucket(): boolean;
+  clearBitbucket(): ConnectionSpec;
+
   getSlack(): SlackSpec | undefined;
   setSlack(value?: SlackSpec): ConnectionSpec;
   hasSlack(): boolean;
@@ -1822,6 +1827,31 @@ export class ConnectionSpec extends jspb.Message {
   setWebhook(value?: WebhookSpec): ConnectionSpec;
   hasWebhook(): boolean;
   clearWebhook(): ConnectionSpec;
+
+  getFacebook(): FacebookSpec | undefined;
+  setFacebook(value?: FacebookSpec): ConnectionSpec;
+  hasFacebook(): boolean;
+  clearFacebook(): ConnectionSpec;
+
+  getTwitter(): TwitterSpec | undefined;
+  setTwitter(value?: TwitterSpec): ConnectionSpec;
+  hasTwitter(): boolean;
+  clearTwitter(): ConnectionSpec;
+
+  getRabbitmq(): RabbitMQSpec | undefined;
+  setRabbitmq(value?: RabbitMQSpec): ConnectionSpec;
+  hasRabbitmq(): boolean;
+  clearRabbitmq(): ConnectionSpec;
+
+  getKafka(): KafkaSpec | undefined;
+  setKafka(value?: KafkaSpec): ConnectionSpec;
+  hasKafka(): boolean;
+  clearKafka(): ConnectionSpec;
+
+  getNeo4j(): Neo4JSpec | undefined;
+  setNeo4j(value?: Neo4JSpec): ConnectionSpec;
+  hasNeo4j(): boolean;
+  clearNeo4j(): ConnectionSpec;
 
   getOwner(): string;
   setOwner(value: string): ConnectionSpec;
@@ -1872,10 +1902,10 @@ export namespace ConnectionSpec {
     couchbase?: CouchbaseSpec.AsObject,
     exasol?: ExasolSpec.AsObject,
     sqlite?: SqliteSpec.AsObject,
+    singlestore?: SingleStoreSpec.AsObject,
     gsheets?: GoogleSheetsSpec.AsObject,
     azurestorage?: AzureStorageSpec.AsObject,
     alicloud?: AliCloudSpec.AsObject,
-    bitbucket?: BitbucketSpec.AsObject,
     digitalocean?: DigitalOceanSpec.AsObject,
     hetzner?: HetznerSpec.AsObject,
     gcpstorage?: GcpStorageSpec.AsObject,
@@ -1892,6 +1922,7 @@ export namespace ConnectionSpec {
     imageregistry?: ImageRegistrySpec.AsObject,
     github?: GithubSpec.AsObject,
     gitlab?: GitlabSpec.AsObject,
+    bitbucket?: BitbucketSpec.AsObject,
     slack?: SlackSpec.AsObject,
     msteam?: MSTeamSpec.AsObject,
     mattermost?: MattermostSpec.AsObject,
@@ -1901,6 +1932,11 @@ export namespace ConnectionSpec {
     pushover?: PushoverSpec.AsObject,
     opsgenie?: OpsgenieSpec.AsObject,
     webhook?: WebhookSpec.AsObject,
+    facebook?: FacebookSpec.AsObject,
+    twitter?: TwitterSpec.AsObject,
+    rabbitmq?: RabbitMQSpec.AsObject,
+    kafka?: KafkaSpec.AsObject,
+    neo4j?: Neo4JSpec.AsObject,
     owner: string,
   }
 }
@@ -2212,6 +2248,24 @@ export namespace FTPSpec {
     username: string,
     password: string,
     url: string,
+  }
+}
+
+export class FacebookSpec extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): FacebookSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FacebookSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FacebookSpec): FacebookSpec.AsObject;
+  static serializeBinaryToWriter(message: FacebookSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FacebookSpec;
+  static deserializeBinaryFromReader(message: FacebookSpec, reader: jspb.BinaryReader): FacebookSpec;
+}
+
+export namespace FacebookSpec {
+  export type AsObject = {
+    token: string,
   }
 }
 
@@ -2569,6 +2623,44 @@ export namespace InformixSpec {
     host: string,
     port: number,
     database: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class KafkaSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): KafkaSpec;
+
+  getPort(): number;
+  setPort(value: number): KafkaSpec;
+
+  getChannel(): string;
+  setChannel(value: string): KafkaSpec;
+
+  getUsername(): string;
+  setUsername(value: string): KafkaSpec;
+
+  getPassword(): string;
+  setPassword(value: string): KafkaSpec;
+
+  getUrl(): string;
+  setUrl(value: string): KafkaSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KafkaSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: KafkaSpec): KafkaSpec.AsObject;
+  static serializeBinaryToWriter(message: KafkaSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KafkaSpec;
+  static deserializeBinaryFromReader(message: KafkaSpec, reader: jspb.BinaryReader): KafkaSpec;
+}
+
+export namespace KafkaSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    channel: string,
     username: string,
     password: string,
     url: string,
@@ -3303,6 +3395,40 @@ export namespace MySqlSpec {
   }
 }
 
+export class Neo4JSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): Neo4JSpec;
+
+  getPort(): number;
+  setPort(value: number): Neo4JSpec;
+
+  getUsername(): string;
+  setUsername(value: string): Neo4JSpec;
+
+  getPassword(): string;
+  setPassword(value: string): Neo4JSpec;
+
+  getUrl(): string;
+  setUrl(value: string): Neo4JSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Neo4JSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: Neo4JSpec): Neo4JSpec.AsObject;
+  static serializeBinaryToWriter(message: Neo4JSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Neo4JSpec;
+  static deserializeBinaryFromReader(message: Neo4JSpec, reader: jspb.BinaryReader): Neo4JSpec;
+}
+
+export namespace Neo4JSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class Notifier extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Notifier;
@@ -3753,6 +3879,36 @@ export namespace PushoverSpec {
   }
 }
 
+export class RabbitMQSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): RabbitMQSpec;
+
+  getPort(): number;
+  setPort(value: number): RabbitMQSpec;
+
+  getUsername(): string;
+  setUsername(value: string): RabbitMQSpec;
+
+  getPassword(): string;
+  setPassword(value: string): RabbitMQSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RabbitMQSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RabbitMQSpec): RabbitMQSpec.AsObject;
+  static serializeBinaryToWriter(message: RabbitMQSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RabbitMQSpec;
+  static deserializeBinaryFromReader(message: RabbitMQSpec, reader: jspb.BinaryReader): RabbitMQSpec;
+}
+
+export namespace RabbitMQSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+  }
+}
+
 export class SAPHanaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SAPHanaSpec;
@@ -4082,6 +4238,40 @@ export namespace ServingSiteStatus {
     totalpredictoraccuracyfailed: number,
     lastdailypredictionsList: Array<number>,
     conditionsList: Array<ServingSiteCondition.AsObject>,
+  }
+}
+
+export class SingleStoreSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SingleStoreSpec;
+
+  getPort(): number;
+  setPort(value: number): SingleStoreSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SingleStoreSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SingleStoreSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SingleStoreSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SingleStoreSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SingleStoreSpec): SingleStoreSpec.AsObject;
+  static serializeBinaryToWriter(message: SingleStoreSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SingleStoreSpec;
+  static deserializeBinaryFromReader(message: SingleStoreSpec, reader: jspb.BinaryReader): SingleStoreSpec;
+}
+
+export namespace SingleStoreSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    url: string,
   }
 }
 
@@ -4434,6 +4624,24 @@ export namespace TeradataSpec {
     username: string,
     password: string,
     url: string,
+  }
+}
+
+export class TwitterSpec extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): TwitterSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TwitterSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TwitterSpec): TwitterSpec.AsObject;
+  static serializeBinaryToWriter(message: TwitterSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TwitterSpec;
+  static deserializeBinaryFromReader(message: TwitterSpec, reader: jspb.BinaryReader): TwitterSpec;
+}
+
+export namespace TwitterSpec {
+  export type AsObject = {
+    token: string,
   }
 }
 

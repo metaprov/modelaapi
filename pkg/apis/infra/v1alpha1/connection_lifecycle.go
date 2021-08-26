@@ -162,6 +162,38 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AmazonAthena.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AmazonAthena.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AmazonAthena.URL
+	case catalog.AmazonRedshift:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.RedShift.Hostname
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.RedShift.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.RedShift.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.RedShift.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.RedShift.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.RedShift.URL
+	case catalog.ApacheDrill:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheDrill.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheDrill.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheDrill.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ApacheDrill.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ApacheDrill.URL
+	case catalog.ApacheDruid:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheDruid.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheDruid.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheDruid.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ApacheDruid.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ApacheDruid.URL
+	case catalog.ApacheHive:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheHive.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheHive.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheHive.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ApacheHive.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ApacheHive.URL
+	case catalog.AzureSqlDatabase:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.AzureSQLDatabase.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.AzureSQLDatabase.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.AzureSQLDatabase.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AzureSQLDatabase.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AzureSQLDatabase.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AzureSQLDatabase.URL
 	case catalog.GcpBigQuery:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.GcpBigQuery.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.GcpBigQuery.Port))
@@ -174,13 +206,58 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Cassandra.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Cassandra.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Cassandra.URL
-	case catalog.AzureSqlDatabase:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.AzureSQLDatabase.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.AzureSQLDatabase.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.AzureSQLDatabase.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.AzureSQLDatabase.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.AzureSQLDatabase.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.AzureSQLDatabase.URL
+	case catalog.CockrouchDB:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.CockroachDB.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.CockroachDB.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.CockroachDB.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.CockroachDB.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.CockroachDB.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.CockroachDB.URL
+	case catalog.Clickhouse:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Clickhouse.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Clickhouse.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Clickhouse.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Clickhouse.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Clickhouse.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Clickhouse.URL
+	case catalog.Couchbase:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Couchbase.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Couchbase.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Couchbase.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Couchbase.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Couchbase.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Couchbase.URL
+	case catalog.Dermio:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Dermio.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Dermio.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Dermio.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Dermio.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Dermio.URL
+	case catalog.DB2:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.DB2.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.DB2.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.DB2.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.DB2.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.DB2.URL
+	case catalog.ElasticSearch:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ElasticSearch.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ElasticSearch.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ElasticSearch.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ElasticSearch.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ElasticSearch.URL
+	case catalog.Exasol:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Exasol.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Exasol.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Exasol.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Exasol.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Exasol.URL
+	case catalog.Greenplum:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Greenplum.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Greenplum.Port))
+		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Greenplum.Database
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Greenplum.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Greenplum.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Greenplum.URL
 	case catalog.MongoDb:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.MongoDb.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.MongoDb.Port))
@@ -216,19 +293,6 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Presto.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Presto.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Presto.URL
-	case catalog.AmazonRedshift:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.RedShift.Hostname
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.RedShift.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.RedShift.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.RedShift.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.RedShift.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.RedShift.URL
-	case catalog.ApacheHive:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheHive.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheHive.Port))
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheHive.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ApacheHive.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ApacheHive.URL
 	case catalog.Snowflake:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Snowflake.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Snowflake.Port))
@@ -250,19 +314,6 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Vertica.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Vertica.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Vertica.URL
-	case catalog.CockrouchDB:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.CockroachDB.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.CockroachDB.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.CockroachDB.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.CockroachDB.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.CockroachDB.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.CockroachDB.URL
-	case catalog.ElasticSearch:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ElasticSearch.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ElasticSearch.Port))
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ElasticSearch.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ElasticSearch.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ElasticSearch.URL
 	case catalog.Informix:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Informix.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Informix.Port))
@@ -302,33 +353,6 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.MSSqlServer.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.MSSqlServer.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.MSSqlServer.URL
-	case catalog.Clickhouse:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Clickhouse.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Clickhouse.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Clickhouse.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Clickhouse.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Clickhouse.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Clickhouse.URL
-	case catalog.Greenplum:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Greenplum.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Greenplum.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Greenplum.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Greenplum.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Greenplum.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Greenplum.URL
-	case catalog.Couchbase:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Couchbase.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Couchbase.Port))
-		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.Couchbase.Database
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Couchbase.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Couchbase.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Couchbase.URL
-	case catalog.Exasol:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Exasol.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Exasol.Port))
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Exasol.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Exasol.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Exasol.URL
 	// Cloud Storage
 	case catalog.AliCloud:
 		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.AliCloud.AccessKey
@@ -354,6 +378,19 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 	case catalog.Aws:
 		fields[string(catalog.ApiKeyNameAccessKey)] = *connection.Spec.Aws.AccessKey
 		fields[string(catalog.ApiKeyNameSecretKey)] = *connection.Spec.Aws.SecretKey
+	case catalog.FTP:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.FTP.Host
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.FTP.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.FTP.Password
+	case catalog.SFTP:
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.SFTP.Host
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.SFTP.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.SFTP.Password
+	case catalog.Dropbox:
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Dropbox.Token
+	case catalog.Box:
+		fields[string(catalog.ApiKeyNameToken)] = *connection.Spec.Box.Token
+
 	case catalog.Dockerhub:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ImageRegistry.Host
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ImageRegistry.Username

@@ -955,16 +955,16 @@ message ConnectionSpec {
   optional SqliteSpec sqlite = 37;
 
   // +kubebuilder:validation:Optional
-  optional GoogleSheetsSpec gsheets = 38;
+  optional SingleStoreSpec singlestore = 38;
 
   // +kubebuilder:validation:Optional
-  optional AzureStorageSpec azurestorage = 39;
+  optional GoogleSheetsSpec gsheets = 39;
 
   // +kubebuilder:validation:Optional
-  optional AliCloudSpec alicloud = 40;
+  optional AzureStorageSpec azurestorage = 40;
 
   // +kubebuilder:validation:Optional
-  optional BitbucketSpec bitbucket = 41;
+  optional AliCloudSpec alicloud = 41;
 
   // +kubebuilder:validation:Optional
   optional DigitalOceanSpec digitalocean = 42;
@@ -973,77 +973,97 @@ message ConnectionSpec {
   optional HetznerSpec hetzner = 43;
 
   // +kubebuilder:validation:Optional
-  optional GcpStorageSpec gcpstorage = 44;
+  optional GcpStorageSpec gcpstorage = 45;
 
   // +kubebuilder:validation:Optional
-  optional LinodeSpec linode = 45;
+  optional LinodeSpec linode = 46;
 
   // +kubebuilder:validation:Optional
-  optional MinioSpec minio = 46;
+  optional MinioSpec minio = 47;
 
   // +kubebuilder:validation:Optional
-  optional OpenstackSpec openstack = 47;
+  optional OpenstackSpec openstack = 48;
 
   // +kubebuilder:validation:Optional
-  optional OvhSpec ovh = 48;
+  optional OvhSpec ovh = 49;
 
   // +kubebuilder:validation:Optional
-  optional AwsS3Spec aws = 49;
+  optional AwsS3Spec aws = 50;
 
   // +kubebuilder:validation:Optional
-  optional SmtpSpec smtp = 50;
+  optional SmtpSpec smtp = 51;
 
   // +kubebuilder:validation:Optional
-  optional FtpSpec ftp = 51;
+  optional FtpSpec ftp = 52;
 
   // +kubebuilder:validation:Optional
-  optional SFtpSpec sftp = 52;
+  optional SFtpSpec sftp = 53;
 
   // +kubebuilder:validation:Optional
-  optional DropboxSpec dropbox = 53;
+  optional DropboxSpec dropbox = 54;
 
   // +kubebuilder:validation:Optional
-  optional BoxSpec box = 54;
+  optional BoxSpec box = 55;
 
   // +kubebuilder:validation:Optional
-  optional ImageRegistrySpec imageRegistry = 55;
+  optional ImageRegistrySpec imageRegistry = 56;
 
   // +kubebuilder:validation:Optional
-  optional GithubSpec github = 56;
+  optional GithubSpec github = 57;
 
   // +kubebuilder:validation:Optional
-  optional GitlabSpec gitlab = 57;
+  optional GitlabSpec gitlab = 58;
 
   // +kubebuilder:validation:Optional
-  optional SlackSpec slack = 58;
+  optional BitbucketSpec bitbucket = 59;
 
   // +kubebuilder:validation:Optional
-  optional MSTeamSpec msteam = 59;
+  optional SlackSpec slack = 60;
 
   // +kubebuilder:validation:Optional
-  optional MattermostSpec matterMost = 60;
+  optional MSTeamSpec msteam = 61;
 
   // +kubebuilder:validation:Optional
-  optional HipchatSpec hipchat = 61;
+  optional MattermostSpec matterMost = 62;
 
   // +kubebuilder:validation:Optional
-  optional VictorOpSpec victorop = 62;
+  optional HipchatSpec hipchat = 63;
 
   // +kubebuilder:validation:Optional
-  optional PagerDutySpec pagerduty = 63;
+  optional VictorOpSpec victorop = 64;
 
   // +kubebuilder:validation:Optional
-  optional PushoverSpec pushover = 64;
+  optional PagerDutySpec pagerduty = 65;
 
   // +kubebuilder:validation:Optional
-  optional OpsgenieSpec opsgenie = 65;
+  optional PushoverSpec pushover = 66;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 66;
+  optional OpsgenieSpec opsgenie = 67;
+
+  // +kubebuilder:validation:Optional
+  optional WebhookSpec webhook = 68;
+
+  // Social media
+  // +kubebuilder:validation:Optional
+  optional FacebookSpec facebook = 69;
+
+  // +kubebuilder:validation:Optional
+  optional TwitterSpec twitter = 70;
+
+  // Message broker
+  // +kubebuilder:validation:Optional
+  optional RabbitMQSpec rabbitmq = 71;
+
+  // +kubebuilder:validation:Optional
+  optional KafkaSpec kafka = 72;
+
+  // +kubebuilder:validation:Optional
+  optional Neo4JSpec neo4j = 73;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 67;
+  optional string owner = 74;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -1217,6 +1237,11 @@ message FTPSpec {
   // URL override the other settings
   // +kubebuilder:default:=""
   optional string url = 6;
+}
+
+message FacebookSpec {
+  // +kubebuilder:default:=""
+  optional string token = 1;
 }
 
 message FtpSpec {
@@ -1393,6 +1418,27 @@ message InformixSpec {
   optional string password = 5;
 
   // URL Override the other
+  optional string url = 6;
+}
+
+message KafkaSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string channel = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
   optional string url = 6;
 }
 
@@ -1797,6 +1843,24 @@ message MySqlSpec {
   optional string url = 6;
 }
 
+message Neo4JSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 7;
+}
+
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2030,6 +2094,21 @@ message PushoverSpec {
   optional string url = 3;
 }
 
+message RabbitMQSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 21
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 3;
+
+  // +kubebuilder:default:=""
+  optional string password = 4;
+}
+
 message SAPHanaSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2216,6 +2295,24 @@ message ServingSiteStatus {
   repeated ServingSiteCondition conditions = 9;
 }
 
+message SingleStoreSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL Override the other
+  // +kubebuilder:default:=""
+  optional string url = 7;
+}
+
 message SlackSpec {
   // +kubebuilder:default:=""
   optional string webhookUrl = 1;
@@ -2394,6 +2491,11 @@ message TeradataSpec {
 
   // URL Override the other
   optional string url = 6;
+}
+
+message TwitterSpec {
+  // +kubebuilder:default:=""
+  optional string token = 1;
 }
 
 message VerticaSpec {

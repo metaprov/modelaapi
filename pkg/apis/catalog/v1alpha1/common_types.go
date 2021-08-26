@@ -161,6 +161,7 @@ const (
 	DB2              ProviderName = "db2"
 	ElasticSearch    ProviderName = "elasticsearch"
 	Exasol           ProviderName = "exasol"
+	Kafka            ProviderName = "kafka"
 	GoogleSheets     ProviderName = "googlesheets"
 	GcpSpanner       ProviderName = "spanner"
 	Greenplum        ProviderName = "greenplum"
@@ -171,13 +172,18 @@ const (
 	Presto           ProviderName = "presto"
 	SAPHana          ProviderName = "hana"
 	Snowflake        ProviderName = "snowflake"
+	Singlestore      ProviderName = "singlestore"
 	Sybase           ProviderName = "sybase"
 	MSSqlServer      ProviderName = "mssqlserver"
 	Sqlite           ProviderName = "sqlite"
+	RabbitMQ         ProviderName = "rabbitmq"
 	Teradata         ProviderName = "teradata"
 	Vertica          ProviderName = "vertica"
 	Odbc             ProviderName = "odbc"
 	Informix         ProviderName = "informix"
+
+	// graph databases
+	Neo4j ProviderName = "neo4j"
 
 	// Cloud Storage
 	AliCloud     ProviderName = "alicloud"
@@ -205,18 +211,23 @@ const (
 	Gitlab    ProviderName = "gitlab"
 
 	// Messaging
-	SmtpProvider    ProviderName = "smtp"
-	Slack           ProviderName = "slack"
-	Hipchat         ProviderName = "hipchat"
-	Discord         ProviderName = "discord"
-	PageDuty        ProviderName = "pagerduty"
-	PushOver        ProviderName = "pushover"
-	OpsGenie        ProviderName = "opsgenie"
-	Webhook         ProviderName = "webook"
-	VictorOps       ProviderName = "victorops"
-	Flock           ProviderName = "flock"
-	MSTeam          ProviderName = "msteam"
-	MatterMost      ProviderName = "mattermost"
+	SmtpProvider ProviderName = "smtp"
+	Slack        ProviderName = "slack"
+	Hipchat      ProviderName = "hipchat"
+	Discord      ProviderName = "discord"
+	PageDuty     ProviderName = "pagerduty"
+	PushOver     ProviderName = "pushover"
+	OpsGenie     ProviderName = "opsgenie"
+	Webhook      ProviderName = "webook"
+	VictorOps    ProviderName = "victorops"
+	Flock        ProviderName = "flock"
+	MSTeam       ProviderName = "msteam"
+	MatterMost   ProviderName = "mattermost"
+
+	// Social media
+	Facebook ProviderName = "facebook"
+	Twitter  ProviderName = "twitter"
+
 	UnknownProvider ProviderName = "unknown"
 )
 
@@ -1110,6 +1121,9 @@ const (
 	ConnectionCategoryDatabase            ConnectionCategory = "database"
 	ConnectionCategoryGit                 ConnectionCategory = "git"
 	ConnectionCategoryMessaging           ConnectionCategory = "messaging"
+	ConnectionMessagerBroker              ConnectionCategory = "message-broker"
+	ConnectionGraphDatabase               ConnectionCategory = "graph-database"
+	ConnectionSocialMedia                 ConnectionCategory = "social-media"
 )
 
 //==============================================================================
