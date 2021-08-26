@@ -203,7 +203,7 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Oracle.Username
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Oracle.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Oracle.URL
-	case catalog.Postgres:
+	case catalog.PostgresSQL:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.PostgresSQL.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.PostgresSQL.Port))
 		fields[string(catalog.ApiKeyNameDatabase)] = *connection.Spec.PostgresSQL.Database
@@ -224,11 +224,11 @@ func (connection *Connection) CreateSecret() *v1.Secret {
 		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.RedShift.Password
 		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.RedShift.URL
 	case catalog.ApacheHive:
-		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Hive.Host
-		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Hive.Port))
-		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.Hive.Username
-		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.Hive.Password
-		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.Hive.URL
+		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.ApacheHive.Host
+		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.ApacheHive.Port))
+		fields[string(catalog.ApiKeyNameUsername)] = *connection.Spec.ApacheHive.Username
+		fields[string(catalog.ApiKeyNamePassword)] = *connection.Spec.ApacheHive.Password
+		fields[string(catalog.ApiKeyNameURL)] = *connection.Spec.ApacheHive.URL
 	case catalog.Snowflake:
 		fields[string(catalog.ApiKeyNameHost)] = *connection.Spec.Snowflake.Host
 		fields[string(catalog.ApiKeyNamePort)] = strconv.Itoa(int(*connection.Spec.Snowflake.Port))
@@ -432,7 +432,7 @@ func (connection *Connection) MaskSecretFields() {
 		connection.Spec.Oracle.Username = hiddenPtr
 		connection.Spec.Oracle.Password = hiddenPtr
 		connection.Spec.Oracle.URL = hiddenPtr
-	case catalog.Postgres:
+	case catalog.PostgresSQL:
 		connection.Spec.PostgresSQL.Username = hiddenPtr
 		connection.Spec.PostgresSQL.Password = hiddenPtr
 		connection.Spec.PostgresSQL.URL = hiddenPtr
@@ -445,9 +445,9 @@ func (connection *Connection) MaskSecretFields() {
 		connection.Spec.RedShift.Password = hiddenPtr
 		connection.Spec.RedShift.URL = hiddenPtr
 	case catalog.ApacheHive:
-		connection.Spec.Hive.Username = hiddenPtr
-		connection.Spec.Hive.Password = hiddenPtr
-		connection.Spec.Hive.URL = hiddenPtr
+		connection.Spec.ApacheHive.Username = hiddenPtr
+		connection.Spec.ApacheHive.Password = hiddenPtr
+		connection.Spec.ApacheHive.URL = hiddenPtr
 	case catalog.Snowflake:
 		connection.Spec.Snowflake.Username = hiddenPtr
 		connection.Spec.Snowflake.Password = hiddenPtr
