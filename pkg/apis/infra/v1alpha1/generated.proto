@@ -355,6 +355,52 @@ message ApacheCassandraSpec {
   optional string url = 6;
 }
 
+// ApacheDruid
+message ApacheDrillSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+// ApacheDruid defines the connection to cassandra
+message ApacheDruidSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 message ApacheHiveSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -622,6 +668,11 @@ message BitbucketSpec {
   optional string ssh = 3;
 }
 
+message BoxSpec {
+  // +kubebuilder:default:=""
+  optional string token = 1;
+}
+
 message ClickHouseSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -811,161 +862,188 @@ message ConnectionSpec {
   optional AmazonAthenaSpec athena = 5;
 
   // +kubebuilder:validation:Optional
-  optional GcpBigQuerySpec bigquery = 6;
+  optional ApacheDrillSpec drill = 6;
 
   // +kubebuilder:validation:Optional
-  optional ApacheCassandraSpec cassandra = 7;
+  optional ApacheDruidSpec druid = 7;
 
   // +kubebuilder:validation:Optional
-  optional AzureSQLDatabaseSpec azuresqldatabase = 8;
+  optional ApacheHiveSpec hive = 8;
 
   // +kubebuilder:validation:Optional
-  optional MongoDbSpec mongodb = 9;
+  optional AmazonRedShiftSpec redshift = 9;
 
   // +kubebuilder:validation:Optional
-  optional MySqlSpec mysql = 10;
+  optional DermioSpec dermio = 10;
 
   // +kubebuilder:validation:Optional
-  optional OdbcSpec odbc = 11;
+  optional DB2Spec db2 = 11;
 
   // +kubebuilder:validation:Optional
-  optional OracleSpec oracle = 12;
+  optional GcpBigQuerySpec bigquery = 12;
 
   // +kubebuilder:validation:Optional
-  optional PostgresSQLSpec postgres = 13;
+  optional ApacheCassandraSpec cassandra = 13;
 
   // +kubebuilder:validation:Optional
-  optional PrestoSpec presto = 14;
+  optional AzureSQLDatabaseSpec azuresqldatabase = 14;
 
   // +kubebuilder:validation:Optional
-  optional AmazonRedShiftSpec redshift = 15;
+  optional MongoDbSpec mongodb = 15;
 
   // +kubebuilder:validation:Optional
-  optional ApacheHiveSpec hive = 16;
+  optional MySqlSpec mysql = 16;
 
   // +kubebuilder:validation:Optional
-  optional SnowflakeSpec snowflake = 17;
+  optional OdbcSpec odbc = 17;
 
   // +kubebuilder:validation:Optional
-  optional SybaseSpec sybase = 18;
+  optional OracleSpec oracle = 18;
 
   // +kubebuilder:validation:Optional
-  optional VerticaSpec vertica = 19;
+  optional PostgresSQLSpec postgres = 19;
 
   // +kubebuilder:validation:Optional
-  optional CockroachDBSpec cockroachdb = 20;
+  optional PrestoSpec presto = 20;
 
   // +kubebuilder:validation:Optional
-  optional ElasticSearchSpec elasticsearch = 21;
+  optional SnowflakeSpec snowflake = 22;
 
   // +kubebuilder:validation:Optional
-  optional InformixSpec informix = 22;
+  optional SybaseSpec sybase = 23;
 
   // +kubebuilder:validation:Optional
-  optional SAPHanaSpec hana = 23;
+  optional VerticaSpec vertica = 24;
 
   // +kubebuilder:validation:Optional
-  optional TeradataSpec teradata = 24;
+  optional CockroachDBSpec cockroachdb = 25;
 
   // +kubebuilder:validation:Optional
-  optional GcpSpannerSpec spanner = 25;
+  optional ElasticSearchSpec elasticsearch = 26;
 
   // +kubebuilder:validation:Optional
-  optional ApacheSparkSpec spark = 26;
+  optional InformixSpec informix = 27;
 
   // +kubebuilder:validation:Optional
-  optional MSSqlServerSpec mssqlserver = 27;
+  optional SAPHanaSpec hana = 28;
 
   // +kubebuilder:validation:Optional
-  optional ClickHouseSpec clickhouse = 28;
+  optional TeradataSpec teradata = 29;
 
   // +kubebuilder:validation:Optional
-  optional GreenPlumSpec greenplum = 29;
+  optional GcpSpannerSpec spanner = 30;
 
   // +kubebuilder:validation:Optional
-  optional CouchbaseSpec couchbase = 30;
+  optional ApacheSparkSpec spark = 31;
 
   // +kubebuilder:validation:Optional
-  optional ExasolSpec exasol = 31;
+  optional MSSqlServerSpec mssqlserver = 32;
 
   // +kubebuilder:validation:Optional
-  optional SqliteSpec sqlite = 32;
+  optional ClickHouseSpec clickhouse = 33;
 
   // +kubebuilder:validation:Optional
-  optional AzureStorageSpec azurestorage = 33;
+  optional GreenPlumSpec greenplum = 34;
 
   // +kubebuilder:validation:Optional
-  optional AliCloudSpec alicloud = 34;
+  optional CouchbaseSpec couchbase = 35;
 
   // +kubebuilder:validation:Optional
-  optional BitbucketSpec bitbucket = 35;
+  optional ExasolSpec exasol = 36;
 
   // +kubebuilder:validation:Optional
-  optional DigitalOceanSpec digitalocean = 36;
+  optional SqliteSpec sqlite = 37;
 
   // +kubebuilder:validation:Optional
-  optional HetznerSpec hetzner = 37;
+  optional GoogleSheetsSpec gsheets = 38;
 
   // +kubebuilder:validation:Optional
-  optional GcpStorageSpec gcpstorage = 38;
+  optional AzureStorageSpec azurestorage = 39;
 
   // +kubebuilder:validation:Optional
-  optional LinodeSpec linode = 39;
+  optional AliCloudSpec alicloud = 40;
 
   // +kubebuilder:validation:Optional
-  optional MinioSpec minio = 40;
+  optional BitbucketSpec bitbucket = 41;
 
   // +kubebuilder:validation:Optional
-  optional OpenstackSpec openstack = 41;
+  optional DigitalOceanSpec digitalocean = 42;
 
   // +kubebuilder:validation:Optional
-  optional OvhSpec ovh = 42;
+  optional HetznerSpec hetzner = 43;
 
   // +kubebuilder:validation:Optional
-  optional AwsS3Spec aws = 43;
+  optional GcpStorageSpec gcpstorage = 44;
 
   // +kubebuilder:validation:Optional
-  optional SmtpSpec smtp = 44;
+  optional LinodeSpec linode = 45;
 
   // +kubebuilder:validation:Optional
-  optional ImageRegistrySpec imageRegistry = 45;
+  optional MinioSpec minio = 46;
 
   // +kubebuilder:validation:Optional
-  optional GithubSpec github = 46;
+  optional OpenstackSpec openstack = 47;
 
   // +kubebuilder:validation:Optional
-  optional GitlabSpec gitlab = 47;
+  optional OvhSpec ovh = 48;
 
   // +kubebuilder:validation:Optional
-  optional SlackSpec slack = 48;
+  optional AwsS3Spec aws = 49;
 
   // +kubebuilder:validation:Optional
-  optional MSTeamSpec msteam = 50;
+  optional SmtpSpec smtp = 50;
 
   // +kubebuilder:validation:Optional
-  optional MattermostSpec matterMost = 51;
+  optional FtpSpec ftp = 51;
 
   // +kubebuilder:validation:Optional
-  optional HipchatSpec hipchat = 52;
+  optional SFtpSpec sftp = 52;
 
   // +kubebuilder:validation:Optional
-  optional VictorOpSpec victorop = 53;
+  optional DropboxSpec dropbox = 53;
 
   // +kubebuilder:validation:Optional
-  optional PagerDutySpec pagerduty = 54;
+  optional BoxSpec box = 54;
 
   // +kubebuilder:validation:Optional
-  optional PushoverSpec pushover = 55;
+  optional ImageRegistrySpec imageRegistry = 55;
 
   // +kubebuilder:validation:Optional
-  optional OpsgenieSpec opsgenie = 56;
+  optional GithubSpec github = 56;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 57;
+  optional GitlabSpec gitlab = 57;
+
+  // +kubebuilder:validation:Optional
+  optional SlackSpec slack = 58;
+
+  // +kubebuilder:validation:Optional
+  optional MSTeamSpec msteam = 59;
+
+  // +kubebuilder:validation:Optional
+  optional MattermostSpec matterMost = 60;
+
+  // +kubebuilder:validation:Optional
+  optional HipchatSpec hipchat = 61;
+
+  // +kubebuilder:validation:Optional
+  optional VictorOpSpec victorop = 62;
+
+  // +kubebuilder:validation:Optional
+  optional PagerDutySpec pagerduty = 63;
+
+  // +kubebuilder:validation:Optional
+  optional PushoverSpec pushover = 64;
+
+  // +kubebuilder:validation:Optional
+  optional OpsgenieSpec opsgenie = 65;
+
+  // +kubebuilder:validation:Optional
+  optional WebhookSpec webhook = 66;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 58;
+  optional string owner = 67;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -1009,6 +1087,50 @@ message CouchbaseSpec {
   optional string url = 7;
 }
 
+message DB2Spec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message DermioSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
 message DigitalOceanSpec {
   // Token for digital ocean
   // +kubebuilder:default:=""
@@ -1029,6 +1151,11 @@ message DigitalOceanSpec {
   // url or connection string
   // +kubebuilder:default:=""
   optional string host = 5;
+}
+
+message DropboxSpec {
+  // +kubebuilder:default:=""
+  optional string token = 1;
 }
 
 message ElasticSearchSpec {
@@ -1068,6 +1195,43 @@ message ExasolSpec {
   // URL Override the other
   // +kubebuilder:default:=""
   optional string url = 7;
+}
+
+message FTPSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message FtpSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 21
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 3;
+
+  // +kubebuilder:default:=""
+  optional string password = 4;
 }
 
 // BigQuerySpec defines the connection to big query
@@ -1144,6 +1308,17 @@ message GitlabSpec {
 
   // +kubebuilder:default:=""
   optional string ssh = 2;
+}
+
+message GoogleSheetsSpec {
+  // +kubebuilder:default:=""
+  optional string scopes = 1;
+
+  // +kubebuilder:default:= ""
+  optional string id = 2;
+
+  // +kubebuilder:default:=""
+  optional string dataToPull = 3;
 }
 
 message GreenPlumSpec {
@@ -1874,6 +2049,43 @@ message SAPHanaSpec {
 
   // URL Override the other
   optional string url = 6;
+}
+
+message SFTPSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 9042
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string keyspace = 3;
+
+  // +kubebuilder:default:=""
+  optional string username = 4;
+
+  // +kubebuilder:default:=""
+  optional string password = 5;
+
+  // URL override the other settings
+  // +kubebuilder:default:=""
+  optional string url = 6;
+}
+
+message SFtpSpec {
+  // +kubebuilder:default:=""
+  optional string host = 1;
+
+  // +kubebuilder:default:= 21
+  // +kubebuilder:validation:Minimum=0
+  optional int32 port = 2;
+
+  // +kubebuilder:default:=""
+  optional string username = 3;
+
+  // +kubebuilder:default:=""
+  optional string password = 4;
 }
 
 message Scope {

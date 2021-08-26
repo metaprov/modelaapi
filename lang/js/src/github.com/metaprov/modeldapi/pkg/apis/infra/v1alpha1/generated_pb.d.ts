@@ -563,6 +563,82 @@ export namespace ApacheCassandraSpec {
   }
 }
 
+export class ApacheDrillSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ApacheDrillSpec;
+
+  getPort(): number;
+  setPort(value: number): ApacheDrillSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): ApacheDrillSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ApacheDrillSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ApacheDrillSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ApacheDrillSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApacheDrillSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApacheDrillSpec): ApacheDrillSpec.AsObject;
+  static serializeBinaryToWriter(message: ApacheDrillSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApacheDrillSpec;
+  static deserializeBinaryFromReader(message: ApacheDrillSpec, reader: jspb.BinaryReader): ApacheDrillSpec;
+}
+
+export namespace ApacheDrillSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class ApacheDruidSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): ApacheDruidSpec;
+
+  getPort(): number;
+  setPort(value: number): ApacheDruidSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): ApacheDruidSpec;
+
+  getUsername(): string;
+  setUsername(value: string): ApacheDruidSpec;
+
+  getPassword(): string;
+  setPassword(value: string): ApacheDruidSpec;
+
+  getUrl(): string;
+  setUrl(value: string): ApacheDruidSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApacheDruidSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApacheDruidSpec): ApacheDruidSpec.AsObject;
+  static serializeBinaryToWriter(message: ApacheDruidSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApacheDruidSpec;
+  static deserializeBinaryFromReader(message: ApacheDruidSpec, reader: jspb.BinaryReader): ApacheDruidSpec;
+}
+
+export namespace ApacheDruidSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class ApacheHiveSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ApacheHiveSpec;
@@ -1083,6 +1159,24 @@ export namespace BitbucketSpec {
   }
 }
 
+export class BoxSpec extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): BoxSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BoxSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: BoxSpec): BoxSpec.AsObject;
+  static serializeBinaryToWriter(message: BoxSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BoxSpec;
+  static deserializeBinaryFromReader(message: BoxSpec, reader: jspb.BinaryReader): BoxSpec;
+}
+
+export namespace BoxSpec {
+  export type AsObject = {
+    token: string,
+  }
+}
+
 export class ClickHouseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ClickHouseSpec;
@@ -1429,6 +1523,36 @@ export class ConnectionSpec extends jspb.Message {
   hasAthena(): boolean;
   clearAthena(): ConnectionSpec;
 
+  getDrill(): ApacheDrillSpec | undefined;
+  setDrill(value?: ApacheDrillSpec): ConnectionSpec;
+  hasDrill(): boolean;
+  clearDrill(): ConnectionSpec;
+
+  getDruid(): ApacheDruidSpec | undefined;
+  setDruid(value?: ApacheDruidSpec): ConnectionSpec;
+  hasDruid(): boolean;
+  clearDruid(): ConnectionSpec;
+
+  getHive(): ApacheHiveSpec | undefined;
+  setHive(value?: ApacheHiveSpec): ConnectionSpec;
+  hasHive(): boolean;
+  clearHive(): ConnectionSpec;
+
+  getRedshift(): AmazonRedShiftSpec | undefined;
+  setRedshift(value?: AmazonRedShiftSpec): ConnectionSpec;
+  hasRedshift(): boolean;
+  clearRedshift(): ConnectionSpec;
+
+  getDermio(): DermioSpec | undefined;
+  setDermio(value?: DermioSpec): ConnectionSpec;
+  hasDermio(): boolean;
+  clearDermio(): ConnectionSpec;
+
+  getDb2(): DB2Spec | undefined;
+  setDb2(value?: DB2Spec): ConnectionSpec;
+  hasDb2(): boolean;
+  clearDb2(): ConnectionSpec;
+
   getBigquery(): GcpBigQuerySpec | undefined;
   setBigquery(value?: GcpBigQuerySpec): ConnectionSpec;
   hasBigquery(): boolean;
@@ -1473,16 +1597,6 @@ export class ConnectionSpec extends jspb.Message {
   setPresto(value?: PrestoSpec): ConnectionSpec;
   hasPresto(): boolean;
   clearPresto(): ConnectionSpec;
-
-  getRedshift(): AmazonRedShiftSpec | undefined;
-  setRedshift(value?: AmazonRedShiftSpec): ConnectionSpec;
-  hasRedshift(): boolean;
-  clearRedshift(): ConnectionSpec;
-
-  getHive(): ApacheHiveSpec | undefined;
-  setHive(value?: ApacheHiveSpec): ConnectionSpec;
-  hasHive(): boolean;
-  clearHive(): ConnectionSpec;
 
   getSnowflake(): SnowflakeSpec | undefined;
   setSnowflake(value?: SnowflakeSpec): ConnectionSpec;
@@ -1564,6 +1678,11 @@ export class ConnectionSpec extends jspb.Message {
   hasSqlite(): boolean;
   clearSqlite(): ConnectionSpec;
 
+  getGsheets(): GoogleSheetsSpec | undefined;
+  setGsheets(value?: GoogleSheetsSpec): ConnectionSpec;
+  hasGsheets(): boolean;
+  clearGsheets(): ConnectionSpec;
+
   getAzurestorage(): AzureStorageSpec | undefined;
   setAzurestorage(value?: AzureStorageSpec): ConnectionSpec;
   hasAzurestorage(): boolean;
@@ -1623,6 +1742,26 @@ export class ConnectionSpec extends jspb.Message {
   setSmtp(value?: SmtpSpec): ConnectionSpec;
   hasSmtp(): boolean;
   clearSmtp(): ConnectionSpec;
+
+  getFtp(): FtpSpec | undefined;
+  setFtp(value?: FtpSpec): ConnectionSpec;
+  hasFtp(): boolean;
+  clearFtp(): ConnectionSpec;
+
+  getSftp(): SFtpSpec | undefined;
+  setSftp(value?: SFtpSpec): ConnectionSpec;
+  hasSftp(): boolean;
+  clearSftp(): ConnectionSpec;
+
+  getDropbox(): DropboxSpec | undefined;
+  setDropbox(value?: DropboxSpec): ConnectionSpec;
+  hasDropbox(): boolean;
+  clearDropbox(): ConnectionSpec;
+
+  getBox(): BoxSpec | undefined;
+  setBox(value?: BoxSpec): ConnectionSpec;
+  hasBox(): boolean;
+  clearBox(): ConnectionSpec;
 
   getImageregistry(): ImageRegistrySpec | undefined;
   setImageregistry(value?: ImageRegistrySpec): ConnectionSpec;
@@ -1702,6 +1841,12 @@ export namespace ConnectionSpec {
     provider: string,
     secretname: string,
     athena?: AmazonAthenaSpec.AsObject,
+    drill?: ApacheDrillSpec.AsObject,
+    druid?: ApacheDruidSpec.AsObject,
+    hive?: ApacheHiveSpec.AsObject,
+    redshift?: AmazonRedShiftSpec.AsObject,
+    dermio?: DermioSpec.AsObject,
+    db2?: DB2Spec.AsObject,
     bigquery?: GcpBigQuerySpec.AsObject,
     cassandra?: ApacheCassandraSpec.AsObject,
     azuresqldatabase?: AzureSQLDatabaseSpec.AsObject,
@@ -1711,8 +1856,6 @@ export namespace ConnectionSpec {
     oracle?: OracleSpec.AsObject,
     postgres?: PostgresSQLSpec.AsObject,
     presto?: PrestoSpec.AsObject,
-    redshift?: AmazonRedShiftSpec.AsObject,
-    hive?: ApacheHiveSpec.AsObject,
     snowflake?: SnowflakeSpec.AsObject,
     sybase?: SybaseSpec.AsObject,
     vertica?: VerticaSpec.AsObject,
@@ -1729,6 +1872,7 @@ export namespace ConnectionSpec {
     couchbase?: CouchbaseSpec.AsObject,
     exasol?: ExasolSpec.AsObject,
     sqlite?: SqliteSpec.AsObject,
+    gsheets?: GoogleSheetsSpec.AsObject,
     azurestorage?: AzureStorageSpec.AsObject,
     alicloud?: AliCloudSpec.AsObject,
     bitbucket?: BitbucketSpec.AsObject,
@@ -1741,6 +1885,10 @@ export namespace ConnectionSpec {
     ovh?: OvhSpec.AsObject,
     aws?: AwsS3Spec.AsObject,
     smtp?: SmtpSpec.AsObject,
+    ftp?: FtpSpec.AsObject,
+    sftp?: SFtpSpec.AsObject,
+    dropbox?: DropboxSpec.AsObject,
+    box?: BoxSpec.AsObject,
     imageregistry?: ImageRegistrySpec.AsObject,
     github?: GithubSpec.AsObject,
     gitlab?: GitlabSpec.AsObject,
@@ -1829,6 +1977,82 @@ export namespace CouchbaseSpec {
   }
 }
 
+export class DB2Spec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): DB2Spec;
+
+  getPort(): number;
+  setPort(value: number): DB2Spec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): DB2Spec;
+
+  getUsername(): string;
+  setUsername(value: string): DB2Spec;
+
+  getPassword(): string;
+  setPassword(value: string): DB2Spec;
+
+  getUrl(): string;
+  setUrl(value: string): DB2Spec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DB2Spec.AsObject;
+  static toObject(includeInstance: boolean, msg: DB2Spec): DB2Spec.AsObject;
+  static serializeBinaryToWriter(message: DB2Spec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DB2Spec;
+  static deserializeBinaryFromReader(message: DB2Spec, reader: jspb.BinaryReader): DB2Spec;
+}
+
+export namespace DB2Spec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class DermioSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): DermioSpec;
+
+  getPort(): number;
+  setPort(value: number): DermioSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): DermioSpec;
+
+  getUsername(): string;
+  setUsername(value: string): DermioSpec;
+
+  getPassword(): string;
+  setPassword(value: string): DermioSpec;
+
+  getUrl(): string;
+  setUrl(value: string): DermioSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DermioSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DermioSpec): DermioSpec.AsObject;
+  static serializeBinaryToWriter(message: DermioSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DermioSpec;
+  static deserializeBinaryFromReader(message: DermioSpec, reader: jspb.BinaryReader): DermioSpec;
+}
+
+export namespace DermioSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
 export class DigitalOceanSpec extends jspb.Message {
   getToken(): string;
   setToken(value: string): DigitalOceanSpec;
@@ -1860,6 +2084,24 @@ export namespace DigitalOceanSpec {
     secretkey: string,
     defaultregion: string,
     host: string,
+  }
+}
+
+export class DropboxSpec extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): DropboxSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DropboxSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DropboxSpec): DropboxSpec.AsObject;
+  static serializeBinaryToWriter(message: DropboxSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DropboxSpec;
+  static deserializeBinaryFromReader(message: DropboxSpec, reader: jspb.BinaryReader): DropboxSpec;
+}
+
+export namespace DropboxSpec {
+  export type AsObject = {
+    token: string,
   }
 }
 
@@ -1932,6 +2174,74 @@ export namespace ExasolSpec {
     username: string,
     password: string,
     url: string,
+  }
+}
+
+export class FTPSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): FTPSpec;
+
+  getPort(): number;
+  setPort(value: number): FTPSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): FTPSpec;
+
+  getUsername(): string;
+  setUsername(value: string): FTPSpec;
+
+  getPassword(): string;
+  setPassword(value: string): FTPSpec;
+
+  getUrl(): string;
+  setUrl(value: string): FTPSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FTPSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FTPSpec): FTPSpec.AsObject;
+  static serializeBinaryToWriter(message: FTPSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FTPSpec;
+  static deserializeBinaryFromReader(message: FTPSpec, reader: jspb.BinaryReader): FTPSpec;
+}
+
+export namespace FTPSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class FtpSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): FtpSpec;
+
+  getPort(): number;
+  setPort(value: number): FtpSpec;
+
+  getUsername(): string;
+  setUsername(value: string): FtpSpec;
+
+  getPassword(): string;
+  setPassword(value: string): FtpSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FtpSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FtpSpec): FtpSpec.AsObject;
+  static serializeBinaryToWriter(message: FtpSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FtpSpec;
+  static deserializeBinaryFromReader(message: FtpSpec, reader: jspb.BinaryReader): FtpSpec;
+}
+
+export namespace FtpSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
   }
 }
 
@@ -2086,6 +2396,32 @@ export namespace GitlabSpec {
   export type AsObject = {
     token: string,
     ssh: string,
+  }
+}
+
+export class GoogleSheetsSpec extends jspb.Message {
+  getScopes(): string;
+  setScopes(value: string): GoogleSheetsSpec;
+
+  getId(): string;
+  setId(value: string): GoogleSheetsSpec;
+
+  getDatatopull(): string;
+  setDatatopull(value: string): GoogleSheetsSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GoogleSheetsSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GoogleSheetsSpec): GoogleSheetsSpec.AsObject;
+  static serializeBinaryToWriter(message: GoogleSheetsSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GoogleSheetsSpec;
+  static deserializeBinaryFromReader(message: GoogleSheetsSpec, reader: jspb.BinaryReader): GoogleSheetsSpec;
+}
+
+export namespace GoogleSheetsSpec {
+  export type AsObject = {
+    scopes: string,
+    id: string,
+    datatopull: string,
   }
 }
 
@@ -3452,6 +3788,74 @@ export namespace SAPHanaSpec {
     username: string,
     password: string,
     url: string,
+  }
+}
+
+export class SFTPSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SFTPSpec;
+
+  getPort(): number;
+  setPort(value: number): SFTPSpec;
+
+  getKeyspace(): string;
+  setKeyspace(value: string): SFTPSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SFTPSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SFTPSpec;
+
+  getUrl(): string;
+  setUrl(value: string): SFTPSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SFTPSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SFTPSpec): SFTPSpec.AsObject;
+  static serializeBinaryToWriter(message: SFTPSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SFTPSpec;
+  static deserializeBinaryFromReader(message: SFTPSpec, reader: jspb.BinaryReader): SFTPSpec;
+}
+
+export namespace SFTPSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    keyspace: string,
+    username: string,
+    password: string,
+    url: string,
+  }
+}
+
+export class SFtpSpec extends jspb.Message {
+  getHost(): string;
+  setHost(value: string): SFtpSpec;
+
+  getPort(): number;
+  setPort(value: number): SFtpSpec;
+
+  getUsername(): string;
+  setUsername(value: string): SFtpSpec;
+
+  getPassword(): string;
+  setPassword(value: string): SFtpSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SFtpSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SFtpSpec): SFtpSpec.AsObject;
+  static serializeBinaryToWriter(message: SFtpSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SFtpSpec;
+  static deserializeBinaryFromReader(message: SFtpSpec, reader: jspb.BinaryReader): SFtpSpec;
+}
+
+export namespace SFtpSpec {
+  export type AsObject = {
+    host: string,
+    port: number,
+    username: string,
+    password: string,
   }
 }
 

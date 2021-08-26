@@ -40,6 +40,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.A
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken', null, global);
@@ -57,6 +59,7 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.A
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit', null, global);
@@ -70,14 +73,20 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.C
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec', null, global);
@@ -120,6 +129,8 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.P
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Scope', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteCondition', null, global);
@@ -469,6 +480,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -837,6 +890,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1110,6 +1184,48 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1120,6 +1236,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1162,6 +1299,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1267,6 +1446,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2149,6 +2349,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.displayName = 'proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -8102,6 +8344,782 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.toObject(opt_includeInstance, this);
 };
@@ -12874,6 +13892,154 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    token: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string token = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.setToken = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.clearToken = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.prototype.hasToken = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec.toObject(opt_includeInstance, this);
 };
@@ -15839,6 +17005,12 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     provider: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     secretname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     athena: (f = msg.getAthena()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec.toObject(includeInstance, f),
+    drill: (f = msg.getDrill()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.toObject(includeInstance, f),
+    druid: (f = msg.getDruid()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.toObject(includeInstance, f),
+    hive: (f = msg.getHive()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.toObject(includeInstance, f),
+    redshift: (f = msg.getRedshift()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.toObject(includeInstance, f),
+    dermio: (f = msg.getDermio()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.toObject(includeInstance, f),
+    db2: (f = msg.getDb2()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.toObject(includeInstance, f),
     bigquery: (f = msg.getBigquery()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.toObject(includeInstance, f),
     cassandra: (f = msg.getCassandra()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.toObject(includeInstance, f),
     azuresqldatabase: (f = msg.getAzuresqldatabase()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec.toObject(includeInstance, f),
@@ -15848,8 +17020,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     oracle: (f = msg.getOracle()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec.toObject(includeInstance, f),
     postgres: (f = msg.getPostgres()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.toObject(includeInstance, f),
     presto: (f = msg.getPresto()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec.toObject(includeInstance, f),
-    redshift: (f = msg.getRedshift()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.toObject(includeInstance, f),
-    hive: (f = msg.getHive()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.toObject(includeInstance, f),
     snowflake: (f = msg.getSnowflake()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.toObject(includeInstance, f),
     sybase: (f = msg.getSybase()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec.toObject(includeInstance, f),
     vertica: (f = msg.getVertica()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec.toObject(includeInstance, f),
@@ -15866,6 +17036,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     couchbase: (f = msg.getCouchbase()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec.toObject(includeInstance, f),
     exasol: (f = msg.getExasol()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.toObject(includeInstance, f),
     sqlite: (f = msg.getSqlite()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec.toObject(includeInstance, f),
+    gsheets: (f = msg.getGsheets()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.toObject(includeInstance, f),
     azurestorage: (f = msg.getAzurestorage()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec.toObject(includeInstance, f),
     alicloud: (f = msg.getAlicloud()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec.toObject(includeInstance, f),
     bitbucket: (f = msg.getBitbucket()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec.toObject(includeInstance, f),
@@ -15878,6 +17049,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     ovh: (f = msg.getOvh()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec.toObject(includeInstance, f),
     aws: (f = msg.getAws()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec.toObject(includeInstance, f),
     smtp: (f = msg.getSmtp()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec.toObject(includeInstance, f),
+    ftp: (f = msg.getFtp()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.toObject(includeInstance, f),
+    sftp: (f = msg.getSftp()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.toObject(includeInstance, f),
+    dropbox: (f = msg.getDropbox()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.toObject(includeInstance, f),
+    box: (f = msg.getBox()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.toObject(includeInstance, f),
     imageregistry: (f = msg.getImageregistry()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec.toObject(includeInstance, f),
     github: (f = msg.getGithub()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec.toObject(includeInstance, f),
     gitlab: (f = msg.getGitlab()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.toObject(includeInstance, f),
@@ -15890,7 +17065,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     pushover: (f = msg.getPushover()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec.toObject(includeInstance, f),
     opsgenie: (f = msg.getOpsgenie()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec.toObject(includeInstance, f),
     webhook: (f = msg.getWebhook()) && proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 58)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 67)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15950,261 +17125,306 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.deser
       msg.setAthena(value);
       break;
     case 6:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.deserializeBinaryFromReader);
-      msg.setBigquery(value);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.deserializeBinaryFromReader);
+      msg.setDrill(value);
       break;
     case 7:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.deserializeBinaryFromReader);
-      msg.setCassandra(value);
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.deserializeBinaryFromReader);
+      msg.setDruid(value);
       break;
     case 8:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec.deserializeBinaryFromReader);
-      msg.setAzuresqldatabase(value);
-      break;
-    case 9:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.deserializeBinaryFromReader);
-      msg.setMongodb(value);
-      break;
-    case 10:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.deserializeBinaryFromReader);
-      msg.setMysql(value);
-      break;
-    case 11:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec.deserializeBinaryFromReader);
-      msg.setOdbc(value);
-      break;
-    case 12:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec.deserializeBinaryFromReader);
-      msg.setOracle(value);
-      break;
-    case 13:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.deserializeBinaryFromReader);
-      msg.setPostgres(value);
-      break;
-    case 14:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec.deserializeBinaryFromReader);
-      msg.setPresto(value);
-      break;
-    case 15:
-      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.deserializeBinaryFromReader);
-      msg.setRedshift(value);
-      break;
-    case 16:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.deserializeBinaryFromReader);
       msg.setHive(value);
       break;
+    case 9:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.deserializeBinaryFromReader);
+      msg.setRedshift(value);
+      break;
+    case 10:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.deserializeBinaryFromReader);
+      msg.setDermio(value);
+      break;
+    case 11:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.deserializeBinaryFromReader);
+      msg.setDb2(value);
+      break;
+    case 12:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.deserializeBinaryFromReader);
+      msg.setBigquery(value);
+      break;
+    case 13:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.deserializeBinaryFromReader);
+      msg.setCassandra(value);
+      break;
+    case 14:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec.deserializeBinaryFromReader);
+      msg.setAzuresqldatabase(value);
+      break;
+    case 15:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.deserializeBinaryFromReader);
+      msg.setMongodb(value);
+      break;
+    case 16:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.deserializeBinaryFromReader);
+      msg.setMysql(value);
+      break;
     case 17:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec.deserializeBinaryFromReader);
+      msg.setOdbc(value);
+      break;
+    case 18:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec.deserializeBinaryFromReader);
+      msg.setOracle(value);
+      break;
+    case 19:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.deserializeBinaryFromReader);
+      msg.setPostgres(value);
+      break;
+    case 20:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec.deserializeBinaryFromReader);
+      msg.setPresto(value);
+      break;
+    case 22:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.deserializeBinaryFromReader);
       msg.setSnowflake(value);
       break;
-    case 18:
+    case 23:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec.deserializeBinaryFromReader);
       msg.setSybase(value);
       break;
-    case 19:
+    case 24:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec.deserializeBinaryFromReader);
       msg.setVertica(value);
       break;
-    case 20:
+    case 25:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec.deserializeBinaryFromReader);
       msg.setCockroachdb(value);
       break;
-    case 21:
+    case 26:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec.deserializeBinaryFromReader);
       msg.setElasticsearch(value);
       break;
-    case 22:
+    case 27:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec.deserializeBinaryFromReader);
       msg.setInformix(value);
       break;
-    case 23:
+    case 28:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec.deserializeBinaryFromReader);
       msg.setHana(value);
       break;
-    case 24:
+    case 29:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec.deserializeBinaryFromReader);
       msg.setTeradata(value);
       break;
-    case 25:
+    case 30:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec.deserializeBinaryFromReader);
       msg.setSpanner(value);
       break;
-    case 26:
+    case 31:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec.deserializeBinaryFromReader);
       msg.setSpark(value);
       break;
-    case 27:
+    case 32:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec.deserializeBinaryFromReader);
       msg.setMssqlserver(value);
       break;
-    case 28:
+    case 33:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec.deserializeBinaryFromReader);
       msg.setClickhouse(value);
       break;
-    case 29:
+    case 34:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec.deserializeBinaryFromReader);
       msg.setGreenplum(value);
       break;
-    case 30:
+    case 35:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec.deserializeBinaryFromReader);
       msg.setCouchbase(value);
       break;
-    case 31:
+    case 36:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.deserializeBinaryFromReader);
       msg.setExasol(value);
       break;
-    case 32:
+    case 37:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec.deserializeBinaryFromReader);
       msg.setSqlite(value);
       break;
-    case 33:
+    case 38:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.deserializeBinaryFromReader);
+      msg.setGsheets(value);
+      break;
+    case 39:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec.deserializeBinaryFromReader);
       msg.setAzurestorage(value);
       break;
-    case 34:
+    case 40:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec.deserializeBinaryFromReader);
       msg.setAlicloud(value);
       break;
-    case 35:
+    case 41:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec.deserializeBinaryFromReader);
       msg.setBitbucket(value);
       break;
-    case 36:
+    case 42:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.deserializeBinaryFromReader);
       msg.setDigitalocean(value);
       break;
-    case 37:
+    case 43:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec.deserializeBinaryFromReader);
       msg.setHetzner(value);
       break;
-    case 38:
+    case 44:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec.deserializeBinaryFromReader);
       msg.setGcpstorage(value);
       break;
-    case 39:
+    case 45:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec.deserializeBinaryFromReader);
       msg.setLinode(value);
       break;
-    case 40:
+    case 46:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec.deserializeBinaryFromReader);
       msg.setMinio(value);
       break;
-    case 41:
+    case 47:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec.deserializeBinaryFromReader);
       msg.setOpenstack(value);
       break;
-    case 42:
+    case 48:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec.deserializeBinaryFromReader);
       msg.setOvh(value);
       break;
-    case 43:
+    case 49:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec.deserializeBinaryFromReader);
       msg.setAws(value);
       break;
-    case 44:
+    case 50:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec.deserializeBinaryFromReader);
       msg.setSmtp(value);
       break;
-    case 45:
+    case 51:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.deserializeBinaryFromReader);
+      msg.setFtp(value);
+      break;
+    case 52:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.deserializeBinaryFromReader);
+      msg.setSftp(value);
+      break;
+    case 53:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.deserializeBinaryFromReader);
+      msg.setDropbox(value);
+      break;
+    case 54:
+      var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.deserializeBinaryFromReader);
+      msg.setBox(value);
+      break;
+    case 55:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec.deserializeBinaryFromReader);
       msg.setImageregistry(value);
       break;
-    case 46:
+    case 56:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec.deserializeBinaryFromReader);
       msg.setGithub(value);
       break;
-    case 47:
+    case 57:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.deserializeBinaryFromReader);
       msg.setGitlab(value);
       break;
-    case 48:
+    case 58:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec.deserializeBinaryFromReader);
       msg.setSlack(value);
       break;
-    case 50:
+    case 59:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec.deserializeBinaryFromReader);
       msg.setMsteam(value);
       break;
-    case 51:
+    case 60:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec.deserializeBinaryFromReader);
       msg.setMattermost(value);
       break;
-    case 52:
+    case 61:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec.deserializeBinaryFromReader);
       msg.setHipchat(value);
       break;
-    case 53:
+    case 62:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec.deserializeBinaryFromReader);
       msg.setVictorop(value);
       break;
-    case 54:
+    case 63:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec.deserializeBinaryFromReader);
       msg.setPagerduty(value);
       break;
-    case 55:
+    case 64:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec.deserializeBinaryFromReader);
       msg.setPushover(value);
       break;
-    case 56:
+    case 65:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec.deserializeBinaryFromReader);
       msg.setOpsgenie(value);
       break;
-    case 57:
+    case 66:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec.deserializeBinaryFromReader);
       msg.setWebhook(value);
       break;
-    case 58:
+    case 67:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -16274,10 +17494,58 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec.serializeBinaryToWriter
     );
   }
-  f = message.getBigquery();
+  f = message.getDrill();
   if (f != null) {
     writer.writeMessage(
       6,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getDruid();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getHive();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getRedshift();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getDermio();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getDb2();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBigquery();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec.serializeBinaryToWriter
     );
@@ -16285,7 +17553,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getCassandra();
   if (f != null) {
     writer.writeMessage(
-      7,
+      13,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec.serializeBinaryToWriter
     );
@@ -16293,7 +17561,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getAzuresqldatabase();
   if (f != null) {
     writer.writeMessage(
-      8,
+      14,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec.serializeBinaryToWriter
     );
@@ -16301,7 +17569,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMongodb();
   if (f != null) {
     writer.writeMessage(
-      9,
+      15,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec.serializeBinaryToWriter
     );
@@ -16309,7 +17577,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMysql();
   if (f != null) {
     writer.writeMessage(
-      10,
+      16,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec.serializeBinaryToWriter
     );
@@ -16317,7 +17585,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getOdbc();
   if (f != null) {
     writer.writeMessage(
-      11,
+      17,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec.serializeBinaryToWriter
     );
@@ -16325,7 +17593,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getOracle();
   if (f != null) {
     writer.writeMessage(
-      12,
+      18,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec.serializeBinaryToWriter
     );
@@ -16333,7 +17601,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getPostgres();
   if (f != null) {
     writer.writeMessage(
-      13,
+      19,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec.serializeBinaryToWriter
     );
@@ -16341,31 +17609,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getPresto();
   if (f != null) {
     writer.writeMessage(
-      14,
+      20,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getRedshift();
-  if (f != null) {
-    writer.writeMessage(
-      15,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getHive();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec.serializeBinaryToWriter
     );
   }
   f = message.getSnowflake();
   if (f != null) {
     writer.writeMessage(
-      17,
+      22,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec.serializeBinaryToWriter
     );
@@ -16373,7 +17625,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSybase();
   if (f != null) {
     writer.writeMessage(
-      18,
+      23,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec.serializeBinaryToWriter
     );
@@ -16381,7 +17633,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getVertica();
   if (f != null) {
     writer.writeMessage(
-      19,
+      24,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec.serializeBinaryToWriter
     );
@@ -16389,7 +17641,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getCockroachdb();
   if (f != null) {
     writer.writeMessage(
-      20,
+      25,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec.serializeBinaryToWriter
     );
@@ -16397,7 +17649,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getElasticsearch();
   if (f != null) {
     writer.writeMessage(
-      21,
+      26,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec.serializeBinaryToWriter
     );
@@ -16405,7 +17657,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getInformix();
   if (f != null) {
     writer.writeMessage(
-      22,
+      27,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec.serializeBinaryToWriter
     );
@@ -16413,7 +17665,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getHana();
   if (f != null) {
     writer.writeMessage(
-      23,
+      28,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec.serializeBinaryToWriter
     );
@@ -16421,7 +17673,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getTeradata();
   if (f != null) {
     writer.writeMessage(
-      24,
+      29,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec.serializeBinaryToWriter
     );
@@ -16429,7 +17681,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSpanner();
   if (f != null) {
     writer.writeMessage(
-      25,
+      30,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec.serializeBinaryToWriter
     );
@@ -16437,7 +17689,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSpark();
   if (f != null) {
     writer.writeMessage(
-      26,
+      31,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec.serializeBinaryToWriter
     );
@@ -16445,7 +17697,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMssqlserver();
   if (f != null) {
     writer.writeMessage(
-      27,
+      32,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec.serializeBinaryToWriter
     );
@@ -16453,7 +17705,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getClickhouse();
   if (f != null) {
     writer.writeMessage(
-      28,
+      33,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec.serializeBinaryToWriter
     );
@@ -16461,7 +17713,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getGreenplum();
   if (f != null) {
     writer.writeMessage(
-      29,
+      34,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec.serializeBinaryToWriter
     );
@@ -16469,7 +17721,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getCouchbase();
   if (f != null) {
     writer.writeMessage(
-      30,
+      35,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec.serializeBinaryToWriter
     );
@@ -16477,7 +17729,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getExasol();
   if (f != null) {
     writer.writeMessage(
-      31,
+      36,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.serializeBinaryToWriter
     );
@@ -16485,15 +17737,23 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSqlite();
   if (f != null) {
     writer.writeMessage(
-      32,
+      37,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getGsheets();
+  if (f != null) {
+    writer.writeMessage(
+      38,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.serializeBinaryToWriter
     );
   }
   f = message.getAzurestorage();
   if (f != null) {
     writer.writeMessage(
-      33,
+      39,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec.serializeBinaryToWriter
     );
@@ -16501,7 +17761,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getAlicloud();
   if (f != null) {
     writer.writeMessage(
-      34,
+      40,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec.serializeBinaryToWriter
     );
@@ -16509,7 +17769,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getBitbucket();
   if (f != null) {
     writer.writeMessage(
-      35,
+      41,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec.serializeBinaryToWriter
     );
@@ -16517,7 +17777,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getDigitalocean();
   if (f != null) {
     writer.writeMessage(
-      36,
+      42,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.serializeBinaryToWriter
     );
@@ -16525,7 +17785,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getHetzner();
   if (f != null) {
     writer.writeMessage(
-      37,
+      43,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec.serializeBinaryToWriter
     );
@@ -16533,7 +17793,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getGcpstorage();
   if (f != null) {
     writer.writeMessage(
-      38,
+      44,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec.serializeBinaryToWriter
     );
@@ -16541,7 +17801,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getLinode();
   if (f != null) {
     writer.writeMessage(
-      39,
+      45,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec.serializeBinaryToWriter
     );
@@ -16549,7 +17809,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMinio();
   if (f != null) {
     writer.writeMessage(
-      40,
+      46,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec.serializeBinaryToWriter
     );
@@ -16557,7 +17817,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getOpenstack();
   if (f != null) {
     writer.writeMessage(
-      41,
+      47,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec.serializeBinaryToWriter
     );
@@ -16565,7 +17825,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getOvh();
   if (f != null) {
     writer.writeMessage(
-      42,
+      48,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec.serializeBinaryToWriter
     );
@@ -16573,7 +17833,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getAws();
   if (f != null) {
     writer.writeMessage(
-      43,
+      49,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec.serializeBinaryToWriter
     );
@@ -16581,15 +17841,47 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSmtp();
   if (f != null) {
     writer.writeMessage(
-      44,
+      50,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getFtp();
+  if (f != null) {
+    writer.writeMessage(
+      51,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getSftp();
+  if (f != null) {
+    writer.writeMessage(
+      52,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getDropbox();
+  if (f != null) {
+    writer.writeMessage(
+      53,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBox();
+  if (f != null) {
+    writer.writeMessage(
+      54,
+      f,
+      proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec.serializeBinaryToWriter
     );
   }
   f = message.getImageregistry();
   if (f != null) {
     writer.writeMessage(
-      45,
+      55,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec.serializeBinaryToWriter
     );
@@ -16597,7 +17889,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getGithub();
   if (f != null) {
     writer.writeMessage(
-      46,
+      56,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec.serializeBinaryToWriter
     );
@@ -16605,7 +17897,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getGitlab();
   if (f != null) {
     writer.writeMessage(
-      47,
+      57,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.serializeBinaryToWriter
     );
@@ -16613,7 +17905,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getSlack();
   if (f != null) {
     writer.writeMessage(
-      48,
+      58,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec.serializeBinaryToWriter
     );
@@ -16621,7 +17913,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMsteam();
   if (f != null) {
     writer.writeMessage(
-      50,
+      59,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec.serializeBinaryToWriter
     );
@@ -16629,7 +17921,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getMattermost();
   if (f != null) {
     writer.writeMessage(
-      51,
+      60,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec.serializeBinaryToWriter
     );
@@ -16637,7 +17929,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getHipchat();
   if (f != null) {
     writer.writeMessage(
-      52,
+      61,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec.serializeBinaryToWriter
     );
@@ -16645,7 +17937,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getVictorop();
   if (f != null) {
     writer.writeMessage(
-      53,
+      62,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec.serializeBinaryToWriter
     );
@@ -16653,7 +17945,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getPagerduty();
   if (f != null) {
     writer.writeMessage(
-      54,
+      63,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec.serializeBinaryToWriter
     );
@@ -16661,7 +17953,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getPushover();
   if (f != null) {
     writer.writeMessage(
-      55,
+      64,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec.serializeBinaryToWriter
     );
@@ -16669,7 +17961,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getOpsgenie();
   if (f != null) {
     writer.writeMessage(
-      56,
+      65,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec.serializeBinaryToWriter
     );
@@ -16677,15 +17969,15 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   f = message.getWebhook();
   if (f != null) {
     writer.writeMessage(
-      57,
+      66,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 58));
+  f = /** @type {string} */ (jspb.Message.getField(message, 67));
   if (f != null) {
     writer.writeString(
-      58,
+      67,
       f
     );
   }
@@ -16875,20 +18167,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional GcpBigQuerySpec bigquery = 6;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec}
+ * optional ApacheDrillSpec drill = 6;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getBigquery = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec, 6));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDrill = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec, 6));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setBigquery = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDrill = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
@@ -16897,8 +18189,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearBigquery = function() {
-  return this.setBigquery(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDrill = function() {
+  return this.setDrill(undefined);
 };
 
 
@@ -16906,26 +18198,26 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasBigquery = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDrill = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional ApacheCassandraSpec cassandra = 7;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec}
+ * optional ApacheDruidSpec druid = 7;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getCassandra = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec, 7));
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDruid = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec, 7));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setCassandra = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDruid = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -16934,8 +18226,8 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearCassandra = function() {
-  return this.setCassandra(undefined);
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDruid = function() {
+  return this.setDruid(undefined);
 };
 
 
@@ -16943,314 +18235,18 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasCassandra = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDruid = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional AzureSQLDatabaseSpec azuresqldatabase = 8;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAzuresqldatabase = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec, 8));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setAzuresqldatabase = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearAzuresqldatabase = function() {
-  return this.setAzuresqldatabase(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasAzuresqldatabase = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional MongoDbSpec mongodb = 9;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMongodb = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec, 9));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMongodb = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearMongodb = function() {
-  return this.setMongodb(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMongodb = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional MySqlSpec mysql = 10;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMysql = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec, 10));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMysql = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearMysql = function() {
-  return this.setMysql(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMysql = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional OdbcSpec odbc = 11;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOdbc = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec, 11));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOdbc = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOdbc = function() {
-  return this.setOdbc(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOdbc = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional OracleSpec oracle = 12;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOracle = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec, 12));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOracle = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOracle = function() {
-  return this.setOracle(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOracle = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional PostgresSQLSpec postgres = 13;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPostgres = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec, 13));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPostgres = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearPostgres = function() {
-  return this.setPostgres(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPostgres = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional PrestoSpec presto = 14;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPresto = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec, 14));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPresto = function(value) {
-  return jspb.Message.setWrapperField(this, 14, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearPresto = function() {
-  return this.setPresto(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPresto = function() {
-  return jspb.Message.getField(this, 14) != null;
-};
-
-
-/**
- * optional AmazonRedShiftSpec redshift = 15;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getRedshift = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec, 15));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setRedshift = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearRedshift = function() {
-  return this.setRedshift(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasRedshift = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional ApacheHiveSpec hive = 16;
+ * optional ApacheHiveSpec hive = 8;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getHive = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec, 16));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec, 8));
 };
 
 
@@ -17259,7 +18255,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setHive = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -17277,17 +18273,461 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasHive = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional AmazonRedShiftSpec redshift = 9;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getRedshift = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setRedshift = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearRedshift = function() {
+  return this.setRedshift(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasRedshift = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional DermioSpec dermio = 10;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDermio = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDermio = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDermio = function() {
+  return this.setDermio(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDermio = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional DB2Spec db2 = 11;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDb2 = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec, 11));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDb2 = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDb2 = function() {
+  return this.setDb2(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDb2 = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional GcpBigQuerySpec bigquery = 12;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getBigquery = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec, 12));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setBigquery = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearBigquery = function() {
+  return this.setBigquery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasBigquery = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional ApacheCassandraSpec cassandra = 13;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getCassandra = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec, 13));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setCassandra = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearCassandra = function() {
+  return this.setCassandra(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasCassandra = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional AzureSQLDatabaseSpec azuresqldatabase = 14;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAzuresqldatabase = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec, 14));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setAzuresqldatabase = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearAzuresqldatabase = function() {
+  return this.setAzuresqldatabase(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasAzuresqldatabase = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional MongoDbSpec mongodb = 15;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMongodb = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec, 15));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MongoDbSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMongodb = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearMongodb = function() {
+  return this.setMongodb(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMongodb = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional MySqlSpec mysql = 16;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMysql = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec, 16));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MySqlSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMysql = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearMysql = function() {
+  return this.setMysql(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMysql = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional SnowflakeSpec snowflake = 17;
+ * optional OdbcSpec odbc = 17;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOdbc = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec, 17));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OdbcSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOdbc = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOdbc = function() {
+  return this.setOdbc(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOdbc = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional OracleSpec oracle = 18;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOracle = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec, 18));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OracleSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOracle = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOracle = function() {
+  return this.setOracle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOracle = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional PostgresSQLSpec postgres = 19;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPostgres = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec, 19));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPostgres = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearPostgres = function() {
+  return this.setPostgres(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPostgres = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional PrestoSpec presto = 20;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPresto = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec, 20));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PrestoSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPresto = function(value) {
+  return jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearPresto = function() {
+  return this.setPresto(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPresto = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional SnowflakeSpec snowflake = 22;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSnowflake = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec, 17));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SnowflakeSpec, 22));
 };
 
 
@@ -17296,7 +18736,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSnowflake = function(value) {
-  return jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -17314,17 +18754,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSnowflake = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional SybaseSpec sybase = 18;
+ * optional SybaseSpec sybase = 23;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSybase = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec, 18));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SybaseSpec, 23));
 };
 
 
@@ -17333,7 +18773,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSybase = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 23, value);
 };
 
 
@@ -17351,17 +18791,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSybase = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional VerticaSpec vertica = 19;
+ * optional VerticaSpec vertica = 24;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getVertica = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec, 19));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VerticaSpec, 24));
 };
 
 
@@ -17370,7 +18810,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setVertica = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 24, value);
 };
 
 
@@ -17388,17 +18828,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasVertica = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
 /**
- * optional CockroachDBSpec cockroachdb = 20;
+ * optional CockroachDBSpec cockroachdb = 25;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getCockroachdb = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec, 20));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CockroachDBSpec, 25));
 };
 
 
@@ -17407,7 +18847,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setCockroachdb = function(value) {
-  return jspb.Message.setWrapperField(this, 20, value);
+  return jspb.Message.setWrapperField(this, 25, value);
 };
 
 
@@ -17425,17 +18865,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasCockroachdb = function() {
-  return jspb.Message.getField(this, 20) != null;
+  return jspb.Message.getField(this, 25) != null;
 };
 
 
 /**
- * optional ElasticSearchSpec elasticsearch = 21;
+ * optional ElasticSearchSpec elasticsearch = 26;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getElasticsearch = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec, 21));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec, 26));
 };
 
 
@@ -17444,7 +18884,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setElasticsearch = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 26, value);
 };
 
 
@@ -17462,17 +18902,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasElasticsearch = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 26) != null;
 };
 
 
 /**
- * optional InformixSpec informix = 22;
+ * optional InformixSpec informix = 27;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getInformix = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec, 22));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.InformixSpec, 27));
 };
 
 
@@ -17481,7 +18921,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setInformix = function(value) {
-  return jspb.Message.setWrapperField(this, 22, value);
+  return jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -17499,17 +18939,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasInformix = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * optional SAPHanaSpec hana = 23;
+ * optional SAPHanaSpec hana = 28;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getHana = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec, 23));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec, 28));
 };
 
 
@@ -17518,7 +18958,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setHana = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+  return jspb.Message.setWrapperField(this, 28, value);
 };
 
 
@@ -17536,17 +18976,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasHana = function() {
-  return jspb.Message.getField(this, 23) != null;
+  return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * optional TeradataSpec teradata = 24;
+ * optional TeradataSpec teradata = 29;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getTeradata = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec, 24));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TeradataSpec, 29));
 };
 
 
@@ -17555,7 +18995,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setTeradata = function(value) {
-  return jspb.Message.setWrapperField(this, 24, value);
+  return jspb.Message.setWrapperField(this, 29, value);
 };
 
 
@@ -17573,17 +19013,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasTeradata = function() {
-  return jspb.Message.getField(this, 24) != null;
+  return jspb.Message.getField(this, 29) != null;
 };
 
 
 /**
- * optional GcpSpannerSpec spanner = 25;
+ * optional GcpSpannerSpec spanner = 30;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSpanner = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec, 25));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec, 30));
 };
 
 
@@ -17592,7 +19032,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSpanner = function(value) {
-  return jspb.Message.setWrapperField(this, 25, value);
+  return jspb.Message.setWrapperField(this, 30, value);
 };
 
 
@@ -17610,17 +19050,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSpanner = function() {
-  return jspb.Message.getField(this, 25) != null;
+  return jspb.Message.getField(this, 30) != null;
 };
 
 
 /**
- * optional ApacheSparkSpec spark = 26;
+ * optional ApacheSparkSpec spark = 31;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSpark = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec, 26));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec, 31));
 };
 
 
@@ -17629,7 +19069,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSpark = function(value) {
-  return jspb.Message.setWrapperField(this, 26, value);
+  return jspb.Message.setWrapperField(this, 31, value);
 };
 
 
@@ -17647,17 +19087,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSpark = function() {
-  return jspb.Message.getField(this, 26) != null;
+  return jspb.Message.getField(this, 31) != null;
 };
 
 
 /**
- * optional MSSqlServerSpec mssqlserver = 27;
+ * optional MSSqlServerSpec mssqlserver = 32;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMssqlserver = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec, 27));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec, 32));
 };
 
 
@@ -17666,7 +19106,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMssqlserver = function(value) {
-  return jspb.Message.setWrapperField(this, 27, value);
+  return jspb.Message.setWrapperField(this, 32, value);
 };
 
 
@@ -17684,17 +19124,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMssqlserver = function() {
-  return jspb.Message.getField(this, 27) != null;
+  return jspb.Message.getField(this, 32) != null;
 };
 
 
 /**
- * optional ClickHouseSpec clickhouse = 28;
+ * optional ClickHouseSpec clickhouse = 33;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getClickhouse = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec, 28));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ClickHouseSpec, 33));
 };
 
 
@@ -17703,7 +19143,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setClickhouse = function(value) {
-  return jspb.Message.setWrapperField(this, 28, value);
+  return jspb.Message.setWrapperField(this, 33, value);
 };
 
 
@@ -17721,17 +19161,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasClickhouse = function() {
-  return jspb.Message.getField(this, 28) != null;
+  return jspb.Message.getField(this, 33) != null;
 };
 
 
 /**
- * optional GreenPlumSpec greenplum = 29;
+ * optional GreenPlumSpec greenplum = 34;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getGreenplum = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec, 29));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GreenPlumSpec, 34));
 };
 
 
@@ -17740,7 +19180,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setGreenplum = function(value) {
-  return jspb.Message.setWrapperField(this, 29, value);
+  return jspb.Message.setWrapperField(this, 34, value);
 };
 
 
@@ -17758,17 +19198,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasGreenplum = function() {
-  return jspb.Message.getField(this, 29) != null;
+  return jspb.Message.getField(this, 34) != null;
 };
 
 
 /**
- * optional CouchbaseSpec couchbase = 30;
+ * optional CouchbaseSpec couchbase = 35;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getCouchbase = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec, 30));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CouchbaseSpec, 35));
 };
 
 
@@ -17777,7 +19217,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setCouchbase = function(value) {
-  return jspb.Message.setWrapperField(this, 30, value);
+  return jspb.Message.setWrapperField(this, 35, value);
 };
 
 
@@ -17795,17 +19235,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasCouchbase = function() {
-  return jspb.Message.getField(this, 30) != null;
+  return jspb.Message.getField(this, 35) != null;
 };
 
 
 /**
- * optional ExasolSpec exasol = 31;
+ * optional ExasolSpec exasol = 36;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getExasol = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec, 31));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec, 36));
 };
 
 
@@ -17814,7 +19254,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setExasol = function(value) {
-  return jspb.Message.setWrapperField(this, 31, value);
+  return jspb.Message.setWrapperField(this, 36, value);
 };
 
 
@@ -17832,17 +19272,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasExasol = function() {
-  return jspb.Message.getField(this, 31) != null;
+  return jspb.Message.getField(this, 36) != null;
 };
 
 
 /**
- * optional SqliteSpec sqlite = 32;
+ * optional SqliteSpec sqlite = 37;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSqlite = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec, 32));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SqliteSpec, 37));
 };
 
 
@@ -17851,7 +19291,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSqlite = function(value) {
-  return jspb.Message.setWrapperField(this, 32, value);
+  return jspb.Message.setWrapperField(this, 37, value);
 };
 
 
@@ -17869,17 +19309,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSqlite = function() {
-  return jspb.Message.getField(this, 32) != null;
+  return jspb.Message.getField(this, 37) != null;
 };
 
 
 /**
- * optional AzureStorageSpec azurestorage = 33;
+ * optional GoogleSheetsSpec gsheets = 38;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getGsheets = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec, 38));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setGsheets = function(value) {
+  return jspb.Message.setWrapperField(this, 38, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearGsheets = function() {
+  return this.setGsheets(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasGsheets = function() {
+  return jspb.Message.getField(this, 38) != null;
+};
+
+
+/**
+ * optional AzureStorageSpec azurestorage = 39;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAzurestorage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec, 33));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AzureStorageSpec, 39));
 };
 
 
@@ -17888,7 +19365,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setAzurestorage = function(value) {
-  return jspb.Message.setWrapperField(this, 33, value);
+  return jspb.Message.setWrapperField(this, 39, value);
 };
 
 
@@ -17906,17 +19383,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasAzurestorage = function() {
-  return jspb.Message.getField(this, 33) != null;
+  return jspb.Message.getField(this, 39) != null;
 };
 
 
 /**
- * optional AliCloudSpec alicloud = 34;
+ * optional AliCloudSpec alicloud = 40;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAlicloud = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec, 34));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AliCloudSpec, 40));
 };
 
 
@@ -17925,7 +19402,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setAlicloud = function(value) {
-  return jspb.Message.setWrapperField(this, 34, value);
+  return jspb.Message.setWrapperField(this, 40, value);
 };
 
 
@@ -17943,17 +19420,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasAlicloud = function() {
-  return jspb.Message.getField(this, 34) != null;
+  return jspb.Message.getField(this, 40) != null;
 };
 
 
 /**
- * optional BitbucketSpec bitbucket = 35;
+ * optional BitbucketSpec bitbucket = 41;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getBitbucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec, 35));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BitbucketSpec, 41));
 };
 
 
@@ -17962,7 +19439,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setBitbucket = function(value) {
-  return jspb.Message.setWrapperField(this, 35, value);
+  return jspb.Message.setWrapperField(this, 41, value);
 };
 
 
@@ -17980,17 +19457,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasBitbucket = function() {
-  return jspb.Message.getField(this, 35) != null;
+  return jspb.Message.getField(this, 41) != null;
 };
 
 
 /**
- * optional DigitalOceanSpec digitalocean = 36;
+ * optional DigitalOceanSpec digitalocean = 42;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDigitalocean = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec, 36));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec, 42));
 };
 
 
@@ -17999,7 +19476,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDigitalocean = function(value) {
-  return jspb.Message.setWrapperField(this, 36, value);
+  return jspb.Message.setWrapperField(this, 42, value);
 };
 
 
@@ -18017,17 +19494,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDigitalocean = function() {
-  return jspb.Message.getField(this, 36) != null;
+  return jspb.Message.getField(this, 42) != null;
 };
 
 
 /**
- * optional HetznerSpec hetzner = 37;
+ * optional HetznerSpec hetzner = 43;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getHetzner = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec, 37));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HetznerSpec, 43));
 };
 
 
@@ -18036,7 +19513,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setHetzner = function(value) {
-  return jspb.Message.setWrapperField(this, 37, value);
+  return jspb.Message.setWrapperField(this, 43, value);
 };
 
 
@@ -18054,17 +19531,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasHetzner = function() {
-  return jspb.Message.getField(this, 37) != null;
+  return jspb.Message.getField(this, 43) != null;
 };
 
 
 /**
- * optional GcpStorageSpec gcpstorage = 38;
+ * optional GcpStorageSpec gcpstorage = 44;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getGcpstorage = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec, 38));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GcpStorageSpec, 44));
 };
 
 
@@ -18073,7 +19550,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setGcpstorage = function(value) {
-  return jspb.Message.setWrapperField(this, 38, value);
+  return jspb.Message.setWrapperField(this, 44, value);
 };
 
 
@@ -18091,17 +19568,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasGcpstorage = function() {
-  return jspb.Message.getField(this, 38) != null;
+  return jspb.Message.getField(this, 44) != null;
 };
 
 
 /**
- * optional LinodeSpec linode = 39;
+ * optional LinodeSpec linode = 45;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getLinode = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec, 39));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LinodeSpec, 45));
 };
 
 
@@ -18110,7 +19587,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setLinode = function(value) {
-  return jspb.Message.setWrapperField(this, 39, value);
+  return jspb.Message.setWrapperField(this, 45, value);
 };
 
 
@@ -18128,17 +19605,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasLinode = function() {
-  return jspb.Message.getField(this, 39) != null;
+  return jspb.Message.getField(this, 45) != null;
 };
 
 
 /**
- * optional MinioSpec minio = 40;
+ * optional MinioSpec minio = 46;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMinio = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec, 40));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MinioSpec, 46));
 };
 
 
@@ -18147,7 +19624,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMinio = function(value) {
-  return jspb.Message.setWrapperField(this, 40, value);
+  return jspb.Message.setWrapperField(this, 46, value);
 };
 
 
@@ -18165,17 +19642,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMinio = function() {
-  return jspb.Message.getField(this, 40) != null;
+  return jspb.Message.getField(this, 46) != null;
 };
 
 
 /**
- * optional OpenstackSpec openstack = 41;
+ * optional OpenstackSpec openstack = 47;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOpenstack = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec, 41));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpenstackSpec, 47));
 };
 
 
@@ -18184,7 +19661,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOpenstack = function(value) {
-  return jspb.Message.setWrapperField(this, 41, value);
+  return jspb.Message.setWrapperField(this, 47, value);
 };
 
 
@@ -18202,17 +19679,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOpenstack = function() {
-  return jspb.Message.getField(this, 41) != null;
+  return jspb.Message.getField(this, 47) != null;
 };
 
 
 /**
- * optional OvhSpec ovh = 42;
+ * optional OvhSpec ovh = 48;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOvh = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec, 42));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OvhSpec, 48));
 };
 
 
@@ -18221,7 +19698,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOvh = function(value) {
-  return jspb.Message.setWrapperField(this, 42, value);
+  return jspb.Message.setWrapperField(this, 48, value);
 };
 
 
@@ -18239,17 +19716,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOvh = function() {
-  return jspb.Message.getField(this, 42) != null;
+  return jspb.Message.getField(this, 48) != null;
 };
 
 
 /**
- * optional AwsS3Spec aws = 43;
+ * optional AwsS3Spec aws = 49;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getAws = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec, 43));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AwsS3Spec, 49));
 };
 
 
@@ -18258,7 +19735,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setAws = function(value) {
-  return jspb.Message.setWrapperField(this, 43, value);
+  return jspb.Message.setWrapperField(this, 49, value);
 };
 
 
@@ -18276,17 +19753,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasAws = function() {
-  return jspb.Message.getField(this, 43) != null;
+  return jspb.Message.getField(this, 49) != null;
 };
 
 
 /**
- * optional SmtpSpec smtp = 44;
+ * optional SmtpSpec smtp = 50;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSmtp = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec, 44));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SmtpSpec, 50));
 };
 
 
@@ -18295,7 +19772,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSmtp = function(value) {
-  return jspb.Message.setWrapperField(this, 44, value);
+  return jspb.Message.setWrapperField(this, 50, value);
 };
 
 
@@ -18313,17 +19790,165 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSmtp = function() {
-  return jspb.Message.getField(this, 44) != null;
+  return jspb.Message.getField(this, 50) != null;
 };
 
 
 /**
- * optional ImageRegistrySpec imageRegistry = 45;
+ * optional FtpSpec ftp = 51;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getFtp = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec, 51));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setFtp = function(value) {
+  return jspb.Message.setWrapperField(this, 51, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearFtp = function() {
+  return this.setFtp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasFtp = function() {
+  return jspb.Message.getField(this, 51) != null;
+};
+
+
+/**
+ * optional SFtpSpec sftp = 52;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSftp = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec, 52));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSftp = function(value) {
+  return jspb.Message.setWrapperField(this, 52, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearSftp = function() {
+  return this.setSftp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSftp = function() {
+  return jspb.Message.getField(this, 52) != null;
+};
+
+
+/**
+ * optional DropboxSpec dropbox = 53;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getDropbox = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec, 53));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setDropbox = function(value) {
+  return jspb.Message.setWrapperField(this, 53, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearDropbox = function() {
+  return this.setDropbox(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasDropbox = function() {
+  return jspb.Message.getField(this, 53) != null;
+};
+
+
+/**
+ * optional BoxSpec box = 54;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getBox = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec, 54));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.BoxSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+*/
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setBox = function(value) {
+  return jspb.Message.setWrapperField(this, 54, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearBox = function() {
+  return this.setBox(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasBox = function() {
+  return jspb.Message.getField(this, 54) != null;
+};
+
+
+/**
+ * optional ImageRegistrySpec imageRegistry = 55;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getImageregistry = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec, 45));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec, 55));
 };
 
 
@@ -18332,7 +19957,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setImageregistry = function(value) {
-  return jspb.Message.setWrapperField(this, 45, value);
+  return jspb.Message.setWrapperField(this, 55, value);
 };
 
 
@@ -18350,17 +19975,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasImageregistry = function() {
-  return jspb.Message.getField(this, 45) != null;
+  return jspb.Message.getField(this, 55) != null;
 };
 
 
 /**
- * optional GithubSpec github = 46;
+ * optional GithubSpec github = 56;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getGithub = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec, 46));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GithubSpec, 56));
 };
 
 
@@ -18369,7 +19994,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setGithub = function(value) {
-  return jspb.Message.setWrapperField(this, 46, value);
+  return jspb.Message.setWrapperField(this, 56, value);
 };
 
 
@@ -18387,17 +20012,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasGithub = function() {
-  return jspb.Message.getField(this, 46) != null;
+  return jspb.Message.getField(this, 56) != null;
 };
 
 
 /**
- * optional GitlabSpec gitlab = 47;
+ * optional GitlabSpec gitlab = 57;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getGitlab = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec, 47));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec, 57));
 };
 
 
@@ -18406,7 +20031,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setGitlab = function(value) {
-  return jspb.Message.setWrapperField(this, 47, value);
+  return jspb.Message.setWrapperField(this, 57, value);
 };
 
 
@@ -18424,17 +20049,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasGitlab = function() {
-  return jspb.Message.getField(this, 47) != null;
+  return jspb.Message.getField(this, 57) != null;
 };
 
 
 /**
- * optional SlackSpec slack = 48;
+ * optional SlackSpec slack = 58;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSlack = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec, 48));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SlackSpec, 58));
 };
 
 
@@ -18443,7 +20068,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSlack = function(value) {
-  return jspb.Message.setWrapperField(this, 48, value);
+  return jspb.Message.setWrapperField(this, 58, value);
 };
 
 
@@ -18461,17 +20086,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSlack = function() {
-  return jspb.Message.getField(this, 48) != null;
+  return jspb.Message.getField(this, 58) != null;
 };
 
 
 /**
- * optional MSTeamSpec msteam = 50;
+ * optional MSTeamSpec msteam = 59;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMsteam = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec, 50));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MSTeamSpec, 59));
 };
 
 
@@ -18480,7 +20105,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMsteam = function(value) {
-  return jspb.Message.setWrapperField(this, 50, value);
+  return jspb.Message.setWrapperField(this, 59, value);
 };
 
 
@@ -18498,17 +20123,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMsteam = function() {
-  return jspb.Message.getField(this, 50) != null;
+  return jspb.Message.getField(this, 59) != null;
 };
 
 
 /**
- * optional MattermostSpec matterMost = 51;
+ * optional MattermostSpec matterMost = 60;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getMattermost = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec, 51));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.MattermostSpec, 60));
 };
 
 
@@ -18517,7 +20142,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setMattermost = function(value) {
-  return jspb.Message.setWrapperField(this, 51, value);
+  return jspb.Message.setWrapperField(this, 60, value);
 };
 
 
@@ -18535,17 +20160,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasMattermost = function() {
-  return jspb.Message.getField(this, 51) != null;
+  return jspb.Message.getField(this, 60) != null;
 };
 
 
 /**
- * optional HipchatSpec hipchat = 52;
+ * optional HipchatSpec hipchat = 61;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getHipchat = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec, 52));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.HipchatSpec, 61));
 };
 
 
@@ -18554,7 +20179,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setHipchat = function(value) {
-  return jspb.Message.setWrapperField(this, 52, value);
+  return jspb.Message.setWrapperField(this, 61, value);
 };
 
 
@@ -18572,17 +20197,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasHipchat = function() {
-  return jspb.Message.getField(this, 52) != null;
+  return jspb.Message.getField(this, 61) != null;
 };
 
 
 /**
- * optional VictorOpSpec victorop = 53;
+ * optional VictorOpSpec victorop = 62;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getVictorop = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec, 53));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VictorOpSpec, 62));
 };
 
 
@@ -18591,7 +20216,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setVictorop = function(value) {
-  return jspb.Message.setWrapperField(this, 53, value);
+  return jspb.Message.setWrapperField(this, 62, value);
 };
 
 
@@ -18609,17 +20234,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasVictorop = function() {
-  return jspb.Message.getField(this, 53) != null;
+  return jspb.Message.getField(this, 62) != null;
 };
 
 
 /**
- * optional PagerDutySpec pagerduty = 54;
+ * optional PagerDutySpec pagerduty = 63;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPagerduty = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec, 54));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PagerDutySpec, 63));
 };
 
 
@@ -18628,7 +20253,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPagerduty = function(value) {
-  return jspb.Message.setWrapperField(this, 54, value);
+  return jspb.Message.setWrapperField(this, 63, value);
 };
 
 
@@ -18646,17 +20271,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPagerduty = function() {
-  return jspb.Message.getField(this, 54) != null;
+  return jspb.Message.getField(this, 63) != null;
 };
 
 
 /**
- * optional PushoverSpec pushover = 55;
+ * optional PushoverSpec pushover = 64;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getPushover = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec, 55));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.PushoverSpec, 64));
 };
 
 
@@ -18665,7 +20290,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setPushover = function(value) {
-  return jspb.Message.setWrapperField(this, 55, value);
+  return jspb.Message.setWrapperField(this, 64, value);
 };
 
 
@@ -18683,17 +20308,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasPushover = function() {
-  return jspb.Message.getField(this, 55) != null;
+  return jspb.Message.getField(this, 64) != null;
 };
 
 
 /**
- * optional OpsgenieSpec opsgenie = 56;
+ * optional OpsgenieSpec opsgenie = 65;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOpsgenie = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec, 56));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.OpsgenieSpec, 65));
 };
 
 
@@ -18702,7 +20327,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOpsgenie = function(value) {
-  return jspb.Message.setWrapperField(this, 56, value);
+  return jspb.Message.setWrapperField(this, 65, value);
 };
 
 
@@ -18720,17 +20345,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOpsgenie = function() {
-  return jspb.Message.getField(this, 56) != null;
+  return jspb.Message.getField(this, 65) != null;
 };
 
 
 /**
- * optional WebhookSpec webhook = 57;
+ * optional WebhookSpec webhook = 66;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getWebhook = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec, 57));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.WebhookSpec, 66));
 };
 
 
@@ -18739,7 +20364,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setWebhook = function(value) {
-  return jspb.Message.setWrapperField(this, 57, value);
+  return jspb.Message.setWrapperField(this, 66, value);
 };
 
 
@@ -18757,16 +20382,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasWebhook = function() {
-  return jspb.Message.getField(this, 57) != null;
+  return jspb.Message.getField(this, 66) != null;
 };
 
 
 /**
- * optional string owner = 58;
+ * optional string owner = 67;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 58, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 67, ""));
 };
 
 
@@ -18775,7 +20400,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 58, value);
+  return jspb.Message.setField(this, 67, value);
 };
 
 
@@ -18784,7 +20409,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 58, undefined);
+  return jspb.Message.setField(this, 67, undefined);
 };
 
 
@@ -18793,7 +20418,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 58) != null;
+  return jspb.Message.getField(this, 67) != null;
 };
 
 
@@ -19508,6 +21133,782 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DB2Spec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DermioSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.toObject(opt_includeInstance, this);
 };
@@ -19829,6 +22230,154 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.pro
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec.prototype.hasHost = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    token: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string token = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.setToken = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.clearToken = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.DropboxSpec.prototype.hasToken = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -20557,6 +23106,686 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ExasolSpec.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FTPSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string username = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string password = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.FtpSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -22065,6 +25294,250 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.prototype
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GitlabSpec.prototype.hasSsh = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    scopes: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    id: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    datatopull: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScopes(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatatopull(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string scopes = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.getScopes = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.setScopes = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.clearScopes = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.hasScopes = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string id = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.setId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.clearId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.hasId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string dataToPull = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.getDatatopull = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.setDatatopull = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.clearDatatopull = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec.prototype.hasDatatopull = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -34855,6 +38328,686 @@ proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec.prototyp
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SAPHanaSpec.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    keyspace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKeyspace(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string keyspace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getKeyspace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setKeyspace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearKeyspace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasKeyspace = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string username = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string url = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.setUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.clearUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFTPSpec.prototype.hasUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    host: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    username: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    password: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec;
+  return proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHost(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string host = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.getHost = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.setHost = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.clearHost = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.hasHost = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 port = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string username = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.setUsername = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.clearUsername = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.hasUsername = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string password = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.SFtpSpec.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
