@@ -2473,11 +2473,13 @@ export namespace DsGetTablesResponse {
 }
 
 export class DsExecuteSqlRequest extends jspb.Message {
-  getConnectionnamespace(): string;
-  setConnectionnamespace(value: string): DsExecuteSqlRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsExecuteSqlRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsExecuteSqlRequest;
 
-  getConnectionname(): string;
-  setConnectionname(value: string): DsExecuteSqlRequest;
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsExecuteSqlRequest;
 
   getDatabasename(): string;
   setDatabasename(value: string): DsExecuteSqlRequest;
@@ -2495,8 +2497,8 @@ export class DsExecuteSqlRequest extends jspb.Message {
 
 export namespace DsExecuteSqlRequest {
   export type AsObject = {
-    connectionnamespace: string,
-    connectionname: string,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
     databasename: string,
     sql: string,
   }

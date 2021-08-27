@@ -533,10 +533,10 @@ message DsGetTablesResponse {
 }
 
 message DsExecuteSqlRequest {
-    string connectionNamespace = 1;
-    string connectionName      = 2;    
-    string databaseName        = 3;    
-    string sql                 = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection   = 1;
+    map<string,bytes>                                                           secret       = 2;    
+    string                                                                      databaseName = 3;    
+    string                                                                      sql          = 4;
 }
 
 message DsExecuteSqlResponse {

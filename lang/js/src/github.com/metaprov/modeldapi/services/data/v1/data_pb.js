@@ -21206,8 +21206,8 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototy
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    connectionnamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    connectionname: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     databasename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sql: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -21247,12 +21247,15 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.deseria
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setConnectionnamespace(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setConnectionname(value);
+      var value = msg.getSecretMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
+         });
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -21291,19 +21294,17 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototy
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConnectionnamespace();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
-  f = message.getConnectionname();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
+  f = message.getSecretMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getDatabasename();
   if (f.length > 0) {
@@ -21323,39 +21324,62 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.seriali
 
 
 /**
- * optional string connectionNamespace = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnectionnamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnection = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnectionnamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
 /**
- * optional string connectionName = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.getConnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.hasConnection = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * @param {string} value
+ * map<string, bytes> secret = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.setConnectionname = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
+proto.github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.prototype.clearSecretMap = function() {
+  this.getSecretMap().clear();
+  return this;};
 
 
 /**
