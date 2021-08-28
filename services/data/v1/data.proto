@@ -548,10 +548,12 @@ message DsSnapshotRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion     version      = 2;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource             datasource   = 3;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset                dataset      = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection   = 5;
-    map<string,bytes>                                                           secret       = 6;    
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 7;
-    string                                                                      key          = 8;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            dbconnection = 5;
+    map<string,bytes>                                                           dbsecret     = 6;    
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            storageconnection = 7;
+    map<string,bytes>                                                           storagesecret     = 8;        
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 9;
+    string                                                                      key          = 10;
 }
 
 message DsSnapshotResponse {
