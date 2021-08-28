@@ -1370,6 +1370,11 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.Snapshotted != nil {
+		in, out := &in.Snapshotted, &out.Snapshotted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Validated != nil {
 		in, out := &in.Validated, &out.Validated
 		*out = new(bool)

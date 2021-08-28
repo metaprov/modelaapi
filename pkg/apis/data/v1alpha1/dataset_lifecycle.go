@@ -175,6 +175,10 @@ func (dataset *Dataset) Validated() bool {
 	return *dataset.Spec.Validated && dataset.GetCond(DatasetValidated).Status == v1.ConditionTrue
 }
 
+func (dataset *Dataset) Snapshotted() bool {
+	return *dataset.Spec.Snapshotted && dataset.GetCond(DatasetSnapshotted).Status == v1.ConditionTrue
+}
+
 func (dataset *Dataset) Profiled() bool {
 	return dataset.GetCond(DatasetProfiled).Status == v1.ConditionTrue
 }
@@ -185,6 +189,40 @@ func (dataset *Dataset) Reported() bool {
 
 func (dataset *Dataset) Generated() bool {
 	return dataset.GetCond(DatasetGenerated).Status == v1.ConditionTrue
+}
+
+//------------------------------ Snapshot
+
+func (dataset *Dataset) MarkSnapshotFailed(msg string) {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:    DatasetSnapshotted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(DatasetPhaseFailed),
+		Message: "Failed to snapshot." + msg,
+	})
+	dataset.Status.Phase = DatasetPhaseFailed
+	dataset.Status.LastError = msg
+	dataset.Status.Progress = util.Int32Ptr(100)
+}
+
+func (dataset *Dataset) MarkSnapshotSuccess() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetSnapshotted,
+		Status: v1.ConditionTrue,
+	})
+	dataset.Status.Phase = DatasetPhaseSnapshotSuccess
+	dataset.Status.Progress = util.Int32Ptr(20)
+
+}
+
+func (dataset *Dataset) MarkTakingSnapshot() {
+	dataset.CreateOrUpdateCond(DatasetCondition{
+		Type:   DatasetSnapshotted,
+		Status: v1.ConditionFalse,
+		Reason: string(DatasetPhaseSnapshotRunning),
+	})
+	dataset.Status.Phase = DatasetPhaseSnapshotRunning
+	dataset.Status.Progress = util.Int32Ptr(10)
 }
 
 // ----------------------------- Validation --------------------

@@ -1093,10 +1093,15 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional bool reported = 7;
 
+  // If true, we should take a snapshot of the databases in order to create a dataset
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool snapshotted = 8;
+
   // If true, we should validate the dataset
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool validate = 8;
+  optional bool validate = 9;
 
   // Labeled indicates if this dataset is labeled or not.
   // +kubebuilder:default:=true

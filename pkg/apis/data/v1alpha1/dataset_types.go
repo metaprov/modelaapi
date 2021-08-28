@@ -20,6 +20,8 @@ const (
 	DatasetPhaseProfileSuccess    DatasetPhase = "Profiled"
 	DatasetPhaseValidationRunning DatasetPhase = "Validating"
 	DatasetPhaseValidationSuccess DatasetPhase = "Validated"
+	DatasetPhaseSnapshotRunning   DatasetPhase = "TakingSnapshot"
+	DatasetPhaseSnapshotSuccess   DatasetPhase = "Snapshotted"
 	DatasetPhaseFailed            DatasetPhase = "Failed"
 	DatasetPhaseAborted           DatasetPhase = "Aborted"
 	DatasetPhaseReady             DatasetPhase = "Ready"
@@ -30,14 +32,15 @@ type DatasetConditionType string
 
 /// DatasetName Condition
 const (
-	DatasetReported  DatasetConditionType = "Reported"
-	DatasetValidated DatasetConditionType = "Validated"
-	DatasetProfiled  DatasetConditionType = "Profiled"
-	DatasetIngested  DatasetConditionType = "Ingested"
-	DatasetGenerated DatasetConditionType = "Generated"
-	DatasetSaved     DatasetConditionType = "Saved"
-	DatasetArchived  DatasetConditionType = "Archived"
-	DatasetReady     DatasetConditionType = "Ready"
+	DatasetReported    DatasetConditionType = "Reported"
+	DatasetValidated   DatasetConditionType = "Validated"
+	DatasetSnapshotted DatasetConditionType = "Snapshooted"
+	DatasetProfiled    DatasetConditionType = "Profiled"
+	DatasetIngested    DatasetConditionType = "Ingested"
+	DatasetGenerated   DatasetConditionType = "Generated"
+	DatasetSaved       DatasetConditionType = "Saved"
+	DatasetArchived    DatasetConditionType = "Archived"
+	DatasetReady       DatasetConditionType = "Ready"
 )
 
 // DatasetCondition describes the state of a dataset at a certain point.
@@ -110,10 +113,14 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"varint,7,opt,name=reported"`
+	// If true, we should take a snapshot of the databases in order to create a dataset
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,8,opt,name=snapshotted"`
 	// If true, we should validate the dataset
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Validated *bool `json:"validate,omitempty" protobuf:"varint,8,opt,name=validate"`
+	Validated *bool `json:"validate,omitempty" protobuf:"varint,9,opt,name=validate"`
 	// Labeled indicates if this dataset is labeled or not.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

@@ -214,6 +214,11 @@ spec:
                     - stratified
                     type: string
                 type: object
+              snapshotted:
+                default: true
+                description: If true, we should take a snapshot of the databases in
+                  order to create a dataset
+                type: boolean
               syntactic:
                 default: false
                 description: Syntactic indicates if we want to generate this dataset

@@ -1543,6 +1543,9 @@ export class DatasetSpec extends jspb.Message {
   getReported(): boolean;
   setReported(value: boolean): DatasetSpec;
 
+  getSnapshotted(): boolean;
+  setSnapshotted(value: boolean): DatasetSpec;
+
   getValidate(): boolean;
   setValidate(value: boolean): DatasetSpec;
 
@@ -1594,6 +1597,7 @@ export namespace DatasetSpec {
     datasourcename: string,
     description: string,
     reported: boolean,
+    snapshotted: boolean,
     validate: boolean,
     labeled: boolean,
     syntactic: boolean,
