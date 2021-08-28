@@ -675,5 +675,45 @@ export class DatasetServiceClient {
     this.methodInfoExecuteSql);
   }
 
+  methodInfoSnapshot = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse,
+    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse.deserializeBinary
+  );
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse>;
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse>;
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.SnapshotResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/Snapshot',
+        request,
+        metadata || {},
+        this.methodInfoSnapshot,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/Snapshot',
+    request,
+    metadata || {},
+    this.methodInfoSnapshot);
+  }
+
 }
 

@@ -759,3 +759,55 @@ export namespace ExecuteSqlResponse {
   }
 }
 
+export class SnapshotRequest extends jspb.Message {
+  getConnectionnamespace(): string;
+  setConnectionnamespace(value: string): SnapshotRequest;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): SnapshotRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): SnapshotRequest;
+
+  getSql(): string;
+  setSql(value: string): SnapshotRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnapshotRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SnapshotRequest): SnapshotRequest.AsObject;
+  static serializeBinaryToWriter(message: SnapshotRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnapshotRequest;
+  static deserializeBinaryFromReader(message: SnapshotRequest, reader: jspb.BinaryReader): SnapshotRequest;
+}
+
+export namespace SnapshotRequest {
+  export type AsObject = {
+    connectionnamespace: string,
+    connectionname: string,
+    databasename: string,
+    sql: string,
+  }
+}
+
+export class SnapshotResponse extends jspb.Message {
+  getBucket(): string;
+  setBucket(value: string): SnapshotResponse;
+
+  getPath(): string;
+  setPath(value: string): SnapshotResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SnapshotResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SnapshotResponse): SnapshotResponse.AsObject;
+  static serializeBinaryToWriter(message: SnapshotResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SnapshotResponse;
+  static deserializeBinaryFromReader(message: SnapshotResponse, reader: jspb.BinaryReader): SnapshotResponse;
+}
+
+export namespace SnapshotResponse {
+  export type AsObject = {
+    bucket: string,
+    path: string,
+  }
+}
+

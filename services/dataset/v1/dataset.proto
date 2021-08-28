@@ -198,6 +198,19 @@ message ExecuteSqlResponse {
 }
 
 
+message SnapshotRequest {
+    string connectionNamespace = 1;
+    string connectionName      = 2;    
+    string databaseName        = 3;  
+    string sql                 = 4;  
+}
+
+message SnapshotResponse {
+    string bucket = 1;
+    string path   = 2;
+}
+
+
 
 
 
@@ -276,6 +289,11 @@ service DatasetService {
     rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
         option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql";
     }
+
+    rpc Snapshot(SnapshotRequest) returns (SnapshotResponse) {
+        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:snapshot";
+    }
+
 
 
 

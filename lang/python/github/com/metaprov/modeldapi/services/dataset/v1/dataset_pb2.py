@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modeldapi/services/dataset/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/dataset/v1/dataset.proto\x12\x31github.com.metaprov.modeldapi.services.dataset.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x14ListDatasetsResponse\x12S\n\x08\x64\x61tasets\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList\"\xc5\x01\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x12GetDatasetResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15\x43reateDatasetResponse\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15UpdateDatasetResponse\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDatasetResponse\"Q\n\x12UploadChunkRequest\x12\r\n\x05\x66name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0c\n\x04last\x18\x04 \x01(\x08\"0\n\x13UploadChunkResponse\x12\r\n\x05\x66name\x18\x01 \x01(\t\x12\n\n\x02ok\x18\x02 \x01(\x08\"\x8b\x01\n\x1b\x43reateDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12K\n\x04item\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"~\n\x1c\x43reateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\x97\x01\n\x1a\x43reateColumnProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03\x63ol\x18\x03 \x01(\t\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"q\n\x1b\x43reateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modeldapi.services.common.v1.Plot\"H\n\x18GetDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"\x8f\x01\n\x19GetDatasetProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Q\n\x07profile\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16\x43ompareDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17\x43ompareDatasetsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16GenerateDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17GenerateDatasetResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16ValidateDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17ValidateDatasetResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"9\n\x16\x44ownloadDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"&\n\x17\x44ownloadDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"J\n\x13GetDatabasesRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\")\n\x14GetDatabasesResponse\x12\x11\n\tdatabases\x18\x01 \x03(\t\"]\n\x10GetTablesRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\"#\n\x11GetTablesResponse\x12\x0e\n\x06tables\x18\x01 \x03(\t\"k\n\x11\x45xecuteSqlRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x12\x0b\n\x03sql\x18\x04 \x01(\t\"d\n\x12\x45xecuteSqlResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView2\x83\x1e\n\x0e\x44\x61tasetService\x12\xb9\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest\x1aG.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/api/v1/datasets\x12\xba\x01\n\nGetDataset\x12\x44.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest\x1a\x45.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/datasets/{name}\x12\xc5\x01\n\rCreateDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x10/api/v1/datasets:\x07\x64\x61taset\x12\xdd\x01\n\rUpdateDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse\"9\x82\xd3\xe4\x93\x02\x33\x1a(/api/v1/datasets/{dataset.metadata.name}:\x07\x64\x61taset\x12\xc3\x01\n\rDeleteDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/api/v1/datasets/{name}\x12\xff\x01\n\x0f\x43ompareDatasets\x12I.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse\"U\x82\xd3\xe4\x93\x02O\"M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:compare\x12\x85\x02\n\x11GetDatasetProfile\x12K.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest\x1aL.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse\"U\x82\xd3\xe4\x93\x02O\x12M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile\x12\x8e\x02\n\x14\x43reateDatasetProfile\x12N.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest\x1aO.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse\"U\x82\xd3\xe4\x93\x02O\"M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile\x12\x8e\x02\n\x13\x43reateColumnProfile\x12M.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest\x1aN.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse\"X\x82\xd3\xe4\x93\x02R\"P/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}/columnplot\x12\x80\x02\n\x0fGenerateDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:generate\x12\x80\x02\n\x0fValidateDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate\x12\xf4\x01\n\x0bUploadChunk\x12\x45.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest\x1a\x46.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate\x12\x80\x02\n\x0f\x44ownloadDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:download\x12\xf8\x01\n\x0cGetDatabases\x12\x46.github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesRequest\x1aG.github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesResponse\"W\x82\xd3\xe4\x93\x02Q\x12O/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:databases\x12\xec\x01\n\tGetTables\x12\x43.github.com.metaprov.modeldapi.services.dataset.v1.GetTablesRequest\x1a\x44.github.com.metaprov.modeldapi.services.dataset.v1.GetTablesResponse\"T\x82\xd3\xe4\x93\x02N\x12L/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:tables\x12\xf3\x01\n\nExecuteSql\x12\x44.github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlRequest\x1a\x45.github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlResponse\"X\x82\xd3\xe4\x93\x02R\"P/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesqlB3Z1github.com/metaprov/modeldapi/services/dataset/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modeldapi/services/dataset/v1/dataset.proto\x12\x31github.com.metaprov.modeldapi.services.dataset.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modeldapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x14ListDatasetsResponse\x12S\n\x08\x64\x61tasets\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList\"\xc5\x01\n\x11GetDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x12GetDatasetResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"c\n\x14\x43reateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15\x43reateDatasetResponse\"c\n\x14UpdateDatasetRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"\x17\n\x15UpdateDatasetResponse\"7\n\x14\x44\x65leteDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDatasetResponse\"Q\n\x12UploadChunkRequest\x12\r\n\x05\x66name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0c\n\x04last\x18\x04 \x01(\x08\"0\n\x13UploadChunkResponse\x12\r\n\x05\x66name\x18\x01 \x01(\t\x12\n\n\x02ok\x18\x02 \x01(\x08\"\x8b\x01\n\x1b\x43reateDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12K\n\x04item\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"~\n\x1c\x43reateDatasetProfileResponse\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12Q\n\x07profile\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"\x97\x01\n\x1a\x43reateColumnProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03\x63ol\x18\x03 \x01(\t\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\"q\n\x1b\x43reateColumnProfileResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x04plot\x18\x02 \x01(\x0b\x32\x36.github.com.metaprov.modeldapi.services.common.v1.Plot\"H\n\x18GetDatasetProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"\x8f\x01\n\x19GetDatasetProfileResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12Q\n\x07profile\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16\x43ompareDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17\x43ompareDatasetsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16GenerateDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17GenerateDatasetResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\":\n\x16ValidateDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8f\x01\n\x17ValidateDatasetResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12R\n\x08profiles\x18\x03 \x03(\x0b\x32@.github.com.metaprov.modeldapi.services.common.v1.DatasetProfile\"9\n\x16\x44ownloadDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"&\n\x17\x44ownloadDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"J\n\x13GetDatabasesRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\")\n\x14GetDatabasesResponse\x12\x11\n\tdatabases\x18\x01 \x03(\t\"]\n\x10GetTablesRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\"#\n\x11GetTablesResponse\x12\x0e\n\x06tables\x18\x01 \x03(\t\"k\n\x11\x45xecuteSqlRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x12\x0b\n\x03sql\x18\x04 \x01(\t\"d\n\x12\x45xecuteSqlResponse\x12N\n\ttableview\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modeldapi.services.common.v1.TableView\"i\n\x0fSnapshotRequest\x12\x1b\n\x13\x63onnectionNamespace\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61tabaseName\x18\x03 \x01(\t\x12\x0b\n\x03sql\x18\x04 \x01(\t\"0\n\x10SnapshotResponse\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t2\xf1\x1f\n\x0e\x44\x61tasetService\x12\xb9\x01\n\x0cListDatasets\x12\x46.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsRequest\x1aG.github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/api/v1/datasets\x12\xba\x01\n\nGetDataset\x12\x44.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetRequest\x1a\x45.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/datasets/{name}\x12\xc5\x01\n\rCreateDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x10/api/v1/datasets:\x07\x64\x61taset\x12\xdd\x01\n\rUpdateDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse\"9\x82\xd3\xe4\x93\x02\x33\x1a(/api/v1/datasets/{dataset.metadata.name}:\x07\x64\x61taset\x12\xc3\x01\n\rDeleteDataset\x12G.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetRequest\x1aH.github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/api/v1/datasets/{name}\x12\xff\x01\n\x0f\x43ompareDatasets\x12I.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse\"U\x82\xd3\xe4\x93\x02O\"M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:compare\x12\x85\x02\n\x11GetDatasetProfile\x12K.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileRequest\x1aL.github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse\"U\x82\xd3\xe4\x93\x02O\x12M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile\x12\x8e\x02\n\x14\x43reateDatasetProfile\x12N.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileRequest\x1aO.github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse\"U\x82\xd3\xe4\x93\x02O\"M/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile\x12\x8e\x02\n\x13\x43reateColumnProfile\x12M.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileRequest\x1aN.github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse\"X\x82\xd3\xe4\x93\x02R\"P/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}/columnplot\x12\x80\x02\n\x0fGenerateDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:generate\x12\x80\x02\n\x0fValidateDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate\x12\xf4\x01\n\x0bUploadChunk\x12\x45.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkRequest\x1a\x46.github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate\x12\x80\x02\n\x0f\x44ownloadDataset\x12I.github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetRequest\x1aJ.github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:download\x12\xf8\x01\n\x0cGetDatabases\x12\x46.github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesRequest\x1aG.github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesResponse\"W\x82\xd3\xe4\x93\x02Q\x12O/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:databases\x12\xec\x01\n\tGetTables\x12\x43.github.com.metaprov.modeldapi.services.dataset.v1.GetTablesRequest\x1a\x44.github.com.metaprov.modeldapi.services.dataset.v1.GetTablesResponse\"T\x82\xd3\xe4\x93\x02N\x12L/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:tables\x12\xf3\x01\n\nExecuteSql\x12\x44.github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlRequest\x1a\x45.github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlResponse\"X\x82\xd3\xe4\x93\x02R\"P/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql\x12\xeb\x01\n\x08Snapshot\x12\x42.github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest\x1a\x43.github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse\"V\x82\xd3\xe4\x93\x02P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:snapshotB3Z1github.com/metaprov/modeldapi/services/dataset/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -1359,6 +1359,98 @@ _EXECUTESQLRESPONSE = _descriptor.Descriptor(
   serialized_end=3296,
 )
 
+
+_SNAPSHOTREQUEST = _descriptor.Descriptor(
+  name='SnapshotRequest',
+  full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='connectionNamespace', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest.connectionNamespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connectionName', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest.connectionName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='databaseName', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest.databaseName', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sql', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest.sql', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3298,
+  serialized_end=3403,
+)
+
+
+_SNAPSHOTRESPONSE = _descriptor.Descriptor(
+  name='SnapshotResponse',
+  full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse.bucket', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse.path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3405,
+  serialized_end=3453,
+)
+
 _LISTDATASETSREQUEST_LABELSENTRY.containing_type = _LISTDATASETSREQUEST
 _LISTDATASETSREQUEST.fields_by_name['labels'].message_type = _LISTDATASETSREQUEST_LABELSENTRY
 _LISTDATASETSRESPONSE.fields_by_name['datasets'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASETLIST
@@ -1408,6 +1500,8 @@ DESCRIPTOR.message_types_by_name['GetTablesRequest'] = _GETTABLESREQUEST
 DESCRIPTOR.message_types_by_name['GetTablesResponse'] = _GETTABLESRESPONSE
 DESCRIPTOR.message_types_by_name['ExecuteSqlRequest'] = _EXECUTESQLREQUEST
 DESCRIPTOR.message_types_by_name['ExecuteSqlResponse'] = _EXECUTESQLRESPONSE
+DESCRIPTOR.message_types_by_name['SnapshotRequest'] = _SNAPSHOTREQUEST
+DESCRIPTOR.message_types_by_name['SnapshotResponse'] = _SNAPSHOTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListDatasetsRequest = _reflection.GeneratedProtocolMessageType('ListDatasetsRequest', (_message.Message,), {
@@ -1650,6 +1744,20 @@ ExecuteSqlResponse = _reflection.GeneratedProtocolMessageType('ExecuteSqlRespons
   })
 _sym_db.RegisterMessage(ExecuteSqlResponse)
 
+SnapshotRequest = _reflection.GeneratedProtocolMessageType('SnapshotRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SNAPSHOTREQUEST,
+  '__module__' : 'github.com.metaprov.modeldapi.services.dataset.v1.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest)
+  })
+_sym_db.RegisterMessage(SnapshotRequest)
+
+SnapshotResponse = _reflection.GeneratedProtocolMessageType('SnapshotResponse', (_message.Message,), {
+  'DESCRIPTOR' : _SNAPSHOTRESPONSE,
+  '__module__' : 'github.com.metaprov.modeldapi.services.dataset.v1.dataset_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse)
+  })
+_sym_db.RegisterMessage(SnapshotResponse)
+
 
 DESCRIPTOR._options = None
 _LISTDATASETSREQUEST_LABELSENTRY._options = None
@@ -1662,8 +1770,8 @@ _DATASETSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3299,
-  serialized_end=7142,
+  serialized_start=3456,
+  serialized_end=7537,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDatasets',
@@ -1823,6 +1931,16 @@ _DATASETSERVICE = _descriptor.ServiceDescriptor(
     input_type=_EXECUTESQLREQUEST,
     output_type=_EXECUTESQLRESPONSE,
     serialized_options=b'\202\323\344\223\002R\"P/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Snapshot',
+    full_name='github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.Snapshot',
+    index=16,
+    containing_service=None,
+    input_type=_SNAPSHOTREQUEST,
+    output_type=_SNAPSHOTRESPONSE,
+    serialized_options=b'\202\323\344\223\002P\"N/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:snapshot',
     create_key=_descriptor._internal_create_key,
   ),
 ])
