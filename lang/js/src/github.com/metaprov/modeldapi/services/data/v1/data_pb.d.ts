@@ -2525,6 +2525,26 @@ export namespace DsExecuteSqlResponse {
 }
 
 export class DsSnapshotRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsSnapshotRequest;
+  hasProduct(): boolean;
+  clearProduct(): DsSnapshotRequest;
+
+  getVersion(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsSnapshotRequest;
+  hasVersion(): boolean;
+  clearVersion(): DsSnapshotRequest;
+
+  getDatasource(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsSnapshotRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): DsSnapshotRequest;
+
+  getDataset(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSnapshotRequest;
+  hasDataset(): boolean;
+  clearDataset(): DsSnapshotRequest;
+
   getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
   setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsSnapshotRequest;
   hasConnection(): boolean;
@@ -2532,12 +2552,6 @@ export class DsSnapshotRequest extends jspb.Message {
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsSnapshotRequest;
-
-  getDatabasename(): string;
-  setDatabasename(value: string): DsSnapshotRequest;
-
-  getSql(): string;
-  setSql(value: string): DsSnapshotRequest;
 
   getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
   setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsSnapshotRequest;
@@ -2557,10 +2571,12 @@ export class DsSnapshotRequest extends jspb.Message {
 
 export namespace DsSnapshotRequest {
   export type AsObject = {
+    product?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    datasource?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
-    databasename: string,
-    sql: string,
     bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
   }

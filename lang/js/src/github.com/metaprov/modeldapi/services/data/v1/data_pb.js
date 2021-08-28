@@ -21645,12 +21645,14 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    product: (f = msg.getProduct()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    version: (f = msg.getVersion()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    dataset: (f = msg.getDataset()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    databasename: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sql: jspb.Message.getFieldWithDefault(msg, 4, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    key: jspb.Message.getFieldWithDefault(msg, 6, "")
+    key: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -21688,30 +21690,42 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
+      msg.setProduct(value);
+      break;
+    case 2:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
+      msg.setVersion(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.setDataset(value);
+      break;
+    case 5:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 2:
+    case 6:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDatabasename(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSql(value);
-      break;
-    case 5:
+    case 7:
       var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 6:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
@@ -21744,36 +21758,54 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getConnection();
+  f = message.getProduct();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
+    );
+  }
+  f = message.getVersion();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasource();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+    );
+  }
+  f = message.getDataset();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getConnection();
+  if (f != null) {
+    writer.writeMessage(
+      5,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getDatabasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getSql();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getBucket();
   if (f != null) {
     writer.writeMessage(
-      5,
+      7,
       f,
       github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
@@ -21781,7 +21813,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.serialize
   f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      8,
       f
     );
   }
@@ -21789,12 +21821,160 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.serialize
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getProduct = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setProduct = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.clearProduct = function() {
+  return this.setProduct(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getVersion = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setVersion = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.clearVersion = function() {
+  return this.setVersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasVersion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setDatasource = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasDatasource = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getDataset = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setDataset = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.clearDataset = function() {
+  return this.setDataset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasDataset = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
 };
 
 
@@ -21803,7 +21983,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -21821,19 +22001,19 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * map<string, bytes> secret = 2;
+ * map<string, bytes> secret = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };
 
@@ -21848,48 +22028,12 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
 
 
 /**
- * optional string databaseName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getDatabasename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setDatabasename = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string sql = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getSql = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setSql = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 5;
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 7;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getBucket = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 7));
 };
 
 
@@ -21898,7 +22042,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
 */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setBucket = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -21916,16 +22060,16 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.hasBucket = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string key = 6;
+ * optional string key = 8;
  * @return {string}
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -21934,7 +22078,7 @@ proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype
  * @return {!proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest} returns this
  */
 proto.github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

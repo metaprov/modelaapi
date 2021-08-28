@@ -58,6 +58,7 @@ const (
 	BatchPredictTask      TaskName = "batch-predict"
 	ForecastTask          TaskName = "forecast"
 	ProfileDatasetTask    TaskName = "profile-dataset"
+	SnapshotDatasetTask   TaskName = "snapshot-dataset"
 	ProfileStudyTask      TaskName = "profile-study"
 	ProfileModelTask      TaskName = "profile-model"
 	PublishModelTask      TaskName = "publish-model"
