@@ -2524,3 +2524,59 @@ export namespace DsExecuteSqlResponse {
   }
 }
 
+export class DsSnapshotRequest extends jspb.Message {
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsSnapshotRequest;
+  hasConnection(): boolean;
+  clearConnection(): DsSnapshotRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): DsSnapshotRequest;
+
+  getDatabasename(): string;
+  setDatabasename(value: string): DsSnapshotRequest;
+
+  getSql(): string;
+  setSql(value: string): DsSnapshotRequest;
+
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsSnapshotRequest;
+  hasBucket(): boolean;
+  clearBucket(): DsSnapshotRequest;
+
+  getKey(): string;
+  setKey(value: string): DsSnapshotRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsSnapshotRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsSnapshotRequest): DsSnapshotRequest.AsObject;
+  static serializeBinaryToWriter(message: DsSnapshotRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsSnapshotRequest;
+  static deserializeBinaryFromReader(message: DsSnapshotRequest, reader: jspb.BinaryReader): DsSnapshotRequest;
+}
+
+export namespace DsSnapshotRequest {
+  export type AsObject = {
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+    databasename: string,
+    sql: string,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    key: string,
+  }
+}
+
+export class DsSnapshotResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DsSnapshotResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsSnapshotResponse): DsSnapshotResponse.AsObject;
+  static serializeBinaryToWriter(message: DsSnapshotResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsSnapshotResponse;
+  static deserializeBinaryFromReader(message: DsSnapshotResponse, reader: jspb.BinaryReader): DsSnapshotResponse;
+}
+
+export namespace DsSnapshotResponse {
+  export type AsObject = {
+  }
+}
+

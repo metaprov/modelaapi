@@ -1435,5 +1435,45 @@ export class DataServiceClient {
     this.methodInfoExecuteSql);
   }
 
+  methodInfoSnapshot = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse,
+    (request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse.deserializeBinary
+  );
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse>;
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse>;
+
+  snapshot(
+    request: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modeldapi_services_data_v1_data_pb.DsSnapshotResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot',
+        request,
+        metadata || {},
+        this.methodInfoSnapshot,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot',
+    request,
+    metadata || {},
+    this.methodInfoSnapshot);
+  }
+
 }
 

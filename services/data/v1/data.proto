@@ -543,6 +543,20 @@ message DsExecuteSqlResponse {
     github.com.metaprov.modeldapi.services.common.v1.TableView tableview = 1;
 }
 
+message DsSnapshotRequest {
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection            connection   = 1;
+    map<string,bytes>                                                           secret       = 2;    
+    string                                                                      databaseName = 3;    
+    string                                                                      sql          = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket         bucket       = 5;
+    string                                                                      key          = 6;
+}
+
+message DsSnapshotResponse {
+  
+}
+
+
 
 
 
@@ -612,12 +626,8 @@ service DataService {
     rpc GetDatabases(DsGetDatabasesRequest) returns (DsGetDatabasesResponse) {        
     }
 
-    rpc GetTables(DsGetTablesRequest) returns (DsGetTablesResponse) {
-        
-    }
-
-    rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {
-        
-    }
+    rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
+    rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
+    rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
 
 }

@@ -189,6 +189,11 @@ class DataServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.FromString,
                 )
+        self.Snapshot = channel.unary_unary(
+                '/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot',
+                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotResponse.FromString,
+                )
 
 
 class DataServiceServicer(object):
@@ -428,6 +433,12 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Snapshot(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -605,6 +616,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.ExecuteSql,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.SerializeToString,
+            ),
+            'Snapshot': grpc.unary_unary_rpc_method_handler(
+                    servicer.Snapshot,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1208,5 +1224,22 @@ class DataService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql',
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsExecuteSqlResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Snapshot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot',
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_data_dot_v1_dot_data__pb2.DsSnapshotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
