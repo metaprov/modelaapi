@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modeldapi/services/publisherd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xe9\t\n\x13PublishModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32Z.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x81\x01\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32\x63.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\")\n\x14PublishModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xe2\x06\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\t \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\"\n\x10TarModelResponse\x12\x0e\n\x06tarUri\x18\x01 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xb1\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse\"\x00\x12\xaa\x01\n\x0fPublishCombined\x12I.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest\x1aJ.github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modeldapi.services.publisherd.v1\x1aHgithub.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xdf\t\n\x10\x42\x61keModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32W.github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12~\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32`.github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"&\n\x11\x42\x61keModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xe2\x06\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\t \x03(\x0b\x32V.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\"\n\x10TarModelResponse\x12\x0e\n\x06tarUri\x18\x01 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa0\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse\"\x00\x12\x99\x01\n\x04\x42\x61ke\x12\x46.github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest\x1aG.github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modeldapi/services/publisherd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -173,23 +173,23 @@ _PUBLISHNOTEBOOKRESPONSE = _descriptor.Descriptor(
 )
 
 
-_PUBLISHMODELREQUEST_CLOUDSECRETENTRY = _descriptor.Descriptor(
+_BAKEMODELREQUEST_CLOUDSECRETENTRY = _descriptor.Descriptor(
   name='CloudSecretEntry',
-  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -207,27 +207,27 @@ _PUBLISHMODELREQUEST_CLOUDSECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1921,
-  serialized_end=1971,
+  serialized_start=1911,
+  serialized_end=1961,
 )
 
-_PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY = _descriptor.Descriptor(
+_BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY = _descriptor.Descriptor(
   name='DockerRegistrySecretEntry',
-  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry',
+  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -245,125 +245,125 @@ _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1973,
-  serialized_end=2032,
+  serialized_start=1963,
+  serialized_end=2022,
 )
 
-_PUBLISHMODELREQUEST = _descriptor.Descriptor(
-  name='PublishModelRequest',
-  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest',
+_BAKEMODELREQUEST = _descriptor.Descriptor(
+  name='BakeModelRequest',
+  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataproduct', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproduct', index=0,
+      name='dataproduct', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataproduct', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataproductversion', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataproductversion', index=1,
+      name='dataproductversion', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataproductversion', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.model', index=2,
+      name='model', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.model', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='study', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.study', index=3,
+      name='study', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.study', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.datasource', index=4,
+      name='datasource', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.datasource', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dataset', index=5,
+      name='dataset', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataset', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='provider', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.provider', index=6,
+      name='provider', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.provider', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='imagename', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.imagename', index=7,
+      name='imagename', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.imagename', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='imagenameWithVersion', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.imagenameWithVersion', index=8,
+      name='imagenameWithVersion', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.imagenameWithVersion', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='push', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.push', index=9,
+      name='push', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.push', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.bucket', index=10,
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.bucket', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cloudConn', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudConn', index=11,
+      name='cloudConn', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.cloudConn', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cloudSecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.cloudSecret', index=12,
+      name='cloudSecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.cloudSecret', index=12,
       number=13, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dockerConnection', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerConnection', index=13,
+      name='dockerConnection', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dockerConnection', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dockerRegistrySecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.dockerRegistrySecret', index=14,
+      name='dockerRegistrySecret', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dockerRegistrySecret', index=14,
       number=15, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kaniko', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.kaniko', index=15,
+      name='kaniko', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.kaniko', index=15,
       number=19, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -372,7 +372,7 @@ _PUBLISHMODELREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PUBLISHMODELREQUEST_CLOUDSECRETENTRY, _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY, ],
+  nested_types=[_BAKEMODELREQUEST_CLOUDSECRETENTRY, _BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -382,20 +382,20 @@ _PUBLISHMODELREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=775,
-  serialized_end=2032,
+  serialized_end=2022,
 )
 
 
-_PUBLISHMODELRESPONSE = _descriptor.Descriptor(
-  name='PublishModelResponse',
-  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse',
+_BAKEMODELRESPONSE = _descriptor.Descriptor(
+  name='BakeModelResponse',
+  full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ImageName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse.ImageName', index=0,
+      name='ImageName', full_name='github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse.ImageName', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -413,8 +413,8 @@ _PUBLISHMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2034,
-  serialized_end=2075,
+  serialized_start=2024,
+  serialized_end=2062,
 )
 
 
@@ -452,8 +452,8 @@ _TARMODELREQUEST_CLOUDSECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1921,
-  serialized_end=1971,
+  serialized_start=1911,
+  serialized_end=1961,
 )
 
 _TARMODELREQUEST = _descriptor.Descriptor(
@@ -539,8 +539,8 @@ _TARMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2078,
-  serialized_end=2944,
+  serialized_start=2065,
+  serialized_end=2931,
 )
 
 
@@ -571,8 +571,8 @@ _TARMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2946,
-  serialized_end=2980,
+  serialized_start=2933,
+  serialized_end=2967,
 )
 
 
@@ -596,8 +596,8 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2982,
-  serialized_end=2999,
+  serialized_start=2969,
+  serialized_end=2986,
 )
 
 
@@ -621,26 +621,26 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3001,
-  serialized_end=3019,
+  serialized_start=2988,
+  serialized_end=3006,
 )
 
 _PUBLISHNOTEBOOKREQUEST_SECRETENTRY.containing_type = _PUBLISHNOTEBOOKREQUEST
 _PUBLISHNOTEBOOKREQUEST.fields_by_name['notebookSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._NOTEBOOKSPEC
 _PUBLISHNOTEBOOKREQUEST.fields_by_name['secret'].message_type = _PUBLISHNOTEBOOKREQUEST_SECRETENTRY
-_PUBLISHMODELREQUEST_CLOUDSECRETENTRY.containing_type = _PUBLISHMODELREQUEST
-_PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY.containing_type = _PUBLISHMODELREQUEST
-_PUBLISHMODELREQUEST.fields_by_name['dataproduct'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
-_PUBLISHMODELREQUEST.fields_by_name['dataproductversion'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
-_PUBLISHMODELREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
-_PUBLISHMODELREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
-_PUBLISHMODELREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
-_PUBLISHMODELREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
-_PUBLISHMODELREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
-_PUBLISHMODELREQUEST.fields_by_name['cloudConn'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_PUBLISHMODELREQUEST.fields_by_name['cloudSecret'].message_type = _PUBLISHMODELREQUEST_CLOUDSECRETENTRY
-_PUBLISHMODELREQUEST.fields_by_name['dockerConnection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
-_PUBLISHMODELREQUEST.fields_by_name['dockerRegistrySecret'].message_type = _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY
+_BAKEMODELREQUEST_CLOUDSECRETENTRY.containing_type = _BAKEMODELREQUEST
+_BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY.containing_type = _BAKEMODELREQUEST
+_BAKEMODELREQUEST.fields_by_name['dataproduct'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
+_BAKEMODELREQUEST.fields_by_name['dataproductversion'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
+_BAKEMODELREQUEST.fields_by_name['model'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_BAKEMODELREQUEST.fields_by_name['study'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_BAKEMODELREQUEST.fields_by_name['datasource'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASOURCE
+_BAKEMODELREQUEST.fields_by_name['dataset'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
+_BAKEMODELREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_BAKEMODELREQUEST.fields_by_name['cloudConn'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
+_BAKEMODELREQUEST.fields_by_name['cloudSecret'].message_type = _BAKEMODELREQUEST_CLOUDSECRETENTRY
+_BAKEMODELREQUEST.fields_by_name['dockerConnection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
+_BAKEMODELREQUEST.fields_by_name['dockerRegistrySecret'].message_type = _BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY
 _TARMODELREQUEST_CLOUDSECRETENTRY.containing_type = _TARMODELREQUEST
 _TARMODELREQUEST.fields_by_name['dataproduct'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _TARMODELREQUEST.fields_by_name['dataproductversion'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCTVERSION
@@ -653,8 +653,8 @@ _TARMODELREQUEST.fields_by_name['cloudConn'].message_type = github_dot_com_dot_m
 _TARMODELREQUEST.fields_by_name['cloudSecret'].message_type = _TARMODELREQUEST_CLOUDSECRETENTRY
 DESCRIPTOR.message_types_by_name['PublishNotebookRequest'] = _PUBLISHNOTEBOOKREQUEST
 DESCRIPTOR.message_types_by_name['PublishNotebookResponse'] = _PUBLISHNOTEBOOKRESPONSE
-DESCRIPTOR.message_types_by_name['PublishModelRequest'] = _PUBLISHMODELREQUEST
-DESCRIPTOR.message_types_by_name['PublishModelResponse'] = _PUBLISHMODELRESPONSE
+DESCRIPTOR.message_types_by_name['BakeModelRequest'] = _BAKEMODELREQUEST
+DESCRIPTOR.message_types_by_name['BakeModelResponse'] = _BAKEMODELRESPONSE
 DESCRIPTOR.message_types_by_name['TarModelRequest'] = _TARMODELREQUEST
 DESCRIPTOR.message_types_by_name['TarModelResponse'] = _TARMODELRESPONSE
 DESCRIPTOR.message_types_by_name['ShutdownRequest'] = _SHUTDOWNREQUEST
@@ -683,35 +683,35 @@ PublishNotebookResponse = _reflection.GeneratedProtocolMessageType('PublishNoteb
   })
 _sym_db.RegisterMessage(PublishNotebookResponse)
 
-PublishModelRequest = _reflection.GeneratedProtocolMessageType('PublishModelRequest', (_message.Message,), {
+BakeModelRequest = _reflection.GeneratedProtocolMessageType('BakeModelRequest', (_message.Message,), {
 
   'CloudSecretEntry' : _reflection.GeneratedProtocolMessageType('CloudSecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PUBLISHMODELREQUEST_CLOUDSECRETENTRY,
+    'DESCRIPTOR' : _BAKEMODELREQUEST_CLOUDSECRETENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.publisherd.v1.publisherd_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.CloudSecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry)
     })
   ,
 
   'DockerRegistrySecretEntry' : _reflection.GeneratedProtocolMessageType('DockerRegistrySecretEntry', (_message.Message,), {
-    'DESCRIPTOR' : _PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY,
+    'DESCRIPTOR' : _BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY,
     '__module__' : 'github.com.metaprov.modeldapi.services.publisherd.v1.publisherd_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest.DockerRegistrySecretEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry)
     })
   ,
-  'DESCRIPTOR' : _PUBLISHMODELREQUEST,
+  'DESCRIPTOR' : _BAKEMODELREQUEST,
   '__module__' : 'github.com.metaprov.modeldapi.services.publisherd.v1.publisherd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest)
   })
-_sym_db.RegisterMessage(PublishModelRequest)
-_sym_db.RegisterMessage(PublishModelRequest.CloudSecretEntry)
-_sym_db.RegisterMessage(PublishModelRequest.DockerRegistrySecretEntry)
+_sym_db.RegisterMessage(BakeModelRequest)
+_sym_db.RegisterMessage(BakeModelRequest.CloudSecretEntry)
+_sym_db.RegisterMessage(BakeModelRequest.DockerRegistrySecretEntry)
 
-PublishModelResponse = _reflection.GeneratedProtocolMessageType('PublishModelResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PUBLISHMODELRESPONSE,
+BakeModelResponse = _reflection.GeneratedProtocolMessageType('BakeModelResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BAKEMODELRESPONSE,
   '__module__' : 'github.com.metaprov.modeldapi.services.publisherd.v1.publisherd_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.PublishModelResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse)
   })
-_sym_db.RegisterMessage(PublishModelResponse)
+_sym_db.RegisterMessage(BakeModelResponse)
 
 TarModelRequest = _reflection.GeneratedProtocolMessageType('TarModelRequest', (_message.Message,), {
 
@@ -752,8 +752,8 @@ _sym_db.RegisterMessage(ShutdownResponse)
 
 DESCRIPTOR._options = None
 _PUBLISHNOTEBOOKREQUEST_SECRETENTRY._options = None
-_PUBLISHMODELREQUEST_CLOUDSECRETENTRY._options = None
-_PUBLISHMODELREQUEST_DOCKERREGISTRYSECRETENTRY._options = None
+_BAKEMODELREQUEST_CLOUDSECRETENTRY._options = None
+_BAKEMODELREQUEST_DOCKERREGISTRYSECRETENTRY._options = None
 _TARMODELREQUEST_CLOUDSECRETENTRY._options = None
 
 _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
@@ -763,8 +763,8 @@ _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3022,
-  serialized_end=3711,
+  serialized_start=3009,
+  serialized_end=3681,
   methods=[
   _descriptor.MethodDescriptor(
     name='PublishTar',
@@ -777,12 +777,12 @@ _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='PublishCombined',
-    full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.PublishCombined',
+    name='Bake',
+    full_name='github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.Bake',
     index=1,
     containing_service=None,
-    input_type=_PUBLISHMODELREQUEST,
-    output_type=_PUBLISHMODELRESPONSE,
+    input_type=_BAKEMODELREQUEST,
+    output_type=_BAKEMODELRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

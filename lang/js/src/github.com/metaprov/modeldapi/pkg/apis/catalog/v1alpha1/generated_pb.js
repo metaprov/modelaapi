@@ -6956,7 +6956,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.repeatedFields_ = [10];
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.repeatedFields_ = [11];
 
 
 
@@ -6997,8 +6997,9 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
     shadow: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     released: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     deployed: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    trafficselector: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    canarymetricsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
+    mounttar: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+    trafficselector: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    canarymetricsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7068,10 +7069,14 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       msg.setDeployed(value);
       break;
     case 9:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMounttar(value);
+      break;
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setTrafficselector(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.addCanarymetrics(value);
       break;
@@ -7160,17 +7165,24 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
   if (f != null) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
   f = message.getCanarymetricsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      10,
+      11,
       f
     );
   }
@@ -7466,19 +7478,19 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
 
 
 /**
- * optional string trafficSelector = 9;
- * @return {string}
+ * optional bool mountTar = 9;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getTrafficselector = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getMounttar = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setTrafficselector = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setMounttar = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -7487,7 +7499,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearTrafficselector = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearMounttar = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -7496,17 +7508,53 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasTrafficselector = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasMounttar = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * repeated string canaryMetrics = 10;
+ * optional string trafficSelector = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getTrafficselector = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setTrafficselector = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.clearTrafficselector = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.hasTrafficselector = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * repeated string canaryMetrics = 11;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.getCanarymetricsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
@@ -7515,7 +7563,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.setCanarymetricsList = function(value) {
-  return jspb.Message.setField(this, 10, value || []);
+  return jspb.Message.setField(this, 11, value || []);
 };
 
 
@@ -7525,7 +7573,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpe
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec.prototype.addCanarymetrics = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
 };
 
 

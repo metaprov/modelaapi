@@ -21,7 +21,7 @@ message PublishNotebookResponse {
     string ImageName     = 1;
 }
 
-message PublishModelRequest {
+message BakeModelRequest {
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
     github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
     github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model             model               = 3;
@@ -42,7 +42,7 @@ message PublishModelRequest {
 
 
 
-message PublishModelResponse {
+message BakeModelResponse {
     string ImageName     = 1;
 }
 
@@ -69,7 +69,7 @@ service PublisherdService {
     // publish tar file including the reports
     rpc PublishTar(TarModelRequest) returns (TarModelResponse) {}
 
-    rpc PublishCombined(PublishModelRequest) returns (PublishModelResponse) {}
+    rpc Bake(BakeModelRequest) returns (BakeModelResponse) {}
 
     // Publish a notebook.
     rpc PublishNotebook(PublishNotebookRequest) returns (PublishNotebookResponse) {}

@@ -83,8 +83,10 @@ const (
 	ModelPhaseReporting   ModelPhase = "Reporting"
 	ModelPhaseReported    ModelPhase = "Reported"
 	ModelPhaseCompleted   ModelPhase = "Completed"
-	ModelPhasePublishing  ModelPhase = "Publishing"
-	ModelPhasePublished   ModelPhase = "Published"
+	ModelPhaseTar         ModelPhase = "CreatringTar"
+	ModelPhaseTarred      ModelPhase = "Tarred"
+	ModelPhaseBaking      ModelPhase = "Baking"
+	ModelPhaseBaked       ModelPhase = "Baked"
 	ModelPhaseProfiling   ModelPhase = "Profiling"
 	ModelPhaseProfiled    ModelPhase = "Profiled"
 	ModelPhaseAborted     ModelPhase = "Aborted"
@@ -111,8 +113,10 @@ const (
 	ModelTested ModelConditionType = "Tested"
 	// Model report was generated and uploaded to the bucket.
 	ModelReported ModelConditionType = "Reported"
-	// Container Image was created and pushed to the image repository
-	ModelPublished ModelConditionType = "Published"
+	// Model was tarred
+	ModelTarred ModelConditionType = "Tarred"
+	// Model was baked
+	ModelBaked ModelConditionType = "Baked"
 	// Model profiled
 	ModelProfiled ModelConditionType = "Profiled"
 	// Execution of the model completed successful
@@ -260,52 +264,56 @@ type ModelSpec struct {
 	// Published is set when we want to wrap the model in a docker container
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Published *bool `json:"published,omitempty" protobuf:"varint,18,opt,name=published"`
+	Tar *bool `json:"tar,omitempty" protobuf:"varint,18,opt,name=tar"`
+	// Baked indicate that the system should create an docker image with the container.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Baked *bool `json:"published,omitempty" protobuf:"varint,19,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,19,opt,name=pushed"`
+	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,20,opt,name=pushed"`
 	// Reported is set when a report should be created for this model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,20,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,21,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,21,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,22,opt,name=paused"`
 	// Profiled is set when we want to create model profile.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,22,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,23,opt,name=profiled"`
 	// Archived is true when the model should be archived
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Archived *bool `json:"archived,omitempty" protobuf:"varint,23,opt,name=archived"`
+	Archived *bool `json:"archived,omitempty" protobuf:"varint,24,opt,name=archived"`
 	// Forecasted is true when the model should perform a forecast
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,24,opt,name=forecasted"`
+	Forecasted *bool `json:"forecasted,omitempty" protobuf:"varint,25,opt,name=forecasted"`
 	// Indicates that the model should be released to production
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Released *bool `json:"released,omitempty" protobuf:"varint,25,opt,name=released"`
+	Released *bool `json:"released,omitempty" protobuf:"varint,26,opt,name=released"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,26,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,27,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,27,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,28,opt,name=forecastingSpec"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,28,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,29,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,29,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,30,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,30,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,31,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {

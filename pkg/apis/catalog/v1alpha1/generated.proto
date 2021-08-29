@@ -407,14 +407,18 @@ message ModelDeploymentSpec {
   // +kubebuilder:validation:Optional
   optional bool deployed = 8;
 
+  // MountTar means that we would mount the model tar file. Else we would use baked image.
+  // Default: true
+  optional bool mountTar = 9;
+
   // TrafficSelector is a filter on the traffic to this model
   // +kubebuilder:validation:Optional
-  optional string trafficSelector = 9;
+  optional string trafficSelector = 10;
 
   // If the deployment is canary, the metric define how to evaluate the canary.
   // Default: none
   // +kubebuilder:validation:Optional
-  repeated string canaryMetrics = 10;
+  repeated string canaryMetrics = 11;
 }
 
 message ModelDeploymentStatus {

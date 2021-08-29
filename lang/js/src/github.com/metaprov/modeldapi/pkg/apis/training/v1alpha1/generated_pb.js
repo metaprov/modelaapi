@@ -21536,19 +21536,20 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     training: (f = msg.getTraining()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject(includeInstance, f),
     tested: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
-    published: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
-    pushed: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
-    reported: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
-    profiled: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
-    archived: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
-    forecasted: (f = jspb.Message.getBooleanField(msg, 24)) == null ? undefined : f,
-    released: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+    tar: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
+    published: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
+    pushed: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
+    reported: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
+    profiled: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
+    archived: (f = jspb.Message.getBooleanField(msg, 24)) == null ? undefined : f,
+    forecasted: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+    released: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     forecastingspec: (f = msg.getForecastingspec()) && proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    activedeadlineseconds: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
-    estimatortype: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f
+    activedeadlineseconds: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+    estimatortype: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21662,56 +21663,60 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
       break;
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPublished(value);
+      msg.setTar(value);
       break;
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPushed(value);
+      msg.setPublished(value);
       break;
     case 20:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReported(value);
+      msg.setPushed(value);
       break;
     case 21:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPaused(value);
+      msg.setReported(value);
       break;
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setProfiled(value);
+      msg.setPaused(value);
       break;
     case 23:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setArchived(value);
+      msg.setProfiled(value);
       break;
     case 24:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setForecasted(value);
+      msg.setArchived(value);
       break;
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReleased(value);
+      msg.setForecasted(value);
       break;
     case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReleased(value);
+      break;
+    case 27:
       var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
-    case 27:
+    case 28:
       var value = new proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec;
       reader.readMessage(value,proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.deserializeBinaryFromReader);
       msg.setForecastingspec(value);
       break;
-    case 28:
+    case 29:
       var value = new github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec;
       reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.deserializeBinaryFromReader);
       msg.setCompilation(value);
       break;
-    case 29:
+    case 30:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setActivedeadlineseconds(value);
       break;
-    case 30:
+    case 31:
       var value = /** @type {string} */ (reader.readString());
       msg.setEstimatortype(value);
       break;
@@ -21926,10 +21931,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeBool(
+      26,
+      f
+    );
+  }
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      26,
+      27,
       f,
       github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -21937,7 +21949,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   f = message.getForecastingspec();
   if (f != null) {
     writer.writeMessage(
-      27,
+      28,
       f,
       proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec.serializeBinaryToWriter
     );
@@ -21945,22 +21957,22 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   f = message.getCompilation();
   if (f != null) {
     writer.writeMessage(
-      28,
+      29,
       f,
       github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 29));
+  f = /** @type {number} */ (jspb.Message.getField(message, 30));
   if (f != null) {
     writer.writeInt64(
-      29,
+      30,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 30));
+  f = /** @type {string} */ (jspb.Message.getField(message, 31));
   if (f != null) {
     writer.writeString(
-      30,
+      31,
       f
     );
   }
@@ -22587,10 +22599,10 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 
 
 /**
- * optional bool published = 18;
+ * optional bool tar = 18;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPublished = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getTar = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
@@ -22599,7 +22611,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPublished = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setTar = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -22608,7 +22620,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPublished = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearTar = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -22617,16 +22629,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPublished = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasTar = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional bool pushed = 19;
+ * optional bool published = 19;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPushed = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPublished = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
@@ -22635,7 +22647,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPushed = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPublished = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -22644,7 +22656,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPushed = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPublished = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -22653,16 +22665,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPushed = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPublished = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional bool reported = 20;
+ * optional bool pushed = 20;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getReported = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPushed = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
 };
 
@@ -22671,7 +22683,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setReported = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPushed = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -22680,7 +22692,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearReported = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPushed = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -22689,16 +22701,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReported = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPushed = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional bool paused = 21;
+ * optional bool reported = 21;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPaused = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getReported = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
 };
 
@@ -22707,7 +22719,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPaused = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setReported = function(value) {
   return jspb.Message.setField(this, 21, value);
 };
 
@@ -22716,7 +22728,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPaused = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearReported = function() {
   return jspb.Message.setField(this, 21, undefined);
 };
 
@@ -22725,16 +22737,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPaused = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReported = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * optional bool profiled = 22;
+ * optional bool paused = 22;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getProfiled = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getPaused = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
 };
 
@@ -22743,7 +22755,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setProfiled = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setPaused = function(value) {
   return jspb.Message.setField(this, 22, value);
 };
 
@@ -22752,7 +22764,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearProfiled = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearPaused = function() {
   return jspb.Message.setField(this, 22, undefined);
 };
 
@@ -22761,16 +22773,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasProfiled = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional bool archived = 23;
+ * optional bool profiled = 23;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getArchived = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getProfiled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
 };
 
@@ -22779,7 +22791,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setArchived = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setProfiled = function(value) {
   return jspb.Message.setField(this, 23, value);
 };
 
@@ -22788,7 +22800,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearArchived = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearProfiled = function() {
   return jspb.Message.setField(this, 23, undefined);
 };
 
@@ -22797,16 +22809,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasArchived = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasProfiled = function() {
   return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional bool forecasted = 24;
+ * optional bool archived = 24;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getForecasted = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getArchived = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
 };
 
@@ -22815,7 +22827,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setForecasted = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setArchived = function(value) {
   return jspb.Message.setField(this, 24, value);
 };
 
@@ -22824,7 +22836,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearForecasted = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearArchived = function() {
   return jspb.Message.setField(this, 24, undefined);
 };
 
@@ -22833,16 +22845,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasForecasted = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasArchived = function() {
   return jspb.Message.getField(this, 24) != null;
 };
 
 
 /**
- * optional bool released = 25;
+ * optional bool forecasted = 25;
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getReleased = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getForecasted = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
 };
 
@@ -22851,7 +22863,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setReleased = function(value) {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setForecasted = function(value) {
   return jspb.Message.setField(this, 25, value);
 };
 
@@ -22860,7 +22872,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearReleased = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearForecasted = function() {
   return jspb.Message.setField(this, 25, undefined);
 };
 
@@ -22869,18 +22881,54 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReleased = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasForecasted = function() {
   return jspb.Message.getField(this, 25) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 26;
+ * optional bool released = 26;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getReleased = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setReleased = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearReleased = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasReleased = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 27;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 26));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 27));
 };
 
 
@@ -22889,7 +22937,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 26, value);
+  return jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -22907,17 +22955,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 26) != null;
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * optional ForecastingSpec forecastingSpec = 27;
+ * optional ForecastingSpec forecastingSpec = 28;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getForecastingspec = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec, 27));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastingSpec, 28));
 };
 
 
@@ -22926,7 +22974,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setForecastingspec = function(value) {
-  return jspb.Message.setWrapperField(this, 27, value);
+  return jspb.Message.setWrapperField(this, 28, value);
 };
 
 
@@ -22944,17 +22992,17 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasForecastingspec = function() {
-  return jspb.Message.getField(this, 27) != null;
+  return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 28;
+ * optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 29;
  * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getCompilation = function() {
   return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec, 28));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec, 29));
 };
 
 
@@ -22963,7 +23011,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
 */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setCompilation = function(value) {
-  return jspb.Message.setWrapperField(this, 28, value);
+  return jspb.Message.setWrapperField(this, 29, value);
 };
 
 
@@ -22981,16 +23029,16 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {boolean}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasCompilation = function() {
-  return jspb.Message.getField(this, 28) != null;
+  return jspb.Message.getField(this, 29) != null;
 };
 
 
 /**
- * optional int64 activeDeadlineSeconds = 29;
+ * optional int64 activeDeadlineSeconds = 30;
  * @return {number}
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getActivedeadlineseconds = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 29, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 30, 0));
 };
 
 
@@ -22999,42 +23047,6 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
 proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setActivedeadlineseconds = function(value) {
-  return jspb.Message.setField(this, 29, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearActivedeadlineseconds = function() {
-  return jspb.Message.setField(this, 29, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasActivedeadlineseconds = function() {
-  return jspb.Message.getField(this, 29) != null;
-};
-
-
-/**
- * optional string estimatorType = 30;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getEstimatortype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
- */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setEstimatortype = function(value) {
   return jspb.Message.setField(this, 30, value);
 };
 
@@ -23043,7 +23055,7 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearEstimatortype = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearActivedeadlineseconds = function() {
   return jspb.Message.setField(this, 30, undefined);
 };
 
@@ -23052,8 +23064,44 @@ proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasEstimatortype = function() {
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasActivedeadlineseconds = function() {
   return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional string estimatorType = 31;
+ * @return {string}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getEstimatortype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setEstimatortype = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearEstimatortype = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasEstimatortype = function() {
+  return jspb.Message.getField(this, 31) != null;
 };
 
 

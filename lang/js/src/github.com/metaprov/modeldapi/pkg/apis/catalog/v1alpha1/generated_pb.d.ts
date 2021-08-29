@@ -709,6 +709,9 @@ export class ModelDeploymentSpec extends jspb.Message {
   getDeployed(): boolean;
   setDeployed(value: boolean): ModelDeploymentSpec;
 
+  getMounttar(): boolean;
+  setMounttar(value: boolean): ModelDeploymentSpec;
+
   getTrafficselector(): string;
   setTrafficselector(value: string): ModelDeploymentSpec;
 
@@ -735,6 +738,7 @@ export namespace ModelDeploymentSpec {
     shadow: boolean,
     released: boolean,
     deployed: boolean,
+    mounttar: boolean,
     trafficselector: string,
     canarymetricsList: Array<string>,
   }

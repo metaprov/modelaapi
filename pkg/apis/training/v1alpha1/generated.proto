@@ -1480,64 +1480,69 @@ message ModelSpec {
   // Published is set when we want to wrap the model in a docker container
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool published = 18;
+  optional bool tar = 18;
+
+  // Baked indicate that the system should create an docker image with the container.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool published = 19;
 
   // Pushed indicate if the model image should be pushed into the remote docker registry.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pushed = 19;
+  optional bool pushed = 20;
 
   // Reported is set when a report should be created for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reported = 20;
+  optional bool reported = 21;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 21;
+  optional bool paused = 22;
 
   // Profiled is set when we want to create model profile.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool profiled = 22;
+  optional bool profiled = 23;
 
   // Archived is true when the model should be archived
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool archived = 23;
+  optional bool archived = 24;
 
   // Forecasted is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecasted = 24;
+  optional bool forecasted = 25;
 
   // Indicates that the model should be released to production
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool released = 25;
+  optional bool released = 26;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 26;
+  optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 27;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 27;
+  optional ForecastingSpec forecastingSpec = 28;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 28;
+  optional github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 29;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 29;
+  optional int64 activeDeadlineSeconds = 30;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 30;
+  optional string estimatorType = 31;
 }
 
 // ModelStatus defines the observed state of the Model

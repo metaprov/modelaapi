@@ -183,6 +183,10 @@ spec:
                       description: The version of the model. Note that a single predictor
                         might serve different models
                       type: string
+                    mountTar:
+                      description: 'MountTar means that we would mount the model tar
+                        file. Else we would use baked image. Default: true'
+                      type: boolean
                     released:
                       description: 'A released model is a model that should serve
                         production traffic. Default: false'

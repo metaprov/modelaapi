@@ -1961,8 +1961,13 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Published != nil {
-		in, out := &in.Published, &out.Published
+	if in.Tar != nil {
+		in, out := &in.Tar, &out.Tar
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Baked != nil {
+		in, out := &in.Baked, &out.Baked
 		*out = new(bool)
 		**out = **in
 	}

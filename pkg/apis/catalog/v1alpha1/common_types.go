@@ -62,6 +62,7 @@ const (
 	ProfileStudyTask      TaskName = "profile-study"
 	ProfileModelTask      TaskName = "profile-model"
 	PublishModelTask      TaskName = "publish-model"
+	BakeModelTask         TaskName = "bake-model"
 	RunRecipeTask         TaskName = "run-recipe"
 	ReportDatasetTask     TaskName = "report-dataset"
 	ReportModelTask       TaskName = "report-model"
@@ -1288,13 +1289,16 @@ type ModelDeploymentSpec struct {
 	// Default: false
 	// +kubebuilder:validation:Optional
 	Deployed *bool `json:"deployed,omitempty" protobuf:"bytes,8,opt,name=deployed"`
+	// MountTar means that we would mount the model tar file. Else we would use baked image.
+	// Default: true
+	MountTar *bool `json:"mountTar,omitempty" protobuf:"bytes,9,opt,name=mountTar"`
 	// TrafficSelector is a filter on the traffic to this model
 	// +kubebuilder:validation:Optional
-	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,9,opt,name=trafficSelector"`
+	TrafficSelector *string `json:"trafficSelector,omitempty" protobuf:"bytes,10,opt,name=trafficSelector"`
 	// If the deployment is canary, the metric define how to evaluate the canary.
 	// Default: none
 	// +kubebuilder:validation:Optional
-	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,10,rep,name=canaryMetrics"`
+	CanaryMetrics []CanaryMetric `json:"canaryMetrics,omitempty" protobuf:"bytes,11,rep,name=canaryMetrics"`
 }
 
 type ModelDeploymentStatus struct {

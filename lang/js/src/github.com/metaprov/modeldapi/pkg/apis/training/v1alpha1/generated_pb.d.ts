@@ -2152,6 +2152,9 @@ export class ModelSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): ModelSpec;
 
+  getTar(): boolean;
+  setTar(value: boolean): ModelSpec;
+
   getPublished(): boolean;
   setPublished(value: boolean): ModelSpec;
 
@@ -2224,6 +2227,7 @@ export namespace ModelSpec {
     training?: TrainingSpec.AsObject,
     tested: boolean,
     aborted: boolean,
+    tar: boolean,
     published: boolean,
     pushed: boolean,
     reported: boolean,

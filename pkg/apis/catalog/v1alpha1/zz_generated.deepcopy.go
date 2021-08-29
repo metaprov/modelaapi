@@ -647,6 +647,11 @@ func (in *ModelDeploymentSpec) DeepCopyInto(out *ModelDeploymentSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.MountTar != nil {
+		in, out := &in.MountTar, &out.MountTar
+		*out = new(bool)
+		**out = **in
+	}
 	if in.TrafficSelector != nil {
 		in, out := &in.TrafficSelector, &out.TrafficSelector
 		*out = new(string)

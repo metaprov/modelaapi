@@ -734,8 +734,8 @@ spec:
                 type: boolean
               published:
                 default: false
-                description: Published is set when we want to wrap the model in a
-                  docker container
+                description: Baked indicate that the system should create an docker
+                  image with the container.
                 type: boolean
               pushed:
                 default: false
@@ -756,6 +756,11 @@ spec:
                   the model is stand alone
                 maxLength: 63
                 type: string
+              tar:
+                default: false
+                description: Published is set when we want to wrap the model in a
+                  docker container
+                type: boolean
               task:
                 description: Task is the machine learning task (regression, classification).
                   The task is generated from the study task
