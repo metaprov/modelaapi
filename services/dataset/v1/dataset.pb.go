@@ -2199,7 +2199,7 @@ var file_github_com_metaprov_modeldapi_services_dataset_v1_dataset_proto_rawDesc
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x62, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x62, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x12, 0x12, 0x0a,
 	0x04, 0x70, 0x61, 0x74, 0x68, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70, 0x61, 0x74,
-	0x68, 0x32, 0xf1, 0x1f, 0x0a, 0x0e, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x53, 0x65, 0x72,
+	0x68, 0x32, 0x83, 0x1e, 0x0a, 0x0e, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x12, 0xb9, 0x01, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74,
 	0x61, 0x73, 0x65, 0x74, 0x73, 0x12, 0x46, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
@@ -2439,26 +2439,11 @@ var file_github_com_metaprov_modeldapi_services_dataset_v1_dataset_proto_rawDesc
 	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70,
 	0x61, 0x63, 0x65, 0x7d, 0x2f, 0x7b, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x2e, 0x6d, 0x65,
 	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x65, 0x78, 0x65,
-	0x63, 0x75, 0x74, 0x65, 0x73, 0x71, 0x6c, 0x12, 0xeb, 0x01, 0x0a, 0x08, 0x53, 0x6e, 0x61, 0x70,
-	0x73, 0x68, 0x6f, 0x74, 0x12, 0x42, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x64, 0x61,
-	0x74, 0x61, 0x73, 0x65, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x6e, 0x61,
-	0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x56, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x50, 0x22, 0x4e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x31, 0x2f, 0x64,
-	0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x73, 0x2f, 0x7b, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70,
-	0x61, 0x63, 0x65, 0x7d, 0x2f, 0x7b, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x2e, 0x6d, 0x65,
-	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x73, 0x6e, 0x61,
-	0x70, 0x73, 0x68, 0x6f, 0x74, 0x42, 0x33, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f,
-	0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x63, 0x75, 0x74, 0x65, 0x73, 0x71, 0x6c, 0x42, 0x33, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2549,26 +2534,24 @@ var file_github_com_metaprov_modeldapi_services_dataset_v1_dataset_proto_depIdxs
 	26, // 28: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDatabases:input_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesRequest
 	28, // 29: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetTables:input_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetTablesRequest
 	30, // 30: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ExecuteSql:input_type -> github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlRequest
-	32, // 31: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.Snapshot:input_type -> github.com.metaprov.modeldapi.services.dataset.v1.SnapshotRequest
-	1,  // 32: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ListDatasets:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse
-	3,  // 33: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse
-	5,  // 34: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse
-	7,  // 35: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.UpdateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse
-	9,  // 36: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.DeleteDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse
-	19, // 37: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CompareDatasets:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse
-	17, // 38: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDatasetProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse
-	13, // 39: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateDatasetProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse
-	15, // 40: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateColumnProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse
-	21, // 41: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GenerateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse
-	23, // 42: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ValidateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse
-	11, // 43: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.UploadChunk:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse
-	25, // 44: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.DownloadDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetResponse
-	27, // 45: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDatabases:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesResponse
-	29, // 46: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetTables:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetTablesResponse
-	31, // 47: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ExecuteSql:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlResponse
-	33, // 48: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.Snapshot:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.SnapshotResponse
-	32, // [32:49] is the sub-list for method output_type
-	15, // [15:32] is the sub-list for method input_type
+	1,  // 31: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ListDatasets:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ListDatasetsResponse
+	3,  // 32: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetResponse
+	5,  // 33: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetResponse
+	7,  // 34: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.UpdateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.UpdateDatasetResponse
+	9,  // 35: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.DeleteDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.DeleteDatasetResponse
+	19, // 36: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CompareDatasets:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CompareDatasetsResponse
+	17, // 37: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDatasetProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatasetProfileResponse
+	13, // 38: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateDatasetProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateDatasetProfileResponse
+	15, // 39: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.CreateColumnProfile:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.CreateColumnProfileResponse
+	21, // 40: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GenerateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GenerateDatasetResponse
+	23, // 41: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ValidateDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ValidateDatasetResponse
+	11, // 42: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.UploadChunk:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.UploadChunkResponse
+	25, // 43: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.DownloadDataset:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.DownloadDatasetResponse
+	27, // 44: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetDatabases:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetDatabasesResponse
+	29, // 45: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.GetTables:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.GetTablesResponse
+	31, // 46: github.com.metaprov.modeldapi.services.dataset.v1.DatasetService.ExecuteSql:output_type -> github.com.metaprov.modeldapi.services.dataset.v1.ExecuteSqlResponse
+	31, // [31:47] is the sub-list for method output_type
+	15, // [15:31] is the sub-list for method input_type
 	15, // [15:15] is the sub-list for extension type_name
 	15, // [15:15] is the sub-list for extension extendee
 	0,  // [0:15] is the sub-list for field type_name
@@ -3041,7 +3024,6 @@ type DatasetServiceClient interface {
 	GetDatabases(ctx context.Context, in *GetDatabasesRequest, opts ...grpc.CallOption) (*GetDatabasesResponse, error)
 	GetTables(ctx context.Context, in *GetTablesRequest, opts ...grpc.CallOption) (*GetTablesResponse, error)
 	ExecuteSql(ctx context.Context, in *ExecuteSqlRequest, opts ...grpc.CallOption) (*ExecuteSqlResponse, error)
-	Snapshot(ctx context.Context, in *SnapshotRequest, opts ...grpc.CallOption) (*SnapshotResponse, error)
 }
 
 type datasetServiceClient struct {
@@ -3196,15 +3178,6 @@ func (c *datasetServiceClient) ExecuteSql(ctx context.Context, in *ExecuteSqlReq
 	return out, nil
 }
 
-func (c *datasetServiceClient) Snapshot(ctx context.Context, in *SnapshotRequest, opts ...grpc.CallOption) (*SnapshotResponse, error) {
-	out := new(SnapshotResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/Snapshot", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DatasetServiceServer is the server API for DatasetService service.
 type DatasetServiceServer interface {
 	// Datasets
@@ -3227,7 +3200,6 @@ type DatasetServiceServer interface {
 	GetDatabases(context.Context, *GetDatabasesRequest) (*GetDatabasesResponse, error)
 	GetTables(context.Context, *GetTablesRequest) (*GetTablesResponse, error)
 	ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error)
-	Snapshot(context.Context, *SnapshotRequest) (*SnapshotResponse, error)
 }
 
 // UnimplementedDatasetServiceServer can be embedded to have forward compatible implementations.
@@ -3281,9 +3253,6 @@ func (*UnimplementedDatasetServiceServer) GetTables(context.Context, *GetTablesR
 }
 func (*UnimplementedDatasetServiceServer) ExecuteSql(context.Context, *ExecuteSqlRequest) (*ExecuteSqlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExecuteSql not implemented")
-}
-func (*UnimplementedDatasetServiceServer) Snapshot(context.Context, *SnapshotRequest) (*SnapshotResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Snapshot not implemented")
 }
 
 func RegisterDatasetServiceServer(s *grpc.Server, srv DatasetServiceServer) {
@@ -3578,24 +3547,6 @@ func _DatasetService_ExecuteSql_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DatasetService_Snapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SnapshotRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DatasetServiceServer).Snapshot(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/Snapshot",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DatasetServiceServer).Snapshot(ctx, req.(*SnapshotRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 var _DatasetService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "github.com.metaprov.modeldapi.services.dataset.v1.DatasetService",
 	HandlerType: (*DatasetServiceServer)(nil),
@@ -3663,10 +3614,6 @@ var _DatasetService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ExecuteSql",
 			Handler:    _DatasetService_ExecuteSql_Handler,
-		},
-		{
-			MethodName: "Snapshot",
-			Handler:    _DatasetService_Snapshot_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

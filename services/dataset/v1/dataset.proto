@@ -290,11 +290,6 @@ service DatasetService {
         option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql";
     }
 
-    rpc Snapshot(SnapshotRequest) returns (SnapshotResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:snapshot";
-    }
-
-
 
 
 
