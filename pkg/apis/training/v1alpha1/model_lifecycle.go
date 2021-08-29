@@ -624,10 +624,10 @@ func (model *Model) MarkForecasting() {
 
 // ---------------------- publish
 
-func (model *Model) MarkPublishing() {
-	model.Status.Phase = ModelPhasePublishing
+func (model *Model) MarkBaking() {
+	model.Status.Phase = ModelPhaseBaking
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelPublished,
+		Type:   ModelBaked,
 		Status: v1.ConditionFalse,
 		Reason: ReasonPublishing,
 	})
@@ -635,22 +635,22 @@ func (model *Model) MarkPublishing() {
 }
 
 func (model *Model) Published() bool {
-	cond := model.GetCond(ModelPublished)
+	cond := model.GetCond(ModelBaked)
 	return cond.Status == v1.ConditionTrue
 }
 
 func (model *Model) MarkPublished(image string) {
 	model.Status.ImageName = image
-	model.Status.Phase = ModelPhasePublished
+	model.Status.Phase = ModelPhaseBaked
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelPublished,
+		Type:   ModelBaked,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkPublishFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelPublished,
+		Type:    ModelBaked,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
@@ -776,7 +776,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels["study"] = study.Name
 	model.Spec.Pushed = study.Spec.ModelImagePushed
-	model.Spec.Published = study.Spec.ModelPublished
+	model.Spec.Baked = study.Spec.ModelPublished
 	model.Spec.Location = &data.DataLocation{
 		BucketName: study.Spec.Location.BucketName,
 		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),
