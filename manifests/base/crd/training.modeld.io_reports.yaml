@@ -71,6 +71,116 @@ spec:
                   report.
                 format: int64
                 type: integer
+              custom:
+                description: If the report is custom report, this field holds the
+                  specification
+                properties:
+                  barCharts:
+                    items:
+                      description: Bar Chart
+                      properties:
+                        datasetName:
+                          description: Dataset is the name of the dataset
+                          type: string
+                        legend:
+                          description: Show borther
+                          type: boolean
+                        sort:
+                          description: Show borther
+                          type: boolean
+                        x:
+                          description: name of the X column
+                          type: string
+                        "y":
+                          description: Y column
+                          type: string
+                      type: object
+                    type: array
+                  histCharts:
+                    items:
+                      properties:
+                        bins:
+                          description: Show borther
+                          format: int32
+                          type: integer
+                        datasetName:
+                          description: Dataset is the name of the dataset
+                          type: string
+                        x:
+                          description: name of the X column
+                          type: string
+                      type: object
+                    type: array
+                  lineCharts:
+                    items:
+                      properties:
+                        datasetName:
+                          description: Dataset is the name of the dataset
+                          type: string
+                        legend:
+                          description: Show borther
+                          type: boolean
+                        x:
+                          description: name of the X column
+                          type: string
+                        "y":
+                          description: Y column
+                          type: string
+                      type: object
+                    type: array
+                  tables:
+                    items:
+                      properties:
+                        border:
+                          description: Show borther
+                          type: boolean
+                        columns:
+                          description: List of table columns, if empty use call the
+                            columns
+                          items:
+                            type: string
+                          type: array
+                        datasetName:
+                          description: Dataset is the name of the dataset
+                          type: string
+                        filters:
+                          description: one or more filters
+                          items:
+                            type: string
+                          type: array
+                        groupby:
+                          description: Groupby columns
+                          items:
+                            type: string
+                          type: array
+                        rows:
+                          description: Row is the row number
+                          format: int32
+                          type: integer
+                        showIndex:
+                          description: Show index column
+                          type: boolean
+                      type: object
+                    type: array
+                  values:
+                    items:
+                      properties:
+                        column:
+                          description: Column is the name of the column
+                          type: string
+                        datasetName:
+                          description: Dataset is the name of the dataset
+                          type: string
+                        row:
+                          description: Row is the row number
+                          format: int32
+                          type: integer
+                        scalar:
+                          description: Scalar the a const value
+                          type: string
+                      type: object
+                    type: array
+                type: object
               entityRef:
                 description: EntityRef specify the entity being report. Currently
                   entities can be dataset,model or study

@@ -191,6 +191,137 @@ message CronReportStatus {
   repeated CronReportCondition conditions = 4;
 }
 
+// Bar Chart
+message CustomReportBarChart {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Y column
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool legend = 4;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool sort = 5;
+}
+
+message CustomReportHistogram {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional int32 bins = 3;
+}
+
+message CustomReportLineChart {
+  // Dataset is the name of the dataset
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Y column
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool legend = 4;
+}
+
+message CustomReportScatterPlot {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // name of the Y axis columns
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
+}
+
+// Container for custom reports.
+message CustomReportSpec {
+  repeated CustomReportValue values = 1;
+
+  repeated CustomReportTable tables = 2;
+
+  repeated CustomReportLineChart lineCharts = 3;
+
+  repeated CustomReportBarChart barCharts = 4;
+
+  repeated CustomReportHistogram histCharts = 5;
+
+  repeated CustomReportHistogram scatterCharts = 6;
+}
+
+message CustomReportTable {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // List of table columns, if empty use call the columns
+  // +kubebuilder:validation:Optional
+  repeated string columns = 2;
+
+  // one or more filters
+  // +kubebuilder:validation:Optional
+  repeated string filters = 3;
+
+  // Groupby columns
+  // +kubebuilder:validation:Optional
+  repeated string groupby = 4;
+
+  // Row is the row number
+  // +kubebuilder:validation:Optional
+  optional int32 rows = 5;
+
+  // Show index column
+  // +kubebuilder:validation:Optional
+  optional bool showIndex = 6;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool border = 7;
+}
+
+message CustomReportValue {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // Column is the name of the column
+  // +kubebuilder:validation:Optional
+  optional string column = 2;
+
+  // Row is the row number
+  // +kubebuilder:validation:Optional
+  optional int32 row = 3;
+
+  // Scalar the a const value
+  // +kubebuilder:validation:Optional
+  optional string scalar = 4;
+}
+
 message DataSplit {
   // Indicate that this is an automatic split.
   // +kubebuilder:default:=true
@@ -459,6 +590,9 @@ message ForecastingSpec {
   // Default it true
   // +kubebuilder:validation:Optional
   optional bool forecast = 13;
+}
+
+message FormatSpec {
 }
 
 // FreqSpec specify the frequency specification.
@@ -2278,6 +2412,10 @@ message ReportSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 10;
+
+  // If the report is custom report, this field holds the specification
+  // +kubebuilder:validation:Optional
+  optional CustomReportSpec custom = 11;
 }
 
 // ReportStatus defines the observed state of the report.
