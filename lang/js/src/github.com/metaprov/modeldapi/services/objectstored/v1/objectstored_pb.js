@@ -397,11 +397,8 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.proto
  */
 proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bucketname: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    bucketspec: (f = msg.getBucketspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.toObject(includeInstance, f),
-    crednamespace: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    credname: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    connectionspec: (f = msg.getConnectionspec()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.toObject(includeInstance, f),
+    bucket: (f = msg.getBucket()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
     key: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
@@ -441,26 +438,14 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBucketname(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
+      msg.setBucket(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.deserializeBinaryFromReader);
-      msg.setBucketspec(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCrednamespace(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCredname(value);
-      break;
-    case 5:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.deserializeBinaryFromReader);
-      msg.setConnectionspec(value);
+      var value = new github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
+      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
+      msg.setConnection(value);
       break;
     case 6:
       var value = msg.getSecretMap();
@@ -501,41 +486,20 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.proto
  */
 proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBucketname();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBucket();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getBucketspec();
+  f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getCrednamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getCredname();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getConnectionspec();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.serializeBinaryToWriter
+      github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
@@ -553,38 +517,57 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.seria
 
 
 /**
- * optional string bucketName = 1;
- * @return {string}
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getBucketname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getBucket = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setBucketname = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec bucketSpec = 2;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec}
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getBucketspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setBucketspec = function(value) {
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setBucket = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
+ */
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.clearBucket = function() {
+  return this.setBucket(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.hasBucket = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection connection = 2;
+ * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection}
+ */
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getConnection = function() {
+  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
+ * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
+*/
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setConnection = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -593,8 +576,8 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.clearBucketspec = function() {
-  return this.setBucketspec(undefined);
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
@@ -602,81 +585,8 @@ proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.hasBucketspec = function() {
+proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string credNamespace = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getCrednamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setCrednamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string credName = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getCredname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setCredname = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec connectionSpec = 5;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec}
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.getConnectionspec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
-*/
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.setConnectionspec = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest} returns this
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.clearConnectionspec = function() {
-  return this.setConnectionspec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.prototype.hasConnectionspec = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

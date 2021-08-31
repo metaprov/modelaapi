@@ -170,7 +170,7 @@ const (
 	MySql            ProviderName = "mysql"
 	MongoDb          ProviderName = "mongodb"
 	Oracle           ProviderName = "oracle"
-	PostgresSQL      ProviderName = "postgressql"
+	PostgresSQL      ProviderName = "postgres"
 	Presto           ProviderName = "presto"
 	SAPHana          ProviderName = "hana"
 	Snowflake        ProviderName = "snowflake"

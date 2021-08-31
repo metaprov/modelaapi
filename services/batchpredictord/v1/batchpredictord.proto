@@ -1,0 +1,29 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modeldapi/services/batchpredictord/v1";
+package github.com.metaprov.modeldapi.services.batchpredictord.v1;
+
+import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+// A request to batch predictor
+message BatchPredictRequest {
+    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 2;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 3;
+    map<string,bytes>                                                    fromSecret     = 4;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket  targetBucket   = 5;
+    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection     toConnection   = 6;
+    map<string,bytes>                                                    toSecret       = 7;    
+}
+
+message BatchPredictResponse {
+
+}
+
+
+service Batch {
+    // Ingest a new dataset to the store, the store creates a new layouts and set of keys
+    // for the new dataset
+    rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
+}

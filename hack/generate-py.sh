@@ -107,6 +107,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto \
     github.com/metaprov/modeldapi/services/virtualvolume/v1/virtualvolume.proto \
+    github.com/metaprov/modeldapi/services/batchpredictord/v1/batchpredictord.proto \
 
 
 

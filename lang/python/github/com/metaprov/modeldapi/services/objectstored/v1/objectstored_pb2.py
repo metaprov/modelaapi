@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modeldapi/services/objectstored/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/services/objectstored/v1/objectstored.proto\x12\x36github.com.metaprov.modeldapi.services.objectstored.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"!\n\x0eIngestResponse\x12\x0f\n\x07liveKey\x18\x01 \x01(\t\"%\n\x0eObjectResponse\x12\x13\n\x0b\x61rchivePath\x18\x01 \x01(\t\"\xa8\x03\n\rObjectRequest\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\\\n\nbucketSpec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x12\x15\n\rcredNamespace\x18\x03 \x01(\t\x12\x10\n\x08\x63redName\x18\x04 \x01(\t\x12]\n\x0e\x63onnectionSpec\x18\x05 \x01(\x0b\x32\x45.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12\x61\n\x06secret\x18\x06 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.SecretEntry\x12\x0b\n\x03key\x18\x07 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"-\n\x1c\x45xistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\x32\xa2\x05\n\x12ObjectstoreService\x12\x99\x01\n\x06Ingest\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\x9a\x01\n\x07\x41rchive\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\x9a\x01\n\x07Recover\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\xb5\x01\n\x14\x45xistInVirtualBucket\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1aT.github.com.metaprov.modeldapi.services.objectstored.v1.ExistInVirtualBucketResponse\"\x00\x42\x38Z6github.com/metaprov/modeldapi/services/objectstored/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modeldapi/services/objectstored/v1/objectstored.proto\x12\x36github.com.metaprov.modeldapi.services.objectstored.v1\x1a\x45github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto\"!\n\x0eIngestResponse\x12\x0f\n\x07liveKey\x18\x01 \x01(\t\"%\n\x0eObjectResponse\x12\x13\n\x0b\x61rchivePath\x18\x01 \x01(\t\"\xdb\x02\n\rObjectRequest\x12T\n\x06\x62ucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection\x12\x61\n\x06secret\x18\x06 \x03(\x0b\x32Q.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.SecretEntry\x12\x0b\n\x03key\x18\x07 \x01(\t\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"-\n\x1c\x45xistInVirtualBucketResponse\x12\r\n\x05\x65xist\x18\x01 \x01(\x08\x32\xa2\x05\n\x12ObjectstoreService\x12\x99\x01\n\x06Ingest\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\x9a\x01\n\x07\x41rchive\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\x9a\x01\n\x07Recover\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1a\x46.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse\"\x00\x12\xb5\x01\n\x14\x45xistInVirtualBucket\x12\x45.github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest\x1aT.github.com.metaprov.modeldapi.services.objectstored.v1.ExistInVirtualBucketResponse\"\x00\x42\x38Z6github.com/metaprov/modeldapi/services/objectstored/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -125,8 +125,8 @@ _OBJECTREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=658,
-  serialized_end=703,
+  serialized_start=581,
+  serialized_end=626,
 )
 
 _OBJECTREQUEST = _descriptor.Descriptor(
@@ -138,49 +138,28 @@ _OBJECTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bucketName', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.bucketName', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='bucket', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.bucket', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bucketSpec', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.bucketSpec', index=1,
+      name='connection', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.connection', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='credNamespace', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.credNamespace', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='credName', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.credName', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectionSpec', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.connectionSpec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.secret', index=5,
+      name='secret', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.secret', index=2,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.key', index=6,
+      name='key', full_name='github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.key', index=3,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -199,7 +178,7 @@ _OBJECTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=279,
-  serialized_end=703,
+  serialized_end=626,
 )
 
 
@@ -230,13 +209,13 @@ _EXISTINVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=705,
-  serialized_end=750,
+  serialized_start=628,
+  serialized_end=673,
 )
 
 _OBJECTREQUEST_SECRETENTRY.containing_type = _OBJECTREQUEST
-_OBJECTREQUEST.fields_by_name['bucketSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKETSPEC
-_OBJECTREQUEST.fields_by_name['connectionSpec'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTIONSPEC
+_OBJECTREQUEST.fields_by_name['bucket'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_OBJECTREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _OBJECTREQUEST.fields_by_name['secret'].message_type = _OBJECTREQUEST_SECRETENTRY
 DESCRIPTOR.message_types_by_name['IngestResponse'] = _INGESTRESPONSE
 DESCRIPTOR.message_types_by_name['ObjectResponse'] = _OBJECTRESPONSE
@@ -291,8 +270,8 @@ _OBJECTSTORESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=753,
-  serialized_end=1427,
+  serialized_start=676,
+  serialized_end=1350,
   methods=[
   _descriptor.MethodDescriptor(
     name='Ingest',

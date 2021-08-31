@@ -40,24 +40,15 @@ export namespace ObjectResponse {
 }
 
 export class ObjectRequest extends jspb.Message {
-  getBucketname(): string;
-  setBucketname(value: string): ObjectRequest;
+  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ObjectRequest;
+  hasBucket(): boolean;
+  clearBucket(): ObjectRequest;
 
-  getBucketspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec | undefined;
-  setBucketspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec): ObjectRequest;
-  hasBucketspec(): boolean;
-  clearBucketspec(): ObjectRequest;
-
-  getCrednamespace(): string;
-  setCrednamespace(value: string): ObjectRequest;
-
-  getCredname(): string;
-  setCredname(value: string): ObjectRequest;
-
-  getConnectionspec(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec | undefined;
-  setConnectionspec(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec): ObjectRequest;
-  hasConnectionspec(): boolean;
-  clearConnectionspec(): ObjectRequest;
+  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ObjectRequest;
+  hasConnection(): boolean;
+  clearConnection(): ObjectRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): ObjectRequest;
@@ -75,11 +66,8 @@ export class ObjectRequest extends jspb.Message {
 
 export namespace ObjectRequest {
   export type AsObject = {
-    bucketname: string,
-    bucketspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketSpec.AsObject,
-    crednamespace: string,
-    credname: string,
-    connectionspec?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionSpec.AsObject,
+    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
     key: string,
   }
