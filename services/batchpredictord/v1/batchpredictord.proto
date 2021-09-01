@@ -4,6 +4,7 @@ package github.com.metaprov.modeldapi.services.batchpredictord.v1;
 
 import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "google/protobuf/empty.proto";
 
 
 // A request to batch predictor
@@ -26,4 +27,5 @@ service Batch {
     // Ingest a new dataset to the store, the store creates a new layouts and set of keys
     // for the new dataset
     rpc BatchPredict(BatchPredictRequest) returns (BatchPredictResponse) {}
+    rpc Shutdown(google.protobuf.Empty) returns (google.protobuf.Empty) {}
 }

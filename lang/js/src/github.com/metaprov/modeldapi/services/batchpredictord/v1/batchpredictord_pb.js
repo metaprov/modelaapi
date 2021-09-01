@@ -19,6 +19,8 @@ var github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb = require
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb);
 var github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb);
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
+goog.object.extend(proto, google_protobuf_empty_pb);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictResponse', null, global);
 /**
