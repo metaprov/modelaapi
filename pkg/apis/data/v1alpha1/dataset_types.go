@@ -114,7 +114,7 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"varint,7,opt,name=reported"`
 	// If true, we should take a snapshot of the databases in order to create a dataset
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Snapshotted *bool `json:"snapshotted,omitempty" protobuf:"varint,8,opt,name=snapshotted"`
 	// If true, we should validate the dataset

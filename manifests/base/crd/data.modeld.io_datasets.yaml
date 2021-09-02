@@ -215,7 +215,7 @@ spec:
                     type: string
                 type: object
               snapshotted:
-                default: true
+                default: false
                 description: If true, we should take a snapshot of the databases in
                   order to create a dataset
                 type: boolean

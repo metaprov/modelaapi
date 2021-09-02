@@ -1094,7 +1094,7 @@ message DatasetSpec {
   optional bool reported = 7;
 
   // If true, we should take a snapshot of the databases in order to create a dataset
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool snapshotted = 8;
 

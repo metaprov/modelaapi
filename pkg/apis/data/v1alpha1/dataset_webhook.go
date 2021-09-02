@@ -45,6 +45,11 @@ func (dataset *Dataset) Default() {
 		dataset.Spec.Origin = &DataLocation{}
 	}
 
+	// if we read from a database, we must snapshot the data. by default we do not snapshot
+	if *dataset.Spec.Origin.Type == DataLocationSQLTable || *dataset.Spec.Origin.Type == DataLocationSQLView {
+		dataset.Spec.Snapshotted = util.BoolPtr(true)
+	}
+
 	if dataset.ObjectMeta.Labels == nil {
 		dataset.ObjectMeta.Labels = make(map[string]string)
 		if dataset.Spec.DataSourceName != nil {
