@@ -1,3 +1,3 @@
-// +groupName=training.modela.io
+// +groupName=training.modela.ai
 // +kubebuilder:object:generate=true
 package v1alpha1

@@ -85,7 +85,7 @@ func (b *ModelAutobuilder) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.io", Kind: "ModelAutobuilder"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "ModelAutobuilder"},
 		b.Name, allErrs)
 }
 

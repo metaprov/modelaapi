@@ -1,5 +1,5 @@
 // +kubebuilder:object:generate=true
-// +groupName=infra.modela.io
+// +groupName=infra.modela.ai
 
 package v1alpha1
 

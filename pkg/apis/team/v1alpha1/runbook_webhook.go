@@ -43,7 +43,7 @@ func (runbook *RunBook) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "team.modela.io", Kind: "RunBook"}, runbook.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "team.modela.ai", Kind: "RunBook"}, runbook.Name, allErrs)
 }
 
 func (runbook *RunBook) validateMeta(fldPath *field.Path) field.ErrorList {

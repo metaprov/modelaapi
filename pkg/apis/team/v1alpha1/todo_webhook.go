@@ -44,7 +44,7 @@ func (alert *Todo) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.io", Kind: "Todo"}, alert.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Todo"}, alert.Name, allErrs)
 }
 
 func (alert *Todo) validateMeta(fldPath *field.Path) field.ErrorList {

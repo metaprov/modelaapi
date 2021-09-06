@@ -162,7 +162,7 @@ func (notifier *Model) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.io", Kind: "dModel"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "dModel"},
 		notifier.Name, allErrs)
 }
 

@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: userroleclasses.catalog.modela.io
+  name: userroleclasses.catalog.modela.ai
 spec:
-  group: catalog.modela.io
+  group: catalog.modela.ai
   names:
     categories:
     - catalog

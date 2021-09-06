@@ -40,7 +40,7 @@ func (notifier *VirtualVolume) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modela.io", Kind: "VirtualVolume"},
+		schema.GroupKind{Group: "infra.modela.ai", Kind: "VirtualVolume"},
 		notifier.Name, allErrs)
 }
 

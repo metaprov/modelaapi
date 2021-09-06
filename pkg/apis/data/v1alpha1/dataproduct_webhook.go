@@ -65,7 +65,7 @@ func (r *DataProduct) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modela.io", Kind: "DataProduct"},
+		schema.GroupKind{Group: "data.modela.ai", Kind: "DataProduct"},
 		r.Name, allErrs)
 }
 

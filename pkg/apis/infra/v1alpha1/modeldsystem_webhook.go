@@ -44,7 +44,7 @@ func (notifier *ModeldSystem) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.io", Kind: "ModeldSystem"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ModeldSystem"}, notifier.Name, allErrs)
 }
 
 func (notifier *ModeldSystem) validateMeta(fldPath *field.Path) field.ErrorList {

@@ -1,5 +1,5 @@
 // +kubebuilder:object:generate=true
-// +groupName=inference.modela.io
+// +groupName=inference.modela.ai
 
 package v1alpha1
 

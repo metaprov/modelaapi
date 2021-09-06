@@ -1,5 +1,5 @@
 package training
 
 const (
-	GroupName = "training.modela.io"
+	GroupName = "training.modela.ai"
 )

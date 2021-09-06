@@ -1,5 +1,5 @@
 // +kubebuilder:object:generate=true
-// +groupName=training.modela.io
+// +groupName=training.modela.ai
 package v1alpha1
 
 import (

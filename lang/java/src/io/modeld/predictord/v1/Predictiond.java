@@ -37157,8 +37157,8 @@ public final class Predictiond {
       "d.io\032\037modela-discuss@googlegroups.com2\0031" +
       ".0*\002\001\0022\020application/json:\020application/js" +
       "onR;\n\003404\0224\n*Returned when the resource " +
-      "does not exist.\022\006\n\004\232\002\001\007r7\n\027modela.io doc" +
-      "umentation\022\034https://modela.io/site/docs/" +
+      "does not exist.\022\006\n\004\232\002\001\007r7\n\027modela.ai doc" +
+      "umentation\022\034https://modela.ai/site/docs/" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

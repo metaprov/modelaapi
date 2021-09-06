@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: dataproducts.data.modela.io
+  name: dataproducts.data.modela.ai
 spec:
-  group: data.modela.io
+  group: data.modela.ai
   names:
     categories:
     - data

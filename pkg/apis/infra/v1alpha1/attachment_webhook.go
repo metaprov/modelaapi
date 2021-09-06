@@ -44,7 +44,7 @@ func (alert *Attachment) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.io", Kind: "Attachment"}, alert.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Attachment"}, alert.Name, allErrs)
 }
 
 func (alert *Attachment) validateMeta(fldPath *field.Path) field.ErrorList {

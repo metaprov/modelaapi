@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: workloadclasses.catalog.modela.io
+  name: workloadclasses.catalog.modela.ai
 spec:
-  group: catalog.modela.io
+  group: catalog.modela.ai
   names:
     categories:
     - catalog

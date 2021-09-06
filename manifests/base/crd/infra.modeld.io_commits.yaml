@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: commits.infra.modela.io
+  name: commits.infra.modela.ai
 spec:
-  group: infra.modela.io
+  group: infra.modela.ai
   names:
     categories:
     - infra

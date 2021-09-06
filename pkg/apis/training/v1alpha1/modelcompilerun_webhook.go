@@ -48,7 +48,7 @@ func (run *ModelCompilerRun) validateBucket() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.io", Kind: "ModelCompilerRun"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "ModelCompilerRun"},
 		run.Name, allErrs)
 }
 

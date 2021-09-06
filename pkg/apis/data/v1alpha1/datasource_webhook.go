@@ -90,7 +90,7 @@ func (ffile *DataSource) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modela.io", Kind: "DataSource"},
+		schema.GroupKind{Group: "data.modela.ai", Kind: "DataSource"},
 		ffile.Name, allErrs)
 }
 

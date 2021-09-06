@@ -44,7 +44,7 @@ func (commit *Commit) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.io", Kind: "Commit"}, commit.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "Commit"}, commit.Name, allErrs)
 }
 
 func (commit *Commit) validateMeta(fldPath *field.Path) field.ErrorList {

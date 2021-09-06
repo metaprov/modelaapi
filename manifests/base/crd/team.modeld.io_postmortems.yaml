@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: postmortems.team.modela.io
+  name: postmortems.team.modela.ai
 spec:
-  group: team.modela.io
+  group: team.modela.ai
   names:
     categories:
     - team

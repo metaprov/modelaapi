@@ -45,7 +45,7 @@ func (cur *Curtain) validateBucket() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modela.io", Kind: "Curtain"},
+		schema.GroupKind{Group: "inference.modela.ai", Kind: "Curtain"},
 		cur.Name, allErrs)
 }
 

@@ -1,5 +1,5 @@
 // +kubebuilder:object:generate=true
-// +groupName=catalog.modela.io
+// +groupName=catalog.modela.ai
 
 package v1alpha1
 

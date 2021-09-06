@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: curtains.inference.modela.io
+  name: curtains.inference.modela.ai
 spec:
-  group: inference.modela.io
+  group: inference.modela.ai
   names:
     categories:
     - inference

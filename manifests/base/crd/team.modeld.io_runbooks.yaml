@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: runbooks.team.modela.io
+  name: runbooks.team.modela.ai
 spec:
-  group: team.modela.io
+  group: team.modela.ai
   names:
     categories:
     - data

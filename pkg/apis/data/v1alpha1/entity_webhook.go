@@ -39,7 +39,7 @@ func (entity *Entity) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modela.io", Kind: "Entity"},
+		schema.GroupKind{Group: "data.modela.ai", Kind: "Entity"},
 		entity.Name, allErrs)
 }
 

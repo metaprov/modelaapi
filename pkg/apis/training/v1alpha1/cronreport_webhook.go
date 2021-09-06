@@ -190,7 +190,7 @@ func (report *CronReport) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modela.io", Kind: "Report"},
+		schema.GroupKind{Group: "inference.modela.ai", Kind: "Report"},
 		report.Name, allErrs)
 }
 

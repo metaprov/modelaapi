@@ -56,7 +56,7 @@ func (predictor *Predictor) validate() error {
 	//var allErrs field.ErrorList
 
 	//return apierrors.NewInvalid(
-	//	schema.GroupKind{Group: "inference.modela.io", Kind: "Predictor"},
+	//	schema.GroupKind{Group: "inference.modela.ai", Kind: "Predictor"},
 	//	predictor.FileName, allErrs)
 	return nil
 }

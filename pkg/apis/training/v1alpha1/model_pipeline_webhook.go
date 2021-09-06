@@ -42,7 +42,7 @@ func (pl *ModelPipeline) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.io", Kind: "ModelPipeline"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "ModelPipeline"},
 		pl.Name, allErrs)
 }
 

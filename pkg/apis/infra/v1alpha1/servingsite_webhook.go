@@ -31,7 +31,7 @@ func (r *ServingSite) Default() {
 		r.Spec.Description = util.StrPtr("")
 	}
 	if r.Spec.FDQN == nil {
-		r.Spec.FDQN = util.StrPtr(r.Name + ".modela.io")
+		r.Spec.FDQN = util.StrPtr(r.Name + ".modela.ai")
 	}
 }
 

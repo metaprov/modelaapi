@@ -227,7 +227,7 @@ func (study *Study) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modela.io", Kind: "Study"},
+		schema.GroupKind{Group: "training.modela.ai", Kind: "Study"},
 		study.Name, allErrs)
 }
 

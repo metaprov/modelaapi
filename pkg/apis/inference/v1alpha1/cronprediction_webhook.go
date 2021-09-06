@@ -190,7 +190,7 @@ func (prediction *CronPrediction) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modela.io", Kind: "Prediction"},
+		schema.GroupKind{Group: "inference.modela.ai", Kind: "Prediction"},
 		prediction.Name, allErrs)
 }
 

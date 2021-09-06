@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: reports.training.modela.io
+  name: reports.training.modela.ai
 spec:
-  group: training.modela.io
+  group: training.modela.ai
   names:
     categories:
     - training

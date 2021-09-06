@@ -322,7 +322,7 @@ func (connection *Connection) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modela.io", Kind: "StorageConnection"},
+		schema.GroupKind{Group: "infra.modela.ai", Kind: "StorageConnection"},
 		connection.Name, allErrs)
 }
 

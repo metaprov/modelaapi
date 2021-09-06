@@ -44,7 +44,7 @@ func (wr *DataPipeline) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modela.io", Kind: "DataPipeline"},
+		schema.GroupKind{Group: "data.modela.ai", Kind: "DataPipeline"},
 		wr.Name, allErrs)
 }
 
