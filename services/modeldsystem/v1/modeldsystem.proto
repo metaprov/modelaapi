@@ -6,89 +6,89 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
-message ListModeldSystemsRequest {
+message ListModelaSystemsRequest {
     string             namespace = 1;
     map<string,string> labels    = 2;   
 }
 
-message ListModeldSystemsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList items = 1;   
+message ListModelaSystemsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList items = 1;   
 }
 
-message ModeldSystemResponse {}
+message ModelaSystemResponse {}
 
-message CreateModeldSystemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem  item = 1;
+message CreateModelaSystemRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem  item = 1;
     string password = 2;    
 }
 
-message CreateModeldSystemResponse {
+message CreateModelaSystemResponse {
 
 }
 
-message UpdateModeldSystemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+message UpdateModelaSystemRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem item = 1;
 }
 
-message UpdateModeldSystemResponse {
+message UpdateModelaSystemResponse {
 
 }
 
-message GetModeldSystemRequest {
+message GetModelaSystemRequest {
     string namespace = 1;
     string name      = 2;
 }
 
 
-message GetModeldSystemResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+message GetModelaSystemResponse {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem item = 1;
     string yaml = 2;
 }
 
 
 
-message GetModeldSystemNamespacesRequest {
+message GetModelaSystemNamespacesRequest {
     string namespace = 1;
     string name      = 2;
 }
 
 
-message GetModeldSystemNamespacesResponse {
+message GetModelaSystemNamespacesResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 
 
 
-message DeleteModeldSystemRequest {
+message DeleteModelaSystemRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-message DeleteModeldSystemResponse {}
+message DeleteModelaSystemResponse {}
 
 
-message ModeldSystemCreateResponse {}
+message ModelaSystemCreateResponse {}
 message LogoutResponse {}
 message ResetPasswordResponse {}
 
-message ModeldSystemLoginRequest {
+message ModelaSystemLoginRequest {
     string namespace = 1;
     string name      = 2;
     string password  = 3;
 }
 
-message ModeldSystemLoginResponse {
+message ModelaSystemLoginResponse {
     string token = 1; // jwt token
 }
 
 
-message ModeldSystemGetByNameRequest {
+message ModelaSystemGetByNameRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message ModeldSystemLogoutRequest {
+message ModelaSystemLogoutRequest {
     string token = 1; // jwt token
 }
 
@@ -121,27 +121,27 @@ message ResetPasswordReponse {
 
 
 
-service ModeldSystemService {
-    rpc ListModeldSystems(ListModeldSystemsRequest) returns (ListModeldSystemsResponse) {
+service ModelaSystemService {
+    rpc ListModelaSystems(ListModelaSystemsRequest) returns (ListModelaSystemsResponse) {
         option (google.api.http).get = "/v1/modeldsystems";
     }
-    rpc CreateModeldSystem(CreateModeldSystemRequest) returns (CreateModeldSystemResponse) {
+    rpc CreateModelaSystem(CreateModelaSystemRequest) returns (CreateModelaSystemResponse) {
         option (google.api.http) = {
 			post: "/v1/modeldsystems"
 			body: "modeldsystem"
 		};
     }
-    rpc GetModeldSystem(GetModeldSystemRequest) returns (GetModeldSystemResponse) {
+    rpc GetModelaSystem(GetModelaSystemRequest) returns (GetModelaSystemResponse) {
         option (google.api.http).get = "/v1/{namespace}/modeldsystems/{name}";
     }
-    rpc UpdateModeldSystem(UpdateModeldSystemRequest) returns (UpdateModeldSystemResponse) {
+    rpc UpdateModelaSystem(UpdateModelaSystemRequest) returns (UpdateModelaSystemResponse) {
         option (google.api.http) = {
 			put: "/v1/{modeldsystem.metadata.namespace}/modeldsystems//{modeldsystem.metadata.name}"
 			body: "modeldsystem"
 		};
     }
 
-    rpc DeleteModeldSystem(DeleteModeldSystemRequest) returns (DeleteModeldSystemResponse) {
+    rpc DeleteModelaSystem(DeleteModelaSystemRequest) returns (DeleteModelaSystemResponse) {
         option (google.api.http).delete = "/api/{namespace}/v1/modeldsystems/{name}";
     }
 

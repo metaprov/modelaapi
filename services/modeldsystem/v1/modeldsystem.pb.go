@@ -32,7 +32,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type ListModeldSystemsRequest struct {
+type ListModelaSystemsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -41,8 +41,8 @@ type ListModeldSystemsRequest struct {
 	Labels    map[string]string `protobuf:"bytes,2,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ListModeldSystemsRequest) Reset() {
-	*x = ListModeldSystemsRequest{}
+func (x *ListModelaSystemsRequest) Reset() {
+	*x = ListModelaSystemsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -50,13 +50,13 @@ func (x *ListModeldSystemsRequest) Reset() {
 	}
 }
 
-func (x *ListModeldSystemsRequest) String() string {
+func (x *ListModelaSystemsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListModeldSystemsRequest) ProtoMessage() {}
+func (*ListModelaSystemsRequest) ProtoMessage() {}
 
-func (x *ListModeldSystemsRequest) ProtoReflect() protoreflect.Message {
+func (x *ListModelaSystemsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -68,35 +68,35 @@ func (x *ListModeldSystemsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListModeldSystemsRequest.ProtoReflect.Descriptor instead.
-func (*ListModeldSystemsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListModelaSystemsRequest.ProtoReflect.Descriptor instead.
+func (*ListModelaSystemsRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ListModeldSystemsRequest) GetNamespace() string {
+func (x *ListModelaSystemsRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *ListModeldSystemsRequest) GetLabels() map[string]string {
+func (x *ListModelaSystemsRequest) GetLabels() map[string]string {
 	if x != nil {
 		return x.Labels
 	}
 	return nil
 }
 
-type ListModeldSystemsResponse struct {
+type ListModelaSystemsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Items *v1alpha1.ModeldSystemList `protobuf:"bytes,1,opt,name=items,proto3" json:"items,omitempty"`
+	Items *v1alpha1.ModelaSystemList `protobuf:"bytes,1,opt,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *ListModeldSystemsResponse) Reset() {
-	*x = ListModeldSystemsResponse{}
+func (x *ListModelaSystemsResponse) Reset() {
+	*x = ListModelaSystemsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -104,13 +104,13 @@ func (x *ListModeldSystemsResponse) Reset() {
 	}
 }
 
-func (x *ListModeldSystemsResponse) String() string {
+func (x *ListModelaSystemsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListModeldSystemsResponse) ProtoMessage() {}
+func (*ListModelaSystemsResponse) ProtoMessage() {}
 
-func (x *ListModeldSystemsResponse) ProtoReflect() protoreflect.Message {
+func (x *ListModelaSystemsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -122,26 +122,26 @@ func (x *ListModeldSystemsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListModeldSystemsResponse.ProtoReflect.Descriptor instead.
-func (*ListModeldSystemsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListModelaSystemsResponse.ProtoReflect.Descriptor instead.
+func (*ListModelaSystemsResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ListModeldSystemsResponse) GetItems() *v1alpha1.ModeldSystemList {
+func (x *ListModelaSystemsResponse) GetItems() *v1alpha1.ModelaSystemList {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-type ModeldSystemResponse struct {
+type ModelaSystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *ModeldSystemResponse) Reset() {
-	*x = ModeldSystemResponse{}
+func (x *ModelaSystemResponse) Reset() {
+	*x = ModelaSystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -149,13 +149,13 @@ func (x *ModeldSystemResponse) Reset() {
 	}
 }
 
-func (x *ModeldSystemResponse) String() string {
+func (x *ModelaSystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemResponse) ProtoMessage() {}
+func (*ModelaSystemResponse) ProtoMessage() {}
 
-func (x *ModeldSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -167,22 +167,22 @@ func (x *ModeldSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemResponse.ProtoReflect.Descriptor instead.
-func (*ModeldSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemResponse.ProtoReflect.Descriptor instead.
+func (*ModelaSystemResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{2}
 }
 
-type CreateModeldSystemRequest struct {
+type CreateModelaSystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item     *v1alpha1.ModeldSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item     *v1alpha1.ModelaSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 	Password string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 }
 
-func (x *CreateModeldSystemRequest) Reset() {
-	*x = CreateModeldSystemRequest{}
+func (x *CreateModelaSystemRequest) Reset() {
+	*x = CreateModelaSystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -190,13 +190,13 @@ func (x *CreateModeldSystemRequest) Reset() {
 	}
 }
 
-func (x *CreateModeldSystemRequest) String() string {
+func (x *CreateModelaSystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateModeldSystemRequest) ProtoMessage() {}
+func (*CreateModelaSystemRequest) ProtoMessage() {}
 
-func (x *CreateModeldSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateModelaSystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -208,33 +208,33 @@ func (x *CreateModeldSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateModeldSystemRequest.ProtoReflect.Descriptor instead.
-func (*CreateModeldSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateModelaSystemRequest.ProtoReflect.Descriptor instead.
+func (*CreateModelaSystemRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateModeldSystemRequest) GetItem() *v1alpha1.ModeldSystem {
+func (x *CreateModelaSystemRequest) GetItem() *v1alpha1.ModelaSystem {
 	if x != nil {
 		return x.Item
 	}
 	return nil
 }
 
-func (x *CreateModeldSystemRequest) GetPassword() string {
+func (x *CreateModelaSystemRequest) GetPassword() string {
 	if x != nil {
 		return x.Password
 	}
 	return ""
 }
 
-type CreateModeldSystemResponse struct {
+type CreateModelaSystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *CreateModeldSystemResponse) Reset() {
-	*x = CreateModeldSystemResponse{}
+func (x *CreateModelaSystemResponse) Reset() {
+	*x = CreateModelaSystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -242,13 +242,13 @@ func (x *CreateModeldSystemResponse) Reset() {
 	}
 }
 
-func (x *CreateModeldSystemResponse) String() string {
+func (x *CreateModelaSystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateModeldSystemResponse) ProtoMessage() {}
+func (*CreateModelaSystemResponse) ProtoMessage() {}
 
-func (x *CreateModeldSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateModelaSystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -260,21 +260,21 @@ func (x *CreateModeldSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateModeldSystemResponse.ProtoReflect.Descriptor instead.
-func (*CreateModeldSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateModelaSystemResponse.ProtoReflect.Descriptor instead.
+func (*CreateModelaSystemResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{4}
 }
 
-type UpdateModeldSystemRequest struct {
+type UpdateModelaSystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *v1alpha1.ModeldSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item *v1alpha1.ModelaSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
-func (x *UpdateModeldSystemRequest) Reset() {
-	*x = UpdateModeldSystemRequest{}
+func (x *UpdateModelaSystemRequest) Reset() {
+	*x = UpdateModelaSystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -282,13 +282,13 @@ func (x *UpdateModeldSystemRequest) Reset() {
 	}
 }
 
-func (x *UpdateModeldSystemRequest) String() string {
+func (x *UpdateModelaSystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateModeldSystemRequest) ProtoMessage() {}
+func (*UpdateModelaSystemRequest) ProtoMessage() {}
 
-func (x *UpdateModeldSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateModelaSystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -300,26 +300,26 @@ func (x *UpdateModeldSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateModeldSystemRequest.ProtoReflect.Descriptor instead.
-func (*UpdateModeldSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateModelaSystemRequest.ProtoReflect.Descriptor instead.
+func (*UpdateModelaSystemRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *UpdateModeldSystemRequest) GetItem() *v1alpha1.ModeldSystem {
+func (x *UpdateModelaSystemRequest) GetItem() *v1alpha1.ModelaSystem {
 	if x != nil {
 		return x.Item
 	}
 	return nil
 }
 
-type UpdateModeldSystemResponse struct {
+type UpdateModelaSystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *UpdateModeldSystemResponse) Reset() {
-	*x = UpdateModeldSystemResponse{}
+func (x *UpdateModelaSystemResponse) Reset() {
+	*x = UpdateModelaSystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -327,13 +327,13 @@ func (x *UpdateModeldSystemResponse) Reset() {
 	}
 }
 
-func (x *UpdateModeldSystemResponse) String() string {
+func (x *UpdateModelaSystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateModeldSystemResponse) ProtoMessage() {}
+func (*UpdateModelaSystemResponse) ProtoMessage() {}
 
-func (x *UpdateModeldSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *UpdateModelaSystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -345,12 +345,12 @@ func (x *UpdateModeldSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateModeldSystemResponse.ProtoReflect.Descriptor instead.
-func (*UpdateModeldSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateModelaSystemResponse.ProtoReflect.Descriptor instead.
+func (*UpdateModelaSystemResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{6}
 }
 
-type GetModeldSystemRequest struct {
+type GetModelaSystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -359,8 +359,8 @@ type GetModeldSystemRequest struct {
 	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *GetModeldSystemRequest) Reset() {
-	*x = GetModeldSystemRequest{}
+func (x *GetModelaSystemRequest) Reset() {
+	*x = GetModelaSystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -368,13 +368,13 @@ func (x *GetModeldSystemRequest) Reset() {
 	}
 }
 
-func (x *GetModeldSystemRequest) String() string {
+func (x *GetModelaSystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetModeldSystemRequest) ProtoMessage() {}
+func (*GetModelaSystemRequest) ProtoMessage() {}
 
-func (x *GetModeldSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *GetModelaSystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -386,36 +386,36 @@ func (x *GetModeldSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetModeldSystemRequest.ProtoReflect.Descriptor instead.
-func (*GetModeldSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetModelaSystemRequest.ProtoReflect.Descriptor instead.
+func (*GetModelaSystemRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetModeldSystemRequest) GetNamespace() string {
+func (x *GetModelaSystemRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *GetModeldSystemRequest) GetName() string {
+func (x *GetModelaSystemRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type GetModeldSystemResponse struct {
+type GetModelaSystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *v1alpha1.ModeldSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item *v1alpha1.ModelaSystem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 	Yaml string                 `protobuf:"bytes,2,opt,name=yaml,proto3" json:"yaml,omitempty"`
 }
 
-func (x *GetModeldSystemResponse) Reset() {
-	*x = GetModeldSystemResponse{}
+func (x *GetModelaSystemResponse) Reset() {
+	*x = GetModelaSystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -423,13 +423,13 @@ func (x *GetModeldSystemResponse) Reset() {
 	}
 }
 
-func (x *GetModeldSystemResponse) String() string {
+func (x *GetModelaSystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetModeldSystemResponse) ProtoMessage() {}
+func (*GetModelaSystemResponse) ProtoMessage() {}
 
-func (x *GetModeldSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *GetModelaSystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -441,26 +441,26 @@ func (x *GetModeldSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetModeldSystemResponse.ProtoReflect.Descriptor instead.
-func (*GetModeldSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetModelaSystemResponse.ProtoReflect.Descriptor instead.
+func (*GetModelaSystemResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *GetModeldSystemResponse) GetItem() *v1alpha1.ModeldSystem {
+func (x *GetModelaSystemResponse) GetItem() *v1alpha1.ModelaSystem {
 	if x != nil {
 		return x.Item
 	}
 	return nil
 }
 
-func (x *GetModeldSystemResponse) GetYaml() string {
+func (x *GetModelaSystemResponse) GetYaml() string {
 	if x != nil {
 		return x.Yaml
 	}
 	return ""
 }
 
-type GetModeldSystemNamespacesRequest struct {
+type GetModelaSystemNamespacesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -469,8 +469,8 @@ type GetModeldSystemNamespacesRequest struct {
 	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *GetModeldSystemNamespacesRequest) Reset() {
-	*x = GetModeldSystemNamespacesRequest{}
+func (x *GetModelaSystemNamespacesRequest) Reset() {
+	*x = GetModelaSystemNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -478,13 +478,13 @@ func (x *GetModeldSystemNamespacesRequest) Reset() {
 	}
 }
 
-func (x *GetModeldSystemNamespacesRequest) String() string {
+func (x *GetModelaSystemNamespacesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetModeldSystemNamespacesRequest) ProtoMessage() {}
+func (*GetModelaSystemNamespacesRequest) ProtoMessage() {}
 
-func (x *GetModeldSystemNamespacesRequest) ProtoReflect() protoreflect.Message {
+func (x *GetModelaSystemNamespacesRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -496,26 +496,26 @@ func (x *GetModeldSystemNamespacesRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetModeldSystemNamespacesRequest.ProtoReflect.Descriptor instead.
-func (*GetModeldSystemNamespacesRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetModelaSystemNamespacesRequest.ProtoReflect.Descriptor instead.
+func (*GetModelaSystemNamespacesRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetModeldSystemNamespacesRequest) GetNamespace() string {
+func (x *GetModelaSystemNamespacesRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *GetModeldSystemNamespacesRequest) GetName() string {
+func (x *GetModelaSystemNamespacesRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type GetModeldSystemNamespacesResponse struct {
+type GetModelaSystemNamespacesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -523,8 +523,8 @@ type GetModeldSystemNamespacesResponse struct {
 	Namespaces []*v1.NamespaceInfo `protobuf:"bytes,1,rep,name=namespaces,proto3" json:"namespaces,omitempty"`
 }
 
-func (x *GetModeldSystemNamespacesResponse) Reset() {
-	*x = GetModeldSystemNamespacesResponse{}
+func (x *GetModelaSystemNamespacesResponse) Reset() {
+	*x = GetModelaSystemNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -532,13 +532,13 @@ func (x *GetModeldSystemNamespacesResponse) Reset() {
 	}
 }
 
-func (x *GetModeldSystemNamespacesResponse) String() string {
+func (x *GetModelaSystemNamespacesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetModeldSystemNamespacesResponse) ProtoMessage() {}
+func (*GetModelaSystemNamespacesResponse) ProtoMessage() {}
 
-func (x *GetModeldSystemNamespacesResponse) ProtoReflect() protoreflect.Message {
+func (x *GetModelaSystemNamespacesResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -550,19 +550,19 @@ func (x *GetModeldSystemNamespacesResponse) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetModeldSystemNamespacesResponse.ProtoReflect.Descriptor instead.
-func (*GetModeldSystemNamespacesResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetModelaSystemNamespacesResponse.ProtoReflect.Descriptor instead.
+func (*GetModelaSystemNamespacesResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *GetModeldSystemNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
+func (x *GetModelaSystemNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
 	if x != nil {
 		return x.Namespaces
 	}
 	return nil
 }
 
-type DeleteModeldSystemRequest struct {
+type DeleteModelaSystemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -571,8 +571,8 @@ type DeleteModeldSystemRequest struct {
 	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *DeleteModeldSystemRequest) Reset() {
-	*x = DeleteModeldSystemRequest{}
+func (x *DeleteModelaSystemRequest) Reset() {
+	*x = DeleteModelaSystemRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -580,13 +580,13 @@ func (x *DeleteModeldSystemRequest) Reset() {
 	}
 }
 
-func (x *DeleteModeldSystemRequest) String() string {
+func (x *DeleteModelaSystemRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteModeldSystemRequest) ProtoMessage() {}
+func (*DeleteModelaSystemRequest) ProtoMessage() {}
 
-func (x *DeleteModeldSystemRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteModelaSystemRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -598,33 +598,33 @@ func (x *DeleteModeldSystemRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteModeldSystemRequest.ProtoReflect.Descriptor instead.
-func (*DeleteModeldSystemRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteModelaSystemRequest.ProtoReflect.Descriptor instead.
+func (*DeleteModelaSystemRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *DeleteModeldSystemRequest) GetNamespace() string {
+func (x *DeleteModelaSystemRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *DeleteModeldSystemRequest) GetName() string {
+func (x *DeleteModelaSystemRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type DeleteModeldSystemResponse struct {
+type DeleteModelaSystemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *DeleteModeldSystemResponse) Reset() {
-	*x = DeleteModeldSystemResponse{}
+func (x *DeleteModelaSystemResponse) Reset() {
+	*x = DeleteModelaSystemResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -632,13 +632,13 @@ func (x *DeleteModeldSystemResponse) Reset() {
 	}
 }
 
-func (x *DeleteModeldSystemResponse) String() string {
+func (x *DeleteModelaSystemResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteModeldSystemResponse) ProtoMessage() {}
+func (*DeleteModelaSystemResponse) ProtoMessage() {}
 
-func (x *DeleteModeldSystemResponse) ProtoReflect() protoreflect.Message {
+func (x *DeleteModelaSystemResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -650,19 +650,19 @@ func (x *DeleteModeldSystemResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteModeldSystemResponse.ProtoReflect.Descriptor instead.
-func (*DeleteModeldSystemResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteModelaSystemResponse.ProtoReflect.Descriptor instead.
+func (*DeleteModelaSystemResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{12}
 }
 
-type ModeldSystemCreateResponse struct {
+type ModelaSystemCreateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *ModeldSystemCreateResponse) Reset() {
-	*x = ModeldSystemCreateResponse{}
+func (x *ModelaSystemCreateResponse) Reset() {
+	*x = ModelaSystemCreateResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -670,13 +670,13 @@ func (x *ModeldSystemCreateResponse) Reset() {
 	}
 }
 
-func (x *ModeldSystemCreateResponse) String() string {
+func (x *ModelaSystemCreateResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemCreateResponse) ProtoMessage() {}
+func (*ModelaSystemCreateResponse) ProtoMessage() {}
 
-func (x *ModeldSystemCreateResponse) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemCreateResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -688,8 +688,8 @@ func (x *ModeldSystemCreateResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemCreateResponse.ProtoReflect.Descriptor instead.
-func (*ModeldSystemCreateResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemCreateResponse.ProtoReflect.Descriptor instead.
+func (*ModelaSystemCreateResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{13}
 }
 
@@ -769,7 +769,7 @@ func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{15}
 }
 
-type ModeldSystemLoginRequest struct {
+type ModelaSystemLoginRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -779,8 +779,8 @@ type ModeldSystemLoginRequest struct {
 	Password  string `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
 }
 
-func (x *ModeldSystemLoginRequest) Reset() {
-	*x = ModeldSystemLoginRequest{}
+func (x *ModelaSystemLoginRequest) Reset() {
+	*x = ModelaSystemLoginRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -788,13 +788,13 @@ func (x *ModeldSystemLoginRequest) Reset() {
 	}
 }
 
-func (x *ModeldSystemLoginRequest) String() string {
+func (x *ModelaSystemLoginRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemLoginRequest) ProtoMessage() {}
+func (*ModelaSystemLoginRequest) ProtoMessage() {}
 
-func (x *ModeldSystemLoginRequest) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemLoginRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -806,33 +806,33 @@ func (x *ModeldSystemLoginRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemLoginRequest.ProtoReflect.Descriptor instead.
-func (*ModeldSystemLoginRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemLoginRequest.ProtoReflect.Descriptor instead.
+func (*ModelaSystemLoginRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *ModeldSystemLoginRequest) GetNamespace() string {
+func (x *ModelaSystemLoginRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *ModeldSystemLoginRequest) GetName() string {
+func (x *ModelaSystemLoginRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *ModeldSystemLoginRequest) GetPassword() string {
+func (x *ModelaSystemLoginRequest) GetPassword() string {
 	if x != nil {
 		return x.Password
 	}
 	return ""
 }
 
-type ModeldSystemLoginResponse struct {
+type ModelaSystemLoginResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -840,8 +840,8 @@ type ModeldSystemLoginResponse struct {
 	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"` // jwt token
 }
 
-func (x *ModeldSystemLoginResponse) Reset() {
-	*x = ModeldSystemLoginResponse{}
+func (x *ModelaSystemLoginResponse) Reset() {
+	*x = ModelaSystemLoginResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -849,13 +849,13 @@ func (x *ModeldSystemLoginResponse) Reset() {
 	}
 }
 
-func (x *ModeldSystemLoginResponse) String() string {
+func (x *ModelaSystemLoginResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemLoginResponse) ProtoMessage() {}
+func (*ModelaSystemLoginResponse) ProtoMessage() {}
 
-func (x *ModeldSystemLoginResponse) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemLoginResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -867,19 +867,19 @@ func (x *ModeldSystemLoginResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemLoginResponse.ProtoReflect.Descriptor instead.
-func (*ModeldSystemLoginResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemLoginResponse.ProtoReflect.Descriptor instead.
+func (*ModelaSystemLoginResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *ModeldSystemLoginResponse) GetToken() string {
+func (x *ModelaSystemLoginResponse) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
 	return ""
 }
 
-type ModeldSystemGetByNameRequest struct {
+type ModelaSystemGetByNameRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -888,8 +888,8 @@ type ModeldSystemGetByNameRequest struct {
 	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *ModeldSystemGetByNameRequest) Reset() {
-	*x = ModeldSystemGetByNameRequest{}
+func (x *ModelaSystemGetByNameRequest) Reset() {
+	*x = ModelaSystemGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -897,13 +897,13 @@ func (x *ModeldSystemGetByNameRequest) Reset() {
 	}
 }
 
-func (x *ModeldSystemGetByNameRequest) String() string {
+func (x *ModelaSystemGetByNameRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemGetByNameRequest) ProtoMessage() {}
+func (*ModelaSystemGetByNameRequest) ProtoMessage() {}
 
-func (x *ModeldSystemGetByNameRequest) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemGetByNameRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -915,26 +915,26 @@ func (x *ModeldSystemGetByNameRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemGetByNameRequest.ProtoReflect.Descriptor instead.
-func (*ModeldSystemGetByNameRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemGetByNameRequest.ProtoReflect.Descriptor instead.
+func (*ModelaSystemGetByNameRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *ModeldSystemGetByNameRequest) GetNamespace() string {
+func (x *ModelaSystemGetByNameRequest) GetNamespace() string {
 	if x != nil {
 		return x.Namespace
 	}
 	return ""
 }
 
-func (x *ModeldSystemGetByNameRequest) GetName() string {
+func (x *ModelaSystemGetByNameRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type ModeldSystemLogoutRequest struct {
+type ModelaSystemLogoutRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -942,8 +942,8 @@ type ModeldSystemLogoutRequest struct {
 	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"` // jwt token
 }
 
-func (x *ModeldSystemLogoutRequest) Reset() {
-	*x = ModeldSystemLogoutRequest{}
+func (x *ModelaSystemLogoutRequest) Reset() {
+	*x = ModelaSystemLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -951,13 +951,13 @@ func (x *ModeldSystemLogoutRequest) Reset() {
 	}
 }
 
-func (x *ModeldSystemLogoutRequest) String() string {
+func (x *ModelaSystemLogoutRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ModeldSystemLogoutRequest) ProtoMessage() {}
+func (*ModelaSystemLogoutRequest) ProtoMessage() {}
 
-func (x *ModeldSystemLogoutRequest) ProtoReflect() protoreflect.Message {
+func (x *ModelaSystemLogoutRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -969,12 +969,12 @@ func (x *ModeldSystemLogoutRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ModeldSystemLogoutRequest.ProtoReflect.Descriptor instead.
-func (*ModeldSystemLogoutRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ModelaSystemLogoutRequest.ProtoReflect.Descriptor instead.
+func (*ModelaSystemLogoutRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *ModeldSystemLogoutRequest) GetToken() string {
+func (x *ModelaSystemLogoutRequest) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
@@ -1229,7 +1229,7 @@ var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pro
 	0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xe9, 0x01, 0x0a, 0x18, 0x4c, 0x69, 0x73, 0x74,
-	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
+	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x12, 0x74, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x02, 0x20, 0x03,
@@ -1237,62 +1237,62 @@ var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pro
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
-	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
+	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79,
 	0x52, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x1a, 0x39, 0x0a, 0x0b, 0x4c, 0x61, 0x62, 0x65,
 	0x6c, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
 	0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a,
 	0x02, 0x38, 0x01, 0x22, 0x7a, 0x0a, 0x19, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x5d, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e,
 	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22,
-	0x16, 0x0a, 0x14, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
+	0x16, 0x0a, 0x14, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x90, 0x01, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61,
 	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
 	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x1a,
+	0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x1a,
 	0x0a, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x22, 0x1c, 0x0a, 0x1a, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x74, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61,
 	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
 	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0x1c,
-	0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0x1c,
+	0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x4a, 0x0a, 0x16,
-	0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
+	0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70,
 	0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73,
 	0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x86, 0x01, 0x0a, 0x17, 0x47, 0x65, 0x74,
-	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70,
+	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72,
 	0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x12, 0x0a,
+	0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x12, 0x0a,
 	0x04, 0x79, 0x61, 0x6d, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x79, 0x61, 0x6d,
-	0x6c, 0x22, 0x54, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x6c, 0x22, 0x54, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70,
 	0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x84, 0x01, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x4d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x73,
+	0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x73,
 	0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5f, 0x0a,
 	0x0a, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
@@ -1300,33 +1300,33 @@ var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pro
 	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x6e,
 	0x66, 0x6f, 0x52, 0x0a, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x22, 0x4d,
-	0x0a, 0x19, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x0a, 0x19, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e,
 	0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
 	0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1c, 0x0a,
-	0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73,
+	0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73,
 	0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x0a, 0x1a, 0x4d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x10, 0x0a, 0x0e, 0x4c, 0x6f, 0x67,
 	0x6f, 0x75, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x17, 0x0a, 0x15, 0x52,
 	0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x68, 0x0a, 0x18, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x68, 0x0a, 0x18, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12,
 	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
 	0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x22, 0x31,
-	0x0a, 0x19, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x6f,
+	0x0a, 0x19, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x4c, 0x6f,
 	0x67, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74,
 	0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65,
-	0x6e, 0x22, 0x50, 0x0a, 0x1c, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65,
+	0x6e, 0x22, 0x50, 0x0a, 0x1c, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x47, 0x65, 0x74, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12,
 	0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x22, 0x31, 0x0a, 0x19, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73,
+	0x61, 0x6d, 0x65, 0x22, 0x31, 0x0a, 0x19, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73,
 	0x74, 0x65, 0x6d, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x91, 0x01, 0x0a, 0x15, 0x43, 0x68, 0x61, 0x6e, 0x67,
@@ -1350,61 +1350,61 @@ var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pro
 	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x65,
 	0x64, 0x4e, 0x65, 0x77, 0x22, 0x16, 0x0a, 0x14, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73,
 	0x73, 0x77, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xcc, 0x09, 0x0a,
-	0x13, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53, 0x65, 0x72,
+	0x13, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x12, 0xd3, 0x01, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64,
-	0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x50, 0x2e, 0x67, 0x69, 0x74,
+	0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x50, 0x2e, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
 	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x51, 0x2e, 0x67,
 	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
 	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74,
-	0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61,
 	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x19, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x13, 0x12, 0x11, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64,
 	0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x12, 0xe4, 0x01, 0x0a, 0x12, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
 	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
 	0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71,
+	0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
 	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
 	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f,
 	0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21,
 	0x22, 0x11, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74,
 	0x65, 0x6d, 0x73, 0x3a, 0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65,
-	0x6d, 0x12, 0xe0, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53,
+	0x6d, 0x12, 0xe0, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53,
 	0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x4e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x26, 0x12, 0x24,
 	0x2f, 0x76, 0x31, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x7d, 0x2f,
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x2f, 0x7b, 0x6e,
 	0x61, 0x6d, 0x65, 0x7d, 0x12, 0xa4, 0x02, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d,
-	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69,
+	0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69,
 	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
 	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x52,
+	0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x52,
 	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
 	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f,
-	0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x22, 0x67, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x61, 0x1a, 0x51, 0x2f, 0x76, 0x31, 0x2f,
 	0x7b, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x6d, 0x65,
 	0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65,
@@ -1412,17 +1412,17 @@ var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pro
 	0x2f, 0x7b, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x6d,
 	0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x0c, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0xed, 0x01, 0x0a, 0x12,
-	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74,
 	0x65, 0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44,
-	0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x53, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x30, 0x82, 0xd3, 0xe4, 0x93, 0x02,
 	0x2a, 0x2a, 0x28, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x7d, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73,
@@ -1447,52 +1447,52 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 
 var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
 var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_goTypes = []interface{}{
-	(*ListModeldSystemsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest
-	(*ListModeldSystemsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse
-	(*ModeldSystemResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemResponse
-	(*CreateModeldSystemRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest
-	(*CreateModeldSystemResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemResponse
-	(*UpdateModeldSystemRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest
-	(*UpdateModeldSystemResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemResponse
-	(*GetModeldSystemRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemRequest
-	(*GetModeldSystemResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse
-	(*GetModeldSystemNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesRequest
-	(*GetModeldSystemNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesResponse
-	(*DeleteModeldSystemRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemRequest
-	(*DeleteModeldSystemResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemResponse
-	(*ModeldSystemCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemCreateResponse
+	(*ListModelaSystemsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsRequest
+	(*ListModelaSystemsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsResponse
+	(*ModelaSystemResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemResponse
+	(*CreateModelaSystemRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModelaSystemRequest
+	(*CreateModelaSystemResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModelaSystemResponse
+	(*UpdateModelaSystemRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModelaSystemRequest
+	(*UpdateModelaSystemResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModelaSystemResponse
+	(*GetModelaSystemRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemRequest
+	(*GetModelaSystemResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemResponse
+	(*GetModelaSystemNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemNamespacesRequest
+	(*GetModelaSystemNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemNamespacesResponse
+	(*DeleteModelaSystemRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModelaSystemRequest
+	(*DeleteModelaSystemResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModelaSystemResponse
+	(*ModelaSystemCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemCreateResponse
 	(*LogoutResponse)(nil),                    // 14: github.com.metaprov.modelaapi.services.modeldsystem.v1.LogoutResponse
 	(*ResetPasswordResponse)(nil),             // 15: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordResponse
-	(*ModeldSystemLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLoginRequest
-	(*ModeldSystemLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLoginResponse
-	(*ModeldSystemGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemGetByNameRequest
-	(*ModeldSystemLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLogoutRequest
+	(*ModelaSystemLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemLoginRequest
+	(*ModelaSystemLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemLoginResponse
+	(*ModelaSystemGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemGetByNameRequest
+	(*ModelaSystemLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemLogoutRequest
 	(*ChangePasswordRequest)(nil),             // 20: github.com.metaprov.modelaapi.services.modeldsystem.v1.ChangePasswordRequest
 	(*ChangePasswordResponse)(nil),            // 21: github.com.metaprov.modelaapi.services.modeldsystem.v1.ChangePasswordResponse
 	(*ResetPasswordRequest)(nil),              // 22: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordRequest
 	(*ResetPasswordReponse)(nil),              // 23: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordReponse
-	nil,                                       // 24: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.LabelsEntry
-	(*v1alpha1.ModeldSystemList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList
-	(*v1alpha1.ModeldSystem)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
+	nil,                                       // 24: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsRequest.LabelsEntry
+	(*v1alpha1.ModelaSystemList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList
+	(*v1alpha1.ModelaSystem)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem
 	(*v1.NamespaceInfo)(nil),                  // 27: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
 var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_depIdxs = []int32{
-	24, // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.LabelsEntry
-	25, // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList
-	26, // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	26, // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	26, // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	27, // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.ListModeldSystems:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest
-	3,  // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.CreateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest
-	7,  // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.GetModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemRequest
-	5,  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.UpdateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest
-	11, // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.DeleteModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemRequest
-	1,  // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.ListModeldSystems:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse
-	4,  // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.CreateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemResponse
-	8,  // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.GetModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse
-	6,  // 14: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.UpdateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemResponse
-	12, // 15: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.DeleteModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemResponse
+	24, // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsRequest.LabelsEntry
+	25, // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList
+	26, // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModelaSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem
+	26, // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModelaSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem
+	26, // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem
+	27, // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.ListModelaSystems:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.CreateModelaSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModelaSystemRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.GetModelaSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.UpdateModelaSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModelaSystemRequest
+	11, // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.DeleteModelaSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModelaSystemRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.ListModelaSystems:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModelaSystemsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.CreateModelaSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModelaSystemResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.GetModelaSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModelaSystemResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.UpdateModelaSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModelaSystemResponse
+	12, // 15: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService.DeleteModelaSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModelaSystemResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1507,7 +1507,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListModeldSystemsRequest); i {
+			switch v := v.(*ListModelaSystemsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1519,7 +1519,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListModeldSystemsResponse); i {
+			switch v := v.(*ListModelaSystemsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1531,7 +1531,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemResponse); i {
+			switch v := v.(*ModelaSystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1543,7 +1543,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModeldSystemRequest); i {
+			switch v := v.(*CreateModelaSystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1555,7 +1555,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateModeldSystemResponse); i {
+			switch v := v.(*CreateModelaSystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1567,7 +1567,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateModeldSystemRequest); i {
+			switch v := v.(*UpdateModelaSystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1579,7 +1579,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateModeldSystemResponse); i {
+			switch v := v.(*UpdateModelaSystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1591,7 +1591,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModeldSystemRequest); i {
+			switch v := v.(*GetModelaSystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1603,7 +1603,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModeldSystemResponse); i {
+			switch v := v.(*GetModelaSystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1615,7 +1615,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModeldSystemNamespacesRequest); i {
+			switch v := v.(*GetModelaSystemNamespacesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1627,7 +1627,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetModeldSystemNamespacesResponse); i {
+			switch v := v.(*GetModelaSystemNamespacesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1639,7 +1639,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteModeldSystemRequest); i {
+			switch v := v.(*DeleteModelaSystemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1651,7 +1651,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteModeldSystemResponse); i {
+			switch v := v.(*DeleteModelaSystemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1663,7 +1663,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemCreateResponse); i {
+			switch v := v.(*ModelaSystemCreateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1699,7 +1699,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemLoginRequest); i {
+			switch v := v.(*ModelaSystemLoginRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1711,7 +1711,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemLoginResponse); i {
+			switch v := v.(*ModelaSystemLoginResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1723,7 +1723,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemGetByNameRequest); i {
+			switch v := v.(*ModelaSystemGetByNameRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1735,7 +1735,7 @@ func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_pr
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModeldSystemLogoutRequest); i {
+			switch v := v.(*ModelaSystemLogoutRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1823,216 +1823,216 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// ModeldSystemServiceClient is the client API for ModeldSystemService service.
+// ModelaSystemServiceClient is the client API for ModelaSystemService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type ModeldSystemServiceClient interface {
-	ListModeldSystems(ctx context.Context, in *ListModeldSystemsRequest, opts ...grpc.CallOption) (*ListModeldSystemsResponse, error)
-	CreateModeldSystem(ctx context.Context, in *CreateModeldSystemRequest, opts ...grpc.CallOption) (*CreateModeldSystemResponse, error)
-	GetModeldSystem(ctx context.Context, in *GetModeldSystemRequest, opts ...grpc.CallOption) (*GetModeldSystemResponse, error)
-	UpdateModeldSystem(ctx context.Context, in *UpdateModeldSystemRequest, opts ...grpc.CallOption) (*UpdateModeldSystemResponse, error)
-	DeleteModeldSystem(ctx context.Context, in *DeleteModeldSystemRequest, opts ...grpc.CallOption) (*DeleteModeldSystemResponse, error)
+type ModelaSystemServiceClient interface {
+	ListModelaSystems(ctx context.Context, in *ListModelaSystemsRequest, opts ...grpc.CallOption) (*ListModelaSystemsResponse, error)
+	CreateModelaSystem(ctx context.Context, in *CreateModelaSystemRequest, opts ...grpc.CallOption) (*CreateModelaSystemResponse, error)
+	GetModelaSystem(ctx context.Context, in *GetModelaSystemRequest, opts ...grpc.CallOption) (*GetModelaSystemResponse, error)
+	UpdateModelaSystem(ctx context.Context, in *UpdateModelaSystemRequest, opts ...grpc.CallOption) (*UpdateModelaSystemResponse, error)
+	DeleteModelaSystem(ctx context.Context, in *DeleteModelaSystemRequest, opts ...grpc.CallOption) (*DeleteModelaSystemResponse, error)
 }
 
-type modeldSystemServiceClient struct {
+type modelaSystemServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewModeldSystemServiceClient(cc grpc.ClientConnInterface) ModeldSystemServiceClient {
-	return &modeldSystemServiceClient{cc}
+func NewModelaSystemServiceClient(cc grpc.ClientConnInterface) ModelaSystemServiceClient {
+	return &modelaSystemServiceClient{cc}
 }
 
-func (c *modeldSystemServiceClient) ListModeldSystems(ctx context.Context, in *ListModeldSystemsRequest, opts ...grpc.CallOption) (*ListModeldSystemsResponse, error) {
-	out := new(ListModeldSystemsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems", in, out, opts...)
+func (c *modelaSystemServiceClient) ListModelaSystems(ctx context.Context, in *ListModelaSystemsRequest, opts ...grpc.CallOption) (*ListModelaSystemsResponse, error) {
+	out := new(ListModelaSystemsResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/ListModelaSystems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modeldSystemServiceClient) CreateModeldSystem(ctx context.Context, in *CreateModeldSystemRequest, opts ...grpc.CallOption) (*CreateModeldSystemResponse, error) {
-	out := new(CreateModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem", in, out, opts...)
+func (c *modelaSystemServiceClient) CreateModelaSystem(ctx context.Context, in *CreateModelaSystemRequest, opts ...grpc.CallOption) (*CreateModelaSystemResponse, error) {
+	out := new(CreateModelaSystemResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/CreateModelaSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modeldSystemServiceClient) GetModeldSystem(ctx context.Context, in *GetModeldSystemRequest, opts ...grpc.CallOption) (*GetModeldSystemResponse, error) {
-	out := new(GetModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem", in, out, opts...)
+func (c *modelaSystemServiceClient) GetModelaSystem(ctx context.Context, in *GetModelaSystemRequest, opts ...grpc.CallOption) (*GetModelaSystemResponse, error) {
+	out := new(GetModelaSystemResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/GetModelaSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modeldSystemServiceClient) UpdateModeldSystem(ctx context.Context, in *UpdateModeldSystemRequest, opts ...grpc.CallOption) (*UpdateModeldSystemResponse, error) {
-	out := new(UpdateModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem", in, out, opts...)
+func (c *modelaSystemServiceClient) UpdateModelaSystem(ctx context.Context, in *UpdateModelaSystemRequest, opts ...grpc.CallOption) (*UpdateModelaSystemResponse, error) {
+	out := new(UpdateModelaSystemResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/UpdateModelaSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modeldSystemServiceClient) DeleteModeldSystem(ctx context.Context, in *DeleteModeldSystemRequest, opts ...grpc.CallOption) (*DeleteModeldSystemResponse, error) {
-	out := new(DeleteModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem", in, out, opts...)
+func (c *modelaSystemServiceClient) DeleteModelaSystem(ctx context.Context, in *DeleteModelaSystemRequest, opts ...grpc.CallOption) (*DeleteModelaSystemResponse, error) {
+	out := new(DeleteModelaSystemResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/DeleteModelaSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ModeldSystemServiceServer is the server API for ModeldSystemService service.
-type ModeldSystemServiceServer interface {
-	ListModeldSystems(context.Context, *ListModeldSystemsRequest) (*ListModeldSystemsResponse, error)
-	CreateModeldSystem(context.Context, *CreateModeldSystemRequest) (*CreateModeldSystemResponse, error)
-	GetModeldSystem(context.Context, *GetModeldSystemRequest) (*GetModeldSystemResponse, error)
-	UpdateModeldSystem(context.Context, *UpdateModeldSystemRequest) (*UpdateModeldSystemResponse, error)
-	DeleteModeldSystem(context.Context, *DeleteModeldSystemRequest) (*DeleteModeldSystemResponse, error)
+// ModelaSystemServiceServer is the server API for ModelaSystemService service.
+type ModelaSystemServiceServer interface {
+	ListModelaSystems(context.Context, *ListModelaSystemsRequest) (*ListModelaSystemsResponse, error)
+	CreateModelaSystem(context.Context, *CreateModelaSystemRequest) (*CreateModelaSystemResponse, error)
+	GetModelaSystem(context.Context, *GetModelaSystemRequest) (*GetModelaSystemResponse, error)
+	UpdateModelaSystem(context.Context, *UpdateModelaSystemRequest) (*UpdateModelaSystemResponse, error)
+	DeleteModelaSystem(context.Context, *DeleteModelaSystemRequest) (*DeleteModelaSystemResponse, error)
 }
 
-// UnimplementedModeldSystemServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedModeldSystemServiceServer struct {
+// UnimplementedModelaSystemServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedModelaSystemServiceServer struct {
 }
 
-func (*UnimplementedModeldSystemServiceServer) ListModeldSystems(context.Context, *ListModeldSystemsRequest) (*ListModeldSystemsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListModeldSystems not implemented")
+func (*UnimplementedModelaSystemServiceServer) ListModelaSystems(context.Context, *ListModelaSystemsRequest) (*ListModelaSystemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListModelaSystems not implemented")
 }
-func (*UnimplementedModeldSystemServiceServer) CreateModeldSystem(context.Context, *CreateModeldSystemRequest) (*CreateModeldSystemResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateModeldSystem not implemented")
+func (*UnimplementedModelaSystemServiceServer) CreateModelaSystem(context.Context, *CreateModelaSystemRequest) (*CreateModelaSystemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateModelaSystem not implemented")
 }
-func (*UnimplementedModeldSystemServiceServer) GetModeldSystem(context.Context, *GetModeldSystemRequest) (*GetModeldSystemResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetModeldSystem not implemented")
+func (*UnimplementedModelaSystemServiceServer) GetModelaSystem(context.Context, *GetModelaSystemRequest) (*GetModelaSystemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetModelaSystem not implemented")
 }
-func (*UnimplementedModeldSystemServiceServer) UpdateModeldSystem(context.Context, *UpdateModeldSystemRequest) (*UpdateModeldSystemResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateModeldSystem not implemented")
+func (*UnimplementedModelaSystemServiceServer) UpdateModelaSystem(context.Context, *UpdateModelaSystemRequest) (*UpdateModelaSystemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateModelaSystem not implemented")
 }
-func (*UnimplementedModeldSystemServiceServer) DeleteModeldSystem(context.Context, *DeleteModeldSystemRequest) (*DeleteModeldSystemResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteModeldSystem not implemented")
-}
-
-func RegisterModeldSystemServiceServer(s *grpc.Server, srv ModeldSystemServiceServer) {
-	s.RegisterService(&_ModeldSystemService_serviceDesc, srv)
+func (*UnimplementedModelaSystemServiceServer) DeleteModelaSystem(context.Context, *DeleteModelaSystemRequest) (*DeleteModelaSystemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteModelaSystem not implemented")
 }
 
-func _ModeldSystemService_ListModeldSystems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListModeldSystemsRequest)
+func RegisterModelaSystemServiceServer(s *grpc.Server, srv ModelaSystemServiceServer) {
+	s.RegisterService(&_ModelaSystemService_serviceDesc, srv)
+}
+
+func _ModelaSystemService_ListModelaSystems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListModelaSystemsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModeldSystemServiceServer).ListModeldSystems(ctx, in)
+		return srv.(ModelaSystemServiceServer).ListModelaSystems(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/ListModelaSystems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModeldSystemServiceServer).ListModeldSystems(ctx, req.(*ListModeldSystemsRequest))
+		return srv.(ModelaSystemServiceServer).ListModelaSystems(ctx, req.(*ListModelaSystemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModeldSystemService_CreateModeldSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateModeldSystemRequest)
+func _ModelaSystemService_CreateModelaSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateModelaSystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModeldSystemServiceServer).CreateModeldSystem(ctx, in)
+		return srv.(ModelaSystemServiceServer).CreateModelaSystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/CreateModelaSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModeldSystemServiceServer).CreateModeldSystem(ctx, req.(*CreateModeldSystemRequest))
+		return srv.(ModelaSystemServiceServer).CreateModelaSystem(ctx, req.(*CreateModelaSystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModeldSystemService_GetModeldSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetModeldSystemRequest)
+func _ModelaSystemService_GetModelaSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetModelaSystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModeldSystemServiceServer).GetModeldSystem(ctx, in)
+		return srv.(ModelaSystemServiceServer).GetModelaSystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/GetModelaSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModeldSystemServiceServer).GetModeldSystem(ctx, req.(*GetModeldSystemRequest))
+		return srv.(ModelaSystemServiceServer).GetModelaSystem(ctx, req.(*GetModelaSystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModeldSystemService_UpdateModeldSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateModeldSystemRequest)
+func _ModelaSystemService_UpdateModelaSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateModelaSystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModeldSystemServiceServer).UpdateModeldSystem(ctx, in)
+		return srv.(ModelaSystemServiceServer).UpdateModelaSystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/UpdateModelaSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModeldSystemServiceServer).UpdateModeldSystem(ctx, req.(*UpdateModeldSystemRequest))
+		return srv.(ModelaSystemServiceServer).UpdateModelaSystem(ctx, req.(*UpdateModelaSystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModeldSystemService_DeleteModeldSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteModeldSystemRequest)
+func _ModelaSystemService_DeleteModelaSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteModelaSystemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModeldSystemServiceServer).DeleteModeldSystem(ctx, in)
+		return srv.(ModelaSystemServiceServer).DeleteModelaSystem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService/DeleteModelaSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModeldSystemServiceServer).DeleteModeldSystem(ctx, req.(*DeleteModeldSystemRequest))
+		return srv.(ModelaSystemServiceServer).DeleteModelaSystem(ctx, req.(*DeleteModelaSystemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _ModeldSystemService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService",
-	HandlerType: (*ModeldSystemServiceServer)(nil),
+var _ModelaSystemService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "github.com.metaprov.modelaapi.services.modeldsystem.v1.ModelaSystemService",
+	HandlerType: (*ModelaSystemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListModeldSystems",
-			Handler:    _ModeldSystemService_ListModeldSystems_Handler,
+			MethodName: "ListModelaSystems",
+			Handler:    _ModelaSystemService_ListModelaSystems_Handler,
 		},
 		{
-			MethodName: "CreateModeldSystem",
-			Handler:    _ModeldSystemService_CreateModeldSystem_Handler,
+			MethodName: "CreateModelaSystem",
+			Handler:    _ModelaSystemService_CreateModelaSystem_Handler,
 		},
 		{
-			MethodName: "GetModeldSystem",
-			Handler:    _ModeldSystemService_GetModeldSystem_Handler,
+			MethodName: "GetModelaSystem",
+			Handler:    _ModelaSystemService_GetModelaSystem_Handler,
 		},
 		{
-			MethodName: "UpdateModeldSystem",
-			Handler:    _ModeldSystemService_UpdateModeldSystem_Handler,
+			MethodName: "UpdateModelaSystem",
+			Handler:    _ModelaSystemService_UpdateModelaSystem_Handler,
 		},
 		{
-			MethodName: "DeleteModeldSystem",
-			Handler:    _ModeldSystemService_DeleteModeldSystem_Handler,
+			MethodName: "DeleteModelaSystem",
+			Handler:    _ModelaSystemService_DeleteModelaSystem_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

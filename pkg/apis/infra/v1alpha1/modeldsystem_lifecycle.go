@@ -18,7 +18,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (notifier *ModeldSystem) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (notifier *ModelaSystem) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(notifier).
 		Complete()
@@ -32,16 +32,16 @@ func (notifier *ModeldSystem) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Finalizer
 //==============================================================================
 
-func (notifier *ModeldSystem) HasFinalizer() bool {
+func (notifier *ModelaSystem) HasFinalizer() bool {
 	return util.HasFin(&notifier.ObjectMeta, metav1.GroupName)
 }
-func (notifier *ModeldSystem) AddFinalizer() { util.AddFin(&notifier.ObjectMeta, metav1.GroupName) }
-func (notifier *ModeldSystem) RemoveFinalizer() {
+func (notifier *ModelaSystem) AddFinalizer() { util.AddFin(&notifier.ObjectMeta, metav1.GroupName) }
+func (notifier *ModelaSystem) RemoveFinalizer() {
 	util.RemoveFin(&notifier.ObjectMeta, metav1.GroupName)
 }
 
 // Merge or update condition
-func (notifier *ModeldSystem) CreateOrUpdateCond(cond ModeldSystemCondition) {
+func (notifier *ModelaSystem) CreateOrUpdateCond(cond ModelaSystemCondition) {
 	i := notifier.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -60,7 +60,7 @@ func (notifier *ModeldSystem) CreateOrUpdateCond(cond ModeldSystemCondition) {
 	notifier.Status.Conditions[i] = current
 }
 
-func (notifier *ModeldSystem) GetCondIdx(t ModeldSystemConditionType) int {
+func (notifier *ModelaSystem) GetCondIdx(t ModelaSystemConditionType) int {
 	for i, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -69,14 +69,14 @@ func (notifier *ModeldSystem) GetCondIdx(t ModeldSystemConditionType) int {
 	return -1
 }
 
-func (notifier *ModeldSystem) GetCond(t ModeldSystemConditionType) ModeldSystemCondition {
+func (notifier *ModelaSystem) GetCond(t ModelaSystemConditionType) ModelaSystemCondition {
 	for _, v := range notifier.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ModeldSystemCondition{
+	return ModelaSystemCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -85,34 +85,34 @@ func (notifier *ModeldSystem) GetCond(t ModeldSystemConditionType) ModeldSystemC
 
 }
 
-func (notifier *ModeldSystem) IsReady() bool {
-	return notifier.GetCond(ModeldSystemReady).Status == v1.ConditionTrue
+func (notifier *ModelaSystem) IsReady() bool {
+	return notifier.GetCond(ModelaSystemReady).Status == v1.ConditionTrue
 }
 
-func (notifier *ModeldSystem) RootUri() string {
+func (notifier *ModelaSystem) RootUri() string {
 	return fmt.Sprintf("tenant/%s/apitokens/%s", notifier.Namespace, notifier.Name)
 }
 
-func (notifier *ModeldSystem) ManifestUri() string {
+func (notifier *ModelaSystem) ManifestUri() string {
 	return fmt.Sprintf("%s/%s-apitoken.yaml", notifier.RootUri(), notifier.Name)
 }
 
-func ParseModeldSystemYaml(content []byte) (*ModeldSystem, error) {
+func ParseModelaSystemYaml(content []byte) (*ModelaSystem, error) {
 	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
 	if err != nil {
 		return nil, err
 	}
-	r := requiredObj.(*ModeldSystem)
+	r := requiredObj.(*ModelaSystem)
 	return r, nil
 }
 
-func (notifier *ModeldSystem) ToYamlFile() ([]byte, error) {
+func (notifier *ModelaSystem) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(notifier)
 }
 
-func (alert *ModeldSystem) MarkArchived() {
-	alert.CreateOrUpdateCond(ModeldSystemCondition{
-		Type:   ModeldSystemSaved,
+func (alert *ModelaSystem) MarkArchived() {
+	alert.CreateOrUpdateCond(ModelaSystemCondition{
+		Type:   ModelaSystemSaved,
 		Status: v1.ConditionTrue,
 	})
 }

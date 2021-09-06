@@ -1751,16 +1751,16 @@ message MinioSpec {
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
-message ModeldSystem {
+message ModelaSystem {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ModeldSystemSpec spec = 2;
+  optional ModelaSystemSpec spec = 2;
 
-  optional ModeldSystemStatus status = 3;
+  optional ModelaSystemStatus status = 3;
 }
 
-// ModeldSystemCondition describes the state of the license at a certain point.
-message ModeldSystemCondition {
+// ModelaSystemCondition describes the state of the license at a certain point.
+message ModelaSystemCondition {
   // Type of account condition.
   optional string type = 1;
 
@@ -1778,19 +1778,19 @@ message ModeldSystemCondition {
 }
 
 // +kubebuilder:object:root=true
-// ModeldSystemList is a list of ModeldSystems
-message ModeldSystemList {
+// ModelaSystemList is a list of ModelaSystems
+message ModelaSystemList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated ModeldSystem items = 2;
+  repeated ModelaSystem items = 2;
 }
 
-// ModeldSystemSpec defines the desired state of ModeldSystem
-message ModeldSystemSpec {
+// ModelaSystemSpec defines the desired state of ModelaSystem
+message ModelaSystemSpec {
 }
 
-// ModeldSystemStatus is the observed state of a ModeldSystem
-message ModeldSystemStatus {
+// ModelaSystemStatus is the observed state of a ModelaSystem
+message ModelaSystemStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
@@ -1798,7 +1798,7 @@ message ModeldSystemStatus {
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModeldSystemCondition conditions = 2;
+  repeated ModelaSystemCondition conditions = 2;
 }
 
 message MongoDbSpec {

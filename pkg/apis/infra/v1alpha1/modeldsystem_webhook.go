@@ -17,26 +17,26 @@ import (
 )
 
 // validation
-var _ webhook.Defaulter = &ModeldSystem{}
+var _ webhook.Defaulter = &ModelaSystem{}
 
-func (notifier *ModeldSystem) Default() {
+func (notifier *ModelaSystem) Default() {
 
 }
 
 // validation
-var _ webhook.Validator = &ModeldSystem{}
+var _ webhook.Validator = &ModelaSystem{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ModeldSystem) ValidateCreate() error {
+func (notifier *ModelaSystem) ValidateCreate() error {
 	return notifier.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (notifier *ModeldSystem) ValidateUpdate(old runtime.Object) error {
+func (notifier *ModelaSystem) ValidateUpdate(old runtime.Object) error {
 	return notifier.validate()
 }
 
-func (notifier *ModeldSystem) validate() error {
+func (notifier *ModelaSystem) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, notifier.validateMeta(field.NewPath("metadata"))...)
 	allErrs = append(allErrs, notifier.validateSpec(field.NewPath("spec"))...)
@@ -44,16 +44,16 @@ func (notifier *ModeldSystem) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ModeldSystem"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.ai", Kind: "ModelaSystem"}, notifier.Name, allErrs)
 }
 
-func (notifier *ModeldSystem) validateMeta(fldPath *field.Path) field.ErrorList {
+func (notifier *ModelaSystem) validateMeta(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, notifier.validateName(fldPath.Child("name"))...)
 	return allErrs
 }
 
-func (notifier *ModeldSystem) validateName(fldPath *field.Path) field.ErrorList {
+func (notifier *ModelaSystem) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(notifier.Name)
 	if err != nil {
@@ -62,7 +62,7 @@ func (notifier *ModeldSystem) validateName(fldPath *field.Path) field.ErrorList 
 	return allErrs
 }
 
-func (notifier *ModeldSystem) validateSpec(fldPath *field.Path) field.ErrorList {
+func (notifier *ModelaSystem) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	//Smtp.To   []string
 	//Smtp.Origin string
@@ -74,13 +74,13 @@ func (notifier *ModeldSystem) validateSpec(fldPath *field.Path) field.ErrorList 
 	return allErrs
 }
 
-func (notifier *ModeldSystem) ValidateDelete() error {
+func (notifier *ModelaSystem) ValidateDelete() error {
 	return nil
 }
 
-func (notifier *ModeldSystem) MarkReady() {
-	notifier.CreateOrUpdateCond(ModeldSystemCondition{
-		Type:   ModeldSystemReady,
+func (notifier *ModelaSystem) MarkReady() {
+	notifier.CreateOrUpdateCond(ModelaSystemCondition{
+		Type:   ModelaSystemReady,
 		Status: corev1.ConditionTrue,
 	})
 }

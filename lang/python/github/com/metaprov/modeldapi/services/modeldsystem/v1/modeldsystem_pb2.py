@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modelaapi/services/modelasystem/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xca\x01\n\x18ListModeldSystemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x19ListModeldSystemsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList\"\x16\n\x14ModeldSystemResponse\"\x80\x01\n\x19\x43reateModeldSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\x1a\x43reateModeldSystemResponse\"n\n\x19UpdateModeldSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem\"\x1c\n\x1aUpdateModeldSystemResponse\"9\n\x16GetModeldSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x17GetModeldSystemResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"C\n GetModeldSystemNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n!GetModeldSystemNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"<\n\x19\x44\x65leteModeldSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteModeldSystemResponse\"\x1c\n\x1aModeldSystemCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"M\n\x18ModeldSystemLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"*\n\x19ModeldSystemLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"?\n\x1cModeldSystemGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"*\n\x19ModeldSystemLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xcc\t\n\x13ModeldSystemService\x12\xd3\x01\n\x11ListModeldSystems\x12P.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest\x1aQ.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/modelasystems\x12\xe4\x01\n\x12\x43reateModeldSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemResponse\"\'\x82\xd3\xe4\x93\x02!\"\x11/v1/modelasystems:\x0cmodelasystem\x12\xe0\x01\n\x0fGetModeldSystem\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/{namespace}/modelasystems/{name}\x12\xa4\x02\n\x12UpdateModeldSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemResponse\"g\x82\xd3\xe4\x93\x02\x61\x1aQ/v1/{modelasystem.metadata.namespace}/modelasystems//{modelasystem.metadata.name}:\x0cmodelasystem\x12\xed\x01\n\x12\x44\x65leteModeldSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemResponse\"0\x82\xd3\xe4\x93\x02**(/api/{namespace}/v1/modelasystems/{name}B8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xca\x01\n\x18ListModelaSystemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x19ListModelaSystemsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList\"\x16\n\x14ModelaSystemResponse\"\x80\x01\n\x19\x43reateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\x1a\x43reateModelaSystemResponse\"n\n\x19UpdateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\"\x1c\n\x1aUpdateModelaSystemResponse\"9\n\x16GetModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x17GetModelaSystemResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"C\n GetModelaSystemNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n!GetModelaSystemNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"<\n\x19\x44\x65leteModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteModelaSystemResponse\"\x1c\n\x1aModelaSystemCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"M\n\x18ModelaSystemLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"*\n\x19ModelaSystemLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"?\n\x1cModelaSystemGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"*\n\x19ModelaSystemLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xcc\t\n\x13ModelaSystemService\x12\xd3\x01\n\x11ListModelaSystems\x12P.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest\x1aQ.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/modelasystems\x12\xe4\x01\n\x12\x43reateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse\"\'\x82\xd3\xe4\x93\x02!\"\x11/v1/modelasystems:\x0cmodelasystem\x12\xe0\x01\n\x0fGetModelaSystem\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/{namespace}/modelasystems/{name}\x12\xa4\x02\n\x12UpdateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse\"g\x82\xd3\xe4\x93\x02\x61\x1aQ/v1/{modelasystem.metadata.namespace}/modelasystems//{modelasystem.metadata.name}:\x0cmodelasystem\x12\xed\x01\n\x12\x44\x65leteModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse\"0\x82\xd3\xe4\x93\x02**(/api/{namespace}/v1/modelasystems/{name}B8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -31,21 +31,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTMODELASYSTEMSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -68,22 +68,22 @@ _LISTMODELASYSTEMSREQUEST_LABELSENTRY = _descriptor.Descriptor(
 )
 
 _LISTMODELASYSTEMSREQUEST = _descriptor.Descriptor(
-  name='ListModeldSystemsRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest',
+  name='ListModelaSystemsRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.labels', index=1,
+      name='labels', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.labels', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -107,15 +107,15 @@ _LISTMODELASYSTEMSREQUEST = _descriptor.Descriptor(
 
 
 _LISTMODELASYSTEMSRESPONSE = _descriptor.Descriptor(
-  name='ListModeldSystemsResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse',
+  name='ListModelaSystemsResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -139,8 +139,8 @@ _LISTMODELASYSTEMSRESPONSE = _descriptor.Descriptor(
 
 
 _MODELASYSTEMRESPONSE = _descriptor.Descriptor(
-  name='ModeldSystemResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemResponse',
+  name='ModelaSystemResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -164,22 +164,22 @@ _MODELASYSTEMRESPONSE = _descriptor.Descriptor(
 
 
 _CREATEMODELASYSTEMREQUEST = _descriptor.Descriptor(
-  name='CreateModeldSystemRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest',
+  name='CreateModelaSystemRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest.password', index=1,
+      name='password', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest.password', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -203,8 +203,8 @@ _CREATEMODELASYSTEMREQUEST = _descriptor.Descriptor(
 
 
 _CREATEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
-  name='CreateModeldSystemResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemResponse',
+  name='CreateModelaSystemResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -228,15 +228,15 @@ _CREATEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
 
 
 _UPDATEMODELASYSTEMREQUEST = _descriptor.Descriptor(
-  name='UpdateModeldSystemRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest',
+  name='UpdateModelaSystemRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -260,8 +260,8 @@ _UPDATEMODELASYSTEMREQUEST = _descriptor.Descriptor(
 
 
 _UPDATEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
-  name='UpdateModeldSystemResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemResponse',
+  name='UpdateModelaSystemResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -285,22 +285,22 @@ _UPDATEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
 
 
 _GETMODELASYSTEMREQUEST = _descriptor.Descriptor(
-  name='GetModeldSystemRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest',
+  name='GetModelaSystemRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -324,22 +324,22 @@ _GETMODELASYSTEMREQUEST = _descriptor.Descriptor(
 
 
 _GETMODELASYSTEMRESPONSE = _descriptor.Descriptor(
-  name='GetModeldSystemResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse',
+  name='GetModelaSystemResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -363,22 +363,22 @@ _GETMODELASYSTEMRESPONSE = _descriptor.Descriptor(
 
 
 _GETMODELASYSTEMNAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetModeldSystemNamespacesRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesRequest',
+  name='GetModelaSystemNamespacesRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -402,15 +402,15 @@ _GETMODELASYSTEMNAMESPACESREQUEST = _descriptor.Descriptor(
 
 
 _GETMODELASYSTEMNAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetModeldSystemNamespacesResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesResponse',
+  name='GetModelaSystemNamespacesResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesResponse.namespaces', index=0,
+      name='namespaces', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesResponse.namespaces', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -434,22 +434,22 @@ _GETMODELASYSTEMNAMESPACESRESPONSE = _descriptor.Descriptor(
 
 
 _DELETEMODELASYSTEMREQUEST = _descriptor.Descriptor(
-  name='DeleteModeldSystemRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest',
+  name='DeleteModelaSystemRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -473,8 +473,8 @@ _DELETEMODELASYSTEMREQUEST = _descriptor.Descriptor(
 
 
 _DELETEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
-  name='DeleteModeldSystemResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemResponse',
+  name='DeleteModelaSystemResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -498,8 +498,8 @@ _DELETEMODELASYSTEMRESPONSE = _descriptor.Descriptor(
 
 
 _MODELASYSTEMCREATERESPONSE = _descriptor.Descriptor(
-  name='ModeldSystemCreateResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemCreateResponse',
+  name='ModelaSystemCreateResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemCreateResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -573,29 +573,29 @@ _RESETPASSWORDRESPONSE = _descriptor.Descriptor(
 
 
 _MODELASYSTEMLOGINREQUEST = _descriptor.Descriptor(
-  name='ModeldSystemLoginRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest',
+  name='ModelaSystemLoginRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest.password', index=2,
+      name='password', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginRequest.password', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -619,15 +619,15 @@ _MODELASYSTEMLOGINREQUEST = _descriptor.Descriptor(
 
 
 _MODELASYSTEMLOGINRESPONSE = _descriptor.Descriptor(
-  name='ModeldSystemLoginResponse',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginResponse',
+  name='ModelaSystemLoginResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginResponse.token', index=0,
+      name='token', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginResponse.token', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -651,22 +651,22 @@ _MODELASYSTEMLOGINRESPONSE = _descriptor.Descriptor(
 
 
 _MODELASYSTEMGETBYNAMEREQUEST = _descriptor.Descriptor(
-  name='ModeldSystemGetByNameRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemGetByNameRequest',
+  name='ModelaSystemGetByNameRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemGetByNameRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemGetByNameRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemGetByNameRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemGetByNameRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemGetByNameRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -690,15 +690,15 @@ _MODELASYSTEMGETBYNAMEREQUEST = _descriptor.Descriptor(
 
 
 _MODELASYSTEMLOGOUTREQUEST = _descriptor.Descriptor(
-  name='ModeldSystemLogoutRequest',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLogoutRequest',
+  name='ModelaSystemLogoutRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLogoutRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLogoutRequest.token', index=0,
+      name='token', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLogoutRequest.token', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -890,137 +890,137 @@ _CREATEMODELASYSTEMREQUEST.fields_by_name['item'].message_type = github_dot_com_
 _UPDATEMODELASYSTEMREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._MODELASYSTEM
 _GETMODELASYSTEMRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._MODELASYSTEM
 _GETMODELASYSTEMNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
-DESCRIPTOR.message_types_by_name['ListModeldSystemsRequest'] = _LISTMODELASYSTEMSREQUEST
-DESCRIPTOR.message_types_by_name['ListModeldSystemsResponse'] = _LISTMODELASYSTEMSRESPONSE
-DESCRIPTOR.message_types_by_name['ModeldSystemResponse'] = _MODELASYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['CreateModeldSystemRequest'] = _CREATEMODELASYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['CreateModeldSystemResponse'] = _CREATEMODELASYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateModeldSystemRequest'] = _UPDATEMODELASYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['UpdateModeldSystemResponse'] = _UPDATEMODELASYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['GetModeldSystemRequest'] = _GETMODELASYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['GetModeldSystemResponse'] = _GETMODELASYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['GetModeldSystemNamespacesRequest'] = _GETMODELASYSTEMNAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetModeldSystemNamespacesResponse'] = _GETMODELASYSTEMNAMESPACESRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteModeldSystemRequest'] = _DELETEMODELASYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['DeleteModeldSystemResponse'] = _DELETEMODELASYSTEMRESPONSE
-DESCRIPTOR.message_types_by_name['ModeldSystemCreateResponse'] = _MODELASYSTEMCREATERESPONSE
+DESCRIPTOR.message_types_by_name['ListModelaSystemsRequest'] = _LISTMODELASYSTEMSREQUEST
+DESCRIPTOR.message_types_by_name['ListModelaSystemsResponse'] = _LISTMODELASYSTEMSRESPONSE
+DESCRIPTOR.message_types_by_name['ModelaSystemResponse'] = _MODELASYSTEMRESPONSE
+DESCRIPTOR.message_types_by_name['CreateModelaSystemRequest'] = _CREATEMODELASYSTEMREQUEST
+DESCRIPTOR.message_types_by_name['CreateModelaSystemResponse'] = _CREATEMODELASYSTEMRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateModelaSystemRequest'] = _UPDATEMODELASYSTEMREQUEST
+DESCRIPTOR.message_types_by_name['UpdateModelaSystemResponse'] = _UPDATEMODELASYSTEMRESPONSE
+DESCRIPTOR.message_types_by_name['GetModelaSystemRequest'] = _GETMODELASYSTEMREQUEST
+DESCRIPTOR.message_types_by_name['GetModelaSystemResponse'] = _GETMODELASYSTEMRESPONSE
+DESCRIPTOR.message_types_by_name['GetModelaSystemNamespacesRequest'] = _GETMODELASYSTEMNAMESPACESREQUEST
+DESCRIPTOR.message_types_by_name['GetModelaSystemNamespacesResponse'] = _GETMODELASYSTEMNAMESPACESRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteModelaSystemRequest'] = _DELETEMODELASYSTEMREQUEST
+DESCRIPTOR.message_types_by_name['DeleteModelaSystemResponse'] = _DELETEMODELASYSTEMRESPONSE
+DESCRIPTOR.message_types_by_name['ModelaSystemCreateResponse'] = _MODELASYSTEMCREATERESPONSE
 DESCRIPTOR.message_types_by_name['LogoutResponse'] = _LOGOUTRESPONSE
 DESCRIPTOR.message_types_by_name['ResetPasswordResponse'] = _RESETPASSWORDRESPONSE
-DESCRIPTOR.message_types_by_name['ModeldSystemLoginRequest'] = _MODELASYSTEMLOGINREQUEST
-DESCRIPTOR.message_types_by_name['ModeldSystemLoginResponse'] = _MODELASYSTEMLOGINRESPONSE
-DESCRIPTOR.message_types_by_name['ModeldSystemGetByNameRequest'] = _MODELASYSTEMGETBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['ModeldSystemLogoutRequest'] = _MODELASYSTEMLOGOUTREQUEST
+DESCRIPTOR.message_types_by_name['ModelaSystemLoginRequest'] = _MODELASYSTEMLOGINREQUEST
+DESCRIPTOR.message_types_by_name['ModelaSystemLoginResponse'] = _MODELASYSTEMLOGINRESPONSE
+DESCRIPTOR.message_types_by_name['ModelaSystemGetByNameRequest'] = _MODELASYSTEMGETBYNAMEREQUEST
+DESCRIPTOR.message_types_by_name['ModelaSystemLogoutRequest'] = _MODELASYSTEMLOGOUTREQUEST
 DESCRIPTOR.message_types_by_name['ChangePasswordRequest'] = _CHANGEPASSWORDREQUEST
 DESCRIPTOR.message_types_by_name['ChangePasswordResponse'] = _CHANGEPASSWORDRESPONSE
 DESCRIPTOR.message_types_by_name['ResetPasswordRequest'] = _RESETPASSWORDREQUEST
 DESCRIPTOR.message_types_by_name['ResetPasswordReponse'] = _RESETPASSWORDREPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ListModeldSystemsRequest = _reflection.GeneratedProtocolMessageType('ListModeldSystemsRequest', (_message.Message,), {
+ListModelaSystemsRequest = _reflection.GeneratedProtocolMessageType('ListModelaSystemsRequest', (_message.Message,), {
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTMODELASYSTEMSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTMODELASYSTEMSREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest)
   })
-_sym_db.RegisterMessage(ListModeldSystemsRequest)
-_sym_db.RegisterMessage(ListModeldSystemsRequest.LabelsEntry)
+_sym_db.RegisterMessage(ListModelaSystemsRequest)
+_sym_db.RegisterMessage(ListModelaSystemsRequest.LabelsEntry)
 
-ListModeldSystemsResponse = _reflection.GeneratedProtocolMessageType('ListModeldSystemsResponse', (_message.Message,), {
+ListModelaSystemsResponse = _reflection.GeneratedProtocolMessageType('ListModelaSystemsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTMODELASYSTEMSRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse)
   })
-_sym_db.RegisterMessage(ListModeldSystemsResponse)
+_sym_db.RegisterMessage(ListModelaSystemsResponse)
 
-ModeldSystemResponse = _reflection.GeneratedProtocolMessageType('ModeldSystemResponse', (_message.Message,), {
+ModelaSystemResponse = _reflection.GeneratedProtocolMessageType('ModelaSystemResponse', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemResponse)
   })
-_sym_db.RegisterMessage(ModeldSystemResponse)
+_sym_db.RegisterMessage(ModelaSystemResponse)
 
-CreateModeldSystemRequest = _reflection.GeneratedProtocolMessageType('CreateModeldSystemRequest', (_message.Message,), {
+CreateModelaSystemRequest = _reflection.GeneratedProtocolMessageType('CreateModelaSystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEMODELASYSTEMREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest)
   })
-_sym_db.RegisterMessage(CreateModeldSystemRequest)
+_sym_db.RegisterMessage(CreateModelaSystemRequest)
 
-CreateModeldSystemResponse = _reflection.GeneratedProtocolMessageType('CreateModeldSystemResponse', (_message.Message,), {
+CreateModelaSystemResponse = _reflection.GeneratedProtocolMessageType('CreateModelaSystemResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEMODELASYSTEMRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse)
   })
-_sym_db.RegisterMessage(CreateModeldSystemResponse)
+_sym_db.RegisterMessage(CreateModelaSystemResponse)
 
-UpdateModeldSystemRequest = _reflection.GeneratedProtocolMessageType('UpdateModeldSystemRequest', (_message.Message,), {
+UpdateModelaSystemRequest = _reflection.GeneratedProtocolMessageType('UpdateModelaSystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEMODELASYSTEMREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest)
   })
-_sym_db.RegisterMessage(UpdateModeldSystemRequest)
+_sym_db.RegisterMessage(UpdateModelaSystemRequest)
 
-UpdateModeldSystemResponse = _reflection.GeneratedProtocolMessageType('UpdateModeldSystemResponse', (_message.Message,), {
+UpdateModelaSystemResponse = _reflection.GeneratedProtocolMessageType('UpdateModelaSystemResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEMODELASYSTEMRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse)
   })
-_sym_db.RegisterMessage(UpdateModeldSystemResponse)
+_sym_db.RegisterMessage(UpdateModelaSystemResponse)
 
-GetModeldSystemRequest = _reflection.GeneratedProtocolMessageType('GetModeldSystemRequest', (_message.Message,), {
+GetModelaSystemRequest = _reflection.GeneratedProtocolMessageType('GetModelaSystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELASYSTEMREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest)
   })
-_sym_db.RegisterMessage(GetModeldSystemRequest)
+_sym_db.RegisterMessage(GetModelaSystemRequest)
 
-GetModeldSystemResponse = _reflection.GeneratedProtocolMessageType('GetModeldSystemResponse', (_message.Message,), {
+GetModelaSystemResponse = _reflection.GeneratedProtocolMessageType('GetModelaSystemResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELASYSTEMRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse)
   })
-_sym_db.RegisterMessage(GetModeldSystemResponse)
+_sym_db.RegisterMessage(GetModelaSystemResponse)
 
-GetModeldSystemNamespacesRequest = _reflection.GeneratedProtocolMessageType('GetModeldSystemNamespacesRequest', (_message.Message,), {
+GetModelaSystemNamespacesRequest = _reflection.GeneratedProtocolMessageType('GetModelaSystemNamespacesRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELASYSTEMNAMESPACESREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesRequest)
   })
-_sym_db.RegisterMessage(GetModeldSystemNamespacesRequest)
+_sym_db.RegisterMessage(GetModelaSystemNamespacesRequest)
 
-GetModeldSystemNamespacesResponse = _reflection.GeneratedProtocolMessageType('GetModeldSystemNamespacesResponse', (_message.Message,), {
+GetModelaSystemNamespacesResponse = _reflection.GeneratedProtocolMessageType('GetModelaSystemNamespacesResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETMODELASYSTEMNAMESPACESRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemNamespacesResponse)
   })
-_sym_db.RegisterMessage(GetModeldSystemNamespacesResponse)
+_sym_db.RegisterMessage(GetModelaSystemNamespacesResponse)
 
-DeleteModeldSystemRequest = _reflection.GeneratedProtocolMessageType('DeleteModeldSystemRequest', (_message.Message,), {
+DeleteModelaSystemRequest = _reflection.GeneratedProtocolMessageType('DeleteModelaSystemRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEMODELASYSTEMREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest)
   })
-_sym_db.RegisterMessage(DeleteModeldSystemRequest)
+_sym_db.RegisterMessage(DeleteModelaSystemRequest)
 
-DeleteModeldSystemResponse = _reflection.GeneratedProtocolMessageType('DeleteModeldSystemResponse', (_message.Message,), {
+DeleteModelaSystemResponse = _reflection.GeneratedProtocolMessageType('DeleteModelaSystemResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEMODELASYSTEMRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse)
   })
-_sym_db.RegisterMessage(DeleteModeldSystemResponse)
+_sym_db.RegisterMessage(DeleteModelaSystemResponse)
 
-ModeldSystemCreateResponse = _reflection.GeneratedProtocolMessageType('ModeldSystemCreateResponse', (_message.Message,), {
+ModelaSystemCreateResponse = _reflection.GeneratedProtocolMessageType('ModelaSystemCreateResponse', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMCREATERESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemCreateResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemCreateResponse)
   })
-_sym_db.RegisterMessage(ModeldSystemCreateResponse)
+_sym_db.RegisterMessage(ModelaSystemCreateResponse)
 
 LogoutResponse = _reflection.GeneratedProtocolMessageType('LogoutResponse', (_message.Message,), {
   'DESCRIPTOR' : _LOGOUTRESPONSE,
@@ -1036,33 +1036,33 @@ ResetPasswordResponse = _reflection.GeneratedProtocolMessageType('ResetPasswordR
   })
 _sym_db.RegisterMessage(ResetPasswordResponse)
 
-ModeldSystemLoginRequest = _reflection.GeneratedProtocolMessageType('ModeldSystemLoginRequest', (_message.Message,), {
+ModelaSystemLoginRequest = _reflection.GeneratedProtocolMessageType('ModelaSystemLoginRequest', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMLOGINREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginRequest)
   })
-_sym_db.RegisterMessage(ModeldSystemLoginRequest)
+_sym_db.RegisterMessage(ModelaSystemLoginRequest)
 
-ModeldSystemLoginResponse = _reflection.GeneratedProtocolMessageType('ModeldSystemLoginResponse', (_message.Message,), {
+ModelaSystemLoginResponse = _reflection.GeneratedProtocolMessageType('ModelaSystemLoginResponse', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMLOGINRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLoginResponse)
   })
-_sym_db.RegisterMessage(ModeldSystemLoginResponse)
+_sym_db.RegisterMessage(ModelaSystemLoginResponse)
 
-ModeldSystemGetByNameRequest = _reflection.GeneratedProtocolMessageType('ModeldSystemGetByNameRequest', (_message.Message,), {
+ModelaSystemGetByNameRequest = _reflection.GeneratedProtocolMessageType('ModelaSystemGetByNameRequest', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMGETBYNAMEREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemGetByNameRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemGetByNameRequest)
   })
-_sym_db.RegisterMessage(ModeldSystemGetByNameRequest)
+_sym_db.RegisterMessage(ModelaSystemGetByNameRequest)
 
-ModeldSystemLogoutRequest = _reflection.GeneratedProtocolMessageType('ModeldSystemLogoutRequest', (_message.Message,), {
+ModelaSystemLogoutRequest = _reflection.GeneratedProtocolMessageType('ModelaSystemLogoutRequest', (_message.Message,), {
   'DESCRIPTOR' : _MODELASYSTEMLOGOUTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLogoutRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemLogoutRequest)
   })
-_sym_db.RegisterMessage(ModeldSystemLogoutRequest)
+_sym_db.RegisterMessage(ModelaSystemLogoutRequest)
 
 ChangePasswordRequest = _reflection.GeneratedProtocolMessageType('ChangePasswordRequest', (_message.Message,), {
   'DESCRIPTOR' : _CHANGEPASSWORDREQUEST,
@@ -1097,8 +1097,8 @@ DESCRIPTOR._options = None
 _LISTMODELASYSTEMSREQUEST_LABELSENTRY._options = None
 
 _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
-  name='ModeldSystemService',
-  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService',
+  name='ModelaSystemService',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
@@ -1107,8 +1107,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
   serialized_end=3194,
   methods=[
   _descriptor.MethodDescriptor(
-    name='ListModeldSystems',
-    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.ListModeldSystems',
+    name='ListModelaSystems',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.ListModelaSystems',
     index=0,
     containing_service=None,
     input_type=_LISTMODELASYSTEMSREQUEST,
@@ -1117,8 +1117,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='CreateModeldSystem',
-    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.CreateModeldSystem',
+    name='CreateModelaSystem',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.CreateModelaSystem',
     index=1,
     containing_service=None,
     input_type=_CREATEMODELASYSTEMREQUEST,
@@ -1127,8 +1127,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetModeldSystem',
-    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.GetModeldSystem',
+    name='GetModelaSystem',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.GetModelaSystem',
     index=2,
     containing_service=None,
     input_type=_GETMODELASYSTEMREQUEST,
@@ -1137,8 +1137,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='UpdateModeldSystem',
-    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.UpdateModeldSystem',
+    name='UpdateModelaSystem',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.UpdateModelaSystem',
     index=3,
     containing_service=None,
     input_type=_UPDATEMODELASYSTEMREQUEST,
@@ -1147,8 +1147,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='DeleteModeldSystem',
-    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.DeleteModeldSystem',
+    name='DeleteModelaSystem',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.DeleteModelaSystem',
     index=4,
     containing_service=None,
     input_type=_DELETEMODELASYSTEMREQUEST,
@@ -1159,6 +1159,6 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
 ])
 _sym_db.RegisterServiceDescriptor(_MODELASYSTEMSERVICE)
 
-DESCRIPTOR.services_by_name['ModeldSystemService'] = _MODELASYSTEMSERVICE
+DESCRIPTOR.services_by_name['ModelaSystemService'] = _MODELASYSTEMSERVICE
 
 # @@protoc_insertion_point(module_scope)

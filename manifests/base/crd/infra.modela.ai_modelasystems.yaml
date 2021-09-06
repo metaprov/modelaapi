@@ -13,8 +13,8 @@ spec:
     categories:
     - infra
     - modela
-    kind: ModeldSystem
-    listKind: ModeldSystemList
+    kind: ModelaSystem
+    listKind: ModelaSystemList
     plural: modelasystems
     singular: modelasystem
   scope: Namespaced
@@ -55,14 +55,14 @@ spec:
           metadata:
             type: object
           spec:
-            description: ModeldSystemSpec defines the desired state of ModeldSystem
+            description: ModelaSystemSpec defines the desired state of ModelaSystem
             type: object
           status:
-            description: ModeldSystemStatus is the observed state of a ModeldSystem
+            description: ModelaSystemStatus is the observed state of a ModelaSystem
             properties:
               conditions:
                 items:
-                  description: ModeldSystemCondition describes the state of the license
+                  description: ModelaSystemCondition describes the state of the license
                     at a certain point.
                   properties:
                     lastTransitionTime:
