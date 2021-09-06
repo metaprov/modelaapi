@@ -3425,8 +3425,8 @@ namespace Github.Com.Metaprov.modelaapi.Services.Common.V1 {
         [pbr::OriginalName("DATAPRODUCT")] Dataproduct = 1,
         [pbr::OriginalName("LAB")] Lab = 2,
         [pbr::OriginalName("SERVINGSITE")] Servingsite = 3,
-        [pbr::OriginalName("MODELDSYSTEM")] Modeldsystem = 4,
-        [pbr::OriginalName("MODELDCATALOG")] Modeldcatalog = 5,
+        [pbr::OriginalName("MODELASYSTEM")] Modeldsystem = 4,
+        [pbr::OriginalName("MODELACATALOG")] Modeldcatalog = 5,
       }
 
     }

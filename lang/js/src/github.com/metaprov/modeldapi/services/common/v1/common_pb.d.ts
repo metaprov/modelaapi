@@ -388,8 +388,8 @@ export namespace NamespaceInfo {
     DATAPRODUCT = 1,
     LAB = 2,
     SERVINGSITE = 3,
-    MODELDSYSTEM = 4,
-    MODELDCATALOG = 5,
+    MODELASYSTEM = 4,
+    MODELACATALOG = 5,
   }
 }
 

@@ -1121,7 +1121,7 @@ _MEASUREMENT = _descriptor.Descriptor(
 )
 
 
-_MODELDEPLOYMENTSPEC = _descriptor.Descriptor(
+_MODELAEPLOYMENTSPEC = _descriptor.Descriptor(
   name='ModelDeploymentSpec',
   full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec',
   filename=None,
@@ -1223,7 +1223,7 @@ _MODELDEPLOYMENTSPEC = _descriptor.Descriptor(
 )
 
 
-_MODELDEPLOYMENTSTATUS = _descriptor.Descriptor(
+_MODELAEPLOYMENTSTATUS = _descriptor.Descriptor(
   name='ModelDeploymentStatus',
   full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus',
   filename=None,
@@ -2160,10 +2160,10 @@ _MLFRAMEWORKLIST.fields_by_name['items'].message_type = _MLFRAMEWORK
 _MACHINECLASS.fields_by_name['mem'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _MACHINECLASSCOST.fields_by_name['costPerMinute'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
 _MACHINECLASSCOST.fields_by_name['costSpot'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2._QUANTITY
-_MODELDEPLOYMENTSTATUS.fields_by_name['lastPredictionTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
-_MODELDEPLOYMENTSTATUS.fields_by_name['deployedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
-_MODELDEPLOYMENTSTATUS.fields_by_name['releasedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
-_MODELDEPLOYMENTSTATUS.fields_by_name['approvedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_MODELAEPLOYMENTSTATUS.fields_by_name['lastPredictionTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_MODELAEPLOYMENTSTATUS.fields_by_name['deployedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_MODELAEPLOYMENTSTATUS.fields_by_name['releasedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_MODELAEPLOYMENTSTATUS.fields_by_name['approvedAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
 _PRETRAINEDMODEL.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _PRETRAINEDMODEL.fields_by_name['spec'].message_type = _PRETRAINEDMODELSPEC
 _PRETRAINEDMODELLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
@@ -2211,8 +2211,8 @@ DESCRIPTOR.message_types_by_name['MLFrameworkSpec'] = _MLFRAMEWORKSPEC
 DESCRIPTOR.message_types_by_name['MachineClass'] = _MACHINECLASS
 DESCRIPTOR.message_types_by_name['MachineClassCost'] = _MACHINECLASSCOST
 DESCRIPTOR.message_types_by_name['Measurement'] = _MEASUREMENT
-DESCRIPTOR.message_types_by_name['ModelDeploymentSpec'] = _MODELDEPLOYMENTSPEC
-DESCRIPTOR.message_types_by_name['ModelDeploymentStatus'] = _MODELDEPLOYMENTSTATUS
+DESCRIPTOR.message_types_by_name['ModelDeploymentSpec'] = _MODELAEPLOYMENTSPEC
+DESCRIPTOR.message_types_by_name['ModelDeploymentStatus'] = _MODELAEPLOYMENTSTATUS
 DESCRIPTOR.message_types_by_name['PretrainedModel'] = _PRETRAINEDMODEL
 DESCRIPTOR.message_types_by_name['PretrainedModelList'] = _PRETRAINEDMODELLIST
 DESCRIPTOR.message_types_by_name['PretrainedModelSpec'] = _PRETRAINEDMODELSPEC
@@ -2385,14 +2385,14 @@ Measurement = _reflection.GeneratedProtocolMessageType('Measurement', (_message.
 _sym_db.RegisterMessage(Measurement)
 
 ModelDeploymentSpec = _reflection.GeneratedProtocolMessageType('ModelDeploymentSpec', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDEPLOYMENTSPEC,
+  'DESCRIPTOR' : _MODELAEPLOYMENTSPEC,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec)
   })
 _sym_db.RegisterMessage(ModelDeploymentSpec)
 
 ModelDeploymentStatus = _reflection.GeneratedProtocolMessageType('ModelDeploymentStatus', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDEPLOYMENTSTATUS,
+  'DESCRIPTOR' : _MODELAEPLOYMENTSTATUS,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus)
   })

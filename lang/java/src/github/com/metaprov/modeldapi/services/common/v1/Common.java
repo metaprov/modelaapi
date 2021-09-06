@@ -10439,13 +10439,13 @@ public final class Common {
        */
       SERVINGSITE(3),
       /**
-       * <code>MODELDSYSTEM = 4;</code>
+       * <code>MODELASYSTEM = 4;</code>
        */
-      MODELDSYSTEM(4),
+      MODELASYSTEM(4),
       /**
-       * <code>MODELDCATALOG = 5;</code>
+       * <code>MODELACATALOG = 5;</code>
        */
-      MODELDCATALOG(5),
+      MODELACATALOG(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -10466,13 +10466,13 @@ public final class Common {
        */
       public static final int SERVINGSITE_VALUE = 3;
       /**
-       * <code>MODELDSYSTEM = 4;</code>
+       * <code>MODELASYSTEM = 4;</code>
        */
-      public static final int MODELDSYSTEM_VALUE = 4;
+      public static final int MODELASYSTEM_VALUE = 4;
       /**
-       * <code>MODELDCATALOG = 5;</code>
+       * <code>MODELACATALOG = 5;</code>
        */
-      public static final int MODELDCATALOG_VALUE = 5;
+      public static final int MODELACATALOG_VALUE = 5;
 
 
       public final int getNumber() {
@@ -10503,8 +10503,8 @@ public final class Common {
           case 1: return DATAPRODUCT;
           case 2: return LAB;
           case 3: return SERVINGSITE;
-          case 4: return MODELDSYSTEM;
-          case 5: return MODELDCATALOG;
+          case 4: return MODELASYSTEM;
+          case 5: return MODELACATALOG;
           default: return null;
         }
       }
@@ -13720,7 +13720,7 @@ public final class Common {
       "\n\013datasources\030\010 \001(\005\022\017\n\007studies\030\t \001(\005\022\016\n\006" +
       "models\030\n \001(\005\"k\n\rNamespaceType\022\n\n\006TENANT\020" +
       "\000\022\017\n\013DATAPRODUCT\020\001\022\007\n\003LAB\020\002\022\017\n\013SERVINGSI" +
-      "TE\020\003\022\020\n\014MODELDSYSTEM\020\004\022\021\n\rMODELDCATALOG\020" +
+      "TE\020\003\022\020\n\014MODELASYSTEM\020\004\022\021\n\rMODELACATALOG\020" +
       "\005\"\272\001\n\tTableView\022\014\n\004cols\030\001 \003(\t\022L\n\004rows\030\002 " +
       "\003(\0132>.github.com.metaprov.modeldapi.serv" +
       "ices.common.v1.TableViewRow\022Q\n\010profiles\030" +

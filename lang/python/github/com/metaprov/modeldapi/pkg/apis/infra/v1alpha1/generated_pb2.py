@@ -5158,7 +5158,7 @@ _MINIOSPEC = _descriptor.Descriptor(
 )
 
 
-_MODELDSYSTEM = _descriptor.Descriptor(
+_MODELASYSTEM = _descriptor.Descriptor(
   name='ModeldSystem',
   full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem',
   filename=None,
@@ -5204,7 +5204,7 @@ _MODELDSYSTEM = _descriptor.Descriptor(
 )
 
 
-_MODELDSYSTEMCONDITION = _descriptor.Descriptor(
+_MODELASYSTEMCONDITION = _descriptor.Descriptor(
   name='ModeldSystemCondition',
   full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemCondition',
   filename=None,
@@ -5264,7 +5264,7 @@ _MODELDSYSTEMCONDITION = _descriptor.Descriptor(
 )
 
 
-_MODELDSYSTEMLIST = _descriptor.Descriptor(
+_MODELASYSTEMLIST = _descriptor.Descriptor(
   name='ModeldSystemList',
   full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList',
   filename=None,
@@ -5303,7 +5303,7 @@ _MODELDSYSTEMLIST = _descriptor.Descriptor(
 )
 
 
-_MODELDSYSTEMSPEC = _descriptor.Descriptor(
+_MODELASYSTEMSPEC = _descriptor.Descriptor(
   name='ModeldSystemSpec',
   full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemSpec',
   filename=None,
@@ -5328,7 +5328,7 @@ _MODELDSYSTEMSPEC = _descriptor.Descriptor(
 )
 
 
-_MODELDSYSTEMSTATUS = _descriptor.Descriptor(
+_MODELASYSTEMSTATUS = _descriptor.Descriptor(
   name='ModeldSystemStatus',
   full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemStatus',
   filename=None,
@@ -8666,13 +8666,13 @@ _LICENSESPEC.fields_by_name['trialEnd'].message_type = k8s_dot_io_dot_apimachine
 _LICENSESPEC.fields_by_name['expireAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
 _LICENSESTATUS.fields_by_name['lastUpdated'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
 _LICENSESTATUS.fields_by_name['conditions'].message_type = _LICENSECONDITION
-_MODELDSYSTEM.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
-_MODELDSYSTEM.fields_by_name['spec'].message_type = _MODELDSYSTEMSPEC
-_MODELDSYSTEM.fields_by_name['status'].message_type = _MODELDSYSTEMSTATUS
-_MODELDSYSTEMCONDITION.fields_by_name['lastTransitionTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
-_MODELDSYSTEMLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
-_MODELDSYSTEMLIST.fields_by_name['items'].message_type = _MODELDSYSTEM
-_MODELDSYSTEMSTATUS.fields_by_name['conditions'].message_type = _MODELDSYSTEMCONDITION
+_MODELASYSTEM.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
+_MODELASYSTEM.fields_by_name['spec'].message_type = _MODELASYSTEMSPEC
+_MODELASYSTEM.fields_by_name['status'].message_type = _MODELASYSTEMSTATUS
+_MODELASYSTEMCONDITION.fields_by_name['lastTransitionTime'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
+_MODELASYSTEMLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
+_MODELASYSTEMLIST.fields_by_name['items'].message_type = _MODELASYSTEM
+_MODELASYSTEMSTATUS.fields_by_name['conditions'].message_type = _MODELASYSTEMCONDITION
 _NOTIFIER.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _NOTIFIER.fields_by_name['spec'].message_type = _NOTIFIERSPEC
 _NOTIFIER.fields_by_name['status'].message_type = _NOTIFIERSTATUS
@@ -8810,11 +8810,11 @@ DESCRIPTOR.message_types_by_name['MSSqlServerSpec'] = _MSSQLSERVERSPEC
 DESCRIPTOR.message_types_by_name['MSTeamSpec'] = _MSTEAMSPEC
 DESCRIPTOR.message_types_by_name['MattermostSpec'] = _MATTERMOSTSPEC
 DESCRIPTOR.message_types_by_name['MinioSpec'] = _MINIOSPEC
-DESCRIPTOR.message_types_by_name['ModeldSystem'] = _MODELDSYSTEM
-DESCRIPTOR.message_types_by_name['ModeldSystemCondition'] = _MODELDSYSTEMCONDITION
-DESCRIPTOR.message_types_by_name['ModeldSystemList'] = _MODELDSYSTEMLIST
-DESCRIPTOR.message_types_by_name['ModeldSystemSpec'] = _MODELDSYSTEMSPEC
-DESCRIPTOR.message_types_by_name['ModeldSystemStatus'] = _MODELDSYSTEMSTATUS
+DESCRIPTOR.message_types_by_name['ModeldSystem'] = _MODELASYSTEM
+DESCRIPTOR.message_types_by_name['ModeldSystemCondition'] = _MODELASYSTEMCONDITION
+DESCRIPTOR.message_types_by_name['ModeldSystemList'] = _MODELASYSTEMLIST
+DESCRIPTOR.message_types_by_name['ModeldSystemSpec'] = _MODELASYSTEMSPEC
+DESCRIPTOR.message_types_by_name['ModeldSystemStatus'] = _MODELASYSTEMSTATUS
 DESCRIPTOR.message_types_by_name['MongoDbSpec'] = _MONGODBSPEC
 DESCRIPTOR.message_types_by_name['MySqlSpec'] = _MYSQLSPEC
 DESCRIPTOR.message_types_by_name['Neo4JSpec'] = _NEO4JSPEC
@@ -9472,35 +9472,35 @@ MinioSpec = _reflection.GeneratedProtocolMessageType('MinioSpec', (_message.Mess
 _sym_db.RegisterMessage(MinioSpec)
 
 ModeldSystem = _reflection.GeneratedProtocolMessageType('ModeldSystem', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDSYSTEM,
+  'DESCRIPTOR' : _MODELASYSTEM,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem)
   })
 _sym_db.RegisterMessage(ModeldSystem)
 
 ModeldSystemCondition = _reflection.GeneratedProtocolMessageType('ModeldSystemCondition', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDSYSTEMCONDITION,
+  'DESCRIPTOR' : _MODELASYSTEMCONDITION,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemCondition)
   })
 _sym_db.RegisterMessage(ModeldSystemCondition)
 
 ModeldSystemList = _reflection.GeneratedProtocolMessageType('ModeldSystemList', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDSYSTEMLIST,
+  'DESCRIPTOR' : _MODELASYSTEMLIST,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList)
   })
 _sym_db.RegisterMessage(ModeldSystemList)
 
 ModeldSystemSpec = _reflection.GeneratedProtocolMessageType('ModeldSystemSpec', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDSYSTEMSPEC,
+  'DESCRIPTOR' : _MODELASYSTEMSPEC,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemSpec)
   })
 _sym_db.RegisterMessage(ModeldSystemSpec)
 
 ModeldSystemStatus = _reflection.GeneratedProtocolMessageType('ModeldSystemStatus', (_message.Message,), {
-  'DESCRIPTOR' : _MODELDSYSTEMSTATUS,
+  'DESCRIPTOR' : _MODELASYSTEMSTATUS,
   '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.generated_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemStatus)
   })
