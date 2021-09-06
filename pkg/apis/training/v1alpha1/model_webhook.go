@@ -7,9 +7,9 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/apis/common"
-	"github.com/metaprov/modeldapi/pkg/util"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -162,7 +162,7 @@ func (notifier *Model) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "dModel"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "dModel"},
 		notifier.Name, allErrs)
 }
 

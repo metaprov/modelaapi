@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.virtualbucket.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.virtualbucket.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb from '../../../../../../github.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket_pb';
+import * as github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb from '../../../../../../github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket_pb';
 
 
 export class VirtualBucketServiceClient {
@@ -36,32 +36,32 @@ export class VirtualBucketServiceClient {
   }
 
   methodInfoListVirtualBuckets = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest) => {
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse,
+    (request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse.deserializeBinary
   );
 
   listVirtualBuckets(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse>;
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse>;
 
   listVirtualBuckets(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse>;
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse>;
 
   listVirtualBuckets(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.ListVirtualBucketsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+          '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
         request,
         metadata || {},
         this.methodInfoListVirtualBuckets,
@@ -69,39 +69,39 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+      '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
     request,
     metadata || {},
     this.methodInfoListVirtualBuckets);
   }
 
   methodInfoCreateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse.deserializeBinary
   );
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse>;
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse>;
 
   createVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.CreateVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
         request,
         metadata || {},
         this.methodInfoCreateVirtualBucket,
@@ -109,39 +109,39 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
     request,
     metadata || {},
     this.methodInfoCreateVirtualBucket);
   }
 
   methodInfoGetVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse.deserializeBinary
   );
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse>;
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse>;
 
   getVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.GetVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
         request,
         metadata || {},
         this.methodInfoGetVirtualBucket,
@@ -149,39 +149,39 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
     request,
     metadata || {},
     this.methodInfoGetVirtualBucket);
   }
 
   methodInfoUpdateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse.deserializeBinary
   );
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse>;
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse>;
 
   updateVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.UpdateVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
         request,
         metadata || {},
         this.methodInfoUpdateVirtualBucket,
@@ -189,39 +189,39 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
     request,
     metadata || {},
     this.methodInfoUpdateVirtualBucket);
   }
 
   methodInfoDeleteVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse.deserializeBinary
   );
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse>;
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse>;
 
   deleteVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_pb.DeleteVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
         request,
         metadata || {},
         this.methodInfoDeleteVirtualBucket,
@@ -229,7 +229,7 @@ export class VirtualBucketServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
     request,
     metadata || {},
     this.methodInfoDeleteVirtualBucket);

@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto
+// source: github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListVirtualBucketsRequest struct {
 func (x *ListVirtualBucketsRequest) Reset() {
 	*x = ListVirtualBucketsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListVirtualBucketsRequest) String() string {
 func (*ListVirtualBucketsRequest) ProtoMessage() {}
 
 func (x *ListVirtualBucketsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListVirtualBucketsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualBucketsRequest.ProtoReflect.Descriptor instead.
 func (*ListVirtualBucketsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListVirtualBucketsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListVirtualBucketsResponse struct {
 func (x *ListVirtualBucketsResponse) Reset() {
 	*x = ListVirtualBucketsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListVirtualBucketsResponse) String() string {
 func (*ListVirtualBucketsResponse) ProtoMessage() {}
 
 func (x *ListVirtualBucketsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListVirtualBucketsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualBucketsResponse.ProtoReflect.Descriptor instead.
 func (*ListVirtualBucketsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListVirtualBucketsResponse) GetItems() *v1alpha1.VirtualBucketList {
@@ -144,7 +144,7 @@ type CreateVirtualBucketRequest struct {
 func (x *CreateVirtualBucketRequest) Reset() {
 	*x = CreateVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateVirtualBucketRequest) String() string {
 func (*CreateVirtualBucketRequest) ProtoMessage() {}
 
 func (x *CreateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*CreateVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateVirtualBucketRequest) GetItem() *v1alpha1.VirtualBucket {
@@ -189,7 +189,7 @@ type CreateVirtualBucketResponse struct {
 func (x *CreateVirtualBucketResponse) Reset() {
 	*x = CreateVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateVirtualBucketResponse) String() string {
 func (*CreateVirtualBucketResponse) ProtoMessage() {}
 
 func (x *CreateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*CreateVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateVirtualBucketRequest struct {
@@ -229,7 +229,7 @@ type UpdateVirtualBucketRequest struct {
 func (x *UpdateVirtualBucketRequest) Reset() {
 	*x = UpdateVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateVirtualBucketRequest) String() string {
 func (*UpdateVirtualBucketRequest) ProtoMessage() {}
 
 func (x *UpdateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateVirtualBucketRequest) GetItem() *v1alpha1.VirtualBucket {
@@ -274,7 +274,7 @@ type UpdateVirtualBucketResponse struct {
 func (x *UpdateVirtualBucketResponse) Reset() {
 	*x = UpdateVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateVirtualBucketResponse) String() string {
 func (*UpdateVirtualBucketResponse) ProtoMessage() {}
 
 func (x *UpdateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{5}
 }
 
 type GetVirtualBucketRequest struct {
@@ -315,7 +315,7 @@ type GetVirtualBucketRequest struct {
 func (x *GetVirtualBucketRequest) Reset() {
 	*x = GetVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetVirtualBucketRequest) String() string {
 func (*GetVirtualBucketRequest) ProtoMessage() {}
 
 func (x *GetVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*GetVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetVirtualBucketRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetVirtualBucketResponse struct {
 func (x *GetVirtualBucketResponse) Reset() {
 	*x = GetVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetVirtualBucketResponse) String() string {
 func (*GetVirtualBucketResponse) ProtoMessage() {}
 
 func (x *GetVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*GetVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetVirtualBucketResponse) GetItem() *v1alpha1.VirtualBucket {
@@ -425,7 +425,7 @@ type DeleteVirtualBucketRequest struct {
 func (x *DeleteVirtualBucketRequest) Reset() {
 	*x = DeleteVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteVirtualBucketRequest) String() string {
 func (*DeleteVirtualBucketRequest) ProtoMessage() {}
 
 func (x *DeleteVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteVirtualBucketRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteVirtualBucketResponse struct {
 func (x *DeleteVirtualBucketResponse) Reset() {
 	*x = DeleteVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteVirtualBucketResponse) String() string {
 func (*DeleteVirtualBucketResponse) ProtoMessage() {}
 
 func (x *DeleteVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc = []byte{
 	0x0a, 0x4b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c,
@@ -669,49 +669,49 @@ var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_p
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData = file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData = file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_goTypes = []interface{}{
-	(*ListVirtualBucketsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest
-	(*ListVirtualBucketsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse
-	(*CreateVirtualBucketRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest
-	(*CreateVirtualBucketResponse)(nil), // 3: github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketResponse
-	(*UpdateVirtualBucketRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest
-	(*UpdateVirtualBucketResponse)(nil), // 5: github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketResponse
-	(*GetVirtualBucketRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest
-	(*GetVirtualBucketResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse
-	(*DeleteVirtualBucketRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest
-	(*DeleteVirtualBucketResponse)(nil), // 9: github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketResponse
-	nil,                                 // 10: github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry
-	(*v1alpha1.VirtualBucketList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketList
-	(*v1alpha1.VirtualBucket)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
+var file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_goTypes = []interface{}{
+	(*ListVirtualBucketsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest
+	(*ListVirtualBucketsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse
+	(*CreateVirtualBucketRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest
+	(*CreateVirtualBucketResponse)(nil), // 3: github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketResponse
+	(*UpdateVirtualBucketRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest
+	(*UpdateVirtualBucketResponse)(nil), // 5: github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketResponse
+	(*GetVirtualBucketRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRequest
+	(*GetVirtualBucketResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse
+	(*DeleteVirtualBucketRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketRequest
+	(*DeleteVirtualBucketResponse)(nil), // 9: github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketResponse
+	nil,                                 // 10: github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry
+	(*v1alpha1.VirtualBucketList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList
+	(*v1alpha1.VirtualBucket)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
 }
-var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketList
-	12, // 2: github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	12, // 3: github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	12, // 4: github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	0,  // 5: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets:input_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets:output_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.ListVirtualBucketsResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.CreateVirtualBucketResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.GetVirtualBucketResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.UpdateVirtualBucketResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.virtualbucket.v1.DeleteVirtualBucketResponse
+var file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList
+	12, // 2: github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	12, // 3: github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	12, // 4: github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	0,  // 5: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets:input_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.ListVirtualBuckets:output_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.CreateVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.GetVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.UpdateVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService.DeleteVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -719,13 +719,13 @@ var file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_p
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_init() }
-func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_init() }
+func file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualBucketsRequest); i {
 			case 0:
 				return &v.state
@@ -737,7 +737,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualBucketsResponse); i {
 			case 0:
 				return &v.state
@@ -749,7 +749,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -761,7 +761,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -773,7 +773,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -785,7 +785,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -797,7 +797,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -809,7 +809,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -821,7 +821,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -833,7 +833,7 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -850,20 +850,20 @@ func file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto = out.File
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto = out.File
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_virtualbucket_v1_virtualbucket_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -895,7 +895,7 @@ func NewVirtualBucketServiceClient(cc grpc.ClientConnInterface) VirtualBucketSer
 
 func (c *virtualBucketServiceClient) ListVirtualBuckets(ctx context.Context, in *ListVirtualBucketsRequest, opts ...grpc.CallOption) (*ListVirtualBucketsResponse, error) {
 	out := new(ListVirtualBucketsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -904,7 +904,7 @@ func (c *virtualBucketServiceClient) ListVirtualBuckets(ctx context.Context, in 
 
 func (c *virtualBucketServiceClient) CreateVirtualBucket(ctx context.Context, in *CreateVirtualBucketRequest, opts ...grpc.CallOption) (*CreateVirtualBucketResponse, error) {
 	out := new(CreateVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -913,7 +913,7 @@ func (c *virtualBucketServiceClient) CreateVirtualBucket(ctx context.Context, in
 
 func (c *virtualBucketServiceClient) GetVirtualBucket(ctx context.Context, in *GetVirtualBucketRequest, opts ...grpc.CallOption) (*GetVirtualBucketResponse, error) {
 	out := new(GetVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -922,7 +922,7 @@ func (c *virtualBucketServiceClient) GetVirtualBucket(ctx context.Context, in *G
 
 func (c *virtualBucketServiceClient) UpdateVirtualBucket(ctx context.Context, in *UpdateVirtualBucketRequest, opts ...grpc.CallOption) (*UpdateVirtualBucketResponse, error) {
 	out := new(UpdateVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -931,7 +931,7 @@ func (c *virtualBucketServiceClient) UpdateVirtualBucket(ctx context.Context, in
 
 func (c *virtualBucketServiceClient) DeleteVirtualBucket(ctx context.Context, in *DeleteVirtualBucketRequest, opts ...grpc.CallOption) (*DeleteVirtualBucketResponse, error) {
 	out := new(DeleteVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -981,7 +981,7 @@ func _VirtualBucketService_ListVirtualBuckets_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualBucketServiceServer).ListVirtualBuckets(ctx, req.(*ListVirtualBucketsRequest))
@@ -999,7 +999,7 @@ func _VirtualBucketService_CreateVirtualBucket_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualBucketServiceServer).CreateVirtualBucket(ctx, req.(*CreateVirtualBucketRequest))
@@ -1017,7 +1017,7 @@ func _VirtualBucketService_GetVirtualBucket_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualBucketServiceServer).GetVirtualBucket(ctx, req.(*GetVirtualBucketRequest))
@@ -1035,7 +1035,7 @@ func _VirtualBucketService_UpdateVirtualBucket_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualBucketServiceServer).UpdateVirtualBucket(ctx, req.(*UpdateVirtualBucketRequest))
@@ -1053,7 +1053,7 @@ func _VirtualBucketService_DeleteVirtualBucket_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualBucketServiceServer).DeleteVirtualBucket(ctx, req.(*DeleteVirtualBucketRequest))
@@ -1062,7 +1062,7 @@ func _VirtualBucketService_DeleteVirtualBucket_Handler(srv interface{}, ctx cont
 }
 
 var _VirtualBucketService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService",
+	ServiceName: "github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService",
 	HandlerType: (*VirtualBucketServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1087,5 +1087,5 @@ var _VirtualBucketService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/virtualbucket/v1/virtualbucket.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto",
 }

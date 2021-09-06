@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: entities.data.modeld.io
+  name: entities.data.modela.io
 spec:
-  group: data.modeld.io
+  group: data.modela.io
   names:
     categories:
     - data
-    - modeld
+    - modela
     kind: Entity
     listKind: EntityList
     plural: entities

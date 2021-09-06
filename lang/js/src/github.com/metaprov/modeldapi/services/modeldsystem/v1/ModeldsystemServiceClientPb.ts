@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.modeldsystem.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.modelasystem.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb from '../../../../../../github.com/metaprov/modeldapi/services/modeldsystem/v1/modeldsystem_pb';
+import * as github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb from '../../../../../../github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem_pb';
 
 
 export class ModeldSystemServiceClient {
@@ -36,32 +36,32 @@ export class ModeldSystemServiceClient {
   }
 
   methodInfoListModeldSystems = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse,
-    (request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsRequest) => {
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse.deserializeBinary
   );
 
   listModeldSystems(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse>;
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse>;
 
   listModeldSystems(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse>;
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse>;
 
   listModeldSystems(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.ListModeldSystemsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModeldSystemsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems',
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems',
         request,
         metadata || {},
         this.methodInfoListModeldSystems,
@@ -69,39 +69,39 @@ export class ModeldSystemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems',
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems',
     request,
     metadata || {},
     this.methodInfoListModeldSystems);
   }
 
   methodInfoCreateModeldSystem = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse,
-    (request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemRequest) => {
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse.deserializeBinary
   );
 
   createModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse>;
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse>;
 
   createModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse>;
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse>;
 
   createModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.CreateModeldSystemResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModeldSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem',
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem',
         request,
         metadata || {},
         this.methodInfoCreateModeldSystem,
@@ -109,39 +109,39 @@ export class ModeldSystemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem',
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem',
     request,
     metadata || {},
     this.methodInfoCreateModeldSystem);
   }
 
   methodInfoGetModeldSystem = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse,
-    (request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemRequest) => {
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse.deserializeBinary
   );
 
   getModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse>;
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse>;
 
   getModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse>;
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse>;
 
   getModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.GetModeldSystemResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModeldSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem',
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem',
         request,
         metadata || {},
         this.methodInfoGetModeldSystem,
@@ -149,39 +149,39 @@ export class ModeldSystemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem',
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem',
     request,
     metadata || {},
     this.methodInfoGetModeldSystem);
   }
 
   methodInfoUpdateModeldSystem = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse,
-    (request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemRequest) => {
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse.deserializeBinary
   );
 
   updateModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse>;
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse>;
 
   updateModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse>;
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse>;
 
   updateModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.UpdateModeldSystemResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModeldSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem',
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem',
         request,
         metadata || {},
         this.methodInfoUpdateModeldSystem,
@@ -189,39 +189,39 @@ export class ModeldSystemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem',
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem',
     request,
     metadata || {},
     this.methodInfoUpdateModeldSystem);
   }
 
   methodInfoDeleteModeldSystem = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse,
-    (request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemRequest) => {
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse.deserializeBinary
   );
 
   deleteModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse>;
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse>;
 
   deleteModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse>;
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse>;
 
   deleteModeldSystem(
-    request: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemRequest,
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modeldsystem_v1_modeldsystem_pb.DeleteModeldSystemResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModeldSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem',
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem',
         request,
         metadata || {},
         this.methodInfoDeleteModeldSystem,
@@ -229,7 +229,7 @@ export class ModeldSystemServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem',
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem',
     request,
     metadata || {},
     this.methodInfoDeleteModeldSystem);

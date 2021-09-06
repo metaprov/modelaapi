@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/notifier/v1/notifier.proto
+// source: github.com/metaprov/modelaapi/services/notifier/v1/notifier.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	_ "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	_ "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListNotifiersRequest struct {
 func (x *ListNotifiersRequest) Reset() {
 	*x = ListNotifiersRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListNotifiersRequest) String() string {
 func (*ListNotifiersRequest) ProtoMessage() {}
 
 func (x *ListNotifiersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListNotifiersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNotifiersRequest.ProtoReflect.Descriptor instead.
 func (*ListNotifiersRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListNotifiersRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListNotifiersResponse struct {
 func (x *ListNotifiersResponse) Reset() {
 	*x = ListNotifiersResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListNotifiersResponse) String() string {
 func (*ListNotifiersResponse) ProtoMessage() {}
 
 func (x *ListNotifiersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListNotifiersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNotifiersResponse.ProtoReflect.Descriptor instead.
 func (*ListNotifiersResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListNotifiersResponse) GetItems() *v1alpha1.NotifierList {
@@ -143,7 +143,7 @@ type NotifierResponse struct {
 func (x *NotifierResponse) Reset() {
 	*x = NotifierResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *NotifierResponse) String() string {
 func (*NotifierResponse) ProtoMessage() {}
 
 func (x *NotifierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *NotifierResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifierResponse.ProtoReflect.Descriptor instead.
 func (*NotifierResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateNotifierRequest struct {
@@ -183,7 +183,7 @@ type CreateNotifierRequest struct {
 func (x *CreateNotifierRequest) Reset() {
 	*x = CreateNotifierRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateNotifierRequest) String() string {
 func (*CreateNotifierRequest) ProtoMessage() {}
 
 func (x *CreateNotifierRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateNotifierRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNotifierRequest.ProtoReflect.Descriptor instead.
 func (*CreateNotifierRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateNotifierRequest) GetItem() *v1alpha1.Notifier {
@@ -228,7 +228,7 @@ type CreateNotifierResponse struct {
 func (x *CreateNotifierResponse) Reset() {
 	*x = CreateNotifierResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *CreateNotifierResponse) String() string {
 func (*CreateNotifierResponse) ProtoMessage() {}
 
 func (x *CreateNotifierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *CreateNotifierResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNotifierResponse.ProtoReflect.Descriptor instead.
 func (*CreateNotifierResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateNotifierRequest struct {
@@ -268,7 +268,7 @@ type UpdateNotifierRequest struct {
 func (x *UpdateNotifierRequest) Reset() {
 	*x = UpdateNotifierRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *UpdateNotifierRequest) String() string {
 func (*UpdateNotifierRequest) ProtoMessage() {}
 
 func (x *UpdateNotifierRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *UpdateNotifierRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotifierRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNotifierRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateNotifierRequest) GetItem() *v1alpha1.Notifier {
@@ -313,7 +313,7 @@ type UpdateNotifierResponse struct {
 func (x *UpdateNotifierResponse) Reset() {
 	*x = UpdateNotifierResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -326,7 +326,7 @@ func (x *UpdateNotifierResponse) String() string {
 func (*UpdateNotifierResponse) ProtoMessage() {}
 
 func (x *UpdateNotifierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -339,7 +339,7 @@ func (x *UpdateNotifierResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotifierResponse.ProtoReflect.Descriptor instead.
 func (*UpdateNotifierResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{6}
 }
 
 type GetNotifierRequest struct {
@@ -354,7 +354,7 @@ type GetNotifierRequest struct {
 func (x *GetNotifierRequest) Reset() {
 	*x = GetNotifierRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +367,7 @@ func (x *GetNotifierRequest) String() string {
 func (*GetNotifierRequest) ProtoMessage() {}
 
 func (x *GetNotifierRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *GetNotifierRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotifierRequest.ProtoReflect.Descriptor instead.
 func (*GetNotifierRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetNotifierRequest) GetNamespace() string {
@@ -409,7 +409,7 @@ type GetNotifierResponse struct {
 func (x *GetNotifierResponse) Reset() {
 	*x = GetNotifierResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetNotifierResponse) String() string {
 func (*GetNotifierResponse) ProtoMessage() {}
 
 func (x *GetNotifierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetNotifierResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotifierResponse.ProtoReflect.Descriptor instead.
 func (*GetNotifierResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetNotifierResponse) GetItem() *v1alpha1.Notifier {
@@ -464,7 +464,7 @@ type DeleteNotifierRequest struct {
 func (x *DeleteNotifierRequest) Reset() {
 	*x = DeleteNotifierRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -477,7 +477,7 @@ func (x *DeleteNotifierRequest) String() string {
 func (*DeleteNotifierRequest) ProtoMessage() {}
 
 func (x *DeleteNotifierRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +490,7 @@ func (x *DeleteNotifierRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNotifierRequest.ProtoReflect.Descriptor instead.
 func (*DeleteNotifierRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteNotifierRequest) GetNamespace() string {
@@ -516,7 +516,7 @@ type DeleteNotifierResponse struct {
 func (x *DeleteNotifierResponse) Reset() {
 	*x = DeleteNotifierResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *DeleteNotifierResponse) String() string {
 func (*DeleteNotifierResponse) ProtoMessage() {}
 
 func (x *DeleteNotifierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,12 +542,12 @@ func (x *DeleteNotifierResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNotifierResponse.ProtoReflect.Descriptor instead.
 func (*DeleteNotifierResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP(), []int{10}
 }
 
-var File_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDesc = []byte{
 	0x0a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65,
@@ -699,50 +699,50 @@ var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescData = file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescData = file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_goTypes = []interface{}{
-	(*ListNotifiersRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersRequest
-	(*ListNotifiersResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersResponse
-	(*NotifierResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.notifier.v1.NotifierResponse
-	(*CreateNotifierRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.notifier.v1.CreateNotifierRequest
-	(*CreateNotifierResponse)(nil), // 4: github.com.metaprov.modeldapi.services.notifier.v1.CreateNotifierResponse
-	(*UpdateNotifierRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.notifier.v1.UpdateNotifierRequest
-	(*UpdateNotifierResponse)(nil), // 6: github.com.metaprov.modeldapi.services.notifier.v1.UpdateNotifierResponse
-	(*GetNotifierRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.notifier.v1.GetNotifierRequest
-	(*GetNotifierResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.notifier.v1.GetNotifierResponse
-	(*DeleteNotifierRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.notifier.v1.DeleteNotifierRequest
-	(*DeleteNotifierResponse)(nil), // 10: github.com.metaprov.modeldapi.services.notifier.v1.DeleteNotifierResponse
-	nil,                            // 11: github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry
-	(*v1alpha1.NotifierList)(nil),  // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierList
-	(*v1alpha1.Notifier)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
+var file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_goTypes = []interface{}{
+	(*ListNotifiersRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest
+	(*ListNotifiersResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse
+	(*NotifierResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.notifier.v1.NotifierResponse
+	(*CreateNotifierRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest
+	(*CreateNotifierResponse)(nil), // 4: github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse
+	(*UpdateNotifierRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest
+	(*UpdateNotifierResponse)(nil), // 6: github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse
+	(*GetNotifierRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest
+	(*GetNotifierResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse
+	(*DeleteNotifierRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest
+	(*DeleteNotifierResponse)(nil), // 10: github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse
+	nil,                            // 11: github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry
+	(*v1alpha1.NotifierList)(nil),  // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList
+	(*v1alpha1.Notifier)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
 }
-var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_depIdxs = []int32{
-	11, // 0: github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersRequest.labels:type_name -> github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry
-	12, // 1: github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierList
-	13, // 2: github.com.metaprov.modeldapi.services.notifier.v1.CreateNotifierRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	13, // 3: github.com.metaprov.modeldapi.services.notifier.v1.UpdateNotifierRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	13, // 4: github.com.metaprov.modeldapi.services.notifier.v1.GetNotifierResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	0,  // 5: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.ListNotifiers:input_type -> github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.CreateNotifier:input_type -> github.com.metaprov.modeldapi.services.notifier.v1.CreateNotifierRequest
-	7,  // 7: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.GetNotifier:input_type -> github.com.metaprov.modeldapi.services.notifier.v1.GetNotifierRequest
-	5,  // 8: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.UpdateNotifier:input_type -> github.com.metaprov.modeldapi.services.notifier.v1.UpdateNotifierRequest
-	9,  // 9: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.DeleteNotifier:input_type -> github.com.metaprov.modeldapi.services.notifier.v1.DeleteNotifierRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.ListNotifiers:output_type -> github.com.metaprov.modeldapi.services.notifier.v1.ListNotifiersResponse
-	4,  // 11: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.CreateNotifier:output_type -> github.com.metaprov.modeldapi.services.notifier.v1.CreateNotifierResponse
-	8,  // 12: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.GetNotifier:output_type -> github.com.metaprov.modeldapi.services.notifier.v1.GetNotifierResponse
-	6,  // 13: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.UpdateNotifier:output_type -> github.com.metaprov.modeldapi.services.notifier.v1.UpdateNotifierResponse
-	10, // 14: github.com.metaprov.modeldapi.services.notifier.v1.NotifierService.DeleteNotifier:output_type -> github.com.metaprov.modeldapi.services.notifier.v1.DeleteNotifierResponse
+var file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_depIdxs = []int32{
+	11, // 0: github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.labels:type_name -> github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry
+	12, // 1: github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList
+	13, // 2: github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
+	13, // 3: github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
+	13, // 4: github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
+	0,  // 5: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.ListNotifiers:input_type -> github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.CreateNotifier:input_type -> github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest
+	7,  // 7: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.GetNotifier:input_type -> github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest
+	5,  // 8: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.UpdateNotifier:input_type -> github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest
+	9,  // 9: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.DeleteNotifier:input_type -> github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.ListNotifiers:output_type -> github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse
+	4,  // 11: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.CreateNotifier:output_type -> github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse
+	8,  // 12: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.GetNotifier:output_type -> github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse
+	6,  // 13: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.UpdateNotifier:output_type -> github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse
+	10, // 14: github.com.metaprov.modelaapi.services.notifier.v1.NotifierService.DeleteNotifier:output_type -> github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -750,13 +750,13 @@ var file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_depId
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init() }
-func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_init() }
+func file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListNotifiersRequest); i {
 			case 0:
 				return &v.state
@@ -768,7 +768,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListNotifiersResponse); i {
 			case 0:
 				return &v.state
@@ -780,7 +780,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NotifierResponse); i {
 			case 0:
 				return &v.state
@@ -792,7 +792,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateNotifierRequest); i {
 			case 0:
 				return &v.state
@@ -804,7 +804,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateNotifierResponse); i {
 			case 0:
 				return &v.state
@@ -816,7 +816,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateNotifierRequest); i {
 			case 0:
 				return &v.state
@@ -828,7 +828,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateNotifierResponse); i {
 			case 0:
 				return &v.state
@@ -840,7 +840,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNotifierRequest); i {
 			case 0:
 				return &v.state
@@ -852,7 +852,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNotifierResponse); i {
 			case 0:
 				return &v.state
@@ -864,7 +864,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteNotifierRequest); i {
 			case 0:
 				return &v.state
@@ -876,7 +876,7 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteNotifierResponse); i {
 			case 0:
 				return &v.state
@@ -893,20 +893,20 @@ func file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_init
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto = out.File
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_notifier_v1_notifier_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto = out.File
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_notifier_v1_notifier_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -938,7 +938,7 @@ func NewNotifierServiceClient(cc grpc.ClientConnInterface) NotifierServiceClient
 
 func (c *notifierServiceClient) ListNotifiers(ctx context.Context, in *ListNotifiersRequest, opts ...grpc.CallOption) (*ListNotifiersResponse, error) {
 	out := new(ListNotifiersResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/ListNotifiers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -947,7 +947,7 @@ func (c *notifierServiceClient) ListNotifiers(ctx context.Context, in *ListNotif
 
 func (c *notifierServiceClient) CreateNotifier(ctx context.Context, in *CreateNotifierRequest, opts ...grpc.CallOption) (*CreateNotifierResponse, error) {
 	out := new(CreateNotifierResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/CreateNotifier", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -956,7 +956,7 @@ func (c *notifierServiceClient) CreateNotifier(ctx context.Context, in *CreateNo
 
 func (c *notifierServiceClient) GetNotifier(ctx context.Context, in *GetNotifierRequest, opts ...grpc.CallOption) (*GetNotifierResponse, error) {
 	out := new(GetNotifierResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/GetNotifier", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -965,7 +965,7 @@ func (c *notifierServiceClient) GetNotifier(ctx context.Context, in *GetNotifier
 
 func (c *notifierServiceClient) UpdateNotifier(ctx context.Context, in *UpdateNotifierRequest, opts ...grpc.CallOption) (*UpdateNotifierResponse, error) {
 	out := new(UpdateNotifierResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/UpdateNotifier", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -974,7 +974,7 @@ func (c *notifierServiceClient) UpdateNotifier(ctx context.Context, in *UpdateNo
 
 func (c *notifierServiceClient) DeleteNotifier(ctx context.Context, in *DeleteNotifierRequest, opts ...grpc.CallOption) (*DeleteNotifierResponse, error) {
 	out := new(DeleteNotifierResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/DeleteNotifier", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1024,7 +1024,7 @@ func _NotifierService_ListNotifiers_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/ListNotifiers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotifierServiceServer).ListNotifiers(ctx, req.(*ListNotifiersRequest))
@@ -1042,7 +1042,7 @@ func _NotifierService_CreateNotifier_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/CreateNotifier",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotifierServiceServer).CreateNotifier(ctx, req.(*CreateNotifierRequest))
@@ -1060,7 +1060,7 @@ func _NotifierService_GetNotifier_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/GetNotifier",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotifierServiceServer).GetNotifier(ctx, req.(*GetNotifierRequest))
@@ -1078,7 +1078,7 @@ func _NotifierService_UpdateNotifier_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/UpdateNotifier",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotifierServiceServer).UpdateNotifier(ctx, req.(*UpdateNotifierRequest))
@@ -1096,7 +1096,7 @@ func _NotifierService_DeleteNotifier_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/DeleteNotifier",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotifierServiceServer).DeleteNotifier(ctx, req.(*DeleteNotifierRequest))
@@ -1105,7 +1105,7 @@ func _NotifierService_DeleteNotifier_Handler(srv interface{}, ctx context.Contex
 }
 
 var _NotifierService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.notifier.v1.NotifierService",
+	ServiceName: "github.com.metaprov.modelaapi.services.notifier.v1.NotifierService",
 	HandlerType: (*NotifierServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1130,5 +1130,5 @@ var _NotifierService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/notifier/v1/notifier.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/notifier/v1/notifier.proto",
 }

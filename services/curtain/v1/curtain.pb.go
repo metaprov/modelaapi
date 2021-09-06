@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/curtain/v1/curtain.proto
+// source: github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -45,7 +45,7 @@ type ListCurtainsRequest struct {
 func (x *ListCurtainsRequest) Reset() {
 	*x = ListCurtainsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -58,7 +58,7 @@ func (x *ListCurtainsRequest) String() string {
 func (*ListCurtainsRequest) ProtoMessage() {}
 
 func (x *ListCurtainsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -71,7 +71,7 @@ func (x *ListCurtainsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCurtainsRequest.ProtoReflect.Descriptor instead.
 func (*ListCurtainsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListCurtainsRequest) GetNamespace() string {
@@ -114,7 +114,7 @@ type ListCurtainsResponse struct {
 func (x *ListCurtainsResponse) Reset() {
 	*x = ListCurtainsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -127,7 +127,7 @@ func (x *ListCurtainsResponse) String() string {
 func (*ListCurtainsResponse) ProtoMessage() {}
 
 func (x *ListCurtainsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -140,7 +140,7 @@ func (x *ListCurtainsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCurtainsResponse.ProtoReflect.Descriptor instead.
 func (*ListCurtainsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListCurtainsResponse) GetItems() *v1alpha1.CurtainList {
@@ -166,7 +166,7 @@ type CreateCurtainResponse struct {
 func (x *CreateCurtainResponse) Reset() {
 	*x = CreateCurtainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -179,7 +179,7 @@ func (x *CreateCurtainResponse) String() string {
 func (*CreateCurtainResponse) ProtoMessage() {}
 
 func (x *CreateCurtainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -192,7 +192,7 @@ func (x *CreateCurtainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCurtainResponse.ProtoReflect.Descriptor instead.
 func (*CreateCurtainResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateCurtainRequest struct {
@@ -206,7 +206,7 @@ type CreateCurtainRequest struct {
 func (x *CreateCurtainRequest) Reset() {
 	*x = CreateCurtainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -219,7 +219,7 @@ func (x *CreateCurtainRequest) String() string {
 func (*CreateCurtainRequest) ProtoMessage() {}
 
 func (x *CreateCurtainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -232,7 +232,7 @@ func (x *CreateCurtainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCurtainRequest.ProtoReflect.Descriptor instead.
 func (*CreateCurtainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateCurtainRequest) GetItem() *v1alpha1.Curtain {
@@ -253,7 +253,7 @@ type UpdateCurtainRequest struct {
 func (x *UpdateCurtainRequest) Reset() {
 	*x = UpdateCurtainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -266,7 +266,7 @@ func (x *UpdateCurtainRequest) String() string {
 func (*UpdateCurtainRequest) ProtoMessage() {}
 
 func (x *UpdateCurtainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -279,7 +279,7 @@ func (x *UpdateCurtainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCurtainRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCurtainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateCurtainRequest) GetItem() *v1alpha1.Curtain {
@@ -298,7 +298,7 @@ type UpdateCurtainResponse struct {
 func (x *UpdateCurtainResponse) Reset() {
 	*x = UpdateCurtainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -311,7 +311,7 @@ func (x *UpdateCurtainResponse) String() string {
 func (*UpdateCurtainResponse) ProtoMessage() {}
 
 func (x *UpdateCurtainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -324,7 +324,7 @@ func (x *UpdateCurtainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCurtainResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCurtainResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{5}
 }
 
 type GetCurtainRequest struct {
@@ -339,7 +339,7 @@ type GetCurtainRequest struct {
 func (x *GetCurtainRequest) Reset() {
 	*x = GetCurtainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -352,7 +352,7 @@ func (x *GetCurtainRequest) String() string {
 func (*GetCurtainRequest) ProtoMessage() {}
 
 func (x *GetCurtainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -365,7 +365,7 @@ func (x *GetCurtainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurtainRequest.ProtoReflect.Descriptor instead.
 func (*GetCurtainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetCurtainRequest) GetNamespace() string {
@@ -394,7 +394,7 @@ type GetCurtainResponse struct {
 func (x *GetCurtainResponse) Reset() {
 	*x = GetCurtainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -407,7 +407,7 @@ func (x *GetCurtainResponse) String() string {
 func (*GetCurtainResponse) ProtoMessage() {}
 
 func (x *GetCurtainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -420,7 +420,7 @@ func (x *GetCurtainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurtainResponse.ProtoReflect.Descriptor instead.
 func (*GetCurtainResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCurtainResponse) GetItem() *v1alpha1.Curtain {
@@ -449,7 +449,7 @@ type DeleteCurtainRequest struct {
 func (x *DeleteCurtainRequest) Reset() {
 	*x = DeleteCurtainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -462,7 +462,7 @@ func (x *DeleteCurtainRequest) String() string {
 func (*DeleteCurtainRequest) ProtoMessage() {}
 
 func (x *DeleteCurtainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -475,7 +475,7 @@ func (x *DeleteCurtainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCurtainRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCurtainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteCurtainRequest) GetNamespace() string {
@@ -501,7 +501,7 @@ type DeleteCurtainResponse struct {
 func (x *DeleteCurtainResponse) Reset() {
 	*x = DeleteCurtainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -514,7 +514,7 @@ func (x *DeleteCurtainResponse) String() string {
 func (*DeleteCurtainResponse) ProtoMessage() {}
 
 func (x *DeleteCurtainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,12 +527,12 @@ func (x *DeleteCurtainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCurtainResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCurtainResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x75, 0x72, 0x74, 0x61, 0x69, 0x6e,
@@ -683,49 +683,49 @@ var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescData = file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescData = file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_goTypes = []interface{}{
-	(*ListCurtainsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest
-	(*ListCurtainsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse
-	(*CreateCurtainResponse)(nil), // 2: github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainResponse
-	(*CreateCurtainRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest
-	(*UpdateCurtainRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest
-	(*UpdateCurtainResponse)(nil), // 5: github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainResponse
-	(*GetCurtainRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.curtain.v1.GetCurtainRequest
-	(*GetCurtainResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.curtain.v1.GetCurtainResponse
-	(*DeleteCurtainRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.curtain.v1.DeleteCurtainRequest
-	(*DeleteCurtainResponse)(nil), // 9: github.com.metaprov.modeldapi.services.curtain.v1.DeleteCurtainResponse
-	nil,                           // 10: github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry
-	(*v1alpha1.CurtainList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList
-	(*v1alpha1.Curtain)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
+var file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_goTypes = []interface{}{
+	(*ListCurtainsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest
+	(*ListCurtainsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse
+	(*CreateCurtainResponse)(nil), // 2: github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse
+	(*CreateCurtainRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest
+	(*UpdateCurtainRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest
+	(*UpdateCurtainResponse)(nil), // 5: github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse
+	(*GetCurtainRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest
+	(*GetCurtainResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse
+	(*DeleteCurtainRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest
+	(*DeleteCurtainResponse)(nil), // 9: github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse
+	nil,                           // 10: github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry
+	(*v1alpha1.CurtainList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList
+	(*v1alpha1.Curtain)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain
 }
-var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList
-	12, // 2: github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
-	12, // 3: github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
-	12, // 4: github.com.metaprov.modeldapi.services.curtain.v1.GetCurtainResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain
-	0,  // 5: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.ListCurtains:input_type -> github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.CreateCurtain:input_type -> github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.GetCurtain:input_type -> github.com.metaprov.modeldapi.services.curtain.v1.GetCurtainRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.UpdateCurtain:input_type -> github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.DeleteCurtain:input_type -> github.com.metaprov.modeldapi.services.curtain.v1.DeleteCurtainRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.ListCurtains:output_type -> github.com.metaprov.modeldapi.services.curtain.v1.ListCurtainsResponse
-	2,  // 11: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.CreateCurtain:output_type -> github.com.metaprov.modeldapi.services.curtain.v1.CreateCurtainResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.GetCurtain:output_type -> github.com.metaprov.modeldapi.services.curtain.v1.GetCurtainResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.UpdateCurtain:output_type -> github.com.metaprov.modeldapi.services.curtain.v1.UpdateCurtainResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.curtain.v1.CurtainService.DeleteCurtain:output_type -> github.com.metaprov.modeldapi.services.curtain.v1.DeleteCurtainResponse
+var file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList
+	12, // 2: github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain
+	12, // 3: github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain
+	12, // 4: github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain
+	0,  // 5: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.ListCurtains:input_type -> github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.CreateCurtain:input_type -> github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.GetCurtain:input_type -> github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.UpdateCurtain:input_type -> github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.DeleteCurtain:input_type -> github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.ListCurtains:output_type -> github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse
+	2,  // 11: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.CreateCurtain:output_type -> github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.GetCurtain:output_type -> github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.UpdateCurtain:output_type -> github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.curtain.v1.CurtainService.DeleteCurtain:output_type -> github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -733,13 +733,13 @@ var file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_depIdxs
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init() }
-func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_init() }
+func file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCurtainsRequest); i {
 			case 0:
 				return &v.state
@@ -751,7 +751,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCurtainsResponse); i {
 			case 0:
 				return &v.state
@@ -763,7 +763,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCurtainResponse); i {
 			case 0:
 				return &v.state
@@ -775,7 +775,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCurtainRequest); i {
 			case 0:
 				return &v.state
@@ -787,7 +787,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCurtainRequest); i {
 			case 0:
 				return &v.state
@@ -799,7 +799,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCurtainResponse); i {
 			case 0:
 				return &v.state
@@ -811,7 +811,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurtainRequest); i {
 			case 0:
 				return &v.state
@@ -823,7 +823,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCurtainResponse); i {
 			case 0:
 				return &v.state
@@ -835,7 +835,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCurtainRequest); i {
 			case 0:
 				return &v.state
@@ -847,7 +847,7 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCurtainResponse); i {
 			case 0:
 				return &v.state
@@ -864,20 +864,20 @@ func file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto = out.File
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_curtain_v1_curtain_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto = out.File
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_curtain_v1_curtain_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -909,7 +909,7 @@ func NewCurtainServiceClient(cc grpc.ClientConnInterface) CurtainServiceClient {
 
 func (c *curtainServiceClient) ListCurtains(ctx context.Context, in *ListCurtainsRequest, opts ...grpc.CallOption) (*ListCurtainsResponse, error) {
 	out := new(ListCurtainsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/ListCurtains", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -918,7 +918,7 @@ func (c *curtainServiceClient) ListCurtains(ctx context.Context, in *ListCurtain
 
 func (c *curtainServiceClient) CreateCurtain(ctx context.Context, in *CreateCurtainRequest, opts ...grpc.CallOption) (*CreateCurtainResponse, error) {
 	out := new(CreateCurtainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/CreateCurtain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -927,7 +927,7 @@ func (c *curtainServiceClient) CreateCurtain(ctx context.Context, in *CreateCurt
 
 func (c *curtainServiceClient) GetCurtain(ctx context.Context, in *GetCurtainRequest, opts ...grpc.CallOption) (*GetCurtainResponse, error) {
 	out := new(GetCurtainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/GetCurtain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -936,7 +936,7 @@ func (c *curtainServiceClient) GetCurtain(ctx context.Context, in *GetCurtainReq
 
 func (c *curtainServiceClient) UpdateCurtain(ctx context.Context, in *UpdateCurtainRequest, opts ...grpc.CallOption) (*UpdateCurtainResponse, error) {
 	out := new(UpdateCurtainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/UpdateCurtain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -945,7 +945,7 @@ func (c *curtainServiceClient) UpdateCurtain(ctx context.Context, in *UpdateCurt
 
 func (c *curtainServiceClient) DeleteCurtain(ctx context.Context, in *DeleteCurtainRequest, opts ...grpc.CallOption) (*DeleteCurtainResponse, error) {
 	out := new(DeleteCurtainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/DeleteCurtain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -995,7 +995,7 @@ func _CurtainService_ListCurtains_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains",
+		FullMethod: "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/ListCurtains",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CurtainServiceServer).ListCurtains(ctx, req.(*ListCurtainsRequest))
@@ -1013,7 +1013,7 @@ func _CurtainService_CreateCurtain_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain",
+		FullMethod: "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/CreateCurtain",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CurtainServiceServer).CreateCurtain(ctx, req.(*CreateCurtainRequest))
@@ -1031,7 +1031,7 @@ func _CurtainService_GetCurtain_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain",
+		FullMethod: "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/GetCurtain",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CurtainServiceServer).GetCurtain(ctx, req.(*GetCurtainRequest))
@@ -1049,7 +1049,7 @@ func _CurtainService_UpdateCurtain_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain",
+		FullMethod: "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/UpdateCurtain",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CurtainServiceServer).UpdateCurtain(ctx, req.(*UpdateCurtainRequest))
@@ -1067,7 +1067,7 @@ func _CurtainService_DeleteCurtain_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain",
+		FullMethod: "/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/DeleteCurtain",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CurtainServiceServer).DeleteCurtain(ctx, req.(*DeleteCurtainRequest))
@@ -1076,7 +1076,7 @@ func _CurtainService_DeleteCurtain_Handler(srv interface{}, ctx context.Context,
 }
 
 var _CurtainService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.curtain.v1.CurtainService",
+	ServiceName: "github.com.metaprov.modelaapi.services.curtain.v1.CurtainService",
 	HandlerType: (*CurtainServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1101,5 +1101,5 @@ var _CurtainService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/curtain/v1/curtain.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto",
 }

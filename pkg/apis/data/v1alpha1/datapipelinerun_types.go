@@ -6,7 +6,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -54,7 +54,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Error",type="date",JSONPath=".metadata.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modeld,all}
+// +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

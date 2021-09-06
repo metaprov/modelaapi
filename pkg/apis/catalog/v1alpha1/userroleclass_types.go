@@ -28,7 +28,7 @@ const (
 )
 
 // UserRoleClass specify the RBAC premission for a specific user role.
-// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modeld,all}
+// +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modela,all}
 // +kubebuilder:object:root=true
 type UserRoleClass struct {
 	metav1.TypeMeta   `json:",inline"`

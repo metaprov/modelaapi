@@ -7,12 +7,12 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 
 	"testing"
 
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gotest.tools/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -25,7 +25,7 @@ func autoBuilder() *ModelAutobuilder {
 			DataProductName:        util.StrPtr("iris-product"),
 			DataProductVersionName: util.StrPtr("v0.0.1"),
 			Location: &data.DataLocation{
-				Path:       util.StrPtr("modeld/depot/iris.csv"),
+				Path:       util.StrPtr("modela/depot/iris.csv"),
 				BucketName: util.StrPtr("default-digitalocean-bucket"),
 			},
 			Task:           &task,
@@ -50,9 +50,9 @@ func TestProduct(t *testing.T) {
 	assert.Equal(t, product.Namespace, "default-tenant")
 	assert.Equal(t, product.Spec.DataLocation.BucketName, "default-digitalocean-bucket")
 	assert.Equal(t, product.Spec.TenantRef.Name, "default-tenant")
-	assert.Equal(t, product.Spec.TenantRef.Namespace, "modeld-system")
+	assert.Equal(t, product.Spec.TenantRef.Namespace, "modela-system")
 	assert.Equal(t, *product.Spec.ServingSiteName, "default-serving-site")
-	assert.Equal(t, product.Spec.DataLocation.Path, "modeld/live/tenants/default-tenant/dataproducts/iris-product")
+	assert.Equal(t, product.Spec.DataLocation.Path, "modela/live/tenants/default-tenant/dataproducts/iris-product")
 }
 
 func TestProductVersion(t *testing.T) {
@@ -86,8 +86,8 @@ func TestDataset(t *testing.T) {
 	assert.Equal(t, dset.Spec.VersionName, "v0.0.1")
 	assert.Equal(t, dset.Spec.DataSourceName, "iris")
 	assert.Equal(t, *dset.Spec.Labeled, true)
-	assert.Equal(t, dset.Spec.Location.Path, "modeld/live/tenants/default-tenant/dataproducts/iris-product/versions/v0.0.1/datasets/iris/data/raw/iris.csv")
-	assert.Equal(t, dset.Spec.Origin.Path, "modeld/depot/iris.csv")
+	assert.Equal(t, dset.Spec.Location.Path, "modela/live/tenants/default-tenant/dataproducts/iris-product/versions/v0.0.1/datasets/iris/data/raw/iris.csv")
+	assert.Equal(t, dset.Spec.Origin.Path, "modela/depot/iris.csv")
 }
 
 func TestStudy(t *testing.T) {

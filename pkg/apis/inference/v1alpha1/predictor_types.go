@@ -1,8 +1,8 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	training "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -55,7 +55,7 @@ type PredictorCondition struct {
 // +kubebuilder:printcolumn:name="Replicas",type="integer",JSONPath=".spec.replicas",description=""
 // +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modeld}
+// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
 type Predictor struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

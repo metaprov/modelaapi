@@ -1,5 +1,5 @@
 package infra
 
 const (
-	GroupName = "infra.modeld.io"
+	GroupName = "infra.modela.io"
 )

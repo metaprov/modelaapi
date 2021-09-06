@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 
 
 export class ListAlgorithmsRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListAlgorithmsRequest {
 }
 
 export class ListAlgorithmsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList): ListAlgorithmsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList): ListAlgorithmsResponse;
   hasItems(): boolean;
   clearItems(): ListAlgorithmsResponse;
 
@@ -42,7 +42,7 @@ export class ListAlgorithmsResponse extends jspb.Message {
 
 export namespace ListAlgorithmsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.AsObject,
   }
 }
 
@@ -69,8 +69,8 @@ export namespace GetAlgorithmRequest {
 }
 
 export class GetAlgorithmResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm): GetAlgorithmResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm): GetAlgorithmResponse;
   hasItem(): boolean;
   clearItem(): GetAlgorithmResponse;
 
@@ -84,7 +84,7 @@ export class GetAlgorithmResponse extends jspb.Message {
 
 export namespace GetAlgorithmResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject,
   }
 }
 
@@ -111,8 +111,8 @@ export namespace ListMLFrameworksRequest {
 }
 
 export class ListMLFrameworksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList): ListMLFrameworksResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList): ListMLFrameworksResponse;
   hasItems(): boolean;
   clearItems(): ListMLFrameworksResponse;
 
@@ -126,7 +126,7 @@ export class ListMLFrameworksResponse extends jspb.Message {
 
 export namespace ListMLFrameworksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList.AsObject,
   }
 }
 
@@ -153,8 +153,8 @@ export namespace GetMLFrameworkRequest {
 }
 
 export class GetMLFrameworkResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework): GetMLFrameworkResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework): GetMLFrameworkResponse;
   hasItem(): boolean;
   clearItem(): GetMLFrameworkResponse;
 
@@ -168,7 +168,7 @@ export class GetMLFrameworkResponse extends jspb.Message {
 
 export namespace GetMLFrameworkResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.AsObject,
   }
 }
 
@@ -195,8 +195,8 @@ export namespace ListCloudsRequest {
 }
 
 export class ListCloudsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList): ListCloudsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList): ListCloudsResponse;
   hasItems(): boolean;
   clearItems(): ListCloudsResponse;
 
@@ -210,7 +210,7 @@ export class ListCloudsResponse extends jspb.Message {
 
 export namespace ListCloudsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList.AsObject,
   }
 }
 
@@ -237,8 +237,8 @@ export namespace GetCloudRequest {
 }
 
 export class GetCloudResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud): GetCloudResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud): GetCloudResponse;
   hasItem(): boolean;
   clearItem(): GetCloudResponse;
 
@@ -252,7 +252,7 @@ export class GetCloudResponse extends jspb.Message {
 
 export namespace GetCloudResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.AsObject,
   }
 }
 
@@ -279,8 +279,8 @@ export namespace ListPublicDatasetsRequest {
 }
 
 export class ListPublicDatasetsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList): ListPublicDatasetsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList): ListPublicDatasetsResponse;
   hasItems(): boolean;
   clearItems(): ListPublicDatasetsResponse;
 
@@ -294,7 +294,7 @@ export class ListPublicDatasetsResponse extends jspb.Message {
 
 export namespace ListPublicDatasetsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList.AsObject,
   }
 }
 
@@ -321,8 +321,8 @@ export namespace GetPublicDatasetRequest {
 }
 
 export class GetPublicDatasetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset): GetPublicDatasetResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset): GetPublicDatasetResponse;
   hasItem(): boolean;
   clearItem(): GetPublicDatasetResponse;
 
@@ -336,7 +336,7 @@ export class GetPublicDatasetResponse extends jspb.Message {
 
 export namespace GetPublicDatasetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.AsObject,
   }
 }
 
@@ -493,8 +493,8 @@ export namespace ListPretrainedModelsRequest {
 }
 
 export class ListPretrainedModelsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList): ListPretrainedModelsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList): ListPretrainedModelsResponse;
   hasItems(): boolean;
   clearItems(): ListPretrainedModelsResponse;
 
@@ -508,7 +508,7 @@ export class ListPretrainedModelsResponse extends jspb.Message {
 
 export namespace ListPretrainedModelsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModelList.AsObject,
   }
 }
 
@@ -535,8 +535,8 @@ export namespace GetPretrainedModelRequest {
 }
 
 export class GetPretrainedModelResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel): GetPretrainedModelResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel): GetPretrainedModelResponse;
   hasItem(): boolean;
   clearItem(): GetPretrainedModelResponse;
 
@@ -550,7 +550,7 @@ export class GetPretrainedModelResponse extends jspb.Message {
 
 export namespace GetPretrainedModelResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PretrainedModel.AsObject,
   }
 }
 
@@ -577,8 +577,8 @@ export namespace ListWorkloadClassesRequest {
 }
 
 export class ListWorkloadClassesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList): ListWorkloadClassesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList): ListWorkloadClassesResponse;
   hasItems(): boolean;
   clearItems(): ListWorkloadClassesResponse;
 
@@ -592,7 +592,7 @@ export class ListWorkloadClassesResponse extends jspb.Message {
 
 export namespace ListWorkloadClassesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList.AsObject,
   }
 }
 
@@ -619,8 +619,8 @@ export namespace GetWorkloadClassRequest {
 }
 
 export class GetWorkloadClassResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass): GetWorkloadClassResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass): GetWorkloadClassResponse;
   hasItem(): boolean;
   clearItem(): GetWorkloadClassResponse;
 
@@ -634,7 +634,7 @@ export class GetWorkloadClassResponse extends jspb.Message {
 
 export namespace GetWorkloadClassResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClass.AsObject,
   }
 }
 
@@ -661,8 +661,8 @@ export namespace ListUserRoleClassesRequest {
 }
 
 export class ListUserRoleClassesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList): ListUserRoleClassesResponse;
   hasItems(): boolean;
   clearItems(): ListUserRoleClassesResponse;
 
@@ -676,7 +676,7 @@ export class ListUserRoleClassesResponse extends jspb.Message {
 
 export namespace ListUserRoleClassesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClassList.AsObject,
   }
 }
 
@@ -703,8 +703,8 @@ export namespace GetUserRoleClassRequest {
 }
 
 export class GetUserRoleClassResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass): GetUserRoleClassResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass): GetUserRoleClassResponse;
   hasItem(): boolean;
   clearItem(): GetUserRoleClassResponse;
 
@@ -718,7 +718,7 @@ export class GetUserRoleClassResponse extends jspb.Message {
 
 export namespace GetUserRoleClassResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.UserRoleClass.AsObject,
   }
 }
 

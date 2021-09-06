@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.predictionstore.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.predictionstore.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb from '../../../../../../github.com/metaprov/modeldapi/services/predictionstore/v1/predictionstore_pb';
+import * as github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb from '../../../../../../github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore_pb';
 
 
 export class PredictionStoreServiceClient {
@@ -36,32 +36,32 @@ export class PredictionStoreServiceClient {
   }
 
   methodInfoIngest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse,
-    (request: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest) => {
+    github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse,
+    (request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse.deserializeBinary
   );
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse>;
+    request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse>;
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
+    request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse>;
+               response: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse>;
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
+    request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
+          '/github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService/Ingest',
         request,
         metadata || {},
         this.methodInfoIngest,
@@ -69,7 +69,7 @@ export class PredictionStoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
+      '/github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService/Ingest',
     request,
     metadata || {},
     this.methodInfoIngest);

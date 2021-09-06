@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: reviews.team.modeld.io
+  name: reviews.team.modela.io
 spec:
-  group: team.modeld.io
+  group: team.modela.io
   names:
     categories:
     - team
-    - modeld
+    - modela
     kind: Review
     listKind: ReviewList
     plural: reviews

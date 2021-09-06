@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.account.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.account.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_account_v1_account_pb from '../../../../../../github.com/metaprov/modeldapi/services/account/v1/account_pb';
+import * as github_com_metaprov_modelaapi_services_account_v1_account_pb from '../../../../../../github.com/metaprov/modelaapi/services/account/v1/account_pb';
 
 
 export class AccountServiceClient {
@@ -36,32 +36,32 @@ export class AccountServiceClient {
   }
 
   methodInfoListAccounts = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse.deserializeBinary
   );
 
   listAccounts(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse>;
 
   listAccounts(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse>;
 
   listAccounts(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ListAccountsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts',
         request,
         metadata || {},
         this.methodInfoListAccounts,
@@ -69,39 +69,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts',
     request,
     metadata || {},
     this.methodInfoListAccounts);
   }
 
   methodInfoCreateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse.deserializeBinary
   );
 
   createAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse>;
 
   createAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse>;
 
   createAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.CreateAccountResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount',
         request,
         metadata || {},
         this.methodInfoCreateAccount,
@@ -109,39 +109,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount',
     request,
     metadata || {},
     this.methodInfoCreateAccount);
   }
 
   methodInfoGetAccount = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse.deserializeBinary
   );
 
   getAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse>;
 
   getAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse>;
 
   getAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount',
         request,
         metadata || {},
         this.methodInfoGetAccount,
@@ -149,39 +149,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount',
     request,
     metadata || {},
     this.methodInfoGetAccount);
   }
 
   methodInfoUpdateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse.deserializeBinary
   );
 
   updateAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse>;
 
   updateAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse>;
 
   updateAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UpdateAccountResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount',
         request,
         metadata || {},
         this.methodInfoUpdateAccount,
@@ -189,39 +189,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount',
     request,
     metadata || {},
     this.methodInfoUpdateAccount);
   }
 
   methodInfoDeleteAccount = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse.deserializeBinary
   );
 
   deleteAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse>;
 
   deleteAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse>;
 
   deleteAccount(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DeleteAccountResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount',
         request,
         metadata || {},
         this.methodInfoDeleteAccount,
@@ -229,39 +229,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount',
     request,
     metadata || {},
     this.methodInfoDeleteAccount);
   }
 
   methodInfoGetAccountNamespaces = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse.deserializeBinary
   );
 
   getAccountNamespaces(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
 
   getAccountNamespaces(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
 
   getAccountNamespaces(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces',
         request,
         metadata || {},
         this.methodInfoGetAccountNamespaces,
@@ -269,39 +269,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces',
     request,
     metadata || {},
     this.methodInfoGetAccountNamespaces);
   }
 
   methodInfoLogin = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse.deserializeBinary
   );
 
   login(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse>;
 
   login(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse>;
 
   login(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLoginResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login',
         request,
         metadata || {},
         this.methodInfoLogin,
@@ -309,39 +309,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login',
     request,
     metadata || {},
     this.methodInfoLogin);
   }
 
   methodInfoLogout = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLogoutRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse.deserializeBinary
   );
 
   logout(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLogoutRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse>;
 
   logout(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLogoutRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse>;
 
   logout(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.AccountLogoutRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.LogoutResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
         request,
         metadata || {},
         this.methodInfoLogout,
@@ -349,39 +349,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
     request,
     metadata || {},
     this.methodInfoLogout);
   }
 
   methodInfoChangePassword = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse.deserializeBinary
   );
 
   changePassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse>;
 
   changePassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse>;
 
   changePassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ChangePasswordResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
         request,
         metadata || {},
         this.methodInfoChangePassword,
@@ -389,39 +389,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
     request,
     metadata || {},
     this.methodInfoChangePassword);
   }
 
   methodInfoResetPassword = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse.deserializeBinary
   );
 
   resetPassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse>;
 
   resetPassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse>;
 
   resetPassword(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.ResetPasswordResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword',
         request,
         metadata || {},
         this.methodInfoResetPassword,
@@ -429,39 +429,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword',
     request,
     metadata || {},
     this.methodInfoResetPassword);
   }
 
   methodInfoUploadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse.deserializeBinary
   );
 
   uploadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse>;
 
   uploadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse>;
 
   uploadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.UploadAvatarReponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
         request,
         metadata || {},
         this.methodInfoUploadAvatar,
@@ -469,39 +469,39 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
     request,
     metadata || {},
     this.methodInfoUploadAvatar);
   }
 
   methodInfoDownloadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse,
-    (request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest) => {
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse,
+    (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse.deserializeBinary
   );
 
   downloadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse>;
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse>;
 
   downloadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse>;
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse>;
 
   downloadAvatar(
-    request: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarRequest,
+    request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_account_v1_account_pb.DownloadAvatarReponse) => void) {
+               response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+          '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
         request,
         metadata || {},
         this.methodInfoDownloadAvatar,
@@ -509,7 +509,7 @@ export class AccountServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
+      '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
     request,
     metadata || {},
     this.methodInfoDownloadAvatar);

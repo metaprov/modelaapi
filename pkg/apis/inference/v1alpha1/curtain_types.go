@@ -46,7 +46,7 @@ type CurtainCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=curtains,singular=curtain,categories={inference,modeld,all}
+// +kubebuilder:resource:path=curtains,singular=curtain,categories={inference,modela,all}
 type Curtain struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

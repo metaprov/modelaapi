@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListFeaturesRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListFeaturesRequest {
 }
 
 export class ListFeaturesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList): ListFeaturesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList): ListFeaturesResponse;
   hasItems(): boolean;
   clearItems(): ListFeaturesResponse;
 
@@ -42,13 +42,13 @@ export class ListFeaturesResponse extends jspb.Message {
 
 export namespace ListFeaturesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList.AsObject,
   }
 }
 
 export class CreateFeatureRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureRequest;
   hasItem(): boolean;
   clearItem(): CreateFeatureRequest;
 
@@ -62,7 +62,7 @@ export class CreateFeatureRequest extends jspb.Message {
 
 export namespace CreateFeatureRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateFeatureResponse {
 }
 
 export class UpdateFeatureRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureRequest;
   hasItem(): boolean;
   clearItem(): UpdateFeatureRequest;
 
@@ -96,7 +96,7 @@ export class UpdateFeatureRequest extends jspb.Message {
 
 export namespace UpdateFeatureRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetFeatureRequest {
 }
 
 export class GetFeatureResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature): GetFeatureResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): GetFeatureResponse;
   hasItem(): boolean;
   clearItem(): GetFeatureResponse;
 
@@ -155,7 +155,7 @@ export class GetFeatureResponse extends jspb.Message {
 
 export namespace GetFeatureResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
     yaml: string,
   }
 }

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.datasource.v1 import datasource_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2
+from github.com.metaprov.modelaapi.services.datasource.v1 import datasource_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2
 
 
 class DataSourceServiceStub(object):
@@ -17,39 +17,39 @@ class DataSourceServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataSources = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.FromString,
                 )
         self.CreateDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.FromString,
                 )
         self.GetDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.FromString,
                 )
         self.UpdateDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.FromString,
                 )
         self.DeleteDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.FromString,
                 )
         self.InferSchema = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.FromString,
                 )
         self.GetTableView = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.FromString,
                 )
 
 
@@ -106,42 +106,42 @@ def add_DataSourceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListDataSources': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataSources,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.SerializeToString,
             ),
             'CreateDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.SerializeToString,
             ),
             'GetDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.SerializeToString,
             ),
             'UpdateDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.SerializeToString,
             ),
             'DeleteDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.SerializeToString,
             ),
             'InferSchema': grpc.unary_unary_rpc_method_handler(
                     servicer.InferSchema,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.SerializeToString,
             ),
             'GetTableView': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTableView,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -162,9 +162,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.ListDataSourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -179,9 +179,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.CreateDataSourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -196,9 +196,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetDataSourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -213,9 +213,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.UpdateDataSourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -230,9 +230,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.DeleteDataSourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -247,9 +247,9 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.InferSchemaResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -264,8 +264,8 @@ class DataSourceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datasource_dot_v1_dot_datasource__pb2.GetTableViewResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

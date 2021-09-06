@@ -46,7 +46,7 @@ type AttachmentCondition struct {
 // +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.bucketName",description=""
 // +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modeld}
+// +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modela}
 type Attachment struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

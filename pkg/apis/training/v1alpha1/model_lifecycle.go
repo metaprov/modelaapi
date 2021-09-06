@@ -13,10 +13,10 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/apis/training"
-	"github.com/metaprov/modeldapi/pkg/util"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/training"
+	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -100,7 +100,7 @@ func (model *Model) IsExpired(minutes int) bool {
 }
 
 func (model *Model) ReportName() string {
-	return "modeld-report-" + model.ObjectMeta.Name
+	return "modela-report-" + model.ObjectMeta.Name
 }
 
 func (model *Model) IsEnsemble() bool {
@@ -272,15 +272,15 @@ func (model *Model) Key() string {
 }
 
 func (model *Model) DepotKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/depot/models", model.Key())
+	return fmt.Sprintf("%s/%s", "modela/depot/models", model.Key())
 }
 
 func (model *Model) LiveKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/live/models", model.Key())
+	return fmt.Sprintf("%s/%s", "modela/live/models", model.Key())
 }
 
 func (model *Model) ArchiveKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/archive/models", model.Key())
+	return fmt.Sprintf("%s/%s", "modela/archive/models", model.Key())
 }
 
 func (model *Model) Accuracy() float64 {

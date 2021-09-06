@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto
+// source: github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListCronReportsRequest struct {
 func (x *ListCronReportsRequest) Reset() {
 	*x = ListCronReportsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListCronReportsRequest) String() string {
 func (*ListCronReportsRequest) ProtoMessage() {}
 
 func (x *ListCronReportsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListCronReportsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCronReportsRequest.ProtoReflect.Descriptor instead.
 func (*ListCronReportsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListCronReportsRequest) GetNamespace() string {
@@ -105,7 +105,7 @@ type ListCronReportsResponse struct {
 func (x *ListCronReportsResponse) Reset() {
 	*x = ListCronReportsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -118,7 +118,7 @@ func (x *ListCronReportsResponse) String() string {
 func (*ListCronReportsResponse) ProtoMessage() {}
 
 func (x *ListCronReportsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +131,7 @@ func (x *ListCronReportsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCronReportsResponse.ProtoReflect.Descriptor instead.
 func (*ListCronReportsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListCronReportsResponse) GetItems() *v1alpha1.CronReportList {
@@ -150,7 +150,7 @@ type CreateCronReportResponse struct {
 func (x *CreateCronReportResponse) Reset() {
 	*x = CreateCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -163,7 +163,7 @@ func (x *CreateCronReportResponse) String() string {
 func (*CreateCronReportResponse) ProtoMessage() {}
 
 func (x *CreateCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -176,7 +176,7 @@ func (x *CreateCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCronReportResponse.ProtoReflect.Descriptor instead.
 func (*CreateCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateCronReportRequest struct {
@@ -190,7 +190,7 @@ type CreateCronReportRequest struct {
 func (x *CreateCronReportRequest) Reset() {
 	*x = CreateCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -203,7 +203,7 @@ func (x *CreateCronReportRequest) String() string {
 func (*CreateCronReportRequest) ProtoMessage() {}
 
 func (x *CreateCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *CreateCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCronReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateCronReportRequest) GetItem() *v1alpha1.CronReport {
@@ -237,7 +237,7 @@ type UpdateCronReportRequest struct {
 func (x *UpdateCronReportRequest) Reset() {
 	*x = UpdateCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -250,7 +250,7 @@ func (x *UpdateCronReportRequest) String() string {
 func (*UpdateCronReportRequest) ProtoMessage() {}
 
 func (x *UpdateCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -263,7 +263,7 @@ func (x *UpdateCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCronReportRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateCronReportRequest) GetItem() *v1alpha1.CronReport {
@@ -282,7 +282,7 @@ type UpdateCronReportResponse struct {
 func (x *UpdateCronReportResponse) Reset() {
 	*x = UpdateCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -295,7 +295,7 @@ func (x *UpdateCronReportResponse) String() string {
 func (*UpdateCronReportResponse) ProtoMessage() {}
 
 func (x *UpdateCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *UpdateCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCronReportResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{5}
 }
 
 type GetCronReportRequest struct {
@@ -323,7 +323,7 @@ type GetCronReportRequest struct {
 func (x *GetCronReportRequest) Reset() {
 	*x = GetCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -336,7 +336,7 @@ func (x *GetCronReportRequest) String() string {
 func (*GetCronReportRequest) ProtoMessage() {}
 
 func (x *GetCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -349,7 +349,7 @@ func (x *GetCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCronReportRequest.ProtoReflect.Descriptor instead.
 func (*GetCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetCronReportRequest) GetNamespace() string {
@@ -378,7 +378,7 @@ type GetCronReportResponse struct {
 func (x *GetCronReportResponse) Reset() {
 	*x = GetCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +391,7 @@ func (x *GetCronReportResponse) String() string {
 func (*GetCronReportResponse) ProtoMessage() {}
 
 func (x *GetCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *GetCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCronReportResponse.ProtoReflect.Descriptor instead.
 func (*GetCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCronReportResponse) GetItem() *v1alpha1.CronReport {
@@ -433,7 +433,7 @@ type DeleteCronReportRequest struct {
 func (x *DeleteCronReportRequest) Reset() {
 	*x = DeleteCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *DeleteCronReportRequest) String() string {
 func (*DeleteCronReportRequest) ProtoMessage() {}
 
 func (x *DeleteCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *DeleteCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCronReportRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteCronReportRequest) GetNamespace() string {
@@ -485,7 +485,7 @@ type DeleteCronReportResponse struct {
 func (x *DeleteCronReportResponse) Reset() {
 	*x = DeleteCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -498,7 +498,7 @@ func (x *DeleteCronReportResponse) String() string {
 func (*DeleteCronReportResponse) ProtoMessage() {}
 
 func (x *DeleteCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +511,7 @@ func (x *DeleteCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCronReportResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{9}
 }
 
 type PauseCronReportRequest struct {
@@ -526,7 +526,7 @@ type PauseCronReportRequest struct {
 func (x *PauseCronReportRequest) Reset() {
 	*x = PauseCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *PauseCronReportRequest) String() string {
 func (*PauseCronReportRequest) ProtoMessage() {}
 
 func (x *PauseCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *PauseCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseCronReportRequest.ProtoReflect.Descriptor instead.
 func (*PauseCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *PauseCronReportRequest) GetNamespace() string {
@@ -578,7 +578,7 @@ type PauseCronReportResponse struct {
 func (x *PauseCronReportResponse) Reset() {
 	*x = PauseCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +591,7 @@ func (x *PauseCronReportResponse) String() string {
 func (*PauseCronReportResponse) ProtoMessage() {}
 
 func (x *PauseCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +604,7 @@ func (x *PauseCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseCronReportResponse.ProtoReflect.Descriptor instead.
 func (*PauseCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{11}
 }
 
 type ResumeCronReportRequest struct {
@@ -619,7 +619,7 @@ type ResumeCronReportRequest struct {
 func (x *ResumeCronReportRequest) Reset() {
 	*x = ResumeCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -632,7 +632,7 @@ func (x *ResumeCronReportRequest) String() string {
 func (*ResumeCronReportRequest) ProtoMessage() {}
 
 func (x *ResumeCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -645,7 +645,7 @@ func (x *ResumeCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeCronReportRequest.ProtoReflect.Descriptor instead.
 func (*ResumeCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ResumeCronReportRequest) GetNamespace() string {
@@ -671,7 +671,7 @@ type ResumeCronReportResponse struct {
 func (x *ResumeCronReportResponse) Reset() {
 	*x = ResumeCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -684,7 +684,7 @@ func (x *ResumeCronReportResponse) String() string {
 func (*ResumeCronReportResponse) ProtoMessage() {}
 
 func (x *ResumeCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -697,7 +697,7 @@ func (x *ResumeCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeCronReportResponse.ProtoReflect.Descriptor instead.
 func (*ResumeCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{13}
 }
 
 type RunCronReportRequest struct {
@@ -711,7 +711,7 @@ type RunCronReportRequest struct {
 func (x *RunCronReportRequest) Reset() {
 	*x = RunCronReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -724,7 +724,7 @@ func (x *RunCronReportRequest) String() string {
 func (*RunCronReportRequest) ProtoMessage() {}
 
 func (x *RunCronReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -737,7 +737,7 @@ func (x *RunCronReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronReportRequest.ProtoReflect.Descriptor instead.
 func (*RunCronReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RunCronReportRequest) GetItem() *v1alpha1.CronReport {
@@ -756,7 +756,7 @@ type RunCronReportResponse struct {
 func (x *RunCronReportResponse) Reset() {
 	*x = RunCronReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -769,7 +769,7 @@ func (x *RunCronReportResponse) String() string {
 func (*RunCronReportResponse) ProtoMessage() {}
 
 func (x *RunCronReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -782,12 +782,12 @@ func (x *RunCronReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronReportResponse.ProtoReflect.Descriptor instead.
 func (*RunCronReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP(), []int{15}
 }
 
-var File_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x72, 0x65, 0x70,
@@ -1000,62 +1000,62 @@ var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescData = file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescData = file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
-var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_goTypes = []interface{}{
-	(*ListCronReportsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest
-	(*ListCronReportsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsResponse
-	(*CreateCronReportResponse)(nil), // 2: github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportResponse
-	(*CreateCronReportRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportRequest
-	(*UpdateCronReportRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportRequest
-	(*UpdateCronReportResponse)(nil), // 5: github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportResponse
-	(*GetCronReportRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportRequest
-	(*GetCronReportResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportResponse
-	(*DeleteCronReportRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportRequest
-	(*DeleteCronReportResponse)(nil), // 9: github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportResponse
-	(*PauseCronReportRequest)(nil),   // 10: github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest
-	(*PauseCronReportResponse)(nil),  // 11: github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportResponse
-	(*ResumeCronReportRequest)(nil),  // 12: github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest
-	(*ResumeCronReportResponse)(nil), // 13: github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportResponse
-	(*RunCronReportRequest)(nil),     // 14: github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest
-	(*RunCronReportResponse)(nil),    // 15: github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportResponse
-	nil,                              // 16: github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry
-	(*v1alpha1.CronReportList)(nil),  // 17: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportList
-	(*v1alpha1.CronReport)(nil),      // 18: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport
+var file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_goTypes = []interface{}{
+	(*ListCronReportsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRequest
+	(*ListCronReportsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsResponse
+	(*CreateCronReportResponse)(nil), // 2: github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportResponse
+	(*CreateCronReportRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest
+	(*UpdateCronReportRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest
+	(*UpdateCronReportResponse)(nil), // 5: github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportResponse
+	(*GetCronReportRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportRequest
+	(*GetCronReportResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
+	(*DeleteCronReportRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.cronreport.v1.DeleteCronReportRequest
+	(*DeleteCronReportResponse)(nil), // 9: github.com.metaprov.modelaapi.services.cronreport.v1.DeleteCronReportResponse
+	(*PauseCronReportRequest)(nil),   // 10: github.com.metaprov.modelaapi.services.cronreport.v1.PauseCronReportRequest
+	(*PauseCronReportResponse)(nil),  // 11: github.com.metaprov.modelaapi.services.cronreport.v1.PauseCronReportResponse
+	(*ResumeCronReportRequest)(nil),  // 12: github.com.metaprov.modelaapi.services.cronreport.v1.ResumeCronReportRequest
+	(*ResumeCronReportResponse)(nil), // 13: github.com.metaprov.modelaapi.services.cronreport.v1.ResumeCronReportResponse
+	(*RunCronReportRequest)(nil),     // 14: github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest
+	(*RunCronReportResponse)(nil),    // 15: github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportResponse
+	nil,                              // 16: github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry
+	(*v1alpha1.CronReportList)(nil),  // 17: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList
+	(*v1alpha1.CronReport)(nil),      // 18: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport
 }
-var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_depIdxs = []int32{
-	16, // 0: github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry
-	17, // 1: github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportList
-	18, // 2: github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport
-	18, // 3: github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport
-	18, // 4: github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport
-	18, // 5: github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport
-	0,  // 6: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.ListCronReports:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.CreateCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportRequest
-	6,  // 8: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.GetCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportRequest
-	4,  // 9: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.UpdateCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportRequest
-	8,  // 10: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.DeleteCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportRequest
-	14, // 11: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.RunReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportRequest
-	10, // 12: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.PauseCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportRequest
-	12, // 13: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.ResumeCronReport:input_type -> github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportRequest
-	1,  // 14: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.ListCronReports:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.ListCronReportsResponse
-	2,  // 15: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.CreateCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.CreateCronReportResponse
-	7,  // 16: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.GetCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.GetCronReportResponse
-	5,  // 17: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.UpdateCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.UpdateCronReportResponse
-	9,  // 18: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.DeleteCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.DeleteCronReportResponse
-	15, // 19: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.RunReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.RunCronReportResponse
-	11, // 20: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.PauseCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.PauseCronReportResponse
-	13, // 21: github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService.ResumeCronReport:output_type -> github.com.metaprov.modeldapi.services.cronreport.v1.ResumeCronReportResponse
+var file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_depIdxs = []int32{
+	16, // 0: github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRequest.LabelsEntry
+	17, // 1: github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList
+	18, // 2: github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport
+	18, // 3: github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport
+	18, // 4: github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport
+	18, // 5: github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport
+	0,  // 6: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.ListCronReports:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.CreateCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportRequest
+	6,  // 8: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.GetCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportRequest
+	4,  // 9: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.UpdateCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportRequest
+	8,  // 10: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.DeleteCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.DeleteCronReportRequest
+	14, // 11: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.RunReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportRequest
+	10, // 12: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.PauseCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.PauseCronReportRequest
+	12, // 13: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.ResumeCronReport:input_type -> github.com.metaprov.modelaapi.services.cronreport.v1.ResumeCronReportRequest
+	1,  // 14: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.ListCronReports:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.ListCronReportsResponse
+	2,  // 15: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.CreateCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.CreateCronReportResponse
+	7,  // 16: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.GetCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.GetCronReportResponse
+	5,  // 17: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.UpdateCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.UpdateCronReportResponse
+	9,  // 18: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.DeleteCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.DeleteCronReportResponse
+	15, // 19: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.RunReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.RunCronReportResponse
+	11, // 20: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.PauseCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.PauseCronReportResponse
+	13, // 21: github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService.ResumeCronReport:output_type -> github.com.metaprov.modelaapi.services.cronreport.v1.ResumeCronReportResponse
 	14, // [14:22] is the sub-list for method output_type
 	6,  // [6:14] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1063,13 +1063,13 @@ var file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_d
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_init() }
-func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_init() }
+func file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCronReportsRequest); i {
 			case 0:
 				return &v.state
@@ -1081,7 +1081,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCronReportsResponse); i {
 			case 0:
 				return &v.state
@@ -1093,7 +1093,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1105,7 +1105,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1117,7 +1117,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1129,7 +1129,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1141,7 +1141,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1153,7 +1153,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1165,7 +1165,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1177,7 +1177,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1189,7 +1189,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1201,7 +1201,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1213,7 +1213,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1225,7 +1225,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1237,7 +1237,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronReportRequest); i {
 			case 0:
 				return &v.state
@@ -1249,7 +1249,7 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronReportResponse); i {
 			case 0:
 				return &v.state
@@ -1266,20 +1266,20 @@ func file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto = out.File
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto = out.File
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1314,7 +1314,7 @@ func NewCronReportServiceClient(cc grpc.ClientConnInterface) CronReportServiceCl
 
 func (c *cronReportServiceClient) ListCronReports(ctx context.Context, in *ListCronReportsRequest, opts ...grpc.CallOption) (*ListCronReportsResponse, error) {
 	out := new(ListCronReportsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ListCronReports", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ListCronReports", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1323,7 +1323,7 @@ func (c *cronReportServiceClient) ListCronReports(ctx context.Context, in *ListC
 
 func (c *cronReportServiceClient) CreateCronReport(ctx context.Context, in *CreateCronReportRequest, opts ...grpc.CallOption) (*CreateCronReportResponse, error) {
 	out := new(CreateCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/CreateCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/CreateCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1332,7 +1332,7 @@ func (c *cronReportServiceClient) CreateCronReport(ctx context.Context, in *Crea
 
 func (c *cronReportServiceClient) GetCronReport(ctx context.Context, in *GetCronReportRequest, opts ...grpc.CallOption) (*GetCronReportResponse, error) {
 	out := new(GetCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/GetCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/GetCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1341,7 +1341,7 @@ func (c *cronReportServiceClient) GetCronReport(ctx context.Context, in *GetCron
 
 func (c *cronReportServiceClient) UpdateCronReport(ctx context.Context, in *UpdateCronReportRequest, opts ...grpc.CallOption) (*UpdateCronReportResponse, error) {
 	out := new(UpdateCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/UpdateCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/UpdateCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1350,7 +1350,7 @@ func (c *cronReportServiceClient) UpdateCronReport(ctx context.Context, in *Upda
 
 func (c *cronReportServiceClient) DeleteCronReport(ctx context.Context, in *DeleteCronReportRequest, opts ...grpc.CallOption) (*DeleteCronReportResponse, error) {
 	out := new(DeleteCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/DeleteCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/DeleteCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1359,7 +1359,7 @@ func (c *cronReportServiceClient) DeleteCronReport(ctx context.Context, in *Dele
 
 func (c *cronReportServiceClient) RunReport(ctx context.Context, in *RunCronReportRequest, opts ...grpc.CallOption) (*RunCronReportResponse, error) {
 	out := new(RunCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/RunReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/RunReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1368,7 +1368,7 @@ func (c *cronReportServiceClient) RunReport(ctx context.Context, in *RunCronRepo
 
 func (c *cronReportServiceClient) PauseCronReport(ctx context.Context, in *PauseCronReportRequest, opts ...grpc.CallOption) (*PauseCronReportResponse, error) {
 	out := new(PauseCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/PauseCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1377,7 +1377,7 @@ func (c *cronReportServiceClient) PauseCronReport(ctx context.Context, in *Pause
 
 func (c *cronReportServiceClient) ResumeCronReport(ctx context.Context, in *ResumeCronReportRequest, opts ...grpc.CallOption) (*ResumeCronReportResponse, error) {
 	out := new(ResumeCronReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ResumeCronReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1439,7 +1439,7 @@ func _CronReportService_ListCronReports_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ListCronReports",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ListCronReports",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).ListCronReports(ctx, req.(*ListCronReportsRequest))
@@ -1457,7 +1457,7 @@ func _CronReportService_CreateCronReport_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/CreateCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/CreateCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).CreateCronReport(ctx, req.(*CreateCronReportRequest))
@@ -1475,7 +1475,7 @@ func _CronReportService_GetCronReport_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/GetCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/GetCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).GetCronReport(ctx, req.(*GetCronReportRequest))
@@ -1493,7 +1493,7 @@ func _CronReportService_UpdateCronReport_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/UpdateCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/UpdateCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).UpdateCronReport(ctx, req.(*UpdateCronReportRequest))
@@ -1511,7 +1511,7 @@ func _CronReportService_DeleteCronReport_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/DeleteCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/DeleteCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).DeleteCronReport(ctx, req.(*DeleteCronReportRequest))
@@ -1529,7 +1529,7 @@ func _CronReportService_RunReport_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/RunReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/RunReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).RunReport(ctx, req.(*RunCronReportRequest))
@@ -1547,7 +1547,7 @@ func _CronReportService_PauseCronReport_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/PauseCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).PauseCronReport(ctx, req.(*PauseCronReportRequest))
@@ -1565,7 +1565,7 @@ func _CronReportService_ResumeCronReport_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ResumeCronReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronReportServiceServer).ResumeCronReport(ctx, req.(*ResumeCronReportRequest))
@@ -1574,7 +1574,7 @@ func _CronReportService_ResumeCronReport_Handler(srv interface{}, ctx context.Co
 }
 
 var _CronReportService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService",
+	ServiceName: "github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService",
 	HandlerType: (*CronReportServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1611,5 +1611,5 @@ var _CronReportService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/cronreport/v1/cronreport.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/cronreport/v1/cronreport.proto",
 }

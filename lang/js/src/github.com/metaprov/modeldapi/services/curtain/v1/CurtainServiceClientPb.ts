@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.curtain.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.curtain.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb from '../../../../../../github.com/metaprov/modeldapi/services/curtain/v1/curtain_pb';
+import * as github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb from '../../../../../../github.com/metaprov/modelaapi/services/curtain/v1/curtain_pb';
 
 
 export class CurtainServiceClient {
@@ -36,32 +36,32 @@ export class CurtainServiceClient {
   }
 
   methodInfoListCurtains = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse,
-    (request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsRequest) => {
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse,
+    (request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse.deserializeBinary
   );
 
   listCurtains(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse>;
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse>;
 
   listCurtains(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse>;
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse>;
 
   listCurtains(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.ListCurtainsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.ListCurtainsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
+          '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/ListCurtains',
         request,
         metadata || {},
         this.methodInfoListCurtains,
@@ -69,39 +69,39 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/ListCurtains',
+      '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/ListCurtains',
     request,
     metadata || {},
     this.methodInfoListCurtains);
   }
 
   methodInfoCreateCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse,
-    (request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainRequest) => {
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse,
+    (request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse.deserializeBinary
   );
 
   createCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse>;
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse>;
 
   createCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse>;
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse>;
 
   createCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.CreateCurtainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.CreateCurtainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
+          '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/CreateCurtain',
         request,
         metadata || {},
         this.methodInfoCreateCurtain,
@@ -109,39 +109,39 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/CreateCurtain',
+      '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/CreateCurtain',
     request,
     metadata || {},
     this.methodInfoCreateCurtain);
   }
 
   methodInfoGetCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse,
-    (request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainRequest) => {
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse,
+    (request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse.deserializeBinary
   );
 
   getCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse>;
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse>;
 
   getCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse>;
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse>;
 
   getCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.GetCurtainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.GetCurtainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
+          '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/GetCurtain',
         request,
         metadata || {},
         this.methodInfoGetCurtain,
@@ -149,39 +149,39 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/GetCurtain',
+      '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/GetCurtain',
     request,
     metadata || {},
     this.methodInfoGetCurtain);
   }
 
   methodInfoUpdateCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse,
-    (request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest) => {
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse,
+    (request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse.deserializeBinary
   );
 
   updateCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse>;
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse>;
 
   updateCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse>;
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse>;
 
   updateCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.UpdateCurtainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
+          '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/UpdateCurtain',
         request,
         metadata || {},
         this.methodInfoUpdateCurtain,
@@ -189,39 +189,39 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/UpdateCurtain',
+      '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/UpdateCurtain',
     request,
     metadata || {},
     this.methodInfoUpdateCurtain);
   }
 
   methodInfoDeleteCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse,
-    (request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest) => {
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse,
+    (request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse.deserializeBinary
   );
 
   deleteCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse>;
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse>;
 
   deleteCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse>;
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse>;
 
   deleteCurtain(
-    request: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
+    request: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_curtain_v1_curtain_pb.DeleteCurtainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
+          '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/DeleteCurtain',
         request,
         metadata || {},
         this.methodInfoDeleteCurtain,
@@ -229,7 +229,7 @@ export class CurtainServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.curtain.v1.CurtainService/DeleteCurtain',
+      '/github.com.metaprov.modelaapi.services.curtain.v1.CurtainService/DeleteCurtain',
     request,
     metadata || {},
     this.methodInfoDeleteCurtain);

@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/commit/v1/commit.proto
+// source: github.com/metaprov/modelaapi/services/commit/v1/commit.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListCommitsRequest struct {
 func (x *ListCommitsRequest) Reset() {
 	*x = ListCommitsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListCommitsRequest) String() string {
 func (*ListCommitsRequest) ProtoMessage() {}
 
 func (x *ListCommitsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListCommitsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCommitsRequest.ProtoReflect.Descriptor instead.
 func (*ListCommitsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListCommitsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListCommitsResponse struct {
 func (x *ListCommitsResponse) Reset() {
 	*x = ListCommitsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListCommitsResponse) String() string {
 func (*ListCommitsResponse) ProtoMessage() {}
 
 func (x *ListCommitsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListCommitsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCommitsResponse.ProtoReflect.Descriptor instead.
 func (*ListCommitsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListCommitsResponse) GetItems() *v1alpha1.CommitList {
@@ -143,7 +143,7 @@ type CommitResponse struct {
 func (x *CommitResponse) Reset() {
 	*x = CommitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *CommitResponse) String() string {
 func (*CommitResponse) ProtoMessage() {}
 
 func (x *CommitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *CommitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommitResponse.ProtoReflect.Descriptor instead.
 func (*CommitResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateCommitRequest struct {
@@ -184,7 +184,7 @@ type CreateCommitRequest struct {
 func (x *CreateCommitRequest) Reset() {
 	*x = CreateCommitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateCommitRequest) String() string {
 func (*CreateCommitRequest) ProtoMessage() {}
 
 func (x *CreateCommitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateCommitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCommitRequest.ProtoReflect.Descriptor instead.
 func (*CreateCommitRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateCommitRequest) GetItem() *v1alpha1.Commit {
@@ -236,7 +236,7 @@ type CreateCommitResponse struct {
 func (x *CreateCommitResponse) Reset() {
 	*x = CreateCommitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateCommitResponse) String() string {
 func (*CreateCommitResponse) ProtoMessage() {}
 
 func (x *CreateCommitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateCommitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCommitResponse.ProtoReflect.Descriptor instead.
 func (*CreateCommitResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateCommitRequest struct {
@@ -276,7 +276,7 @@ type UpdateCommitRequest struct {
 func (x *UpdateCommitRequest) Reset() {
 	*x = UpdateCommitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateCommitRequest) String() string {
 func (*UpdateCommitRequest) ProtoMessage() {}
 
 func (x *UpdateCommitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateCommitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCommitRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCommitRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateCommitRequest) GetItem() *v1alpha1.Commit {
@@ -321,7 +321,7 @@ type UpdateCommitResponse struct {
 func (x *UpdateCommitResponse) Reset() {
 	*x = UpdateCommitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateCommitResponse) String() string {
 func (*UpdateCommitResponse) ProtoMessage() {}
 
 func (x *UpdateCommitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateCommitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCommitResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCommitResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{6}
 }
 
 type GetCommitRequest struct {
@@ -362,7 +362,7 @@ type GetCommitRequest struct {
 func (x *GetCommitRequest) Reset() {
 	*x = GetCommitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetCommitRequest) String() string {
 func (*GetCommitRequest) ProtoMessage() {}
 
 func (x *GetCommitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetCommitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommitRequest.ProtoReflect.Descriptor instead.
 func (*GetCommitRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCommitRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetCommitResponse struct {
 func (x *GetCommitResponse) Reset() {
 	*x = GetCommitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetCommitResponse) String() string {
 func (*GetCommitResponse) ProtoMessage() {}
 
 func (x *GetCommitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetCommitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommitResponse.ProtoReflect.Descriptor instead.
 func (*GetCommitResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetCommitResponse) GetItem() *v1alpha1.Commit {
@@ -472,7 +472,7 @@ type GetCommitNamespacesRequest struct {
 func (x *GetCommitNamespacesRequest) Reset() {
 	*x = GetCommitNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetCommitNamespacesRequest) String() string {
 func (*GetCommitNamespacesRequest) ProtoMessage() {}
 
 func (x *GetCommitNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetCommitNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommitNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetCommitNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetCommitNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetCommitNamespacesResponse struct {
 func (x *GetCommitNamespacesResponse) Reset() {
 	*x = GetCommitNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetCommitNamespacesResponse) String() string {
 func (*GetCommitNamespacesResponse) ProtoMessage() {}
 
 func (x *GetCommitNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetCommitNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommitNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetCommitNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetCommitNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteCommitRequest struct {
 func (x *DeleteCommitRequest) Reset() {
 	*x = DeleteCommitRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteCommitRequest) String() string {
 func (*DeleteCommitRequest) ProtoMessage() {}
 
 func (x *DeleteCommitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteCommitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCommitRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCommitRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteCommitRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteCommitResponse struct {
 func (x *DeleteCommitResponse) Reset() {
 	*x = DeleteCommitResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteCommitResponse) String() string {
 func (*DeleteCommitResponse) ProtoMessage() {}
 
 func (x *DeleteCommitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteCommitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCommitResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCommitResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{12}
 }
 
 type CommitCreateResponse struct {
@@ -664,7 +664,7 @@ type CommitCreateResponse struct {
 func (x *CommitCreateResponse) Reset() {
 	*x = CommitCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *CommitCreateResponse) String() string {
 func (*CommitCreateResponse) ProtoMessage() {}
 
 func (x *CommitCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,12 +690,12 @@ func (x *CommitCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommitCreateResponse.ProtoReflect.Descriptor instead.
 func (*CommitCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP(), []int{13}
 }
 
-var File_github_com_metaprov_modeldapi_services_commit_v1_commit_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_commit_v1_commit_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x69, 0x74, 0x2f,
@@ -857,55 +857,55 @@ var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescData = file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescData = file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_goTypes = []interface{}{
-	(*ListCommitsRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.commit.v1.ListCommitsRequest
-	(*ListCommitsResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.commit.v1.ListCommitsResponse
-	(*CommitResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.commit.v1.CommitResponse
-	(*CreateCommitRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.commit.v1.CreateCommitRequest
-	(*CreateCommitResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.commit.v1.CreateCommitResponse
-	(*UpdateCommitRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.commit.v1.UpdateCommitRequest
-	(*UpdateCommitResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.commit.v1.UpdateCommitResponse
-	(*GetCommitRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.commit.v1.GetCommitRequest
-	(*GetCommitResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.commit.v1.GetCommitResponse
-	(*GetCommitNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.commit.v1.GetCommitNamespacesRequest
-	(*GetCommitNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.commit.v1.GetCommitNamespacesResponse
-	(*DeleteCommitRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.commit.v1.DeleteCommitRequest
-	(*DeleteCommitResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.commit.v1.DeleteCommitResponse
-	(*CommitCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.commit.v1.CommitCreateResponse
-	nil,                                 // 14: github.com.metaprov.modeldapi.services.commit.v1.ListCommitsRequest.LabelsEntry
-	(*v1alpha1.CommitList)(nil),         // 15: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitList
-	(*v1alpha1.Commit)(nil),             // 16: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit
-	(*v1.NamespaceInfo)(nil),            // 17: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_goTypes = []interface{}{
+	(*ListCommitsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest
+	(*ListCommitsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.commit.v1.ListCommitsResponse
+	(*CommitResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.commit.v1.CommitResponse
+	(*CreateCommitRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.commit.v1.CreateCommitRequest
+	(*CreateCommitResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.commit.v1.CreateCommitResponse
+	(*UpdateCommitRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest
+	(*UpdateCommitResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitResponse
+	(*GetCommitRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.commit.v1.GetCommitRequest
+	(*GetCommitResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse
+	(*GetCommitNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.commit.v1.GetCommitNamespacesRequest
+	(*GetCommitNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.commit.v1.GetCommitNamespacesResponse
+	(*DeleteCommitRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitRequest
+	(*DeleteCommitResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitResponse
+	(*CommitCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.commit.v1.CommitCreateResponse
+	nil,                                 // 14: github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest.LabelsEntry
+	(*v1alpha1.CommitList)(nil),         // 15: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList
+	(*v1alpha1.Commit)(nil),             // 16: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit
+	(*v1.NamespaceInfo)(nil),            // 17: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.commit.v1.ListCommitsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.commit.v1.ListCommitsRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.commit.v1.ListCommitsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.CommitList
-	16, // 2: github.com.metaprov.modeldapi.services.commit.v1.CreateCommitRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit
-	16, // 3: github.com.metaprov.modeldapi.services.commit.v1.UpdateCommitRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit
-	16, // 4: github.com.metaprov.modeldapi.services.commit.v1.GetCommitResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit
-	17, // 5: github.com.metaprov.modeldapi.services.commit.v1.GetCommitNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.commit.v1.CommitService.ListCommits:input_type -> github.com.metaprov.modeldapi.services.commit.v1.ListCommitsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.commit.v1.CommitService.CreateCommit:input_type -> github.com.metaprov.modeldapi.services.commit.v1.CreateCommitRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.commit.v1.CommitService.GetCommit:input_type -> github.com.metaprov.modeldapi.services.commit.v1.GetCommitRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.commit.v1.CommitService.UpdateCommit:input_type -> github.com.metaprov.modeldapi.services.commit.v1.UpdateCommitRequest
-	11, // 10: github.com.metaprov.modeldapi.services.commit.v1.CommitService.DeleteCommit:input_type -> github.com.metaprov.modeldapi.services.commit.v1.DeleteCommitRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.commit.v1.CommitService.ListCommits:output_type -> github.com.metaprov.modeldapi.services.commit.v1.ListCommitsResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.commit.v1.CommitService.CreateCommit:output_type -> github.com.metaprov.modeldapi.services.commit.v1.CreateCommitResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.commit.v1.CommitService.GetCommit:output_type -> github.com.metaprov.modeldapi.services.commit.v1.GetCommitResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.commit.v1.CommitService.UpdateCommit:output_type -> github.com.metaprov.modeldapi.services.commit.v1.UpdateCommitResponse
-	12, // 15: github.com.metaprov.modeldapi.services.commit.v1.CommitService.DeleteCommit:output_type -> github.com.metaprov.modeldapi.services.commit.v1.DeleteCommitResponse
+var file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.commit.v1.ListCommitsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList
+	16, // 2: github.com.metaprov.modelaapi.services.commit.v1.CreateCommitRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit
+	16, // 3: github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit
+	16, // 4: github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit
+	17, // 5: github.com.metaprov.modelaapi.services.commit.v1.GetCommitNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.commit.v1.CommitService.ListCommits:input_type -> github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.commit.v1.CommitService.CreateCommit:input_type -> github.com.metaprov.modelaapi.services.commit.v1.CreateCommitRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.commit.v1.CommitService.GetCommit:input_type -> github.com.metaprov.modelaapi.services.commit.v1.GetCommitRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.commit.v1.CommitService.UpdateCommit:input_type -> github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest
+	11, // 10: github.com.metaprov.modelaapi.services.commit.v1.CommitService.DeleteCommit:input_type -> github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.commit.v1.CommitService.ListCommits:output_type -> github.com.metaprov.modelaapi.services.commit.v1.ListCommitsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.commit.v1.CommitService.CreateCommit:output_type -> github.com.metaprov.modelaapi.services.commit.v1.CreateCommitResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.commit.v1.CommitService.GetCommit:output_type -> github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.commit.v1.CommitService.UpdateCommit:output_type -> github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitResponse
+	12, // 15: github.com.metaprov.modelaapi.services.commit.v1.CommitService.DeleteCommit:output_type -> github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -913,13 +913,13 @@ var file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_depIdxs =
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() }
-func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_commit_v1_commit_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_init() }
+func file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_commit_v1_commit_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCommitsRequest); i {
 			case 0:
 				return &v.state
@@ -931,7 +931,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCommitsResponse); i {
 			case 0:
 				return &v.state
@@ -943,7 +943,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CommitResponse); i {
 			case 0:
 				return &v.state
@@ -955,7 +955,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCommitRequest); i {
 			case 0:
 				return &v.state
@@ -967,7 +967,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCommitResponse); i {
 			case 0:
 				return &v.state
@@ -979,7 +979,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCommitRequest); i {
 			case 0:
 				return &v.state
@@ -991,7 +991,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCommitResponse); i {
 			case 0:
 				return &v.state
@@ -1003,7 +1003,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommitRequest); i {
 			case 0:
 				return &v.state
@@ -1015,7 +1015,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommitResponse); i {
 			case 0:
 				return &v.state
@@ -1027,7 +1027,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommitNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1039,7 +1039,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCommitNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1051,7 +1051,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCommitRequest); i {
 			case 0:
 				return &v.state
@@ -1063,7 +1063,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCommitResponse); i {
 			case 0:
 				return &v.state
@@ -1075,7 +1075,7 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CommitCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1092,20 +1092,20 @@ func file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_commit_v1_commit_proto = out.File
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_commit_v1_commit_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_commit_v1_commit_proto = out.File
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_commit_v1_commit_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1137,7 +1137,7 @@ func NewCommitServiceClient(cc grpc.ClientConnInterface) CommitServiceClient {
 
 func (c *commitServiceClient) ListCommits(ctx context.Context, in *ListCommitsRequest, opts ...grpc.CallOption) (*ListCommitsResponse, error) {
 	out := new(ListCommitsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/ListCommits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/ListCommits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1146,7 +1146,7 @@ func (c *commitServiceClient) ListCommits(ctx context.Context, in *ListCommitsRe
 
 func (c *commitServiceClient) CreateCommit(ctx context.Context, in *CreateCommitRequest, opts ...grpc.CallOption) (*CreateCommitResponse, error) {
 	out := new(CreateCommitResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/CreateCommit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/CreateCommit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1155,7 +1155,7 @@ func (c *commitServiceClient) CreateCommit(ctx context.Context, in *CreateCommit
 
 func (c *commitServiceClient) GetCommit(ctx context.Context, in *GetCommitRequest, opts ...grpc.CallOption) (*GetCommitResponse, error) {
 	out := new(GetCommitResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/GetCommit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/GetCommit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1164,7 +1164,7 @@ func (c *commitServiceClient) GetCommit(ctx context.Context, in *GetCommitReques
 
 func (c *commitServiceClient) UpdateCommit(ctx context.Context, in *UpdateCommitRequest, opts ...grpc.CallOption) (*UpdateCommitResponse, error) {
 	out := new(UpdateCommitResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/UpdateCommit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/UpdateCommit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1173,7 +1173,7 @@ func (c *commitServiceClient) UpdateCommit(ctx context.Context, in *UpdateCommit
 
 func (c *commitServiceClient) DeleteCommit(ctx context.Context, in *DeleteCommitRequest, opts ...grpc.CallOption) (*DeleteCommitResponse, error) {
 	out := new(DeleteCommitResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/DeleteCommit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/DeleteCommit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1223,7 +1223,7 @@ func _CommitService_ListCommits_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/ListCommits",
+		FullMethod: "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/ListCommits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CommitServiceServer).ListCommits(ctx, req.(*ListCommitsRequest))
@@ -1241,7 +1241,7 @@ func _CommitService_CreateCommit_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/CreateCommit",
+		FullMethod: "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/CreateCommit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CommitServiceServer).CreateCommit(ctx, req.(*CreateCommitRequest))
@@ -1259,7 +1259,7 @@ func _CommitService_GetCommit_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/GetCommit",
+		FullMethod: "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/GetCommit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CommitServiceServer).GetCommit(ctx, req.(*GetCommitRequest))
@@ -1277,7 +1277,7 @@ func _CommitService_UpdateCommit_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/UpdateCommit",
+		FullMethod: "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/UpdateCommit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CommitServiceServer).UpdateCommit(ctx, req.(*UpdateCommitRequest))
@@ -1295,7 +1295,7 @@ func _CommitService_DeleteCommit_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.commit.v1.CommitService/DeleteCommit",
+		FullMethod: "/github.com.metaprov.modelaapi.services.commit.v1.CommitService/DeleteCommit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CommitServiceServer).DeleteCommit(ctx, req.(*DeleteCommitRequest))
@@ -1304,7 +1304,7 @@ func _CommitService_DeleteCommit_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _CommitService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.commit.v1.CommitService",
+	ServiceName: "github.com.metaprov.modelaapi.services.commit.v1.CommitService",
 	HandlerType: (*CommitServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1329,5 +1329,5 @@ var _CommitService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/commit/v1/commit.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/commit/v1/commit.proto",
 }

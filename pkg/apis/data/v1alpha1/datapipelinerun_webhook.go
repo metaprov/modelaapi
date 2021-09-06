@@ -52,7 +52,7 @@ var _ webhook.Defaulter = &DataPipelineRun{}
 func (run *DataPipelineRun) Default() {
 	//if run.Spec.DataLocation
 	//if run.Spec.DataLocation.Path == "" {
-	//	run.Spec.DataLocation.Path = "modeld/live/tenants/default-tenant/dataproducts/" + run.Namespace +
+	//	run.Spec.DataLocation.Path = "modela/live/tenants/default-tenant/dataproducts/" + run.Namespace +
 	//		"/dataproductversions/" +
 	//		*run.Spec.VersionName +
 	//		"/datapipelines/" + *run.Spec.DataPipelineName + "/runs/" + run.Name

@@ -34,7 +34,7 @@ type LabCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=labs,singular=lab,categories={infra,modeld,all}
+// +kubebuilder:resource:path=labs,singular=lab,categories={infra,modela,all}
 // +kubebuilder:subresource:status
 type Lab struct {
 	metav1.TypeMeta   `json:",inline"`

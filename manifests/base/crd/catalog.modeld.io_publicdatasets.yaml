@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: publicdatasets.catalog.modeld.io
+  name: publicdatasets.catalog.modela.io
 spec:
-  group: catalog.modeld.io
+  group: catalog.modela.io
   names:
     categories:
     - catalog
-    - modeld
+    - modela
     - all
     kind: PublicDataset
     listKind: PublicDatasetList

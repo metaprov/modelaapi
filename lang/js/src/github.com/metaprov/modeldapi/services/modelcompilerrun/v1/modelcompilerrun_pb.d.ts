@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 
 
 export class ListModelCompilerRunsRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListModelCompilerRunsRequest {
 }
 
 export class ListModelCompilerRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList): ListModelCompilerRunsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList): ListModelCompilerRunsResponse;
   hasItems(): boolean;
   clearItems(): ListModelCompilerRunsResponse;
 
@@ -42,7 +42,7 @@ export class ListModelCompilerRunsResponse extends jspb.Message {
 
 export namespace ListModelCompilerRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList.AsObject,
   }
 }
 
@@ -61,8 +61,8 @@ export namespace ModelCompilerRunResponse {
 }
 
 export class CreateModelCompilerRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): CreateModelCompilerRunRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): CreateModelCompilerRunRequest;
   hasItem(): boolean;
   clearItem(): CreateModelCompilerRunRequest;
 
@@ -76,7 +76,7 @@ export class CreateModelCompilerRunRequest extends jspb.Message {
 
 export namespace CreateModelCompilerRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
   }
 }
 
@@ -95,8 +95,8 @@ export namespace CreateModelCompilerRunResponse {
 }
 
 export class UpdateModelCompilerRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): UpdateModelCompilerRunRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): UpdateModelCompilerRunRequest;
   hasItem(): boolean;
   clearItem(): UpdateModelCompilerRunRequest;
 
@@ -110,7 +110,7 @@ export class UpdateModelCompilerRunRequest extends jspb.Message {
 
 export namespace UpdateModelCompilerRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
   }
 }
 
@@ -151,8 +151,8 @@ export namespace GetModelCompilerRunRequest {
 }
 
 export class GetModelCompilerRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): GetModelCompilerRunResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): GetModelCompilerRunResponse;
   hasItem(): boolean;
   clearItem(): GetModelCompilerRunResponse;
 
@@ -169,7 +169,7 @@ export class GetModelCompilerRunResponse extends jspb.Message {
 
 export namespace GetModelCompilerRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
     yaml: string,
   }
 }

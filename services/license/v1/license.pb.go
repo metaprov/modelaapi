@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/license/v1/license.proto
+// source: github.com/metaprov/modelaapi/services/license/v1/license.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListLicensesRequest struct {
 func (x *ListLicensesRequest) Reset() {
 	*x = ListLicensesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListLicensesRequest) String() string {
 func (*ListLicensesRequest) ProtoMessage() {}
 
 func (x *ListLicensesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListLicensesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLicensesRequest.ProtoReflect.Descriptor instead.
 func (*ListLicensesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListLicensesRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListLicensesResponse struct {
 func (x *ListLicensesResponse) Reset() {
 	*x = ListLicensesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListLicensesResponse) String() string {
 func (*ListLicensesResponse) ProtoMessage() {}
 
 func (x *ListLicensesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListLicensesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLicensesResponse.ProtoReflect.Descriptor instead.
 func (*ListLicensesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListLicensesResponse) GetItems() *v1alpha1.LicenseList {
@@ -143,7 +143,7 @@ type LicenseResponse struct {
 func (x *LicenseResponse) Reset() {
 	*x = LicenseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *LicenseResponse) String() string {
 func (*LicenseResponse) ProtoMessage() {}
 
 func (x *LicenseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *LicenseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LicenseResponse.ProtoReflect.Descriptor instead.
 func (*LicenseResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateLicenseRequest struct {
@@ -183,7 +183,7 @@ type CreateLicenseRequest struct {
 func (x *CreateLicenseRequest) Reset() {
 	*x = CreateLicenseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateLicenseRequest) String() string {
 func (*CreateLicenseRequest) ProtoMessage() {}
 
 func (x *CreateLicenseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateLicenseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLicenseRequest.ProtoReflect.Descriptor instead.
 func (*CreateLicenseRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateLicenseRequest) GetItem() *v1alpha1.License {
@@ -230,7 +230,7 @@ type CreateLicenseFromKeyRequest struct {
 func (x *CreateLicenseFromKeyRequest) Reset() {
 	*x = CreateLicenseFromKeyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -243,7 +243,7 @@ func (x *CreateLicenseFromKeyRequest) String() string {
 func (*CreateLicenseFromKeyRequest) ProtoMessage() {}
 
 func (x *CreateLicenseFromKeyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +256,7 @@ func (x *CreateLicenseFromKeyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLicenseFromKeyRequest.ProtoReflect.Descriptor instead.
 func (*CreateLicenseFromKeyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateLicenseFromKeyRequest) GetKey() string {
@@ -275,7 +275,7 @@ type CreateLicenseResponse struct {
 func (x *CreateLicenseResponse) Reset() {
 	*x = CreateLicenseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -288,7 +288,7 @@ func (x *CreateLicenseResponse) String() string {
 func (*CreateLicenseResponse) ProtoMessage() {}
 
 func (x *CreateLicenseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -301,7 +301,7 @@ func (x *CreateLicenseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLicenseResponse.ProtoReflect.Descriptor instead.
 func (*CreateLicenseResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{5}
 }
 
 type UpdateLicenseRequest struct {
@@ -315,7 +315,7 @@ type UpdateLicenseRequest struct {
 func (x *UpdateLicenseRequest) Reset() {
 	*x = UpdateLicenseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *UpdateLicenseRequest) String() string {
 func (*UpdateLicenseRequest) ProtoMessage() {}
 
 func (x *UpdateLicenseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *UpdateLicenseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLicenseRequest.ProtoReflect.Descriptor instead.
 func (*UpdateLicenseRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateLicenseRequest) GetItem() *v1alpha1.License {
@@ -360,7 +360,7 @@ type UpdateLicenseResponse struct {
 func (x *UpdateLicenseResponse) Reset() {
 	*x = UpdateLicenseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -373,7 +373,7 @@ func (x *UpdateLicenseResponse) String() string {
 func (*UpdateLicenseResponse) ProtoMessage() {}
 
 func (x *UpdateLicenseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -386,7 +386,7 @@ func (x *UpdateLicenseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLicenseResponse.ProtoReflect.Descriptor instead.
 func (*UpdateLicenseResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{7}
 }
 
 type GetLicenseRequest struct {
@@ -401,7 +401,7 @@ type GetLicenseRequest struct {
 func (x *GetLicenseRequest) Reset() {
 	*x = GetLicenseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -414,7 +414,7 @@ func (x *GetLicenseRequest) String() string {
 func (*GetLicenseRequest) ProtoMessage() {}
 
 func (x *GetLicenseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -427,7 +427,7 @@ func (x *GetLicenseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLicenseRequest.ProtoReflect.Descriptor instead.
 func (*GetLicenseRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetLicenseRequest) GetNamespace() string {
@@ -456,7 +456,7 @@ type GetLicenseResponse struct {
 func (x *GetLicenseResponse) Reset() {
 	*x = GetLicenseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -469,7 +469,7 @@ func (x *GetLicenseResponse) String() string {
 func (*GetLicenseResponse) ProtoMessage() {}
 
 func (x *GetLicenseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -482,7 +482,7 @@ func (x *GetLicenseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLicenseResponse.ProtoReflect.Descriptor instead.
 func (*GetLicenseResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetLicenseResponse) GetLicense() *v1alpha1.License {
@@ -511,7 +511,7 @@ type GetLicenseNamespacesRequest struct {
 func (x *GetLicenseNamespacesRequest) Reset() {
 	*x = GetLicenseNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -524,7 +524,7 @@ func (x *GetLicenseNamespacesRequest) String() string {
 func (*GetLicenseNamespacesRequest) ProtoMessage() {}
 
 func (x *GetLicenseNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -537,7 +537,7 @@ func (x *GetLicenseNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLicenseNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetLicenseNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetLicenseNamespacesRequest) GetNamespace() string {
@@ -565,7 +565,7 @@ type GetLicenseNamespacesResponse struct {
 func (x *GetLicenseNamespacesResponse) Reset() {
 	*x = GetLicenseNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -578,7 +578,7 @@ func (x *GetLicenseNamespacesResponse) String() string {
 func (*GetLicenseNamespacesResponse) ProtoMessage() {}
 
 func (x *GetLicenseNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -591,7 +591,7 @@ func (x *GetLicenseNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLicenseNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetLicenseNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetLicenseNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -613,7 +613,7 @@ type DeleteLicenseRequest struct {
 func (x *DeleteLicenseRequest) Reset() {
 	*x = DeleteLicenseRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -626,7 +626,7 @@ func (x *DeleteLicenseRequest) String() string {
 func (*DeleteLicenseRequest) ProtoMessage() {}
 
 func (x *DeleteLicenseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -639,7 +639,7 @@ func (x *DeleteLicenseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLicenseRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLicenseRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteLicenseRequest) GetNamespace() string {
@@ -665,7 +665,7 @@ type DeleteLicenseResponse struct {
 func (x *DeleteLicenseResponse) Reset() {
 	*x = DeleteLicenseResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -678,7 +678,7 @@ func (x *DeleteLicenseResponse) String() string {
 func (*DeleteLicenseResponse) ProtoMessage() {}
 
 func (x *DeleteLicenseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -691,12 +691,12 @@ func (x *DeleteLicenseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLicenseResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLicenseResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP(), []int{13}
 }
 
-var File_github_com_metaprov_modeldapi_services_license_v1_license_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_license_v1_license_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6c, 0x69, 0x63, 0x65, 0x6e, 0x73, 0x65,
@@ -871,57 +871,57 @@ var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescData = file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescData = file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_goTypes = []interface{}{
-	(*ListLicensesRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.license.v1.ListLicensesRequest
-	(*ListLicensesResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.license.v1.ListLicensesResponse
-	(*LicenseResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.license.v1.LicenseResponse
-	(*CreateLicenseRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest
-	(*CreateLicenseFromKeyRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.license.v1.CreateLicenseFromKeyRequest
-	(*CreateLicenseResponse)(nil),        // 5: github.com.metaprov.modeldapi.services.license.v1.CreateLicenseResponse
-	(*UpdateLicenseRequest)(nil),         // 6: github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest
-	(*UpdateLicenseResponse)(nil),        // 7: github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseResponse
-	(*GetLicenseRequest)(nil),            // 8: github.com.metaprov.modeldapi.services.license.v1.GetLicenseRequest
-	(*GetLicenseResponse)(nil),           // 9: github.com.metaprov.modeldapi.services.license.v1.GetLicenseResponse
-	(*GetLicenseNamespacesRequest)(nil),  // 10: github.com.metaprov.modeldapi.services.license.v1.GetLicenseNamespacesRequest
-	(*GetLicenseNamespacesResponse)(nil), // 11: github.com.metaprov.modeldapi.services.license.v1.GetLicenseNamespacesResponse
-	(*DeleteLicenseRequest)(nil),         // 12: github.com.metaprov.modeldapi.services.license.v1.DeleteLicenseRequest
-	(*DeleteLicenseResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.license.v1.DeleteLicenseResponse
-	nil,                                  // 14: github.com.metaprov.modeldapi.services.license.v1.ListLicensesRequest.LabelsEntry
-	(*v1alpha1.LicenseList)(nil),         // 15: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseList
-	(*v1alpha1.License)(nil),             // 16: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	(*v1.NamespaceInfo)(nil),             // 17: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_license_v1_license_proto_goTypes = []interface{}{
+	(*ListLicensesRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest
+	(*ListLicensesResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse
+	(*LicenseResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.license.v1.LicenseResponse
+	(*CreateLicenseRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest
+	(*CreateLicenseFromKeyRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest
+	(*CreateLicenseResponse)(nil),        // 5: github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse
+	(*UpdateLicenseRequest)(nil),         // 6: github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseRequest
+	(*UpdateLicenseResponse)(nil),        // 7: github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseResponse
+	(*GetLicenseRequest)(nil),            // 8: github.com.metaprov.modelaapi.services.license.v1.GetLicenseRequest
+	(*GetLicenseResponse)(nil),           // 9: github.com.metaprov.modelaapi.services.license.v1.GetLicenseResponse
+	(*GetLicenseNamespacesRequest)(nil),  // 10: github.com.metaprov.modelaapi.services.license.v1.GetLicenseNamespacesRequest
+	(*GetLicenseNamespacesResponse)(nil), // 11: github.com.metaprov.modelaapi.services.license.v1.GetLicenseNamespacesResponse
+	(*DeleteLicenseRequest)(nil),         // 12: github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseRequest
+	(*DeleteLicenseResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseResponse
+	nil,                                  // 14: github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.LabelsEntry
+	(*v1alpha1.LicenseList)(nil),         // 15: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList
+	(*v1alpha1.License)(nil),             // 16: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License
+	(*v1.NamespaceInfo)(nil),             // 17: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.license.v1.ListLicensesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.license.v1.ListLicensesRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.license.v1.ListLicensesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseList
-	16, // 2: github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	16, // 3: github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	16, // 4: github.com.metaprov.modeldapi.services.license.v1.GetLicenseResponse.license:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License
-	17, // 5: github.com.metaprov.modeldapi.services.license.v1.GetLicenseNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.license.v1.LicenseService.ListLicenses:input_type -> github.com.metaprov.modeldapi.services.license.v1.ListLicensesRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.license.v1.LicenseService.CreateLicense:input_type -> github.com.metaprov.modeldapi.services.license.v1.CreateLicenseRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.license.v1.LicenseService.CreateLicenseFromKey:input_type -> github.com.metaprov.modeldapi.services.license.v1.CreateLicenseFromKeyRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.license.v1.LicenseService.GetLicense:input_type -> github.com.metaprov.modeldapi.services.license.v1.GetLicenseRequest
-	6,  // 10: github.com.metaprov.modeldapi.services.license.v1.LicenseService.UpdateLicense:input_type -> github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseRequest
-	12, // 11: github.com.metaprov.modeldapi.services.license.v1.LicenseService.DeleteLicense:input_type -> github.com.metaprov.modeldapi.services.license.v1.DeleteLicenseRequest
-	1,  // 12: github.com.metaprov.modeldapi.services.license.v1.LicenseService.ListLicenses:output_type -> github.com.metaprov.modeldapi.services.license.v1.ListLicensesResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.license.v1.LicenseService.CreateLicense:output_type -> github.com.metaprov.modeldapi.services.license.v1.CreateLicenseResponse
-	5,  // 14: github.com.metaprov.modeldapi.services.license.v1.LicenseService.CreateLicenseFromKey:output_type -> github.com.metaprov.modeldapi.services.license.v1.CreateLicenseResponse
-	9,  // 15: github.com.metaprov.modeldapi.services.license.v1.LicenseService.GetLicense:output_type -> github.com.metaprov.modeldapi.services.license.v1.GetLicenseResponse
-	7,  // 16: github.com.metaprov.modeldapi.services.license.v1.LicenseService.UpdateLicense:output_type -> github.com.metaprov.modeldapi.services.license.v1.UpdateLicenseResponse
-	13, // 17: github.com.metaprov.modeldapi.services.license.v1.LicenseService.DeleteLicense:output_type -> github.com.metaprov.modeldapi.services.license.v1.DeleteLicenseResponse
+var file_github_com_metaprov_modelaapi_services_license_v1_license_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList
+	16, // 2: github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License
+	16, // 3: github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License
+	16, // 4: github.com.metaprov.modelaapi.services.license.v1.GetLicenseResponse.license:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License
+	17, // 5: github.com.metaprov.modelaapi.services.license.v1.GetLicenseNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.license.v1.LicenseService.ListLicenses:input_type -> github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.license.v1.LicenseService.CreateLicense:input_type -> github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.license.v1.LicenseService.CreateLicenseFromKey:input_type -> github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.license.v1.LicenseService.GetLicense:input_type -> github.com.metaprov.modelaapi.services.license.v1.GetLicenseRequest
+	6,  // 10: github.com.metaprov.modelaapi.services.license.v1.LicenseService.UpdateLicense:input_type -> github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseRequest
+	12, // 11: github.com.metaprov.modelaapi.services.license.v1.LicenseService.DeleteLicense:input_type -> github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseRequest
+	1,  // 12: github.com.metaprov.modelaapi.services.license.v1.LicenseService.ListLicenses:output_type -> github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.license.v1.LicenseService.CreateLicense:output_type -> github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse
+	5,  // 14: github.com.metaprov.modelaapi.services.license.v1.LicenseService.CreateLicenseFromKey:output_type -> github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse
+	9,  // 15: github.com.metaprov.modelaapi.services.license.v1.LicenseService.GetLicense:output_type -> github.com.metaprov.modelaapi.services.license.v1.GetLicenseResponse
+	7,  // 16: github.com.metaprov.modelaapi.services.license.v1.LicenseService.UpdateLicense:output_type -> github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseResponse
+	13, // 17: github.com.metaprov.modelaapi.services.license.v1.LicenseService.DeleteLicense:output_type -> github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseResponse
 	12, // [12:18] is the sub-list for method output_type
 	6,  // [6:12] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -929,13 +929,13 @@ var file_github_com_metaprov_modeldapi_services_license_v1_license_proto_depIdxs
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init() }
-func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_license_v1_license_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_license_v1_license_proto_init() }
+func file_github_com_metaprov_modelaapi_services_license_v1_license_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_license_v1_license_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLicensesRequest); i {
 			case 0:
 				return &v.state
@@ -947,7 +947,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLicensesResponse); i {
 			case 0:
 				return &v.state
@@ -959,7 +959,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LicenseResponse); i {
 			case 0:
 				return &v.state
@@ -971,7 +971,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLicenseRequest); i {
 			case 0:
 				return &v.state
@@ -983,7 +983,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLicenseFromKeyRequest); i {
 			case 0:
 				return &v.state
@@ -995,7 +995,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLicenseResponse); i {
 			case 0:
 				return &v.state
@@ -1007,7 +1007,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLicenseRequest); i {
 			case 0:
 				return &v.state
@@ -1019,7 +1019,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLicenseResponse); i {
 			case 0:
 				return &v.state
@@ -1031,7 +1031,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLicenseRequest); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1043,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLicenseResponse); i {
 			case 0:
 				return &v.state
@@ -1055,7 +1055,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLicenseNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1067,7 +1067,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLicenseNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1079,7 +1079,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLicenseRequest); i {
 			case 0:
 				return &v.state
@@ -1091,7 +1091,7 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLicenseResponse); i {
 			case 0:
 				return &v.state
@@ -1108,20 +1108,20 @@ func file_github_com_metaprov_modeldapi_services_license_v1_license_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_license_v1_license_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_license_v1_license_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_license_v1_license_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_license_v1_license_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_license_v1_license_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_license_v1_license_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_license_v1_license_proto = out.File
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_license_v1_license_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_license_v1_license_proto = out.File
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_license_v1_license_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1154,7 +1154,7 @@ func NewLicenseServiceClient(cc grpc.ClientConnInterface) LicenseServiceClient {
 
 func (c *licenseServiceClient) ListLicenses(ctx context.Context, in *ListLicensesRequest, opts ...grpc.CallOption) (*ListLicensesResponse, error) {
 	out := new(ListLicensesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/ListLicenses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1163,7 +1163,7 @@ func (c *licenseServiceClient) ListLicenses(ctx context.Context, in *ListLicense
 
 func (c *licenseServiceClient) CreateLicense(ctx context.Context, in *CreateLicenseRequest, opts ...grpc.CallOption) (*CreateLicenseResponse, error) {
 	out := new(CreateLicenseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicense", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1172,7 +1172,7 @@ func (c *licenseServiceClient) CreateLicense(ctx context.Context, in *CreateLice
 
 func (c *licenseServiceClient) CreateLicenseFromKey(ctx context.Context, in *CreateLicenseFromKeyRequest, opts ...grpc.CallOption) (*CreateLicenseResponse, error) {
 	out := new(CreateLicenseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicenseFromKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1181,7 +1181,7 @@ func (c *licenseServiceClient) CreateLicenseFromKey(ctx context.Context, in *Cre
 
 func (c *licenseServiceClient) GetLicense(ctx context.Context, in *GetLicenseRequest, opts ...grpc.CallOption) (*GetLicenseResponse, error) {
 	out := new(GetLicenseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/GetLicense", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1190,7 +1190,7 @@ func (c *licenseServiceClient) GetLicense(ctx context.Context, in *GetLicenseReq
 
 func (c *licenseServiceClient) UpdateLicense(ctx context.Context, in *UpdateLicenseRequest, opts ...grpc.CallOption) (*UpdateLicenseResponse, error) {
 	out := new(UpdateLicenseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/UpdateLicense", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1199,7 +1199,7 @@ func (c *licenseServiceClient) UpdateLicense(ctx context.Context, in *UpdateLice
 
 func (c *licenseServiceClient) DeleteLicense(ctx context.Context, in *DeleteLicenseRequest, opts ...grpc.CallOption) (*DeleteLicenseResponse, error) {
 	out := new(DeleteLicenseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/DeleteLicense", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1253,7 +1253,7 @@ func _LicenseService_ListLicenses_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/ListLicenses",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/ListLicenses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).ListLicenses(ctx, req.(*ListLicensesRequest))
@@ -1271,7 +1271,7 @@ func _LicenseService_CreateLicense_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicense",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicense",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).CreateLicense(ctx, req.(*CreateLicenseRequest))
@@ -1289,7 +1289,7 @@ func _LicenseService_CreateLicenseFromKey_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/CreateLicenseFromKey",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicenseFromKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).CreateLicenseFromKey(ctx, req.(*CreateLicenseFromKeyRequest))
@@ -1307,7 +1307,7 @@ func _LicenseService_GetLicense_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/GetLicense",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/GetLicense",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).GetLicense(ctx, req.(*GetLicenseRequest))
@@ -1325,7 +1325,7 @@ func _LicenseService_UpdateLicense_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/UpdateLicense",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/UpdateLicense",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).UpdateLicense(ctx, req.(*UpdateLicenseRequest))
@@ -1343,7 +1343,7 @@ func _LicenseService_DeleteLicense_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.license.v1.LicenseService/DeleteLicense",
+		FullMethod: "/github.com.metaprov.modelaapi.services.license.v1.LicenseService/DeleteLicense",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LicenseServiceServer).DeleteLicense(ctx, req.(*DeleteLicenseRequest))
@@ -1352,7 +1352,7 @@ func _LicenseService_DeleteLicense_Handler(srv interface{}, ctx context.Context,
 }
 
 var _LicenseService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.license.v1.LicenseService",
+	ServiceName: "github.com.metaprov.modelaapi.services.license.v1.LicenseService",
 	HandlerType: (*LicenseServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1381,5 +1381,5 @@ var _LicenseService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/license/v1/license.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/license/v1/license.proto",
 }

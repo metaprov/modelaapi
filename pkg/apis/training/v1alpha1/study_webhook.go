@@ -7,9 +7,9 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/apis/common"
-	"github.com/metaprov/modeldapi/pkg/util"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -227,7 +227,7 @@ func (study *Study) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "Study"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "Study"},
 		study.Name, allErrs)
 }
 

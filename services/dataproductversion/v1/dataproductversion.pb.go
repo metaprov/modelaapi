@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/dataproductversion/v1/dataproductversion.proto
+// source: github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	_ "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	_ "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListDataProductVersionsRequest struct {
 func (x *ListDataProductVersionsRequest) Reset() {
 	*x = ListDataProductVersionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListDataProductVersionsRequest) String() string {
 func (*ListDataProductVersionsRequest) ProtoMessage() {}
 
 func (x *ListDataProductVersionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListDataProductVersionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataProductVersionsRequest.ProtoReflect.Descriptor instead.
 func (*ListDataProductVersionsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListDataProductVersionsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListDataProductVersionsResponse struct {
 func (x *ListDataProductVersionsResponse) Reset() {
 	*x = ListDataProductVersionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListDataProductVersionsResponse) String() string {
 func (*ListDataProductVersionsResponse) ProtoMessage() {}
 
 func (x *ListDataProductVersionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListDataProductVersionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataProductVersionsResponse.ProtoReflect.Descriptor instead.
 func (*ListDataProductVersionsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListDataProductVersionsResponse) GetItems() *v1alpha1.DataProductVersionList {
@@ -145,7 +145,7 @@ type CreateDataProductVersionRequest struct {
 func (x *CreateDataProductVersionRequest) Reset() {
 	*x = CreateDataProductVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -158,7 +158,7 @@ func (x *CreateDataProductVersionRequest) String() string {
 func (*CreateDataProductVersionRequest) ProtoMessage() {}
 
 func (x *CreateDataProductVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +171,7 @@ func (x *CreateDataProductVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataProductVersionRequest.ProtoReflect.Descriptor instead.
 func (*CreateDataProductVersionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateDataProductVersionRequest) GetItem() *v1alpha1.DataProductVersion {
@@ -190,7 +190,7 @@ type CreateDataProductVersionResponse struct {
 func (x *CreateDataProductVersionResponse) Reset() {
 	*x = CreateDataProductVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -203,7 +203,7 @@ func (x *CreateDataProductVersionResponse) String() string {
 func (*CreateDataProductVersionResponse) ProtoMessage() {}
 
 func (x *CreateDataProductVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *CreateDataProductVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataProductVersionResponse.ProtoReflect.Descriptor instead.
 func (*CreateDataProductVersionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateDataProductVersionRequest struct {
@@ -230,7 +230,7 @@ type UpdateDataProductVersionRequest struct {
 func (x *UpdateDataProductVersionRequest) Reset() {
 	*x = UpdateDataProductVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -243,7 +243,7 @@ func (x *UpdateDataProductVersionRequest) String() string {
 func (*UpdateDataProductVersionRequest) ProtoMessage() {}
 
 func (x *UpdateDataProductVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +256,7 @@ func (x *UpdateDataProductVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDataProductVersionRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDataProductVersionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateDataProductVersionRequest) GetItem() *v1alpha1.DataProductVersion {
@@ -275,7 +275,7 @@ type UpdateDataProductVersionResponse struct {
 func (x *UpdateDataProductVersionResponse) Reset() {
 	*x = UpdateDataProductVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -288,7 +288,7 @@ func (x *UpdateDataProductVersionResponse) String() string {
 func (*UpdateDataProductVersionResponse) ProtoMessage() {}
 
 func (x *UpdateDataProductVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -301,7 +301,7 @@ func (x *UpdateDataProductVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDataProductVersionResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDataProductVersionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{5}
 }
 
 type GetDataProductVersionRequest struct {
@@ -316,7 +316,7 @@ type GetDataProductVersionRequest struct {
 func (x *GetDataProductVersionRequest) Reset() {
 	*x = GetDataProductVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -329,7 +329,7 @@ func (x *GetDataProductVersionRequest) String() string {
 func (*GetDataProductVersionRequest) ProtoMessage() {}
 
 func (x *GetDataProductVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -342,7 +342,7 @@ func (x *GetDataProductVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataProductVersionRequest.ProtoReflect.Descriptor instead.
 func (*GetDataProductVersionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetDataProductVersionRequest) GetNamespace() string {
@@ -371,7 +371,7 @@ type GetDataProductVersionResponse struct {
 func (x *GetDataProductVersionResponse) Reset() {
 	*x = GetDataProductVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -384,7 +384,7 @@ func (x *GetDataProductVersionResponse) String() string {
 func (*GetDataProductVersionResponse) ProtoMessage() {}
 
 func (x *GetDataProductVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -397,7 +397,7 @@ func (x *GetDataProductVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataProductVersionResponse.ProtoReflect.Descriptor instead.
 func (*GetDataProductVersionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetDataProductVersionResponse) GetItem() *v1alpha1.DataProductVersion {
@@ -426,7 +426,7 @@ type DeleteDataProductVersionRequest struct {
 func (x *DeleteDataProductVersionRequest) Reset() {
 	*x = DeleteDataProductVersionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -439,7 +439,7 @@ func (x *DeleteDataProductVersionRequest) String() string {
 func (*DeleteDataProductVersionRequest) ProtoMessage() {}
 
 func (x *DeleteDataProductVersionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -452,7 +452,7 @@ func (x *DeleteDataProductVersionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDataProductVersionRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDataProductVersionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteDataProductVersionRequest) GetNamespace() string {
@@ -478,7 +478,7 @@ type DeleteDataProductVersionResponse struct {
 func (x *DeleteDataProductVersionResponse) Reset() {
 	*x = DeleteDataProductVersionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -491,7 +491,7 @@ func (x *DeleteDataProductVersionResponse) String() string {
 func (*DeleteDataProductVersionResponse) ProtoMessage() {}
 
 func (x *DeleteDataProductVersionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -504,12 +504,12 @@ func (x *DeleteDataProductVersionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDataProductVersionResponse.ProtoReflect.Descriptor instead.
 func (*DeleteDataProductVersionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc = []byte{
 	0x0a, 0x55, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x70, 0x72, 0x6f,
@@ -689,49 +689,49 @@ var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproduc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData = file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData = file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_goTypes = []interface{}{
-	(*ListDataProductVersionsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsRequest
-	(*ListDataProductVersionsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsResponse
-	(*CreateDataProductVersionRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.dataproductversion.v1.CreateDataProductVersionRequest
-	(*CreateDataProductVersionResponse)(nil), // 3: github.com.metaprov.modeldapi.services.dataproductversion.v1.CreateDataProductVersionResponse
-	(*UpdateDataProductVersionRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.dataproductversion.v1.UpdateDataProductVersionRequest
-	(*UpdateDataProductVersionResponse)(nil), // 5: github.com.metaprov.modeldapi.services.dataproductversion.v1.UpdateDataProductVersionResponse
-	(*GetDataProductVersionRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.dataproductversion.v1.GetDataProductVersionRequest
-	(*GetDataProductVersionResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.dataproductversion.v1.GetDataProductVersionResponse
-	(*DeleteDataProductVersionRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.dataproductversion.v1.DeleteDataProductVersionRequest
-	(*DeleteDataProductVersionResponse)(nil), // 9: github.com.metaprov.modeldapi.services.dataproductversion.v1.DeleteDataProductVersionResponse
-	nil,                                      // 10: github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry
-	(*v1alpha1.DataProductVersionList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionList
-	(*v1alpha1.DataProductVersion)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
+var file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_goTypes = []interface{}{
+	(*ListDataProductVersionsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest
+	(*ListDataProductVersionsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse
+	(*CreateDataProductVersionRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest
+	(*CreateDataProductVersionResponse)(nil), // 3: github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionResponse
+	(*UpdateDataProductVersionRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionRequest
+	(*UpdateDataProductVersionResponse)(nil), // 5: github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionResponse
+	(*GetDataProductVersionRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionRequest
+	(*GetDataProductVersionResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionResponse
+	(*DeleteDataProductVersionRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionRequest
+	(*DeleteDataProductVersionResponse)(nil), // 9: github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionResponse
+	nil,                                      // 10: github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry
+	(*v1alpha1.DataProductVersionList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList
+	(*v1alpha1.DataProductVersion)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
 }
-var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionList
-	12, // 2: github.com.metaprov.modeldapi.services.dataproductversion.v1.CreateDataProductVersionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	12, // 3: github.com.metaprov.modeldapi.services.dataproductversion.v1.UpdateDataProductVersionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	12, // 4: github.com.metaprov.modeldapi.services.dataproductversion.v1.GetDataProductVersionResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	0,  // 5: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.ListDataProductVersions:input_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.CreateDataProductVersion:input_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.CreateDataProductVersionRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.GetDataProductVersion:input_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.GetDataProductVersionRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.UpdateDataProductVersion:input_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.UpdateDataProductVersionRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.DeleteDataProductVersion:input_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.DeleteDataProductVersionRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.ListDataProductVersions:output_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.ListDataProductVersionsResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.CreateDataProductVersion:output_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.CreateDataProductVersionResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.GetDataProductVersion:output_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.GetDataProductVersionResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.UpdateDataProductVersion:output_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.UpdateDataProductVersionResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService.DeleteDataProductVersion:output_type -> github.com.metaprov.modeldapi.services.dataproductversion.v1.DeleteDataProductVersionResponse
+var file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList
+	12, // 2: github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	12, // 3: github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	12, // 4: github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	0,  // 5: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.ListDataProductVersions:input_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.CreateDataProductVersion:input_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.GetDataProductVersion:input_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.UpdateDataProductVersion:input_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.DeleteDataProductVersion:input_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.ListDataProductVersions:output_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.CreateDataProductVersion:output_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.GetDataProductVersion:output_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.UpdateDataProductVersion:output_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService.DeleteDataProductVersion:output_type -> github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -740,14 +740,14 @@ var file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproduc
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_init()
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto != nil {
+func file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDataProductVersionsRequest); i {
 			case 0:
 				return &v.state
@@ -759,7 +759,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDataProductVersionsResponse); i {
 			case 0:
 				return &v.state
@@ -771,7 +771,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateDataProductVersionRequest); i {
 			case 0:
 				return &v.state
@@ -783,7 +783,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateDataProductVersionResponse); i {
 			case 0:
 				return &v.state
@@ -795,7 +795,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateDataProductVersionRequest); i {
 			case 0:
 				return &v.state
@@ -807,7 +807,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateDataProductVersionResponse); i {
 			case 0:
 				return &v.state
@@ -819,7 +819,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDataProductVersionRequest); i {
 			case 0:
 				return &v.state
@@ -831,7 +831,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDataProductVersionResponse); i {
 			case 0:
 				return &v.state
@@ -843,7 +843,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteDataProductVersionRequest); i {
 			case 0:
 				return &v.state
@@ -855,7 +855,7 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteDataProductVersionResponse); i {
 			case 0:
 				return &v.state
@@ -872,20 +872,20 @@ func file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataprodu
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto = out.File
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto = out.File
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -917,7 +917,7 @@ func NewDataProductVersionServiceClient(cc grpc.ClientConnInterface) DataProduct
 
 func (c *dataProductVersionServiceClient) ListDataProductVersions(ctx context.Context, in *ListDataProductVersionsRequest, opts ...grpc.CallOption) (*ListDataProductVersionsResponse, error) {
 	out := new(ListDataProductVersionsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -926,7 +926,7 @@ func (c *dataProductVersionServiceClient) ListDataProductVersions(ctx context.Co
 
 func (c *dataProductVersionServiceClient) CreateDataProductVersion(ctx context.Context, in *CreateDataProductVersionRequest, opts ...grpc.CallOption) (*CreateDataProductVersionResponse, error) {
 	out := new(CreateDataProductVersionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -935,7 +935,7 @@ func (c *dataProductVersionServiceClient) CreateDataProductVersion(ctx context.C
 
 func (c *dataProductVersionServiceClient) GetDataProductVersion(ctx context.Context, in *GetDataProductVersionRequest, opts ...grpc.CallOption) (*GetDataProductVersionResponse, error) {
 	out := new(GetDataProductVersionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -944,7 +944,7 @@ func (c *dataProductVersionServiceClient) GetDataProductVersion(ctx context.Cont
 
 func (c *dataProductVersionServiceClient) UpdateDataProductVersion(ctx context.Context, in *UpdateDataProductVersionRequest, opts ...grpc.CallOption) (*UpdateDataProductVersionResponse, error) {
 	out := new(UpdateDataProductVersionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -953,7 +953,7 @@ func (c *dataProductVersionServiceClient) UpdateDataProductVersion(ctx context.C
 
 func (c *dataProductVersionServiceClient) DeleteDataProductVersion(ctx context.Context, in *DeleteDataProductVersionRequest, opts ...grpc.CallOption) (*DeleteDataProductVersionResponse, error) {
 	out := new(DeleteDataProductVersionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1003,7 +1003,7 @@ func _DataProductVersionService_ListDataProductVersions_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataProductVersionServiceServer).ListDataProductVersions(ctx, req.(*ListDataProductVersionsRequest))
@@ -1021,7 +1021,7 @@ func _DataProductVersionService_CreateDataProductVersion_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataProductVersionServiceServer).CreateDataProductVersion(ctx, req.(*CreateDataProductVersionRequest))
@@ -1039,7 +1039,7 @@ func _DataProductVersionService_GetDataProductVersion_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataProductVersionServiceServer).GetDataProductVersion(ctx, req.(*GetDataProductVersionRequest))
@@ -1057,7 +1057,7 @@ func _DataProductVersionService_UpdateDataProductVersion_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataProductVersionServiceServer).UpdateDataProductVersion(ctx, req.(*UpdateDataProductVersionRequest))
@@ -1075,7 +1075,7 @@ func _DataProductVersionService_DeleteDataProductVersion_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion",
+		FullMethod: "/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataProductVersionServiceServer).DeleteDataProductVersion(ctx, req.(*DeleteDataProductVersionRequest))
@@ -1084,7 +1084,7 @@ func _DataProductVersionService_DeleteDataProductVersion_Handler(srv interface{}
 }
 
 var _DataProductVersionService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService",
+	ServiceName: "github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService",
 	HandlerType: (*DataProductVersionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1109,5 +1109,5 @@ var _DataProductVersionService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/dataproductversion/v1/dataproductversion.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto",
 }

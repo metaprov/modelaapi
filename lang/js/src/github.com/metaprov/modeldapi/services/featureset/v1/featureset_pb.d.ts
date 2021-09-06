@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListFeaturesetRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListFeaturesetRequest {
 }
 
 export class ListFeaturesetResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesetResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesetResponse;
   hasItems(): boolean;
   clearItems(): ListFeaturesetResponse;
 
@@ -42,13 +42,13 @@ export class ListFeaturesetResponse extends jspb.Message {
 
 export namespace ListFeaturesetResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
   }
 }
 
 export class CreateFeaturesetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
   hasItem(): boolean;
   clearItem(): CreateFeaturesetRequest;
 
@@ -62,7 +62,7 @@ export class CreateFeaturesetRequest extends jspb.Message {
 
 export namespace CreateFeaturesetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateFeaturesetResponse {
 }
 
 export class UpdateFeaturesetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): UpdateFeaturesetRequest;
   hasItem(): boolean;
   clearItem(): UpdateFeaturesetRequest;
 
@@ -96,7 +96,7 @@ export class UpdateFeaturesetRequest extends jspb.Message {
 
 export namespace UpdateFeaturesetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetFeaturesetRequest {
 }
 
 export class GetFeaturesetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeaturesetResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeaturesetResponse;
   hasItem(): boolean;
   clearItem(): GetFeaturesetResponse;
 
@@ -155,7 +155,7 @@ export class GetFeaturesetResponse extends jspb.Message {
 
 export namespace GetFeaturesetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
     yaml: string,
   }
 }

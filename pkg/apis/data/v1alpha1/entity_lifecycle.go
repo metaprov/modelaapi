@@ -14,9 +14,9 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
-	"github.com/metaprov/modeldapi/pkg/apis/common"
-	"github.com/metaprov/modeldapi/pkg/apis/data"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/apis/data"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

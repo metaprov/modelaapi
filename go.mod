@@ -1,4 +1,4 @@
-module github.com/metaprov/modeldapi
+module github.com/metaprov/modelaapi
 
 go 1.16
 

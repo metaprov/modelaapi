@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -43,7 +43,7 @@ func (runbook *RunBook) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "team.modeld.io", Kind: "RunBook"}, runbook.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "team.modela.io", Kind: "RunBook"}, runbook.Name, allErrs)
 }
 
 func (runbook *RunBook) validateMeta(fldPath *field.Path) field.ErrorList {

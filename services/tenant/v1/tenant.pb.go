@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto
+// source: github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListTenantsRequest struct {
 func (x *ListTenantsRequest) Reset() {
 	*x = ListTenantsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListTenantsRequest) String() string {
 func (*ListTenantsRequest) ProtoMessage() {}
 
 func (x *ListTenantsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListTenantsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantsRequest.ProtoReflect.Descriptor instead.
 func (*ListTenantsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListTenantsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListTenantsResponse struct {
 func (x *ListTenantsResponse) Reset() {
 	*x = ListTenantsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListTenantsResponse) String() string {
 func (*ListTenantsResponse) ProtoMessage() {}
 
 func (x *ListTenantsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListTenantsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantsResponse.ProtoReflect.Descriptor instead.
 func (*ListTenantsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListTenantsResponse) GetItems() *v1alpha1.TenantList {
@@ -144,7 +144,7 @@ type CreateTenantRequest struct {
 func (x *CreateTenantRequest) Reset() {
 	*x = CreateTenantRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateTenantRequest) String() string {
 func (*CreateTenantRequest) ProtoMessage() {}
 
 func (x *CreateTenantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateTenantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTenantRequest.ProtoReflect.Descriptor instead.
 func (*CreateTenantRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateTenantRequest) GetItem() *v1alpha1.Tenant {
@@ -189,7 +189,7 @@ type CreateTenantResponse struct {
 func (x *CreateTenantResponse) Reset() {
 	*x = CreateTenantResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateTenantResponse) String() string {
 func (*CreateTenantResponse) ProtoMessage() {}
 
 func (x *CreateTenantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateTenantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTenantResponse.ProtoReflect.Descriptor instead.
 func (*CreateTenantResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateTenantRequest struct {
@@ -229,7 +229,7 @@ type UpdateTenantRequest struct {
 func (x *UpdateTenantRequest) Reset() {
 	*x = UpdateTenantRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateTenantRequest) String() string {
 func (*UpdateTenantRequest) ProtoMessage() {}
 
 func (x *UpdateTenantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateTenantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTenantRequest.ProtoReflect.Descriptor instead.
 func (*UpdateTenantRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateTenantRequest) GetItem() *v1alpha1.Tenant {
@@ -274,7 +274,7 @@ type UpdateTenantResponse struct {
 func (x *UpdateTenantResponse) Reset() {
 	*x = UpdateTenantResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateTenantResponse) String() string {
 func (*UpdateTenantResponse) ProtoMessage() {}
 
 func (x *UpdateTenantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateTenantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTenantResponse.ProtoReflect.Descriptor instead.
 func (*UpdateTenantResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{5}
 }
 
 type GetTenantRequest struct {
@@ -315,7 +315,7 @@ type GetTenantRequest struct {
 func (x *GetTenantRequest) Reset() {
 	*x = GetTenantRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetTenantRequest) String() string {
 func (*GetTenantRequest) ProtoMessage() {}
 
 func (x *GetTenantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetTenantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTenantRequest.ProtoReflect.Descriptor instead.
 func (*GetTenantRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetTenantRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetTenantResponse struct {
 func (x *GetTenantResponse) Reset() {
 	*x = GetTenantResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetTenantResponse) String() string {
 func (*GetTenantResponse) ProtoMessage() {}
 
 func (x *GetTenantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetTenantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTenantResponse.ProtoReflect.Descriptor instead.
 func (*GetTenantResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetTenantResponse) GetItem() *v1alpha1.Tenant {
@@ -425,7 +425,7 @@ type DeleteTenantRequest struct {
 func (x *DeleteTenantRequest) Reset() {
 	*x = DeleteTenantRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteTenantRequest) String() string {
 func (*DeleteTenantRequest) ProtoMessage() {}
 
 func (x *DeleteTenantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteTenantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteTenantRequest.ProtoReflect.Descriptor instead.
 func (*DeleteTenantRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteTenantRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteTenantResponse struct {
 func (x *DeleteTenantResponse) Reset() {
 	*x = DeleteTenantResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteTenantResponse) String() string {
 func (*DeleteTenantResponse) ProtoMessage() {}
 
 func (x *DeleteTenantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteTenantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteTenantResponse.ProtoReflect.Descriptor instead.
 func (*DeleteTenantResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x74, 0x65, 0x6e, 0x61, 0x6e, 0x74, 0x2f,
@@ -643,49 +643,49 @@ var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescData = file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescData = file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_goTypes = []interface{}{
-	(*ListTenantsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest
-	(*ListTenantsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse
-	(*CreateTenantRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest
-	(*CreateTenantResponse)(nil), // 3: github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse
-	(*UpdateTenantRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest
-	(*UpdateTenantResponse)(nil), // 5: github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse
-	(*GetTenantRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest
-	(*GetTenantResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse
-	(*DeleteTenantRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest
-	(*DeleteTenantResponse)(nil), // 9: github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse
-	nil,                          // 10: github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry
-	(*v1alpha1.TenantList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList
-	(*v1alpha1.Tenant)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
+var file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_goTypes = []interface{}{
+	(*ListTenantsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest
+	(*ListTenantsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse
+	(*CreateTenantRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest
+	(*CreateTenantResponse)(nil), // 3: github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantResponse
+	(*UpdateTenantRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest
+	(*UpdateTenantResponse)(nil), // 5: github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantResponse
+	(*GetTenantRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.tenant.v1.GetTenantRequest
+	(*GetTenantResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse
+	(*DeleteTenantRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantRequest
+	(*DeleteTenantResponse)(nil), // 9: github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantResponse
+	nil,                          // 10: github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest.LabelsEntry
+	(*v1alpha1.TenantList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList
+	(*v1alpha1.Tenant)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant
 }
-var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList
-	12, // 2: github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
-	12, // 3: github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
-	12, // 4: github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant
-	0,  // 5: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.ListTenants:input_type -> github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.CreateTenant:input_type -> github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.GetTenant:input_type -> github.com.metaprov.modeldapi.services.tenant.v1.GetTenantRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.UpdateTenant:input_type -> github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.DeleteTenant:input_type -> github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.ListTenants:output_type -> github.com.metaprov.modeldapi.services.tenant.v1.ListTenantsResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.CreateTenant:output_type -> github.com.metaprov.modeldapi.services.tenant.v1.CreateTenantResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.GetTenant:output_type -> github.com.metaprov.modeldapi.services.tenant.v1.GetTenantResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.UpdateTenant:output_type -> github.com.metaprov.modeldapi.services.tenant.v1.UpdateTenantResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.tenant.v1.TenantService.DeleteTenant:output_type -> github.com.metaprov.modeldapi.services.tenant.v1.DeleteTenantResponse
+var file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList
+	12, // 2: github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant
+	12, // 3: github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant
+	12, // 4: github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant
+	0,  // 5: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.ListTenants:input_type -> github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.CreateTenant:input_type -> github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.GetTenant:input_type -> github.com.metaprov.modelaapi.services.tenant.v1.GetTenantRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.UpdateTenant:input_type -> github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.DeleteTenant:input_type -> github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.ListTenants:output_type -> github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.CreateTenant:output_type -> github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.GetTenant:output_type -> github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.UpdateTenant:output_type -> github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.tenant.v1.TenantService.DeleteTenant:output_type -> github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -693,13 +693,13 @@ var file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_depIdxs =
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() }
-func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_init() }
+func file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListTenantsRequest); i {
 			case 0:
 				return &v.state
@@ -711,7 +711,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListTenantsResponse); i {
 			case 0:
 				return &v.state
@@ -723,7 +723,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateTenantRequest); i {
 			case 0:
 				return &v.state
@@ -735,7 +735,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateTenantResponse); i {
 			case 0:
 				return &v.state
@@ -747,7 +747,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateTenantRequest); i {
 			case 0:
 				return &v.state
@@ -759,7 +759,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateTenantResponse); i {
 			case 0:
 				return &v.state
@@ -771,7 +771,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTenantRequest); i {
 			case 0:
 				return &v.state
@@ -783,7 +783,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTenantResponse); i {
 			case 0:
 				return &v.state
@@ -795,7 +795,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteTenantRequest); i {
 			case 0:
 				return &v.state
@@ -807,7 +807,7 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteTenantResponse); i {
 			case 0:
 				return &v.state
@@ -824,20 +824,20 @@ func file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto = out.File
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_tenant_v1_tenant_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto = out.File
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_tenant_v1_tenant_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -869,7 +869,7 @@ func NewTenantServiceClient(cc grpc.ClientConnInterface) TenantServiceClient {
 
 func (c *tenantServiceClient) ListTenants(ctx context.Context, in *ListTenantsRequest, opts ...grpc.CallOption) (*ListTenantsResponse, error) {
 	out := new(ListTenantsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -878,7 +878,7 @@ func (c *tenantServiceClient) ListTenants(ctx context.Context, in *ListTenantsRe
 
 func (c *tenantServiceClient) CreateTenant(ctx context.Context, in *CreateTenantRequest, opts ...grpc.CallOption) (*CreateTenantResponse, error) {
 	out := new(CreateTenantResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -887,7 +887,7 @@ func (c *tenantServiceClient) CreateTenant(ctx context.Context, in *CreateTenant
 
 func (c *tenantServiceClient) GetTenant(ctx context.Context, in *GetTenantRequest, opts ...grpc.CallOption) (*GetTenantResponse, error) {
 	out := new(GetTenantResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/GetTenant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -896,7 +896,7 @@ func (c *tenantServiceClient) GetTenant(ctx context.Context, in *GetTenantReques
 
 func (c *tenantServiceClient) UpdateTenant(ctx context.Context, in *UpdateTenantRequest, opts ...grpc.CallOption) (*UpdateTenantResponse, error) {
 	out := new(UpdateTenantResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/UpdateTenant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -905,7 +905,7 @@ func (c *tenantServiceClient) UpdateTenant(ctx context.Context, in *UpdateTenant
 
 func (c *tenantServiceClient) DeleteTenant(ctx context.Context, in *DeleteTenantRequest, opts ...grpc.CallOption) (*DeleteTenantResponse, error) {
 	out := new(DeleteTenantResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/DeleteTenant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -955,7 +955,7 @@ func _TenantService_ListTenants_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants",
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).ListTenants(ctx, req.(*ListTenantsRequest))
@@ -973,7 +973,7 @@ func _TenantService_CreateTenant_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant",
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).CreateTenant(ctx, req.(*CreateTenantRequest))
@@ -991,7 +991,7 @@ func _TenantService_GetTenant_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant",
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/GetTenant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).GetTenant(ctx, req.(*GetTenantRequest))
@@ -1009,7 +1009,7 @@ func _TenantService_UpdateTenant_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant",
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/UpdateTenant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).UpdateTenant(ctx, req.(*UpdateTenantRequest))
@@ -1027,7 +1027,7 @@ func _TenantService_DeleteTenant_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant",
+		FullMethod: "/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/DeleteTenant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TenantServiceServer).DeleteTenant(ctx, req.(*DeleteTenantRequest))
@@ -1036,7 +1036,7 @@ func _TenantService_DeleteTenant_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _TenantService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.tenant.v1.TenantService",
+	ServiceName: "github.com.metaprov.modelaapi.services.tenant.v1.TenantService",
 	HandlerType: (*TenantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1061,5 +1061,5 @@ var _TenantService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/tenant/v1/tenant.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto",
 }

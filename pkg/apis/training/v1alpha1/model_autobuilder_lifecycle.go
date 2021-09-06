@@ -11,10 +11,10 @@ import (
 	"path/filepath"
 
 	"github.com/dustin/go-humanize"
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/apis/training"
-	"github.com/metaprov/modeldapi/pkg/util"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/training"
+	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 
@@ -350,13 +350,13 @@ func (b *ModelAutobuilder) CreateDataProduct() *data.DataProduct {
 		},
 		Spec: data.DataProductSpec{
 			TenantRef: &v1.ObjectReference{
-				Namespace: "modeld-system",
+				Namespace: "modela-system",
 				Name:      "default-tenant",
 			},
 			StakeHolders: nil,
 			DataLocation: data.DataLocation{
 				BucketName: util.StrPtr("default-digitalocean-bucket"),
-				Path:       util.StrPtr("modeld/live/tenants/default-tenant/dataproducts/" + b.DataProductName()),
+				Path:       util.StrPtr("modela/live/tenants/default-tenant/dataproducts/" + b.DataProductName()),
 			},
 			ImageLocation: &data.ImageLocation{
 				Name:                   util.StrPtr(b.Name),
@@ -463,7 +463,7 @@ func (b *ModelAutobuilder) FileName() string {
 
 func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 	fname := filepath.Base(b.FileName())
-	rawPath := fmt.Sprintf("modeld/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/data/raw/%s",
+	rawPath := fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/data/raw/%s",
 		b.DataProductName(),
 		b.DataProductVersionName(),
 		b.DatasetName(),

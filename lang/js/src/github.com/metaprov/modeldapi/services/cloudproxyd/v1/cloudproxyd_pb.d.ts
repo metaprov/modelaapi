@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 
 
 export class ShutdownRequest extends jspb.Message {
@@ -32,13 +32,13 @@ export namespace ShutdownResponse {
 }
 
 export class VirtualBucketExistRequest extends jspb.Message {
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): VirtualBucketExistRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): VirtualBucketExistRequest;
   hasBucket(): boolean;
   clearBucket(): VirtualBucketExistRequest;
 
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): VirtualBucketExistRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): VirtualBucketExistRequest;
   hasConnection(): boolean;
   clearConnection(): VirtualBucketExistRequest;
 
@@ -55,8 +55,8 @@ export class VirtualBucketExistRequest extends jspb.Message {
 
 export namespace VirtualBucketExistRequest {
   export type AsObject = {
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -83,16 +83,16 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): KeyExistInVirtualBucketRequest;
 
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): KeyExistInVirtualBucketRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): KeyExistInVirtualBucketRequest;
   hasBucket(): boolean;
   clearBucket(): KeyExistInVirtualBucketRequest;
 
   getKey(): string;
   setKey(value: string): KeyExistInVirtualBucketRequest;
 
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): KeyExistInVirtualBucketRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): KeyExistInVirtualBucketRequest;
   hasConnection(): boolean;
   clearConnection(): KeyExistInVirtualBucketRequest;
 
@@ -110,9 +110,9 @@ export class KeyExistInVirtualBucketRequest extends jspb.Message {
 export namespace KeyExistInVirtualBucketRequest {
   export type AsObject = {
     region: string,
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     key: string,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -156,13 +156,13 @@ export class FileDownloadRequest extends jspb.Message {
   getPath(): string;
   setPath(value: string): FileDownloadRequest;
 
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileDownloadRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileDownloadRequest;
   hasBucket(): boolean;
   clearBucket(): FileDownloadRequest;
 
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileDownloadRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileDownloadRequest;
   hasConnection(): boolean;
   clearConnection(): FileDownloadRequest;
 
@@ -181,8 +181,8 @@ export namespace FileDownloadRequest {
   export type AsObject = {
     key: string,
     path: string,
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -208,13 +208,13 @@ export class FileUploadRequest extends jspb.Message {
   getPath(): string;
   setPath(value: string): FileUploadRequest;
 
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileUploadRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): FileUploadRequest;
   hasBucket(): boolean;
   clearBucket(): FileUploadRequest;
 
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileUploadRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): FileUploadRequest;
   hasConnection(): boolean;
   clearConnection(): FileUploadRequest;
 
@@ -233,8 +233,8 @@ export namespace FileUploadRequest {
   export type AsObject = {
     key: string,
     path: string,
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }
@@ -254,13 +254,13 @@ export namespace FileUploadResponse {
 }
 
 export class CreateVirtualBucketRequest extends jspb.Message {
-  getBucket(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): CreateVirtualBucketRequest;
   hasBucket(): boolean;
   clearBucket(): CreateVirtualBucketRequest;
 
-  getConnection(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateVirtualBucketRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateVirtualBucketRequest;
   hasConnection(): boolean;
   clearConnection(): CreateVirtualBucketRequest;
 
@@ -277,8 +277,8 @@ export class CreateVirtualBucketRequest extends jspb.Message {
 
 export namespace CreateVirtualBucketRequest {
   export type AsObject = {
-    bucket?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    connection?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
   }
 }

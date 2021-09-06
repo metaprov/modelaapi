@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 # setup
-# Setup script for installing modeld
+# Setup script for installing modela
 #
 # Author:   Tomer Sagi
 # Created:  Sun Fev 14 
 #
-# Copyright (C) 2016 The modeld developers
+# Copyright (C) 2016 The modela developers
 # For license information, see LICENSE.txt and NOTICE.md
 #
 
 
 """
-Setup script for installing modeld api in python.
+Setup script for installing modela api in python.
 Based on http://bbengfort.github.io/programmer/2016/01/20/packaging-with-pypi.html
 """
 
@@ -31,15 +31,15 @@ from setuptools import find_packages
 
 ## Basic information
 ## Basic information
-NAME         = "modeldapi"
+NAME         = "modelaapi"
 DESCRIPTION  = "A suite of automatic machine learning for kubernetes"
-AUTHOR       = "The modeldapi developers"
-EMAIL        = "info@modeld.io"
-MAINTAINER   = "The modeld developers"
+AUTHOR       = "The modelaapi developers"
+EMAIL        = "info@modela.io"
+MAINTAINER   = "The modela developers"
 LICENSE      = "Apache 2"
-REPOSITORY   = "https://github.com/metaptov/modeldapi"
-PACKAGE      = "modeldapi"
-URL          = "http://www.modeld.io"
+REPOSITORY   = "https://github.com/metaptov/modelaapi"
+PACKAGE      = "modelaapi"
+URL          = "http://www.modela.io"
 
 ## Define the keywords
 KEYWORDS = (

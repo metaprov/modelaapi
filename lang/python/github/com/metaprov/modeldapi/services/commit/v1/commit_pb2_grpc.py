@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.commit.v1 import commit_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2
+from github.com.metaprov.modelaapi.services.commit.v1 import commit_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2
 
 
 class CommitServiceStub(object):
@@ -15,29 +15,29 @@ class CommitServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListCommits = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/ListCommits',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/ListCommits',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.FromString,
                 )
         self.CreateCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/CreateCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/CreateCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.FromString,
                 )
         self.GetCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/GetCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/GetCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.FromString,
                 )
         self.UpdateCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/UpdateCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/UpdateCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.FromString,
                 )
         self.DeleteCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/DeleteCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/DeleteCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_CommitServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListCommits': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCommits,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.SerializeToString,
             ),
             'CreateCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.SerializeToString,
             ),
             'GetCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.SerializeToString,
             ),
             'UpdateCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.SerializeToString,
             ),
             'DeleteCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.commit.v1.CommitService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.commit.v1.CommitService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class CommitService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/ListCommits',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/ListCommits',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.ListCommitsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class CommitService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/CreateCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/CreateCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.CreateCommitResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class CommitService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/GetCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/GetCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.GetCommitResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class CommitService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/UpdateCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/UpdateCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.UpdateCommitResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class CommitService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.commit.v1.CommitService/DeleteCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/DeleteCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_commit_dot_v1_dot_commit__pb2.DeleteCommitResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

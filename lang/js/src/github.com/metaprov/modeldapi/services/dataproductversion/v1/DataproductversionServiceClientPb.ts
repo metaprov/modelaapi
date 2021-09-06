@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.dataproductversion.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.dataproductversion.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb from '../../../../../../github.com/metaprov/modeldapi/services/dataproductversion/v1/dataproductversion_pb';
+import * as github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb from '../../../../../../github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion_pb';
 
 
 export class DataProductVersionServiceClient {
@@ -36,32 +36,32 @@ export class DataProductVersionServiceClient {
   }
 
   methodInfoListDataProductVersions = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse,
-    (request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest) => {
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse,
+    (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse.deserializeBinary
   );
 
   listDataProductVersions(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse>;
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse>;
 
   listDataProductVersions(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse>;
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse>;
 
   listDataProductVersions(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+          '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
         request,
         metadata || {},
         this.methodInfoListDataProductVersions,
@@ -69,39 +69,39 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+      '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
     request,
     metadata || {},
     this.methodInfoListDataProductVersions);
   }
 
   methodInfoCreateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse,
-    (request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest) => {
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse,
+    (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse.deserializeBinary
   );
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse>;
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse>;
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse>;
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse>;
 
   createDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+          '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
         request,
         metadata || {},
         this.methodInfoCreateDataProductVersion,
@@ -109,39 +109,39 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+      '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
     request,
     metadata || {},
     this.methodInfoCreateDataProductVersion);
   }
 
   methodInfoGetDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse,
-    (request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest) => {
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse,
+    (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse.deserializeBinary
   );
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse>;
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse>;
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse>;
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse>;
 
   getDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+          '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
         request,
         metadata || {},
         this.methodInfoGetDataProductVersion,
@@ -149,39 +149,39 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+      '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
     request,
     metadata || {},
     this.methodInfoGetDataProductVersion);
   }
 
   methodInfoUpdateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse,
-    (request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest) => {
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse,
+    (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse.deserializeBinary
   );
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse>;
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse>;
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse>;
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse>;
 
   updateDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+          '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
         request,
         metadata || {},
         this.methodInfoUpdateDataProductVersion,
@@ -189,39 +189,39 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+      '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
     request,
     metadata || {},
     this.methodInfoUpdateDataProductVersion);
   }
 
   methodInfoDeleteDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse,
-    (request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest) => {
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse,
+    (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse.deserializeBinary
   );
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse>;
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse>;
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse>;
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse>;
 
   deleteDataProductVersion(
-    request: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
+    request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+          '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
         request,
         metadata || {},
         this.methodInfoDeleteDataProductVersion,
@@ -229,7 +229,7 @@ export class DataProductVersionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+      '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
     request,
     metadata || {},
     this.methodInfoDeleteDataProductVersion);

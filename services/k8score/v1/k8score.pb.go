@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto
+// source: github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto
 
 package v1
 
@@ -44,7 +44,7 @@ type GetSecretRequest struct {
 func (x *GetSecretRequest) Reset() {
 	*x = GetSecretRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *GetSecretRequest) String() string {
 func (*GetSecretRequest) ProtoMessage() {}
 
 func (x *GetSecretRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *GetSecretRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSecretRequest.ProtoReflect.Descriptor instead.
 func (*GetSecretRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetSecretRequest) GetNamespace() string {
@@ -105,7 +105,7 @@ type GetSecretResponse struct {
 func (x *GetSecretResponse) Reset() {
 	*x = GetSecretResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -118,7 +118,7 @@ func (x *GetSecretResponse) String() string {
 func (*GetSecretResponse) ProtoMessage() {}
 
 func (x *GetSecretResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +131,7 @@ func (x *GetSecretResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSecretResponse.ProtoReflect.Descriptor instead.
 func (*GetSecretResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetSecretResponse) GetItem() *SecretInfo {
@@ -153,7 +153,7 @@ type ListSecretsRequest struct {
 func (x *ListSecretsRequest) Reset() {
 	*x = ListSecretsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -166,7 +166,7 @@ func (x *ListSecretsRequest) String() string {
 func (*ListSecretsRequest) ProtoMessage() {}
 
 func (x *ListSecretsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -179,7 +179,7 @@ func (x *ListSecretsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSecretsRequest.ProtoReflect.Descriptor instead.
 func (*ListSecretsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ListSecretsRequest) GetNamespace() string {
@@ -207,7 +207,7 @@ type ListSecretResponse struct {
 func (x *ListSecretResponse) Reset() {
 	*x = ListSecretResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -220,7 +220,7 @@ func (x *ListSecretResponse) String() string {
 func (*ListSecretResponse) ProtoMessage() {}
 
 func (x *ListSecretResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +233,7 @@ func (x *ListSecretResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSecretResponse.ProtoReflect.Descriptor instead.
 func (*ListSecretResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListSecretResponse) GetItems() []*SecretInfo {
@@ -256,7 +256,7 @@ type GetDeploymentRequest struct {
 func (x *GetDeploymentRequest) Reset() {
 	*x = GetDeploymentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -269,7 +269,7 @@ func (x *GetDeploymentRequest) String() string {
 func (*GetDeploymentRequest) ProtoMessage() {}
 
 func (x *GetDeploymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,7 +282,7 @@ func (x *GetDeploymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeploymentRequest.ProtoReflect.Descriptor instead.
 func (*GetDeploymentRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetDeploymentRequest) GetNamespace() string {
@@ -317,7 +317,7 @@ type GetDeploymentResponse struct {
 func (x *GetDeploymentResponse) Reset() {
 	*x = GetDeploymentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -330,7 +330,7 @@ func (x *GetDeploymentResponse) String() string {
 func (*GetDeploymentResponse) ProtoMessage() {}
 
 func (x *GetDeploymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -343,7 +343,7 @@ func (x *GetDeploymentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeploymentResponse.ProtoReflect.Descriptor instead.
 func (*GetDeploymentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetDeploymentResponse) GetItem() *DeploymentInfo {
@@ -365,7 +365,7 @@ type ListDeploymentsRequest struct {
 func (x *ListDeploymentsRequest) Reset() {
 	*x = ListDeploymentsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -378,7 +378,7 @@ func (x *ListDeploymentsRequest) String() string {
 func (*ListDeploymentsRequest) ProtoMessage() {}
 
 func (x *ListDeploymentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -391,7 +391,7 @@ func (x *ListDeploymentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDeploymentsRequest.ProtoReflect.Descriptor instead.
 func (*ListDeploymentsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ListDeploymentsRequest) GetNamespace() string {
@@ -419,7 +419,7 @@ type ListDeploymentsResponse struct {
 func (x *ListDeploymentsResponse) Reset() {
 	*x = ListDeploymentsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -432,7 +432,7 @@ func (x *ListDeploymentsResponse) String() string {
 func (*ListDeploymentsResponse) ProtoMessage() {}
 
 func (x *ListDeploymentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -445,7 +445,7 @@ func (x *ListDeploymentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDeploymentsResponse.ProtoReflect.Descriptor instead.
 func (*ListDeploymentsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListDeploymentsResponse) GetItems() []*DeploymentInfo {
@@ -468,7 +468,7 @@ type GetServiceRequest struct {
 func (x *GetServiceRequest) Reset() {
 	*x = GetServiceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -481,7 +481,7 @@ func (x *GetServiceRequest) String() string {
 func (*GetServiceRequest) ProtoMessage() {}
 
 func (x *GetServiceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -494,7 +494,7 @@ func (x *GetServiceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetServiceRequest.ProtoReflect.Descriptor instead.
 func (*GetServiceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetServiceRequest) GetNamespace() string {
@@ -529,7 +529,7 @@ type GetServiceResponse struct {
 func (x *GetServiceResponse) Reset() {
 	*x = GetServiceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -542,7 +542,7 @@ func (x *GetServiceResponse) String() string {
 func (*GetServiceResponse) ProtoMessage() {}
 
 func (x *GetServiceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -555,7 +555,7 @@ func (x *GetServiceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetServiceResponse.ProtoReflect.Descriptor instead.
 func (*GetServiceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetServiceResponse) GetItem() *ServiceInfo {
@@ -577,7 +577,7 @@ type ListServicesRequest struct {
 func (x *ListServicesRequest) Reset() {
 	*x = ListServicesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -590,7 +590,7 @@ func (x *ListServicesRequest) String() string {
 func (*ListServicesRequest) ProtoMessage() {}
 
 func (x *ListServicesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -603,7 +603,7 @@ func (x *ListServicesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServicesRequest.ProtoReflect.Descriptor instead.
 func (*ListServicesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListServicesRequest) GetNamespace() string {
@@ -631,7 +631,7 @@ type ListServicesResponse struct {
 func (x *ListServicesResponse) Reset() {
 	*x = ListServicesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -644,7 +644,7 @@ func (x *ListServicesResponse) String() string {
 func (*ListServicesResponse) ProtoMessage() {}
 
 func (x *ListServicesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -657,7 +657,7 @@ func (x *ListServicesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServicesResponse.ProtoReflect.Descriptor instead.
 func (*ListServicesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListServicesResponse) GetItems() []*ServiceInfo {
@@ -680,7 +680,7 @@ type GetPodRequest struct {
 func (x *GetPodRequest) Reset() {
 	*x = GetPodRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -693,7 +693,7 @@ func (x *GetPodRequest) String() string {
 func (*GetPodRequest) ProtoMessage() {}
 
 func (x *GetPodRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -706,7 +706,7 @@ func (x *GetPodRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPodRequest.ProtoReflect.Descriptor instead.
 func (*GetPodRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetPodRequest) GetNamespace() string {
@@ -741,7 +741,7 @@ type GetPodResponse struct {
 func (x *GetPodResponse) Reset() {
 	*x = GetPodResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -754,7 +754,7 @@ func (x *GetPodResponse) String() string {
 func (*GetPodResponse) ProtoMessage() {}
 
 func (x *GetPodResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -767,7 +767,7 @@ func (x *GetPodResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPodResponse.ProtoReflect.Descriptor instead.
 func (*GetPodResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetPodResponse) GetItem() *PodInfo {
@@ -789,7 +789,7 @@ type ListPodsRequest struct {
 func (x *ListPodsRequest) Reset() {
 	*x = ListPodsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -802,7 +802,7 @@ func (x *ListPodsRequest) String() string {
 func (*ListPodsRequest) ProtoMessage() {}
 
 func (x *ListPodsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -815,7 +815,7 @@ func (x *ListPodsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPodsRequest.ProtoReflect.Descriptor instead.
 func (*ListPodsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListPodsRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type ListPodsResponse struct {
 func (x *ListPodsResponse) Reset() {
 	*x = ListPodsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *ListPodsResponse) String() string {
 func (*ListPodsResponse) ProtoMessage() {}
 
 func (x *ListPodsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *ListPodsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPodsResponse.ProtoReflect.Descriptor instead.
 func (*ListPodsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListPodsResponse) GetItems() []*PodInfo {
@@ -892,7 +892,7 @@ type GetJobRequest struct {
 func (x *GetJobRequest) Reset() {
 	*x = GetJobRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -905,7 +905,7 @@ func (x *GetJobRequest) String() string {
 func (*GetJobRequest) ProtoMessage() {}
 
 func (x *GetJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -918,7 +918,7 @@ func (x *GetJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJobRequest.ProtoReflect.Descriptor instead.
 func (*GetJobRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetJobRequest) GetNamespace() string {
@@ -953,7 +953,7 @@ type GetJobResponse struct {
 func (x *GetJobResponse) Reset() {
 	*x = GetJobResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -966,7 +966,7 @@ func (x *GetJobResponse) String() string {
 func (*GetJobResponse) ProtoMessage() {}
 
 func (x *GetJobResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -979,7 +979,7 @@ func (x *GetJobResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJobResponse.ProtoReflect.Descriptor instead.
 func (*GetJobResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetJobResponse) GetItem() *PodInfo {
@@ -1001,7 +1001,7 @@ type ListJobsRequest struct {
 func (x *ListJobsRequest) Reset() {
 	*x = ListJobsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1014,7 +1014,7 @@ func (x *ListJobsRequest) String() string {
 func (*ListJobsRequest) ProtoMessage() {}
 
 func (x *ListJobsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1027,7 +1027,7 @@ func (x *ListJobsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListJobsRequest.ProtoReflect.Descriptor instead.
 func (*ListJobsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ListJobsRequest) GetNamespace() string {
@@ -1055,7 +1055,7 @@ type ListJobsResponse struct {
 func (x *ListJobsResponse) Reset() {
 	*x = ListJobsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1068,7 +1068,7 @@ func (x *ListJobsResponse) String() string {
 func (*ListJobsResponse) ProtoMessage() {}
 
 func (x *ListJobsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1081,7 +1081,7 @@ func (x *ListJobsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListJobsResponse.ProtoReflect.Descriptor instead.
 func (*ListJobsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListJobsResponse) GetItems() []*JobInfo {
@@ -1104,7 +1104,7 @@ type ListEventsRequest struct {
 func (x *ListEventsRequest) Reset() {
 	*x = ListEventsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1117,7 +1117,7 @@ func (x *ListEventsRequest) String() string {
 func (*ListEventsRequest) ProtoMessage() {}
 
 func (x *ListEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1130,7 +1130,7 @@ func (x *ListEventsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEventsRequest.ProtoReflect.Descriptor instead.
 func (*ListEventsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ListEventsRequest) GetNamespace() string {
@@ -1165,7 +1165,7 @@ type ListEventsResponse struct {
 func (x *ListEventsResponse) Reset() {
 	*x = ListEventsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1178,7 +1178,7 @@ func (x *ListEventsResponse) String() string {
 func (*ListEventsResponse) ProtoMessage() {}
 
 func (x *ListEventsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1191,7 +1191,7 @@ func (x *ListEventsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEventsResponse.ProtoReflect.Descriptor instead.
 func (*ListEventsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ListEventsResponse) GetItems() *v1.EventList {
@@ -1213,7 +1213,7 @@ type SecretInfo struct {
 func (x *SecretInfo) Reset() {
 	*x = SecretInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1226,7 +1226,7 @@ func (x *SecretInfo) String() string {
 func (*SecretInfo) ProtoMessage() {}
 
 func (x *SecretInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1239,7 +1239,7 @@ func (x *SecretInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SecretInfo.ProtoReflect.Descriptor instead.
 func (*SecretInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *SecretInfo) GetName() string {
@@ -1268,7 +1268,7 @@ type ServiceInfo struct {
 func (x *ServiceInfo) Reset() {
 	*x = ServiceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1281,7 +1281,7 @@ func (x *ServiceInfo) String() string {
 func (*ServiceInfo) ProtoMessage() {}
 
 func (x *ServiceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1294,7 +1294,7 @@ func (x *ServiceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServiceInfo.ProtoReflect.Descriptor instead.
 func (*ServiceInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ServiceInfo) GetName() string {
@@ -1323,7 +1323,7 @@ type DeploymentInfo struct {
 func (x *DeploymentInfo) Reset() {
 	*x = DeploymentInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1336,7 +1336,7 @@ func (x *DeploymentInfo) String() string {
 func (*DeploymentInfo) ProtoMessage() {}
 
 func (x *DeploymentInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1349,7 +1349,7 @@ func (x *DeploymentInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeploymentInfo.ProtoReflect.Descriptor instead.
 func (*DeploymentInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *DeploymentInfo) GetName() string {
@@ -1378,7 +1378,7 @@ type PodInfo struct {
 func (x *PodInfo) Reset() {
 	*x = PodInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1391,7 +1391,7 @@ func (x *PodInfo) String() string {
 func (*PodInfo) ProtoMessage() {}
 
 func (x *PodInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1404,7 +1404,7 @@ func (x *PodInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PodInfo.ProtoReflect.Descriptor instead.
 func (*PodInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *PodInfo) GetName() string {
@@ -1433,7 +1433,7 @@ type JobInfo struct {
 func (x *JobInfo) Reset() {
 	*x = JobInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1446,7 +1446,7 @@ func (x *JobInfo) String() string {
 func (*JobInfo) ProtoMessage() {}
 
 func (x *JobInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1459,7 +1459,7 @@ func (x *JobInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JobInfo.ProtoReflect.Descriptor instead.
 func (*JobInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *JobInfo) GetName() string {
@@ -1476,9 +1476,9 @@ func (x *JobInfo) GetNamespace() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6b, 0x38, 0x73, 0x63, 0x6f, 0x72, 0x65,
@@ -1878,104 +1878,104 @@ var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescData = file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescData = file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
-var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_goTypes = []interface{}{
-	(*GetSecretRequest)(nil),        // 0: github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest
-	(*GetSecretResponse)(nil),       // 1: github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse
-	(*ListSecretsRequest)(nil),      // 2: github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest
-	(*ListSecretResponse)(nil),      // 3: github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse
-	(*GetDeploymentRequest)(nil),    // 4: github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest
-	(*GetDeploymentResponse)(nil),   // 5: github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse
-	(*ListDeploymentsRequest)(nil),  // 6: github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest
-	(*ListDeploymentsResponse)(nil), // 7: github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse
-	(*GetServiceRequest)(nil),       // 8: github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest
-	(*GetServiceResponse)(nil),      // 9: github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse
-	(*ListServicesRequest)(nil),     // 10: github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest
-	(*ListServicesResponse)(nil),    // 11: github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse
-	(*GetPodRequest)(nil),           // 12: github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest
-	(*GetPodResponse)(nil),          // 13: github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse
-	(*ListPodsRequest)(nil),         // 14: github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest
-	(*ListPodsResponse)(nil),        // 15: github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse
-	(*GetJobRequest)(nil),           // 16: github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest
-	(*GetJobResponse)(nil),          // 17: github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse
-	(*ListJobsRequest)(nil),         // 18: github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest
-	(*ListJobsResponse)(nil),        // 19: github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse
-	(*ListEventsRequest)(nil),       // 20: github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest
-	(*ListEventsResponse)(nil),      // 21: github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse
-	(*SecretInfo)(nil),              // 22: github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo
-	(*ServiceInfo)(nil),             // 23: github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo
-	(*DeploymentInfo)(nil),          // 24: github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo
-	(*PodInfo)(nil),                 // 25: github.com.metaprov.modeldapi.services.k8score.v1.PodInfo
-	(*JobInfo)(nil),                 // 26: github.com.metaprov.modeldapi.services.k8score.v1.JobInfo
-	nil,                             // 27: github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry
-	nil,                             // 28: github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry
-	nil,                             // 29: github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry
-	nil,                             // 30: github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry
-	nil,                             // 31: github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry
-	nil,                             // 32: github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry
-	nil,                             // 33: github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry
-	nil,                             // 34: github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry
-	nil,                             // 35: github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry
-	nil,                             // 36: github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry
-	nil,                             // 37: github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry
+var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
+var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_goTypes = []interface{}{
+	(*GetSecretRequest)(nil),        // 0: github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest
+	(*GetSecretResponse)(nil),       // 1: github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse
+	(*ListSecretsRequest)(nil),      // 2: github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest
+	(*ListSecretResponse)(nil),      // 3: github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse
+	(*GetDeploymentRequest)(nil),    // 4: github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest
+	(*GetDeploymentResponse)(nil),   // 5: github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse
+	(*ListDeploymentsRequest)(nil),  // 6: github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest
+	(*ListDeploymentsResponse)(nil), // 7: github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse
+	(*GetServiceRequest)(nil),       // 8: github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest
+	(*GetServiceResponse)(nil),      // 9: github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse
+	(*ListServicesRequest)(nil),     // 10: github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest
+	(*ListServicesResponse)(nil),    // 11: github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse
+	(*GetPodRequest)(nil),           // 12: github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest
+	(*GetPodResponse)(nil),          // 13: github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse
+	(*ListPodsRequest)(nil),         // 14: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest
+	(*ListPodsResponse)(nil),        // 15: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse
+	(*GetJobRequest)(nil),           // 16: github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest
+	(*GetJobResponse)(nil),          // 17: github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse
+	(*ListJobsRequest)(nil),         // 18: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest
+	(*ListJobsResponse)(nil),        // 19: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse
+	(*ListEventsRequest)(nil),       // 20: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest
+	(*ListEventsResponse)(nil),      // 21: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsResponse
+	(*SecretInfo)(nil),              // 22: github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo
+	(*ServiceInfo)(nil),             // 23: github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo
+	(*DeploymentInfo)(nil),          // 24: github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo
+	(*PodInfo)(nil),                 // 25: github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
+	(*JobInfo)(nil),                 // 26: github.com.metaprov.modelaapi.services.k8score.v1.JobInfo
+	nil,                             // 27: github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest.LabelsEntry
+	nil,                             // 28: github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest.LabelsEntry
+	nil,                             // 29: github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry
+	nil,                             // 30: github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry
+	nil,                             // 31: github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest.LabelsEntry
+	nil,                             // 32: github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest.LabelsEntry
+	nil,                             // 33: github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest.LabelsEntry
+	nil,                             // 34: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.LabelsEntry
+	nil,                             // 35: github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.LabelsEntry
+	nil,                             // 36: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.LabelsEntry
+	nil,                             // 37: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.LabelsEntry
 	(*v1.EventList)(nil),            // 38: k8s.io.api.core.v1.EventList
 }
-var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_depIdxs = []int32{
-	27, // 0: github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest.LabelsEntry
-	22, // 1: github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse.item:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo
-	28, // 2: github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest.LabelsEntry
-	22, // 3: github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse.items:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.SecretInfo
-	29, // 4: github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry
-	24, // 5: github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse.item:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo
-	30, // 6: github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry
-	24, // 7: github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse.items:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.DeploymentInfo
-	31, // 8: github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest.LabelsEntry
-	23, // 9: github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse.item:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo
-	32, // 10: github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest.LabelsEntry
-	23, // 11: github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse.items:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ServiceInfo
-	33, // 12: github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest.LabelsEntry
-	25, // 13: github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse.item:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.PodInfo
-	34, // 14: github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest.LabelsEntry
-	25, // 15: github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse.items:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.PodInfo
-	35, // 16: github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest.LabelsEntry
-	25, // 17: github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse.item:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.PodInfo
-	36, // 18: github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest.LabelsEntry
-	26, // 19: github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse.items:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.JobInfo
-	37, // 20: github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest.LabelsEntry
-	38, // 21: github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse.items:type_name -> k8s.io.api.core.v1.EventList
-	2,  // 22: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sSecrets:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListSecretsRequest
-	0,  // 23: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sSecret:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetSecretRequest
-	10, // 24: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sServices:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListServicesRequest
-	8,  // 25: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sService:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetServiceRequest
-	6,  // 26: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sDeployments:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsRequest
-	4,  // 27: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sDeployment:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentRequest
-	14, // 28: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sPods:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListPodsRequest
-	12, // 29: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sPod:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetPodRequest
-	18, // 30: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sJobs:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListJobsRequest
-	16, // 31: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sJob:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetJobRequest
-	20, // 32: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListEvents:input_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListEventsRequest
-	3,  // 33: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sSecrets:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListSecretResponse
-	1,  // 34: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sSecret:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetSecretResponse
-	11, // 35: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sServices:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListServicesResponse
-	9,  // 36: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sService:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetServiceResponse
-	7,  // 37: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sDeployments:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListDeploymentsResponse
-	5,  // 38: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sDeployment:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetDeploymentResponse
-	15, // 39: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sPods:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListPodsResponse
-	13, // 40: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sPod:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetPodResponse
-	19, // 41: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListK8sJobs:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListJobsResponse
-	17, // 42: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.GetK8sJob:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.GetJobResponse
-	21, // 43: github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService.ListEvents:output_type -> github.com.metaprov.modeldapi.services.k8score.v1.ListEventsResponse
+var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_depIdxs = []int32{
+	27, // 0: github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest.LabelsEntry
+	22, // 1: github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo
+	28, // 2: github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest.LabelsEntry
+	22, // 3: github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.SecretInfo
+	29, // 4: github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest.LabelsEntry
+	24, // 5: github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo
+	30, // 6: github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest.LabelsEntry
+	24, // 7: github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo
+	31, // 8: github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest.LabelsEntry
+	23, // 9: github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo
+	32, // 10: github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest.LabelsEntry
+	23, // 11: github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo
+	33, // 12: github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest.LabelsEntry
+	25, // 13: github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
+	34, // 14: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.LabelsEntry
+	25, // 15: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
+	35, // 16: github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.LabelsEntry
+	25, // 17: github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
+	36, // 18: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.LabelsEntry
+	26, // 19: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.JobInfo
+	37, // 20: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.LabelsEntry
+	38, // 21: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsResponse.items:type_name -> k8s.io.api.core.v1.EventList
+	2,  // 22: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sSecrets:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListSecretsRequest
+	0,  // 23: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sSecret:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetSecretRequest
+	10, // 24: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sServices:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListServicesRequest
+	8,  // 25: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sService:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetServiceRequest
+	6,  // 26: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sDeployments:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsRequest
+	4,  // 27: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sDeployment:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentRequest
+	14, // 28: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sPods:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest
+	12, // 29: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sPod:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetPodRequest
+	18, // 30: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sJobs:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest
+	16, // 31: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sJob:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest
+	20, // 32: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListEvents:input_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest
+	3,  // 33: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sSecrets:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListSecretResponse
+	1,  // 34: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sSecret:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetSecretResponse
+	11, // 35: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sServices:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListServicesResponse
+	9,  // 36: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sService:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetServiceResponse
+	7,  // 37: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sDeployments:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListDeploymentsResponse
+	5,  // 38: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sDeployment:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetDeploymentResponse
+	15, // 39: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sPods:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse
+	13, // 40: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sPod:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetPodResponse
+	19, // 41: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListK8sJobs:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse
+	17, // 42: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.GetK8sJob:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse
+	21, // 43: github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService.ListEvents:output_type -> github.com.metaprov.modelaapi.services.k8score.v1.ListEventsResponse
 	33, // [33:44] is the sub-list for method output_type
 	22, // [22:33] is the sub-list for method input_type
 	22, // [22:22] is the sub-list for extension type_name
@@ -1983,13 +1983,13 @@ var file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_depIdxs
 	0,  // [0:22] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init() }
-func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_init() }
+func file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSecretRequest); i {
 			case 0:
 				return &v.state
@@ -2001,7 +2001,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSecretResponse); i {
 			case 0:
 				return &v.state
@@ -2013,7 +2013,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListSecretsRequest); i {
 			case 0:
 				return &v.state
@@ -2025,7 +2025,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListSecretResponse); i {
 			case 0:
 				return &v.state
@@ -2037,7 +2037,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDeploymentRequest); i {
 			case 0:
 				return &v.state
@@ -2049,7 +2049,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDeploymentResponse); i {
 			case 0:
 				return &v.state
@@ -2061,7 +2061,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDeploymentsRequest); i {
 			case 0:
 				return &v.state
@@ -2073,7 +2073,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDeploymentsResponse); i {
 			case 0:
 				return &v.state
@@ -2085,7 +2085,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetServiceRequest); i {
 			case 0:
 				return &v.state
@@ -2097,7 +2097,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetServiceResponse); i {
 			case 0:
 				return &v.state
@@ -2109,7 +2109,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServicesRequest); i {
 			case 0:
 				return &v.state
@@ -2121,7 +2121,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServicesResponse); i {
 			case 0:
 				return &v.state
@@ -2133,7 +2133,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPodRequest); i {
 			case 0:
 				return &v.state
@@ -2145,7 +2145,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPodResponse); i {
 			case 0:
 				return &v.state
@@ -2157,7 +2157,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPodsRequest); i {
 			case 0:
 				return &v.state
@@ -2169,7 +2169,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPodsResponse); i {
 			case 0:
 				return &v.state
@@ -2181,7 +2181,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJobRequest); i {
 			case 0:
 				return &v.state
@@ -2193,7 +2193,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJobResponse); i {
 			case 0:
 				return &v.state
@@ -2205,7 +2205,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListJobsRequest); i {
 			case 0:
 				return &v.state
@@ -2217,7 +2217,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListJobsResponse); i {
 			case 0:
 				return &v.state
@@ -2229,7 +2229,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListEventsRequest); i {
 			case 0:
 				return &v.state
@@ -2241,7 +2241,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListEventsResponse); i {
 			case 0:
 				return &v.state
@@ -2253,7 +2253,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SecretInfo); i {
 			case 0:
 				return &v.state
@@ -2265,7 +2265,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServiceInfo); i {
 			case 0:
 				return &v.state
@@ -2277,7 +2277,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeploymentInfo); i {
 			case 0:
 				return &v.state
@@ -2289,7 +2289,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PodInfo); i {
 			case 0:
 				return &v.state
@@ -2301,7 +2301,7 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*JobInfo); i {
 			case 0:
 				return &v.state
@@ -2318,20 +2318,20 @@ func file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   38,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto = out.File
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_k8score_v1_k8score_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto = out.File
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2374,7 +2374,7 @@ func NewCoreK8SServiceClient(cc grpc.ClientConnInterface) CoreK8SServiceClient {
 
 func (c *coreK8SServiceClient) ListK8SSecrets(ctx context.Context, in *ListSecretsRequest, opts ...grpc.CallOption) (*ListSecretResponse, error) {
 	out := new(ListSecretResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sSecrets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8sSecrets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2383,7 +2383,7 @@ func (c *coreK8SServiceClient) ListK8SSecrets(ctx context.Context, in *ListSecre
 
 func (c *coreK8SServiceClient) GetK8SSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error) {
 	out := new(GetSecretResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sSecret", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8sSecret", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2392,7 +2392,7 @@ func (c *coreK8SServiceClient) GetK8SSecret(ctx context.Context, in *GetSecretRe
 
 func (c *coreK8SServiceClient) ListK8SServices(ctx context.Context, in *ListServicesRequest, opts ...grpc.CallOption) (*ListServicesResponse, error) {
 	out := new(ListServicesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sServices", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8sServices", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2401,7 +2401,7 @@ func (c *coreK8SServiceClient) ListK8SServices(ctx context.Context, in *ListServ
 
 func (c *coreK8SServiceClient) GetK8SService(ctx context.Context, in *GetServiceRequest, opts ...grpc.CallOption) (*GetServiceResponse, error) {
 	out := new(GetServiceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sService", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8sService", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2410,7 +2410,7 @@ func (c *coreK8SServiceClient) GetK8SService(ctx context.Context, in *GetService
 
 func (c *coreK8SServiceClient) ListK8SDeployments(ctx context.Context, in *ListDeploymentsRequest, opts ...grpc.CallOption) (*ListDeploymentsResponse, error) {
 	out := new(ListDeploymentsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sDeployments", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8sDeployments", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2419,7 +2419,7 @@ func (c *coreK8SServiceClient) ListK8SDeployments(ctx context.Context, in *ListD
 
 func (c *coreK8SServiceClient) GetK8SDeployment(ctx context.Context, in *GetDeploymentRequest, opts ...grpc.CallOption) (*GetDeploymentResponse, error) {
 	out := new(GetDeploymentResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sDeployment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8sDeployment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2428,7 +2428,7 @@ func (c *coreK8SServiceClient) GetK8SDeployment(ctx context.Context, in *GetDepl
 
 func (c *coreK8SServiceClient) ListK8SPods(ctx context.Context, in *ListPodsRequest, opts ...grpc.CallOption) (*ListPodsResponse, error) {
 	out := new(ListPodsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sPods", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8sPods", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2437,7 +2437,7 @@ func (c *coreK8SServiceClient) ListK8SPods(ctx context.Context, in *ListPodsRequ
 
 func (c *coreK8SServiceClient) GetK8SPod(ctx context.Context, in *GetPodRequest, opts ...grpc.CallOption) (*GetPodResponse, error) {
 	out := new(GetPodResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sPod", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8sPod", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2446,7 +2446,7 @@ func (c *coreK8SServiceClient) GetK8SPod(ctx context.Context, in *GetPodRequest,
 
 func (c *coreK8SServiceClient) ListK8SJobs(ctx context.Context, in *ListJobsRequest, opts ...grpc.CallOption) (*ListJobsResponse, error) {
 	out := new(ListJobsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8sJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8sJobs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2455,7 +2455,7 @@ func (c *coreK8SServiceClient) ListK8SJobs(ctx context.Context, in *ListJobsRequ
 
 func (c *coreK8SServiceClient) GetK8SJob(ctx context.Context, in *GetJobRequest, opts ...grpc.CallOption) (*GetJobResponse, error) {
 	out := new(GetJobResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8sJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8sJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2464,7 +2464,7 @@ func (c *coreK8SServiceClient) GetK8SJob(ctx context.Context, in *GetJobRequest,
 
 func (c *coreK8SServiceClient) ListEvents(ctx context.Context, in *ListEventsRequest, opts ...grpc.CallOption) (*ListEventsResponse, error) {
 	out := new(ListEventsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListEvents", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListEvents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2543,7 +2543,7 @@ func _CoreK8SService_ListK8SSecrets_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8SSecrets",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8SSecrets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListK8SSecrets(ctx, req.(*ListSecretsRequest))
@@ -2561,7 +2561,7 @@ func _CoreK8SService_GetK8SSecret_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8SSecret",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8SSecret",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).GetK8SSecret(ctx, req.(*GetSecretRequest))
@@ -2579,7 +2579,7 @@ func _CoreK8SService_ListK8SServices_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8SServices",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8SServices",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListK8SServices(ctx, req.(*ListServicesRequest))
@@ -2597,7 +2597,7 @@ func _CoreK8SService_GetK8SService_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8SService",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8SService",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).GetK8SService(ctx, req.(*GetServiceRequest))
@@ -2615,7 +2615,7 @@ func _CoreK8SService_ListK8SDeployments_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8SDeployments",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8SDeployments",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListK8SDeployments(ctx, req.(*ListDeploymentsRequest))
@@ -2633,7 +2633,7 @@ func _CoreK8SService_GetK8SDeployment_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8SDeployment",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8SDeployment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).GetK8SDeployment(ctx, req.(*GetDeploymentRequest))
@@ -2651,7 +2651,7 @@ func _CoreK8SService_ListK8SPods_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8SPods",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8SPods",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListK8SPods(ctx, req.(*ListPodsRequest))
@@ -2669,7 +2669,7 @@ func _CoreK8SService_GetK8SPod_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8SPod",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8SPod",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).GetK8SPod(ctx, req.(*GetPodRequest))
@@ -2687,7 +2687,7 @@ func _CoreK8SService_ListK8SJobs_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListK8SJobs",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListK8SJobs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListK8SJobs(ctx, req.(*ListJobsRequest))
@@ -2705,7 +2705,7 @@ func _CoreK8SService_GetK8SJob_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/GetK8SJob",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/GetK8SJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).GetK8SJob(ctx, req.(*GetJobRequest))
@@ -2723,7 +2723,7 @@ func _CoreK8SService_ListEvents_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService/ListEvents",
+		FullMethod: "/github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService/ListEvents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CoreK8SServiceServer).ListEvents(ctx, req.(*ListEventsRequest))
@@ -2732,7 +2732,7 @@ func _CoreK8SService_ListEvents_Handler(srv interface{}, ctx context.Context, de
 }
 
 var _CoreK8SService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.k8score.v1.CoreK8sService",
+	ServiceName: "github.com.metaprov.modelaapi.services.k8score.v1.CoreK8sService",
 	HandlerType: (*CoreK8SServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2781,5 +2781,5 @@ var _CoreK8SService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/k8score/v1/k8score.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto",
 }

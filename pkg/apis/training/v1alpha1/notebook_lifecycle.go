@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"text/template"
 
-	"github.com/metaprov/modeldapi/pkg/apis/training"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/training"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -43,7 +43,7 @@ func (notebook *Notebook) RemoveFinalizer() { util.RemoveFin(&notebook.ObjectMet
 //==============================================================================
 
 func (notebook *Notebook) GenImageName() string {
-	return fmt.Sprintf("modeld/%s", notebook.ObjectMeta.Name)
+	return fmt.Sprintf("modela/%s", notebook.ObjectMeta.Name)
 }
 
 func (model *Notebook) RootUri() string {
@@ -153,15 +153,15 @@ func (notebook *Notebook) Key() string {
 }
 
 func (notebook *Notebook) DepotKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/depot/notebooks", notebook.Key())
+	return fmt.Sprintf("%s/%s", "modela/depot/notebooks", notebook.Key())
 }
 
 func (notebook *Notebook) LiveKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/live/notebooks", notebook.Key())
+	return fmt.Sprintf("%s/%s", "modela/live/notebooks", notebook.Key())
 }
 
 func (notebook *Notebook) ArchiveKey() string {
-	return fmt.Sprintf("%s/%s", "modeld/archive/notebooks", notebook.Key())
+	return fmt.Sprintf("%s/%s", "modela/archive/notebooks", notebook.Key())
 }
 
 func ParseNotebookYaml(content []byte) (*Notebook, error) {

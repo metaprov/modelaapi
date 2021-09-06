@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.onlinefeaturestored.v1 import onlinefeaturestored_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2
+from github.com.metaprov.modelaapi.services.onlinefeaturestored.v1 import onlinefeaturestored_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2
 
 
 class OnlineFeatureStoreServiceStub(object):
@@ -15,34 +15,34 @@ class OnlineFeatureStoreServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
                 )
         self.DeleteFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
                 )
         self.ListFeatures = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
                 )
         self.GetFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
                 )
         self.UpdateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
                 )
         self.Enrich = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
                 )
 
 
@@ -90,37 +90,37 @@ def add_OnlineFeatureStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.SerializeToString,
             ),
             'DeleteFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.SerializeToString,
             ),
             'ListFeatures': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeatures,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.SerializeToString,
             ),
             'GetFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.SerializeToString,
             ),
             'UpdateFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.SerializeToString,
             ),
             'Enrich': grpc.unary_unary_rpc_method_handler(
                     servicer.Enrich,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,9 +139,9 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.CreateFeatureResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -156,9 +156,9 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.DeleteFeatureResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -173,9 +173,9 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.ListFeaturesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -190,9 +190,9 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.GetFeatureResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -207,9 +207,9 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.UpdateFeatureResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -224,8 +224,8 @@ class OnlineFeatureStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_onlinefeaturestored_dot_v1_dot_onlinefeaturestored__pb2.EnrichResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

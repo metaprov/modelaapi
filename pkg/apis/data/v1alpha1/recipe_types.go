@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -39,7 +39,7 @@ type RecipeCondition struct {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modeld,all}
+// +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
 type Recipe struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

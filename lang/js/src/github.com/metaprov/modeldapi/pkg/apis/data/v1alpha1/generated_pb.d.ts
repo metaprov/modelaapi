@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -987,8 +987,8 @@ export class DataProductSpec extends jspb.Message {
   getOncallaccountname(): string;
   setOncallaccountname(value: string): DataProductSpec;
 
-  getCompilation(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
-  setCompilation(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
+  getCompilation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec | undefined;
+  setCompilation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec): DataProductSpec;
   hasCompilation(): boolean;
   clearCompilation(): DataProductSpec;
 
@@ -1023,7 +1023,7 @@ export namespace DataProductSpec {
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
     oncallaccountname: string,
-    compilation?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
+    compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     clearencelevel: string,
     priority: string,
   }
@@ -3363,8 +3363,8 @@ export class LabelingPipelineSpec extends jspb.Message {
   getOutputlabelset(): string;
   setOutputlabelset(value: string): LabelingPipelineSpec;
 
-  getSchedule(): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): LabelingPipelineSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): LabelingPipelineSpec;
   hasSchedule(): boolean;
   clearSchedule(): LabelingPipelineSpec;
 
@@ -3395,7 +3395,7 @@ export namespace LabelingPipelineSpec {
     datasetselectorMap: Array<[string, string]>,
     recipenamesList: Array<string>,
     outputlabelset: string,
-    schedule?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,

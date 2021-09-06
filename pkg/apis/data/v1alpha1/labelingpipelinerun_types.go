@@ -56,7 +56,7 @@ type LabelingPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,shortName=lpr,categories={data,modeld}
+// +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,shortName=lpr,categories={data,modela}
 // +kubebuilder:subresource:status
 type LabelingPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListDatasetsRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListDatasetsRequest {
 }
 
 export class ListDatasetsResponse extends jspb.Message {
-  getDatasets(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList | undefined;
-  setDatasets(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList): ListDatasetsResponse;
+  getDatasets(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList | undefined;
+  setDatasets(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList): ListDatasetsResponse;
   hasDatasets(): boolean;
   clearDatasets(): ListDatasetsResponse;
 
@@ -43,7 +43,7 @@ export class ListDatasetsResponse extends jspb.Message {
 
 export namespace ListDatasetsResponse {
   export type AsObject = {
-    datasets?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.AsObject,
+    datasets?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.AsObject,
   }
 }
 
@@ -74,8 +74,8 @@ export namespace GetDatasetRequest {
 }
 
 export class GetDatasetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GetDatasetResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): GetDatasetResponse;
   hasItem(): boolean;
   clearItem(): GetDatasetResponse;
 
@@ -92,14 +92,14 @@ export class GetDatasetResponse extends jspb.Message {
 
 export namespace GetDatasetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     yaml: string,
   }
 }
 
 export class CreateDatasetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
   hasItem(): boolean;
   clearItem(): CreateDatasetRequest;
 
@@ -113,7 +113,7 @@ export class CreateDatasetRequest extends jspb.Message {
 
 export namespace CreateDatasetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -132,8 +132,8 @@ export namespace CreateDatasetResponse {
 }
 
 export class UpdateDatasetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): UpdateDatasetRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): UpdateDatasetRequest;
   hasItem(): boolean;
   clearItem(): UpdateDatasetRequest;
 
@@ -147,7 +147,7 @@ export class UpdateDatasetRequest extends jspb.Message {
 
 export namespace UpdateDatasetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -262,8 +262,8 @@ export class CreateDatasetProfileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): CreateDatasetProfileRequest;
 
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetProfileRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetProfileRequest;
   hasItem(): boolean;
   clearItem(): CreateDatasetProfileRequest;
 
@@ -279,7 +279,7 @@ export namespace CreateDatasetProfileRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -287,8 +287,8 @@ export class CreateDatasetProfileResponse extends jspb.Message {
   getUri(): string;
   setUri(value: string): CreateDatasetProfileResponse;
 
-  getProfile(): github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile | undefined;
-  setProfile(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile): CreateDatasetProfileResponse;
+  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile | undefined;
+  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile): CreateDatasetProfileResponse;
   hasProfile(): boolean;
   clearProfile(): CreateDatasetProfileResponse;
 
@@ -303,7 +303,7 @@ export class CreateDatasetProfileResponse extends jspb.Message {
 export namespace CreateDatasetProfileResponse {
   export type AsObject = {
     uri: string,
-    profile?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.AsObject,
+    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject,
   }
 }
 
@@ -317,8 +317,8 @@ export class CreateColumnProfileRequest extends jspb.Message {
   getCol(): string;
   setCol(value: string): CreateColumnProfileRequest;
 
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateColumnProfileRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateColumnProfileRequest;
   hasItem(): boolean;
   clearItem(): CreateColumnProfileRequest;
 
@@ -335,7 +335,7 @@ export namespace CreateColumnProfileRequest {
     namespace: string,
     name: string,
     col: string,
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -343,8 +343,8 @@ export class CreateColumnProfileResponse extends jspb.Message {
   getName(): string;
   setName(value: string): CreateColumnProfileResponse;
 
-  getPlot(): github_com_metaprov_modeldapi_services_common_v1_common_pb.Plot | undefined;
-  setPlot(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.Plot): CreateColumnProfileResponse;
+  getPlot(): github_com_metaprov_modelaapi_services_common_v1_common_pb.Plot | undefined;
+  setPlot(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.Plot): CreateColumnProfileResponse;
   hasPlot(): boolean;
   clearPlot(): CreateColumnProfileResponse;
 
@@ -359,7 +359,7 @@ export class CreateColumnProfileResponse extends jspb.Message {
 export namespace CreateColumnProfileResponse {
   export type AsObject = {
     name: string,
-    plot?: github_com_metaprov_modeldapi_services_common_v1_common_pb.Plot.AsObject,
+    plot?: github_com_metaprov_modelaapi_services_common_v1_common_pb.Plot.AsObject,
   }
 }
 
@@ -396,8 +396,8 @@ export class GetDatasetProfileResponse extends jspb.Message {
   getName(): string;
   setName(value: string): GetDatasetProfileResponse;
 
-  getProfile(): github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile | undefined;
-  setProfile(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile): GetDatasetProfileResponse;
+  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile | undefined;
+  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile): GetDatasetProfileResponse;
   hasProfile(): boolean;
   clearProfile(): GetDatasetProfileResponse;
 
@@ -413,7 +413,7 @@ export namespace GetDatasetProfileResponse {
   export type AsObject = {
     namespace: string,
     name: string,
-    profile?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.AsObject,
+    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject,
   }
 }
 
@@ -450,10 +450,10 @@ export class CompareDatasetsResponse extends jspb.Message {
   clearNamesList(): CompareDatasetsResponse;
   addNames(value: string, index?: number): CompareDatasetsResponse;
 
-  getProfilesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>;
-  setProfilesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>): CompareDatasetsResponse;
+  getProfilesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>): CompareDatasetsResponse;
   clearProfilesList(): CompareDatasetsResponse;
-  addProfiles(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile;
+  addProfiles(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CompareDatasetsResponse.AsObject;
@@ -467,7 +467,7 @@ export namespace CompareDatasetsResponse {
   export type AsObject = {
     namespace: string,
     namesList: Array<string>,
-    profilesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
+    profilesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
   }
 }
 
@@ -504,10 +504,10 @@ export class GenerateDatasetResponse extends jspb.Message {
   clearNamesList(): GenerateDatasetResponse;
   addNames(value: string, index?: number): GenerateDatasetResponse;
 
-  getProfilesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>;
-  setProfilesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>): GenerateDatasetResponse;
+  getProfilesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>): GenerateDatasetResponse;
   clearProfilesList(): GenerateDatasetResponse;
-  addProfiles(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile;
+  addProfiles(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateDatasetResponse.AsObject;
@@ -521,7 +521,7 @@ export namespace GenerateDatasetResponse {
   export type AsObject = {
     namespace: string,
     namesList: Array<string>,
-    profilesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
+    profilesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
   }
 }
 
@@ -558,10 +558,10 @@ export class ValidateDatasetResponse extends jspb.Message {
   clearNamesList(): ValidateDatasetResponse;
   addNames(value: string, index?: number): ValidateDatasetResponse;
 
-  getProfilesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>;
-  setProfilesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile>): ValidateDatasetResponse;
+  getProfilesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile>): ValidateDatasetResponse;
   clearProfilesList(): ValidateDatasetResponse;
-  addProfiles(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile;
+  addProfiles(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidateDatasetResponse.AsObject;
@@ -575,7 +575,7 @@ export namespace ValidateDatasetResponse {
   export type AsObject = {
     namespace: string,
     namesList: Array<string>,
-    profilesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
+    profilesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.DatasetProfile.AsObject>,
   }
 }
 
@@ -740,8 +740,8 @@ export namespace ExecuteSqlRequest {
 }
 
 export class ExecuteSqlResponse extends jspb.Message {
-  getTableview(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
-  setTableview(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): ExecuteSqlResponse;
+  getTableview(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTableview(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): ExecuteSqlResponse;
   hasTableview(): boolean;
   clearTableview(): ExecuteSqlResponse;
 
@@ -755,7 +755,7 @@ export class ExecuteSqlResponse extends jspb.Message {
 
 export namespace ExecuteSqlResponse {
   export type AsObject = {
-    tableview?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+    tableview?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
   }
 }
 

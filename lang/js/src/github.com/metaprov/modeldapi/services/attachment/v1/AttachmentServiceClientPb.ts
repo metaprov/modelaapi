@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.attachment.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.attachment.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb from '../../../../../../github.com/metaprov/modeldapi/services/attachment/v1/attachment_pb';
+import * as github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb from '../../../../../../github.com/metaprov/modelaapi/services/attachment/v1/attachment_pb';
 
 
 export class AttachmentServiceClient {
@@ -36,32 +36,32 @@ export class AttachmentServiceClient {
   }
 
   methodInfoListAttachments = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse,
-    (request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest) => {
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse,
+    (request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse.deserializeBinary
   );
 
   listAttachments(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse>;
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse>;
 
   listAttachments(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse>;
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse>;
 
   listAttachments(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.ListAttachmentsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/ListAttachments',
+          '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments',
         request,
         metadata || {},
         this.methodInfoListAttachments,
@@ -69,39 +69,39 @@ export class AttachmentServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/ListAttachments',
+      '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments',
     request,
     metadata || {},
     this.methodInfoListAttachments);
   }
 
   methodInfoCreateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse,
-    (request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest) => {
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse,
+    (request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse.deserializeBinary
   );
 
   createAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse>;
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse>;
 
   createAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse>;
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse>;
 
   createAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.CreateAttachmentResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/CreateAttachment',
+          '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment',
         request,
         metadata || {},
         this.methodInfoCreateAttachment,
@@ -109,39 +109,39 @@ export class AttachmentServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/CreateAttachment',
+      '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment',
     request,
     metadata || {},
     this.methodInfoCreateAttachment);
   }
 
   methodInfoGetAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse,
-    (request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentRequest) => {
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse,
+    (request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse.deserializeBinary
   );
 
   getAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse>;
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse>;
 
   getAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse>;
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse>;
 
   getAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.GetAttachmentResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.GetAttachmentResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/GetAttachment',
+          '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment',
         request,
         metadata || {},
         this.methodInfoGetAttachment,
@@ -149,39 +149,39 @@ export class AttachmentServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/GetAttachment',
+      '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment',
     request,
     metadata || {},
     this.methodInfoGetAttachment);
   }
 
   methodInfoUpdateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse,
-    (request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest) => {
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse,
+    (request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse.deserializeBinary
   );
 
   updateAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse>;
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse>;
 
   updateAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse>;
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse>;
 
   updateAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.UpdateAttachmentResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/UpdateAttachment',
+          '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment',
         request,
         metadata || {},
         this.methodInfoUpdateAttachment,
@@ -189,39 +189,39 @@ export class AttachmentServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/UpdateAttachment',
+      '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment',
     request,
     metadata || {},
     this.methodInfoUpdateAttachment);
   }
 
   methodInfoDeleteAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse,
-    (request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest) => {
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse,
+    (request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse.deserializeBinary
   );
 
   deleteAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse>;
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse>;
 
   deleteAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse>;
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse>;
 
   deleteAttachment(
-    request: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
+    request: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_attachment_v1_attachment_pb.DeleteAttachmentResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/DeleteAttachment',
+          '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment',
         request,
         metadata || {},
         this.methodInfoDeleteAttachment,
@@ -229,7 +229,7 @@ export class AttachmentServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/DeleteAttachment',
+      '/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment',
     request,
     metadata || {},
     this.methodInfoDeleteAttachment);

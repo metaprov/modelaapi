@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd.proto
+// source: github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -39,7 +39,7 @@ type ShutdownRequest struct {
 func (x *ShutdownRequest) Reset() {
 	*x = ShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -52,7 +52,7 @@ func (x *ShutdownRequest) String() string {
 func (*ShutdownRequest) ProtoMessage() {}
 
 func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,7 +65,7 @@ func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
 func (*ShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{0}
 }
 
 type ShutdownResponse struct {
@@ -77,7 +77,7 @@ type ShutdownResponse struct {
 func (x *ShutdownResponse) Reset() {
 	*x = ShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -90,7 +90,7 @@ func (x *ShutdownResponse) String() string {
 func (*ShutdownResponse) ProtoMessage() {}
 
 func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -103,7 +103,7 @@ func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
 func (*ShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{1}
 }
 
 type VirtualBucketExistRequest struct {
@@ -119,7 +119,7 @@ type VirtualBucketExistRequest struct {
 func (x *VirtualBucketExistRequest) Reset() {
 	*x = VirtualBucketExistRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -132,7 +132,7 @@ func (x *VirtualBucketExistRequest) String() string {
 func (*VirtualBucketExistRequest) ProtoMessage() {}
 
 func (x *VirtualBucketExistRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -145,7 +145,7 @@ func (x *VirtualBucketExistRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VirtualBucketExistRequest.ProtoReflect.Descriptor instead.
 func (*VirtualBucketExistRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *VirtualBucketExistRequest) GetBucket() *v1alpha1.VirtualBucket {
@@ -180,7 +180,7 @@ type VirtualBucketExistResponse struct {
 func (x *VirtualBucketExistResponse) Reset() {
 	*x = VirtualBucketExistResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -193,7 +193,7 @@ func (x *VirtualBucketExistResponse) String() string {
 func (*VirtualBucketExistResponse) ProtoMessage() {}
 
 func (x *VirtualBucketExistResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -206,7 +206,7 @@ func (x *VirtualBucketExistResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VirtualBucketExistResponse.ProtoReflect.Descriptor instead.
 func (*VirtualBucketExistResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *VirtualBucketExistResponse) GetExist() bool {
@@ -231,7 +231,7 @@ type KeyExistInVirtualBucketRequest struct {
 func (x *KeyExistInVirtualBucketRequest) Reset() {
 	*x = KeyExistInVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -244,7 +244,7 @@ func (x *KeyExistInVirtualBucketRequest) String() string {
 func (*KeyExistInVirtualBucketRequest) ProtoMessage() {}
 
 func (x *KeyExistInVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -257,7 +257,7 @@ func (x *KeyExistInVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeyExistInVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*KeyExistInVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *KeyExistInVirtualBucketRequest) GetRegion() string {
@@ -306,7 +306,7 @@ type KeyExistInVirtualBucketResponse struct {
 func (x *KeyExistInVirtualBucketResponse) Reset() {
 	*x = KeyExistInVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -319,7 +319,7 @@ func (x *KeyExistInVirtualBucketResponse) String() string {
 func (*KeyExistInVirtualBucketResponse) ProtoMessage() {}
 
 func (x *KeyExistInVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -332,7 +332,7 @@ func (x *KeyExistInVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeyExistInVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*KeyExistInVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *KeyExistInVirtualBucketResponse) GetExist() bool {
@@ -351,7 +351,7 @@ type CloudVirtualBucketResponse struct {
 func (x *CloudVirtualBucketResponse) Reset() {
 	*x = CloudVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -364,7 +364,7 @@ func (x *CloudVirtualBucketResponse) String() string {
 func (*CloudVirtualBucketResponse) ProtoMessage() {}
 
 func (x *CloudVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -377,7 +377,7 @@ func (x *CloudVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloudVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*CloudVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{6}
 }
 
 // Ask the bucket to download a file
@@ -396,7 +396,7 @@ type FileDownloadRequest struct {
 func (x *FileDownloadRequest) Reset() {
 	*x = FileDownloadRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -409,7 +409,7 @@ func (x *FileDownloadRequest) String() string {
 func (*FileDownloadRequest) ProtoMessage() {}
 
 func (x *FileDownloadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -422,7 +422,7 @@ func (x *FileDownloadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileDownloadRequest.ProtoReflect.Descriptor instead.
 func (*FileDownloadRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *FileDownloadRequest) GetKey() string {
@@ -469,7 +469,7 @@ type FileDownloadResponse struct {
 func (x *FileDownloadResponse) Reset() {
 	*x = FileDownloadResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -482,7 +482,7 @@ func (x *FileDownloadResponse) String() string {
 func (*FileDownloadResponse) ProtoMessage() {}
 
 func (x *FileDownloadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -495,7 +495,7 @@ func (x *FileDownloadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileDownloadResponse.ProtoReflect.Descriptor instead.
 func (*FileDownloadResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{8}
 }
 
 type FileUploadRequest struct {
@@ -513,7 +513,7 @@ type FileUploadRequest struct {
 func (x *FileUploadRequest) Reset() {
 	*x = FileUploadRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -526,7 +526,7 @@ func (x *FileUploadRequest) String() string {
 func (*FileUploadRequest) ProtoMessage() {}
 
 func (x *FileUploadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -539,7 +539,7 @@ func (x *FileUploadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileUploadRequest.ProtoReflect.Descriptor instead.
 func (*FileUploadRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *FileUploadRequest) GetKey() string {
@@ -586,7 +586,7 @@ type FileUploadResponse struct {
 func (x *FileUploadResponse) Reset() {
 	*x = FileUploadResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -599,7 +599,7 @@ func (x *FileUploadResponse) String() string {
 func (*FileUploadResponse) ProtoMessage() {}
 
 func (x *FileUploadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,7 +612,7 @@ func (x *FileUploadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileUploadResponse.ProtoReflect.Descriptor instead.
 func (*FileUploadResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{10}
 }
 
 type CreateVirtualBucketRequest struct {
@@ -628,7 +628,7 @@ type CreateVirtualBucketRequest struct {
 func (x *CreateVirtualBucketRequest) Reset() {
 	*x = CreateVirtualBucketRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -641,7 +641,7 @@ func (x *CreateVirtualBucketRequest) String() string {
 func (*CreateVirtualBucketRequest) ProtoMessage() {}
 
 func (x *CreateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -654,7 +654,7 @@ func (x *CreateVirtualBucketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualBucketRequest.ProtoReflect.Descriptor instead.
 func (*CreateVirtualBucketRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CreateVirtualBucketRequest) GetBucket() *v1alpha1.VirtualBucket {
@@ -687,7 +687,7 @@ type CreateVirtualBucketResponse struct {
 func (x *CreateVirtualBucketResponse) Reset() {
 	*x = CreateVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -700,7 +700,7 @@ func (x *CreateVirtualBucketResponse) String() string {
 func (*CreateVirtualBucketResponse) ProtoMessage() {}
 
 func (x *CreateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -713,12 +713,12 @@ func (x *CreateVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*CreateVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP(), []int{12}
 }
 
-var File_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc = []byte{
 	0x0a, 0x47, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x70, 0x72,
@@ -956,68 +956,68 @@ var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData = file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData = file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes = []interface{}{
-	(*ShutdownRequest)(nil),                 // 0: github.com.metaprov.modeldapi.services.cloudproxyd.v1.ShutdownRequest
-	(*ShutdownResponse)(nil),                // 1: github.com.metaprov.modeldapi.services.cloudproxyd.v1.ShutdownResponse
-	(*VirtualBucketExistRequest)(nil),       // 2: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest
-	(*VirtualBucketExistResponse)(nil),      // 3: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistResponse
-	(*KeyExistInVirtualBucketRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest
-	(*KeyExistInVirtualBucketResponse)(nil), // 5: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse
-	(*CloudVirtualBucketResponse)(nil),      // 6: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudVirtualBucketResponse
-	(*FileDownloadRequest)(nil),             // 7: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest
-	(*FileDownloadResponse)(nil),            // 8: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadResponse
-	(*FileUploadRequest)(nil),               // 9: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest
-	(*FileUploadResponse)(nil),              // 10: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadResponse
-	(*CreateVirtualBucketRequest)(nil),      // 11: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest
-	(*CreateVirtualBucketResponse)(nil),     // 12: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketResponse
-	nil,                                     // 13: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry
-	nil,                                     // 14: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry
-	nil,                                     // 15: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry
-	nil,                                     // 16: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry
-	nil,                                     // 17: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry
-	(*v1alpha1.VirtualBucket)(nil),          // 18: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha1.Connection)(nil),             // 19: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+var file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes = []interface{}{
+	(*ShutdownRequest)(nil),                 // 0: github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest
+	(*ShutdownResponse)(nil),                // 1: github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse
+	(*VirtualBucketExistRequest)(nil),       // 2: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest
+	(*VirtualBucketExistResponse)(nil),      // 3: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse
+	(*KeyExistInVirtualBucketRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest
+	(*KeyExistInVirtualBucketResponse)(nil), // 5: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse
+	(*CloudVirtualBucketResponse)(nil),      // 6: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudVirtualBucketResponse
+	(*FileDownloadRequest)(nil),             // 7: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest
+	(*FileDownloadResponse)(nil),            // 8: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse
+	(*FileUploadRequest)(nil),               // 9: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest
+	(*FileUploadResponse)(nil),              // 10: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse
+	(*CreateVirtualBucketRequest)(nil),      // 11: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest
+	(*CreateVirtualBucketResponse)(nil),     // 12: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse
+	nil,                                     // 13: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry
+	nil,                                     // 14: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry
+	nil,                                     // 15: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry
+	nil,                                     // 16: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry
+	nil,                                     // 17: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry
+	(*v1alpha1.VirtualBucket)(nil),          // 18: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha1.Connection)(nil),             // 19: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 }
-var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs = []int32{
-	18, // 0: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	19, // 1: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	13, // 2: github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest.secret:type_name -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry
-	18, // 3: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	19, // 4: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	14, // 5: github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.secret:type_name -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry
-	18, // 6: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	19, // 7: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	15, // 8: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest.secret:type_name -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry
-	18, // 9: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	19, // 10: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	16, // 11: github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest.secret:type_name -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry
-	18, // 12: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	19, // 13: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	17, // 14: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.secret:type_name -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry
-	7,  // 15: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Download:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadRequest
-	9,  // 16: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Upload:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadRequest
-	4,  // 17: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.KeyExistInVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest
-	2,  // 18: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.VirtualBucketExist:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistRequest
-	11, // 19: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.CreateVirtualBucketIfNotExist:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketRequest
-	0,  // 20: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Shutdown:input_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.ShutdownRequest
-	8,  // 21: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Download:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileDownloadResponse
-	10, // 22: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Upload:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.FileUploadResponse
-	5,  // 23: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.KeyExistInVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse
-	3,  // 24: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.VirtualBucketExist:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.VirtualBucketExistResponse
-	12, // 25: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.CreateVirtualBucketIfNotExist:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.CreateVirtualBucketResponse
-	1,  // 26: github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService.Shutdown:output_type -> github.com.metaprov.modeldapi.services.cloudproxyd.v1.ShutdownResponse
+var file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs = []int32{
+	18, // 0: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	19, // 1: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	13, // 2: github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.secret:type_name -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest.SecretEntry
+	18, // 3: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	19, // 4: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	14, // 5: github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.secret:type_name -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest.SecretEntry
+	18, // 6: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	19, // 7: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	15, // 8: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.secret:type_name -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.SecretEntry
+	18, // 9: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	19, // 10: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	16, // 11: github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.secret:type_name -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest.SecretEntry
+	18, // 12: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	19, // 13: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	17, // 14: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.secret:type_name -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest.SecretEntry
+	7,  // 15: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Download:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest
+	9,  // 16: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Upload:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadRequest
+	4,  // 17: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.KeyExistInVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketRequest
+	2,  // 18: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.VirtualBucketExist:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistRequest
+	11, // 19: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.CreateVirtualBucketIfNotExist:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketRequest
+	0,  // 20: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Shutdown:input_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownRequest
+	8,  // 21: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Download:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadResponse
+	10, // 22: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Upload:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileUploadResponse
+	5,  // 23: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.KeyExistInVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.KeyExistInVirtualBucketResponse
+	3,  // 24: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.VirtualBucketExist:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.VirtualBucketExistResponse
+	12, // 25: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.CreateVirtualBucketIfNotExist:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.CreateVirtualBucketResponse
+	1,  // 26: github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService.Shutdown:output_type -> github.com.metaprov.modelaapi.services.cloudproxyd.v1.ShutdownResponse
 	21, // [21:27] is the sub-list for method output_type
 	15, // [15:21] is the sub-list for method input_type
 	15, // [15:15] is the sub-list for extension type_name
@@ -1025,13 +1025,13 @@ var file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto
 	0,  // [0:15] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_init() }
-func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_init() }
+func file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1043,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -1055,7 +1055,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VirtualBucketExistRequest); i {
 			case 0:
 				return &v.state
@@ -1067,7 +1067,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VirtualBucketExistResponse); i {
 			case 0:
 				return &v.state
@@ -1079,7 +1079,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeyExistInVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -1091,7 +1091,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeyExistInVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -1103,7 +1103,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CloudVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -1115,7 +1115,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FileDownloadRequest); i {
 			case 0:
 				return &v.state
@@ -1127,7 +1127,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FileDownloadResponse); i {
 			case 0:
 				return &v.state
@@ -1139,7 +1139,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FileUploadRequest); i {
 			case 0:
 				return &v.state
@@ -1151,7 +1151,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FileUploadResponse); i {
 			case 0:
 				return &v.state
@@ -1163,7 +1163,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualBucketRequest); i {
 			case 0:
 				return &v.state
@@ -1175,7 +1175,7 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -1192,20 +1192,20 @@ func file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_prot
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto = out.File
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto = out.File
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1238,7 +1238,7 @@ func NewCloudProxyServiceClient(cc grpc.ClientConnInterface) CloudProxyServiceCl
 
 func (c *cloudProxyServiceClient) Download(ctx context.Context, in *FileDownloadRequest, opts ...grpc.CallOption) (*FileDownloadResponse, error) {
 	out := new(FileDownloadResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Download", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1247,7 +1247,7 @@ func (c *cloudProxyServiceClient) Download(ctx context.Context, in *FileDownload
 
 func (c *cloudProxyServiceClient) Upload(ctx context.Context, in *FileUploadRequest, opts ...grpc.CallOption) (*FileUploadResponse, error) {
 	out := new(FileUploadResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Upload", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1256,7 +1256,7 @@ func (c *cloudProxyServiceClient) Upload(ctx context.Context, in *FileUploadRequ
 
 func (c *cloudProxyServiceClient) KeyExistInVirtualBucket(ctx context.Context, in *KeyExistInVirtualBucketRequest, opts ...grpc.CallOption) (*KeyExistInVirtualBucketResponse, error) {
 	out := new(KeyExistInVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1265,7 +1265,7 @@ func (c *cloudProxyServiceClient) KeyExistInVirtualBucket(ctx context.Context, i
 
 func (c *cloudProxyServiceClient) VirtualBucketExist(ctx context.Context, in *VirtualBucketExistRequest, opts ...grpc.CallOption) (*VirtualBucketExistResponse, error) {
 	out := new(VirtualBucketExistResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1274,7 +1274,7 @@ func (c *cloudProxyServiceClient) VirtualBucketExist(ctx context.Context, in *Vi
 
 func (c *cloudProxyServiceClient) CreateVirtualBucketIfNotExist(ctx context.Context, in *CreateVirtualBucketRequest, opts ...grpc.CallOption) (*CreateVirtualBucketResponse, error) {
 	out := new(CreateVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1283,7 +1283,7 @@ func (c *cloudProxyServiceClient) CreateVirtualBucketIfNotExist(ctx context.Cont
 
 func (c *cloudProxyServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1337,7 +1337,7 @@ func _CloudProxyService_Download_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Download",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).Download(ctx, req.(*FileDownloadRequest))
@@ -1355,7 +1355,7 @@ func _CloudProxyService_Upload_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Upload",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).Upload(ctx, req.(*FileUploadRequest))
@@ -1373,7 +1373,7 @@ func _CloudProxyService_KeyExistInVirtualBucket_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).KeyExistInVirtualBucket(ctx, req.(*KeyExistInVirtualBucketRequest))
@@ -1391,7 +1391,7 @@ func _CloudProxyService_VirtualBucketExist_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).VirtualBucketExist(ctx, req.(*VirtualBucketExistRequest))
@@ -1409,7 +1409,7 @@ func _CloudProxyService_CreateVirtualBucketIfNotExist_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).CreateVirtualBucketIfNotExist(ctx, req.(*CreateVirtualBucketRequest))
@@ -1427,7 +1427,7 @@ func _CloudProxyService_Shutdown_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Shutdown",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudProxyServiceServer).Shutdown(ctx, req.(*ShutdownRequest))
@@ -1436,7 +1436,7 @@ func _CloudProxyService_Shutdown_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _CloudProxyService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService",
+	ServiceName: "github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService",
 	HandlerType: (*CloudProxyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1465,5 +1465,5 @@ var _CloudProxyService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto",
 }

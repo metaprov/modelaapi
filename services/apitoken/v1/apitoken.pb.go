@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto
+// source: github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListApiTokensRequest struct {
 func (x *ListApiTokensRequest) Reset() {
 	*x = ListApiTokensRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListApiTokensRequest) String() string {
 func (*ListApiTokensRequest) ProtoMessage() {}
 
 func (x *ListApiTokensRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListApiTokensRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiTokensRequest.ProtoReflect.Descriptor instead.
 func (*ListApiTokensRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListApiTokensRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListApiTokensResponse struct {
 func (x *ListApiTokensResponse) Reset() {
 	*x = ListApiTokensResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListApiTokensResponse) String() string {
 func (*ListApiTokensResponse) ProtoMessage() {}
 
 func (x *ListApiTokensResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListApiTokensResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiTokensResponse.ProtoReflect.Descriptor instead.
 func (*ListApiTokensResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListApiTokensResponse) GetItems() *v1alpha1.ApiTokenList {
@@ -143,7 +143,7 @@ type ApiTokenResponse struct {
 func (x *ApiTokenResponse) Reset() {
 	*x = ApiTokenResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *ApiTokenResponse) String() string {
 func (*ApiTokenResponse) ProtoMessage() {}
 
 func (x *ApiTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *ApiTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenResponse.ProtoReflect.Descriptor instead.
 func (*ApiTokenResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateApiTokenRequest struct {
@@ -184,7 +184,7 @@ type CreateApiTokenRequest struct {
 func (x *CreateApiTokenRequest) Reset() {
 	*x = CreateApiTokenRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateApiTokenRequest) String() string {
 func (*CreateApiTokenRequest) ProtoMessage() {}
 
 func (x *CreateApiTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateApiTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateApiTokenRequest.ProtoReflect.Descriptor instead.
 func (*CreateApiTokenRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateApiTokenRequest) GetItem() *v1alpha1.ApiToken {
@@ -236,7 +236,7 @@ type CreateApiTokenResponse struct {
 func (x *CreateApiTokenResponse) Reset() {
 	*x = CreateApiTokenResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateApiTokenResponse) String() string {
 func (*CreateApiTokenResponse) ProtoMessage() {}
 
 func (x *CreateApiTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateApiTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateApiTokenResponse.ProtoReflect.Descriptor instead.
 func (*CreateApiTokenResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateApiTokenRequest struct {
@@ -276,7 +276,7 @@ type UpdateApiTokenRequest struct {
 func (x *UpdateApiTokenRequest) Reset() {
 	*x = UpdateApiTokenRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateApiTokenRequest) String() string {
 func (*UpdateApiTokenRequest) ProtoMessage() {}
 
 func (x *UpdateApiTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateApiTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateApiTokenRequest.ProtoReflect.Descriptor instead.
 func (*UpdateApiTokenRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateApiTokenRequest) GetItem() *v1alpha1.ApiToken {
@@ -321,7 +321,7 @@ type UpdateApiTokenResponse struct {
 func (x *UpdateApiTokenResponse) Reset() {
 	*x = UpdateApiTokenResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateApiTokenResponse) String() string {
 func (*UpdateApiTokenResponse) ProtoMessage() {}
 
 func (x *UpdateApiTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateApiTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateApiTokenResponse.ProtoReflect.Descriptor instead.
 func (*UpdateApiTokenResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{6}
 }
 
 type GetApiTokenRequest struct {
@@ -362,7 +362,7 @@ type GetApiTokenRequest struct {
 func (x *GetApiTokenRequest) Reset() {
 	*x = GetApiTokenRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetApiTokenRequest) String() string {
 func (*GetApiTokenRequest) ProtoMessage() {}
 
 func (x *GetApiTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetApiTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetApiTokenRequest.ProtoReflect.Descriptor instead.
 func (*GetApiTokenRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetApiTokenRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetApiTokenResponse struct {
 func (x *GetApiTokenResponse) Reset() {
 	*x = GetApiTokenResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetApiTokenResponse) String() string {
 func (*GetApiTokenResponse) ProtoMessage() {}
 
 func (x *GetApiTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetApiTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetApiTokenResponse.ProtoReflect.Descriptor instead.
 func (*GetApiTokenResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetApiTokenResponse) GetItem() *v1alpha1.ApiToken {
@@ -472,7 +472,7 @@ type GetApiTokenNamespacesRequest struct {
 func (x *GetApiTokenNamespacesRequest) Reset() {
 	*x = GetApiTokenNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetApiTokenNamespacesRequest) String() string {
 func (*GetApiTokenNamespacesRequest) ProtoMessage() {}
 
 func (x *GetApiTokenNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetApiTokenNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetApiTokenNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetApiTokenNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetApiTokenNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetApiTokenNamespacesResponse struct {
 func (x *GetApiTokenNamespacesResponse) Reset() {
 	*x = GetApiTokenNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetApiTokenNamespacesResponse) String() string {
 func (*GetApiTokenNamespacesResponse) ProtoMessage() {}
 
 func (x *GetApiTokenNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetApiTokenNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetApiTokenNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetApiTokenNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetApiTokenNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteApiTokenRequest struct {
 func (x *DeleteApiTokenRequest) Reset() {
 	*x = DeleteApiTokenRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteApiTokenRequest) String() string {
 func (*DeleteApiTokenRequest) ProtoMessage() {}
 
 func (x *DeleteApiTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteApiTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteApiTokenRequest.ProtoReflect.Descriptor instead.
 func (*DeleteApiTokenRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteApiTokenRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteApiTokenResponse struct {
 func (x *DeleteApiTokenResponse) Reset() {
 	*x = DeleteApiTokenResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteApiTokenResponse) String() string {
 func (*DeleteApiTokenResponse) ProtoMessage() {}
 
 func (x *DeleteApiTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteApiTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteApiTokenResponse.ProtoReflect.Descriptor instead.
 func (*DeleteApiTokenResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{12}
 }
 
 type ApiTokenCreateResponse struct {
@@ -664,7 +664,7 @@ type ApiTokenCreateResponse struct {
 func (x *ApiTokenCreateResponse) Reset() {
 	*x = ApiTokenCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *ApiTokenCreateResponse) String() string {
 func (*ApiTokenCreateResponse) ProtoMessage() {}
 
 func (x *ApiTokenCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *ApiTokenCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenCreateResponse.ProtoReflect.Descriptor instead.
 func (*ApiTokenCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{13}
 }
 
 type LogoutResponse struct {
@@ -702,7 +702,7 @@ type LogoutResponse struct {
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -715,7 +715,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -728,7 +728,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{14}
 }
 
 type ResetPasswordResponse struct {
@@ -740,7 +740,7 @@ type ResetPasswordResponse struct {
 func (x *ResetPasswordResponse) Reset() {
 	*x = ResetPasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -753,7 +753,7 @@ func (x *ResetPasswordResponse) String() string {
 func (*ResetPasswordResponse) ProtoMessage() {}
 
 func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{15}
 }
 
 type ApiTokenLoginRequest struct {
@@ -782,7 +782,7 @@ type ApiTokenLoginRequest struct {
 func (x *ApiTokenLoginRequest) Reset() {
 	*x = ApiTokenLoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +795,7 @@ func (x *ApiTokenLoginRequest) String() string {
 func (*ApiTokenLoginRequest) ProtoMessage() {}
 
 func (x *ApiTokenLoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +808,7 @@ func (x *ApiTokenLoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenLoginRequest.ProtoReflect.Descriptor instead.
 func (*ApiTokenLoginRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ApiTokenLoginRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type ApiTokenLoginResponse struct {
 func (x *ApiTokenLoginResponse) Reset() {
 	*x = ApiTokenLoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *ApiTokenLoginResponse) String() string {
 func (*ApiTokenLoginResponse) ProtoMessage() {}
 
 func (x *ApiTokenLoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *ApiTokenLoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenLoginResponse.ProtoReflect.Descriptor instead.
 func (*ApiTokenLoginResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ApiTokenLoginResponse) GetToken() string {
@@ -891,7 +891,7 @@ type ApiTokenGetByNameRequest struct {
 func (x *ApiTokenGetByNameRequest) Reset() {
 	*x = ApiTokenGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -904,7 +904,7 @@ func (x *ApiTokenGetByNameRequest) String() string {
 func (*ApiTokenGetByNameRequest) ProtoMessage() {}
 
 func (x *ApiTokenGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *ApiTokenGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*ApiTokenGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ApiTokenGetByNameRequest) GetNamespace() string {
@@ -945,7 +945,7 @@ type ApiTokenLogoutRequest struct {
 func (x *ApiTokenLogoutRequest) Reset() {
 	*x = ApiTokenLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +958,7 @@ func (x *ApiTokenLogoutRequest) String() string {
 func (*ApiTokenLogoutRequest) ProtoMessage() {}
 
 func (x *ApiTokenLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +971,7 @@ func (x *ApiTokenLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiTokenLogoutRequest.ProtoReflect.Descriptor instead.
 func (*ApiTokenLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ApiTokenLogoutRequest) GetToken() string {
@@ -996,7 +996,7 @@ type ChangePasswordRequest struct {
 func (x *ChangePasswordRequest) Reset() {
 	*x = ChangePasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *ChangePasswordRequest) String() string {
 func (*ChangePasswordRequest) ProtoMessage() {}
 
 func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
 func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ChangePasswordRequest) GetNamespace() string {
@@ -1069,7 +1069,7 @@ type ChangePasswordResponse struct {
 func (x *ChangePasswordResponse) Reset() {
 	*x = ChangePasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1082,7 +1082,7 @@ func (x *ChangePasswordResponse) String() string {
 func (*ChangePasswordResponse) ProtoMessage() {}
 
 func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1095,7 @@ func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordResponse.ProtoReflect.Descriptor instead.
 func (*ChangePasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{21}
 }
 
 type ResetPasswordRequest struct {
@@ -1112,7 +1112,7 @@ type ResetPasswordRequest struct {
 func (x *ResetPasswordRequest) Reset() {
 	*x = ResetPasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1125,7 +1125,7 @@ func (x *ResetPasswordRequest) String() string {
 func (*ResetPasswordRequest) ProtoMessage() {}
 
 func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1138,7 +1138,7 @@ func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
 func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ResetPasswordRequest) GetNamespace() string {
@@ -1178,7 +1178,7 @@ type ResetPasswordReponse struct {
 func (x *ResetPasswordReponse) Reset() {
 	*x = ResetPasswordReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1191,7 +1191,7 @@ func (x *ResetPasswordReponse) String() string {
 func (*ResetPasswordReponse) ProtoMessage() {}
 
 func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1204,12 +1204,12 @@ func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordReponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP(), []int{23}
 }
 
-var File_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDesc = []byte{
 	0x0a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x70, 0x69, 0x74, 0x6f, 0x6b, 0x65,
@@ -1418,65 +1418,65 @@ var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescData = file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescData = file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
-var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_goTypes = []interface{}{
-	(*ListApiTokensRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensRequest
-	(*ListApiTokensResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensResponse
-	(*ApiTokenResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenResponse
-	(*CreateApiTokenRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.apitoken.v1.CreateApiTokenRequest
-	(*CreateApiTokenResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.apitoken.v1.CreateApiTokenResponse
-	(*UpdateApiTokenRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.apitoken.v1.UpdateApiTokenRequest
-	(*UpdateApiTokenResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.apitoken.v1.UpdateApiTokenResponse
-	(*GetApiTokenRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenRequest
-	(*GetApiTokenResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenResponse
-	(*GetApiTokenNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenNamespacesRequest
-	(*GetApiTokenNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenNamespacesResponse
-	(*DeleteApiTokenRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.apitoken.v1.DeleteApiTokenRequest
-	(*DeleteApiTokenResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.apitoken.v1.DeleteApiTokenResponse
-	(*ApiTokenCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenCreateResponse
-	(*LogoutResponse)(nil),                // 14: github.com.metaprov.modeldapi.services.apitoken.v1.LogoutResponse
-	(*ResetPasswordResponse)(nil),         // 15: github.com.metaprov.modeldapi.services.apitoken.v1.ResetPasswordResponse
-	(*ApiTokenLoginRequest)(nil),          // 16: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenLoginRequest
-	(*ApiTokenLoginResponse)(nil),         // 17: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenLoginResponse
-	(*ApiTokenGetByNameRequest)(nil),      // 18: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenGetByNameRequest
-	(*ApiTokenLogoutRequest)(nil),         // 19: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenLogoutRequest
-	(*ChangePasswordRequest)(nil),         // 20: github.com.metaprov.modeldapi.services.apitoken.v1.ChangePasswordRequest
-	(*ChangePasswordResponse)(nil),        // 21: github.com.metaprov.modeldapi.services.apitoken.v1.ChangePasswordResponse
-	(*ResetPasswordRequest)(nil),          // 22: github.com.metaprov.modeldapi.services.apitoken.v1.ResetPasswordRequest
-	(*ResetPasswordReponse)(nil),          // 23: github.com.metaprov.modeldapi.services.apitoken.v1.ResetPasswordReponse
-	nil,                                   // 24: github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry
-	(*v1alpha1.ApiTokenList)(nil),         // 25: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiTokenList
-	(*v1alpha1.ApiToken)(nil),             // 26: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken
-	(*v1.NamespaceInfo)(nil),              // 27: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_goTypes = []interface{}{
+	(*ListApiTokensRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest
+	(*ListApiTokensResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse
+	(*ApiTokenResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenResponse
+	(*CreateApiTokenRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest
+	(*CreateApiTokenResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse
+	(*UpdateApiTokenRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest
+	(*UpdateApiTokenResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse
+	(*GetApiTokenRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest
+	(*GetApiTokenResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse
+	(*GetApiTokenNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesRequest
+	(*GetApiTokenNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesResponse
+	(*DeleteApiTokenRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest
+	(*DeleteApiTokenResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse
+	(*ApiTokenCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenCreateResponse
+	(*LogoutResponse)(nil),                // 14: github.com.metaprov.modelaapi.services.apitoken.v1.LogoutResponse
+	(*ResetPasswordResponse)(nil),         // 15: github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordResponse
+	(*ApiTokenLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest
+	(*ApiTokenLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginResponse
+	(*ApiTokenGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenGetByNameRequest
+	(*ApiTokenLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLogoutRequest
+	(*ChangePasswordRequest)(nil),         // 20: github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest
+	(*ChangePasswordResponse)(nil),        // 21: github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordResponse
+	(*ResetPasswordRequest)(nil),          // 22: github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest
+	(*ResetPasswordReponse)(nil),          // 23: github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordReponse
+	nil,                                   // 24: github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry
+	(*v1alpha1.ApiTokenList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList
+	(*v1alpha1.ApiToken)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken
+	(*v1.NamespaceInfo)(nil),              // 27: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_depIdxs = []int32{
-	24, // 0: github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensRequest.labels:type_name -> github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry
-	25, // 1: github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiTokenList
-	26, // 2: github.com.metaprov.modeldapi.services.apitoken.v1.CreateApiTokenRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken
-	26, // 3: github.com.metaprov.modeldapi.services.apitoken.v1.UpdateApiTokenRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken
-	26, // 4: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken
-	27, // 5: github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.ListApiTokens:input_type -> github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.CreateApiToken:input_type -> github.com.metaprov.modeldapi.services.apitoken.v1.CreateApiTokenRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.GetApiToken:input_type -> github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.UpdateApiToken:input_type -> github.com.metaprov.modeldapi.services.apitoken.v1.UpdateApiTokenRequest
-	11, // 10: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.DeleteApiToken:input_type -> github.com.metaprov.modeldapi.services.apitoken.v1.DeleteApiTokenRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.ListApiTokens:output_type -> github.com.metaprov.modeldapi.services.apitoken.v1.ListApiTokensResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.CreateApiToken:output_type -> github.com.metaprov.modeldapi.services.apitoken.v1.CreateApiTokenResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.GetApiToken:output_type -> github.com.metaprov.modeldapi.services.apitoken.v1.GetApiTokenResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.UpdateApiToken:output_type -> github.com.metaprov.modeldapi.services.apitoken.v1.UpdateApiTokenResponse
-	12, // 15: github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService.DeleteApiToken:output_type -> github.com.metaprov.modeldapi.services.apitoken.v1.DeleteApiTokenResponse
+var file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_depIdxs = []int32{
+	24, // 0: github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.labels:type_name -> github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry
+	25, // 1: github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList
+	26, // 2: github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken
+	26, // 3: github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken
+	26, // 4: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken
+	27, // 5: github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.ListApiTokens:input_type -> github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.CreateApiToken:input_type -> github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.GetApiToken:input_type -> github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.UpdateApiToken:input_type -> github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest
+	11, // 10: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.DeleteApiToken:input_type -> github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.ListApiTokens:output_type -> github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.CreateApiToken:output_type -> github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.GetApiToken:output_type -> github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.UpdateApiToken:output_type -> github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse
+	12, // 15: github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService.DeleteApiToken:output_type -> github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1484,13 +1484,13 @@ var file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_depId
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init() }
-func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_init() }
+func file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListApiTokensRequest); i {
 			case 0:
 				return &v.state
@@ -1502,7 +1502,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListApiTokensResponse); i {
 			case 0:
 				return &v.state
@@ -1514,7 +1514,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenResponse); i {
 			case 0:
 				return &v.state
@@ -1526,7 +1526,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateApiTokenRequest); i {
 			case 0:
 				return &v.state
@@ -1538,7 +1538,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateApiTokenResponse); i {
 			case 0:
 				return &v.state
@@ -1550,7 +1550,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateApiTokenRequest); i {
 			case 0:
 				return &v.state
@@ -1562,7 +1562,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateApiTokenResponse); i {
 			case 0:
 				return &v.state
@@ -1574,7 +1574,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApiTokenRequest); i {
 			case 0:
 				return &v.state
@@ -1586,7 +1586,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApiTokenResponse); i {
 			case 0:
 				return &v.state
@@ -1598,7 +1598,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApiTokenNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1610,7 +1610,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetApiTokenNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1622,7 +1622,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteApiTokenRequest); i {
 			case 0:
 				return &v.state
@@ -1634,7 +1634,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteApiTokenResponse); i {
 			case 0:
 				return &v.state
@@ -1646,7 +1646,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1658,7 +1658,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogoutResponse); i {
 			case 0:
 				return &v.state
@@ -1670,7 +1670,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1682,7 +1682,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenLoginRequest); i {
 			case 0:
 				return &v.state
@@ -1694,7 +1694,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenLoginResponse); i {
 			case 0:
 				return &v.state
@@ -1706,7 +1706,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -1718,7 +1718,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiTokenLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -1730,7 +1730,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1742,7 +1742,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1754,7 +1754,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1766,7 +1766,7 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordReponse); i {
 			case 0:
 				return &v.state
@@ -1783,20 +1783,20 @@ func file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_init
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto = out.File
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_apitoken_v1_apitoken_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto = out.File
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1828,7 +1828,7 @@ func NewApiTokenServiceClient(cc grpc.ClientConnInterface) ApiTokenServiceClient
 
 func (c *apiTokenServiceClient) ListApiTokens(ctx context.Context, in *ListApiTokensRequest, opts ...grpc.CallOption) (*ListApiTokensResponse, error) {
 	out := new(ListApiTokensResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/ListApiTokens", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/ListApiTokens", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1837,7 +1837,7 @@ func (c *apiTokenServiceClient) ListApiTokens(ctx context.Context, in *ListApiTo
 
 func (c *apiTokenServiceClient) CreateApiToken(ctx context.Context, in *CreateApiTokenRequest, opts ...grpc.CallOption) (*CreateApiTokenResponse, error) {
 	out := new(CreateApiTokenResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/CreateApiToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/CreateApiToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1846,7 +1846,7 @@ func (c *apiTokenServiceClient) CreateApiToken(ctx context.Context, in *CreateAp
 
 func (c *apiTokenServiceClient) GetApiToken(ctx context.Context, in *GetApiTokenRequest, opts ...grpc.CallOption) (*GetApiTokenResponse, error) {
 	out := new(GetApiTokenResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/GetApiToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/GetApiToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1855,7 +1855,7 @@ func (c *apiTokenServiceClient) GetApiToken(ctx context.Context, in *GetApiToken
 
 func (c *apiTokenServiceClient) UpdateApiToken(ctx context.Context, in *UpdateApiTokenRequest, opts ...grpc.CallOption) (*UpdateApiTokenResponse, error) {
 	out := new(UpdateApiTokenResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/UpdateApiToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/UpdateApiToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1864,7 +1864,7 @@ func (c *apiTokenServiceClient) UpdateApiToken(ctx context.Context, in *UpdateAp
 
 func (c *apiTokenServiceClient) DeleteApiToken(ctx context.Context, in *DeleteApiTokenRequest, opts ...grpc.CallOption) (*DeleteApiTokenResponse, error) {
 	out := new(DeleteApiTokenResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/DeleteApiToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/DeleteApiToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1914,7 +1914,7 @@ func _ApiTokenService_ListApiTokens_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/ListApiTokens",
+		FullMethod: "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/ListApiTokens",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiTokenServiceServer).ListApiTokens(ctx, req.(*ListApiTokensRequest))
@@ -1932,7 +1932,7 @@ func _ApiTokenService_CreateApiToken_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/CreateApiToken",
+		FullMethod: "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/CreateApiToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiTokenServiceServer).CreateApiToken(ctx, req.(*CreateApiTokenRequest))
@@ -1950,7 +1950,7 @@ func _ApiTokenService_GetApiToken_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/GetApiToken",
+		FullMethod: "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/GetApiToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiTokenServiceServer).GetApiToken(ctx, req.(*GetApiTokenRequest))
@@ -1968,7 +1968,7 @@ func _ApiTokenService_UpdateApiToken_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/UpdateApiToken",
+		FullMethod: "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/UpdateApiToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiTokenServiceServer).UpdateApiToken(ctx, req.(*UpdateApiTokenRequest))
@@ -1986,7 +1986,7 @@ func _ApiTokenService_DeleteApiToken_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/DeleteApiToken",
+		FullMethod: "/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/DeleteApiToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiTokenServiceServer).DeleteApiToken(ctx, req.(*DeleteApiTokenRequest))
@@ -1995,7 +1995,7 @@ func _ApiTokenService_DeleteApiToken_Handler(srv interface{}, ctx context.Contex
 }
 
 var _ApiTokenService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService",
+	ServiceName: "github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService",
 	HandlerType: (*ApiTokenServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2020,5 +2020,5 @@ var _ApiTokenService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/apitoken/v1/apitoken.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto",
 }

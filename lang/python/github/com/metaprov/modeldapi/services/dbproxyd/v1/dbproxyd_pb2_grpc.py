@@ -2,12 +2,12 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
-from github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
-from github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
-from github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2
-from github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
-from github.com.metaprov.modeldapi.services.dbproxyd.v1 import dbproxyd_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2
+from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.services.dbproxyd.v1 import dbproxyd_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
@@ -21,1128 +21,1128 @@ class DatabaseProxyServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListAccounts = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListAccounts',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAccounts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.FromString,
                 )
         self.GetAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
                 )
         self.CreateAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
                 )
         self.UpdateAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
                 )
         self.DeleteAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListAlerts = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListAlerts',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAlerts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.FromString,
                 )
         self.GetAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
                 )
         self.CreateAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
                 )
         self.UpdateAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
                 )
         self.DeleteAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListTodos = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
                 )
         self.GetTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
         self.CreateTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
         self.UpdateTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
                 )
         self.DeleteTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListCommits = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.FromString,
                 )
         self.GetCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
                 )
         self.CreateCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
                 )
         self.UpdateCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
                 )
         self.DeleteCommit = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListApiTokens = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.FromString,
                 )
         self.GetApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
                 )
         self.CreateApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
                 )
         self.UpdateApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
                 )
         self.DeleteApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListConnections = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListConnections',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListConnections',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.FromString,
                 )
         self.GetConnection = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetConnection',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
                 )
         self.CreateConnection = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateConnection',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
                 )
         self.UpdateConnection = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConnection',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
                 )
         self.DeleteConnection = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConnection',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConnection',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListLabs = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabs',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabs',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.FromString,
                 )
         self.GetLab = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLab',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
                 )
         self.CreateLab = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLab',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
                 )
         self.UpdateLab = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLab',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
                 )
         self.DeleteLab = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLab',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLab',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListLicenses = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLicenses',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLicenses',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.FromString,
                 )
         self.GetLicense = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLicense',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
                 )
         self.CreateLicense = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLicense',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
                 )
         self.UpdateLicense = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLicense',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
                 )
         self.DeleteLicense = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLicense',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLicense',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListNotifiers = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotifiers',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotifiers',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.FromString,
                 )
         self.GetNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
                 )
         self.CreateNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
                 )
         self.UpdateNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
                 )
         self.DeleteNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListServingSites = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListServingSites',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListServingSites',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.FromString,
                 )
         self.GetServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
                 )
         self.CreateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
                 )
         self.UpdateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
                 )
         self.DeleteServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListTenants = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTenants',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTenants',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.FromString,
                 )
         self.GetTenant = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTenant',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
                 )
         self.CreateTenant = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTenant',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
                 )
         self.UpdateTenant = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTenant',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
                 )
         self.DeleteTenant = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTenant',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTenant',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListVirtualBuckets = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualBuckets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualBuckets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.FromString,
                 )
         self.GetVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
                 )
         self.CreateVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
                 )
         self.UpdateVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
                 )
         self.DeleteVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListVirtualClusters = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.FromString,
                 )
         self.GetVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
                 )
         self.CreateVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
                 )
         self.UpdateVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
                 )
         self.DeleteVirtualCluster = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListVirtualVolumes = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.FromString,
                 )
         self.GetVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
                 )
         self.CreateVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
                 )
         self.UpdateVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
                 )
         self.DeleteVirtualVolume = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataPipelines = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelines',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.FromString,
                 )
         self.GetDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
                 )
         self.CreateDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
                 )
         self.UpdateDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
                 )
         self.DeleteDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.FromString,
                 )
         self.GetDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
                 )
         self.CreateDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
                 )
         self.UpdateDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
                 )
         self.DeleteDataPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataProducts = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProducts',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProducts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.FromString,
                 )
         self.GetDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProduct',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
                 )
         self.CreateDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProduct',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
                 )
         self.UpdateDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProduct',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
                 )
         self.DeleteDataProduct = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProduct',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProduct',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataProductVersions = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProductVersions',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProductVersions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.FromString,
                 )
         self.GetDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
                 )
         self.CreateDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
                 )
         self.UpdateDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
                 )
         self.DeleteDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDatasets = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDatasets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDatasets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.FromString,
                 )
         self.GetDataset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
         self.CreateDataset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
         self.UpdateDataset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
                 )
         self.DeleteDataset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataSources = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataSources',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataSources',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.FromString,
                 )
         self.GetDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
                 )
         self.CreateDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
                 )
         self.UpdateDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
                 )
         self.DeleteDataSource = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataSource',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataSource',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListEntities = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListEntities',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListEntities',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.FromString,
                 )
         self.GetEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
                 )
         self.CreateEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
                 )
         self.UpdateEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
                 )
         self.DeleteEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListFeatures = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatures',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatures',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.FromString,
                 )
         self.GetFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
                 )
         self.CreateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
                 )
         self.UpdateFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
                 )
         self.DeleteFeature = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeature',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeature',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListFeaturePipelines = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.FromString,
                 )
         self.GetFeaturePipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
                 )
         self.CreateFeaturePipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
                 )
         self.UpdateFeaturePipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
                 )
         self.DeleteFeaturePipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListFeaturePipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.FromString,
                 )
         self.GetFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
                 )
         self.CreateFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
                 )
         self.UpdateFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
                 )
         self.DeleteFeaturePipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListFeaturesets = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.FromString,
                 )
         self.GetFeatureset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
                 )
         self.CreateFeatureset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
                 )
         self.UpdateFeatureset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
                 )
         self.DeleteFeatureset = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListLabelingPipelines = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.FromString,
                 )
         self.GetLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
                 )
         self.CreateLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
                 )
         self.UpdateLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
                 )
         self.DeleteLabelingPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListLabelingPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.FromString,
                 )
         self.GetLabelingPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
                 )
         self.CreateLabelingPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
                 )
         self.UpdateLabelingPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
                 )
         self.DeleteLabelingPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListRecipes = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.FromString,
                 )
         self.GetRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipe',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
                 )
         self.CreateRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipe',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
                 )
         self.UpdateRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipe',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
                 )
         self.DeleteRecipe = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipe',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipe',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListRecipeRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipeRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipeRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.FromString,
                 )
         self.GetRecipeRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipeRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
                 )
         self.CreateRecipeRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipeRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
                 )
         self.UpdateRecipeRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipeRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
                 )
         self.DeleteRecipeRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipeRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipeRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListModelAutobuilders = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelAutobuilders',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelAutobuilders',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.FromString,
                 )
         self.GetModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelAutobuilder',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
                 )
         self.CreateModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelAutobuilder',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
                 )
         self.UpdateModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelAutobuilder',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
                 )
         self.DeleteModelAutobuilder = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelAutobuilder',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelAutobuilder',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListModelPipelines = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelines',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.FromString,
                 )
         self.GetModelPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
                 )
         self.CreateModelPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
                 )
         self.UpdateModelPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
                 )
         self.DeleteModelPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListModelPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.FromString,
                 )
         self.GetModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
                 )
         self.CreateModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
                 )
         self.UpdateModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
                 )
         self.DeleteModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListNotebooks = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebooks',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebooks',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.FromString,
                 )
         self.GetNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
                 )
         self.CreateNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
                 )
         self.UpdateNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
                 )
         self.DeleteNotebook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListNotebookRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebookRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebookRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.FromString,
                 )
         self.GetNotebookRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebookRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
                 )
         self.CreateNotebookRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebookRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
                 )
         self.UpdateNotebookRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebookRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
                 )
         self.DeleteNotebookRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebookRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebookRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListReports = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReports',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReports',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.FromString,
                 )
         self.GetReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
                 )
         self.CreateReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
                 )
         self.UpdateReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
                 )
         self.DeleteReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListCronReports = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
                 )
         self.GetCronReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
                 )
         self.CreateCronReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
                 )
         self.UpdateCronReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
                 )
         self.DeleteCronReport = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListStudies = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.FromString,
                 )
         self.GetStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
                 )
         self.CreateStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
                 )
         self.UpdateStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
                 )
         self.DeleteStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListModels = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModels',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModels',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.FromString,
                 )
         self.GetModel = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
                 )
         self.CreateModel = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
                 )
         self.UpdateModel = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
                 )
         self.DeleteModel = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListCronPredictions = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.FromString,
                 )
         self.GetCronPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
                 )
         self.CreateCronPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
                 )
         self.UpdateCronPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
                 )
         self.DeleteCronPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListPredictions = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.FromString,
                 )
         self.GetPrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
                 )
         self.CreatePrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
                 )
         self.UpdatePrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
                 )
         self.DeletePrediction = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListPredictors = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.FromString,
                 )
         self.GetPredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
                 )
         self.CreatePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
                 )
         self.UpdatePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
                 )
         self.DeletePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListCurtains = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.FromString,
                 )
         self.GetCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
                 )
         self.CreateCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
                 )
         self.UpdateCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
                 )
         self.DeleteCurtain = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListReviews = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
                 )
         self.GetReview = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
         self.CreateReview = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
         self.UpdateReview = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
                 )
         self.DeleteReview = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListPostMortems = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPostMortems',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPostMortems',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.FromString,
                 )
         self.GetPostMortem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPostMortem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
                 )
         self.CreatePostMortem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePostMortem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
                 )
         self.UpdatePostMortem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePostMortem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
                 )
         self.DeletePostMortem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePostMortem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePostMortem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListRunBooks = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRunBooks',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRunBooks',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.FromString,
                 )
         self.GetRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
                 )
         self.CreateRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
                 )
         self.UpdateRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
                 )
         self.DeleteRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.SerializeToString,
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
@@ -2520,1132 +2520,1132 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccounts,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.SerializeToString,
             ),
             'GetAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
             ),
             'CreateAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
             ),
             'UpdateAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.SerializeToString,
             ),
             'DeleteAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListAlerts': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAlerts,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.SerializeToString,
             ),
             'GetAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
             ),
             'CreateAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
             ),
             'UpdateAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.SerializeToString,
             ),
             'DeleteAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListTodos': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTodos,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.SerializeToString,
             ),
             'GetTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
             'CreateTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
             'UpdateTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.SerializeToString,
             ),
             'DeleteTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCommits': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCommits,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.SerializeToString,
             ),
             'GetCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
             ),
             'CreateCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
             ),
             'UpdateCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.SerializeToString,
             ),
             'DeleteCommit': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCommit,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListApiTokens': grpc.unary_unary_rpc_method_handler(
                     servicer.ListApiTokens,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.SerializeToString,
             ),
             'GetApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.GetApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
             ),
             'CreateApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
             ),
             'UpdateApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.SerializeToString,
             ),
             'DeleteApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListConnections': grpc.unary_unary_rpc_method_handler(
                     servicer.ListConnections,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.SerializeToString,
             ),
             'GetConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.GetConnection,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
             ),
             'CreateConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateConnection,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
             ),
             'UpdateConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateConnection,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.SerializeToString,
             ),
             'DeleteConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteConnection,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListLabs': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLabs,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.SerializeToString,
             ),
             'GetLab': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLab,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
             ),
             'CreateLab': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLab,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
             ),
             'UpdateLab': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLab,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.SerializeToString,
             ),
             'DeleteLab': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLab,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListLicenses': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLicenses,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.SerializeToString,
             ),
             'GetLicense': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLicense,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
             ),
             'CreateLicense': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLicense,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
             ),
             'UpdateLicense': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLicense,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.SerializeToString,
             ),
             'DeleteLicense': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLicense,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListNotifiers': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNotifiers,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.SerializeToString,
             ),
             'GetNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
             ),
             'CreateNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
             ),
             'UpdateNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.SerializeToString,
             ),
             'DeleteNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListServingSites': grpc.unary_unary_rpc_method_handler(
                     servicer.ListServingSites,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.SerializeToString,
             ),
             'GetServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.GetServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
             ),
             'CreateServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
             ),
             'UpdateServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.SerializeToString,
             ),
             'DeleteServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListTenants': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTenants,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.SerializeToString,
             ),
             'GetTenant': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTenant,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
             ),
             'CreateTenant': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTenant,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
             ),
             'UpdateTenant': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateTenant,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.SerializeToString,
             ),
             'DeleteTenant': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTenant,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListVirtualBuckets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListVirtualBuckets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.SerializeToString,
             ),
             'GetVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
             ),
             'CreateVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
             ),
             'UpdateVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.SerializeToString,
             ),
             'DeleteVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListVirtualClusters': grpc.unary_unary_rpc_method_handler(
                     servicer.ListVirtualClusters,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.SerializeToString,
             ),
             'GetVirtualCluster': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVirtualCluster,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
             ),
             'CreateVirtualCluster': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtualCluster,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
             ),
             'UpdateVirtualCluster': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateVirtualCluster,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.SerializeToString,
             ),
             'DeleteVirtualCluster': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteVirtualCluster,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListVirtualVolumes': grpc.unary_unary_rpc_method_handler(
                     servicer.ListVirtualVolumes,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.SerializeToString,
             ),
             'GetVirtualVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVirtualVolume,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
             ),
             'CreateVirtualVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtualVolume,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
             ),
             'UpdateVirtualVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateVirtualVolume,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.SerializeToString,
             ),
             'DeleteVirtualVolume': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteVirtualVolume,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataPipelines': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataPipelines,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.SerializeToString,
             ),
             'GetDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
             ),
             'CreateDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
             ),
             'UpdateDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.SerializeToString,
             ),
             'DeleteDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataPipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataPipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.SerializeToString,
             ),
             'GetDataPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
             ),
             'CreateDataPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
             ),
             'UpdateDataPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.SerializeToString,
             ),
             'DeleteDataPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataProducts': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataProducts,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.SerializeToString,
             ),
             'GetDataProduct': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataProduct,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
             ),
             'CreateDataProduct': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataProduct,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
             ),
             'UpdateDataProduct': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataProduct,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.SerializeToString,
             ),
             'DeleteDataProduct': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataProduct,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataProductVersions': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataProductVersions,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.SerializeToString,
             ),
             'GetDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
             ),
             'CreateDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
             ),
             'UpdateDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.SerializeToString,
             ),
             'DeleteDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDatasets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDatasets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.SerializeToString,
             ),
             'GetDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
             'CreateDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
             'UpdateDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.SerializeToString,
             ),
             'DeleteDataset': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataSources': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataSources,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.SerializeToString,
             ),
             'GetDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
             ),
             'CreateDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
             ),
             'UpdateDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.SerializeToString,
             ),
             'DeleteDataSource': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataSource,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListEntities': grpc.unary_unary_rpc_method_handler(
                     servicer.ListEntities,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.SerializeToString,
             ),
             'GetEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
             ),
             'CreateEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
             ),
             'UpdateEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.SerializeToString,
             ),
             'DeleteEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListFeatures': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeatures,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.SerializeToString,
             ),
             'GetFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
             ),
             'CreateFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
             ),
             'UpdateFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.SerializeToString,
             ),
             'DeleteFeature': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeature,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListFeaturePipelines': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeaturePipelines,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.SerializeToString,
             ),
             'GetFeaturePipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeaturePipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
             ),
             'CreateFeaturePipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeaturePipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
             ),
             'UpdateFeaturePipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeaturePipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.SerializeToString,
             ),
             'DeleteFeaturePipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeaturePipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListFeaturePipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeaturePipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.SerializeToString,
             ),
             'GetFeaturePipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeaturePipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
             ),
             'CreateFeaturePipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeaturePipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
             ),
             'UpdateFeaturePipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeaturePipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.SerializeToString,
             ),
             'DeleteFeaturePipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeaturePipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListFeaturesets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeaturesets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.SerializeToString,
             ),
             'GetFeatureset': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeatureset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
             ),
             'CreateFeatureset': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeatureset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
             ),
             'UpdateFeatureset': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeatureset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.SerializeToString,
             ),
             'DeleteFeatureset': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeatureset,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListLabelingPipelines': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLabelingPipelines,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.SerializeToString,
             ),
             'GetLabelingPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLabelingPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
             ),
             'CreateLabelingPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLabelingPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
             ),
             'UpdateLabelingPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLabelingPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.SerializeToString,
             ),
             'DeleteLabelingPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLabelingPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListLabelingPipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLabelingPipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.SerializeToString,
             ),
             'GetLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLabelingPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
             ),
             'CreateLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLabelingPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
             ),
             'UpdateLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLabelingPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.SerializeToString,
             ),
             'DeleteLabelingPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLabelingPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListRecipes': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRecipes,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.SerializeToString,
             ),
             'GetRecipe': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRecipe,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
             ),
             'CreateRecipe': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateRecipe,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
             ),
             'UpdateRecipe': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateRecipe,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.SerializeToString,
             ),
             'DeleteRecipe': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteRecipe,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListRecipeRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRecipeRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.SerializeToString,
             ),
             'GetRecipeRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRecipeRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
             ),
             'CreateRecipeRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateRecipeRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
             ),
             'UpdateRecipeRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateRecipeRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.SerializeToString,
             ),
             'DeleteRecipeRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteRecipeRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListModelAutobuilders': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelAutobuilders,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.SerializeToString,
             ),
             'GetModelAutobuilder': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModelAutobuilder,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
             ),
             'CreateModelAutobuilder': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModelAutobuilder,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
             ),
             'UpdateModelAutobuilder': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModelAutobuilder,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.SerializeToString,
             ),
             'DeleteModelAutobuilder': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModelAutobuilder,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListModelPipelines': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelPipelines,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.SerializeToString,
             ),
             'GetModelPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModelPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
             ),
             'CreateModelPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModelPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
             ),
             'UpdateModelPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModelPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.SerializeToString,
             ),
             'DeleteModelPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModelPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListModelPipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelPipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.SerializeToString,
             ),
             'GetModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
             ),
             'CreateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
             ),
             'UpdateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.SerializeToString,
             ),
             'DeleteModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListNotebooks': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNotebooks,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.SerializeToString,
             ),
             'GetNotebook': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotebook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
             ),
             'CreateNotebook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNotebook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
             ),
             'UpdateNotebook': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateNotebook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.SerializeToString,
             ),
             'DeleteNotebook': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteNotebook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListNotebookRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNotebookRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.SerializeToString,
             ),
             'GetNotebookRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotebookRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
             ),
             'CreateNotebookRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNotebookRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
             ),
             'UpdateNotebookRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateNotebookRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.SerializeToString,
             ),
             'DeleteNotebookRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteNotebookRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListReports': grpc.unary_unary_rpc_method_handler(
                     servicer.ListReports,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.SerializeToString,
             ),
             'GetReport': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
             ),
             'CreateReport': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
             ),
             'UpdateReport': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.SerializeToString,
             ),
             'DeleteReport': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCronReports': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCronReports,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.SerializeToString,
             ),
             'GetCronReport': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCronReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
             ),
             'CreateCronReport': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCronReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
             ),
             'UpdateCronReport': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCronReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.SerializeToString,
             ),
             'DeleteCronReport': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCronReport,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListStudies': grpc.unary_unary_rpc_method_handler(
                     servicer.ListStudies,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.SerializeToString,
             ),
             'GetStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.GetStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
             ),
             'CreateStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
             ),
             'UpdateStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.SerializeToString,
             ),
             'DeleteStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListModels': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModels,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.SerializeToString,
             ),
             'GetModel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
             ),
             'CreateModel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
             ),
             'UpdateModel': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.SerializeToString,
             ),
             'DeleteModel': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCronPredictions': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCronPredictions,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.SerializeToString,
             ),
             'GetCronPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCronPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
             ),
             'CreateCronPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCronPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
             ),
             'UpdateCronPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCronPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.SerializeToString,
             ),
             'DeleteCronPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCronPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListPredictions': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPredictions,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.SerializeToString,
             ),
             'GetPrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
             ),
             'CreatePrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
             ),
             'UpdatePrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.SerializeToString,
             ),
             'DeletePrediction': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePrediction,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListPredictors': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPredictors,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.SerializeToString,
             ),
             'GetPredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
             ),
             'CreatePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
             ),
             'UpdatePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.SerializeToString,
             ),
             'DeletePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCurtains': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCurtains,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.SerializeToString,
             ),
             'GetCurtain': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCurtain,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
             ),
             'CreateCurtain': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCurtain,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
             ),
             'UpdateCurtain': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCurtain,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.SerializeToString,
             ),
             'DeleteCurtain': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCurtain,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListReviews': grpc.unary_unary_rpc_method_handler(
                     servicer.ListReviews,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.SerializeToString,
             ),
             'GetReview': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReview,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
             'CreateReview': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateReview,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
             'UpdateReview': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateReview,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.SerializeToString,
             ),
             'DeleteReview': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteReview,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListPostMortems': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPostMortems,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.SerializeToString,
             ),
             'GetPostMortem': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPostMortem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
             ),
             'CreatePostMortem': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePostMortem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
             ),
             'UpdatePostMortem': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePostMortem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.SerializeToString,
             ),
             'DeletePostMortem': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePostMortem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListRunBooks': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRunBooks,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.SerializeToString,
             ),
             'GetRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
             ),
             'CreateRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
             ),
             'UpdateRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.SerializeToString,
             ),
             'DeleteRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -3664,9 +3664,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListAccounts',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAccounts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAccountsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3681,9 +3681,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3698,9 +3698,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3715,9 +3715,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Account.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3732,8 +3732,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -3749,9 +3749,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListAlerts',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAlerts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAlertsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3766,9 +3766,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3783,9 +3783,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3800,9 +3800,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Alert.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3817,8 +3817,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAlertRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -3834,9 +3834,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTodosResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3851,9 +3851,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3868,9 +3868,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3885,9 +3885,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Todo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3902,8 +3902,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTodoRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -3919,9 +3919,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3936,9 +3936,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3953,9 +3953,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3970,9 +3970,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCommitRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Commit.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3987,8 +3987,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCommitRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4004,9 +4004,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListApiTokensResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4021,9 +4021,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4038,9 +4038,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4055,9 +4055,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ApiToken.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4072,8 +4072,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteApiTokenRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4089,9 +4089,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListConnections',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListConnections',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListConnectionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4106,9 +4106,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetConnection',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetConnection',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4123,9 +4123,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateConnection',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateConnection',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4140,9 +4140,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConnection',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConnection',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateConnectionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Connection.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4157,8 +4157,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConnection',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConnection',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteConnectionRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4174,9 +4174,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabs',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabs',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4191,9 +4191,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLab',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLab',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4208,9 +4208,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLab',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLab',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4225,9 +4225,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLab',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLab',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Lab.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4242,8 +4242,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLab',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLab',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4259,9 +4259,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLicenses',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLicenses',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLicensesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4276,9 +4276,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLicense',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLicense',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4293,9 +4293,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLicense',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLicense',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4310,9 +4310,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLicense',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLicense',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLicenseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.License.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4327,8 +4327,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLicense',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLicense',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLicenseRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4344,9 +4344,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotifiers',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotifiers',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotifiersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4361,9 +4361,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4378,9 +4378,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4395,9 +4395,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Notifier.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4412,8 +4412,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotifierRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4429,9 +4429,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListServingSites',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListServingSites',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListServingsitesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4446,9 +4446,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4463,9 +4463,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4480,9 +4480,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateServingsiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.ServingSite.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4497,8 +4497,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteServingsiteRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4514,9 +4514,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListTenants',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTenants',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListTenantsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4531,9 +4531,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetTenant',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTenant',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetTenantRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4548,9 +4548,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateTenant',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTenant',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateTenantRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4565,9 +4565,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTenant',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTenant',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateTenantRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Tenant.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4582,8 +4582,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTenant',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTenant',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteTenantRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4599,9 +4599,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualBuckets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualBuckets',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualBucketsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4616,9 +4616,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4633,9 +4633,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4650,9 +4650,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualBucket.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4667,8 +4667,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualBucketRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4684,9 +4684,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualClustersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4701,9 +4701,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualClusterRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4718,9 +4718,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualClusterRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4735,9 +4735,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualClusterRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualCluster.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4752,8 +4752,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualClusterRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4769,9 +4769,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListVirtualVolumesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4786,9 +4786,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetVirtualVolumeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4803,9 +4803,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateVirtualVolumeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4820,9 +4820,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateVirtualVolumeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.VirtualVolume.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4837,8 +4837,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteVirtualVolumeRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4854,9 +4854,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelines',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelines',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelinesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4871,9 +4871,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4888,9 +4888,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4905,9 +4905,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4922,8 +4922,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -4939,9 +4939,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataPipelineRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4956,9 +4956,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4973,9 +4973,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -4990,9 +4990,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5007,8 +5007,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataPipelineRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5024,9 +5024,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProducts',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProducts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5041,9 +5041,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProduct',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProduct',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5058,9 +5058,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProduct',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProduct',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5075,9 +5075,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProduct',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProduct',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProduct.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5092,8 +5092,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProduct',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProduct',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5109,9 +5109,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProductVersions',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProductVersions',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDataProductVersionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5126,9 +5126,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5143,9 +5143,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5160,9 +5160,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataProductVersion.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5177,8 +5177,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDataProductVersionRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5194,9 +5194,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDatasets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDatasets',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasetsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5211,9 +5211,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5228,9 +5228,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5245,9 +5245,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Dataset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5262,8 +5262,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasetRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5279,9 +5279,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListDataSources',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataSources',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListDatasourcesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5296,9 +5296,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetDatasourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5313,9 +5313,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateDatasourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5330,9 +5330,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateDatasourceRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DataSource.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5347,8 +5347,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataSource',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataSource',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteDatasourceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5364,9 +5364,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListEntities',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListEntities',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListEntitiesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5381,9 +5381,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5398,9 +5398,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5415,9 +5415,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Entity.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5432,8 +5432,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteEntityRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5449,9 +5449,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatures',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatures',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5466,9 +5466,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5483,9 +5483,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5500,9 +5500,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeatureRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Feature.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5517,8 +5517,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeature',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeature',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeatureRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5534,9 +5534,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelinesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5551,9 +5551,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5568,9 +5568,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5585,9 +5585,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5602,8 +5602,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5619,9 +5619,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturePipelineRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5636,9 +5636,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturePipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5653,9 +5653,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturePipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5670,9 +5670,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturePipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.FeaturePipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5687,8 +5687,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturePipelineRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5704,9 +5704,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListFeaturesetsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5721,9 +5721,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetFeaturesetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5738,9 +5738,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateFeaturesetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5755,9 +5755,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateFeaturesetRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Featureset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5772,8 +5772,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteFeaturesetRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5789,9 +5789,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelinesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5806,9 +5806,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5823,9 +5823,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5840,9 +5840,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5857,8 +5857,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5874,9 +5874,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListLabelingPipelineRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5891,9 +5891,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetLabelingPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5908,9 +5908,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateLabelingPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5925,9 +5925,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateLabelingPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.LabelingPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5942,8 +5942,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteLabelingPipelineRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -5959,9 +5959,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5976,9 +5976,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipe',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipe',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -5993,9 +5993,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipe',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipe',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6010,9 +6010,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipe',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipe',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.Recipe.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6027,8 +6027,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipe',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipe',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6044,9 +6044,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipeRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipeRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRecipeRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6061,9 +6061,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipeRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipeRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRecipeRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6078,9 +6078,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipeRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipeRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRecipeRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6095,9 +6095,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipeRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipeRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRecipeRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.RecipeRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6112,8 +6112,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipeRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipeRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRecipeRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6129,9 +6129,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelAutobuilders',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelAutobuilders',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelAutobuildersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6146,9 +6146,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelAutobuilder',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelAutobuilderRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6163,9 +6163,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelAutobuilder',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelAutobuilderRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6180,9 +6180,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelAutobuilder',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelAutobuilderRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelAutobuilder.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6197,8 +6197,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelAutobuilder',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelAutobuilder',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelAutobuilderRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6214,9 +6214,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelines',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelines',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelinesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6231,9 +6231,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6248,9 +6248,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6265,9 +6265,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipeline.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6282,8 +6282,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6299,9 +6299,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelPipelineRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6316,9 +6316,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6333,9 +6333,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6350,9 +6350,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.ModelPipelineRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6367,8 +6367,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelPipelineRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6384,9 +6384,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebooks',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebooks',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebooksResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6401,9 +6401,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6418,9 +6418,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6435,9 +6435,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Notebook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6452,8 +6452,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6469,9 +6469,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebookRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebookRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListNotebookRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6486,9 +6486,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebookRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebookRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetNotebookRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6503,9 +6503,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebookRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebookRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateNotebookRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6520,9 +6520,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebookRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebookRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateNotebookRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.NotebookRun.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6537,8 +6537,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebookRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebookRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteNotebookRunRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6554,9 +6554,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReports',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReports',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReportsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6571,9 +6571,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6588,9 +6588,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6605,9 +6605,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Report.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6622,8 +6622,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReportRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6639,9 +6639,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronReportsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6656,9 +6656,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6673,9 +6673,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6690,9 +6690,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronReportRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.CronReport.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6707,8 +6707,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronReportRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6724,9 +6724,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListStudiesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6741,9 +6741,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6758,9 +6758,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6775,9 +6775,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Study.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6792,8 +6792,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteStudyRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6809,9 +6809,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListModels',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModels',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListModelsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6826,9 +6826,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetModel',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6843,9 +6843,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateModel',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6860,9 +6860,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModel',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.Model.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6877,8 +6877,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModel',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteModelRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6894,9 +6894,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCronPredictionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6911,9 +6911,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6928,9 +6928,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6945,9 +6945,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCronPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.CronPrediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6962,8 +6962,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCronPredictionRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -6979,9 +6979,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -6996,9 +6996,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7013,9 +7013,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7030,9 +7030,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Prediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7047,8 +7047,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictionRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -7064,9 +7064,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPredictorsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7081,9 +7081,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7098,9 +7098,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7115,9 +7115,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Predictor.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7132,8 +7132,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePredictorRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -7149,9 +7149,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCurtainsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7166,9 +7166,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7183,9 +7183,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7200,9 +7200,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateCurtainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.Curtain.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7217,8 +7217,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteCurtainRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -7234,9 +7234,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListReviewsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7251,9 +7251,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7268,9 +7268,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7285,9 +7285,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateReviewRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.Review.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7302,8 +7302,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteReviewRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -7319,9 +7319,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListPostMortems',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPostMortems',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListPostMortemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7336,9 +7336,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetPostMortem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPostMortem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetPostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7353,9 +7353,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreatePostMortem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePostMortem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7370,9 +7370,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePostMortem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePostMortem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdatePostMortemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.PostMortem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7387,8 +7387,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeletePostMortem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePostMortem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeletePostMortemRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -7404,9 +7404,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/ListRunBooks',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRunBooks',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListRunbooksResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7421,9 +7421,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/GetRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7438,9 +7438,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/CreateRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7455,9 +7455,9 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateRunbookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.RunBook.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -7472,8 +7472,8 @@ class DatabaseProxyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteRunbookRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

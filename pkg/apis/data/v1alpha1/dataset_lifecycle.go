@@ -9,8 +9,8 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modeldapi/pkg/apis/data"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/data"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -103,7 +103,7 @@ func (dataset *Dataset) ManifestUri() string {
 }
 
 func (dataset *Dataset) ProfileUri() string {
-	return fmt.Sprintf("modeld/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/profile/dataset_profile.json",
+	return fmt.Sprintf("modela/live/tenants/default-tenant/dataproducts/%s/versions/%s/datasets/%s/profile/dataset_profile.json",
 		dataset.Namespace, *dataset.Spec.VersionName, dataset.Name)
 }
 
@@ -120,7 +120,7 @@ func (dataset *Dataset) Populate(name string) {
 
 	dataset.ObjectMeta = metav1.ObjectMeta{
 		Name:      "iris",
-		Namespace: "modeld-data",
+		Namespace: "modela-data",
 	}
 
 	dataset.Spec = DatasetSpec{

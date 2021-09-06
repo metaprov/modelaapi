@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/account/v1/account.proto
+// source: github.com/metaprov/modelaapi/services/account/v1/account.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListAccountsRequest struct {
 func (x *ListAccountsRequest) Reset() {
 	*x = ListAccountsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListAccountsRequest) String() string {
 func (*ListAccountsRequest) ProtoMessage() {}
 
 func (x *ListAccountsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListAccountsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAccountsRequest.ProtoReflect.Descriptor instead.
 func (*ListAccountsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListAccountsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListAccountsResponse struct {
 func (x *ListAccountsResponse) Reset() {
 	*x = ListAccountsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListAccountsResponse) String() string {
 func (*ListAccountsResponse) ProtoMessage() {}
 
 func (x *ListAccountsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListAccountsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAccountsResponse.ProtoReflect.Descriptor instead.
 func (*ListAccountsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListAccountsResponse) GetItems() *v1alpha1.AccountList {
@@ -143,7 +143,7 @@ type AccountResponse struct {
 func (x *AccountResponse) Reset() {
 	*x = AccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *AccountResponse) String() string {
 func (*AccountResponse) ProtoMessage() {}
 
 func (x *AccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *AccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountResponse.ProtoReflect.Descriptor instead.
 func (*AccountResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateAccountRequest struct {
@@ -184,7 +184,7 @@ type CreateAccountRequest struct {
 func (x *CreateAccountRequest) Reset() {
 	*x = CreateAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateAccountRequest) String() string {
 func (*CreateAccountRequest) ProtoMessage() {}
 
 func (x *CreateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountRequest.ProtoReflect.Descriptor instead.
 func (*CreateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAccountRequest) GetItem() *v1alpha1.Account {
@@ -236,7 +236,7 @@ type CreateAccountResponse struct {
 func (x *CreateAccountResponse) Reset() {
 	*x = CreateAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateAccountResponse) String() string {
 func (*CreateAccountResponse) ProtoMessage() {}
 
 func (x *CreateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAccountResponse.ProtoReflect.Descriptor instead.
 func (*CreateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateAccountRequest struct {
@@ -276,7 +276,7 @@ type UpdateAccountRequest struct {
 func (x *UpdateAccountRequest) Reset() {
 	*x = UpdateAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateAccountRequest) String() string {
 func (*UpdateAccountRequest) ProtoMessage() {}
 
 func (x *UpdateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAccountRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateAccountRequest) GetItem() *v1alpha1.Account {
@@ -321,7 +321,7 @@ type UpdateAccountResponse struct {
 func (x *UpdateAccountResponse) Reset() {
 	*x = UpdateAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateAccountResponse) String() string {
 func (*UpdateAccountResponse) ProtoMessage() {}
 
 func (x *UpdateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAccountResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{6}
 }
 
 type GetAccountRequest struct {
@@ -362,7 +362,7 @@ type GetAccountRequest struct {
 func (x *GetAccountRequest) Reset() {
 	*x = GetAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetAccountRequest) String() string {
 func (*GetAccountRequest) ProtoMessage() {}
 
 func (x *GetAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountRequest.ProtoReflect.Descriptor instead.
 func (*GetAccountRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetAccountRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetAccountResponse struct {
 func (x *GetAccountResponse) Reset() {
 	*x = GetAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetAccountResponse) String() string {
 func (*GetAccountResponse) ProtoMessage() {}
 
 func (x *GetAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountResponse.ProtoReflect.Descriptor instead.
 func (*GetAccountResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetAccountResponse) GetItem() *v1alpha1.Account {
@@ -472,7 +472,7 @@ type GetAccountNamespacesRequest struct {
 func (x *GetAccountNamespacesRequest) Reset() {
 	*x = GetAccountNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetAccountNamespacesRequest) String() string {
 func (*GetAccountNamespacesRequest) ProtoMessage() {}
 
 func (x *GetAccountNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetAccountNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetAccountNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAccountNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetAccountNamespacesResponse struct {
 func (x *GetAccountNamespacesResponse) Reset() {
 	*x = GetAccountNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetAccountNamespacesResponse) String() string {
 func (*GetAccountNamespacesResponse) ProtoMessage() {}
 
 func (x *GetAccountNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetAccountNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAccountNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetAccountNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAccountNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteAccountRequest struct {
 func (x *DeleteAccountRequest) Reset() {
 	*x = DeleteAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteAccountRequest) String() string {
 func (*DeleteAccountRequest) ProtoMessage() {}
 
 func (x *DeleteAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAccountRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAccountRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteAccountRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteAccountResponse struct {
 func (x *DeleteAccountResponse) Reset() {
 	*x = DeleteAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteAccountResponse) String() string {
 func (*DeleteAccountResponse) ProtoMessage() {}
 
 func (x *DeleteAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAccountResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAccountResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{12}
 }
 
 type AccountCreateResponse struct {
@@ -664,7 +664,7 @@ type AccountCreateResponse struct {
 func (x *AccountCreateResponse) Reset() {
 	*x = AccountCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *AccountCreateResponse) String() string {
 func (*AccountCreateResponse) ProtoMessage() {}
 
 func (x *AccountCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *AccountCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountCreateResponse.ProtoReflect.Descriptor instead.
 func (*AccountCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{13}
 }
 
 type LogoutResponse struct {
@@ -702,7 +702,7 @@ type LogoutResponse struct {
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -715,7 +715,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -728,7 +728,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{14}
 }
 
 type ResetPasswordResponse struct {
@@ -740,7 +740,7 @@ type ResetPasswordResponse struct {
 func (x *ResetPasswordResponse) Reset() {
 	*x = ResetPasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -753,7 +753,7 @@ func (x *ResetPasswordResponse) String() string {
 func (*ResetPasswordResponse) ProtoMessage() {}
 
 func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{15}
 }
 
 type AccountLoginRequest struct {
@@ -782,7 +782,7 @@ type AccountLoginRequest struct {
 func (x *AccountLoginRequest) Reset() {
 	*x = AccountLoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +795,7 @@ func (x *AccountLoginRequest) String() string {
 func (*AccountLoginRequest) ProtoMessage() {}
 
 func (x *AccountLoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +808,7 @@ func (x *AccountLoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountLoginRequest.ProtoReflect.Descriptor instead.
 func (*AccountLoginRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *AccountLoginRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type AccountLoginResponse struct {
 func (x *AccountLoginResponse) Reset() {
 	*x = AccountLoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *AccountLoginResponse) String() string {
 func (*AccountLoginResponse) ProtoMessage() {}
 
 func (x *AccountLoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *AccountLoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountLoginResponse.ProtoReflect.Descriptor instead.
 func (*AccountLoginResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AccountLoginResponse) GetToken() string {
@@ -891,7 +891,7 @@ type AccountGetByNameRequest struct {
 func (x *AccountGetByNameRequest) Reset() {
 	*x = AccountGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -904,7 +904,7 @@ func (x *AccountGetByNameRequest) String() string {
 func (*AccountGetByNameRequest) ProtoMessage() {}
 
 func (x *AccountGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *AccountGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*AccountGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *AccountGetByNameRequest) GetNamespace() string {
@@ -945,7 +945,7 @@ type AccountLogoutRequest struct {
 func (x *AccountLogoutRequest) Reset() {
 	*x = AccountLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +958,7 @@ func (x *AccountLogoutRequest) String() string {
 func (*AccountLogoutRequest) ProtoMessage() {}
 
 func (x *AccountLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +971,7 @@ func (x *AccountLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountLogoutRequest.ProtoReflect.Descriptor instead.
 func (*AccountLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AccountLogoutRequest) GetToken() string {
@@ -996,7 +996,7 @@ type ChangePasswordRequest struct {
 func (x *ChangePasswordRequest) Reset() {
 	*x = ChangePasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *ChangePasswordRequest) String() string {
 func (*ChangePasswordRequest) ProtoMessage() {}
 
 func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
 func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ChangePasswordRequest) GetNamespace() string {
@@ -1069,7 +1069,7 @@ type ChangePasswordResponse struct {
 func (x *ChangePasswordResponse) Reset() {
 	*x = ChangePasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1082,7 +1082,7 @@ func (x *ChangePasswordResponse) String() string {
 func (*ChangePasswordResponse) ProtoMessage() {}
 
 func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1095,7 @@ func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordResponse.ProtoReflect.Descriptor instead.
 func (*ChangePasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{21}
 }
 
 type ResetPasswordRequest struct {
@@ -1112,7 +1112,7 @@ type ResetPasswordRequest struct {
 func (x *ResetPasswordRequest) Reset() {
 	*x = ResetPasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1125,7 +1125,7 @@ func (x *ResetPasswordRequest) String() string {
 func (*ResetPasswordRequest) ProtoMessage() {}
 
 func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1138,7 +1138,7 @@ func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
 func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ResetPasswordRequest) GetNamespace() string {
@@ -1178,7 +1178,7 @@ type ResetPasswordReponse struct {
 func (x *ResetPasswordReponse) Reset() {
 	*x = ResetPasswordReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1191,7 +1191,7 @@ func (x *ResetPasswordReponse) String() string {
 func (*ResetPasswordReponse) ProtoMessage() {}
 
 func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1204,7 +1204,7 @@ func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordReponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{23}
 }
 
 type UploadAvatarRequest struct {
@@ -1221,7 +1221,7 @@ type UploadAvatarRequest struct {
 func (x *UploadAvatarRequest) Reset() {
 	*x = UploadAvatarRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1234,7 +1234,7 @@ func (x *UploadAvatarRequest) String() string {
 func (*UploadAvatarRequest) ProtoMessage() {}
 
 func (x *UploadAvatarRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1247,7 +1247,7 @@ func (x *UploadAvatarRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadAvatarRequest.ProtoReflect.Descriptor instead.
 func (*UploadAvatarRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *UploadAvatarRequest) GetNamespace() string {
@@ -1287,7 +1287,7 @@ type UploadAvatarReponse struct {
 func (x *UploadAvatarReponse) Reset() {
 	*x = UploadAvatarReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1300,7 +1300,7 @@ func (x *UploadAvatarReponse) String() string {
 func (*UploadAvatarReponse) ProtoMessage() {}
 
 func (x *UploadAvatarReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1313,7 +1313,7 @@ func (x *UploadAvatarReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UploadAvatarReponse.ProtoReflect.Descriptor instead.
 func (*UploadAvatarReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{25}
 }
 
 type DownloadAvatarRequest struct {
@@ -1328,7 +1328,7 @@ type DownloadAvatarRequest struct {
 func (x *DownloadAvatarRequest) Reset() {
 	*x = DownloadAvatarRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1341,7 +1341,7 @@ func (x *DownloadAvatarRequest) String() string {
 func (*DownloadAvatarRequest) ProtoMessage() {}
 
 func (x *DownloadAvatarRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1354,7 +1354,7 @@ func (x *DownloadAvatarRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadAvatarRequest.ProtoReflect.Descriptor instead.
 func (*DownloadAvatarRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *DownloadAvatarRequest) GetNamespace() string {
@@ -1382,7 +1382,7 @@ type DownloadAvatarReponse struct {
 func (x *DownloadAvatarReponse) Reset() {
 	*x = DownloadAvatarReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[27]
+		mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1395,7 +1395,7 @@ func (x *DownloadAvatarReponse) String() string {
 func (*DownloadAvatarReponse) ProtoMessage() {}
 
 func (x *DownloadAvatarReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[27]
+	mi := &file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1408,7 +1408,7 @@ func (x *DownloadAvatarReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadAvatarReponse.ProtoReflect.Descriptor instead.
 func (*DownloadAvatarReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP(), []int{27}
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *DownloadAvatarReponse) GetAvatar() []byte {
@@ -1418,9 +1418,9 @@ func (x *DownloadAvatarReponse) GetAvatar() []byte {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_account_v1_account_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_account_v1_account_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74,
@@ -1719,83 +1719,83 @@ var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescData = file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescData = file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
-var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_goTypes = []interface{}{
-	(*ListAccountsRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest
-	(*ListAccountsResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse
-	(*AccountResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.account.v1.AccountResponse
-	(*CreateAccountRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest
-	(*CreateAccountResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse
-	(*UpdateAccountRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest
-	(*UpdateAccountResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse
-	(*GetAccountRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest
-	(*GetAccountResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse
-	(*GetAccountNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest
-	(*GetAccountNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse
-	(*DeleteAccountRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest
-	(*DeleteAccountResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse
-	(*AccountCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.account.v1.AccountCreateResponse
-	(*LogoutResponse)(nil),               // 14: github.com.metaprov.modeldapi.services.account.v1.LogoutResponse
-	(*ResetPasswordResponse)(nil),        // 15: github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse
-	(*AccountLoginRequest)(nil),          // 16: github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest
-	(*AccountLoginResponse)(nil),         // 17: github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse
-	(*AccountGetByNameRequest)(nil),      // 18: github.com.metaprov.modeldapi.services.account.v1.AccountGetByNameRequest
-	(*AccountLogoutRequest)(nil),         // 19: github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest
-	(*ChangePasswordRequest)(nil),        // 20: github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest
-	(*ChangePasswordResponse)(nil),       // 21: github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse
-	(*ResetPasswordRequest)(nil),         // 22: github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest
-	(*ResetPasswordReponse)(nil),         // 23: github.com.metaprov.modeldapi.services.account.v1.ResetPasswordReponse
-	(*UploadAvatarRequest)(nil),          // 24: github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest
-	(*UploadAvatarReponse)(nil),          // 25: github.com.metaprov.modeldapi.services.account.v1.UploadAvatarReponse
-	(*DownloadAvatarRequest)(nil),        // 26: github.com.metaprov.modeldapi.services.account.v1.DownloadAvatarRequest
-	(*DownloadAvatarReponse)(nil),        // 27: github.com.metaprov.modeldapi.services.account.v1.DownloadAvatarReponse
-	nil,                                  // 28: github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.LabelsEntry
-	(*v1alpha1.AccountList)(nil),         // 29: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList
-	(*v1alpha1.Account)(nil),             // 30: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	(*v1.NamespaceInfo)(nil),             // 31: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
+var file_github_com_metaprov_modelaapi_services_account_v1_account_proto_goTypes = []interface{}{
+	(*ListAccountsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest
+	(*ListAccountsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse
+	(*AccountResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.account.v1.AccountResponse
+	(*CreateAccountRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest
+	(*CreateAccountResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.account.v1.CreateAccountResponse
+	(*UpdateAccountRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest
+	(*UpdateAccountResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.account.v1.UpdateAccountResponse
+	(*GetAccountRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.account.v1.GetAccountRequest
+	(*GetAccountResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.account.v1.GetAccountResponse
+	(*GetAccountNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesRequest
+	(*GetAccountNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesResponse
+	(*DeleteAccountRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.account.v1.DeleteAccountRequest
+	(*DeleteAccountResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.account.v1.DeleteAccountResponse
+	(*AccountCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.account.v1.AccountCreateResponse
+	(*LogoutResponse)(nil),               // 14: github.com.metaprov.modelaapi.services.account.v1.LogoutResponse
+	(*ResetPasswordResponse)(nil),        // 15: github.com.metaprov.modelaapi.services.account.v1.ResetPasswordResponse
+	(*AccountLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.account.v1.AccountLoginRequest
+	(*AccountLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.account.v1.AccountLoginResponse
+	(*AccountGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.account.v1.AccountGetByNameRequest
+	(*AccountLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.account.v1.AccountLogoutRequest
+	(*ChangePasswordRequest)(nil),        // 20: github.com.metaprov.modelaapi.services.account.v1.ChangePasswordRequest
+	(*ChangePasswordResponse)(nil),       // 21: github.com.metaprov.modelaapi.services.account.v1.ChangePasswordResponse
+	(*ResetPasswordRequest)(nil),         // 22: github.com.metaprov.modelaapi.services.account.v1.ResetPasswordRequest
+	(*ResetPasswordReponse)(nil),         // 23: github.com.metaprov.modelaapi.services.account.v1.ResetPasswordReponse
+	(*UploadAvatarRequest)(nil),          // 24: github.com.metaprov.modelaapi.services.account.v1.UploadAvatarRequest
+	(*UploadAvatarReponse)(nil),          // 25: github.com.metaprov.modelaapi.services.account.v1.UploadAvatarReponse
+	(*DownloadAvatarRequest)(nil),        // 26: github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarRequest
+	(*DownloadAvatarReponse)(nil),        // 27: github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarReponse
+	nil,                                  // 28: github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest.LabelsEntry
+	(*v1alpha1.AccountList)(nil),         // 29: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList
+	(*v1alpha1.Account)(nil),             // 30: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	(*v1.NamespaceInfo)(nil),             // 31: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_depIdxs = []int32{
-	28, // 0: github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest.LabelsEntry
-	29, // 1: github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList
-	30, // 2: github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	30, // 3: github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	30, // 4: github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	31, // 5: github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.account.v1.AccountService.ListAccounts:input_type -> github.com.metaprov.modeldapi.services.account.v1.ListAccountsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.account.v1.AccountService.CreateAccount:input_type -> github.com.metaprov.modeldapi.services.account.v1.CreateAccountRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.account.v1.AccountService.GetAccount:input_type -> github.com.metaprov.modeldapi.services.account.v1.GetAccountRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.account.v1.AccountService.UpdateAccount:input_type -> github.com.metaprov.modeldapi.services.account.v1.UpdateAccountRequest
-	11, // 10: github.com.metaprov.modeldapi.services.account.v1.AccountService.DeleteAccount:input_type -> github.com.metaprov.modeldapi.services.account.v1.DeleteAccountRequest
-	9,  // 11: github.com.metaprov.modeldapi.services.account.v1.AccountService.GetAccountNamespaces:input_type -> github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesRequest
-	16, // 12: github.com.metaprov.modeldapi.services.account.v1.AccountService.Login:input_type -> github.com.metaprov.modeldapi.services.account.v1.AccountLoginRequest
-	19, // 13: github.com.metaprov.modeldapi.services.account.v1.AccountService.Logout:input_type -> github.com.metaprov.modeldapi.services.account.v1.AccountLogoutRequest
-	20, // 14: github.com.metaprov.modeldapi.services.account.v1.AccountService.ChangePassword:input_type -> github.com.metaprov.modeldapi.services.account.v1.ChangePasswordRequest
-	22, // 15: github.com.metaprov.modeldapi.services.account.v1.AccountService.ResetPassword:input_type -> github.com.metaprov.modeldapi.services.account.v1.ResetPasswordRequest
-	24, // 16: github.com.metaprov.modeldapi.services.account.v1.AccountService.UploadAvatar:input_type -> github.com.metaprov.modeldapi.services.account.v1.UploadAvatarRequest
-	26, // 17: github.com.metaprov.modeldapi.services.account.v1.AccountService.DownloadAvatar:input_type -> github.com.metaprov.modeldapi.services.account.v1.DownloadAvatarRequest
-	1,  // 18: github.com.metaprov.modeldapi.services.account.v1.AccountService.ListAccounts:output_type -> github.com.metaprov.modeldapi.services.account.v1.ListAccountsResponse
-	4,  // 19: github.com.metaprov.modeldapi.services.account.v1.AccountService.CreateAccount:output_type -> github.com.metaprov.modeldapi.services.account.v1.CreateAccountResponse
-	8,  // 20: github.com.metaprov.modeldapi.services.account.v1.AccountService.GetAccount:output_type -> github.com.metaprov.modeldapi.services.account.v1.GetAccountResponse
-	6,  // 21: github.com.metaprov.modeldapi.services.account.v1.AccountService.UpdateAccount:output_type -> github.com.metaprov.modeldapi.services.account.v1.UpdateAccountResponse
-	12, // 22: github.com.metaprov.modeldapi.services.account.v1.AccountService.DeleteAccount:output_type -> github.com.metaprov.modeldapi.services.account.v1.DeleteAccountResponse
-	10, // 23: github.com.metaprov.modeldapi.services.account.v1.AccountService.GetAccountNamespaces:output_type -> github.com.metaprov.modeldapi.services.account.v1.GetAccountNamespacesResponse
-	17, // 24: github.com.metaprov.modeldapi.services.account.v1.AccountService.Login:output_type -> github.com.metaprov.modeldapi.services.account.v1.AccountLoginResponse
-	14, // 25: github.com.metaprov.modeldapi.services.account.v1.AccountService.Logout:output_type -> github.com.metaprov.modeldapi.services.account.v1.LogoutResponse
-	21, // 26: github.com.metaprov.modeldapi.services.account.v1.AccountService.ChangePassword:output_type -> github.com.metaprov.modeldapi.services.account.v1.ChangePasswordResponse
-	15, // 27: github.com.metaprov.modeldapi.services.account.v1.AccountService.ResetPassword:output_type -> github.com.metaprov.modeldapi.services.account.v1.ResetPasswordResponse
-	25, // 28: github.com.metaprov.modeldapi.services.account.v1.AccountService.UploadAvatar:output_type -> github.com.metaprov.modeldapi.services.account.v1.UploadAvatarReponse
-	27, // 29: github.com.metaprov.modeldapi.services.account.v1.AccountService.DownloadAvatar:output_type -> github.com.metaprov.modeldapi.services.account.v1.DownloadAvatarReponse
+var file_github_com_metaprov_modelaapi_services_account_v1_account_proto_depIdxs = []int32{
+	28, // 0: github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest.LabelsEntry
+	29, // 1: github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList
+	30, // 2: github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	30, // 3: github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	30, // 4: github.com.metaprov.modelaapi.services.account.v1.GetAccountResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	31, // 5: github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.account.v1.AccountService.ListAccounts:input_type -> github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.account.v1.AccountService.CreateAccount:input_type -> github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.account.v1.AccountService.GetAccount:input_type -> github.com.metaprov.modelaapi.services.account.v1.GetAccountRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.account.v1.AccountService.UpdateAccount:input_type -> github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest
+	11, // 10: github.com.metaprov.modelaapi.services.account.v1.AccountService.DeleteAccount:input_type -> github.com.metaprov.modelaapi.services.account.v1.DeleteAccountRequest
+	9,  // 11: github.com.metaprov.modelaapi.services.account.v1.AccountService.GetAccountNamespaces:input_type -> github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesRequest
+	16, // 12: github.com.metaprov.modelaapi.services.account.v1.AccountService.Login:input_type -> github.com.metaprov.modelaapi.services.account.v1.AccountLoginRequest
+	19, // 13: github.com.metaprov.modelaapi.services.account.v1.AccountService.Logout:input_type -> github.com.metaprov.modelaapi.services.account.v1.AccountLogoutRequest
+	20, // 14: github.com.metaprov.modelaapi.services.account.v1.AccountService.ChangePassword:input_type -> github.com.metaprov.modelaapi.services.account.v1.ChangePasswordRequest
+	22, // 15: github.com.metaprov.modelaapi.services.account.v1.AccountService.ResetPassword:input_type -> github.com.metaprov.modelaapi.services.account.v1.ResetPasswordRequest
+	24, // 16: github.com.metaprov.modelaapi.services.account.v1.AccountService.UploadAvatar:input_type -> github.com.metaprov.modelaapi.services.account.v1.UploadAvatarRequest
+	26, // 17: github.com.metaprov.modelaapi.services.account.v1.AccountService.DownloadAvatar:input_type -> github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarRequest
+	1,  // 18: github.com.metaprov.modelaapi.services.account.v1.AccountService.ListAccounts:output_type -> github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse
+	4,  // 19: github.com.metaprov.modelaapi.services.account.v1.AccountService.CreateAccount:output_type -> github.com.metaprov.modelaapi.services.account.v1.CreateAccountResponse
+	8,  // 20: github.com.metaprov.modelaapi.services.account.v1.AccountService.GetAccount:output_type -> github.com.metaprov.modelaapi.services.account.v1.GetAccountResponse
+	6,  // 21: github.com.metaprov.modelaapi.services.account.v1.AccountService.UpdateAccount:output_type -> github.com.metaprov.modelaapi.services.account.v1.UpdateAccountResponse
+	12, // 22: github.com.metaprov.modelaapi.services.account.v1.AccountService.DeleteAccount:output_type -> github.com.metaprov.modelaapi.services.account.v1.DeleteAccountResponse
+	10, // 23: github.com.metaprov.modelaapi.services.account.v1.AccountService.GetAccountNamespaces:output_type -> github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesResponse
+	17, // 24: github.com.metaprov.modelaapi.services.account.v1.AccountService.Login:output_type -> github.com.metaprov.modelaapi.services.account.v1.AccountLoginResponse
+	14, // 25: github.com.metaprov.modelaapi.services.account.v1.AccountService.Logout:output_type -> github.com.metaprov.modelaapi.services.account.v1.LogoutResponse
+	21, // 26: github.com.metaprov.modelaapi.services.account.v1.AccountService.ChangePassword:output_type -> github.com.metaprov.modelaapi.services.account.v1.ChangePasswordResponse
+	15, // 27: github.com.metaprov.modelaapi.services.account.v1.AccountService.ResetPassword:output_type -> github.com.metaprov.modelaapi.services.account.v1.ResetPasswordResponse
+	25, // 28: github.com.metaprov.modelaapi.services.account.v1.AccountService.UploadAvatar:output_type -> github.com.metaprov.modelaapi.services.account.v1.UploadAvatarReponse
+	27, // 29: github.com.metaprov.modelaapi.services.account.v1.AccountService.DownloadAvatar:output_type -> github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarReponse
 	18, // [18:30] is the sub-list for method output_type
 	6,  // [6:18] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1803,13 +1803,13 @@ var file_github_com_metaprov_modeldapi_services_account_v1_account_proto_depIdxs
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init() }
-func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_account_v1_account_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_account_v1_account_proto_init() }
+func file_github_com_metaprov_modelaapi_services_account_v1_account_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_account_v1_account_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAccountsRequest); i {
 			case 0:
 				return &v.state
@@ -1821,7 +1821,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAccountsResponse); i {
 			case 0:
 				return &v.state
@@ -1833,7 +1833,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountResponse); i {
 			case 0:
 				return &v.state
@@ -1845,7 +1845,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1857,7 +1857,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1869,7 +1869,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1881,7 +1881,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1893,7 +1893,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1905,7 +1905,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1917,7 +1917,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1929,7 +1929,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAccountNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1941,7 +1941,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1953,7 +1953,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1965,7 +1965,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1977,7 +1977,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogoutResponse); i {
 			case 0:
 				return &v.state
@@ -1989,7 +1989,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordResponse); i {
 			case 0:
 				return &v.state
@@ -2001,7 +2001,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountLoginRequest); i {
 			case 0:
 				return &v.state
@@ -2013,7 +2013,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountLoginResponse); i {
 			case 0:
 				return &v.state
@@ -2025,7 +2025,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -2037,7 +2037,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -2049,7 +2049,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordRequest); i {
 			case 0:
 				return &v.state
@@ -2061,7 +2061,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordResponse); i {
 			case 0:
 				return &v.state
@@ -2073,7 +2073,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordRequest); i {
 			case 0:
 				return &v.state
@@ -2085,7 +2085,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordReponse); i {
 			case 0:
 				return &v.state
@@ -2097,7 +2097,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UploadAvatarRequest); i {
 			case 0:
 				return &v.state
@@ -2109,7 +2109,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UploadAvatarReponse); i {
 			case 0:
 				return &v.state
@@ -2121,7 +2121,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadAvatarRequest); i {
 			case 0:
 				return &v.state
@@ -2133,7 +2133,7 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadAvatarReponse); i {
 			case 0:
 				return &v.state
@@ -2150,20 +2150,20 @@ func file_github_com_metaprov_modeldapi_services_account_v1_account_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_account_v1_account_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_account_v1_account_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_account_v1_account_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_account_v1_account_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_account_v1_account_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_account_v1_account_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_account_v1_account_proto = out.File
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_account_v1_account_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_account_v1_account_proto = out.File
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_account_v1_account_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2202,7 +2202,7 @@ func NewAccountServiceClient(cc grpc.ClientConnInterface) AccountServiceClient {
 
 func (c *accountServiceClient) ListAccounts(ctx context.Context, in *ListAccountsRequest, opts ...grpc.CallOption) (*ListAccountsResponse, error) {
 	out := new(ListAccountsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2211,7 +2211,7 @@ func (c *accountServiceClient) ListAccounts(ctx context.Context, in *ListAccount
 
 func (c *accountServiceClient) CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error) {
 	out := new(CreateAccountResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2220,7 +2220,7 @@ func (c *accountServiceClient) CreateAccount(ctx context.Context, in *CreateAcco
 
 func (c *accountServiceClient) GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error) {
 	out := new(GetAccountResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2229,7 +2229,7 @@ func (c *accountServiceClient) GetAccount(ctx context.Context, in *GetAccountReq
 
 func (c *accountServiceClient) UpdateAccount(ctx context.Context, in *UpdateAccountRequest, opts ...grpc.CallOption) (*UpdateAccountResponse, error) {
 	out := new(UpdateAccountResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2238,7 +2238,7 @@ func (c *accountServiceClient) UpdateAccount(ctx context.Context, in *UpdateAcco
 
 func (c *accountServiceClient) DeleteAccount(ctx context.Context, in *DeleteAccountRequest, opts ...grpc.CallOption) (*DeleteAccountResponse, error) {
 	out := new(DeleteAccountResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2247,7 +2247,7 @@ func (c *accountServiceClient) DeleteAccount(ctx context.Context, in *DeleteAcco
 
 func (c *accountServiceClient) GetAccountNamespaces(ctx context.Context, in *GetAccountNamespacesRequest, opts ...grpc.CallOption) (*GetAccountNamespacesResponse, error) {
 	out := new(GetAccountNamespacesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2256,7 +2256,7 @@ func (c *accountServiceClient) GetAccountNamespaces(ctx context.Context, in *Get
 
 func (c *accountServiceClient) Login(ctx context.Context, in *AccountLoginRequest, opts ...grpc.CallOption) (*AccountLoginResponse, error) {
 	out := new(AccountLoginResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2265,7 +2265,7 @@ func (c *accountServiceClient) Login(ctx context.Context, in *AccountLoginReques
 
 func (c *accountServiceClient) Logout(ctx context.Context, in *AccountLogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
 	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2274,7 +2274,7 @@ func (c *accountServiceClient) Logout(ctx context.Context, in *AccountLogoutRequ
 
 func (c *accountServiceClient) ChangePassword(ctx context.Context, in *ChangePasswordRequest, opts ...grpc.CallOption) (*ChangePasswordResponse, error) {
 	out := new(ChangePasswordResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2283,7 +2283,7 @@ func (c *accountServiceClient) ChangePassword(ctx context.Context, in *ChangePas
 
 func (c *accountServiceClient) ResetPassword(ctx context.Context, in *ResetPasswordRequest, opts ...grpc.CallOption) (*ResetPasswordResponse, error) {
 	out := new(ResetPasswordResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2292,7 +2292,7 @@ func (c *accountServiceClient) ResetPassword(ctx context.Context, in *ResetPassw
 
 func (c *accountServiceClient) UploadAvatar(ctx context.Context, in *UploadAvatarRequest, opts ...grpc.CallOption) (*UploadAvatarReponse, error) {
 	out := new(UploadAvatarReponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2301,7 +2301,7 @@ func (c *accountServiceClient) UploadAvatar(ctx context.Context, in *UploadAvata
 
 func (c *accountServiceClient) DownloadAvatar(ctx context.Context, in *DownloadAvatarRequest, opts ...grpc.CallOption) (*DownloadAvatarReponse, error) {
 	out := new(DownloadAvatarReponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2379,7 +2379,7 @@ func _AccountService_ListAccounts_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).ListAccounts(ctx, req.(*ListAccountsRequest))
@@ -2397,7 +2397,7 @@ func _AccountService_CreateAccount_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).CreateAccount(ctx, req.(*CreateAccountRequest))
@@ -2415,7 +2415,7 @@ func _AccountService_GetAccount_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).GetAccount(ctx, req.(*GetAccountRequest))
@@ -2433,7 +2433,7 @@ func _AccountService_UpdateAccount_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).UpdateAccount(ctx, req.(*UpdateAccountRequest))
@@ -2451,7 +2451,7 @@ func _AccountService_DeleteAccount_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).DeleteAccount(ctx, req.(*DeleteAccountRequest))
@@ -2469,7 +2469,7 @@ func _AccountService_GetAccountNamespaces_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).GetAccountNamespaces(ctx, req.(*GetAccountNamespacesRequest))
@@ -2487,7 +2487,7 @@ func _AccountService_Login_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).Login(ctx, req.(*AccountLoginRequest))
@@ -2505,7 +2505,7 @@ func _AccountService_Logout_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).Logout(ctx, req.(*AccountLogoutRequest))
@@ -2523,7 +2523,7 @@ func _AccountService_ChangePassword_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).ChangePassword(ctx, req.(*ChangePasswordRequest))
@@ -2541,7 +2541,7 @@ func _AccountService_ResetPassword_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).ResetPassword(ctx, req.(*ResetPasswordRequest))
@@ -2559,7 +2559,7 @@ func _AccountService_UploadAvatar_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).UploadAvatar(ctx, req.(*UploadAvatarRequest))
@@ -2577,7 +2577,7 @@ func _AccountService_DownloadAvatar_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar",
+		FullMethod: "/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AccountServiceServer).DownloadAvatar(ctx, req.(*DownloadAvatarRequest))
@@ -2586,7 +2586,7 @@ func _AccountService_DownloadAvatar_Handler(srv interface{}, ctx context.Context
 }
 
 var _AccountService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.account.v1.AccountService",
+	ServiceName: "github.com.metaprov.modelaapi.services.account.v1.AccountService",
 	HandlerType: (*AccountServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2639,5 +2639,5 @@ var _AccountService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/account/v1/account.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/account/v1/account.proto",
 }

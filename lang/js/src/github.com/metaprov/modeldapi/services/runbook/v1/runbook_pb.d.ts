@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated_pb';
 
 
 export class ListRunBooksRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListRunBooksRequest {
 }
 
 export class ListRunBooksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList): ListRunBooksResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList): ListRunBooksResponse;
   hasItems(): boolean;
   clearItems(): ListRunBooksResponse;
 
@@ -42,13 +42,13 @@ export class ListRunBooksResponse extends jspb.Message {
 
 export namespace ListRunBooksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.AsObject,
   }
 }
 
 export class CreateRunBookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): CreateRunBookRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): CreateRunBookRequest;
   hasItem(): boolean;
   clearItem(): CreateRunBookRequest;
 
@@ -62,7 +62,7 @@ export class CreateRunBookRequest extends jspb.Message {
 
 export namespace CreateRunBookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateRunBookResponse {
 }
 
 export class UpdateRunBookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): UpdateRunBookRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): UpdateRunBookRequest;
   hasItem(): boolean;
   clearItem(): UpdateRunBookRequest;
 
@@ -96,7 +96,7 @@ export class UpdateRunBookRequest extends jspb.Message {
 
 export namespace UpdateRunBookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetRunBookRequest {
 }
 
 export class GetRunBookResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): GetRunBookResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): GetRunBookResponse;
   hasItem(): boolean;
   clearItem(): GetRunBookResponse;
 
@@ -155,7 +155,7 @@ export class GetRunBookResponse extends jspb.Message {
 
 export namespace GetRunBookResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
     yaml: string,
   }
 }

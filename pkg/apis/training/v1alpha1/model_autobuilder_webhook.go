@@ -7,9 +7,9 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -85,7 +85,7 @@ func (b *ModelAutobuilder) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "ModelAutobuilder"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "ModelAutobuilder"},
 		b.Name, allErrs)
 }
 

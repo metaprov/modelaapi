@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/servingsite/v1/servingsite.proto
+// source: github.com/metaprov/modelaapi/services/servingsite/v1/servingsite.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListServingSitesRequest struct {
 func (x *ListServingSitesRequest) Reset() {
 	*x = ListServingSitesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListServingSitesRequest) String() string {
 func (*ListServingSitesRequest) ProtoMessage() {}
 
 func (x *ListServingSitesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListServingSitesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServingSitesRequest.ProtoReflect.Descriptor instead.
 func (*ListServingSitesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListServingSitesRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListServingSitesResponse struct {
 func (x *ListServingSitesResponse) Reset() {
 	*x = ListServingSitesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListServingSitesResponse) String() string {
 func (*ListServingSitesResponse) ProtoMessage() {}
 
 func (x *ListServingSitesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListServingSitesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServingSitesResponse.ProtoReflect.Descriptor instead.
 func (*ListServingSitesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListServingSitesResponse) GetItems() *v1alpha1.ServingSiteList {
@@ -144,7 +144,7 @@ type CreateServingSiteRequest struct {
 func (x *CreateServingSiteRequest) Reset() {
 	*x = CreateServingSiteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateServingSiteRequest) String() string {
 func (*CreateServingSiteRequest) ProtoMessage() {}
 
 func (x *CreateServingSiteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateServingSiteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateServingSiteRequest.ProtoReflect.Descriptor instead.
 func (*CreateServingSiteRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateServingSiteRequest) GetItem() *v1alpha1.ServingSite {
@@ -189,7 +189,7 @@ type CreateServingSiteResponse struct {
 func (x *CreateServingSiteResponse) Reset() {
 	*x = CreateServingSiteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateServingSiteResponse) String() string {
 func (*CreateServingSiteResponse) ProtoMessage() {}
 
 func (x *CreateServingSiteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateServingSiteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateServingSiteResponse.ProtoReflect.Descriptor instead.
 func (*CreateServingSiteResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateServingSiteRequest struct {
@@ -229,7 +229,7 @@ type UpdateServingSiteRequest struct {
 func (x *UpdateServingSiteRequest) Reset() {
 	*x = UpdateServingSiteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateServingSiteRequest) String() string {
 func (*UpdateServingSiteRequest) ProtoMessage() {}
 
 func (x *UpdateServingSiteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateServingSiteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateServingSiteRequest.ProtoReflect.Descriptor instead.
 func (*UpdateServingSiteRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateServingSiteRequest) GetItem() *v1alpha1.ServingSite {
@@ -274,7 +274,7 @@ type UpdateServingSiteResponse struct {
 func (x *UpdateServingSiteResponse) Reset() {
 	*x = UpdateServingSiteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateServingSiteResponse) String() string {
 func (*UpdateServingSiteResponse) ProtoMessage() {}
 
 func (x *UpdateServingSiteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateServingSiteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateServingSiteResponse.ProtoReflect.Descriptor instead.
 func (*UpdateServingSiteResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{5}
 }
 
 type GetServingSiteRequest struct {
@@ -315,7 +315,7 @@ type GetServingSiteRequest struct {
 func (x *GetServingSiteRequest) Reset() {
 	*x = GetServingSiteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetServingSiteRequest) String() string {
 func (*GetServingSiteRequest) ProtoMessage() {}
 
 func (x *GetServingSiteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetServingSiteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetServingSiteRequest.ProtoReflect.Descriptor instead.
 func (*GetServingSiteRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetServingSiteRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetServingSiteResponse struct {
 func (x *GetServingSiteResponse) Reset() {
 	*x = GetServingSiteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetServingSiteResponse) String() string {
 func (*GetServingSiteResponse) ProtoMessage() {}
 
 func (x *GetServingSiteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetServingSiteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetServingSiteResponse.ProtoReflect.Descriptor instead.
 func (*GetServingSiteResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetServingSiteResponse) GetItem() *v1alpha1.ServingSite {
@@ -425,7 +425,7 @@ type DeleteServingSiteRequest struct {
 func (x *DeleteServingSiteRequest) Reset() {
 	*x = DeleteServingSiteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteServingSiteRequest) String() string {
 func (*DeleteServingSiteRequest) ProtoMessage() {}
 
 func (x *DeleteServingSiteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteServingSiteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteServingSiteRequest.ProtoReflect.Descriptor instead.
 func (*DeleteServingSiteRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteServingSiteRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteServingSiteResponse struct {
 func (x *DeleteServingSiteResponse) Reset() {
 	*x = DeleteServingSiteResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteServingSiteResponse) String() string {
 func (*DeleteServingSiteResponse) ProtoMessage() {}
 
 func (x *DeleteServingSiteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteServingSiteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteServingSiteResponse.ProtoReflect.Descriptor instead.
 func (*DeleteServingSiteResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDesc = []byte{
 	0x0a, 0x47, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x6e, 0x67,
@@ -662,49 +662,49 @@ var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescData = file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescData = file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_goTypes = []interface{}{
-	(*ListServingSitesRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesRequest
-	(*ListServingSitesResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse
-	(*CreateServingSiteRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest
-	(*CreateServingSiteResponse)(nil), // 3: github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteResponse
-	(*UpdateServingSiteRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest
-	(*UpdateServingSiteResponse)(nil), // 5: github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteResponse
-	(*GetServingSiteRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.servingsite.v1.GetServingSiteRequest
-	(*GetServingSiteResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.servingsite.v1.GetServingSiteResponse
-	(*DeleteServingSiteRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.servingsite.v1.DeleteServingSiteRequest
-	(*DeleteServingSiteResponse)(nil), // 9: github.com.metaprov.modeldapi.services.servingsite.v1.DeleteServingSiteResponse
-	nil,                               // 10: github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry
-	(*v1alpha1.ServingSiteList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList
-	(*v1alpha1.ServingSite)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
+var file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_goTypes = []interface{}{
+	(*ListServingSitesRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest
+	(*ListServingSitesResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse
+	(*CreateServingSiteRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest
+	(*CreateServingSiteResponse)(nil), // 3: github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteResponse
+	(*UpdateServingSiteRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest
+	(*UpdateServingSiteResponse)(nil), // 5: github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteResponse
+	(*GetServingSiteRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRequest
+	(*GetServingSiteResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse
+	(*DeleteServingSiteRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteRequest
+	(*DeleteServingSiteResponse)(nil), // 9: github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteResponse
+	nil,                               // 10: github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry
+	(*v1alpha1.ServingSiteList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList
+	(*v1alpha1.ServingSite)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite
 }
-var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSiteList
-	12, // 2: github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
-	12, // 3: github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
-	12, // 4: github.com.metaprov.modeldapi.services.servingsite.v1.GetServingSiteResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite
-	0,  // 5: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.ListServingSites:input_type -> github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.CreateServingSite:input_type -> github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.GetServingSite:input_type -> github.com.metaprov.modeldapi.services.servingsite.v1.GetServingSiteRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.UpdateServingSite:input_type -> github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.DeleteServingSite:input_type -> github.com.metaprov.modeldapi.services.servingsite.v1.DeleteServingSiteRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.ListServingSites:output_type -> github.com.metaprov.modeldapi.services.servingsite.v1.ListServingSitesResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.CreateServingSite:output_type -> github.com.metaprov.modeldapi.services.servingsite.v1.CreateServingSiteResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.GetServingSite:output_type -> github.com.metaprov.modeldapi.services.servingsite.v1.GetServingSiteResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.UpdateServingSite:output_type -> github.com.metaprov.modeldapi.services.servingsite.v1.UpdateServingSiteResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService.DeleteServingSite:output_type -> github.com.metaprov.modeldapi.services.servingsite.v1.DeleteServingSiteResponse
+var file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList
+	12, // 2: github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite
+	12, // 3: github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite
+	12, // 4: github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite
+	0,  // 5: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.ListServingSites:input_type -> github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.CreateServingSite:input_type -> github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.GetServingSite:input_type -> github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.UpdateServingSite:input_type -> github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.DeleteServingSite:input_type -> github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.ListServingSites:output_type -> github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.CreateServingSite:output_type -> github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.GetServingSite:output_type -> github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.UpdateServingSite:output_type -> github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService.DeleteServingSite:output_type -> github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -712,13 +712,13 @@ var file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_init() }
-func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_init() }
+func file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServingSitesRequest); i {
 			case 0:
 				return &v.state
@@ -730,7 +730,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServingSitesResponse); i {
 			case 0:
 				return &v.state
@@ -742,7 +742,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateServingSiteRequest); i {
 			case 0:
 				return &v.state
@@ -754,7 +754,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateServingSiteResponse); i {
 			case 0:
 				return &v.state
@@ -766,7 +766,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateServingSiteRequest); i {
 			case 0:
 				return &v.state
@@ -778,7 +778,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateServingSiteResponse); i {
 			case 0:
 				return &v.state
@@ -790,7 +790,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetServingSiteRequest); i {
 			case 0:
 				return &v.state
@@ -802,7 +802,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetServingSiteResponse); i {
 			case 0:
 				return &v.state
@@ -814,7 +814,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteServingSiteRequest); i {
 			case 0:
 				return &v.state
@@ -826,7 +826,7 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteServingSiteResponse); i {
 			case 0:
 				return &v.state
@@ -843,20 +843,20 @@ func file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_prot
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto = out.File
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_servingsite_v1_servingsite_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto = out.File
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -888,7 +888,7 @@ func NewServingSiteServiceClient(cc grpc.ClientConnInterface) ServingSiteService
 
 func (c *servingSiteServiceClient) ListServingSites(ctx context.Context, in *ListServingSitesRequest, opts ...grpc.CallOption) (*ListServingSitesResponse, error) {
 	out := new(ListServingSitesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/ListServingSites", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -897,7 +897,7 @@ func (c *servingSiteServiceClient) ListServingSites(ctx context.Context, in *Lis
 
 func (c *servingSiteServiceClient) CreateServingSite(ctx context.Context, in *CreateServingSiteRequest, opts ...grpc.CallOption) (*CreateServingSiteResponse, error) {
 	out := new(CreateServingSiteResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/CreateServingSite", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -906,7 +906,7 @@ func (c *servingSiteServiceClient) CreateServingSite(ctx context.Context, in *Cr
 
 func (c *servingSiteServiceClient) GetServingSite(ctx context.Context, in *GetServingSiteRequest, opts ...grpc.CallOption) (*GetServingSiteResponse, error) {
 	out := new(GetServingSiteResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetServingSite", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -915,7 +915,7 @@ func (c *servingSiteServiceClient) GetServingSite(ctx context.Context, in *GetSe
 
 func (c *servingSiteServiceClient) UpdateServingSite(ctx context.Context, in *UpdateServingSiteRequest, opts ...grpc.CallOption) (*UpdateServingSiteResponse, error) {
 	out := new(UpdateServingSiteResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/UpdateServingSite", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -924,7 +924,7 @@ func (c *servingSiteServiceClient) UpdateServingSite(ctx context.Context, in *Up
 
 func (c *servingSiteServiceClient) DeleteServingSite(ctx context.Context, in *DeleteServingSiteRequest, opts ...grpc.CallOption) (*DeleteServingSiteResponse, error) {
 	out := new(DeleteServingSiteResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -974,7 +974,7 @@ func _ServingSiteService_ListServingSites_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites",
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/ListServingSites",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServingSiteServiceServer).ListServingSites(ctx, req.(*ListServingSitesRequest))
@@ -992,7 +992,7 @@ func _ServingSiteService_CreateServingSite_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite",
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/CreateServingSite",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServingSiteServiceServer).CreateServingSite(ctx, req.(*CreateServingSiteRequest))
@@ -1010,7 +1010,7 @@ func _ServingSiteService_GetServingSite_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite",
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetServingSite",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServingSiteServiceServer).GetServingSite(ctx, req.(*GetServingSiteRequest))
@@ -1028,7 +1028,7 @@ func _ServingSiteService_UpdateServingSite_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite",
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/UpdateServingSite",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServingSiteServiceServer).UpdateServingSite(ctx, req.(*UpdateServingSiteRequest))
@@ -1046,7 +1046,7 @@ func _ServingSiteService_DeleteServingSite_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite",
+		FullMethod: "/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ServingSiteServiceServer).DeleteServingSite(ctx, req.(*DeleteServingSiteRequest))
@@ -1055,7 +1055,7 @@ func _ServingSiteService_DeleteServingSite_Handler(srv interface{}, ctx context.
 }
 
 var _ServingSiteService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService",
+	ServiceName: "github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService",
 	HandlerType: (*ServingSiteServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1080,5 +1080,5 @@ var _ServingSiteService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/servingsite/v1/servingsite.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/servingsite/v1/servingsite.proto",
 }

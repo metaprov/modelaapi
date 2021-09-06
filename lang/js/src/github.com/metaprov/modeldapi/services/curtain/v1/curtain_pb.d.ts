@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
 export class ListCurtainsRequest extends jspb.Message {
@@ -35,8 +35,8 @@ export namespace ListCurtainsRequest {
 }
 
 export class ListCurtainsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList): ListCurtainsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList): ListCurtainsResponse;
   hasItems(): boolean;
   clearItems(): ListCurtainsResponse;
 
@@ -53,7 +53,7 @@ export class ListCurtainsResponse extends jspb.Message {
 
 export namespace ListCurtainsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.AsObject,
     nextPageToken: string,
   }
 }
@@ -73,8 +73,8 @@ export namespace CreateCurtainResponse {
 }
 
 export class CreateCurtainRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): CreateCurtainRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): CreateCurtainRequest;
   hasItem(): boolean;
   clearItem(): CreateCurtainRequest;
 
@@ -88,13 +88,13 @@ export class CreateCurtainRequest extends jspb.Message {
 
 export namespace CreateCurtainRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
   }
 }
 
 export class UpdateCurtainRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): UpdateCurtainRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): UpdateCurtainRequest;
   hasItem(): boolean;
   clearItem(): UpdateCurtainRequest;
 
@@ -108,7 +108,7 @@ export class UpdateCurtainRequest extends jspb.Message {
 
 export namespace UpdateCurtainRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
   }
 }
 
@@ -149,8 +149,8 @@ export namespace GetCurtainRequest {
 }
 
 export class GetCurtainResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): GetCurtainResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain): GetCurtainResponse;
   hasItem(): boolean;
   clearItem(): GetCurtainResponse;
 
@@ -167,7 +167,7 @@ export class GetCurtainResponse extends jspb.Message {
 
 export namespace GetCurtainResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain.AsObject,
     yaml: string,
   }
 }

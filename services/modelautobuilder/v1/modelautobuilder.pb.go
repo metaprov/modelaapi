@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto
+// source: github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListModelAutobuildersRequest struct {
 func (x *ListModelAutobuildersRequest) Reset() {
 	*x = ListModelAutobuildersRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListModelAutobuildersRequest) String() string {
 func (*ListModelAutobuildersRequest) ProtoMessage() {}
 
 func (x *ListModelAutobuildersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListModelAutobuildersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelAutobuildersRequest.ProtoReflect.Descriptor instead.
 func (*ListModelAutobuildersRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListModelAutobuildersRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListModelAutobuildersResponse struct {
 func (x *ListModelAutobuildersResponse) Reset() {
 	*x = ListModelAutobuildersResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListModelAutobuildersResponse) String() string {
 func (*ListModelAutobuildersResponse) ProtoMessage() {}
 
 func (x *ListModelAutobuildersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListModelAutobuildersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelAutobuildersResponse.ProtoReflect.Descriptor instead.
 func (*ListModelAutobuildersResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListModelAutobuildersResponse) GetItems() *v1alpha1.ModelAutobuilderList {
@@ -144,7 +144,7 @@ type CreateModelAutobuilderRequest struct {
 func (x *CreateModelAutobuilderRequest) Reset() {
 	*x = CreateModelAutobuilderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateModelAutobuilderRequest) String() string {
 func (*CreateModelAutobuilderRequest) ProtoMessage() {}
 
 func (x *CreateModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelAutobuilderRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelAutobuilderRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateModelAutobuilderRequest) GetItem() *v1alpha1.ModelAutobuilder {
@@ -189,7 +189,7 @@ type CreateModelAutobuilderResponse struct {
 func (x *CreateModelAutobuilderResponse) Reset() {
 	*x = CreateModelAutobuilderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateModelAutobuilderResponse) String() string {
 func (*CreateModelAutobuilderResponse) ProtoMessage() {}
 
 func (x *CreateModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelAutobuilderResponse.ProtoReflect.Descriptor instead.
 func (*CreateModelAutobuilderResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateModelAutobuilderRequest struct {
@@ -229,7 +229,7 @@ type UpdateModelAutobuilderRequest struct {
 func (x *UpdateModelAutobuilderRequest) Reset() {
 	*x = UpdateModelAutobuilderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateModelAutobuilderRequest) String() string {
 func (*UpdateModelAutobuilderRequest) ProtoMessage() {}
 
 func (x *UpdateModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelAutobuilderRequest.ProtoReflect.Descriptor instead.
 func (*UpdateModelAutobuilderRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateModelAutobuilderRequest) GetItem() *v1alpha1.ModelAutobuilder {
@@ -274,7 +274,7 @@ type UpdateModelAutobuilderResponse struct {
 func (x *UpdateModelAutobuilderResponse) Reset() {
 	*x = UpdateModelAutobuilderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateModelAutobuilderResponse) String() string {
 func (*UpdateModelAutobuilderResponse) ProtoMessage() {}
 
 func (x *UpdateModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelAutobuilderResponse.ProtoReflect.Descriptor instead.
 func (*UpdateModelAutobuilderResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{5}
 }
 
 type GetModelAutobuilderRequest struct {
@@ -315,7 +315,7 @@ type GetModelAutobuilderRequest struct {
 func (x *GetModelAutobuilderRequest) Reset() {
 	*x = GetModelAutobuilderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetModelAutobuilderRequest) String() string {
 func (*GetModelAutobuilderRequest) ProtoMessage() {}
 
 func (x *GetModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelAutobuilderRequest.ProtoReflect.Descriptor instead.
 func (*GetModelAutobuilderRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetModelAutobuilderRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetModelAutobuilderResponse struct {
 func (x *GetModelAutobuilderResponse) Reset() {
 	*x = GetModelAutobuilderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetModelAutobuilderResponse) String() string {
 func (*GetModelAutobuilderResponse) ProtoMessage() {}
 
 func (x *GetModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelAutobuilderResponse.ProtoReflect.Descriptor instead.
 func (*GetModelAutobuilderResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetModelAutobuilderResponse) GetItem() *v1alpha1.ModelAutobuilder {
@@ -425,7 +425,7 @@ type DeleteModelAutobuilderRequest struct {
 func (x *DeleteModelAutobuilderRequest) Reset() {
 	*x = DeleteModelAutobuilderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteModelAutobuilderRequest) String() string {
 func (*DeleteModelAutobuilderRequest) ProtoMessage() {}
 
 func (x *DeleteModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteModelAutobuilderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelAutobuilderRequest.ProtoReflect.Descriptor instead.
 func (*DeleteModelAutobuilderRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteModelAutobuilderRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteModelAutobuilderResponse struct {
 func (x *DeleteModelAutobuilderResponse) Reset() {
 	*x = DeleteModelAutobuilderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteModelAutobuilderResponse) String() string {
 func (*DeleteModelAutobuilderResponse) ProtoMessage() {}
 
 func (x *DeleteModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteModelAutobuilderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelAutobuilderResponse.ProtoReflect.Descriptor instead.
 func (*DeleteModelAutobuilderResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc = []byte{
 	0x0a, 0x51, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x75,
@@ -680,49 +680,49 @@ var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobui
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData = file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData = file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes = []interface{}{
-	(*ListModelAutobuildersRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest
-	(*ListModelAutobuildersResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse
-	(*CreateModelAutobuilderRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest
-	(*CreateModelAutobuilderResponse)(nil), // 3: github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse
-	(*UpdateModelAutobuilderRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest
-	(*UpdateModelAutobuilderResponse)(nil), // 5: github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse
-	(*GetModelAutobuilderRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest
-	(*GetModelAutobuilderResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse
-	(*DeleteModelAutobuilderRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest
-	(*DeleteModelAutobuilderResponse)(nil), // 9: github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse
-	nil,                                    // 10: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry
-	(*v1alpha1.ModelAutobuilderList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList
-	(*v1alpha1.ModelAutobuilder)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+var file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes = []interface{}{
+	(*ListModelAutobuildersRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest
+	(*ListModelAutobuildersResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse
+	(*CreateModelAutobuilderRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest
+	(*CreateModelAutobuilderResponse)(nil), // 3: github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse
+	(*UpdateModelAutobuilderRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest
+	(*UpdateModelAutobuilderResponse)(nil), // 5: github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse
+	(*GetModelAutobuilderRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderRequest
+	(*GetModelAutobuilderResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderResponse
+	(*DeleteModelAutobuilderRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest
+	(*DeleteModelAutobuilderResponse)(nil), // 9: github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse
+	nil,                                    // 10: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry
+	(*v1alpha1.ModelAutobuilderList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList
+	(*v1alpha1.ModelAutobuilder)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder
 }
-var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.labels:type_name -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList
-	12, // 2: github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
-	12, // 3: github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
-	12, // 4: github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder
-	0,  // 5: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders:input_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder:input_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder:input_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder:input_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder:input_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders:output_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.ListModelAutobuildersResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder:output_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder:output_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.GetModelAutobuilderResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder:output_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder:output_type -> github.com.metaprov.modeldapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse
+var file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList
+	12, // 2: github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+	12, // 3: github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+	12, // 4: github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder
+	0,  // 5: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders:input_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder:input_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder:input_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder:input_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder:input_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.ListModelAutobuilders:output_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.CreateModelAutobuilder:output_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.GetModelAutobuilder:output_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.UpdateModelAutobuilder:output_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService.DeleteModelAutobuilder:output_type -> github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -731,14 +731,14 @@ var file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobui
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_init()
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto != nil {
+func file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelAutobuildersRequest); i {
 			case 0:
 				return &v.state
@@ -750,7 +750,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelAutobuildersResponse); i {
 			case 0:
 				return &v.state
@@ -762,7 +762,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelAutobuilderRequest); i {
 			case 0:
 				return &v.state
@@ -774,7 +774,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelAutobuilderResponse); i {
 			case 0:
 				return &v.state
@@ -786,7 +786,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelAutobuilderRequest); i {
 			case 0:
 				return &v.state
@@ -798,7 +798,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelAutobuilderResponse); i {
 			case 0:
 				return &v.state
@@ -810,7 +810,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelAutobuilderRequest); i {
 			case 0:
 				return &v.state
@@ -822,7 +822,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelAutobuilderResponse); i {
 			case 0:
 				return &v.state
@@ -834,7 +834,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelAutobuilderRequest); i {
 			case 0:
 				return &v.state
@@ -846,7 +846,7 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelAutobuilderResponse); i {
 			case 0:
 				return &v.state
@@ -863,20 +863,20 @@ func file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobu
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto = out.File
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto = out.File
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -908,7 +908,7 @@ func NewModelAutobuilderServiceClient(cc grpc.ClientConnInterface) ModelAutobuil
 
 func (c *modelAutobuilderServiceClient) ListModelAutobuilders(ctx context.Context, in *ListModelAutobuildersRequest, opts ...grpc.CallOption) (*ListModelAutobuildersResponse, error) {
 	out := new(ListModelAutobuildersResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -917,7 +917,7 @@ func (c *modelAutobuilderServiceClient) ListModelAutobuilders(ctx context.Contex
 
 func (c *modelAutobuilderServiceClient) CreateModelAutobuilder(ctx context.Context, in *CreateModelAutobuilderRequest, opts ...grpc.CallOption) (*CreateModelAutobuilderResponse, error) {
 	out := new(CreateModelAutobuilderResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -926,7 +926,7 @@ func (c *modelAutobuilderServiceClient) CreateModelAutobuilder(ctx context.Conte
 
 func (c *modelAutobuilderServiceClient) GetModelAutobuilder(ctx context.Context, in *GetModelAutobuilderRequest, opts ...grpc.CallOption) (*GetModelAutobuilderResponse, error) {
 	out := new(GetModelAutobuilderResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -935,7 +935,7 @@ func (c *modelAutobuilderServiceClient) GetModelAutobuilder(ctx context.Context,
 
 func (c *modelAutobuilderServiceClient) UpdateModelAutobuilder(ctx context.Context, in *UpdateModelAutobuilderRequest, opts ...grpc.CallOption) (*UpdateModelAutobuilderResponse, error) {
 	out := new(UpdateModelAutobuilderResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -944,7 +944,7 @@ func (c *modelAutobuilderServiceClient) UpdateModelAutobuilder(ctx context.Conte
 
 func (c *modelAutobuilderServiceClient) DeleteModelAutobuilder(ctx context.Context, in *DeleteModelAutobuilderRequest, opts ...grpc.CallOption) (*DeleteModelAutobuilderResponse, error) {
 	out := new(DeleteModelAutobuilderResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -994,7 +994,7 @@ func _ModelAutobuilderService_ListModelAutobuilders_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelAutobuilderServiceServer).ListModelAutobuilders(ctx, req.(*ListModelAutobuildersRequest))
@@ -1012,7 +1012,7 @@ func _ModelAutobuilderService_CreateModelAutobuilder_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelAutobuilderServiceServer).CreateModelAutobuilder(ctx, req.(*CreateModelAutobuilderRequest))
@@ -1030,7 +1030,7 @@ func _ModelAutobuilderService_GetModelAutobuilder_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelAutobuilderServiceServer).GetModelAutobuilder(ctx, req.(*GetModelAutobuilderRequest))
@@ -1048,7 +1048,7 @@ func _ModelAutobuilderService_UpdateModelAutobuilder_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelAutobuilderServiceServer).UpdateModelAutobuilder(ctx, req.(*UpdateModelAutobuilderRequest))
@@ -1066,7 +1066,7 @@ func _ModelAutobuilderService_DeleteModelAutobuilder_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelAutobuilderServiceServer).DeleteModelAutobuilder(ctx, req.(*DeleteModelAutobuilderRequest))
@@ -1075,7 +1075,7 @@ func _ModelAutobuilderService_DeleteModelAutobuilder_Handler(srv interface{}, ct
 }
 
 var _ModelAutobuilderService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService",
+	ServiceName: "github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService",
 	HandlerType: (*ModelAutobuilderServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1100,5 +1100,5 @@ var _ModelAutobuilderService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto",
 }

@@ -1,9 +1,9 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	datav1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	datav1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -65,7 +65,7 @@ type ModelAutobuilderCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelautobuilders,singular=modelautobuilder,shortName=ar,categories={training,modeld,all}
+// +kubebuilder:resource:path=modelautobuilders,singular=modelautobuilder,shortName=ar,categories={training,modela,all}
 // ModelAutobuilder represent an automatic run of all the phases needed to create a model
 type ModelAutobuilder struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.runbook.v1 import runbook_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2
+from github.com.metaprov.modelaapi.services.runbook.v1 import runbook_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2
 
 
 class RunBookServiceStub(object):
@@ -15,29 +15,29 @@ class RunBookServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListRunBooks = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/ListRunBooks',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.FromString,
                 )
         self.CreateRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/CreateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.FromString,
                 )
         self.GetRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/GetRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.FromString,
                 )
         self.UpdateRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/UpdateRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.FromString,
                 )
         self.DeleteRunBook = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/DeleteRunBook',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_RunBookServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListRunBooks': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRunBooks,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.SerializeToString,
             ),
             'CreateRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.SerializeToString,
             ),
             'GetRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.SerializeToString,
             ),
             'UpdateRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.SerializeToString,
             ),
             'DeleteRunBook': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteRunBook,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.runbook.v1.RunBookService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.runbook.v1.RunBookService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class RunBookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/ListRunBooks',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.ListRunBooksResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class RunBookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/CreateRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.CreateRunBookResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class RunBookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/GetRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.GetRunBookResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class RunBookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/UpdateRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.UpdateRunBookResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class RunBookService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/DeleteRunBook',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_runbook_dot_v1_dot_runbook__pb2.DeleteRunBookResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

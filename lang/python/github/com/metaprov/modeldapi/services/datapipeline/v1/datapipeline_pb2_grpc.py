@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.datapipeline.v1 import datapipeline_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2
+from github.com.metaprov.modelaapi.services.datapipeline.v1 import datapipeline_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2
 
 
 class DataPipelineServiceStub(object):
@@ -15,44 +15,44 @@ class DataPipelineServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataPipelines = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.FromString,
                 )
         self.CreateDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.FromString,
                 )
         self.GetDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.FromString,
                 )
         self.UpdateDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.FromString,
                 )
         self.DeleteDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.FromString,
                 )
         self.PauseDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.FromString,
                 )
         self.ResumeDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.FromString,
                 )
         self.RunDataPipeline = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
                 )
 
 
@@ -112,47 +112,47 @@ def add_DataPipelineServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListDataPipelines': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataPipelines,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.SerializeToString,
             ),
             'CreateDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.SerializeToString,
             ),
             'GetDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.SerializeToString,
             ),
             'UpdateDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.SerializeToString,
             ),
             'DeleteDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.SerializeToString,
             ),
             'PauseDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.SerializeToString,
             ),
             'ResumeDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.SerializeToString,
             ),
             'RunDataPipeline': grpc.unary_unary_rpc_method_handler(
                     servicer.RunDataPipeline,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -171,9 +171,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ListDataPipelines',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ListDataPipelinesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -188,9 +188,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/CreateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.CreateDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -205,9 +205,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/GetDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.GetDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -222,9 +222,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/UpdateDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.UpdateDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -239,9 +239,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/DeleteDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.DeleteDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -256,9 +256,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/PauseDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.PauseDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -273,9 +273,9 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/ResumeDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.ResumeDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -290,8 +290,8 @@ class DataPipelineService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipeline.v1.DataPipelineService/RunDataPipeline',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipeline_dot_v1_dot_datapipeline__pb2.RunDataPipelineResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

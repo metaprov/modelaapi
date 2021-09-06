@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/connection/v1/connection.proto
+// source: github.com/metaprov/modelaapi/services/connection/v1/connection.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListConnectionsRequest struct {
 func (x *ListConnectionsRequest) Reset() {
 	*x = ListConnectionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListConnectionsRequest) String() string {
 func (*ListConnectionsRequest) ProtoMessage() {}
 
 func (x *ListConnectionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListConnectionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListConnectionsRequest.ProtoReflect.Descriptor instead.
 func (*ListConnectionsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListConnectionsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListConnectionsResponse struct {
 func (x *ListConnectionsResponse) Reset() {
 	*x = ListConnectionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListConnectionsResponse) String() string {
 func (*ListConnectionsResponse) ProtoMessage() {}
 
 func (x *ListConnectionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListConnectionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListConnectionsResponse.ProtoReflect.Descriptor instead.
 func (*ListConnectionsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListConnectionsResponse) GetItems() *v1alpha1.ConnectionList {
@@ -145,7 +145,7 @@ type CreateConnectionRequest struct {
 func (x *CreateConnectionRequest) Reset() {
 	*x = CreateConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -158,7 +158,7 @@ func (x *CreateConnectionRequest) String() string {
 func (*CreateConnectionRequest) ProtoMessage() {}
 
 func (x *CreateConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +171,7 @@ func (x *CreateConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateConnectionRequest.ProtoReflect.Descriptor instead.
 func (*CreateConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateConnectionRequest) GetItem() *v1alpha1.Connection {
@@ -197,7 +197,7 @@ type CreateConnectionResponse struct {
 func (x *CreateConnectionResponse) Reset() {
 	*x = CreateConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -210,7 +210,7 @@ func (x *CreateConnectionResponse) String() string {
 func (*CreateConnectionResponse) ProtoMessage() {}
 
 func (x *CreateConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -223,7 +223,7 @@ func (x *CreateConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateConnectionResponse.ProtoReflect.Descriptor instead.
 func (*CreateConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateConnectionRequest struct {
@@ -238,7 +238,7 @@ type UpdateConnectionRequest struct {
 func (x *UpdateConnectionRequest) Reset() {
 	*x = UpdateConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -251,7 +251,7 @@ func (x *UpdateConnectionRequest) String() string {
 func (*UpdateConnectionRequest) ProtoMessage() {}
 
 func (x *UpdateConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +264,7 @@ func (x *UpdateConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateConnectionRequest.ProtoReflect.Descriptor instead.
 func (*UpdateConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateConnectionRequest) GetItem() *v1alpha1.Connection {
@@ -290,7 +290,7 @@ type UpdateConnectionResponse struct {
 func (x *UpdateConnectionResponse) Reset() {
 	*x = UpdateConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -303,7 +303,7 @@ func (x *UpdateConnectionResponse) String() string {
 func (*UpdateConnectionResponse) ProtoMessage() {}
 
 func (x *UpdateConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -316,7 +316,7 @@ func (x *UpdateConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateConnectionResponse.ProtoReflect.Descriptor instead.
 func (*UpdateConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{5}
 }
 
 type GetConnectionRequest struct {
@@ -331,7 +331,7 @@ type GetConnectionRequest struct {
 func (x *GetConnectionRequest) Reset() {
 	*x = GetConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -344,7 +344,7 @@ func (x *GetConnectionRequest) String() string {
 func (*GetConnectionRequest) ProtoMessage() {}
 
 func (x *GetConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -357,7 +357,7 @@ func (x *GetConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConnectionRequest.ProtoReflect.Descriptor instead.
 func (*GetConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetConnectionRequest) GetNamespace() string {
@@ -386,7 +386,7 @@ type GetConnectionResponse struct {
 func (x *GetConnectionResponse) Reset() {
 	*x = GetConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -399,7 +399,7 @@ func (x *GetConnectionResponse) String() string {
 func (*GetConnectionResponse) ProtoMessage() {}
 
 func (x *GetConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -412,7 +412,7 @@ func (x *GetConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConnectionResponse.ProtoReflect.Descriptor instead.
 func (*GetConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetConnectionResponse) GetItem() *v1alpha1.Connection {
@@ -441,7 +441,7 @@ type DeleteConnectionRequest struct {
 func (x *DeleteConnectionRequest) Reset() {
 	*x = DeleteConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -454,7 +454,7 @@ func (x *DeleteConnectionRequest) String() string {
 func (*DeleteConnectionRequest) ProtoMessage() {}
 
 func (x *DeleteConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -467,7 +467,7 @@ func (x *DeleteConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteConnectionRequest.ProtoReflect.Descriptor instead.
 func (*DeleteConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteConnectionRequest) GetNamespace() string {
@@ -493,7 +493,7 @@ type DeleteConnectionResponse struct {
 func (x *DeleteConnectionResponse) Reset() {
 	*x = DeleteConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -506,7 +506,7 @@ func (x *DeleteConnectionResponse) String() string {
 func (*DeleteConnectionResponse) ProtoMessage() {}
 
 func (x *DeleteConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -519,7 +519,7 @@ func (x *DeleteConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteConnectionResponse.ProtoReflect.Descriptor instead.
 func (*DeleteConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{9}
 }
 
 type TestConnectionRequest struct {
@@ -534,7 +534,7 @@ type TestConnectionRequest struct {
 func (x *TestConnectionRequest) Reset() {
 	*x = TestConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -547,7 +547,7 @@ func (x *TestConnectionRequest) String() string {
 func (*TestConnectionRequest) ProtoMessage() {}
 
 func (x *TestConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -560,7 +560,7 @@ func (x *TestConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestConnectionRequest.ProtoReflect.Descriptor instead.
 func (*TestConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *TestConnectionRequest) GetNamespace() string {
@@ -589,7 +589,7 @@ type TestConnectionResponse struct {
 func (x *TestConnectionResponse) Reset() {
 	*x = TestConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -602,7 +602,7 @@ func (x *TestConnectionResponse) String() string {
 func (*TestConnectionResponse) ProtoMessage() {}
 
 func (x *TestConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -615,7 +615,7 @@ func (x *TestConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestConnectionResponse.ProtoReflect.Descriptor instead.
 func (*TestConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *TestConnectionResponse) GetStatus() bool {
@@ -632,9 +632,9 @@ func (x *TestConnectionResponse) GetMsg() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_connection_v1_connection_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_connection_v1_connection_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
@@ -830,57 +830,57 @@ var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescData = file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescData = file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_goTypes = []interface{}{
-	(*ListConnectionsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest
-	(*ListConnectionsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsResponse
-	(*CreateConnectionRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest
-	(*CreateConnectionResponse)(nil), // 3: github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionResponse
-	(*UpdateConnectionRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest
-	(*UpdateConnectionResponse)(nil), // 5: github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionResponse
-	(*GetConnectionRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.connection.v1.GetConnectionRequest
-	(*GetConnectionResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.connection.v1.GetConnectionResponse
-	(*DeleteConnectionRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionRequest
-	(*DeleteConnectionResponse)(nil), // 9: github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionResponse
-	(*TestConnectionRequest)(nil),    // 10: github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest
-	(*TestConnectionResponse)(nil),   // 11: github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse
-	nil,                              // 12: github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest.LabelsEntry
-	nil,                              // 13: github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.SecretEntry
-	nil,                              // 14: github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.SecretEntry
-	(*v1alpha1.ConnectionList)(nil),  // 15: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList
-	(*v1alpha1.Connection)(nil),      // 16: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+var file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_goTypes = []interface{}{
+	(*ListConnectionsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest
+	(*ListConnectionsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse
+	(*CreateConnectionRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest
+	(*CreateConnectionResponse)(nil), // 3: github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse
+	(*UpdateConnectionRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest
+	(*UpdateConnectionResponse)(nil), // 5: github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse
+	(*GetConnectionRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest
+	(*GetConnectionResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
+	(*DeleteConnectionRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest
+	(*DeleteConnectionResponse)(nil), // 9: github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse
+	(*TestConnectionRequest)(nil),    // 10: github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest
+	(*TestConnectionResponse)(nil),   // 11: github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse
+	nil,                              // 12: github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry
+	nil,                              // 13: github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry
+	nil,                              // 14: github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.SecretEntry
+	(*v1alpha1.ConnectionList)(nil),  // 15: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList
+	(*v1alpha1.Connection)(nil),      // 16: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 }
-var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_depIdxs = []int32{
-	12, // 0: github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionList
-	16, // 2: github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	13, // 3: github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.secret:type_name -> github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest.SecretEntry
-	16, // 4: github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	14, // 5: github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.secret:type_name -> github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest.SecretEntry
-	16, // 6: github.com.metaprov.modeldapi.services.connection.v1.GetConnectionResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	0,  // 7: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.ListConnections:input_type -> github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsRequest
-	2,  // 8: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.CreateConnection:input_type -> github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionRequest
-	6,  // 9: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.GetConnection:input_type -> github.com.metaprov.modeldapi.services.connection.v1.GetConnectionRequest
-	4,  // 10: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.UpdateConnection:input_type -> github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionRequest
-	8,  // 11: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.DeleteConnection:input_type -> github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionRequest
-	10, // 12: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.TestConnection:input_type -> github.com.metaprov.modeldapi.services.connection.v1.TestConnectionRequest
-	1,  // 13: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.ListConnections:output_type -> github.com.metaprov.modeldapi.services.connection.v1.ListConnectionsResponse
-	3,  // 14: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.CreateConnection:output_type -> github.com.metaprov.modeldapi.services.connection.v1.CreateConnectionResponse
-	7,  // 15: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.GetConnection:output_type -> github.com.metaprov.modeldapi.services.connection.v1.GetConnectionResponse
-	5,  // 16: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.UpdateConnection:output_type -> github.com.metaprov.modeldapi.services.connection.v1.UpdateConnectionResponse
-	9,  // 17: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.DeleteConnection:output_type -> github.com.metaprov.modeldapi.services.connection.v1.DeleteConnectionResponse
-	11, // 18: github.com.metaprov.modeldapi.services.connection.v1.ConnectionService.TestConnection:output_type -> github.com.metaprov.modeldapi.services.connection.v1.TestConnectionResponse
+var file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_depIdxs = []int32{
+	12, // 0: github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList
+	16, // 2: github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	13, // 3: github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.secret:type_name -> github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry
+	16, // 4: github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	14, // 5: github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.secret:type_name -> github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.SecretEntry
+	16, // 6: github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	0,  // 7: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.ListConnections:input_type -> github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest
+	2,  // 8: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.CreateConnection:input_type -> github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest
+	6,  // 9: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.GetConnection:input_type -> github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest
+	4,  // 10: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.UpdateConnection:input_type -> github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest
+	8,  // 11: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.DeleteConnection:input_type -> github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest
+	10, // 12: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.TestConnection:input_type -> github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest
+	1,  // 13: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.ListConnections:output_type -> github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse
+	3,  // 14: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.CreateConnection:output_type -> github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse
+	7,  // 15: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.GetConnection:output_type -> github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse
+	5,  // 16: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.UpdateConnection:output_type -> github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse
+	9,  // 17: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.DeleteConnection:output_type -> github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse
+	11, // 18: github.com.metaprov.modelaapi.services.connection.v1.ConnectionService.TestConnection:output_type -> github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse
 	13, // [13:19] is the sub-list for method output_type
 	7,  // [7:13] is the sub-list for method input_type
 	7,  // [7:7] is the sub-list for extension type_name
@@ -888,13 +888,13 @@ var file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_d
 	0,  // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_init() }
-func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_connection_v1_connection_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_init() }
+func file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_connection_v1_connection_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListConnectionsRequest); i {
 			case 0:
 				return &v.state
@@ -906,7 +906,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListConnectionsResponse); i {
 			case 0:
 				return &v.state
@@ -918,7 +918,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -930,7 +930,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -942,7 +942,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -954,7 +954,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -966,7 +966,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -978,7 +978,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -990,7 +990,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -1002,7 +1002,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -1014,7 +1014,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TestConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -1026,7 +1026,7 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TestConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -1043,20 +1043,20 @@ func file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_connection_v1_connection_proto = out.File
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_connection_v1_connection_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_connection_v1_connection_proto = out.File
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_connection_v1_connection_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1089,7 +1089,7 @@ func NewConnectionServiceClient(cc grpc.ClientConnInterface) ConnectionServiceCl
 
 func (c *connectionServiceClient) ListConnections(ctx context.Context, in *ListConnectionsRequest, opts ...grpc.CallOption) (*ListConnectionsResponse, error) {
 	out := new(ListConnectionsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ListConnections", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1098,7 +1098,7 @@ func (c *connectionServiceClient) ListConnections(ctx context.Context, in *ListC
 
 func (c *connectionServiceClient) CreateConnection(ctx context.Context, in *CreateConnectionRequest, opts ...grpc.CallOption) (*CreateConnectionResponse, error) {
 	out := new(CreateConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/CreateConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1107,7 +1107,7 @@ func (c *connectionServiceClient) CreateConnection(ctx context.Context, in *Crea
 
 func (c *connectionServiceClient) GetConnection(ctx context.Context, in *GetConnectionRequest, opts ...grpc.CallOption) (*GetConnectionResponse, error) {
 	out := new(GetConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1116,7 +1116,7 @@ func (c *connectionServiceClient) GetConnection(ctx context.Context, in *GetConn
 
 func (c *connectionServiceClient) UpdateConnection(ctx context.Context, in *UpdateConnectionRequest, opts ...grpc.CallOption) (*UpdateConnectionResponse, error) {
 	out := new(UpdateConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/UpdateConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1125,7 +1125,7 @@ func (c *connectionServiceClient) UpdateConnection(ctx context.Context, in *Upda
 
 func (c *connectionServiceClient) DeleteConnection(ctx context.Context, in *DeleteConnectionRequest, opts ...grpc.CallOption) (*DeleteConnectionResponse, error) {
 	out := new(DeleteConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/DeleteConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1134,7 +1134,7 @@ func (c *connectionServiceClient) DeleteConnection(ctx context.Context, in *Dele
 
 func (c *connectionServiceClient) TestConnection(ctx context.Context, in *TestConnectionRequest, opts ...grpc.CallOption) (*TestConnectionResponse, error) {
 	out := new(TestConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/TestConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/TestConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1188,7 +1188,7 @@ func _ConnectionService_ListConnections_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/ListConnections",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ListConnections",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).ListConnections(ctx, req.(*ListConnectionsRequest))
@@ -1206,7 +1206,7 @@ func _ConnectionService_CreateConnection_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/CreateConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/CreateConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).CreateConnection(ctx, req.(*CreateConnectionRequest))
@@ -1224,7 +1224,7 @@ func _ConnectionService_GetConnection_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/GetConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).GetConnection(ctx, req.(*GetConnectionRequest))
@@ -1242,7 +1242,7 @@ func _ConnectionService_UpdateConnection_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/UpdateConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/UpdateConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).UpdateConnection(ctx, req.(*UpdateConnectionRequest))
@@ -1260,7 +1260,7 @@ func _ConnectionService_DeleteConnection_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/DeleteConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/DeleteConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).DeleteConnection(ctx, req.(*DeleteConnectionRequest))
@@ -1278,7 +1278,7 @@ func _ConnectionService_TestConnection_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.connection.v1.ConnectionService/TestConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/TestConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConnectionServiceServer).TestConnection(ctx, req.(*TestConnectionRequest))
@@ -1287,7 +1287,7 @@ func _ConnectionService_TestConnection_Handler(srv interface{}, ctx context.Cont
 }
 
 var _ConnectionService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.connection.v1.ConnectionService",
+	ServiceName: "github.com.metaprov.modelaapi.services.connection.v1.ConnectionService",
 	HandlerType: (*ConnectionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1316,5 +1316,5 @@ var _ConnectionService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/connection/v1/connection.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/connection/v1/connection.proto",
 }

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.modelautobuilder.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.modelautobuilder.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb from '../../../../../../github.com/metaprov/modeldapi/services/modelautobuilder/v1/modelautobuilder_pb';
+import * as github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb from '../../../../../../github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder_pb';
 
 
 export class ModelAutobuilderServiceClient {
@@ -36,32 +36,32 @@ export class ModelAutobuilderServiceClient {
   }
 
   methodInfoListModelAutobuilders = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse,
-    (request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest) => {
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse,
+    (request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse.deserializeBinary
   );
 
   listModelAutobuilders(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse>;
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse>;
 
   listModelAutobuilders(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse>;
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse>;
 
   listModelAutobuilders(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.ListModelAutobuildersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+          '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
         request,
         metadata || {},
         this.methodInfoListModelAutobuilders,
@@ -69,39 +69,39 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
+      '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/ListModelAutobuilders',
     request,
     metadata || {},
     this.methodInfoListModelAutobuilders);
   }
 
   methodInfoCreateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse,
-    (request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest) => {
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse,
+    (request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse.deserializeBinary
   );
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse>;
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse>;
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse>;
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse>;
 
   createModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.CreateModelAutobuilderResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+          '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoCreateModelAutobuilder,
@@ -109,39 +109,39 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
+      '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/CreateModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoCreateModelAutobuilder);
   }
 
   methodInfoGetModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse,
-    (request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest) => {
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse,
+    (request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse.deserializeBinary
   );
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse>;
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse>;
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse>;
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse>;
 
   getModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.GetModelAutobuilderResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+          '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoGetModelAutobuilder,
@@ -149,39 +149,39 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
+      '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/GetModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoGetModelAutobuilder);
   }
 
   methodInfoUpdateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse,
-    (request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest) => {
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse,
+    (request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse.deserializeBinary
   );
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse>;
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse>;
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse>;
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse>;
 
   updateModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.UpdateModelAutobuilderResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+          '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoUpdateModelAutobuilder,
@@ -189,39 +189,39 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
+      '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/UpdateModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoUpdateModelAutobuilder);
   }
 
   methodInfoDeleteModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse,
-    (request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest) => {
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse,
+    (request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse.deserializeBinary
   );
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse>;
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse>;
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse>;
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse>;
 
   deleteModelAutobuilder(
-    request: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
+    request: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_modelautobuilder_v1_modelautobuilder_pb.DeleteModelAutobuilderResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+          '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
         request,
         metadata || {},
         this.methodInfoDeleteModelAutobuilder,
@@ -229,7 +229,7 @@ export class ModelAutobuilderServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
+      '/github.com.metaprov.modelaapi.services.modelautobuilder.v1.ModelAutobuilderService/DeleteModelAutobuilder',
     request,
     metadata || {},
     this.methodInfoDeleteModelAutobuilder);

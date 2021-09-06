@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: dataproducts.data.modeld.io
+  name: dataproducts.data.modela.io
 spec:
-  group: data.modeld.io
+  group: data.modela.io
   names:
     categories:
     - data
-    - modeld
+    - modela
     - all
     kind: DataProduct
     listKind: DataProductList
@@ -105,7 +105,7 @@ spec:
                       - tesla-v100
                       - tesla-k80
                       - t4
-                      - raspberry-pi8-modeld-b
+                      - raspberry-pi8-modela-b
                       type: string
                     type: array
                 type: object

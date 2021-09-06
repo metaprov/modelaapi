@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.virtualbucket.v1 import virtualbucket_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2
+from github.com.metaprov.modelaapi.services.virtualbucket.v1 import virtualbucket_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2
 
 
 class VirtualBucketServiceStub(object):
@@ -15,29 +15,29 @@ class VirtualBucketServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListVirtualBuckets = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.FromString,
                 )
         self.CreateVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.FromString,
                 )
         self.GetVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.FromString,
                 )
         self.UpdateVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.FromString,
                 )
         self.DeleteVirtualBucket = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_VirtualBucketServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListVirtualBuckets': grpc.unary_unary_rpc_method_handler(
                     servicer.ListVirtualBuckets,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.SerializeToString,
             ),
             'CreateVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.SerializeToString,
             ),
             'GetVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.SerializeToString,
             ),
             'UpdateVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.SerializeToString,
             ),
             'DeleteVirtualBucket': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteVirtualBucket,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class VirtualBucketService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/ListVirtualBuckets',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.ListVirtualBucketsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class VirtualBucketService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/CreateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.CreateVirtualBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class VirtualBucketService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/GetVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.GetVirtualBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class VirtualBucketService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/UpdateVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.UpdateVirtualBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class VirtualBucketService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.virtualbucket.v1.VirtualBucketService/DeleteVirtualBucket',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_virtualbucket_dot_v1_dot_virtualbucket__pb2.DeleteVirtualBucketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

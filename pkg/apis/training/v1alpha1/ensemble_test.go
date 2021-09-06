@@ -9,7 +9,7 @@ package v1alpha1
 import (
 	"testing"
 
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

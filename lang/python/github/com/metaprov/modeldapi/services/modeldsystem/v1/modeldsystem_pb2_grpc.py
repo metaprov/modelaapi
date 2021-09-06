@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.modeldsystem.v1 import modeldsystem_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2
+from github.com.metaprov.modelaapi.services.modelasystem.v1 import modelasystem_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2
 
 
 class ModeldSystemServiceStub(object):
@@ -15,29 +15,29 @@ class ModeldSystemServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListModeldSystems = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsResponse.FromString,
                 )
         self.CreateModeldSystem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemResponse.FromString,
                 )
         self.GetModeldSystem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemResponse.FromString,
                 )
         self.UpdateModeldSystem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemResponse.FromString,
                 )
         self.DeleteModeldSystem = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_ModeldSystemServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListModeldSystems': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModeldSystems,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsResponse.SerializeToString,
             ),
             'CreateModeldSystem': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModeldSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemResponse.SerializeToString,
             ),
             'GetModeldSystem': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModeldSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemResponse.SerializeToString,
             ),
             'UpdateModeldSystem': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModeldSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemResponse.SerializeToString,
             ),
             'DeleteModeldSystem': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModeldSystem,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class ModeldSystemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.ListModeldSystemsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.ListModeldSystemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class ModeldSystemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.CreateModeldSystemResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.CreateModeldSystemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class ModeldSystemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.GetModeldSystemResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.GetModeldSystemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class ModeldSystemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.UpdateModeldSystemResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.UpdateModeldSystemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class ModeldSystemService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modeldsystem_dot_v1_dot_modeldsystem__pb2.DeleteModeldSystemResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModeldSystemResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

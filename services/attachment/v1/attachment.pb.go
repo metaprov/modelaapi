@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/attachment/v1/attachment.proto
+// source: github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListAttachmentsRequest struct {
 func (x *ListAttachmentsRequest) Reset() {
 	*x = ListAttachmentsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListAttachmentsRequest) String() string {
 func (*ListAttachmentsRequest) ProtoMessage() {}
 
 func (x *ListAttachmentsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListAttachmentsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAttachmentsRequest.ProtoReflect.Descriptor instead.
 func (*ListAttachmentsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListAttachmentsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListAttachmentsResponse struct {
 func (x *ListAttachmentsResponse) Reset() {
 	*x = ListAttachmentsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListAttachmentsResponse) String() string {
 func (*ListAttachmentsResponse) ProtoMessage() {}
 
 func (x *ListAttachmentsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListAttachmentsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAttachmentsResponse.ProtoReflect.Descriptor instead.
 func (*ListAttachmentsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListAttachmentsResponse) GetItems() *v1alpha1.AttachmentList {
@@ -143,7 +143,7 @@ type AttachmentResponse struct {
 func (x *AttachmentResponse) Reset() {
 	*x = AttachmentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *AttachmentResponse) String() string {
 func (*AttachmentResponse) ProtoMessage() {}
 
 func (x *AttachmentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *AttachmentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentResponse.ProtoReflect.Descriptor instead.
 func (*AttachmentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateAttachmentRequest struct {
@@ -184,7 +184,7 @@ type CreateAttachmentRequest struct {
 func (x *CreateAttachmentRequest) Reset() {
 	*x = CreateAttachmentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateAttachmentRequest) String() string {
 func (*CreateAttachmentRequest) ProtoMessage() {}
 
 func (x *CreateAttachmentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateAttachmentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAttachmentRequest.ProtoReflect.Descriptor instead.
 func (*CreateAttachmentRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAttachmentRequest) GetItem() *v1alpha1.Attachment {
@@ -236,7 +236,7 @@ type CreateAttachmentResponse struct {
 func (x *CreateAttachmentResponse) Reset() {
 	*x = CreateAttachmentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateAttachmentResponse) String() string {
 func (*CreateAttachmentResponse) ProtoMessage() {}
 
 func (x *CreateAttachmentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateAttachmentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAttachmentResponse.ProtoReflect.Descriptor instead.
 func (*CreateAttachmentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateAttachmentRequest struct {
@@ -276,7 +276,7 @@ type UpdateAttachmentRequest struct {
 func (x *UpdateAttachmentRequest) Reset() {
 	*x = UpdateAttachmentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateAttachmentRequest) String() string {
 func (*UpdateAttachmentRequest) ProtoMessage() {}
 
 func (x *UpdateAttachmentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateAttachmentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAttachmentRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAttachmentRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateAttachmentRequest) GetItem() *v1alpha1.Attachment {
@@ -321,7 +321,7 @@ type UpdateAttachmentResponse struct {
 func (x *UpdateAttachmentResponse) Reset() {
 	*x = UpdateAttachmentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateAttachmentResponse) String() string {
 func (*UpdateAttachmentResponse) ProtoMessage() {}
 
 func (x *UpdateAttachmentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateAttachmentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAttachmentResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAttachmentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{6}
 }
 
 type GetAttachmentRequest struct {
@@ -362,7 +362,7 @@ type GetAttachmentRequest struct {
 func (x *GetAttachmentRequest) Reset() {
 	*x = GetAttachmentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetAttachmentRequest) String() string {
 func (*GetAttachmentRequest) ProtoMessage() {}
 
 func (x *GetAttachmentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetAttachmentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAttachmentRequest.ProtoReflect.Descriptor instead.
 func (*GetAttachmentRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetAttachmentRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetAttachmentResponse struct {
 func (x *GetAttachmentResponse) Reset() {
 	*x = GetAttachmentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetAttachmentResponse) String() string {
 func (*GetAttachmentResponse) ProtoMessage() {}
 
 func (x *GetAttachmentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetAttachmentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAttachmentResponse.ProtoReflect.Descriptor instead.
 func (*GetAttachmentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetAttachmentResponse) GetItem() *v1alpha1.Attachment {
@@ -472,7 +472,7 @@ type GetAttachmentNamespacesRequest struct {
 func (x *GetAttachmentNamespacesRequest) Reset() {
 	*x = GetAttachmentNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetAttachmentNamespacesRequest) String() string {
 func (*GetAttachmentNamespacesRequest) ProtoMessage() {}
 
 func (x *GetAttachmentNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetAttachmentNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAttachmentNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetAttachmentNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAttachmentNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetAttachmentNamespacesResponse struct {
 func (x *GetAttachmentNamespacesResponse) Reset() {
 	*x = GetAttachmentNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetAttachmentNamespacesResponse) String() string {
 func (*GetAttachmentNamespacesResponse) ProtoMessage() {}
 
 func (x *GetAttachmentNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetAttachmentNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAttachmentNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetAttachmentNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAttachmentNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteAttachmentRequest struct {
 func (x *DeleteAttachmentRequest) Reset() {
 	*x = DeleteAttachmentRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteAttachmentRequest) String() string {
 func (*DeleteAttachmentRequest) ProtoMessage() {}
 
 func (x *DeleteAttachmentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteAttachmentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAttachmentRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAttachmentRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteAttachmentRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteAttachmentResponse struct {
 func (x *DeleteAttachmentResponse) Reset() {
 	*x = DeleteAttachmentResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteAttachmentResponse) String() string {
 func (*DeleteAttachmentResponse) ProtoMessage() {}
 
 func (x *DeleteAttachmentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteAttachmentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAttachmentResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAttachmentResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{12}
 }
 
 type AttachmentCreateResponse struct {
@@ -664,7 +664,7 @@ type AttachmentCreateResponse struct {
 func (x *AttachmentCreateResponse) Reset() {
 	*x = AttachmentCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *AttachmentCreateResponse) String() string {
 func (*AttachmentCreateResponse) ProtoMessage() {}
 
 func (x *AttachmentCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *AttachmentCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentCreateResponse.ProtoReflect.Descriptor instead.
 func (*AttachmentCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{13}
 }
 
 type LogoutResponse struct {
@@ -702,7 +702,7 @@ type LogoutResponse struct {
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -715,7 +715,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -728,7 +728,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{14}
 }
 
 type ResetPasswordResponse struct {
@@ -740,7 +740,7 @@ type ResetPasswordResponse struct {
 func (x *ResetPasswordResponse) Reset() {
 	*x = ResetPasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -753,7 +753,7 @@ func (x *ResetPasswordResponse) String() string {
 func (*ResetPasswordResponse) ProtoMessage() {}
 
 func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{15}
 }
 
 type AttachmentLoginRequest struct {
@@ -782,7 +782,7 @@ type AttachmentLoginRequest struct {
 func (x *AttachmentLoginRequest) Reset() {
 	*x = AttachmentLoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +795,7 @@ func (x *AttachmentLoginRequest) String() string {
 func (*AttachmentLoginRequest) ProtoMessage() {}
 
 func (x *AttachmentLoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +808,7 @@ func (x *AttachmentLoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentLoginRequest.ProtoReflect.Descriptor instead.
 func (*AttachmentLoginRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *AttachmentLoginRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type AttachmentLoginResponse struct {
 func (x *AttachmentLoginResponse) Reset() {
 	*x = AttachmentLoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *AttachmentLoginResponse) String() string {
 func (*AttachmentLoginResponse) ProtoMessage() {}
 
 func (x *AttachmentLoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *AttachmentLoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentLoginResponse.ProtoReflect.Descriptor instead.
 func (*AttachmentLoginResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AttachmentLoginResponse) GetToken() string {
@@ -891,7 +891,7 @@ type AttachmentGetByNameRequest struct {
 func (x *AttachmentGetByNameRequest) Reset() {
 	*x = AttachmentGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -904,7 +904,7 @@ func (x *AttachmentGetByNameRequest) String() string {
 func (*AttachmentGetByNameRequest) ProtoMessage() {}
 
 func (x *AttachmentGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *AttachmentGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*AttachmentGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *AttachmentGetByNameRequest) GetNamespace() string {
@@ -945,7 +945,7 @@ type AttachmentLogoutRequest struct {
 func (x *AttachmentLogoutRequest) Reset() {
 	*x = AttachmentLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +958,7 @@ func (x *AttachmentLogoutRequest) String() string {
 func (*AttachmentLogoutRequest) ProtoMessage() {}
 
 func (x *AttachmentLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +971,7 @@ func (x *AttachmentLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentLogoutRequest.ProtoReflect.Descriptor instead.
 func (*AttachmentLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AttachmentLogoutRequest) GetToken() string {
@@ -996,7 +996,7 @@ type ChangePasswordRequest struct {
 func (x *ChangePasswordRequest) Reset() {
 	*x = ChangePasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *ChangePasswordRequest) String() string {
 func (*ChangePasswordRequest) ProtoMessage() {}
 
 func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
 func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ChangePasswordRequest) GetNamespace() string {
@@ -1069,7 +1069,7 @@ type ChangePasswordResponse struct {
 func (x *ChangePasswordResponse) Reset() {
 	*x = ChangePasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1082,7 +1082,7 @@ func (x *ChangePasswordResponse) String() string {
 func (*ChangePasswordResponse) ProtoMessage() {}
 
 func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1095,7 @@ func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordResponse.ProtoReflect.Descriptor instead.
 func (*ChangePasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{21}
 }
 
 type ResetPasswordRequest struct {
@@ -1112,7 +1112,7 @@ type ResetPasswordRequest struct {
 func (x *ResetPasswordRequest) Reset() {
 	*x = ResetPasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1125,7 +1125,7 @@ func (x *ResetPasswordRequest) String() string {
 func (*ResetPasswordRequest) ProtoMessage() {}
 
 func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1138,7 +1138,7 @@ func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
 func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ResetPasswordRequest) GetNamespace() string {
@@ -1178,7 +1178,7 @@ type ResetPasswordReponse struct {
 func (x *ResetPasswordReponse) Reset() {
 	*x = ResetPasswordReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1191,7 +1191,7 @@ func (x *ResetPasswordReponse) String() string {
 func (*ResetPasswordReponse) ProtoMessage() {}
 
 func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1204,12 +1204,12 @@ func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordReponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP(), []int{23}
 }
 
-var File_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x74, 0x74, 0x61, 0x63, 0x68, 0x6d,
@@ -1426,65 +1426,65 @@ var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescData = file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescData = file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
-var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_goTypes = []interface{}{
-	(*ListAttachmentsRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsRequest
-	(*ListAttachmentsResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsResponse
-	(*AttachmentResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentResponse
-	(*CreateAttachmentRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.attachment.v1.CreateAttachmentRequest
-	(*CreateAttachmentResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.attachment.v1.CreateAttachmentResponse
-	(*UpdateAttachmentRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.attachment.v1.UpdateAttachmentRequest
-	(*UpdateAttachmentResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.attachment.v1.UpdateAttachmentResponse
-	(*GetAttachmentRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentRequest
-	(*GetAttachmentResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentResponse
-	(*GetAttachmentNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentNamespacesRequest
-	(*GetAttachmentNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentNamespacesResponse
-	(*DeleteAttachmentRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.attachment.v1.DeleteAttachmentRequest
-	(*DeleteAttachmentResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.attachment.v1.DeleteAttachmentResponse
-	(*AttachmentCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentCreateResponse
-	(*LogoutResponse)(nil),                  // 14: github.com.metaprov.modeldapi.services.attachment.v1.LogoutResponse
-	(*ResetPasswordResponse)(nil),           // 15: github.com.metaprov.modeldapi.services.attachment.v1.ResetPasswordResponse
-	(*AttachmentLoginRequest)(nil),          // 16: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentLoginRequest
-	(*AttachmentLoginResponse)(nil),         // 17: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentLoginResponse
-	(*AttachmentGetByNameRequest)(nil),      // 18: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentGetByNameRequest
-	(*AttachmentLogoutRequest)(nil),         // 19: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentLogoutRequest
-	(*ChangePasswordRequest)(nil),           // 20: github.com.metaprov.modeldapi.services.attachment.v1.ChangePasswordRequest
-	(*ChangePasswordResponse)(nil),          // 21: github.com.metaprov.modeldapi.services.attachment.v1.ChangePasswordResponse
-	(*ResetPasswordRequest)(nil),            // 22: github.com.metaprov.modeldapi.services.attachment.v1.ResetPasswordRequest
-	(*ResetPasswordReponse)(nil),            // 23: github.com.metaprov.modeldapi.services.attachment.v1.ResetPasswordReponse
-	nil,                                     // 24: github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry
-	(*v1alpha1.AttachmentList)(nil),         // 25: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AttachmentList
-	(*v1alpha1.Attachment)(nil),             // 26: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment
-	(*v1.NamespaceInfo)(nil),                // 27: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_goTypes = []interface{}{
+	(*ListAttachmentsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest
+	(*ListAttachmentsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsResponse
+	(*AttachmentResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentResponse
+	(*CreateAttachmentRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest
+	(*CreateAttachmentResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentResponse
+	(*UpdateAttachmentRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest
+	(*UpdateAttachmentResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentResponse
+	(*GetAttachmentRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentRequest
+	(*GetAttachmentResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
+	(*GetAttachmentNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentNamespacesRequest
+	(*GetAttachmentNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentNamespacesResponse
+	(*DeleteAttachmentRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentRequest
+	(*DeleteAttachmentResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentResponse
+	(*AttachmentCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentCreateResponse
+	(*LogoutResponse)(nil),                  // 14: github.com.metaprov.modelaapi.services.attachment.v1.LogoutResponse
+	(*ResetPasswordResponse)(nil),           // 15: github.com.metaprov.modelaapi.services.attachment.v1.ResetPasswordResponse
+	(*AttachmentLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentLoginRequest
+	(*AttachmentLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentLoginResponse
+	(*AttachmentGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentGetByNameRequest
+	(*AttachmentLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentLogoutRequest
+	(*ChangePasswordRequest)(nil),           // 20: github.com.metaprov.modelaapi.services.attachment.v1.ChangePasswordRequest
+	(*ChangePasswordResponse)(nil),          // 21: github.com.metaprov.modelaapi.services.attachment.v1.ChangePasswordResponse
+	(*ResetPasswordRequest)(nil),            // 22: github.com.metaprov.modelaapi.services.attachment.v1.ResetPasswordRequest
+	(*ResetPasswordReponse)(nil),            // 23: github.com.metaprov.modelaapi.services.attachment.v1.ResetPasswordReponse
+	nil,                                     // 24: github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry
+	(*v1alpha1.AttachmentList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList
+	(*v1alpha1.Attachment)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment
+	(*v1.NamespaceInfo)(nil),                // 27: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_depIdxs = []int32{
-	24, // 0: github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry
-	25, // 1: github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AttachmentList
-	26, // 2: github.com.metaprov.modeldapi.services.attachment.v1.CreateAttachmentRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment
-	26, // 3: github.com.metaprov.modeldapi.services.attachment.v1.UpdateAttachmentRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment
-	26, // 4: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment
-	27, // 5: github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.ListAttachments:input_type -> github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.CreateAttachment:input_type -> github.com.metaprov.modeldapi.services.attachment.v1.CreateAttachmentRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.GetAttachment:input_type -> github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.UpdateAttachment:input_type -> github.com.metaprov.modeldapi.services.attachment.v1.UpdateAttachmentRequest
-	11, // 10: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.DeleteAttachment:input_type -> github.com.metaprov.modeldapi.services.attachment.v1.DeleteAttachmentRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.ListAttachments:output_type -> github.com.metaprov.modeldapi.services.attachment.v1.ListAttachmentsResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.CreateAttachment:output_type -> github.com.metaprov.modeldapi.services.attachment.v1.CreateAttachmentResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.GetAttachment:output_type -> github.com.metaprov.modeldapi.services.attachment.v1.GetAttachmentResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.UpdateAttachment:output_type -> github.com.metaprov.modeldapi.services.attachment.v1.UpdateAttachmentResponse
-	12, // 15: github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService.DeleteAttachment:output_type -> github.com.metaprov.modeldapi.services.attachment.v1.DeleteAttachmentResponse
+var file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_depIdxs = []int32{
+	24, // 0: github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest.LabelsEntry
+	25, // 1: github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList
+	26, // 2: github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment
+	26, // 3: github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment
+	26, // 4: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment
+	27, // 5: github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.ListAttachments:input_type -> github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.CreateAttachment:input_type -> github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.GetAttachment:input_type -> github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.UpdateAttachment:input_type -> github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentRequest
+	11, // 10: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.DeleteAttachment:input_type -> github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.ListAttachments:output_type -> github.com.metaprov.modelaapi.services.attachment.v1.ListAttachmentsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.CreateAttachment:output_type -> github.com.metaprov.modelaapi.services.attachment.v1.CreateAttachmentResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.GetAttachment:output_type -> github.com.metaprov.modelaapi.services.attachment.v1.GetAttachmentResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.UpdateAttachment:output_type -> github.com.metaprov.modelaapi.services.attachment.v1.UpdateAttachmentResponse
+	12, // 15: github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService.DeleteAttachment:output_type -> github.com.metaprov.modelaapi.services.attachment.v1.DeleteAttachmentResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1492,13 +1492,13 @@ var file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_d
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_init() }
-func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_init() }
+func file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAttachmentsRequest); i {
 			case 0:
 				return &v.state
@@ -1510,7 +1510,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAttachmentsResponse); i {
 			case 0:
 				return &v.state
@@ -1522,7 +1522,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentResponse); i {
 			case 0:
 				return &v.state
@@ -1534,7 +1534,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAttachmentRequest); i {
 			case 0:
 				return &v.state
@@ -1546,7 +1546,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAttachmentResponse); i {
 			case 0:
 				return &v.state
@@ -1558,7 +1558,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAttachmentRequest); i {
 			case 0:
 				return &v.state
@@ -1570,7 +1570,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAttachmentResponse); i {
 			case 0:
 				return &v.state
@@ -1582,7 +1582,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAttachmentRequest); i {
 			case 0:
 				return &v.state
@@ -1594,7 +1594,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAttachmentResponse); i {
 			case 0:
 				return &v.state
@@ -1606,7 +1606,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAttachmentNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1618,7 +1618,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAttachmentNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1630,7 +1630,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAttachmentRequest); i {
 			case 0:
 				return &v.state
@@ -1642,7 +1642,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAttachmentResponse); i {
 			case 0:
 				return &v.state
@@ -1654,7 +1654,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1666,7 +1666,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogoutResponse); i {
 			case 0:
 				return &v.state
@@ -1678,7 +1678,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1690,7 +1690,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentLoginRequest); i {
 			case 0:
 				return &v.state
@@ -1702,7 +1702,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentLoginResponse); i {
 			case 0:
 				return &v.state
@@ -1714,7 +1714,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -1726,7 +1726,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AttachmentLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -1738,7 +1738,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1750,7 +1750,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1762,7 +1762,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1774,7 +1774,7 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordReponse); i {
 			case 0:
 				return &v.state
@@ -1791,20 +1791,20 @@ func file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto = out.File
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_attachment_v1_attachment_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto = out.File
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_attachment_v1_attachment_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1836,7 +1836,7 @@ func NewAttachmentServiceClient(cc grpc.ClientConnInterface) AttachmentServiceCl
 
 func (c *attachmentServiceClient) ListAttachments(ctx context.Context, in *ListAttachmentsRequest, opts ...grpc.CallOption) (*ListAttachmentsResponse, error) {
 	out := new(ListAttachmentsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/ListAttachments", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1845,7 +1845,7 @@ func (c *attachmentServiceClient) ListAttachments(ctx context.Context, in *ListA
 
 func (c *attachmentServiceClient) CreateAttachment(ctx context.Context, in *CreateAttachmentRequest, opts ...grpc.CallOption) (*CreateAttachmentResponse, error) {
 	out := new(CreateAttachmentResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/CreateAttachment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1854,7 +1854,7 @@ func (c *attachmentServiceClient) CreateAttachment(ctx context.Context, in *Crea
 
 func (c *attachmentServiceClient) GetAttachment(ctx context.Context, in *GetAttachmentRequest, opts ...grpc.CallOption) (*GetAttachmentResponse, error) {
 	out := new(GetAttachmentResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/GetAttachment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1863,7 +1863,7 @@ func (c *attachmentServiceClient) GetAttachment(ctx context.Context, in *GetAtta
 
 func (c *attachmentServiceClient) UpdateAttachment(ctx context.Context, in *UpdateAttachmentRequest, opts ...grpc.CallOption) (*UpdateAttachmentResponse, error) {
 	out := new(UpdateAttachmentResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/UpdateAttachment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1872,7 +1872,7 @@ func (c *attachmentServiceClient) UpdateAttachment(ctx context.Context, in *Upda
 
 func (c *attachmentServiceClient) DeleteAttachment(ctx context.Context, in *DeleteAttachmentRequest, opts ...grpc.CallOption) (*DeleteAttachmentResponse, error) {
 	out := new(DeleteAttachmentResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/DeleteAttachment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1922,7 +1922,7 @@ func _AttachmentService_ListAttachments_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/ListAttachments",
+		FullMethod: "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/ListAttachments",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AttachmentServiceServer).ListAttachments(ctx, req.(*ListAttachmentsRequest))
@@ -1940,7 +1940,7 @@ func _AttachmentService_CreateAttachment_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/CreateAttachment",
+		FullMethod: "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/CreateAttachment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AttachmentServiceServer).CreateAttachment(ctx, req.(*CreateAttachmentRequest))
@@ -1958,7 +1958,7 @@ func _AttachmentService_GetAttachment_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/GetAttachment",
+		FullMethod: "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/GetAttachment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AttachmentServiceServer).GetAttachment(ctx, req.(*GetAttachmentRequest))
@@ -1976,7 +1976,7 @@ func _AttachmentService_UpdateAttachment_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/UpdateAttachment",
+		FullMethod: "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/UpdateAttachment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AttachmentServiceServer).UpdateAttachment(ctx, req.(*UpdateAttachmentRequest))
@@ -1994,7 +1994,7 @@ func _AttachmentService_DeleteAttachment_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService/DeleteAttachment",
+		FullMethod: "/github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService/DeleteAttachment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AttachmentServiceServer).DeleteAttachment(ctx, req.(*DeleteAttachmentRequest))
@@ -2003,7 +2003,7 @@ func _AttachmentService_DeleteAttachment_Handler(srv interface{}, ctx context.Co
 }
 
 var _AttachmentService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.attachment.v1.AttachmentService",
+	ServiceName: "github.com.metaprov.modelaapi.services.attachment.v1.AttachmentService",
 	HandlerType: (*AttachmentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2028,5 +2028,5 @@ var _AttachmentService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/attachment/v1/attachment.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto",
 }

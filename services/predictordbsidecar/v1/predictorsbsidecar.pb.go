@@ -9,9 +9,9 @@ package v1
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	_ "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	_ "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	_ "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	_ "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	_ "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	grpc "google.golang.org/grpc"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -130,7 +130,7 @@ func RegisterPredictorDbSidecarServiceServer(s *grpc.Server, srv PredictorDbSide
 }
 
 var _PredictorDbSidecarService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.predictordbsidecar.v1.PredictorDbSidecarService",
+	ServiceName: "github.com.metaprov.modelaapi.services.predictordbsidecar.v1.PredictorDbSidecarService",
 	HandlerType: (*PredictorDbSidecarServiceServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams:     []grpc.StreamDesc{},

@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListTodosRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListTodosRequest {
 }
 
 export class ListTodosResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.TodoList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.TodoList): ListTodosResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList): ListTodosResponse;
   hasItems(): boolean;
   clearItems(): ListTodosResponse;
 
@@ -43,7 +43,7 @@ export class ListTodosResponse extends jspb.Message {
 
 export namespace ListTodosResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace TodoResponse {
 }
 
 export class CreateTodoRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
   hasItem(): boolean;
   clearItem(): CreateTodoRequest;
 
@@ -80,7 +80,7 @@ export class CreateTodoRequest extends jspb.Message {
 
 export namespace CreateTodoRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
     password: string,
   }
 }
@@ -100,8 +100,8 @@ export namespace CreateTodoResponse {
 }
 
 export class UpdateTodoRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo): UpdateTodoRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): UpdateTodoRequest;
   hasItem(): boolean;
   clearItem(): UpdateTodoRequest;
 
@@ -115,7 +115,7 @@ export class UpdateTodoRequest extends jspb.Message {
 
 export namespace UpdateTodoRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
   }
 }
 
@@ -156,8 +156,8 @@ export namespace GetTodoRequest {
 }
 
 export class GetTodoResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo): GetTodoResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): GetTodoResponse;
   hasItem(): boolean;
   clearItem(): GetTodoResponse;
 
@@ -174,7 +174,7 @@ export class GetTodoResponse extends jspb.Message {
 
 export namespace GetTodoResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
     yaml: string,
   }
 }
@@ -202,10 +202,10 @@ export namespace GetTodoNamespacesRequest {
 }
 
 export class GetTodoNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetTodoNamespacesResponse;
+  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetTodoNamespacesResponse;
   clearNamespacesList(): GetTodoNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTodoNamespacesResponse.AsObject;
@@ -217,7 +217,7 @@ export class GetTodoNamespacesResponse extends jspb.Message {
 
 export namespace GetTodoNamespacesResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
+    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

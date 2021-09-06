@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListAttachmentsRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListAttachmentsRequest {
 }
 
 export class ListAttachmentsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList): ListAttachmentsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList): ListAttachmentsResponse;
   hasItems(): boolean;
   clearItems(): ListAttachmentsResponse;
 
@@ -43,7 +43,7 @@ export class ListAttachmentsResponse extends jspb.Message {
 
 export namespace ListAttachmentsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace AttachmentResponse {
 }
 
 export class CreateAttachmentRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): CreateAttachmentRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): CreateAttachmentRequest;
   hasItem(): boolean;
   clearItem(): CreateAttachmentRequest;
 
@@ -80,7 +80,7 @@ export class CreateAttachmentRequest extends jspb.Message {
 
 export namespace CreateAttachmentRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
     password: string,
   }
 }
@@ -100,8 +100,8 @@ export namespace CreateAttachmentResponse {
 }
 
 export class UpdateAttachmentRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): UpdateAttachmentRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): UpdateAttachmentRequest;
   hasItem(): boolean;
   clearItem(): UpdateAttachmentRequest;
 
@@ -115,7 +115,7 @@ export class UpdateAttachmentRequest extends jspb.Message {
 
 export namespace UpdateAttachmentRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
   }
 }
 
@@ -156,8 +156,8 @@ export namespace GetAttachmentRequest {
 }
 
 export class GetAttachmentResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): GetAttachmentResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): GetAttachmentResponse;
   hasItem(): boolean;
   clearItem(): GetAttachmentResponse;
 
@@ -174,7 +174,7 @@ export class GetAttachmentResponse extends jspb.Message {
 
 export namespace GetAttachmentResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
     yaml: string,
   }
 }
@@ -202,10 +202,10 @@ export namespace GetAttachmentNamespacesRequest {
 }
 
 export class GetAttachmentNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetAttachmentNamespacesResponse;
+  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetAttachmentNamespacesResponse;
   clearNamespacesList(): GetAttachmentNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAttachmentNamespacesResponse.AsObject;
@@ -217,7 +217,7 @@ export class GetAttachmentNamespacesResponse extends jspb.Message {
 
 export namespace GetAttachmentNamespacesResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
+    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

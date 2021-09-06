@@ -42,7 +42,7 @@ type TenantCondition struct {
 // +kubebuilder:printcolumn:name="Default Lab",type="string",JSONPath=".spec.defaultLabRef.Name",description=""
 // +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modeld}
+// +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
 // Tenant represents root tenant.
 type Tenant struct {
 	metav1.TypeMeta   `json:",inline"`

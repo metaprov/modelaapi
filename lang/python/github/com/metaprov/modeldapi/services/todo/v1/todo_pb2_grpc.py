@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.todo.v1 import todo_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2
+from github.com.metaprov.modelaapi.services.todo.v1 import todo_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2
 
 
 class TodoServiceStub(object):
@@ -15,29 +15,29 @@ class TodoServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListTodos = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/ListTodos',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/ListTodos',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.FromString,
                 )
         self.CreateTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/CreateTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/CreateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.FromString,
                 )
         self.GetTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/GetTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/GetTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.FromString,
                 )
         self.UpdateTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/UpdateTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/UpdateTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.FromString,
                 )
         self.DeleteTodo = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/DeleteTodo',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/DeleteTodo',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_TodoServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListTodos': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTodos,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.SerializeToString,
             ),
             'CreateTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.SerializeToString,
             ),
             'GetTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.SerializeToString,
             ),
             'UpdateTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.SerializeToString,
             ),
             'DeleteTodo': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTodo,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.todo.v1.TodoService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.todo.v1.TodoService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class TodoService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/ListTodos',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/ListTodos',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.ListTodosResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class TodoService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/CreateTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/CreateTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.CreateTodoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class TodoService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/GetTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/GetTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.GetTodoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class TodoService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/UpdateTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/UpdateTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.UpdateTodoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class TodoService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.todo.v1.TodoService/DeleteTodo',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/DeleteTodo',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_todo_dot_v1_dot_todo__pb2.DeleteTodoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

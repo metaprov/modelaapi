@@ -14,15 +14,15 @@ coverage:
     project:
       default:
         target: auto
-      modeldapi-unit-tests:
+      modelaapi-unit-tests:
         target: auto
         flags:
           - unit-tests
-      modeldapi-integration-tests:
+      modelaapi-integration-tests:
         target: auto
         flags:
           - integration-tests
-      modeldapi-e2e-tests:
+      modelaapi-e2e-tests:
         target: auto
         flags:
           - e2e-tests

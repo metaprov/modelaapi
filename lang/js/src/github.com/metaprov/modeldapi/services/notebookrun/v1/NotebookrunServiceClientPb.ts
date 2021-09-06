@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.notebookrun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.notebookrun.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb from '../../../../../../github.com/metaprov/modeldapi/services/notebookrun/v1/notebookrun_pb';
+import * as github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb from '../../../../../../github.com/metaprov/modelaapi/services/notebookrun/v1/notebookrun_pb';
 
 
 export class NotebookRunServiceClient {
@@ -36,32 +36,32 @@ export class NotebookRunServiceClient {
   }
 
   methodInfoListNotebookRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse,
-    (request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest) => {
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse,
+    (request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse.deserializeBinary
   );
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse>;
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse>;
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse>;
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse>;
 
   listNotebookRuns(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.ListNotebookRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
+          '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
         request,
         metadata || {},
         this.methodInfoListNotebookRuns,
@@ -69,39 +69,39 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
+      '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/ListNotebookRuns',
     request,
     metadata || {},
     this.methodInfoListNotebookRuns);
   }
 
   methodInfoCreateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse,
-    (request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest) => {
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse,
+    (request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse.deserializeBinary
   );
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse>;
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse>;
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse>;
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse>;
 
   createNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.CreateNotebookRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
+          '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
         request,
         metadata || {},
         this.methodInfoCreateNotebookRun,
@@ -109,39 +109,39 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
+      '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/CreateNotebookRun',
     request,
     metadata || {},
     this.methodInfoCreateNotebookRun);
   }
 
   methodInfoGetNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse,
-    (request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest) => {
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse,
+    (request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse.deserializeBinary
   );
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse>;
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse>;
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse>;
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse>;
 
   getNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.GetNotebookRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
+          '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
         request,
         metadata || {},
         this.methodInfoGetNotebookRun,
@@ -149,39 +149,39 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
+      '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/GetNotebookRun',
     request,
     metadata || {},
     this.methodInfoGetNotebookRun);
   }
 
   methodInfoUpdateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse,
-    (request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest) => {
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse,
+    (request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse.deserializeBinary
   );
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse>;
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse>;
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse>;
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse>;
 
   updateNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.UpdateNotebookRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
+          '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
         request,
         metadata || {},
         this.methodInfoUpdateNotebookRun,
@@ -189,39 +189,39 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
+      '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/UpdateNotebookRun',
     request,
     metadata || {},
     this.methodInfoUpdateNotebookRun);
   }
 
   methodInfoDeleteNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse,
-    (request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest) => {
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse,
+    (request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse.deserializeBinary
   );
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse>;
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse>;
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse>;
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse>;
 
   deleteNotebookRun(
-    request: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
+    request: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_notebookrun_v1_notebookrun_pb.DeleteNotebookRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
+          '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
         request,
         metadata || {},
         this.methodInfoDeleteNotebookRun,
@@ -229,7 +229,7 @@ export class NotebookRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
+      '/github.com.metaprov.modelaapi.services.notebookrun.v1.NotebookRunService/DeleteNotebookRun',
     request,
     metadata || {},
     this.methodInfoDeleteNotebookRun);

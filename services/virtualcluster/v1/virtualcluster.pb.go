@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto
+// source: github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	_ "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	_ "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListVirtualClustersRequest struct {
 func (x *ListVirtualClustersRequest) Reset() {
 	*x = ListVirtualClustersRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListVirtualClustersRequest) String() string {
 func (*ListVirtualClustersRequest) ProtoMessage() {}
 
 func (x *ListVirtualClustersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListVirtualClustersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualClustersRequest.ProtoReflect.Descriptor instead.
 func (*ListVirtualClustersRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListVirtualClustersRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListVirtualClustersResponse struct {
 func (x *ListVirtualClustersResponse) Reset() {
 	*x = ListVirtualClustersResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListVirtualClustersResponse) String() string {
 func (*ListVirtualClustersResponse) ProtoMessage() {}
 
 func (x *ListVirtualClustersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListVirtualClustersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualClustersResponse.ProtoReflect.Descriptor instead.
 func (*ListVirtualClustersResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListVirtualClustersResponse) GetItems() *v1alpha1.VirtualClusterList {
@@ -143,7 +143,7 @@ type VirtualClusterResponse struct {
 func (x *VirtualClusterResponse) Reset() {
 	*x = VirtualClusterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *VirtualClusterResponse) String() string {
 func (*VirtualClusterResponse) ProtoMessage() {}
 
 func (x *VirtualClusterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *VirtualClusterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VirtualClusterResponse.ProtoReflect.Descriptor instead.
 func (*VirtualClusterResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateVirtualClusterRequest struct {
@@ -183,7 +183,7 @@ type CreateVirtualClusterRequest struct {
 func (x *CreateVirtualClusterRequest) Reset() {
 	*x = CreateVirtualClusterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateVirtualClusterRequest) String() string {
 func (*CreateVirtualClusterRequest) ProtoMessage() {}
 
 func (x *CreateVirtualClusterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateVirtualClusterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualClusterRequest.ProtoReflect.Descriptor instead.
 func (*CreateVirtualClusterRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateVirtualClusterRequest) GetItem() *v1alpha1.VirtualCluster {
@@ -228,7 +228,7 @@ type CreateVirtualClusterResponse struct {
 func (x *CreateVirtualClusterResponse) Reset() {
 	*x = CreateVirtualClusterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *CreateVirtualClusterResponse) String() string {
 func (*CreateVirtualClusterResponse) ProtoMessage() {}
 
 func (x *CreateVirtualClusterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *CreateVirtualClusterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualClusterResponse.ProtoReflect.Descriptor instead.
 func (*CreateVirtualClusterResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateVirtualClusterRequest struct {
@@ -268,7 +268,7 @@ type UpdateVirtualClusterRequest struct {
 func (x *UpdateVirtualClusterRequest) Reset() {
 	*x = UpdateVirtualClusterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *UpdateVirtualClusterRequest) String() string {
 func (*UpdateVirtualClusterRequest) ProtoMessage() {}
 
 func (x *UpdateVirtualClusterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *UpdateVirtualClusterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualClusterRequest.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualClusterRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateVirtualClusterRequest) GetItem() *v1alpha1.VirtualCluster {
@@ -313,7 +313,7 @@ type UpdateVirtualClusterResponse struct {
 func (x *UpdateVirtualClusterResponse) Reset() {
 	*x = UpdateVirtualClusterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -326,7 +326,7 @@ func (x *UpdateVirtualClusterResponse) String() string {
 func (*UpdateVirtualClusterResponse) ProtoMessage() {}
 
 func (x *UpdateVirtualClusterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -339,7 +339,7 @@ func (x *UpdateVirtualClusterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualClusterResponse.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualClusterResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{6}
 }
 
 type GetVirtualClusterRequest struct {
@@ -354,7 +354,7 @@ type GetVirtualClusterRequest struct {
 func (x *GetVirtualClusterRequest) Reset() {
 	*x = GetVirtualClusterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +367,7 @@ func (x *GetVirtualClusterRequest) String() string {
 func (*GetVirtualClusterRequest) ProtoMessage() {}
 
 func (x *GetVirtualClusterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *GetVirtualClusterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualClusterRequest.ProtoReflect.Descriptor instead.
 func (*GetVirtualClusterRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetVirtualClusterRequest) GetNamespace() string {
@@ -409,7 +409,7 @@ type GetVirtualClusterResponse struct {
 func (x *GetVirtualClusterResponse) Reset() {
 	*x = GetVirtualClusterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetVirtualClusterResponse) String() string {
 func (*GetVirtualClusterResponse) ProtoMessage() {}
 
 func (x *GetVirtualClusterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetVirtualClusterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualClusterResponse.ProtoReflect.Descriptor instead.
 func (*GetVirtualClusterResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetVirtualClusterResponse) GetItem() *v1alpha1.VirtualCluster {
@@ -464,7 +464,7 @@ type DeleteVirtualClusterRequest struct {
 func (x *DeleteVirtualClusterRequest) Reset() {
 	*x = DeleteVirtualClusterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -477,7 +477,7 @@ func (x *DeleteVirtualClusterRequest) String() string {
 func (*DeleteVirtualClusterRequest) ProtoMessage() {}
 
 func (x *DeleteVirtualClusterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +490,7 @@ func (x *DeleteVirtualClusterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualClusterRequest.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualClusterRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteVirtualClusterRequest) GetNamespace() string {
@@ -516,7 +516,7 @@ type DeleteVirtualClusterResponse struct {
 func (x *DeleteVirtualClusterResponse) Reset() {
 	*x = DeleteVirtualClusterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *DeleteVirtualClusterResponse) String() string {
 func (*DeleteVirtualClusterResponse) ProtoMessage() {}
 
 func (x *DeleteVirtualClusterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,12 +542,12 @@ func (x *DeleteVirtualClusterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualClusterResponse.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualClusterResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP(), []int{10}
 }
 
-var File_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc = []byte{
 	0x0a, 0x4d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c,
@@ -717,50 +717,50 @@ var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData = file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData = file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_goTypes = []interface{}{
-	(*ListVirtualClustersRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest
-	(*ListVirtualClustersResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse
-	(*VirtualClusterResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterResponse
-	(*CreateVirtualClusterRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest
-	(*CreateVirtualClusterResponse)(nil), // 4: github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse
-	(*UpdateVirtualClusterRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest
-	(*UpdateVirtualClusterResponse)(nil), // 6: github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse
-	(*GetVirtualClusterRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest
-	(*GetVirtualClusterResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse
-	(*DeleteVirtualClusterRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest
-	(*DeleteVirtualClusterResponse)(nil), // 10: github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse
-	nil,                                  // 11: github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry
-	(*v1alpha1.VirtualClusterList)(nil),  // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList
-	(*v1alpha1.VirtualCluster)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
+var file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_goTypes = []interface{}{
+	(*ListVirtualClustersRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest
+	(*ListVirtualClustersResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersResponse
+	(*VirtualClusterResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterResponse
+	(*CreateVirtualClusterRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.virtualcluster.v1.CreateVirtualClusterRequest
+	(*CreateVirtualClusterResponse)(nil), // 4: github.com.metaprov.modelaapi.services.virtualcluster.v1.CreateVirtualClusterResponse
+	(*UpdateVirtualClusterRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest
+	(*UpdateVirtualClusterResponse)(nil), // 6: github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterResponse
+	(*GetVirtualClusterRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.virtualcluster.v1.GetVirtualClusterRequest
+	(*GetVirtualClusterResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.virtualcluster.v1.GetVirtualClusterResponse
+	(*DeleteVirtualClusterRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.virtualcluster.v1.DeleteVirtualClusterRequest
+	(*DeleteVirtualClusterResponse)(nil), // 10: github.com.metaprov.modelaapi.services.virtualcluster.v1.DeleteVirtualClusterResponse
+	nil,                                  // 11: github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry
+	(*v1alpha1.VirtualClusterList)(nil),  // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterList
+	(*v1alpha1.VirtualCluster)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster
 }
-var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs = []int32{
-	11, // 0: github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.virtualclusterels:type_name -> github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry
-	12, // 1: github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualClusterList
-	13, // 2: github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
-	13, // 3: github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
-	13, // 4: github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster
-	0,  // 5: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters:input_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster:input_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterRequest
-	7,  // 7: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster:input_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterRequest
-	5,  // 8: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster:input_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterRequest
-	9,  // 9: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster:input_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters:output_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.ListVirtualClustersResponse
-	4,  // 11: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster:output_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.CreateVirtualClusterResponse
-	8,  // 12: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster:output_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.GetVirtualClusterResponse
-	6,  // 13: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster:output_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.UpdateVirtualClusterResponse
-	10, // 14: github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster:output_type -> github.com.metaprov.modeldapi.services.virtualcluster.v1.DeleteVirtualClusterResponse
+var file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs = []int32{
+	11, // 0: github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.virtualclusterels:type_name -> github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.VirtualclusterelsEntry
+	12, // 1: github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterList
+	13, // 2: github.com.metaprov.modelaapi.services.virtualcluster.v1.CreateVirtualClusterRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster
+	13, // 3: github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster
+	13, // 4: github.com.metaprov.modelaapi.services.virtualcluster.v1.GetVirtualClusterResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster
+	0,  // 5: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters:input_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster:input_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.CreateVirtualClusterRequest
+	7,  // 7: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster:input_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.GetVirtualClusterRequest
+	5,  // 8: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster:input_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterRequest
+	9,  // 9: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster:input_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.DeleteVirtualClusterRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.ListVirtualClusters:output_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersResponse
+	4,  // 11: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.CreateVirtualCluster:output_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.CreateVirtualClusterResponse
+	8,  // 12: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.GetVirtualCluster:output_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.GetVirtualClusterResponse
+	6,  // 13: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.UpdateVirtualCluster:output_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.UpdateVirtualClusterResponse
+	10, // 14: github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService.DeleteVirtualCluster:output_type -> github.com.metaprov.modelaapi.services.virtualcluster.v1.DeleteVirtualClusterResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -769,14 +769,14 @@ var file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_init()
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto != nil {
+func file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualClustersRequest); i {
 			case 0:
 				return &v.state
@@ -788,7 +788,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualClustersResponse); i {
 			case 0:
 				return &v.state
@@ -800,7 +800,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VirtualClusterResponse); i {
 			case 0:
 				return &v.state
@@ -812,7 +812,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualClusterRequest); i {
 			case 0:
 				return &v.state
@@ -824,7 +824,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualClusterResponse); i {
 			case 0:
 				return &v.state
@@ -836,7 +836,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualClusterRequest); i {
 			case 0:
 				return &v.state
@@ -848,7 +848,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualClusterResponse); i {
 			case 0:
 				return &v.state
@@ -860,7 +860,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualClusterRequest); i {
 			case 0:
 				return &v.state
@@ -872,7 +872,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualClusterResponse); i {
 			case 0:
 				return &v.state
@@ -884,7 +884,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualClusterRequest); i {
 			case 0:
 				return &v.state
@@ -896,7 +896,7 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualClusterResponse); i {
 			case 0:
 				return &v.state
@@ -913,20 +913,20 @@ func file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluste
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto = out.File
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto = out.File
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -958,7 +958,7 @@ func NewVirtualClusterServiceClient(cc grpc.ClientConnInterface) VirtualClusterS
 
 func (c *virtualClusterServiceClient) ListVirtualClusters(ctx context.Context, in *ListVirtualClustersRequest, opts ...grpc.CallOption) (*ListVirtualClustersResponse, error) {
 	out := new(ListVirtualClustersResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -967,7 +967,7 @@ func (c *virtualClusterServiceClient) ListVirtualClusters(ctx context.Context, i
 
 func (c *virtualClusterServiceClient) CreateVirtualCluster(ctx context.Context, in *CreateVirtualClusterRequest, opts ...grpc.CallOption) (*CreateVirtualClusterResponse, error) {
 	out := new(CreateVirtualClusterResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -976,7 +976,7 @@ func (c *virtualClusterServiceClient) CreateVirtualCluster(ctx context.Context, 
 
 func (c *virtualClusterServiceClient) GetVirtualCluster(ctx context.Context, in *GetVirtualClusterRequest, opts ...grpc.CallOption) (*GetVirtualClusterResponse, error) {
 	out := new(GetVirtualClusterResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -985,7 +985,7 @@ func (c *virtualClusterServiceClient) GetVirtualCluster(ctx context.Context, in 
 
 func (c *virtualClusterServiceClient) UpdateVirtualCluster(ctx context.Context, in *UpdateVirtualClusterRequest, opts ...grpc.CallOption) (*UpdateVirtualClusterResponse, error) {
 	out := new(UpdateVirtualClusterResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -994,7 +994,7 @@ func (c *virtualClusterServiceClient) UpdateVirtualCluster(ctx context.Context, 
 
 func (c *virtualClusterServiceClient) DeleteVirtualCluster(ctx context.Context, in *DeleteVirtualClusterRequest, opts ...grpc.CallOption) (*DeleteVirtualClusterResponse, error) {
 	out := new(DeleteVirtualClusterResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1044,7 +1044,7 @@ func _VirtualClusterService_ListVirtualClusters_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualClusterServiceServer).ListVirtualClusters(ctx, req.(*ListVirtualClustersRequest))
@@ -1062,7 +1062,7 @@ func _VirtualClusterService_CreateVirtualCluster_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualClusterServiceServer).CreateVirtualCluster(ctx, req.(*CreateVirtualClusterRequest))
@@ -1080,7 +1080,7 @@ func _VirtualClusterService_GetVirtualCluster_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualClusterServiceServer).GetVirtualCluster(ctx, req.(*GetVirtualClusterRequest))
@@ -1098,7 +1098,7 @@ func _VirtualClusterService_UpdateVirtualCluster_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualClusterServiceServer).UpdateVirtualCluster(ctx, req.(*UpdateVirtualClusterRequest))
@@ -1116,7 +1116,7 @@ func _VirtualClusterService_DeleteVirtualCluster_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualClusterServiceServer).DeleteVirtualCluster(ctx, req.(*DeleteVirtualClusterRequest))
@@ -1125,7 +1125,7 @@ func _VirtualClusterService_DeleteVirtualCluster_Handler(srv interface{}, ctx co
 }
 
 var _VirtualClusterService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.virtualcluster.v1.VirtualClusterService",
+	ServiceName: "github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService",
 	HandlerType: (*VirtualClusterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1150,5 +1150,5 @@ var _VirtualClusterService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/virtualcluster/v1/virtualcluster.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto",
 }

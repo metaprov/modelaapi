@@ -6,17 +6,17 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: modeldsystems.infra.modeld.io
+  name: modelasystems.infra.modela.io
 spec:
-  group: infra.modeld.io
+  group: infra.modela.io
   names:
     categories:
     - infra
-    - modeld
+    - modela
     kind: ModeldSystem
     listKind: ModeldSystemList
-    plural: modeldsystems
-    singular: modeldsystem
+    plural: modelasystems
+    singular: modelasystem
   scope: Namespaced
   versions:
   - additionalPrinterColumns:

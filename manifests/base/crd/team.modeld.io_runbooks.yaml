@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: runbooks.team.modeld.io
+  name: runbooks.team.modela.io
 spec:
-  group: team.modeld.io
+  group: team.modela.io
   names:
     categories:
     - data
-    - modeld
+    - modela
     kind: RunBook
     listKind: RunBookList
     plural: runbooks

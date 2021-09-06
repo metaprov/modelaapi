@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.cronreport.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.cronreport.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb from '../../../../../../github.com/metaprov/modeldapi/services/cronreport/v1/cronreport_pb';
+import * as github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb from '../../../../../../github.com/metaprov/modelaapi/services/cronreport/v1/cronreport_pb';
 
 
 export class CronReportServiceClient {
@@ -36,32 +36,32 @@ export class CronReportServiceClient {
   }
 
   methodInfoListCronReports = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse.deserializeBinary
   );
 
   listCronReports(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse>;
 
   listCronReports(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse>;
 
   listCronReports(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ListCronReportsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ListCronReports',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ListCronReports',
         request,
         metadata || {},
         this.methodInfoListCronReports,
@@ -69,39 +69,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ListCronReports',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ListCronReports',
     request,
     metadata || {},
     this.methodInfoListCronReports);
   }
 
   methodInfoCreateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse.deserializeBinary
   );
 
   createCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse>;
 
   createCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse>;
 
   createCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.CreateCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/CreateCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/CreateCronReport',
         request,
         metadata || {},
         this.methodInfoCreateCronReport,
@@ -109,39 +109,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/CreateCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/CreateCronReport',
     request,
     metadata || {},
     this.methodInfoCreateCronReport);
   }
 
   methodInfoGetCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse.deserializeBinary
   );
 
   getCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse>;
 
   getCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse>;
 
   getCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.GetCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/GetCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/GetCronReport',
         request,
         metadata || {},
         this.methodInfoGetCronReport,
@@ -149,39 +149,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/GetCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/GetCronReport',
     request,
     metadata || {},
     this.methodInfoGetCronReport);
   }
 
   methodInfoUpdateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse.deserializeBinary
   );
 
   updateCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse>;
 
   updateCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse>;
 
   updateCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.UpdateCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/UpdateCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/UpdateCronReport',
         request,
         metadata || {},
         this.methodInfoUpdateCronReport,
@@ -189,39 +189,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/UpdateCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/UpdateCronReport',
     request,
     metadata || {},
     this.methodInfoUpdateCronReport);
   }
 
   methodInfoDeleteCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse.deserializeBinary
   );
 
   deleteCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse>;
 
   deleteCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse>;
 
   deleteCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.DeleteCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/DeleteCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/DeleteCronReport',
         request,
         metadata || {},
         this.methodInfoDeleteCronReport,
@@ -229,39 +229,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/DeleteCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/DeleteCronReport',
     request,
     metadata || {},
     this.methodInfoDeleteCronReport);
   }
 
   methodInfoRunReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse.deserializeBinary
   );
 
   runReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse>;
 
   runReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse>;
 
   runReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.RunCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/RunReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/RunReport',
         request,
         metadata || {},
         this.methodInfoRunReport,
@@ -269,39 +269,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/RunReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/RunReport',
     request,
     metadata || {},
     this.methodInfoRunReport);
   }
 
   methodInfoPauseCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse.deserializeBinary
   );
 
   pauseCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
 
   pauseCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse>;
 
   pauseCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.PauseCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/PauseCronReport',
         request,
         metadata || {},
         this.methodInfoPauseCronReport,
@@ -309,39 +309,39 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/PauseCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/PauseCronReport',
     request,
     metadata || {},
     this.methodInfoPauseCronReport);
   }
 
   methodInfoResumeCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse,
-    (request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest) => {
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse,
+    (request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse.deserializeBinary
   );
 
   resumeCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
 
   resumeCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse>;
 
   resumeCronReport(
-    request: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
+    request: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronreport_v1_cronreport_pb.ResumeCronReportResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+          '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ResumeCronReport',
         request,
         metadata || {},
         this.methodInfoResumeCronReport,
@@ -349,7 +349,7 @@ export class CronReportServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronreport.v1.CronReportService/ResumeCronReport',
+      '/github.com.metaprov.modelaapi.services.cronreport.v1.CronReportService/ResumeCronReport',
     request,
     metadata || {},
     this.methodInfoResumeCronReport);

@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListNotifiersRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListNotifiersRequest {
 }
 
 export class ListNotifiersResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList): ListNotifiersResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList): ListNotifiersResponse;
   hasItems(): boolean;
   clearItems(): ListNotifiersResponse;
 
@@ -43,7 +43,7 @@ export class ListNotifiersResponse extends jspb.Message {
 
 export namespace ListNotifiersResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace NotifierResponse {
 }
 
 export class CreateNotifierRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): CreateNotifierRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): CreateNotifierRequest;
   hasItem(): boolean;
   clearItem(): CreateNotifierRequest;
 
@@ -77,7 +77,7 @@ export class CreateNotifierRequest extends jspb.Message {
 
 export namespace CreateNotifierRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
   }
 }
 
@@ -96,8 +96,8 @@ export namespace CreateNotifierResponse {
 }
 
 export class UpdateNotifierRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): UpdateNotifierRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): UpdateNotifierRequest;
   hasItem(): boolean;
   clearItem(): UpdateNotifierRequest;
 
@@ -111,7 +111,7 @@ export class UpdateNotifierRequest extends jspb.Message {
 
 export namespace UpdateNotifierRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
   }
 }
 
@@ -152,8 +152,8 @@ export namespace GetNotifierRequest {
 }
 
 export class GetNotifierResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): GetNotifierResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier): GetNotifierResponse;
   hasItem(): boolean;
   clearItem(): GetNotifierResponse;
 
@@ -170,7 +170,7 @@ export class GetNotifierResponse extends jspb.Message {
 
 export namespace GetNotifierResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.AsObject,
     yaml: string,
   }
 }

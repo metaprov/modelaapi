@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: predictors.inference.modeld.io
+  name: predictors.inference.modela.io
 spec:
-  group: inference.modeld.io
+  group: inference.modela.io
   names:
     categories:
     - inference
-    - modeld
+    - modela
     kind: Predictor
     listKind: PredictorList
     plural: predictors

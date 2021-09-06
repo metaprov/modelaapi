@@ -3,7 +3,7 @@ package v1alpha1
 import (
 	v1 "k8s.io/api/core/v1"
 
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -38,7 +38,7 @@ type CronPredictionCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule"
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modeld}
+// +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modela}
 // CronPrediction represents a single run of the Prediction Pipeline
 type CronPrediction struct {
 	metav1.TypeMeta   `json:",inline"`

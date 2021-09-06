@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 
 
 export class ListTenantsRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListTenantsRequest {
 }
 
 export class ListTenantsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList): ListTenantsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList): ListTenantsResponse;
   hasItems(): boolean;
   clearItems(): ListTenantsResponse;
 
@@ -42,13 +42,13 @@ export class ListTenantsResponse extends jspb.Message {
 
 export namespace ListTenantsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.AsObject,
   }
 }
 
 export class CreateTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): CreateTenantRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): CreateTenantRequest;
   hasItem(): boolean;
   clearItem(): CreateTenantRequest;
 
@@ -62,7 +62,7 @@ export class CreateTenantRequest extends jspb.Message {
 
 export namespace CreateTenantRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateTenantResponse {
 }
 
 export class UpdateTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): UpdateTenantRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): UpdateTenantRequest;
   hasItem(): boolean;
   clearItem(): UpdateTenantRequest;
 
@@ -96,7 +96,7 @@ export class UpdateTenantRequest extends jspb.Message {
 
 export namespace UpdateTenantRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetTenantRequest {
 }
 
 export class GetTenantResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): GetTenantResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): GetTenantResponse;
   hasItem(): boolean;
   clearItem(): GetTenantResponse;
 
@@ -155,7 +155,7 @@ export class GetTenantResponse extends jspb.Message {
 
 export namespace GetTenantResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
     yaml: string,
   }
 }

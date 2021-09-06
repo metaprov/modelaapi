@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.labelingpipelinerun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.labelingpipelinerun.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb from '../../../../../../github.com/metaprov/modeldapi/services/labelingpipelinerun/v1/labelingpipelinerun_pb';
+import * as github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb from '../../../../../../github.com/metaprov/modelaapi/services/labelingpipelinerun/v1/labelingpipelinerun_pb';
 
 
 export class LabelingPipelineRunServiceClient {
@@ -36,32 +36,32 @@ export class LabelingPipelineRunServiceClient {
   }
 
   methodInfoListLabelingPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse.deserializeBinary
   );
 
   listLabelingPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse>;
 
   listLabelingPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse>;
 
   listLabelingPipelineRuns(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.ListLabelingPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/ListLabelingPipelineRuns',
+          '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/ListLabelingPipelineRuns',
         request,
         metadata || {},
         this.methodInfoListLabelingPipelineRuns,
@@ -69,39 +69,39 @@ export class LabelingPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/ListLabelingPipelineRuns',
+      '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/ListLabelingPipelineRuns',
     request,
     metadata || {},
     this.methodInfoListLabelingPipelineRuns);
   }
 
   methodInfoCreateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse.deserializeBinary
   );
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse>;
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse>;
 
   createLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.CreateLabelingPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/CreateLabelingPipelineRun',
+          '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/CreateLabelingPipelineRun',
         request,
         metadata || {},
         this.methodInfoCreateLabelingPipelineRun,
@@ -109,39 +109,39 @@ export class LabelingPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/CreateLabelingPipelineRun',
+      '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/CreateLabelingPipelineRun',
     request,
     metadata || {},
     this.methodInfoCreateLabelingPipelineRun);
   }
 
   methodInfoGetLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse.deserializeBinary
   );
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse>;
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse>;
 
   getLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.GetLabelingPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/GetLabelingPipelineRun',
+          '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/GetLabelingPipelineRun',
         request,
         metadata || {},
         this.methodInfoGetLabelingPipelineRun,
@@ -149,39 +149,39 @@ export class LabelingPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/GetLabelingPipelineRun',
+      '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/GetLabelingPipelineRun',
     request,
     metadata || {},
     this.methodInfoGetLabelingPipelineRun);
   }
 
   methodInfoUpdateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse.deserializeBinary
   );
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse>;
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse>;
 
   updateLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.UpdateLabelingPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/UpdateLabelingPipelineRun',
+          '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/UpdateLabelingPipelineRun',
         request,
         metadata || {},
         this.methodInfoUpdateLabelingPipelineRun,
@@ -189,39 +189,39 @@ export class LabelingPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/UpdateLabelingPipelineRun',
+      '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/UpdateLabelingPipelineRun',
     request,
     metadata || {},
     this.methodInfoUpdateLabelingPipelineRun);
   }
 
   methodInfoDeleteLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse.deserializeBinary
   );
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse>;
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse>;
 
   deleteLabelingPipelineRun(
-    request: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_labelingpipelinerun_v1_labelingpipelinerun_pb.DeleteLabelingPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/DeleteLabelingPipelineRun',
+          '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/DeleteLabelingPipelineRun',
         request,
         metadata || {},
         this.methodInfoDeleteLabelingPipelineRun,
@@ -229,7 +229,7 @@ export class LabelingPipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/DeleteLabelingPipelineRun',
+      '/github.com.metaprov.modelaapi.services.labelingpipelinerun.v1.LabelingPipelineRunService/DeleteLabelingPipelineRun',
     request,
     metadata || {},
     this.methodInfoDeleteLabelingPipelineRun);

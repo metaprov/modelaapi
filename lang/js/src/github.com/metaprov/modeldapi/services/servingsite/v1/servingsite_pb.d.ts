@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 
 
 export class ListServingSitesRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListServingSitesRequest {
 }
 
 export class ListServingSitesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
   hasItems(): boolean;
   clearItems(): ListServingSitesResponse;
 
@@ -42,13 +42,13 @@ export class ListServingSitesResponse extends jspb.Message {
 
 export namespace ListServingSitesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
   }
 }
 
 export class CreateServingSiteRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
   hasItem(): boolean;
   clearItem(): CreateServingSiteRequest;
 
@@ -62,7 +62,7 @@ export class CreateServingSiteRequest extends jspb.Message {
 
 export namespace CreateServingSiteRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateServingSiteResponse {
 }
 
 export class UpdateServingSiteRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): UpdateServingSiteRequest;
   hasItem(): boolean;
   clearItem(): UpdateServingSiteRequest;
 
@@ -96,7 +96,7 @@ export class UpdateServingSiteRequest extends jspb.Message {
 
 export namespace UpdateServingSiteRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetServingSiteRequest {
 }
 
 export class GetServingSiteResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): GetServingSiteResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): GetServingSiteResponse;
   hasItem(): boolean;
   clearItem(): GetServingSiteResponse;
 
@@ -155,7 +155,7 @@ export class GetServingSiteResponse extends jspb.Message {
 
 export namespace GetServingSiteResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
     yaml: string,
   }
 }

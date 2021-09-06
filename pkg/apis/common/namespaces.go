@@ -1,8 +1,8 @@
 package common
 
 func RootKey() string {
-	return "modeld"
+	return "modela"
 }
 
-const MODELD_SYSTEM = "modeld-system"
-const MODELD_CATALOG = "modeld-catalog"
+const MODELD_SYSTEM = "modela-system"
+const MODELD_CATALOG = "modela-catalog"

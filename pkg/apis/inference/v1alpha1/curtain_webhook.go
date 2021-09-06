@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -45,7 +45,7 @@ func (cur *Curtain) validateBucket() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modeld.io", Kind: "Curtain"},
+		schema.GroupKind{Group: "inference.modela.io", Kind: "Curtain"},
 		cur.Name, allErrs)
 }
 

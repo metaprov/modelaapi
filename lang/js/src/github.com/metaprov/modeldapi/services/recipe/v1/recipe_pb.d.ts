@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListRecipesRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListRecipesRequest {
 }
 
 export class ListRecipesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList): ListRecipesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList): ListRecipesResponse;
   hasItems(): boolean;
   clearItems(): ListRecipesResponse;
 
@@ -43,13 +43,13 @@ export class ListRecipesResponse extends jspb.Message {
 
 export namespace ListRecipesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList.AsObject,
   }
 }
 
 export class CreateRecipeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): CreateRecipeRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): CreateRecipeRequest;
   hasItem(): boolean;
   clearItem(): CreateRecipeRequest;
 
@@ -63,7 +63,7 @@ export class CreateRecipeRequest extends jspb.Message {
 
 export namespace CreateRecipeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
 
@@ -82,8 +82,8 @@ export namespace CreateRecipeResponse {
 }
 
 export class UpdateRecipeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): UpdateRecipeRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): UpdateRecipeRequest;
   hasItem(): boolean;
   clearItem(): UpdateRecipeRequest;
 
@@ -97,7 +97,7 @@ export class UpdateRecipeRequest extends jspb.Message {
 
 export namespace UpdateRecipeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
 
@@ -144,8 +144,8 @@ export class ProfileRecipeRequest extends jspb.Message {
   getName(): string;
   setName(value: string): ProfileRecipeRequest;
 
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): ProfileRecipeRequest;
+  getSpec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
+  setSpec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): ProfileRecipeRequest;
   hasSpec(): boolean;
   clearSpec(): ProfileRecipeRequest;
 
@@ -161,13 +161,13 @@ export namespace ProfileRecipeRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
+    spec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
   }
 }
 
 export class ProfileRecipeResponse extends jspb.Message {
-  getTable(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
-  setTable(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): ProfileRecipeResponse;
+  getTable(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTable(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): ProfileRecipeResponse;
   hasTable(): boolean;
   clearTable(): ProfileRecipeResponse;
 
@@ -181,7 +181,7 @@ export class ProfileRecipeResponse extends jspb.Message {
 
 export namespace ProfileRecipeResponse {
   export type AsObject = {
-    table?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+    table?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
   }
 }
 
@@ -192,8 +192,8 @@ export class RunRecipeRequest extends jspb.Message {
   getName(): string;
   setName(value: string): RunRecipeRequest;
 
-  getSpec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
-  setSpec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): RunRecipeRequest;
+  getSpec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec | undefined;
+  setSpec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec): RunRecipeRequest;
   hasSpec(): boolean;
   clearSpec(): RunRecipeRequest;
 
@@ -209,13 +209,13 @@ export namespace RunRecipeRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    spec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
+    spec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeSpec.AsObject,
   }
 }
 
 export class RunRecipeResponse extends jspb.Message {
-  getRecipe(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setRecipe(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): RunRecipeResponse;
+  getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): RunRecipeResponse;
   hasRecipe(): boolean;
   clearRecipe(): RunRecipeResponse;
 
@@ -232,14 +232,14 @@ export class RunRecipeResponse extends jspb.Message {
 
 export namespace RunRecipeResponse {
   export type AsObject = {
-    recipe?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     yaml: string,
   }
 }
 
 export class GetRecipeResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): GetRecipeResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): GetRecipeResponse;
   hasItem(): boolean;
   clearItem(): GetRecipeResponse;
 
@@ -256,7 +256,7 @@ export class GetRecipeResponse extends jspb.Message {
 
 export namespace GetRecipeResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     yaml: string,
   }
 }

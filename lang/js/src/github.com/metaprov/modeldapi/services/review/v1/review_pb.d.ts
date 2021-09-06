@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 
 
@@ -32,8 +32,8 @@ export namespace GetReviewRequest {
 }
 
 export class GetReviewResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
   hasItem(): boolean;
   clearItem(): GetReviewResponse;
 
@@ -50,14 +50,14 @@ export class GetReviewResponse extends jspb.Message {
 
 export namespace GetReviewResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
     yaml: string,
   }
 }
 
 export class CreateReviewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review): CreateReviewRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): CreateReviewRequest;
   hasItem(): boolean;
   clearItem(): CreateReviewRequest;
 
@@ -71,7 +71,7 @@ export class CreateReviewRequest extends jspb.Message {
 
 export namespace CreateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
   }
 }
 
@@ -90,8 +90,8 @@ export namespace CreateReviewResponse {
 }
 
 export class UpdateReviewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review): UpdateReviewRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): UpdateReviewRequest;
   hasItem(): boolean;
   clearItem(): UpdateReviewRequest;
 
@@ -105,7 +105,7 @@ export class UpdateReviewRequest extends jspb.Message {
 
 export namespace UpdateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
   }
 }
 
@@ -194,8 +194,8 @@ export namespace ListReviewRequest {
 }
 
 export class ListReviewResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList): ListReviewResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList): ListReviewResponse;
   hasItems(): boolean;
   clearItems(): ListReviewResponse;
 
@@ -212,7 +212,7 @@ export class ListReviewResponse extends jspb.Message {
 
 export namespace ListReviewResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.ReviewList.AsObject,
     nextPageToken: string,
   }
 }

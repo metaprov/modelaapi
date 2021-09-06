@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListModeldSystemsRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListModeldSystemsRequest {
 }
 
 export class ListModeldSystemsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList): ListModeldSystemsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList): ListModeldSystemsResponse;
   hasItems(): boolean;
   clearItems(): ListModeldSystemsResponse;
 
@@ -43,7 +43,7 @@ export class ListModeldSystemsResponse extends jspb.Message {
 
 export namespace ListModeldSystemsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystemList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace ModeldSystemResponse {
 }
 
 export class CreateModeldSystemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): CreateModeldSystemRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): CreateModeldSystemRequest;
   hasItem(): boolean;
   clearItem(): CreateModeldSystemRequest;
 
@@ -80,7 +80,7 @@ export class CreateModeldSystemRequest extends jspb.Message {
 
 export namespace CreateModeldSystemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
     password: string,
   }
 }
@@ -100,8 +100,8 @@ export namespace CreateModeldSystemResponse {
 }
 
 export class UpdateModeldSystemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): UpdateModeldSystemRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): UpdateModeldSystemRequest;
   hasItem(): boolean;
   clearItem(): UpdateModeldSystemRequest;
 
@@ -115,7 +115,7 @@ export class UpdateModeldSystemRequest extends jspb.Message {
 
 export namespace UpdateModeldSystemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
   }
 }
 
@@ -156,8 +156,8 @@ export namespace GetModeldSystemRequest {
 }
 
 export class GetModeldSystemResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): GetModeldSystemResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem): GetModeldSystemResponse;
   hasItem(): boolean;
   clearItem(): GetModeldSystemResponse;
 
@@ -174,7 +174,7 @@ export class GetModeldSystemResponse extends jspb.Message {
 
 export namespace GetModeldSystemResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ModeldSystem.AsObject,
     yaml: string,
   }
 }
@@ -202,10 +202,10 @@ export namespace GetModeldSystemNamespacesRequest {
 }
 
 export class GetModeldSystemNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetModeldSystemNamespacesResponse;
+  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetModeldSystemNamespacesResponse;
   clearNamespacesList(): GetModeldSystemNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetModeldSystemNamespacesResponse.AsObject;
@@ -217,7 +217,7 @@ export class GetModeldSystemNamespacesResponse extends jspb.Message {
 
 export namespace GetModeldSystemNamespacesResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
+    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

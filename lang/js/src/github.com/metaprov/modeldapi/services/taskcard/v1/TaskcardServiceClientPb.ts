@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.taskcard.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.taskcard.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb from '../../../../../../github.com/metaprov/modeldapi/services/taskcard/v1/taskcard_pb';
+import * as github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb from '../../../../../../github.com/metaprov/modelaapi/services/taskcard/v1/taskcard_pb';
 
 
 export class TaskCardServiceClient {
@@ -36,32 +36,32 @@ export class TaskCardServiceClient {
   }
 
   methodInfoListTaskCards = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse,
-    (request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest) => {
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse,
+    (request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse.deserializeBinary
   );
 
   listTaskCards(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse>;
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse>;
 
   listTaskCards(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse>;
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse>;
 
   listTaskCards(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.ListTaskCardsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/ListTaskCards',
+          '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/ListTaskCards',
         request,
         metadata || {},
         this.methodInfoListTaskCards,
@@ -69,39 +69,39 @@ export class TaskCardServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/ListTaskCards',
+      '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/ListTaskCards',
     request,
     metadata || {},
     this.methodInfoListTaskCards);
   }
 
   methodInfoCreateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse,
-    (request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest) => {
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse,
+    (request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse.deserializeBinary
   );
 
   createTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse>;
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse>;
 
   createTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse>;
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse>;
 
   createTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.CreateTaskCardResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/CreateTaskCard',
+          '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/CreateTaskCard',
         request,
         metadata || {},
         this.methodInfoCreateTaskCard,
@@ -109,39 +109,39 @@ export class TaskCardServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/CreateTaskCard',
+      '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/CreateTaskCard',
     request,
     metadata || {},
     this.methodInfoCreateTaskCard);
   }
 
   methodInfoGetTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse,
-    (request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest) => {
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse,
+    (request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse.deserializeBinary
   );
 
   getTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse>;
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse>;
 
   getTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse>;
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse>;
 
   getTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.GetTaskCardResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/GetTaskCard',
+          '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/GetTaskCard',
         request,
         metadata || {},
         this.methodInfoGetTaskCard,
@@ -149,39 +149,39 @@ export class TaskCardServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/GetTaskCard',
+      '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/GetTaskCard',
     request,
     metadata || {},
     this.methodInfoGetTaskCard);
   }
 
   methodInfoUpdateTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse,
-    (request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest) => {
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse,
+    (request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse.deserializeBinary
   );
 
   updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse>;
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse>;
 
   updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse>;
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse>;
 
   updateTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.UpdateTaskCardResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/UpdateTaskCard',
+          '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/UpdateTaskCard',
         request,
         metadata || {},
         this.methodInfoUpdateTaskCard,
@@ -189,39 +189,39 @@ export class TaskCardServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/UpdateTaskCard',
+      '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/UpdateTaskCard',
     request,
     metadata || {},
     this.methodInfoUpdateTaskCard);
   }
 
   methodInfoDeleteTaskCard = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse,
-    (request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest) => {
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse,
+    (request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse.deserializeBinary
   );
 
   deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse>;
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse>;
 
   deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse>;
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse>;
 
   deleteTaskCard(
-    request: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
+    request: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_taskcard_v1_taskcard_pb.DeleteTaskCardResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/DeleteTaskCard',
+          '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/DeleteTaskCard',
         request,
         metadata || {},
         this.methodInfoDeleteTaskCard,
@@ -229,7 +229,7 @@ export class TaskCardServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.taskcard.v1.TaskCardService/DeleteTaskCard',
+      '/github.com.metaprov.modelaapi.services.taskcard.v1.TaskCardService/DeleteTaskCard',
     request,
     metadata || {},
     this.methodInfoDeleteTaskCard);

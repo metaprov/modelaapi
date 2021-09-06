@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.featurehistogram.v1 import featurehistogram_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2
+from github.com.metaprov.modelaapi.services.featurehistogram.v1 import featurehistogram_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2
 
 
 class FeatureHistogramServiceStub(object):
@@ -15,29 +15,29 @@ class FeatureHistogramServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListFeatureHistograms = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.FromString,
                 )
         self.CreateFeatureHistogram = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.FromString,
                 )
         self.GetFeatureHistogram = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.FromString,
                 )
         self.UpdateFeatureHistogram = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.FromString,
                 )
         self.DeleteFeatureHistogram = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_FeatureHistogramServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListFeatureHistograms': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFeatureHistograms,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.SerializeToString,
             ),
             'CreateFeatureHistogram': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeatureHistogram,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.SerializeToString,
             ),
             'GetFeatureHistogram': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFeatureHistogram,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.SerializeToString,
             ),
             'UpdateFeatureHistogram': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeatureHistogram,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.SerializeToString,
             ),
             'DeleteFeatureHistogram': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeatureHistogram,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class FeatureHistogramService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.ListFeatureHistogramsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class FeatureHistogramService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.CreateFeatureHistogramResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class FeatureHistogramService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.GetFeatureHistogramResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class FeatureHistogramService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.UpdateFeatureHistogramResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class FeatureHistogramService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_featurehistogram_dot_v1_dot_featurehistogram__pb2.DeleteFeatureHistogramResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: studies.training.modeld.io
+  name: studies.training.modela.io
 spec:
-  group: training.modeld.io
+  group: training.modela.io
   names:
     categories:
     - training
-    - modeld
+    - modela
     kind: Study
     listKind: StudyList
     plural: studies
@@ -133,7 +133,7 @@ spec:
                       - tesla-v100
                       - tesla-k80
                       - t4
-                      - raspberry-pi8-modeld-b
+                      - raspberry-pi8-modela-b
                       type: string
                     type: array
                 type: object
@@ -846,7 +846,7 @@ spec:
                     type: integer
                   retainedFor:
                     default: 60
-                    description: RetainFor measure the time in minutes for modeld
+                    description: RetainFor measure the time in minutes for modela
                       trained. Default is 60 min (1 H).
                     format: int32
                     maximum: 2400

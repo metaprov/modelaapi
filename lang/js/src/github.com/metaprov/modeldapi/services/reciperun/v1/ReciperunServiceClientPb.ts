@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.reciperun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.reciperun.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb from '../../../../../../github.com/metaprov/modeldapi/services/reciperun/v1/reciperun_pb';
+import * as github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb from '../../../../../../github.com/metaprov/modelaapi/services/reciperun/v1/reciperun_pb';
 
 
 export class RecipeRunServiceClient {
@@ -36,32 +36,32 @@ export class RecipeRunServiceClient {
   }
 
   methodInfoListRecipeRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse,
-    (request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest) => {
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse,
+    (request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse.deserializeBinary
   );
 
   listRecipeRuns(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse>;
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse>;
 
   listRecipeRuns(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse>;
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse>;
 
   listRecipeRuns(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.ListRecipeRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
+          '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
         request,
         metadata || {},
         this.methodInfoListRecipeRuns,
@@ -69,39 +69,39 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
+      '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/ListRecipeRuns',
     request,
     metadata || {},
     this.methodInfoListRecipeRuns);
   }
 
   methodInfoCreateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest) => {
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse,
+    (request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse.deserializeBinary
   );
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse>;
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse>;
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse>;
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse>;
 
   createRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.CreateRecipeRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
+          '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
         request,
         metadata || {},
         this.methodInfoCreateRecipeRun,
@@ -109,39 +109,39 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
+      '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/CreateRecipeRun',
     request,
     metadata || {},
     this.methodInfoCreateRecipeRun);
   }
 
   methodInfoGetRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest) => {
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse,
+    (request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse.deserializeBinary
   );
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse>;
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse>;
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse>;
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse>;
 
   getRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.GetRecipeRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
+          '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
         request,
         metadata || {},
         this.methodInfoGetRecipeRun,
@@ -149,39 +149,39 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
+      '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/GetRecipeRun',
     request,
     metadata || {},
     this.methodInfoGetRecipeRun);
   }
 
   methodInfoUpdateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest) => {
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse,
+    (request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse.deserializeBinary
   );
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse>;
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse>;
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse>;
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse>;
 
   updateRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.UpdateRecipeRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
+          '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
         request,
         metadata || {},
         this.methodInfoUpdateRecipeRun,
@@ -189,39 +189,39 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
+      '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/UpdateRecipeRun',
     request,
     metadata || {},
     this.methodInfoUpdateRecipeRun);
   }
 
   methodInfoDeleteRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse,
-    (request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest) => {
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse,
+    (request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse.deserializeBinary
   );
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse>;
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse>;
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse>;
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse>;
 
   deleteRecipeRun(
-    request: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
+    request: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_reciperun_v1_reciperun_pb.DeleteRecipeRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
+          '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
         request,
         metadata || {},
         this.methodInfoDeleteRecipeRun,
@@ -229,7 +229,7 @@ export class RecipeRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
+      '/github.com.metaprov.modelaapi.services.reciperun.v1.RecipeRunService/DeleteRecipeRun',
     request,
     metadata || {},
     this.methodInfoDeleteRecipeRun);

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/batchpredictord/v1/batchpredictord.proto
+// source: github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto
 
 package v1
 
@@ -10,8 +10,8 @@ import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -50,7 +50,7 @@ type BatchPredictRequest struct {
 func (x *BatchPredictRequest) Reset() {
 	*x = BatchPredictRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -63,7 +63,7 @@ func (x *BatchPredictRequest) String() string {
 func (*BatchPredictRequest) ProtoMessage() {}
 
 func (x *BatchPredictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -76,7 +76,7 @@ func (x *BatchPredictRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BatchPredictRequest.ProtoReflect.Descriptor instead.
 func (*BatchPredictRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *BatchPredictRequest) GetPrediction() *v1alpha1.Prediction {
@@ -137,7 +137,7 @@ type BatchPredictResponse struct {
 func (x *BatchPredictResponse) Reset() {
 	*x = BatchPredictResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -150,7 +150,7 @@ func (x *BatchPredictResponse) String() string {
 func (*BatchPredictResponse) ProtoMessage() {}
 
 func (x *BatchPredictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -163,12 +163,12 @@ func (x *BatchPredictResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BatchPredictResponse.ProtoReflect.Descriptor instead.
 func (*BatchPredictResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP(), []int{1}
 }
 
-var File_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc = []byte{
 	0x0a, 0x4f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x62, 0x61, 0x74, 0x63, 0x68, 0x70, 0x72,
@@ -271,40 +271,40 @@ var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredicto
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData = file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData = file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_goTypes = []interface{}{
-	(*BatchPredictRequest)(nil),     // 0: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest
-	(*BatchPredictResponse)(nil),    // 1: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictResponse
-	nil,                             // 2: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
-	nil,                             // 3: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
-	(*v1alpha1.Prediction)(nil),     // 4: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction
-	(*v1alpha11.VirtualBucket)(nil), // 5: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha11.Connection)(nil),    // 6: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_goTypes = []interface{}{
+	(*BatchPredictRequest)(nil),     // 0: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest
+	(*BatchPredictResponse)(nil),    // 1: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse
+	nil,                             // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
+	nil,                             // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
+	(*v1alpha1.Prediction)(nil),     // 4: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
+	(*v1alpha11.VirtualBucket)(nil), // 5: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha11.Connection)(nil),    // 6: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 	(*empty.Empty)(nil),             // 7: google.protobuf.Empty
 }
-var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs = []int32{
-	4, // 0: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.prediction:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction
-	5, // 1: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.fromBucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	6, // 2: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.fromConnection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	2, // 3: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.fromSecret:type_name -> github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
-	5, // 4: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.targetBucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	6, // 5: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.toConnection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	3, // 6: github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.toSecret:type_name -> github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
-	0, // 7: github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch.BatchPredict:input_type -> github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictRequest
-	7, // 8: github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch.Shutdown:input_type -> google.protobuf.Empty
-	1, // 9: github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch.BatchPredict:output_type -> github.com.metaprov.modeldapi.services.batchpredictord.v1.BatchPredictResponse
-	7, // 10: github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch.Shutdown:output_type -> google.protobuf.Empty
+var file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs = []int32{
+	4, // 0: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.prediction:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction
+	5, // 1: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	6, // 2: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	2, // 3: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.fromSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.FromSecretEntry
+	5, // 4: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.targetBucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	6, // 5: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	3, // 6: github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.toSecret:type_name -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest.ToSecretEntry
+	0, // 7: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.BatchPredict:input_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictRequest
+	7, // 8: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:input_type -> google.protobuf.Empty
+	1, // 9: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.BatchPredict:output_type -> github.com.metaprov.modelaapi.services.batchpredictord.v1.BatchPredictResponse
+	7, // 10: github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch.Shutdown:output_type -> google.protobuf.Empty
 	9, // [9:11] is the sub-list for method output_type
 	7, // [7:9] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name
@@ -313,14 +313,14 @@ var file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredicto
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_init()
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto != nil {
+func file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BatchPredictRequest); i {
 			case 0:
 				return &v.state
@@ -332,7 +332,7 @@ func file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredict
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BatchPredictResponse); i {
 			case 0:
 				return &v.state
@@ -349,20 +349,20 @@ func file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredict
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto = out.File
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto = out.File
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -393,7 +393,7 @@ func NewBatchClient(cc grpc.ClientConnInterface) BatchClient {
 
 func (c *batchClient) BatchPredict(ctx context.Context, in *BatchPredictRequest, opts ...grpc.CallOption) (*BatchPredictResponse, error) {
 	out := new(BatchPredictResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch/BatchPredict", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredict", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -402,7 +402,7 @@ func (c *batchClient) BatchPredict(ctx context.Context, in *BatchPredictRequest,
 
 func (c *batchClient) Shutdown(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -442,7 +442,7 @@ func _Batch_BatchPredict_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch/BatchPredict",
+		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredict",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BatchServer).BatchPredict(ctx, req.(*BatchPredictRequest))
@@ -460,7 +460,7 @@ func _Batch_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch/Shutdown",
+		FullMethod: "/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(BatchServer).Shutdown(ctx, req.(*empty.Empty))
@@ -469,7 +469,7 @@ func _Batch_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(inte
 }
 
 var _Batch_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.batchpredictord.v1.Batch",
+	ServiceName: "github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch",
 	HandlerType: (*BatchServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -482,5 +482,5 @@ var _Batch_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/batchpredictord/v1/batchpredictord.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto",
 }

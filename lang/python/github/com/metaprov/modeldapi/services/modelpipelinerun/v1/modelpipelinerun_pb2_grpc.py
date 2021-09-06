@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.modelpipelinerun.v1 import modelpipelinerun_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2
+from github.com.metaprov.modelaapi.services.modelpipelinerun.v1 import modelpipelinerun_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2
 
 
 class ModelPipelineRunServiceStub(object):
@@ -15,54 +15,54 @@ class ModelPipelineRunServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListModelPipelineRuns = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ListModelPipelineRuns',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ListModelPipelineRuns',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.FromString,
                 )
         self.CreateModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/CreateModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/CreateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.FromString,
                 )
         self.GetModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/GetModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/GetModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.FromString,
                 )
         self.UpdateModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/UpdateModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/UpdateModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.FromString,
                 )
         self.DeleteModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DeleteModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/DeleteModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.FromString,
                 )
         self.ApproveModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.FromString,
                 )
         self.DenyModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
                 )
         self.AbortModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
                 )
         self.PauseModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.FromString,
                 )
         self.ResumeModelPipelineRun = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipelineRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.FromString,
                 )
 
 
@@ -134,57 +134,57 @@ def add_ModelPipelineRunServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListModelPipelineRuns': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelPipelineRuns,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.SerializeToString,
             ),
             'CreateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.SerializeToString,
             ),
             'GetModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.SerializeToString,
             ),
             'UpdateModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.SerializeToString,
             ),
             'DeleteModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.SerializeToString,
             ),
             'ApproveModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.ApproveModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.SerializeToString,
             ),
             'DenyModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.DenyModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.SerializeToString,
             ),
             'AbortModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.AbortModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.SerializeToString,
             ),
             'PauseModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.SerializeToString,
             ),
             'ResumeModelPipelineRun': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeModelPipelineRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -203,9 +203,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ListModelPipelineRuns',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ListModelPipelineRuns',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ListModelPipelineRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -220,9 +220,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/CreateModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/CreateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.CreateModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -237,9 +237,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/GetModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/GetModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.GetModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -254,9 +254,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/UpdateModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/UpdateModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.UpdateModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -271,9 +271,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DeleteModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/DeleteModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DeleteModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -288,9 +288,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ApproveModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ApproveModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -305,9 +305,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/DenyModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.DenyModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -322,9 +322,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/AbortModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.AbortModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -339,9 +339,9 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/PauseModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.PauseModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -356,8 +356,8 @@ class ModelPipelineRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipelineRun',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ModelPipelineRunService/ResumeModelPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelpipelinerun_dot_v1_dot_modelpipelinerun__pb2.ResumeModelPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

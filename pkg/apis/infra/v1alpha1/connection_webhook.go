@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
@@ -25,7 +25,7 @@ var _ webhook.Defaulter = &Connection{}
 func (connection *Connection) Default() {
 	if connection.Spec.TenantRef == nil {
 		connection.Spec.TenantRef = &corev1.ObjectReference{
-			Namespace: "modeld-system",
+			Namespace: "modela-system",
 			Name:      "default-tenant",
 		}
 	}
@@ -322,7 +322,7 @@ func (connection *Connection) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modeld.io", Kind: "StorageConnection"},
+		schema.GroupKind{Group: "infra.modela.io", Kind: "StorageConnection"},
 		connection.Name, allErrs)
 }
 

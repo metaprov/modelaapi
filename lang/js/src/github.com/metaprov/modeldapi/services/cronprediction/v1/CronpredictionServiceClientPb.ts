@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.cronprediction.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.cronprediction.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb from '../../../../../../github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction_pb';
+import * as github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb from '../../../../../../github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction_pb';
 
 
 export class CronPredictionServiceClient {
@@ -36,32 +36,32 @@ export class CronPredictionServiceClient {
   }
 
   methodInfoListCronPredictions = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse.deserializeBinary
   );
 
   listCronPredictions(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse>;
 
   listCronPredictions(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse>;
 
   listCronPredictions(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions',
         request,
         metadata || {},
         this.methodInfoListCronPredictions,
@@ -69,39 +69,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions',
     request,
     metadata || {},
     this.methodInfoListCronPredictions);
   }
 
   methodInfoCreateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse.deserializeBinary
   );
 
   createCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse>;
 
   createCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse>;
 
   createCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction',
         request,
         metadata || {},
         this.methodInfoCreateCronPrediction,
@@ -109,39 +109,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction',
     request,
     metadata || {},
     this.methodInfoCreateCronPrediction);
   }
 
   methodInfoGetCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse.deserializeBinary
   );
 
   getCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse>;
 
   getCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse>;
 
   getCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction',
         request,
         metadata || {},
         this.methodInfoGetCronPrediction,
@@ -149,39 +149,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction',
     request,
     metadata || {},
     this.methodInfoGetCronPrediction);
   }
 
   methodInfoUpdateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse.deserializeBinary
   );
 
   updateCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse>;
 
   updateCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse>;
 
   updateCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction',
         request,
         metadata || {},
         this.methodInfoUpdateCronPrediction,
@@ -189,39 +189,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction',
     request,
     metadata || {},
     this.methodInfoUpdateCronPrediction);
   }
 
   methodInfoDeleteCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse.deserializeBinary
   );
 
   deleteCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse>;
 
   deleteCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse>;
 
   deleteCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
         request,
         metadata || {},
         this.methodInfoDeleteCronPrediction,
@@ -229,39 +229,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
     request,
     metadata || {},
     this.methodInfoDeleteCronPrediction);
   }
 
   methodInfoPauseCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse.deserializeBinary
   );
 
   pauseCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
 
   pauseCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
 
   pauseCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
         request,
         metadata || {},
         this.methodInfoPauseCronPrediction,
@@ -269,39 +269,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
     request,
     metadata || {},
     this.methodInfoPauseCronPrediction);
   }
 
   methodInfoResumeCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse.deserializeBinary
   );
 
   resumeCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
 
   resumeCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
 
   resumeCronPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
         request,
         metadata || {},
         this.methodInfoResumeCronPrediction,
@@ -309,39 +309,39 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
     request,
     metadata || {},
     this.methodInfoResumeCronPrediction);
   }
 
   methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse,
-    (request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest) => {
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse,
+    (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse.deserializeBinary
   );
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
 
   runPrediction(
-    request: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
+    request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
+          '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
         request,
         metadata || {},
         this.methodInfoRunPrediction,
@@ -349,7 +349,7 @@ export class CronPredictionServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
+      '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
     request,
     metadata || {},
     this.methodInfoRunPrediction);

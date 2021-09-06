@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/feature/v1/feature.proto
+// source: github.com/metaprov/modelaapi/services/feature/v1/feature.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListFeaturesRequest struct {
 func (x *ListFeaturesRequest) Reset() {
 	*x = ListFeaturesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListFeaturesRequest) String() string {
 func (*ListFeaturesRequest) ProtoMessage() {}
 
 func (x *ListFeaturesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListFeaturesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturesRequest.ProtoReflect.Descriptor instead.
 func (*ListFeaturesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListFeaturesRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListFeaturesResponse struct {
 func (x *ListFeaturesResponse) Reset() {
 	*x = ListFeaturesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListFeaturesResponse) String() string {
 func (*ListFeaturesResponse) ProtoMessage() {}
 
 func (x *ListFeaturesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListFeaturesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturesResponse.ProtoReflect.Descriptor instead.
 func (*ListFeaturesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListFeaturesResponse) GetItems() *v1alpha1.FeatureList {
@@ -144,7 +144,7 @@ type CreateFeatureRequest struct {
 func (x *CreateFeatureRequest) Reset() {
 	*x = CreateFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateFeatureRequest) String() string {
 func (*CreateFeatureRequest) ProtoMessage() {}
 
 func (x *CreateFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureRequest.ProtoReflect.Descriptor instead.
 func (*CreateFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateFeatureRequest) GetItem() *v1alpha1.Feature {
@@ -189,7 +189,7 @@ type CreateFeatureResponse struct {
 func (x *CreateFeatureResponse) Reset() {
 	*x = CreateFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateFeatureResponse) String() string {
 func (*CreateFeatureResponse) ProtoMessage() {}
 
 func (x *CreateFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureResponse.ProtoReflect.Descriptor instead.
 func (*CreateFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateFeatureRequest struct {
@@ -229,7 +229,7 @@ type UpdateFeatureRequest struct {
 func (x *UpdateFeatureRequest) Reset() {
 	*x = UpdateFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateFeatureRequest) String() string {
 func (*UpdateFeatureRequest) ProtoMessage() {}
 
 func (x *UpdateFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateFeatureRequest) GetItem() *v1alpha1.Feature {
@@ -274,7 +274,7 @@ type UpdateFeatureResponse struct {
 func (x *UpdateFeatureResponse) Reset() {
 	*x = UpdateFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateFeatureResponse) String() string {
 func (*UpdateFeatureResponse) ProtoMessage() {}
 
 func (x *UpdateFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{5}
 }
 
 type GetFeatureRequest struct {
@@ -315,7 +315,7 @@ type GetFeatureRequest struct {
 func (x *GetFeatureRequest) Reset() {
 	*x = GetFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetFeatureRequest) String() string {
 func (*GetFeatureRequest) ProtoMessage() {}
 
 func (x *GetFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureRequest.ProtoReflect.Descriptor instead.
 func (*GetFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetFeatureRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetFeatureResponse struct {
 func (x *GetFeatureResponse) Reset() {
 	*x = GetFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetFeatureResponse) String() string {
 func (*GetFeatureResponse) ProtoMessage() {}
 
 func (x *GetFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureResponse.ProtoReflect.Descriptor instead.
 func (*GetFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetFeatureResponse) GetItem() *v1alpha1.Feature {
@@ -425,7 +425,7 @@ type DeleteFeatureRequest struct {
 func (x *DeleteFeatureRequest) Reset() {
 	*x = DeleteFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteFeatureRequest) String() string {
 func (*DeleteFeatureRequest) ProtoMessage() {}
 
 func (x *DeleteFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteFeatureRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteFeatureResponse struct {
 func (x *DeleteFeatureResponse) Reset() {
 	*x = DeleteFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteFeatureResponse) String() string {
 func (*DeleteFeatureResponse) ProtoMessage() {}
 
 func (x *DeleteFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureResponse.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_feature_v1_feature_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_feature_v1_feature_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
@@ -646,49 +646,49 @@ var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescData = file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescData = file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_goTypes = []interface{}{
-	(*ListFeaturesRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesRequest
-	(*ListFeaturesResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesResponse
-	(*CreateFeatureRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.feature.v1.CreateFeatureRequest
-	(*CreateFeatureResponse)(nil), // 3: github.com.metaprov.modeldapi.services.feature.v1.CreateFeatureResponse
-	(*UpdateFeatureRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.feature.v1.UpdateFeatureRequest
-	(*UpdateFeatureResponse)(nil), // 5: github.com.metaprov.modeldapi.services.feature.v1.UpdateFeatureResponse
-	(*GetFeatureRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.feature.v1.GetFeatureRequest
-	(*GetFeatureResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.feature.v1.GetFeatureResponse
-	(*DeleteFeatureRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.feature.v1.DeleteFeatureRequest
-	(*DeleteFeatureResponse)(nil), // 9: github.com.metaprov.modeldapi.services.feature.v1.DeleteFeatureResponse
-	nil,                           // 10: github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesRequest.LabelsEntry
-	(*v1alpha1.FeatureList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	(*v1alpha1.Feature)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
+var file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_goTypes = []interface{}{
+	(*ListFeaturesRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest
+	(*ListFeaturesResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesResponse
+	(*CreateFeatureRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureRequest
+	(*CreateFeatureResponse)(nil), // 3: github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureResponse
+	(*UpdateFeatureRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest
+	(*UpdateFeatureResponse)(nil), // 5: github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureResponse
+	(*GetFeatureRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.feature.v1.GetFeatureRequest
+	(*GetFeatureResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse
+	(*DeleteFeatureRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureRequest
+	(*DeleteFeatureResponse)(nil), // 9: github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureResponse
+	nil,                           // 10: github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest.LabelsEntry
+	(*v1alpha1.FeatureList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList
+	(*v1alpha1.Feature)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
 }
-var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	12, // 2: github.com.metaprov.modeldapi.services.feature.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	12, // 3: github.com.metaprov.modeldapi.services.feature.v1.UpdateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	12, // 4: github.com.metaprov.modeldapi.services.feature.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	0,  // 5: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.ListFeatures:input_type -> github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.CreateFeature:input_type -> github.com.metaprov.modeldapi.services.feature.v1.CreateFeatureRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.GetFeature:input_type -> github.com.metaprov.modeldapi.services.feature.v1.GetFeatureRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.UpdateFeature:input_type -> github.com.metaprov.modeldapi.services.feature.v1.UpdateFeatureRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.DeleteFeature:input_type -> github.com.metaprov.modeldapi.services.feature.v1.DeleteFeatureRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.ListFeatures:output_type -> github.com.metaprov.modeldapi.services.feature.v1.ListFeaturesResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.CreateFeature:output_type -> github.com.metaprov.modeldapi.services.feature.v1.CreateFeatureResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.GetFeature:output_type -> github.com.metaprov.modeldapi.services.feature.v1.GetFeatureResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.UpdateFeature:output_type -> github.com.metaprov.modeldapi.services.feature.v1.UpdateFeatureResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.feature.v1.FeatureService.DeleteFeature:output_type -> github.com.metaprov.modeldapi.services.feature.v1.DeleteFeatureResponse
+var file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList
+	12, // 2: github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	12, // 3: github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	12, // 4: github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	0,  // 5: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.ListFeatures:input_type -> github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.CreateFeature:input_type -> github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.GetFeature:input_type -> github.com.metaprov.modelaapi.services.feature.v1.GetFeatureRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.UpdateFeature:input_type -> github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.DeleteFeature:input_type -> github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.ListFeatures:output_type -> github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.CreateFeature:output_type -> github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.GetFeature:output_type -> github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.UpdateFeature:output_type -> github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.feature.v1.FeatureService.DeleteFeature:output_type -> github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -696,13 +696,13 @@ var file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_depIdxs
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init() }
-func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_feature_v1_feature_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_init() }
+func file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_feature_v1_feature_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturesRequest); i {
 			case 0:
 				return &v.state
@@ -714,7 +714,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturesResponse); i {
 			case 0:
 				return &v.state
@@ -726,7 +726,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -738,7 +738,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -750,7 +750,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -762,7 +762,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -774,7 +774,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -786,7 +786,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -798,7 +798,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -810,7 +810,7 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -827,20 +827,20 @@ func file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_feature_v1_feature_proto = out.File
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_feature_v1_feature_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_feature_v1_feature_proto = out.File
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_feature_v1_feature_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -872,7 +872,7 @@ func NewFeatureServiceClient(cc grpc.ClientConnInterface) FeatureServiceClient {
 
 func (c *featureServiceClient) ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error) {
 	out := new(ListFeaturesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/ListFeatures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -881,7 +881,7 @@ func (c *featureServiceClient) ListFeatures(ctx context.Context, in *ListFeature
 
 func (c *featureServiceClient) CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
 	out := new(CreateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/CreateFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -890,7 +890,7 @@ func (c *featureServiceClient) CreateFeature(ctx context.Context, in *CreateFeat
 
 func (c *featureServiceClient) GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error) {
 	out := new(GetFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/GetFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -899,7 +899,7 @@ func (c *featureServiceClient) GetFeature(ctx context.Context, in *GetFeatureReq
 
 func (c *featureServiceClient) UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error) {
 	out := new(UpdateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/UpdateFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -908,7 +908,7 @@ func (c *featureServiceClient) UpdateFeature(ctx context.Context, in *UpdateFeat
 
 func (c *featureServiceClient) DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error) {
 	out := new(DeleteFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/DeleteFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -958,7 +958,7 @@ func _FeatureService_ListFeatures_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/ListFeatures",
+		FullMethod: "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/ListFeatures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureServiceServer).ListFeatures(ctx, req.(*ListFeaturesRequest))
@@ -976,7 +976,7 @@ func _FeatureService_CreateFeature_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/CreateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/CreateFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureServiceServer).CreateFeature(ctx, req.(*CreateFeatureRequest))
@@ -994,7 +994,7 @@ func _FeatureService_GetFeature_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/GetFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/GetFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureServiceServer).GetFeature(ctx, req.(*GetFeatureRequest))
@@ -1012,7 +1012,7 @@ func _FeatureService_UpdateFeature_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/UpdateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/UpdateFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureServiceServer).UpdateFeature(ctx, req.(*UpdateFeatureRequest))
@@ -1030,7 +1030,7 @@ func _FeatureService_DeleteFeature_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.feature.v1.FeatureService/DeleteFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/DeleteFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureServiceServer).DeleteFeature(ctx, req.(*DeleteFeatureRequest))
@@ -1039,7 +1039,7 @@ func _FeatureService_DeleteFeature_Handler(srv interface{}, ctx context.Context,
 }
 
 var _FeatureService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.feature.v1.FeatureService",
+	ServiceName: "github.com.metaprov.modelaapi.services.feature.v1.FeatureService",
 	HandlerType: (*FeatureServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1064,5 +1064,5 @@ var _FeatureService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/feature/v1/feature.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/feature/v1/feature.proto",
 }

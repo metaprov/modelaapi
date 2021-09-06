@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -40,7 +40,7 @@ func (notifier *VirtualVolume) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modeld.io", Kind: "VirtualVolume"},
+		schema.GroupKind{Group: "infra.modela.io", Kind: "VirtualVolume"},
 		notifier.Name, allErrs)
 }
 

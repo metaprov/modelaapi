@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListVirtualClustersRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListVirtualClustersRequest {
 }
 
 export class ListVirtualClustersResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList): ListVirtualClustersResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList): ListVirtualClustersResponse;
   hasItems(): boolean;
   clearItems(): ListVirtualClustersResponse;
 
@@ -43,7 +43,7 @@ export class ListVirtualClustersResponse extends jspb.Message {
 
 export namespace ListVirtualClustersResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace VirtualClusterResponse {
 }
 
 export class CreateVirtualClusterRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): CreateVirtualClusterRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): CreateVirtualClusterRequest;
   hasItem(): boolean;
   clearItem(): CreateVirtualClusterRequest;
 
@@ -77,7 +77,7 @@ export class CreateVirtualClusterRequest extends jspb.Message {
 
 export namespace CreateVirtualClusterRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
   }
 }
 
@@ -96,8 +96,8 @@ export namespace CreateVirtualClusterResponse {
 }
 
 export class UpdateVirtualClusterRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): UpdateVirtualClusterRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): UpdateVirtualClusterRequest;
   hasItem(): boolean;
   clearItem(): UpdateVirtualClusterRequest;
 
@@ -111,7 +111,7 @@ export class UpdateVirtualClusterRequest extends jspb.Message {
 
 export namespace UpdateVirtualClusterRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
   }
 }
 
@@ -152,8 +152,8 @@ export namespace GetVirtualClusterRequest {
 }
 
 export class GetVirtualClusterResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): GetVirtualClusterResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): GetVirtualClusterResponse;
   hasItem(): boolean;
   clearItem(): GetVirtualClusterResponse;
 
@@ -170,7 +170,7 @@ export class GetVirtualClusterResponse extends jspb.Message {
 
 export namespace GetVirtualClusterResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
     yaml: string,
   }
 }

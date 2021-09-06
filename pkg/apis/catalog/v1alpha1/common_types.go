@@ -1205,7 +1205,7 @@ const (
 	Denied             ConditionReason = "Denied"
 )
 
-// +kubebuilder:validation:Enum="amd-epyc-2";"arma-53";"arma-72";"intel-cascade-lake";"intel-broadwell";"intel-skylake";"tesla-v100";"tesla-k80";"t4";"raspberry-pi8-modeld-b";
+// +kubebuilder:validation:Enum="amd-epyc-2";"arma-53";"arma-72";"intel-cascade-lake";"intel-broadwell";"intel-skylake";"tesla-v100";"tesla-k80";"t4";"raspberry-pi8-modela-b";
 type HardwareTarget string
 
 const (
@@ -1218,7 +1218,7 @@ const (
 	HardwareTargetTeslaV100          HardwareTarget = "tesla-v100"
 	HardwareTargetTeslaK80           HardwareTarget = "tesla-k80"
 	HardwareTargetT4                 HardwareTarget = "t4"
-	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modeld-b"
+	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modela-b"
 )
 
 // +kubebuilder:validation:Enum="tvm";"onyx";"xla";"none"

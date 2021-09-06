@@ -36,7 +36,7 @@ type ModeldSystemCondition struct {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=modeldsystems,singular=modeldsystem,categories={infra,modeld}
+// +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
 type ModeldSystem struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

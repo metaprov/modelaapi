@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.datasource.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.datasource.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb from '../../../../../../github.com/metaprov/modeldapi/services/datasource/v1/datasource_pb';
+import * as github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb from '../../../../../../github.com/metaprov/modelaapi/services/datasource/v1/datasource_pb';
 
 
 export class DataSourceServiceClient {
@@ -36,32 +36,32 @@ export class DataSourceServiceClient {
   }
 
   methodInfoListDataSources = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse.deserializeBinary
   );
 
   listDataSources(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse>;
 
   listDataSources(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse>;
 
   listDataSources(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.ListDataSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.ListDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources',
         request,
         metadata || {},
         this.methodInfoListDataSources,
@@ -69,39 +69,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources',
     request,
     metadata || {},
     this.methodInfoListDataSources);
   }
 
   methodInfoCreateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse.deserializeBinary
   );
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse>;
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse>;
 
   createDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.CreateDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource',
         request,
         metadata || {},
         this.methodInfoCreateDataSource,
@@ -109,39 +109,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource',
     request,
     metadata || {},
     this.methodInfoCreateDataSource);
   }
 
   methodInfoGetDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse.deserializeBinary
   );
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse>;
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse>;
 
   getDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetDataSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource',
         request,
         metadata || {},
         this.methodInfoGetDataSource,
@@ -149,39 +149,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource',
     request,
     metadata || {},
     this.methodInfoGetDataSource);
   }
 
   methodInfoUpdateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse.deserializeBinary
   );
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse>;
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse>;
 
   updateDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.UpdateDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource',
         request,
         metadata || {},
         this.methodInfoUpdateDataSource,
@@ -189,39 +189,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource',
     request,
     metadata || {},
     this.methodInfoUpdateDataSource);
   }
 
   methodInfoDeleteDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse.deserializeBinary
   );
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse>;
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse>;
 
   deleteDataSource(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.DeleteDataSourceResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource',
         request,
         metadata || {},
         this.methodInfoDeleteDataSource,
@@ -229,39 +229,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource',
     request,
     metadata || {},
     this.methodInfoDeleteDataSource);
   }
 
   methodInfoInferSchema = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse.deserializeBinary
   );
 
   inferSchema(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse>;
 
   inferSchema(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse>;
 
   inferSchema(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.InferSchemaResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.InferSchemaResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema',
         request,
         metadata || {},
         this.methodInfoInferSchema,
@@ -269,39 +269,39 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema',
     request,
     metadata || {},
     this.methodInfoInferSchema);
   }
 
   methodInfoGetTableView = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse,
-    (request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewRequest) => {
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse,
+    (request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse.deserializeBinary
   );
 
   getTableView(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse>;
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse>;
 
   getTableView(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse>;
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse>;
 
   getTableView(
-    request: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
+    request: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_datasource_v1_datasource_pb.GetTableViewResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_datasource_v1_datasource_pb.GetTableViewResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
+          '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView',
         request,
         metadata || {},
         this.methodInfoGetTableView,
@@ -309,7 +309,7 @@ export class DataSourceServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView',
+      '/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView',
     request,
     metadata || {},
     this.methodInfoGetTableView);

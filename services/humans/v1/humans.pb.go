@@ -9,7 +9,7 @@ package v1
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -302,20 +302,20 @@ func file_services_humans_v1_humans_proto_rawDescGZIP() []byte {
 
 var file_services_humans_v1_humans_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_services_humans_v1_humans_proto_goTypes = []interface{}{
-	(*LabelCreateRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.humans.v1.LabelCreateRequest
-	(*LabelCreateResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.humans.v1.LabelCreateResponse
-	(*NotificationRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.humans.v1.NotificationRequest
-	(*NotificationResponse)(nil), // 3: github.com.metaprov.modeldapi.services.humans.v1.NotificationResponse
-	(*v1alpha1.Account)(nil),     // 4: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	(*v1alpha1.Notifier)(nil),    // 5: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
+	(*LabelCreateRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.humans.v1.LabelCreateRequest
+	(*LabelCreateResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.humans.v1.LabelCreateResponse
+	(*NotificationRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.humans.v1.NotificationRequest
+	(*NotificationResponse)(nil), // 3: github.com.metaprov.modelaapi.services.humans.v1.NotificationResponse
+	(*v1alpha1.Account)(nil),     // 4: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	(*v1alpha1.Notifier)(nil),    // 5: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
 }
 var file_services_humans_v1_humans_proto_depIdxs = []int32{
-	4, // 0: github.com.metaprov.modeldapi.services.humans.v1.LabelCreateRequest.account:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account
-	5, // 1: github.com.metaprov.modeldapi.services.humans.v1.NotificationRequest.notifiers:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier
-	0, // 2: github.com.metaprov.modeldapi.services.humans.v1.HumansService.Label:input_type -> github.com.metaprov.modeldapi.services.humans.v1.LabelCreateRequest
-	2, // 3: github.com.metaprov.modeldapi.services.humans.v1.HumansService.Notify:input_type -> github.com.metaprov.modeldapi.services.humans.v1.NotificationRequest
-	1, // 4: github.com.metaprov.modeldapi.services.humans.v1.HumansService.Label:output_type -> github.com.metaprov.modeldapi.services.humans.v1.LabelCreateResponse
-	3, // 5: github.com.metaprov.modeldapi.services.humans.v1.HumansService.Notify:output_type -> github.com.metaprov.modeldapi.services.humans.v1.NotificationResponse
+	4, // 0: github.com.metaprov.modelaapi.services.humans.v1.LabelCreateRequest.account:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account
+	5, // 1: github.com.metaprov.modelaapi.services.humans.v1.NotificationRequest.notifiers:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier
+	0, // 2: github.com.metaprov.modelaapi.services.humans.v1.HumansService.Label:input_type -> github.com.metaprov.modelaapi.services.humans.v1.LabelCreateRequest
+	2, // 3: github.com.metaprov.modelaapi.services.humans.v1.HumansService.Notify:input_type -> github.com.metaprov.modelaapi.services.humans.v1.NotificationRequest
+	1, // 4: github.com.metaprov.modelaapi.services.humans.v1.HumansService.Label:output_type -> github.com.metaprov.modelaapi.services.humans.v1.LabelCreateResponse
+	3, // 5: github.com.metaprov.modelaapi.services.humans.v1.HumansService.Notify:output_type -> github.com.metaprov.modelaapi.services.humans.v1.NotificationResponse
 	4, // [4:6] is the sub-list for method output_type
 	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -424,7 +424,7 @@ func NewHumansServiceClient(cc grpc.ClientConnInterface) HumansServiceClient {
 
 func (c *humansServiceClient) Label(ctx context.Context, in *LabelCreateRequest, opts ...grpc.CallOption) (*LabelCreateResponse, error) {
 	out := new(LabelCreateResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.humans.v1.HumansService/Label", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.humans.v1.HumansService/Label", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -433,7 +433,7 @@ func (c *humansServiceClient) Label(ctx context.Context, in *LabelCreateRequest,
 
 func (c *humansServiceClient) Notify(ctx context.Context, in *NotificationRequest, opts ...grpc.CallOption) (*NotificationResponse, error) {
 	out := new(NotificationResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.humans.v1.HumansService/Notify", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.humans.v1.HumansService/Notify", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -471,7 +471,7 @@ func _HumansService_Label_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.humans.v1.HumansService/Label",
+		FullMethod: "/github.com.metaprov.modelaapi.services.humans.v1.HumansService/Label",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(HumansServiceServer).Label(ctx, req.(*LabelCreateRequest))
@@ -489,7 +489,7 @@ func _HumansService_Notify_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.humans.v1.HumansService/Notify",
+		FullMethod: "/github.com.metaprov.modelaapi.services.humans.v1.HumansService/Notify",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(HumansServiceServer).Notify(ctx, req.(*NotificationRequest))
@@ -498,7 +498,7 @@ func _HumansService_Notify_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _HumansService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.humans.v1.HumansService",
+	ServiceName: "github.com.metaprov.modelaapi.services.humans.v1.HumansService",
 	HandlerType: (*HumansServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

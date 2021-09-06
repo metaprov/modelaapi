@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto
+// source: github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListCronPredictionsRequest struct {
 func (x *ListCronPredictionsRequest) Reset() {
 	*x = ListCronPredictionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListCronPredictionsRequest) String() string {
 func (*ListCronPredictionsRequest) ProtoMessage() {}
 
 func (x *ListCronPredictionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListCronPredictionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCronPredictionsRequest.ProtoReflect.Descriptor instead.
 func (*ListCronPredictionsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListCronPredictionsRequest) GetNamespace() string {
@@ -105,7 +105,7 @@ type ListCronPredictionsResponse struct {
 func (x *ListCronPredictionsResponse) Reset() {
 	*x = ListCronPredictionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -118,7 +118,7 @@ func (x *ListCronPredictionsResponse) String() string {
 func (*ListCronPredictionsResponse) ProtoMessage() {}
 
 func (x *ListCronPredictionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +131,7 @@ func (x *ListCronPredictionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCronPredictionsResponse.ProtoReflect.Descriptor instead.
 func (*ListCronPredictionsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListCronPredictionsResponse) GetItems() *v1alpha1.CronPredictionList {
@@ -150,7 +150,7 @@ type CreateCronPredictionResponse struct {
 func (x *CreateCronPredictionResponse) Reset() {
 	*x = CreateCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -163,7 +163,7 @@ func (x *CreateCronPredictionResponse) String() string {
 func (*CreateCronPredictionResponse) ProtoMessage() {}
 
 func (x *CreateCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -176,7 +176,7 @@ func (x *CreateCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*CreateCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateCronPredictionRequest struct {
@@ -190,7 +190,7 @@ type CreateCronPredictionRequest struct {
 func (x *CreateCronPredictionRequest) Reset() {
 	*x = CreateCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -203,7 +203,7 @@ func (x *CreateCronPredictionRequest) String() string {
 func (*CreateCronPredictionRequest) ProtoMessage() {}
 
 func (x *CreateCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *CreateCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*CreateCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateCronPredictionRequest) GetItem() *v1alpha1.CronPrediction {
@@ -237,7 +237,7 @@ type UpdateCronPredictionRequest struct {
 func (x *UpdateCronPredictionRequest) Reset() {
 	*x = UpdateCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -250,7 +250,7 @@ func (x *UpdateCronPredictionRequest) String() string {
 func (*UpdateCronPredictionRequest) ProtoMessage() {}
 
 func (x *UpdateCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -263,7 +263,7 @@ func (x *UpdateCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateCronPredictionRequest) GetItem() *v1alpha1.CronPrediction {
@@ -282,7 +282,7 @@ type UpdateCronPredictionResponse struct {
 func (x *UpdateCronPredictionResponse) Reset() {
 	*x = UpdateCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -295,7 +295,7 @@ func (x *UpdateCronPredictionResponse) String() string {
 func (*UpdateCronPredictionResponse) ProtoMessage() {}
 
 func (x *UpdateCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *UpdateCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{5}
 }
 
 type GetCronPredictionRequest struct {
@@ -323,7 +323,7 @@ type GetCronPredictionRequest struct {
 func (x *GetCronPredictionRequest) Reset() {
 	*x = GetCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -336,7 +336,7 @@ func (x *GetCronPredictionRequest) String() string {
 func (*GetCronPredictionRequest) ProtoMessage() {}
 
 func (x *GetCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -349,7 +349,7 @@ func (x *GetCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*GetCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetCronPredictionRequest) GetNamespace() string {
@@ -378,7 +378,7 @@ type GetCronPredictionResponse struct {
 func (x *GetCronPredictionResponse) Reset() {
 	*x = GetCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +391,7 @@ func (x *GetCronPredictionResponse) String() string {
 func (*GetCronPredictionResponse) ProtoMessage() {}
 
 func (x *GetCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *GetCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*GetCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetCronPredictionResponse) GetItem() *v1alpha1.CronPrediction {
@@ -433,7 +433,7 @@ type DeleteCronPredictionRequest struct {
 func (x *DeleteCronPredictionRequest) Reset() {
 	*x = DeleteCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *DeleteCronPredictionRequest) String() string {
 func (*DeleteCronPredictionRequest) ProtoMessage() {}
 
 func (x *DeleteCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *DeleteCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteCronPredictionRequest) GetNamespace() string {
@@ -485,7 +485,7 @@ type DeleteCronPredictionResponse struct {
 func (x *DeleteCronPredictionResponse) Reset() {
 	*x = DeleteCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -498,7 +498,7 @@ func (x *DeleteCronPredictionResponse) String() string {
 func (*DeleteCronPredictionResponse) ProtoMessage() {}
 
 func (x *DeleteCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +511,7 @@ func (x *DeleteCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*DeleteCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{9}
 }
 
 type PauseCronPredictionRequest struct {
@@ -526,7 +526,7 @@ type PauseCronPredictionRequest struct {
 func (x *PauseCronPredictionRequest) Reset() {
 	*x = PauseCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *PauseCronPredictionRequest) String() string {
 func (*PauseCronPredictionRequest) ProtoMessage() {}
 
 func (x *PauseCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *PauseCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*PauseCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *PauseCronPredictionRequest) GetNamespace() string {
@@ -578,7 +578,7 @@ type PauseCronPredictionResponse struct {
 func (x *PauseCronPredictionResponse) Reset() {
 	*x = PauseCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +591,7 @@ func (x *PauseCronPredictionResponse) String() string {
 func (*PauseCronPredictionResponse) ProtoMessage() {}
 
 func (x *PauseCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +604,7 @@ func (x *PauseCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*PauseCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{11}
 }
 
 type ResumeCronPredictionRequest struct {
@@ -619,7 +619,7 @@ type ResumeCronPredictionRequest struct {
 func (x *ResumeCronPredictionRequest) Reset() {
 	*x = ResumeCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -632,7 +632,7 @@ func (x *ResumeCronPredictionRequest) String() string {
 func (*ResumeCronPredictionRequest) ProtoMessage() {}
 
 func (x *ResumeCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -645,7 +645,7 @@ func (x *ResumeCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*ResumeCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ResumeCronPredictionRequest) GetNamespace() string {
@@ -671,7 +671,7 @@ type ResumeCronPredictionResponse struct {
 func (x *ResumeCronPredictionResponse) Reset() {
 	*x = ResumeCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -684,7 +684,7 @@ func (x *ResumeCronPredictionResponse) String() string {
 func (*ResumeCronPredictionResponse) ProtoMessage() {}
 
 func (x *ResumeCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -697,7 +697,7 @@ func (x *ResumeCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*ResumeCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{13}
 }
 
 type RunCronPredictionRequest struct {
@@ -711,7 +711,7 @@ type RunCronPredictionRequest struct {
 func (x *RunCronPredictionRequest) Reset() {
 	*x = RunCronPredictionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -724,7 +724,7 @@ func (x *RunCronPredictionRequest) String() string {
 func (*RunCronPredictionRequest) ProtoMessage() {}
 
 func (x *RunCronPredictionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -737,7 +737,7 @@ func (x *RunCronPredictionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronPredictionRequest.ProtoReflect.Descriptor instead.
 func (*RunCronPredictionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RunCronPredictionRequest) GetItem() *v1alpha1.CronPrediction {
@@ -756,7 +756,7 @@ type RunCronPredictionResponse struct {
 func (x *RunCronPredictionResponse) Reset() {
 	*x = RunCronPredictionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -769,7 +769,7 @@ func (x *RunCronPredictionResponse) String() string {
 func (*RunCronPredictionResponse) ProtoMessage() {}
 
 func (x *RunCronPredictionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -782,12 +782,12 @@ func (x *RunCronPredictionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronPredictionResponse.ProtoReflect.Descriptor instead.
 func (*RunCronPredictionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP(), []int{15}
 }
 
-var File_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDesc = []byte{
 	0x0a, 0x4d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x70, 0x72, 0x65,
@@ -1020,62 +1020,62 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescData = file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescData = file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
-var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_goTypes = []interface{}{
-	(*ListCronPredictionsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest
-	(*ListCronPredictionsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse
-	(*CreateCronPredictionResponse)(nil), // 2: github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionResponse
-	(*CreateCronPredictionRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest
-	(*UpdateCronPredictionRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest
-	(*UpdateCronPredictionResponse)(nil), // 5: github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionResponse
-	(*GetCronPredictionRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionRequest
-	(*GetCronPredictionResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse
-	(*DeleteCronPredictionRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionRequest
-	(*DeleteCronPredictionResponse)(nil), // 9: github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionResponse
-	(*PauseCronPredictionRequest)(nil),   // 10: github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionRequest
-	(*PauseCronPredictionResponse)(nil),  // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionResponse
-	(*ResumeCronPredictionRequest)(nil),  // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionRequest
-	(*ResumeCronPredictionResponse)(nil), // 13: github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionResponse
-	(*RunCronPredictionRequest)(nil),     // 14: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
-	(*RunCronPredictionResponse)(nil),    // 15: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
-	nil,                                  // 16: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
-	(*v1alpha1.CronPredictionList)(nil),  // 17: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
-	(*v1alpha1.CronPrediction)(nil),      // 18: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
+var file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_goTypes = []interface{}{
+	(*ListCronPredictionsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest
+	(*ListCronPredictionsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse
+	(*CreateCronPredictionResponse)(nil), // 2: github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionResponse
+	(*CreateCronPredictionRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest
+	(*UpdateCronPredictionRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest
+	(*UpdateCronPredictionResponse)(nil), // 5: github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionResponse
+	(*GetCronPredictionRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest
+	(*GetCronPredictionResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse
+	(*DeleteCronPredictionRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest
+	(*DeleteCronPredictionResponse)(nil), // 9: github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionResponse
+	(*PauseCronPredictionRequest)(nil),   // 10: github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest
+	(*PauseCronPredictionResponse)(nil),  // 11: github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionResponse
+	(*ResumeCronPredictionRequest)(nil),  // 12: github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest
+	(*ResumeCronPredictionResponse)(nil), // 13: github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionResponse
+	(*RunCronPredictionRequest)(nil),     // 14: github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest
+	(*RunCronPredictionResponse)(nil),    // 15: github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionResponse
+	nil,                                  // 16: github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
+	(*v1alpha1.CronPredictionList)(nil),  // 17: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	(*v1alpha1.CronPrediction)(nil),      // 18: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction
 }
-var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_depIdxs = []int32{
-	16, // 0: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
-	17, // 1: github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList
-	18, // 2: github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	18, // 3: github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	18, // 4: github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	18, // 5: github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction
-	0,  // 6: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionRequest
-	6,  // 8: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionRequest
-	4,  // 9: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionRequest
-	8,  // 10: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionRequest
-	10, // 11: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionRequest
-	12, // 12: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionRequest
-	14, // 13: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:input_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionRequest
-	1,  // 14: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ListCronPredictionsResponse
-	2,  // 15: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.CreateCronPredictionResponse
-	7,  // 16: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.GetCronPredictionResponse
-	5,  // 17: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.UpdateCronPredictionResponse
-	9,  // 18: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.DeleteCronPredictionResponse
-	11, // 19: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.PauseCronPredictionResponse
-	13, // 20: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.ResumeCronPredictionResponse
-	15, // 21: github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService.RunPrediction:output_type -> github.com.metaprov.modeldapi.services.cronprediction.v1.RunCronPredictionResponse
+var file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_depIdxs = []int32{
+	16, // 0: github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest.LabelsEntry
+	17, // 1: github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList
+	18, // 2: github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 3: github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 4: github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction
+	18, // 5: github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction
+	0,  // 6: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionRequest
+	6,  // 8: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionRequest
+	4,  // 9: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest
+	8,  // 10: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionRequest
+	10, // 11: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionRequest
+	12, // 12: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionRequest
+	14, // 13: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.RunPrediction:input_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionRequest
+	1,  // 14: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ListCronPredictions:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.ListCronPredictionsResponse
+	2,  // 15: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.CreateCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.CreateCronPredictionResponse
+	7,  // 16: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.GetCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.GetCronPredictionResponse
+	5,  // 17: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.UpdateCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionResponse
+	9,  // 18: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.DeleteCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.DeleteCronPredictionResponse
+	11, // 19: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.PauseCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.PauseCronPredictionResponse
+	13, // 20: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.ResumeCronPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.ResumeCronPredictionResponse
+	15, // 21: github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService.RunPrediction:output_type -> github.com.metaprov.modelaapi.services.cronprediction.v1.RunCronPredictionResponse
 	14, // [14:22] is the sub-list for method output_type
 	6,  // [6:14] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1084,14 +1084,14 @@ var file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_init()
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto != nil {
+func file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCronPredictionsRequest); i {
 			case 0:
 				return &v.state
@@ -1103,7 +1103,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCronPredictionsResponse); i {
 			case 0:
 				return &v.state
@@ -1115,7 +1115,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1127,7 +1127,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1139,7 +1139,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1151,7 +1151,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1163,7 +1163,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1175,7 +1175,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1187,7 +1187,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1199,7 +1199,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1211,7 +1211,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1223,7 +1223,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1235,7 +1235,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1247,7 +1247,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1259,7 +1259,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronPredictionRequest); i {
 			case 0:
 				return &v.state
@@ -1271,7 +1271,7 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronPredictionResponse); i {
 			case 0:
 				return &v.state
@@ -1288,20 +1288,20 @@ func file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronpredictio
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto = out.File
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_cronprediction_v1_cronprediction_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto = out.File
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1336,7 +1336,7 @@ func NewCronPredictionServiceClient(cc grpc.ClientConnInterface) CronPredictionS
 
 func (c *cronPredictionServiceClient) ListCronPredictions(ctx context.Context, in *ListCronPredictionsRequest, opts ...grpc.CallOption) (*ListCronPredictionsResponse, error) {
 	out := new(ListCronPredictionsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1345,7 +1345,7 @@ func (c *cronPredictionServiceClient) ListCronPredictions(ctx context.Context, i
 
 func (c *cronPredictionServiceClient) CreateCronPrediction(ctx context.Context, in *CreateCronPredictionRequest, opts ...grpc.CallOption) (*CreateCronPredictionResponse, error) {
 	out := new(CreateCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1354,7 +1354,7 @@ func (c *cronPredictionServiceClient) CreateCronPrediction(ctx context.Context, 
 
 func (c *cronPredictionServiceClient) GetCronPrediction(ctx context.Context, in *GetCronPredictionRequest, opts ...grpc.CallOption) (*GetCronPredictionResponse, error) {
 	out := new(GetCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1363,7 +1363,7 @@ func (c *cronPredictionServiceClient) GetCronPrediction(ctx context.Context, in 
 
 func (c *cronPredictionServiceClient) UpdateCronPrediction(ctx context.Context, in *UpdateCronPredictionRequest, opts ...grpc.CallOption) (*UpdateCronPredictionResponse, error) {
 	out := new(UpdateCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1372,7 +1372,7 @@ func (c *cronPredictionServiceClient) UpdateCronPrediction(ctx context.Context, 
 
 func (c *cronPredictionServiceClient) DeleteCronPrediction(ctx context.Context, in *DeleteCronPredictionRequest, opts ...grpc.CallOption) (*DeleteCronPredictionResponse, error) {
 	out := new(DeleteCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1381,7 +1381,7 @@ func (c *cronPredictionServiceClient) DeleteCronPrediction(ctx context.Context, 
 
 func (c *cronPredictionServiceClient) PauseCronPrediction(ctx context.Context, in *PauseCronPredictionRequest, opts ...grpc.CallOption) (*PauseCronPredictionResponse, error) {
 	out := new(PauseCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1390,7 +1390,7 @@ func (c *cronPredictionServiceClient) PauseCronPrediction(ctx context.Context, i
 
 func (c *cronPredictionServiceClient) ResumeCronPrediction(ctx context.Context, in *ResumeCronPredictionRequest, opts ...grpc.CallOption) (*ResumeCronPredictionResponse, error) {
 	out := new(ResumeCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1399,7 +1399,7 @@ func (c *cronPredictionServiceClient) ResumeCronPrediction(ctx context.Context, 
 
 func (c *cronPredictionServiceClient) RunPrediction(ctx context.Context, in *RunCronPredictionRequest, opts ...grpc.CallOption) (*RunCronPredictionResponse, error) {
 	out := new(RunCronPredictionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/RunPrediction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1461,7 +1461,7 @@ func _CronPredictionService_ListCronPredictions_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).ListCronPredictions(ctx, req.(*ListCronPredictionsRequest))
@@ -1479,7 +1479,7 @@ func _CronPredictionService_CreateCronPrediction_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).CreateCronPrediction(ctx, req.(*CreateCronPredictionRequest))
@@ -1497,7 +1497,7 @@ func _CronPredictionService_GetCronPrediction_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).GetCronPrediction(ctx, req.(*GetCronPredictionRequest))
@@ -1515,7 +1515,7 @@ func _CronPredictionService_UpdateCronPrediction_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).UpdateCronPrediction(ctx, req.(*UpdateCronPredictionRequest))
@@ -1533,7 +1533,7 @@ func _CronPredictionService_DeleteCronPrediction_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).DeleteCronPrediction(ctx, req.(*DeleteCronPredictionRequest))
@@ -1551,7 +1551,7 @@ func _CronPredictionService_PauseCronPrediction_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).PauseCronPrediction(ctx, req.(*PauseCronPredictionRequest))
@@ -1569,7 +1569,7 @@ func _CronPredictionService_ResumeCronPrediction_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).ResumeCronPrediction(ctx, req.(*ResumeCronPredictionRequest))
@@ -1587,7 +1587,7 @@ func _CronPredictionService_RunPrediction_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService/RunPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/RunPrediction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CronPredictionServiceServer).RunPrediction(ctx, req.(*RunCronPredictionRequest))
@@ -1596,7 +1596,7 @@ func _CronPredictionService_RunPrediction_Handler(srv interface{}, ctx context.C
 }
 
 var _CronPredictionService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.cronprediction.v1.CronPredictionService",
+	ServiceName: "github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService",
 	HandlerType: (*CronPredictionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1633,5 +1633,5 @@ var _CronPredictionService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/cronprediction/v1/cronprediction.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/cronprediction/v1/cronprediction.proto",
 }

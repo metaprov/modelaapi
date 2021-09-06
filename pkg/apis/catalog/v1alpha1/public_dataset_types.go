@@ -20,7 +20,7 @@ import (
 // +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
 // +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
-// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modeld,all}
+// +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modela,all}
 type PublicDataset struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

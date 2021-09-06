@@ -1,5 +1,5 @@
 package catalog
 
 const (
-	GroupName = "catalog.modeld.io"
+	GroupName = "catalog.modela.io"
 )

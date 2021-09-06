@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/featurehistogram/v1/featurehistogram.proto
+// source: github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListFeatureHistogramsRequest struct {
 func (x *ListFeatureHistogramsRequest) Reset() {
 	*x = ListFeatureHistogramsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListFeatureHistogramsRequest) String() string {
 func (*ListFeatureHistogramsRequest) ProtoMessage() {}
 
 func (x *ListFeatureHistogramsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListFeatureHistogramsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeatureHistogramsRequest.ProtoReflect.Descriptor instead.
 func (*ListFeatureHistogramsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListFeatureHistogramsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListFeatureHistogramsResponse struct {
 func (x *ListFeatureHistogramsResponse) Reset() {
 	*x = ListFeatureHistogramsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListFeatureHistogramsResponse) String() string {
 func (*ListFeatureHistogramsResponse) ProtoMessage() {}
 
 func (x *ListFeatureHistogramsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListFeatureHistogramsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeatureHistogramsResponse.ProtoReflect.Descriptor instead.
 func (*ListFeatureHistogramsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListFeatureHistogramsResponse) GetItems() *v1alpha1.FeatureHistogramList {
@@ -144,7 +144,7 @@ type CreateFeatureHistogramRequest struct {
 func (x *CreateFeatureHistogramRequest) Reset() {
 	*x = CreateFeatureHistogramRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateFeatureHistogramRequest) String() string {
 func (*CreateFeatureHistogramRequest) ProtoMessage() {}
 
 func (x *CreateFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureHistogramRequest.ProtoReflect.Descriptor instead.
 func (*CreateFeatureHistogramRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateFeatureHistogramRequest) GetItem() *v1alpha1.FeatureHistogram {
@@ -189,7 +189,7 @@ type CreateFeatureHistogramResponse struct {
 func (x *CreateFeatureHistogramResponse) Reset() {
 	*x = CreateFeatureHistogramResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateFeatureHistogramResponse) String() string {
 func (*CreateFeatureHistogramResponse) ProtoMessage() {}
 
 func (x *CreateFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureHistogramResponse.ProtoReflect.Descriptor instead.
 func (*CreateFeatureHistogramResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateFeatureHistogramRequest struct {
@@ -229,7 +229,7 @@ type UpdateFeatureHistogramRequest struct {
 func (x *UpdateFeatureHistogramRequest) Reset() {
 	*x = UpdateFeatureHistogramRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateFeatureHistogramRequest) String() string {
 func (*UpdateFeatureHistogramRequest) ProtoMessage() {}
 
 func (x *UpdateFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureHistogramRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureHistogramRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateFeatureHistogramRequest) GetItem() *v1alpha1.FeatureHistogram {
@@ -274,7 +274,7 @@ type UpdateFeatureHistogramResponse struct {
 func (x *UpdateFeatureHistogramResponse) Reset() {
 	*x = UpdateFeatureHistogramResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateFeatureHistogramResponse) String() string {
 func (*UpdateFeatureHistogramResponse) ProtoMessage() {}
 
 func (x *UpdateFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureHistogramResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureHistogramResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{5}
 }
 
 type GetFeatureHistogramRequest struct {
@@ -315,7 +315,7 @@ type GetFeatureHistogramRequest struct {
 func (x *GetFeatureHistogramRequest) Reset() {
 	*x = GetFeatureHistogramRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetFeatureHistogramRequest) String() string {
 func (*GetFeatureHistogramRequest) ProtoMessage() {}
 
 func (x *GetFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureHistogramRequest.ProtoReflect.Descriptor instead.
 func (*GetFeatureHistogramRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetFeatureHistogramRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetFeatureHistogramResponse struct {
 func (x *GetFeatureHistogramResponse) Reset() {
 	*x = GetFeatureHistogramResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetFeatureHistogramResponse) String() string {
 func (*GetFeatureHistogramResponse) ProtoMessage() {}
 
 func (x *GetFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureHistogramResponse.ProtoReflect.Descriptor instead.
 func (*GetFeatureHistogramResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetFeatureHistogramResponse) GetItem() *v1alpha1.FeatureHistogram {
@@ -425,7 +425,7 @@ type DeleteFeatureHistogramRequest struct {
 func (x *DeleteFeatureHistogramRequest) Reset() {
 	*x = DeleteFeatureHistogramRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteFeatureHistogramRequest) String() string {
 func (*DeleteFeatureHistogramRequest) ProtoMessage() {}
 
 func (x *DeleteFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteFeatureHistogramRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureHistogramRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureHistogramRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteFeatureHistogramRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteFeatureHistogramResponse struct {
 func (x *DeleteFeatureHistogramResponse) Reset() {
 	*x = DeleteFeatureHistogramResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteFeatureHistogramResponse) String() string {
 func (*DeleteFeatureHistogramResponse) ProtoMessage() {}
 
 func (x *DeleteFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteFeatureHistogramResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureHistogramResponse.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureHistogramResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc = []byte{
 	0x0a, 0x51, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
@@ -674,49 +674,49 @@ var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehisto
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData = file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData = file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_goTypes = []interface{}{
-	(*ListFeatureHistogramsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsRequest
-	(*ListFeatureHistogramsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsResponse
-	(*CreateFeatureHistogramRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.featurehistogram.v1.CreateFeatureHistogramRequest
-	(*CreateFeatureHistogramResponse)(nil), // 3: github.com.metaprov.modeldapi.services.featurehistogram.v1.CreateFeatureHistogramResponse
-	(*UpdateFeatureHistogramRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest
-	(*UpdateFeatureHistogramResponse)(nil), // 5: github.com.metaprov.modeldapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse
-	(*GetFeatureHistogramRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.featurehistogram.v1.GetFeatureHistogramRequest
-	(*GetFeatureHistogramResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.featurehistogram.v1.GetFeatureHistogramResponse
-	(*DeleteFeatureHistogramRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest
-	(*DeleteFeatureHistogramResponse)(nil), // 9: github.com.metaprov.modeldapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse
-	nil,                                    // 10: github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry
-	(*v1alpha1.FeatureHistogramList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramList
-	(*v1alpha1.FeatureHistogram)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram
+var file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_goTypes = []interface{}{
+	(*ListFeatureHistogramsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest
+	(*ListFeatureHistogramsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse
+	(*CreateFeatureHistogramRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest
+	(*CreateFeatureHistogramResponse)(nil), // 3: github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse
+	(*UpdateFeatureHistogramRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest
+	(*UpdateFeatureHistogramResponse)(nil), // 5: github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse
+	(*GetFeatureHistogramRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest
+	(*GetFeatureHistogramResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse
+	(*DeleteFeatureHistogramRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest
+	(*DeleteFeatureHistogramResponse)(nil), // 9: github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse
+	nil,                                    // 10: github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry
+	(*v1alpha1.FeatureHistogramList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList
+	(*v1alpha1.FeatureHistogram)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram
 }
-var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramList
-	12, // 2: github.com.metaprov.modeldapi.services.featurehistogram.v1.CreateFeatureHistogramRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram
-	12, // 3: github.com.metaprov.modeldapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram
-	12, // 4: github.com.metaprov.modeldapi.services.featurehistogram.v1.GetFeatureHistogramResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram
-	0,  // 5: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.ListFeatureHistograms:input_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.CreateFeatureHistogram:input_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.CreateFeatureHistogramRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.GetFeatureHistogram:input_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.GetFeatureHistogramRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.UpdateFeatureHistogram:input_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.DeleteFeatureHistogram:input_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.ListFeatureHistograms:output_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.ListFeatureHistogramsResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.CreateFeatureHistogram:output_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.CreateFeatureHistogramResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.GetFeatureHistogram:output_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.GetFeatureHistogramResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.UpdateFeatureHistogram:output_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService.DeleteFeatureHistogram:output_type -> github.com.metaprov.modeldapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse
+var file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList
+	12, // 2: github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram
+	12, // 3: github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram
+	12, // 4: github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram
+	0,  // 5: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.ListFeatureHistograms:input_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.CreateFeatureHistogram:input_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.GetFeatureHistogram:input_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.UpdateFeatureHistogram:input_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.DeleteFeatureHistogram:input_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.ListFeatureHistograms:output_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.CreateFeatureHistogram:output_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.GetFeatureHistogram:output_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.UpdateFeatureHistogram:output_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService.DeleteFeatureHistogram:output_type -> github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -725,14 +725,14 @@ var file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehisto
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_init()
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto != nil {
+func file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeatureHistogramsRequest); i {
 			case 0:
 				return &v.state
@@ -744,7 +744,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeatureHistogramsResponse); i {
 			case 0:
 				return &v.state
@@ -756,7 +756,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureHistogramRequest); i {
 			case 0:
 				return &v.state
@@ -768,7 +768,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureHistogramResponse); i {
 			case 0:
 				return &v.state
@@ -780,7 +780,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureHistogramRequest); i {
 			case 0:
 				return &v.state
@@ -792,7 +792,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureHistogramResponse); i {
 			case 0:
 				return &v.state
@@ -804,7 +804,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureHistogramRequest); i {
 			case 0:
 				return &v.state
@@ -816,7 +816,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureHistogramResponse); i {
 			case 0:
 				return &v.state
@@ -828,7 +828,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureHistogramRequest); i {
 			case 0:
 				return &v.state
@@ -840,7 +840,7 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureHistogramResponse); i {
 			case 0:
 				return &v.state
@@ -857,20 +857,20 @@ func file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehist
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto = out.File
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto = out.File
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -902,7 +902,7 @@ func NewFeatureHistogramServiceClient(cc grpc.ClientConnInterface) FeatureHistog
 
 func (c *featureHistogramServiceClient) ListFeatureHistograms(ctx context.Context, in *ListFeatureHistogramsRequest, opts ...grpc.CallOption) (*ListFeatureHistogramsResponse, error) {
 	out := new(ListFeatureHistogramsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -911,7 +911,7 @@ func (c *featureHistogramServiceClient) ListFeatureHistograms(ctx context.Contex
 
 func (c *featureHistogramServiceClient) CreateFeatureHistogram(ctx context.Context, in *CreateFeatureHistogramRequest, opts ...grpc.CallOption) (*CreateFeatureHistogramResponse, error) {
 	out := new(CreateFeatureHistogramResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -920,7 +920,7 @@ func (c *featureHistogramServiceClient) CreateFeatureHistogram(ctx context.Conte
 
 func (c *featureHistogramServiceClient) GetFeatureHistogram(ctx context.Context, in *GetFeatureHistogramRequest, opts ...grpc.CallOption) (*GetFeatureHistogramResponse, error) {
 	out := new(GetFeatureHistogramResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -929,7 +929,7 @@ func (c *featureHistogramServiceClient) GetFeatureHistogram(ctx context.Context,
 
 func (c *featureHistogramServiceClient) UpdateFeatureHistogram(ctx context.Context, in *UpdateFeatureHistogramRequest, opts ...grpc.CallOption) (*UpdateFeatureHistogramResponse, error) {
 	out := new(UpdateFeatureHistogramResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -938,7 +938,7 @@ func (c *featureHistogramServiceClient) UpdateFeatureHistogram(ctx context.Conte
 
 func (c *featureHistogramServiceClient) DeleteFeatureHistogram(ctx context.Context, in *DeleteFeatureHistogramRequest, opts ...grpc.CallOption) (*DeleteFeatureHistogramResponse, error) {
 	out := new(DeleteFeatureHistogramResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -988,7 +988,7 @@ func _FeatureHistogramService_ListFeatureHistograms_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureHistogramServiceServer).ListFeatureHistograms(ctx, req.(*ListFeatureHistogramsRequest))
@@ -1006,7 +1006,7 @@ func _FeatureHistogramService_CreateFeatureHistogram_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureHistogramServiceServer).CreateFeatureHistogram(ctx, req.(*CreateFeatureHistogramRequest))
@@ -1024,7 +1024,7 @@ func _FeatureHistogramService_GetFeatureHistogram_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureHistogramServiceServer).GetFeatureHistogram(ctx, req.(*GetFeatureHistogramRequest))
@@ -1042,7 +1042,7 @@ func _FeatureHistogramService_UpdateFeatureHistogram_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureHistogramServiceServer).UpdateFeatureHistogram(ctx, req.(*UpdateFeatureHistogramRequest))
@@ -1060,7 +1060,7 @@ func _FeatureHistogramService_DeleteFeatureHistogram_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeatureHistogramServiceServer).DeleteFeatureHistogram(ctx, req.(*DeleteFeatureHistogramRequest))
@@ -1069,7 +1069,7 @@ func _FeatureHistogramService_DeleteFeatureHistogram_Handler(srv interface{}, ct
 }
 
 var _FeatureHistogramService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.featurehistogram.v1.FeatureHistogramService",
+	ServiceName: "github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService",
 	HandlerType: (*FeatureHistogramServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1094,5 +1094,5 @@ var _FeatureHistogramService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/featurehistogram/v1/featurehistogram.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto",
 }

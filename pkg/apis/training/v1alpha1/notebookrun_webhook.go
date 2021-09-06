@@ -54,7 +54,7 @@ func (run *NotebookRun) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "NotebookRun"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "NotebookRun"},
 		run.Name, allErrs)
 }
 

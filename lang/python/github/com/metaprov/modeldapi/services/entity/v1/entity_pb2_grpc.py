@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.entity.v1 import entity_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2
+from github.com.metaprov.modelaapi.services.entity.v1 import entity_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2
 
 
 class EntityServiceStub(object):
@@ -15,29 +15,29 @@ class EntityServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListEntities = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/ListEntities',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.FromString,
                 )
         self.CreateEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/CreateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.FromString,
                 )
         self.GetEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/GetEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.FromString,
                 )
         self.UpdateEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/UpdateEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.FromString,
                 )
         self.DeleteEntity = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/DeleteEntity',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_EntityServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListEntities': grpc.unary_unary_rpc_method_handler(
                     servicer.ListEntities,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.SerializeToString,
             ),
             'CreateEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.SerializeToString,
             ),
             'GetEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.SerializeToString,
             ),
             'UpdateEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.SerializeToString,
             ),
             'DeleteEntity': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteEntity,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.entity.v1.EntityService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.entity.v1.EntityService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class EntityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/ListEntities',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.ListEntitiesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class EntityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/CreateEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.CreateEntityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class EntityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/GetEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.GetEntityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class EntityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/UpdateEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.UpdateEntityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class EntityService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/DeleteEntity',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_entity_dot_v1_dot_entity__pb2.DeleteEntityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

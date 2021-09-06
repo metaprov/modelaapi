@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: notifiers.infra.modeld.io
+  name: notifiers.infra.modela.io
 spec:
-  group: infra.modeld.io
+  group: infra.modela.io
   names:
     categories:
     - infra
-    - modeld
+    - modela
     kind: Notifier
     listKind: NotifierList
     plural: notifiers

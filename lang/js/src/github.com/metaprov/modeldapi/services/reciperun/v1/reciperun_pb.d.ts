@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListRecipeRunsRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListRecipeRunsRequest {
 }
 
 export class ListRecipeRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList): ListRecipeRunsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList): ListRecipeRunsResponse;
   hasItems(): boolean;
   clearItems(): ListRecipeRunsResponse;
 
@@ -42,13 +42,13 @@ export class ListRecipeRunsResponse extends jspb.Message {
 
 export namespace ListRecipeRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.AsObject,
   }
 }
 
 export class CreateRecipeRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): CreateRecipeRunRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): CreateRecipeRunRequest;
   hasItem(): boolean;
   clearItem(): CreateRecipeRunRequest;
 
@@ -62,7 +62,7 @@ export class CreateRecipeRunRequest extends jspb.Message {
 
 export namespace CreateRecipeRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateRecipeRunResponse {
 }
 
 export class UpdateRecipeRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): UpdateRecipeRunRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): UpdateRecipeRunRequest;
   hasItem(): boolean;
   clearItem(): UpdateRecipeRunRequest;
 
@@ -96,7 +96,7 @@ export class UpdateRecipeRunRequest extends jspb.Message {
 
 export namespace UpdateRecipeRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetRecipeRunRequest {
 }
 
 export class GetRecipeRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): GetRecipeRunResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun): GetRecipeRunResponse;
   hasItem(): boolean;
   clearItem(): GetRecipeRunResponse;
 
@@ -155,7 +155,7 @@ export class GetRecipeRunResponse extends jspb.Message {
 
 export namespace GetRecipeRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun.AsObject,
     yaml: string,
   }
 }

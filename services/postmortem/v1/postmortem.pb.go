@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto
+// source: github.com/metaprov/modelaapi/services/postmortem/v1/postmortem.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListPostMortemsRequest struct {
 func (x *ListPostMortemsRequest) Reset() {
 	*x = ListPostMortemsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListPostMortemsRequest) String() string {
 func (*ListPostMortemsRequest) ProtoMessage() {}
 
 func (x *ListPostMortemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListPostMortemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPostMortemsRequest.ProtoReflect.Descriptor instead.
 func (*ListPostMortemsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListPostMortemsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListPostMortemsResponse struct {
 func (x *ListPostMortemsResponse) Reset() {
 	*x = ListPostMortemsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListPostMortemsResponse) String() string {
 func (*ListPostMortemsResponse) ProtoMessage() {}
 
 func (x *ListPostMortemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListPostMortemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPostMortemsResponse.ProtoReflect.Descriptor instead.
 func (*ListPostMortemsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListPostMortemsResponse) GetItems() *v1alpha1.PostMortemList {
@@ -144,7 +144,7 @@ type CreatePostMortemRequest struct {
 func (x *CreatePostMortemRequest) Reset() {
 	*x = CreatePostMortemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreatePostMortemRequest) String() string {
 func (*CreatePostMortemRequest) ProtoMessage() {}
 
 func (x *CreatePostMortemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreatePostMortemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostMortemRequest.ProtoReflect.Descriptor instead.
 func (*CreatePostMortemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreatePostMortemRequest) GetItem() *v1alpha1.PostMortem {
@@ -189,7 +189,7 @@ type CreatePostMortemResponse struct {
 func (x *CreatePostMortemResponse) Reset() {
 	*x = CreatePostMortemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreatePostMortemResponse) String() string {
 func (*CreatePostMortemResponse) ProtoMessage() {}
 
 func (x *CreatePostMortemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreatePostMortemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostMortemResponse.ProtoReflect.Descriptor instead.
 func (*CreatePostMortemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdatePostMortemRequest struct {
@@ -229,7 +229,7 @@ type UpdatePostMortemRequest struct {
 func (x *UpdatePostMortemRequest) Reset() {
 	*x = UpdatePostMortemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdatePostMortemRequest) String() string {
 func (*UpdatePostMortemRequest) ProtoMessage() {}
 
 func (x *UpdatePostMortemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdatePostMortemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostMortemRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePostMortemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdatePostMortemRequest) GetItem() *v1alpha1.PostMortem {
@@ -274,7 +274,7 @@ type UpdatePostMortemResponse struct {
 func (x *UpdatePostMortemResponse) Reset() {
 	*x = UpdatePostMortemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdatePostMortemResponse) String() string {
 func (*UpdatePostMortemResponse) ProtoMessage() {}
 
 func (x *UpdatePostMortemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdatePostMortemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostMortemResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePostMortemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{5}
 }
 
 type GetPostMortemRequest struct {
@@ -315,7 +315,7 @@ type GetPostMortemRequest struct {
 func (x *GetPostMortemRequest) Reset() {
 	*x = GetPostMortemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetPostMortemRequest) String() string {
 func (*GetPostMortemRequest) ProtoMessage() {}
 
 func (x *GetPostMortemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetPostMortemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostMortemRequest.ProtoReflect.Descriptor instead.
 func (*GetPostMortemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetPostMortemRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetPostMortemResponse struct {
 func (x *GetPostMortemResponse) Reset() {
 	*x = GetPostMortemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetPostMortemResponse) String() string {
 func (*GetPostMortemResponse) ProtoMessage() {}
 
 func (x *GetPostMortemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetPostMortemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostMortemResponse.ProtoReflect.Descriptor instead.
 func (*GetPostMortemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetPostMortemResponse) GetItem() *v1alpha1.PostMortem {
@@ -425,7 +425,7 @@ type DeletePostMortemRequest struct {
 func (x *DeletePostMortemRequest) Reset() {
 	*x = DeletePostMortemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeletePostMortemRequest) String() string {
 func (*DeletePostMortemRequest) ProtoMessage() {}
 
 func (x *DeletePostMortemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeletePostMortemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostMortemRequest.ProtoReflect.Descriptor instead.
 func (*DeletePostMortemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeletePostMortemRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeletePostMortemResponse struct {
 func (x *DeletePostMortemResponse) Reset() {
 	*x = DeletePostMortemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeletePostMortemResponse) String() string {
 func (*DeletePostMortemResponse) ProtoMessage() {}
 
 func (x *DeletePostMortemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeletePostMortemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostMortemResponse.ProtoReflect.Descriptor instead.
 func (*DeletePostMortemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x6f, 0x73, 0x74, 0x6d, 0x6f, 0x72,
@@ -659,49 +659,49 @@ var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescData = file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescData = file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_goTypes = []interface{}{
-	(*ListPostMortemsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest
-	(*ListPostMortemsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsResponse
-	(*CreatePostMortemRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest
-	(*CreatePostMortemResponse)(nil), // 3: github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemResponse
-	(*UpdatePostMortemRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest
-	(*UpdatePostMortemResponse)(nil), // 5: github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemResponse
-	(*GetPostMortemRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemRequest
-	(*GetPostMortemResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemResponse
-	(*DeletePostMortemRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemRequest
-	(*DeletePostMortemResponse)(nil), // 9: github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemResponse
-	nil,                              // 10: github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry
-	(*v1alpha1.PostMortemList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList
-	(*v1alpha1.PostMortem)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
+var file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_goTypes = []interface{}{
+	(*ListPostMortemsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest
+	(*ListPostMortemsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse
+	(*CreatePostMortemRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest
+	(*CreatePostMortemResponse)(nil), // 3: github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemResponse
+	(*UpdatePostMortemRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest
+	(*UpdatePostMortemResponse)(nil), // 5: github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemResponse
+	(*GetPostMortemRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemRequest
+	(*GetPostMortemResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemResponse
+	(*DeletePostMortemRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemRequest
+	(*DeletePostMortemResponse)(nil), // 9: github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemResponse
+	nil,                              // 10: github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry
+	(*v1alpha1.PostMortemList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList
+	(*v1alpha1.PostMortem)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem
 }
-var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortemList
-	12, // 2: github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
-	12, // 3: github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
-	12, // 4: github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem
-	0,  // 5: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.ListPostMortems:input_type -> github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.CreatePostMortem:input_type -> github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.GetPostMortem:input_type -> github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.UpdatePostMortem:input_type -> github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.DeletePostMortem:input_type -> github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.ListPostMortems:output_type -> github.com.metaprov.modeldapi.services.postmortem.v1.ListPostMortemsResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.CreatePostMortem:output_type -> github.com.metaprov.modeldapi.services.postmortem.v1.CreatePostMortemResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.GetPostMortem:output_type -> github.com.metaprov.modeldapi.services.postmortem.v1.GetPostMortemResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.UpdatePostMortem:output_type -> github.com.metaprov.modeldapi.services.postmortem.v1.UpdatePostMortemResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService.DeletePostMortem:output_type -> github.com.metaprov.modeldapi.services.postmortem.v1.DeletePostMortemResponse
+var file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList
+	12, // 2: github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem
+	12, // 3: github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem
+	12, // 4: github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem
+	0,  // 5: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.ListPostMortems:input_type -> github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.CreatePostMortem:input_type -> github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.GetPostMortem:input_type -> github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.UpdatePostMortem:input_type -> github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.DeletePostMortem:input_type -> github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.ListPostMortems:output_type -> github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.CreatePostMortem:output_type -> github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.GetPostMortem:output_type -> github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.UpdatePostMortem:output_type -> github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService.DeletePostMortem:output_type -> github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -709,13 +709,13 @@ var file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_d
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_init() }
-func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_init() }
+func file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPostMortemsRequest); i {
 			case 0:
 				return &v.state
@@ -727,7 +727,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPostMortemsResponse); i {
 			case 0:
 				return &v.state
@@ -739,7 +739,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePostMortemRequest); i {
 			case 0:
 				return &v.state
@@ -751,7 +751,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePostMortemResponse); i {
 			case 0:
 				return &v.state
@@ -763,7 +763,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdatePostMortemRequest); i {
 			case 0:
 				return &v.state
@@ -775,7 +775,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdatePostMortemResponse); i {
 			case 0:
 				return &v.state
@@ -787,7 +787,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPostMortemRequest); i {
 			case 0:
 				return &v.state
@@ -799,7 +799,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPostMortemResponse); i {
 			case 0:
 				return &v.state
@@ -811,7 +811,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeletePostMortemRequest); i {
 			case 0:
 				return &v.state
@@ -823,7 +823,7 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeletePostMortemResponse); i {
 			case 0:
 				return &v.state
@@ -840,20 +840,20 @@ func file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto = out.File
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_postmortem_v1_postmortem_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto = out.File
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -885,7 +885,7 @@ func NewPostMortemServiceClient(cc grpc.ClientConnInterface) PostMortemServiceCl
 
 func (c *postMortemServiceClient) ListPostMortems(ctx context.Context, in *ListPostMortemsRequest, opts ...grpc.CallOption) (*ListPostMortemsResponse, error) {
 	out := new(ListPostMortemsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/ListPostMortems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/ListPostMortems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -894,7 +894,7 @@ func (c *postMortemServiceClient) ListPostMortems(ctx context.Context, in *ListP
 
 func (c *postMortemServiceClient) CreatePostMortem(ctx context.Context, in *CreatePostMortemRequest, opts ...grpc.CallOption) (*CreatePostMortemResponse, error) {
 	out := new(CreatePostMortemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/CreatePostMortem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/CreatePostMortem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -903,7 +903,7 @@ func (c *postMortemServiceClient) CreatePostMortem(ctx context.Context, in *Crea
 
 func (c *postMortemServiceClient) GetPostMortem(ctx context.Context, in *GetPostMortemRequest, opts ...grpc.CallOption) (*GetPostMortemResponse, error) {
 	out := new(GetPostMortemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/GetPostMortem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/GetPostMortem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -912,7 +912,7 @@ func (c *postMortemServiceClient) GetPostMortem(ctx context.Context, in *GetPost
 
 func (c *postMortemServiceClient) UpdatePostMortem(ctx context.Context, in *UpdatePostMortemRequest, opts ...grpc.CallOption) (*UpdatePostMortemResponse, error) {
 	out := new(UpdatePostMortemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/UpdatePostMortem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/UpdatePostMortem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -921,7 +921,7 @@ func (c *postMortemServiceClient) UpdatePostMortem(ctx context.Context, in *Upda
 
 func (c *postMortemServiceClient) DeletePostMortem(ctx context.Context, in *DeletePostMortemRequest, opts ...grpc.CallOption) (*DeletePostMortemResponse, error) {
 	out := new(DeletePostMortemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/DeletePostMortem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/DeletePostMortem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -971,7 +971,7 @@ func _PostMortemService_ListPostMortems_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/ListPostMortems",
+		FullMethod: "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/ListPostMortems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PostMortemServiceServer).ListPostMortems(ctx, req.(*ListPostMortemsRequest))
@@ -989,7 +989,7 @@ func _PostMortemService_CreatePostMortem_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/CreatePostMortem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/CreatePostMortem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PostMortemServiceServer).CreatePostMortem(ctx, req.(*CreatePostMortemRequest))
@@ -1007,7 +1007,7 @@ func _PostMortemService_GetPostMortem_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/GetPostMortem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/GetPostMortem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PostMortemServiceServer).GetPostMortem(ctx, req.(*GetPostMortemRequest))
@@ -1025,7 +1025,7 @@ func _PostMortemService_UpdatePostMortem_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/UpdatePostMortem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/UpdatePostMortem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PostMortemServiceServer).UpdatePostMortem(ctx, req.(*UpdatePostMortemRequest))
@@ -1043,7 +1043,7 @@ func _PostMortemService_DeletePostMortem_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService/DeletePostMortem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/DeletePostMortem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PostMortemServiceServer).DeletePostMortem(ctx, req.(*DeletePostMortemRequest))
@@ -1052,7 +1052,7 @@ func _PostMortemService_DeletePostMortem_Handler(srv interface{}, ctx context.Co
 }
 
 var _PostMortemService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.postmortem.v1.PostMortemService",
+	ServiceName: "github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService",
 	HandlerType: (*PostMortemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1077,5 +1077,5 @@ var _PostMortemService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/postmortem/v1/postmortem.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/postmortem/v1/postmortem.proto",
 }

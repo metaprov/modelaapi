@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 
 
 export class ListReportsRequest extends jspb.Message {
@@ -31,8 +31,8 @@ export namespace ListReportsRequest {
 }
 
 export class ListReportsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportList): ListReportsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList): ListReportsResponse;
   hasItems(): boolean;
   clearItems(): ListReportsResponse;
 
@@ -46,13 +46,13 @@ export class ListReportsResponse extends jspb.Message {
 
 export namespace ListReportsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ReportList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList.AsObject,
   }
 }
 
 export class CreateReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateReportRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateReportRequest;
   hasItem(): boolean;
   clearItem(): CreateReportRequest;
 
@@ -66,7 +66,7 @@ export class CreateReportRequest extends jspb.Message {
 
 export namespace CreateReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
 
@@ -85,8 +85,8 @@ export namespace CreateReportResponse {
 }
 
 export class UpdateReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): UpdateReportRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): UpdateReportRequest;
   hasItem(): boolean;
   clearItem(): UpdateReportRequest;
 
@@ -100,7 +100,7 @@ export class UpdateReportRequest extends jspb.Message {
 
 export namespace UpdateReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
 
@@ -141,8 +141,8 @@ export namespace GetReportRequest {
 }
 
 export class GetReportResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report): GetReportResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): GetReportResponse;
   hasItem(): boolean;
   clearItem(): GetReportResponse;
 
@@ -159,7 +159,7 @@ export class GetReportResponse extends jspb.Message {
 
 export namespace GetReportResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
     yaml: string,
   }
 }

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.cloudproxyd.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.cloudproxyd.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb from '../../../../../../github.com/metaprov/modeldapi/services/cloudproxyd/v1/cloudproxyd_pb';
+import * as github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb from '../../../../../../github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd_pb';
 
 
 export class CloudProxyServiceClient {
@@ -36,32 +36,32 @@ export class CloudProxyServiceClient {
   }
 
   methodInfoDownload = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse.deserializeBinary
   );
 
   download(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse>;
 
   download(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse>;
 
   download(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Download',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download',
         request,
         metadata || {},
         this.methodInfoDownload,
@@ -69,39 +69,39 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Download',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download',
     request,
     metadata || {},
     this.methodInfoDownload);
   }
 
   methodInfoUpload = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse.deserializeBinary
   );
 
   upload(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse>;
 
   upload(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse>;
 
   upload(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Upload',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload',
         request,
         metadata || {},
         this.methodInfoUpload,
@@ -109,39 +109,39 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Upload',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload',
     request,
     metadata || {},
     this.methodInfoUpload);
   }
 
   methodInfoKeyExistInVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse.deserializeBinary
   );
 
   keyExistInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse>;
 
   keyExistInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse>;
 
   keyExistInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
         request,
         metadata || {},
         this.methodInfoKeyExistInVirtualBucket,
@@ -149,39 +149,39 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
     request,
     metadata || {},
     this.methodInfoKeyExistInVirtualBucket);
   }
 
   methodInfoVirtualBucketExist = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse.deserializeBinary
   );
 
   virtualBucketExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse>;
 
   virtualBucketExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse>;
 
   virtualBucketExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
         request,
         metadata || {},
         this.methodInfoVirtualBucketExist,
@@ -189,39 +189,39 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
     request,
     metadata || {},
     this.methodInfoVirtualBucketExist);
   }
 
   methodInfoCreateVirtualBucketIfNotExist = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse.deserializeBinary
   );
 
   createVirtualBucketIfNotExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse>;
 
   createVirtualBucketIfNotExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse>;
 
   createVirtualBucketIfNotExist(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
         request,
         metadata || {},
         this.methodInfoCreateVirtualBucketIfNotExist,
@@ -229,39 +229,39 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
     request,
     metadata || {},
     this.methodInfoCreateVirtualBucketIfNotExist);
   }
 
   methodInfoShutdown = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse,
-    (request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest) => {
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse,
+    (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse.deserializeBinary
   );
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse>;
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse>;
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
+    request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
+          '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
         request,
         metadata || {},
         this.methodInfoShutdown,
@@ -269,7 +269,7 @@ export class CloudProxyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
+      '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
     request,
     metadata || {},
     this.methodInfoShutdown);

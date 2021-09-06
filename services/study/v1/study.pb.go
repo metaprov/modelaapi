@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/study/v1/study.proto
+// source: github.com/metaprov/modelaapi/services/study/v1/study.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type GetStudyRequest struct {
 func (x *GetStudyRequest) Reset() {
 	*x = GetStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *GetStudyRequest) String() string {
 func (*GetStudyRequest) ProtoMessage() {}
 
 func (x *GetStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *GetStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStudyRequest.ProtoReflect.Descriptor instead.
 func (*GetStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetStudyRequest) GetNamespace() string {
@@ -99,7 +99,7 @@ type GetStudyResponse struct {
 func (x *GetStudyResponse) Reset() {
 	*x = GetStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -112,7 +112,7 @@ func (x *GetStudyResponse) String() string {
 func (*GetStudyResponse) ProtoMessage() {}
 
 func (x *GetStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -125,7 +125,7 @@ func (x *GetStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStudyResponse.ProtoReflect.Descriptor instead.
 func (*GetStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetStudyResponse) GetItem() *v1alpha1.Study {
@@ -154,7 +154,7 @@ type ListStudyRequest struct {
 func (x *ListStudyRequest) Reset() {
 	*x = ListStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -167,7 +167,7 @@ func (x *ListStudyRequest) String() string {
 func (*ListStudyRequest) ProtoMessage() {}
 
 func (x *ListStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -180,7 +180,7 @@ func (x *ListStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStudyRequest.ProtoReflect.Descriptor instead.
 func (*ListStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ListStudyRequest) GetNamespace() string {
@@ -208,7 +208,7 @@ type ListStudyResponse struct {
 func (x *ListStudyResponse) Reset() {
 	*x = ListStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -221,7 +221,7 @@ func (x *ListStudyResponse) String() string {
 func (*ListStudyResponse) ProtoMessage() {}
 
 func (x *ListStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +234,7 @@ func (x *ListStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStudyResponse.ProtoReflect.Descriptor instead.
 func (*ListStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListStudyResponse) GetItems() *v1alpha1.StudyList {
@@ -255,7 +255,7 @@ type CreateStudyRequest struct {
 func (x *CreateStudyRequest) Reset() {
 	*x = CreateStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -268,7 +268,7 @@ func (x *CreateStudyRequest) String() string {
 func (*CreateStudyRequest) ProtoMessage() {}
 
 func (x *CreateStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -281,7 +281,7 @@ func (x *CreateStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStudyRequest.ProtoReflect.Descriptor instead.
 func (*CreateStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateStudyRequest) GetItem() *v1alpha1.Study {
@@ -300,7 +300,7 @@ type CreateStudyResponse struct {
 func (x *CreateStudyResponse) Reset() {
 	*x = CreateStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -313,7 +313,7 @@ func (x *CreateStudyResponse) String() string {
 func (*CreateStudyResponse) ProtoMessage() {}
 
 func (x *CreateStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *CreateStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStudyResponse.ProtoReflect.Descriptor instead.
 func (*CreateStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{5}
 }
 
 type UpdateStudyRequest struct {
@@ -340,7 +340,7 @@ type UpdateStudyRequest struct {
 func (x *UpdateStudyRequest) Reset() {
 	*x = UpdateStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -353,7 +353,7 @@ func (x *UpdateStudyRequest) String() string {
 func (*UpdateStudyRequest) ProtoMessage() {}
 
 func (x *UpdateStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -366,7 +366,7 @@ func (x *UpdateStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateStudyRequest.ProtoReflect.Descriptor instead.
 func (*UpdateStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateStudyRequest) GetItem() *v1alpha1.Study {
@@ -389,7 +389,7 @@ type CreateStudyProfileRequest struct {
 func (x *CreateStudyProfileRequest) Reset() {
 	*x = CreateStudyProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -402,7 +402,7 @@ func (x *CreateStudyProfileRequest) String() string {
 func (*CreateStudyProfileRequest) ProtoMessage() {}
 
 func (x *CreateStudyProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +415,7 @@ func (x *CreateStudyProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStudyProfileRequest.ProtoReflect.Descriptor instead.
 func (*CreateStudyProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CreateStudyProfileRequest) GetNamespace() string {
@@ -452,7 +452,7 @@ type CreateStudyProfileResponse struct {
 func (x *CreateStudyProfileResponse) Reset() {
 	*x = CreateStudyProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -465,7 +465,7 @@ func (x *CreateStudyProfileResponse) String() string {
 func (*CreateStudyProfileResponse) ProtoMessage() {}
 
 func (x *CreateStudyProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -478,7 +478,7 @@ func (x *CreateStudyProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStudyProfileResponse.ProtoReflect.Descriptor instead.
 func (*CreateStudyProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CreateStudyProfileResponse) GetNamespace() string {
@@ -516,7 +516,7 @@ type GetStudyProfileRequest struct {
 func (x *GetStudyProfileRequest) Reset() {
 	*x = GetStudyProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *GetStudyProfileRequest) String() string {
 func (*GetStudyProfileRequest) ProtoMessage() {}
 
 func (x *GetStudyProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,7 +542,7 @@ func (x *GetStudyProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStudyProfileRequest.ProtoReflect.Descriptor instead.
 func (*GetStudyProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetStudyProfileRequest) GetNamespace() string {
@@ -578,7 +578,7 @@ type GetStudyProfileResponse struct {
 func (x *GetStudyProfileResponse) Reset() {
 	*x = GetStudyProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +591,7 @@ func (x *GetStudyProfileResponse) String() string {
 func (*GetStudyProfileResponse) ProtoMessage() {}
 
 func (x *GetStudyProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +604,7 @@ func (x *GetStudyProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStudyProfileResponse.ProtoReflect.Descriptor instead.
 func (*GetStudyProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetStudyProfileResponse) GetProfile() *v1.StudyProfile {
@@ -633,7 +633,7 @@ type AbortStudyRequest struct {
 func (x *AbortStudyRequest) Reset() {
 	*x = AbortStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -646,7 +646,7 @@ func (x *AbortStudyRequest) String() string {
 func (*AbortStudyRequest) ProtoMessage() {}
 
 func (x *AbortStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -659,7 +659,7 @@ func (x *AbortStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AbortStudyRequest.ProtoReflect.Descriptor instead.
 func (*AbortStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *AbortStudyRequest) GetNamespace() string {
@@ -685,7 +685,7 @@ type AbortStudyResponse struct {
 func (x *AbortStudyResponse) Reset() {
 	*x = AbortStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -698,7 +698,7 @@ func (x *AbortStudyResponse) String() string {
 func (*AbortStudyResponse) ProtoMessage() {}
 
 func (x *AbortStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -711,7 +711,7 @@ func (x *AbortStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AbortStudyResponse.ProtoReflect.Descriptor instead.
 func (*AbortStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{12}
 }
 
 type PauseStudyRequest struct {
@@ -726,7 +726,7 @@ type PauseStudyRequest struct {
 func (x *PauseStudyRequest) Reset() {
 	*x = PauseStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -739,7 +739,7 @@ func (x *PauseStudyRequest) String() string {
 func (*PauseStudyRequest) ProtoMessage() {}
 
 func (x *PauseStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -752,7 +752,7 @@ func (x *PauseStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseStudyRequest.ProtoReflect.Descriptor instead.
 func (*PauseStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *PauseStudyRequest) GetNamespace() string {
@@ -778,7 +778,7 @@ type PauseStudyResponse struct {
 func (x *PauseStudyResponse) Reset() {
 	*x = PauseStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -791,7 +791,7 @@ func (x *PauseStudyResponse) String() string {
 func (*PauseStudyResponse) ProtoMessage() {}
 
 func (x *PauseStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -804,7 +804,7 @@ func (x *PauseStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseStudyResponse.ProtoReflect.Descriptor instead.
 func (*PauseStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{14}
 }
 
 type ResumeStudyRequest struct {
@@ -819,7 +819,7 @@ type ResumeStudyRequest struct {
 func (x *ResumeStudyRequest) Reset() {
 	*x = ResumeStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -832,7 +832,7 @@ func (x *ResumeStudyRequest) String() string {
 func (*ResumeStudyRequest) ProtoMessage() {}
 
 func (x *ResumeStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -845,7 +845,7 @@ func (x *ResumeStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeStudyRequest.ProtoReflect.Descriptor instead.
 func (*ResumeStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ResumeStudyRequest) GetNamespace() string {
@@ -871,7 +871,7 @@ type ResumeStudyResponse struct {
 func (x *ResumeStudyResponse) Reset() {
 	*x = ResumeStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -884,7 +884,7 @@ func (x *ResumeStudyResponse) String() string {
 func (*ResumeStudyResponse) ProtoMessage() {}
 
 func (x *ResumeStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -897,7 +897,7 @@ func (x *ResumeStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeStudyResponse.ProtoReflect.Descriptor instead.
 func (*ResumeStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{16}
 }
 
 type DeleteStudyRequest struct {
@@ -912,7 +912,7 @@ type DeleteStudyRequest struct {
 func (x *DeleteStudyRequest) Reset() {
 	*x = DeleteStudyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -925,7 +925,7 @@ func (x *DeleteStudyRequest) String() string {
 func (*DeleteStudyRequest) ProtoMessage() {}
 
 func (x *DeleteStudyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -938,7 +938,7 @@ func (x *DeleteStudyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteStudyRequest.ProtoReflect.Descriptor instead.
 func (*DeleteStudyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DeleteStudyRequest) GetNamespace() string {
@@ -964,7 +964,7 @@ type DeleteStudyResponse struct {
 func (x *DeleteStudyResponse) Reset() {
 	*x = DeleteStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -977,7 +977,7 @@ func (x *DeleteStudyResponse) String() string {
 func (*DeleteStudyResponse) ProtoMessage() {}
 
 func (x *DeleteStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -990,7 +990,7 @@ func (x *DeleteStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteStudyResponse.ProtoReflect.Descriptor instead.
 func (*DeleteStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{18}
 }
 
 type UpdateStudyResponse struct {
@@ -1002,7 +1002,7 @@ type UpdateStudyResponse struct {
 func (x *UpdateStudyResponse) Reset() {
 	*x = UpdateStudyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1015,7 +1015,7 @@ func (x *UpdateStudyResponse) String() string {
 func (*UpdateStudyResponse) ProtoMessage() {}
 
 func (x *UpdateStudyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1028,12 +1028,12 @@ func (x *UpdateStudyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateStudyResponse.ProtoReflect.Descriptor instead.
 func (*UpdateStudyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP(), []int{19}
 }
 
-var File_github_com_metaprov_modeldapi_services_study_v1_study_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_study_v1_study_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDesc = []byte{
 	0x0a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x73, 0x74, 0x75, 0x64, 0x79, 0x2f, 0x76,
@@ -1300,75 +1300,75 @@ var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDesc = [
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescData = file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescData = file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
-var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_goTypes = []interface{}{
-	(*GetStudyRequest)(nil),            // 0: github.com.metaprov.modeldapi.services.study.v1.GetStudyRequest
-	(*GetStudyResponse)(nil),           // 1: github.com.metaprov.modeldapi.services.study.v1.GetStudyResponse
-	(*ListStudyRequest)(nil),           // 2: github.com.metaprov.modeldapi.services.study.v1.ListStudyRequest
-	(*ListStudyResponse)(nil),          // 3: github.com.metaprov.modeldapi.services.study.v1.ListStudyResponse
-	(*CreateStudyRequest)(nil),         // 4: github.com.metaprov.modeldapi.services.study.v1.CreateStudyRequest
-	(*CreateStudyResponse)(nil),        // 5: github.com.metaprov.modeldapi.services.study.v1.CreateStudyResponse
-	(*UpdateStudyRequest)(nil),         // 6: github.com.metaprov.modeldapi.services.study.v1.UpdateStudyRequest
-	(*CreateStudyProfileRequest)(nil),  // 7: github.com.metaprov.modeldapi.services.study.v1.CreateStudyProfileRequest
-	(*CreateStudyProfileResponse)(nil), // 8: github.com.metaprov.modeldapi.services.study.v1.CreateStudyProfileResponse
-	(*GetStudyProfileRequest)(nil),     // 9: github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileRequest
-	(*GetStudyProfileResponse)(nil),    // 10: github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileResponse
-	(*AbortStudyRequest)(nil),          // 11: github.com.metaprov.modeldapi.services.study.v1.AbortStudyRequest
-	(*AbortStudyResponse)(nil),         // 12: github.com.metaprov.modeldapi.services.study.v1.AbortStudyResponse
-	(*PauseStudyRequest)(nil),          // 13: github.com.metaprov.modeldapi.services.study.v1.PauseStudyRequest
-	(*PauseStudyResponse)(nil),         // 14: github.com.metaprov.modeldapi.services.study.v1.PauseStudyResponse
-	(*ResumeStudyRequest)(nil),         // 15: github.com.metaprov.modeldapi.services.study.v1.ResumeStudyRequest
-	(*ResumeStudyResponse)(nil),        // 16: github.com.metaprov.modeldapi.services.study.v1.ResumeStudyResponse
-	(*DeleteStudyRequest)(nil),         // 17: github.com.metaprov.modeldapi.services.study.v1.DeleteStudyRequest
-	(*DeleteStudyResponse)(nil),        // 18: github.com.metaprov.modeldapi.services.study.v1.DeleteStudyResponse
-	(*UpdateStudyResponse)(nil),        // 19: github.com.metaprov.modeldapi.services.study.v1.UpdateStudyResponse
-	nil,                                // 20: github.com.metaprov.modeldapi.services.study.v1.ListStudyRequest.LabelsEntry
-	(*v1alpha1.Study)(nil),             // 21: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha1.StudyList)(nil),         // 22: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyList
-	(*v1alpha1.Model)(nil),             // 23: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1.StudyProfile)(nil),            // 24: github.com.metaprov.modeldapi.services.common.v1.StudyProfile
-	(*v1.ModelProfile)(nil),            // 25: github.com.metaprov.modeldapi.services.common.v1.ModelProfile
+var file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_github_com_metaprov_modelaapi_services_study_v1_study_proto_goTypes = []interface{}{
+	(*GetStudyRequest)(nil),            // 0: github.com.metaprov.modelaapi.services.study.v1.GetStudyRequest
+	(*GetStudyResponse)(nil),           // 1: github.com.metaprov.modelaapi.services.study.v1.GetStudyResponse
+	(*ListStudyRequest)(nil),           // 2: github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest
+	(*ListStudyResponse)(nil),          // 3: github.com.metaprov.modelaapi.services.study.v1.ListStudyResponse
+	(*CreateStudyRequest)(nil),         // 4: github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest
+	(*CreateStudyResponse)(nil),        // 5: github.com.metaprov.modelaapi.services.study.v1.CreateStudyResponse
+	(*UpdateStudyRequest)(nil),         // 6: github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest
+	(*CreateStudyProfileRequest)(nil),  // 7: github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileRequest
+	(*CreateStudyProfileResponse)(nil), // 8: github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileResponse
+	(*GetStudyProfileRequest)(nil),     // 9: github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest
+	(*GetStudyProfileResponse)(nil),    // 10: github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse
+	(*AbortStudyRequest)(nil),          // 11: github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest
+	(*AbortStudyResponse)(nil),         // 12: github.com.metaprov.modelaapi.services.study.v1.AbortStudyResponse
+	(*PauseStudyRequest)(nil),          // 13: github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest
+	(*PauseStudyResponse)(nil),         // 14: github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse
+	(*ResumeStudyRequest)(nil),         // 15: github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest
+	(*ResumeStudyResponse)(nil),        // 16: github.com.metaprov.modelaapi.services.study.v1.ResumeStudyResponse
+	(*DeleteStudyRequest)(nil),         // 17: github.com.metaprov.modelaapi.services.study.v1.DeleteStudyRequest
+	(*DeleteStudyResponse)(nil),        // 18: github.com.metaprov.modelaapi.services.study.v1.DeleteStudyResponse
+	(*UpdateStudyResponse)(nil),        // 19: github.com.metaprov.modelaapi.services.study.v1.UpdateStudyResponse
+	nil,                                // 20: github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest.LabelsEntry
+	(*v1alpha1.Study)(nil),             // 21: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	(*v1alpha1.StudyList)(nil),         // 22: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList
+	(*v1alpha1.Model)(nil),             // 23: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	(*v1.StudyProfile)(nil),            // 24: github.com.metaprov.modelaapi.services.common.v1.StudyProfile
+	(*v1.ModelProfile)(nil),            // 25: github.com.metaprov.modelaapi.services.common.v1.ModelProfile
 }
-var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_depIdxs = []int32{
-	21, // 0: github.com.metaprov.modeldapi.services.study.v1.GetStudyResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	20, // 1: github.com.metaprov.modeldapi.services.study.v1.ListStudyRequest.labels:type_name -> github.com.metaprov.modeldapi.services.study.v1.ListStudyRequest.LabelsEntry
-	22, // 2: github.com.metaprov.modeldapi.services.study.v1.ListStudyResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyList
-	21, // 3: github.com.metaprov.modeldapi.services.study.v1.CreateStudyRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	21, // 4: github.com.metaprov.modeldapi.services.study.v1.UpdateStudyRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	23, // 5: github.com.metaprov.modeldapi.services.study.v1.CreateStudyProfileRequest.models:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	24, // 6: github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileResponse.profile:type_name -> github.com.metaprov.modeldapi.services.common.v1.StudyProfile
-	25, // 7: github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileResponse.modelsProfile:type_name -> github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	2,  // 8: github.com.metaprov.modeldapi.services.study.v1.StudyService.ListStudies:input_type -> github.com.metaprov.modeldapi.services.study.v1.ListStudyRequest
-	4,  // 9: github.com.metaprov.modeldapi.services.study.v1.StudyService.CreateStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.CreateStudyRequest
-	0,  // 10: github.com.metaprov.modeldapi.services.study.v1.StudyService.GetStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.GetStudyRequest
-	6,  // 11: github.com.metaprov.modeldapi.services.study.v1.StudyService.UpdateStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.UpdateStudyRequest
-	17, // 12: github.com.metaprov.modeldapi.services.study.v1.StudyService.DeleteStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.DeleteStudyRequest
-	7,  // 13: github.com.metaprov.modeldapi.services.study.v1.StudyService.CreateStudyProfile:input_type -> github.com.metaprov.modeldapi.services.study.v1.CreateStudyProfileRequest
-	9,  // 14: github.com.metaprov.modeldapi.services.study.v1.StudyService.GetStudyProfile:input_type -> github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileRequest
-	11, // 15: github.com.metaprov.modeldapi.services.study.v1.StudyService.AbortStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.AbortStudyRequest
-	13, // 16: github.com.metaprov.modeldapi.services.study.v1.StudyService.PauseStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.PauseStudyRequest
-	15, // 17: github.com.metaprov.modeldapi.services.study.v1.StudyService.ResumeStudy:input_type -> github.com.metaprov.modeldapi.services.study.v1.ResumeStudyRequest
-	3,  // 18: github.com.metaprov.modeldapi.services.study.v1.StudyService.ListStudies:output_type -> github.com.metaprov.modeldapi.services.study.v1.ListStudyResponse
-	5,  // 19: github.com.metaprov.modeldapi.services.study.v1.StudyService.CreateStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.CreateStudyResponse
-	1,  // 20: github.com.metaprov.modeldapi.services.study.v1.StudyService.GetStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.GetStudyResponse
-	19, // 21: github.com.metaprov.modeldapi.services.study.v1.StudyService.UpdateStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.UpdateStudyResponse
-	18, // 22: github.com.metaprov.modeldapi.services.study.v1.StudyService.DeleteStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.DeleteStudyResponse
-	8,  // 23: github.com.metaprov.modeldapi.services.study.v1.StudyService.CreateStudyProfile:output_type -> github.com.metaprov.modeldapi.services.study.v1.CreateStudyProfileResponse
-	10, // 24: github.com.metaprov.modeldapi.services.study.v1.StudyService.GetStudyProfile:output_type -> github.com.metaprov.modeldapi.services.study.v1.GetStudyProfileResponse
-	12, // 25: github.com.metaprov.modeldapi.services.study.v1.StudyService.AbortStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.AbortStudyResponse
-	14, // 26: github.com.metaprov.modeldapi.services.study.v1.StudyService.PauseStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.PauseStudyResponse
-	16, // 27: github.com.metaprov.modeldapi.services.study.v1.StudyService.ResumeStudy:output_type -> github.com.metaprov.modeldapi.services.study.v1.ResumeStudyResponse
+var file_github_com_metaprov_modelaapi_services_study_v1_study_proto_depIdxs = []int32{
+	21, // 0: github.com.metaprov.modelaapi.services.study.v1.GetStudyResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	20, // 1: github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest.labels:type_name -> github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest.LabelsEntry
+	22, // 2: github.com.metaprov.modelaapi.services.study.v1.ListStudyResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList
+	21, // 3: github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	21, // 4: github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	23, // 5: github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileRequest.models:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	24, // 6: github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.StudyProfile
+	25, // 7: github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse.modelsProfile:type_name -> github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	2,  // 8: github.com.metaprov.modelaapi.services.study.v1.StudyService.ListStudies:input_type -> github.com.metaprov.modelaapi.services.study.v1.ListStudyRequest
+	4,  // 9: github.com.metaprov.modelaapi.services.study.v1.StudyService.CreateStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.CreateStudyRequest
+	0,  // 10: github.com.metaprov.modelaapi.services.study.v1.StudyService.GetStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.GetStudyRequest
+	6,  // 11: github.com.metaprov.modelaapi.services.study.v1.StudyService.UpdateStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.UpdateStudyRequest
+	17, // 12: github.com.metaprov.modelaapi.services.study.v1.StudyService.DeleteStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.DeleteStudyRequest
+	7,  // 13: github.com.metaprov.modelaapi.services.study.v1.StudyService.CreateStudyProfile:input_type -> github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileRequest
+	9,  // 14: github.com.metaprov.modelaapi.services.study.v1.StudyService.GetStudyProfile:input_type -> github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileRequest
+	11, // 15: github.com.metaprov.modelaapi.services.study.v1.StudyService.AbortStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.AbortStudyRequest
+	13, // 16: github.com.metaprov.modelaapi.services.study.v1.StudyService.PauseStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.PauseStudyRequest
+	15, // 17: github.com.metaprov.modelaapi.services.study.v1.StudyService.ResumeStudy:input_type -> github.com.metaprov.modelaapi.services.study.v1.ResumeStudyRequest
+	3,  // 18: github.com.metaprov.modelaapi.services.study.v1.StudyService.ListStudies:output_type -> github.com.metaprov.modelaapi.services.study.v1.ListStudyResponse
+	5,  // 19: github.com.metaprov.modelaapi.services.study.v1.StudyService.CreateStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.CreateStudyResponse
+	1,  // 20: github.com.metaprov.modelaapi.services.study.v1.StudyService.GetStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.GetStudyResponse
+	19, // 21: github.com.metaprov.modelaapi.services.study.v1.StudyService.UpdateStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.UpdateStudyResponse
+	18, // 22: github.com.metaprov.modelaapi.services.study.v1.StudyService.DeleteStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.DeleteStudyResponse
+	8,  // 23: github.com.metaprov.modelaapi.services.study.v1.StudyService.CreateStudyProfile:output_type -> github.com.metaprov.modelaapi.services.study.v1.CreateStudyProfileResponse
+	10, // 24: github.com.metaprov.modelaapi.services.study.v1.StudyService.GetStudyProfile:output_type -> github.com.metaprov.modelaapi.services.study.v1.GetStudyProfileResponse
+	12, // 25: github.com.metaprov.modelaapi.services.study.v1.StudyService.AbortStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.AbortStudyResponse
+	14, // 26: github.com.metaprov.modelaapi.services.study.v1.StudyService.PauseStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.PauseStudyResponse
+	16, // 27: github.com.metaprov.modelaapi.services.study.v1.StudyService.ResumeStudy:output_type -> github.com.metaprov.modelaapi.services.study.v1.ResumeStudyResponse
 	18, // [18:28] is the sub-list for method output_type
 	8,  // [8:18] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
@@ -1376,13 +1376,13 @@ var file_github_com_metaprov_modeldapi_services_study_v1_study_proto_depIdxs = [
 	0,  // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() }
-func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_study_v1_study_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_study_v1_study_proto_init() }
+func file_github_com_metaprov_modelaapi_services_study_v1_study_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_study_v1_study_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1394,7 +1394,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1406,7 +1406,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1418,7 +1418,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1430,7 +1430,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1442,7 +1442,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1454,7 +1454,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1466,7 +1466,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateStudyProfileRequest); i {
 			case 0:
 				return &v.state
@@ -1478,7 +1478,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateStudyProfileResponse); i {
 			case 0:
 				return &v.state
@@ -1490,7 +1490,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStudyProfileRequest); i {
 			case 0:
 				return &v.state
@@ -1502,7 +1502,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetStudyProfileResponse); i {
 			case 0:
 				return &v.state
@@ -1514,7 +1514,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AbortStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1526,7 +1526,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AbortStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1538,7 +1538,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1550,7 +1550,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1562,7 +1562,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1574,7 +1574,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1586,7 +1586,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteStudyRequest); i {
 			case 0:
 				return &v.state
@@ -1598,7 +1598,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1610,7 +1610,7 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateStudyResponse); i {
 			case 0:
 				return &v.state
@@ -1627,20 +1627,20 @@ func file_github_com_metaprov_modeldapi_services_study_v1_study_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_study_v1_study_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_study_v1_study_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_study_v1_study_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_study_v1_study_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_study_v1_study_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_study_v1_study_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_study_v1_study_proto = out.File
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_study_v1_study_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_study_v1_study_proto = out.File
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_study_v1_study_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1677,7 +1677,7 @@ func NewStudyServiceClient(cc grpc.ClientConnInterface) StudyServiceClient {
 
 func (c *studyServiceClient) ListStudies(ctx context.Context, in *ListStudyRequest, opts ...grpc.CallOption) (*ListStudyResponse, error) {
 	out := new(ListStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1686,7 +1686,7 @@ func (c *studyServiceClient) ListStudies(ctx context.Context, in *ListStudyReque
 
 func (c *studyServiceClient) CreateStudy(ctx context.Context, in *CreateStudyRequest, opts ...grpc.CallOption) (*CreateStudyResponse, error) {
 	out := new(CreateStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1695,7 +1695,7 @@ func (c *studyServiceClient) CreateStudy(ctx context.Context, in *CreateStudyReq
 
 func (c *studyServiceClient) GetStudy(ctx context.Context, in *GetStudyRequest, opts ...grpc.CallOption) (*GetStudyResponse, error) {
 	out := new(GetStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1704,7 +1704,7 @@ func (c *studyServiceClient) GetStudy(ctx context.Context, in *GetStudyRequest, 
 
 func (c *studyServiceClient) UpdateStudy(ctx context.Context, in *UpdateStudyRequest, opts ...grpc.CallOption) (*UpdateStudyResponse, error) {
 	out := new(UpdateStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1713,7 +1713,7 @@ func (c *studyServiceClient) UpdateStudy(ctx context.Context, in *UpdateStudyReq
 
 func (c *studyServiceClient) DeleteStudy(ctx context.Context, in *DeleteStudyRequest, opts ...grpc.CallOption) (*DeleteStudyResponse, error) {
 	out := new(DeleteStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1722,7 +1722,7 @@ func (c *studyServiceClient) DeleteStudy(ctx context.Context, in *DeleteStudyReq
 
 func (c *studyServiceClient) CreateStudyProfile(ctx context.Context, in *CreateStudyProfileRequest, opts ...grpc.CallOption) (*CreateStudyProfileResponse, error) {
 	out := new(CreateStudyProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1731,7 +1731,7 @@ func (c *studyServiceClient) CreateStudyProfile(ctx context.Context, in *CreateS
 
 func (c *studyServiceClient) GetStudyProfile(ctx context.Context, in *GetStudyProfileRequest, opts ...grpc.CallOption) (*GetStudyProfileResponse, error) {
 	out := new(GetStudyProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1740,7 +1740,7 @@ func (c *studyServiceClient) GetStudyProfile(ctx context.Context, in *GetStudyPr
 
 func (c *studyServiceClient) AbortStudy(ctx context.Context, in *AbortStudyRequest, opts ...grpc.CallOption) (*AbortStudyResponse, error) {
 	out := new(AbortStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1749,7 +1749,7 @@ func (c *studyServiceClient) AbortStudy(ctx context.Context, in *AbortStudyReque
 
 func (c *studyServiceClient) PauseStudy(ctx context.Context, in *PauseStudyRequest, opts ...grpc.CallOption) (*PauseStudyResponse, error) {
 	out := new(PauseStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1758,7 +1758,7 @@ func (c *studyServiceClient) PauseStudy(ctx context.Context, in *PauseStudyReque
 
 func (c *studyServiceClient) ResumeStudy(ctx context.Context, in *ResumeStudyRequest, opts ...grpc.CallOption) (*ResumeStudyResponse, error) {
 	out := new(ResumeStudyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1828,7 +1828,7 @@ func _StudyService_ListStudies_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).ListStudies(ctx, req.(*ListStudyRequest))
@@ -1846,7 +1846,7 @@ func _StudyService_CreateStudy_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).CreateStudy(ctx, req.(*CreateStudyRequest))
@@ -1864,7 +1864,7 @@ func _StudyService_GetStudy_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).GetStudy(ctx, req.(*GetStudyRequest))
@@ -1882,7 +1882,7 @@ func _StudyService_UpdateStudy_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).UpdateStudy(ctx, req.(*UpdateStudyRequest))
@@ -1900,7 +1900,7 @@ func _StudyService_DeleteStudy_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).DeleteStudy(ctx, req.(*DeleteStudyRequest))
@@ -1918,7 +1918,7 @@ func _StudyService_CreateStudyProfile_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).CreateStudyProfile(ctx, req.(*CreateStudyProfileRequest))
@@ -1936,7 +1936,7 @@ func _StudyService_GetStudyProfile_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).GetStudyProfile(ctx, req.(*GetStudyProfileRequest))
@@ -1954,7 +1954,7 @@ func _StudyService_AbortStudy_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).AbortStudy(ctx, req.(*AbortStudyRequest))
@@ -1972,7 +1972,7 @@ func _StudyService_PauseStudy_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).PauseStudy(ctx, req.(*PauseStudyRequest))
@@ -1990,7 +1990,7 @@ func _StudyService_ResumeStudy_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy",
+		FullMethod: "/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StudyServiceServer).ResumeStudy(ctx, req.(*ResumeStudyRequest))
@@ -1999,7 +1999,7 @@ func _StudyService_ResumeStudy_Handler(srv interface{}, ctx context.Context, dec
 }
 
 var _StudyService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.study.v1.StudyService",
+	ServiceName: "github.com.metaprov.modelaapi.services.study.v1.StudyService",
 	HandlerType: (*StudyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2044,5 +2044,5 @@ var _StudyService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/study/v1/study.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/study/v1/study.proto",
 }

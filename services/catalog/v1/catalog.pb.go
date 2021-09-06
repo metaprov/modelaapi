@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto
+// source: github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListAlgorithmsRequest struct {
 func (x *ListAlgorithmsRequest) Reset() {
 	*x = ListAlgorithmsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListAlgorithmsRequest) String() string {
 func (*ListAlgorithmsRequest) ProtoMessage() {}
 
 func (x *ListAlgorithmsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListAlgorithmsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlgorithmsRequest.ProtoReflect.Descriptor instead.
 func (*ListAlgorithmsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListAlgorithmsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListAlgorithmsResponse struct {
 func (x *ListAlgorithmsResponse) Reset() {
 	*x = ListAlgorithmsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListAlgorithmsResponse) String() string {
 func (*ListAlgorithmsResponse) ProtoMessage() {}
 
 func (x *ListAlgorithmsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListAlgorithmsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlgorithmsResponse.ProtoReflect.Descriptor instead.
 func (*ListAlgorithmsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListAlgorithmsResponse) GetItems() *v1alpha1.AlgorithmList {
@@ -145,7 +145,7 @@ type GetAlgorithmRequest struct {
 func (x *GetAlgorithmRequest) Reset() {
 	*x = GetAlgorithmRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -158,7 +158,7 @@ func (x *GetAlgorithmRequest) String() string {
 func (*GetAlgorithmRequest) ProtoMessage() {}
 
 func (x *GetAlgorithmRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +171,7 @@ func (x *GetAlgorithmRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlgorithmRequest.ProtoReflect.Descriptor instead.
 func (*GetAlgorithmRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetAlgorithmRequest) GetNamespace() string {
@@ -199,7 +199,7 @@ type GetAlgorithmResponse struct {
 func (x *GetAlgorithmResponse) Reset() {
 	*x = GetAlgorithmResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -212,7 +212,7 @@ func (x *GetAlgorithmResponse) String() string {
 func (*GetAlgorithmResponse) ProtoMessage() {}
 
 func (x *GetAlgorithmResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -225,7 +225,7 @@ func (x *GetAlgorithmResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlgorithmResponse.ProtoReflect.Descriptor instead.
 func (*GetAlgorithmResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetAlgorithmResponse) GetItem() *v1alpha1.Algorithm {
@@ -247,7 +247,7 @@ type ListMLFrameworksRequest struct {
 func (x *ListMLFrameworksRequest) Reset() {
 	*x = ListMLFrameworksRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -260,7 +260,7 @@ func (x *ListMLFrameworksRequest) String() string {
 func (*ListMLFrameworksRequest) ProtoMessage() {}
 
 func (x *ListMLFrameworksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -273,7 +273,7 @@ func (x *ListMLFrameworksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMLFrameworksRequest.ProtoReflect.Descriptor instead.
 func (*ListMLFrameworksRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListMLFrameworksRequest) GetNamespace() string {
@@ -301,7 +301,7 @@ type ListMLFrameworksResponse struct {
 func (x *ListMLFrameworksResponse) Reset() {
 	*x = ListMLFrameworksResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -314,7 +314,7 @@ func (x *ListMLFrameworksResponse) String() string {
 func (*ListMLFrameworksResponse) ProtoMessage() {}
 
 func (x *ListMLFrameworksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -327,7 +327,7 @@ func (x *ListMLFrameworksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMLFrameworksResponse.ProtoReflect.Descriptor instead.
 func (*ListMLFrameworksResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ListMLFrameworksResponse) GetItems() *v1alpha1.MLFrameworkList {
@@ -349,7 +349,7 @@ type GetMLFrameworkRequest struct {
 func (x *GetMLFrameworkRequest) Reset() {
 	*x = GetMLFrameworkRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -362,7 +362,7 @@ func (x *GetMLFrameworkRequest) String() string {
 func (*GetMLFrameworkRequest) ProtoMessage() {}
 
 func (x *GetMLFrameworkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,7 +375,7 @@ func (x *GetMLFrameworkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMLFrameworkRequest.ProtoReflect.Descriptor instead.
 func (*GetMLFrameworkRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetMLFrameworkRequest) GetNamespace() string {
@@ -403,7 +403,7 @@ type GetMLFrameworkResponse struct {
 func (x *GetMLFrameworkResponse) Reset() {
 	*x = GetMLFrameworkResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -416,7 +416,7 @@ func (x *GetMLFrameworkResponse) String() string {
 func (*GetMLFrameworkResponse) ProtoMessage() {}
 
 func (x *GetMLFrameworkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -429,7 +429,7 @@ func (x *GetMLFrameworkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMLFrameworkResponse.ProtoReflect.Descriptor instead.
 func (*GetMLFrameworkResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetMLFrameworkResponse) GetItem() *v1alpha1.MLFramework {
@@ -451,7 +451,7 @@ type ListCloudsRequest struct {
 func (x *ListCloudsRequest) Reset() {
 	*x = ListCloudsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -464,7 +464,7 @@ func (x *ListCloudsRequest) String() string {
 func (*ListCloudsRequest) ProtoMessage() {}
 
 func (x *ListCloudsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -477,7 +477,7 @@ func (x *ListCloudsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCloudsRequest.ProtoReflect.Descriptor instead.
 func (*ListCloudsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListCloudsRequest) GetNamespace() string {
@@ -505,7 +505,7 @@ type ListCloudsResponse struct {
 func (x *ListCloudsResponse) Reset() {
 	*x = ListCloudsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -518,7 +518,7 @@ func (x *ListCloudsResponse) String() string {
 func (*ListCloudsResponse) ProtoMessage() {}
 
 func (x *ListCloudsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -531,7 +531,7 @@ func (x *ListCloudsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCloudsResponse.ProtoReflect.Descriptor instead.
 func (*ListCloudsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListCloudsResponse) GetItems() *v1alpha1.CloudList {
@@ -553,7 +553,7 @@ type GetCloudRequest struct {
 func (x *GetCloudRequest) Reset() {
 	*x = GetCloudRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -566,7 +566,7 @@ func (x *GetCloudRequest) String() string {
 func (*GetCloudRequest) ProtoMessage() {}
 
 func (x *GetCloudRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -579,7 +579,7 @@ func (x *GetCloudRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCloudRequest.ProtoReflect.Descriptor instead.
 func (*GetCloudRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetCloudRequest) GetNamespace() string {
@@ -607,7 +607,7 @@ type GetCloudResponse struct {
 func (x *GetCloudResponse) Reset() {
 	*x = GetCloudResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -620,7 +620,7 @@ func (x *GetCloudResponse) String() string {
 func (*GetCloudResponse) ProtoMessage() {}
 
 func (x *GetCloudResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -633,7 +633,7 @@ func (x *GetCloudResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCloudResponse.ProtoReflect.Descriptor instead.
 func (*GetCloudResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetCloudResponse) GetItem() *v1alpha1.Cloud {
@@ -655,7 +655,7 @@ type ListPublicDatasetsRequest struct {
 func (x *ListPublicDatasetsRequest) Reset() {
 	*x = ListPublicDatasetsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -668,7 +668,7 @@ func (x *ListPublicDatasetsRequest) String() string {
 func (*ListPublicDatasetsRequest) ProtoMessage() {}
 
 func (x *ListPublicDatasetsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -681,7 +681,7 @@ func (x *ListPublicDatasetsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPublicDatasetsRequest.ProtoReflect.Descriptor instead.
 func (*ListPublicDatasetsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ListPublicDatasetsRequest) GetNamespace() string {
@@ -709,7 +709,7 @@ type ListPublicDatasetsResponse struct {
 func (x *ListPublicDatasetsResponse) Reset() {
 	*x = ListPublicDatasetsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -722,7 +722,7 @@ func (x *ListPublicDatasetsResponse) String() string {
 func (*ListPublicDatasetsResponse) ProtoMessage() {}
 
 func (x *ListPublicDatasetsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -735,7 +735,7 @@ func (x *ListPublicDatasetsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPublicDatasetsResponse.ProtoReflect.Descriptor instead.
 func (*ListPublicDatasetsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListPublicDatasetsResponse) GetItems() *v1alpha1.PublicDatasetList {
@@ -757,7 +757,7 @@ type GetPublicDatasetRequest struct {
 func (x *GetPublicDatasetRequest) Reset() {
 	*x = GetPublicDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -770,7 +770,7 @@ func (x *GetPublicDatasetRequest) String() string {
 func (*GetPublicDatasetRequest) ProtoMessage() {}
 
 func (x *GetPublicDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -783,7 +783,7 @@ func (x *GetPublicDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPublicDatasetRequest.ProtoReflect.Descriptor instead.
 func (*GetPublicDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetPublicDatasetRequest) GetNamespace() string {
@@ -811,7 +811,7 @@ type GetPublicDatasetResponse struct {
 func (x *GetPublicDatasetResponse) Reset() {
 	*x = GetPublicDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -824,7 +824,7 @@ func (x *GetPublicDatasetResponse) String() string {
 func (*GetPublicDatasetResponse) ProtoMessage() {}
 
 func (x *GetPublicDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -837,7 +837,7 @@ func (x *GetPublicDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPublicDatasetResponse.ProtoReflect.Descriptor instead.
 func (*GetPublicDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetPublicDatasetResponse) GetItem() *v1alpha1.PublicDataset {
@@ -859,7 +859,7 @@ type DownloadPublicDatasetRequest struct {
 func (x *DownloadPublicDatasetRequest) Reset() {
 	*x = DownloadPublicDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -872,7 +872,7 @@ func (x *DownloadPublicDatasetRequest) String() string {
 func (*DownloadPublicDatasetRequest) ProtoMessage() {}
 
 func (x *DownloadPublicDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -885,7 +885,7 @@ func (x *DownloadPublicDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadPublicDatasetRequest.ProtoReflect.Descriptor instead.
 func (*DownloadPublicDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DownloadPublicDatasetRequest) GetNamespace() string {
@@ -913,7 +913,7 @@ type DownloadPublicDatasetResponse struct {
 func (x *DownloadPublicDatasetResponse) Reset() {
 	*x = DownloadPublicDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -926,7 +926,7 @@ func (x *DownloadPublicDatasetResponse) String() string {
 func (*DownloadPublicDatasetResponse) ProtoMessage() {}
 
 func (x *DownloadPublicDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -939,7 +939,7 @@ func (x *DownloadPublicDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadPublicDatasetResponse.ProtoReflect.Descriptor instead.
 func (*DownloadPublicDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DownloadPublicDatasetResponse) GetRaw() []byte {
@@ -961,7 +961,7 @@ type PreviewPublicDatasetRequest struct {
 func (x *PreviewPublicDatasetRequest) Reset() {
 	*x = PreviewPublicDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -974,7 +974,7 @@ func (x *PreviewPublicDatasetRequest) String() string {
 func (*PreviewPublicDatasetRequest) ProtoMessage() {}
 
 func (x *PreviewPublicDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -987,7 +987,7 @@ func (x *PreviewPublicDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PreviewPublicDatasetRequest.ProtoReflect.Descriptor instead.
 func (*PreviewPublicDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *PreviewPublicDatasetRequest) GetNamespace() string {
@@ -1016,7 +1016,7 @@ type PreviewPublicDatasetResponse struct {
 func (x *PreviewPublicDatasetResponse) Reset() {
 	*x = PreviewPublicDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1029,7 +1029,7 @@ func (x *PreviewPublicDatasetResponse) String() string {
 func (*PreviewPublicDatasetResponse) ProtoMessage() {}
 
 func (x *PreviewPublicDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1042,7 +1042,7 @@ func (x *PreviewPublicDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PreviewPublicDatasetResponse.ProtoReflect.Descriptor instead.
 func (*PreviewPublicDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *PreviewPublicDatasetResponse) GetRaw() []byte {
@@ -1065,7 +1065,7 @@ type ApplyPublicDatasetCRRequest struct {
 func (x *ApplyPublicDatasetCRRequest) Reset() {
 	*x = ApplyPublicDatasetCRRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1078,7 +1078,7 @@ func (x *ApplyPublicDatasetCRRequest) String() string {
 func (*ApplyPublicDatasetCRRequest) ProtoMessage() {}
 
 func (x *ApplyPublicDatasetCRRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1091,7 +1091,7 @@ func (x *ApplyPublicDatasetCRRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyPublicDatasetCRRequest.ProtoReflect.Descriptor instead.
 func (*ApplyPublicDatasetCRRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ApplyPublicDatasetCRRequest) GetNamespace() string {
@@ -1127,7 +1127,7 @@ type ApplyPublicDatasetCRResponse struct {
 func (x *ApplyPublicDatasetCRResponse) Reset() {
 	*x = ApplyPublicDatasetCRResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1140,7 +1140,7 @@ func (x *ApplyPublicDatasetCRResponse) String() string {
 func (*ApplyPublicDatasetCRResponse) ProtoMessage() {}
 
 func (x *ApplyPublicDatasetCRResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1153,7 +1153,7 @@ func (x *ApplyPublicDatasetCRResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApplyPublicDatasetCRResponse.ProtoReflect.Descriptor instead.
 func (*ApplyPublicDatasetCRResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ApplyPublicDatasetCRResponse) GetRaw() []byte {
@@ -1175,7 +1175,7 @@ type ListPretrainedModelsRequest struct {
 func (x *ListPretrainedModelsRequest) Reset() {
 	*x = ListPretrainedModelsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1188,7 +1188,7 @@ func (x *ListPretrainedModelsRequest) String() string {
 func (*ListPretrainedModelsRequest) ProtoMessage() {}
 
 func (x *ListPretrainedModelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1201,7 +1201,7 @@ func (x *ListPretrainedModelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPretrainedModelsRequest.ProtoReflect.Descriptor instead.
 func (*ListPretrainedModelsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ListPretrainedModelsRequest) GetNamespace() string {
@@ -1229,7 +1229,7 @@ type ListPretrainedModelsResponse struct {
 func (x *ListPretrainedModelsResponse) Reset() {
 	*x = ListPretrainedModelsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1242,7 +1242,7 @@ func (x *ListPretrainedModelsResponse) String() string {
 func (*ListPretrainedModelsResponse) ProtoMessage() {}
 
 func (x *ListPretrainedModelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1255,7 +1255,7 @@ func (x *ListPretrainedModelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPretrainedModelsResponse.ProtoReflect.Descriptor instead.
 func (*ListPretrainedModelsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ListPretrainedModelsResponse) GetItems() *v1alpha1.PretrainedModelList {
@@ -1277,7 +1277,7 @@ type GetPretrainedModelRequest struct {
 func (x *GetPretrainedModelRequest) Reset() {
 	*x = GetPretrainedModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1290,7 +1290,7 @@ func (x *GetPretrainedModelRequest) String() string {
 func (*GetPretrainedModelRequest) ProtoMessage() {}
 
 func (x *GetPretrainedModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1303,7 +1303,7 @@ func (x *GetPretrainedModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPretrainedModelRequest.ProtoReflect.Descriptor instead.
 func (*GetPretrainedModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetPretrainedModelRequest) GetNamespace() string {
@@ -1331,7 +1331,7 @@ type GetPretrainedModelResponse struct {
 func (x *GetPretrainedModelResponse) Reset() {
 	*x = GetPretrainedModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1344,7 +1344,7 @@ func (x *GetPretrainedModelResponse) String() string {
 func (*GetPretrainedModelResponse) ProtoMessage() {}
 
 func (x *GetPretrainedModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1357,7 +1357,7 @@ func (x *GetPretrainedModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPretrainedModelResponse.ProtoReflect.Descriptor instead.
 func (*GetPretrainedModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *GetPretrainedModelResponse) GetItem() *v1alpha1.PretrainedModel {
@@ -1379,7 +1379,7 @@ type ListWorkloadClassesRequest struct {
 func (x *ListWorkloadClassesRequest) Reset() {
 	*x = ListWorkloadClassesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1392,7 +1392,7 @@ func (x *ListWorkloadClassesRequest) String() string {
 func (*ListWorkloadClassesRequest) ProtoMessage() {}
 
 func (x *ListWorkloadClassesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1405,7 +1405,7 @@ func (x *ListWorkloadClassesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWorkloadClassesRequest.ProtoReflect.Descriptor instead.
 func (*ListWorkloadClassesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ListWorkloadClassesRequest) GetNamespace() string {
@@ -1433,7 +1433,7 @@ type ListWorkloadClassesResponse struct {
 func (x *ListWorkloadClassesResponse) Reset() {
 	*x = ListWorkloadClassesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[27]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1446,7 +1446,7 @@ func (x *ListWorkloadClassesResponse) String() string {
 func (*ListWorkloadClassesResponse) ProtoMessage() {}
 
 func (x *ListWorkloadClassesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[27]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1459,7 +1459,7 @@ func (x *ListWorkloadClassesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListWorkloadClassesResponse.ProtoReflect.Descriptor instead.
 func (*ListWorkloadClassesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{27}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ListWorkloadClassesResponse) GetItems() *v1alpha1.WorkloadClassList {
@@ -1481,7 +1481,7 @@ type GetWorkloadClassRequest struct {
 func (x *GetWorkloadClassRequest) Reset() {
 	*x = GetWorkloadClassRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[28]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1494,7 +1494,7 @@ func (x *GetWorkloadClassRequest) String() string {
 func (*GetWorkloadClassRequest) ProtoMessage() {}
 
 func (x *GetWorkloadClassRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[28]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1507,7 +1507,7 @@ func (x *GetWorkloadClassRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWorkloadClassRequest.ProtoReflect.Descriptor instead.
 func (*GetWorkloadClassRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{28}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetWorkloadClassRequest) GetName() string {
@@ -1535,7 +1535,7 @@ type GetWorkloadClassResponse struct {
 func (x *GetWorkloadClassResponse) Reset() {
 	*x = GetWorkloadClassResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[29]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1548,7 +1548,7 @@ func (x *GetWorkloadClassResponse) String() string {
 func (*GetWorkloadClassResponse) ProtoMessage() {}
 
 func (x *GetWorkloadClassResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[29]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1561,7 +1561,7 @@ func (x *GetWorkloadClassResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWorkloadClassResponse.ProtoReflect.Descriptor instead.
 func (*GetWorkloadClassResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{29}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *GetWorkloadClassResponse) GetItem() *v1alpha1.WorkloadClass {
@@ -1583,7 +1583,7 @@ type ListUserRoleClassesRequest struct {
 func (x *ListUserRoleClassesRequest) Reset() {
 	*x = ListUserRoleClassesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[30]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1596,7 +1596,7 @@ func (x *ListUserRoleClassesRequest) String() string {
 func (*ListUserRoleClassesRequest) ProtoMessage() {}
 
 func (x *ListUserRoleClassesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[30]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1609,7 +1609,7 @@ func (x *ListUserRoleClassesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUserRoleClassesRequest.ProtoReflect.Descriptor instead.
 func (*ListUserRoleClassesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{30}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ListUserRoleClassesRequest) GetNamespace() string {
@@ -1637,7 +1637,7 @@ type ListUserRoleClassesResponse struct {
 func (x *ListUserRoleClassesResponse) Reset() {
 	*x = ListUserRoleClassesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[31]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1650,7 +1650,7 @@ func (x *ListUserRoleClassesResponse) String() string {
 func (*ListUserRoleClassesResponse) ProtoMessage() {}
 
 func (x *ListUserRoleClassesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[31]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1663,7 +1663,7 @@ func (x *ListUserRoleClassesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUserRoleClassesResponse.ProtoReflect.Descriptor instead.
 func (*ListUserRoleClassesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{31}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ListUserRoleClassesResponse) GetItems() *v1alpha1.UserRoleClassList {
@@ -1685,7 +1685,7 @@ type GetUserRoleClassRequest struct {
 func (x *GetUserRoleClassRequest) Reset() {
 	*x = GetUserRoleClassRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[32]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1698,7 +1698,7 @@ func (x *GetUserRoleClassRequest) String() string {
 func (*GetUserRoleClassRequest) ProtoMessage() {}
 
 func (x *GetUserRoleClassRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[32]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1711,7 +1711,7 @@ func (x *GetUserRoleClassRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRoleClassRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRoleClassRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{32}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *GetUserRoleClassRequest) GetName() string {
@@ -1739,7 +1739,7 @@ type GetUserRoleClassResponse struct {
 func (x *GetUserRoleClassResponse) Reset() {
 	*x = GetUserRoleClassResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[33]
+		mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1752,7 +1752,7 @@ func (x *GetUserRoleClassResponse) String() string {
 func (*GetUserRoleClassResponse) ProtoMessage() {}
 
 func (x *GetUserRoleClassResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[33]
+	mi := &file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1765,7 +1765,7 @@ func (x *GetUserRoleClassResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRoleClassResponse.ProtoReflect.Descriptor instead.
 func (*GetUserRoleClassResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{33}
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *GetUserRoleClassResponse) GetItem() *v1alpha1.UserRoleClass {
@@ -1775,9 +1775,9 @@ func (x *GetUserRoleClassResponse) GetItem() *v1alpha1.UserRoleClass {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67,
@@ -2259,127 +2259,127 @@ var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescData = file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescData = file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
-var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_goTypes = []interface{}{
-	(*ListAlgorithmsRequest)(nil),         // 0: github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsRequest
-	(*ListAlgorithmsResponse)(nil),        // 1: github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsResponse
-	(*GetAlgorithmRequest)(nil),           // 2: github.com.metaprov.modeldapi.services.catalog.v1.GetAlgorithmRequest
-	(*GetAlgorithmResponse)(nil),          // 3: github.com.metaprov.modeldapi.services.catalog.v1.GetAlgorithmResponse
-	(*ListMLFrameworksRequest)(nil),       // 4: github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksRequest
-	(*ListMLFrameworksResponse)(nil),      // 5: github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksResponse
-	(*GetMLFrameworkRequest)(nil),         // 6: github.com.metaprov.modeldapi.services.catalog.v1.GetMLFrameworkRequest
-	(*GetMLFrameworkResponse)(nil),        // 7: github.com.metaprov.modeldapi.services.catalog.v1.GetMLFrameworkResponse
-	(*ListCloudsRequest)(nil),             // 8: github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsRequest
-	(*ListCloudsResponse)(nil),            // 9: github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsResponse
-	(*GetCloudRequest)(nil),               // 10: github.com.metaprov.modeldapi.services.catalog.v1.GetCloudRequest
-	(*GetCloudResponse)(nil),              // 11: github.com.metaprov.modeldapi.services.catalog.v1.GetCloudResponse
-	(*ListPublicDatasetsRequest)(nil),     // 12: github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsRequest
-	(*ListPublicDatasetsResponse)(nil),    // 13: github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsResponse
-	(*GetPublicDatasetRequest)(nil),       // 14: github.com.metaprov.modeldapi.services.catalog.v1.GetPublicDatasetRequest
-	(*GetPublicDatasetResponse)(nil),      // 15: github.com.metaprov.modeldapi.services.catalog.v1.GetPublicDatasetResponse
-	(*DownloadPublicDatasetRequest)(nil),  // 16: github.com.metaprov.modeldapi.services.catalog.v1.DownloadPublicDatasetRequest
-	(*DownloadPublicDatasetResponse)(nil), // 17: github.com.metaprov.modeldapi.services.catalog.v1.DownloadPublicDatasetResponse
-	(*PreviewPublicDatasetRequest)(nil),   // 18: github.com.metaprov.modeldapi.services.catalog.v1.PreviewPublicDatasetRequest
-	(*PreviewPublicDatasetResponse)(nil),  // 19: github.com.metaprov.modeldapi.services.catalog.v1.PreviewPublicDatasetResponse
-	(*ApplyPublicDatasetCRRequest)(nil),   // 20: github.com.metaprov.modeldapi.services.catalog.v1.ApplyPublicDatasetCRRequest
-	(*ApplyPublicDatasetCRResponse)(nil),  // 21: github.com.metaprov.modeldapi.services.catalog.v1.ApplyPublicDatasetCRResponse
-	(*ListPretrainedModelsRequest)(nil),   // 22: github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsRequest
-	(*ListPretrainedModelsResponse)(nil),  // 23: github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsResponse
-	(*GetPretrainedModelRequest)(nil),     // 24: github.com.metaprov.modeldapi.services.catalog.v1.GetPretrainedModelRequest
-	(*GetPretrainedModelResponse)(nil),    // 25: github.com.metaprov.modeldapi.services.catalog.v1.GetPretrainedModelResponse
-	(*ListWorkloadClassesRequest)(nil),    // 26: github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesRequest
-	(*ListWorkloadClassesResponse)(nil),   // 27: github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesResponse
-	(*GetWorkloadClassRequest)(nil),       // 28: github.com.metaprov.modeldapi.services.catalog.v1.GetWorkloadClassRequest
-	(*GetWorkloadClassResponse)(nil),      // 29: github.com.metaprov.modeldapi.services.catalog.v1.GetWorkloadClassResponse
-	(*ListUserRoleClassesRequest)(nil),    // 30: github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesRequest
-	(*ListUserRoleClassesResponse)(nil),   // 31: github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesResponse
-	(*GetUserRoleClassRequest)(nil),       // 32: github.com.metaprov.modeldapi.services.catalog.v1.GetUserRoleClassRequest
-	(*GetUserRoleClassResponse)(nil),      // 33: github.com.metaprov.modeldapi.services.catalog.v1.GetUserRoleClassResponse
-	nil,                                   // 34: github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry
-	nil,                                   // 35: github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry
-	nil,                                   // 36: github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsRequest.LabelsEntry
-	nil,                                   // 37: github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry
-	nil,                                   // 38: github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry
-	nil,                                   // 39: github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry
-	nil,                                   // 40: github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry
-	(*v1alpha1.AlgorithmList)(nil),        // 41: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmList
-	(*v1alpha1.Algorithm)(nil),            // 42: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm
-	(*v1alpha1.MLFrameworkList)(nil),      // 43: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList
-	(*v1alpha1.MLFramework)(nil),          // 44: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework
-	(*v1alpha1.CloudList)(nil),            // 45: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudList
-	(*v1alpha1.Cloud)(nil),                // 46: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Cloud
-	(*v1alpha1.PublicDatasetList)(nil),    // 47: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetList
-	(*v1alpha1.PublicDataset)(nil),        // 48: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset
-	(*v1alpha1.PretrainedModelList)(nil),  // 49: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelList
-	(*v1alpha1.PretrainedModel)(nil),      // 50: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel
-	(*v1alpha1.WorkloadClassList)(nil),    // 51: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassList
-	(*v1alpha1.WorkloadClass)(nil),        // 52: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClass
-	(*v1alpha1.UserRoleClassList)(nil),    // 53: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClassList
-	(*v1alpha1.UserRoleClass)(nil),        // 54: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass
+var file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
+var file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_goTypes = []interface{}{
+	(*ListAlgorithmsRequest)(nil),         // 0: github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest
+	(*ListAlgorithmsResponse)(nil),        // 1: github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse
+	(*GetAlgorithmRequest)(nil),           // 2: github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmRequest
+	(*GetAlgorithmResponse)(nil),          // 3: github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse
+	(*ListMLFrameworksRequest)(nil),       // 4: github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest
+	(*ListMLFrameworksResponse)(nil),      // 5: github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksResponse
+	(*GetMLFrameworkRequest)(nil),         // 6: github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkRequest
+	(*GetMLFrameworkResponse)(nil),        // 7: github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse
+	(*ListCloudsRequest)(nil),             // 8: github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest
+	(*ListCloudsResponse)(nil),            // 9: github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsResponse
+	(*GetCloudRequest)(nil),               // 10: github.com.metaprov.modelaapi.services.catalog.v1.GetCloudRequest
+	(*GetCloudResponse)(nil),              // 11: github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse
+	(*ListPublicDatasetsRequest)(nil),     // 12: github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest
+	(*ListPublicDatasetsResponse)(nil),    // 13: github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsResponse
+	(*GetPublicDatasetRequest)(nil),       // 14: github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetRequest
+	(*GetPublicDatasetResponse)(nil),      // 15: github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
+	(*DownloadPublicDatasetRequest)(nil),  // 16: github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetRequest
+	(*DownloadPublicDatasetResponse)(nil), // 17: github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetResponse
+	(*PreviewPublicDatasetRequest)(nil),   // 18: github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetRequest
+	(*PreviewPublicDatasetResponse)(nil),  // 19: github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetResponse
+	(*ApplyPublicDatasetCRRequest)(nil),   // 20: github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRRequest
+	(*ApplyPublicDatasetCRResponse)(nil),  // 21: github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRResponse
+	(*ListPretrainedModelsRequest)(nil),   // 22: github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest
+	(*ListPretrainedModelsResponse)(nil),  // 23: github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsResponse
+	(*GetPretrainedModelRequest)(nil),     // 24: github.com.metaprov.modelaapi.services.catalog.v1.GetPretrainedModelRequest
+	(*GetPretrainedModelResponse)(nil),    // 25: github.com.metaprov.modelaapi.services.catalog.v1.GetPretrainedModelResponse
+	(*ListWorkloadClassesRequest)(nil),    // 26: github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest
+	(*ListWorkloadClassesResponse)(nil),   // 27: github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesResponse
+	(*GetWorkloadClassRequest)(nil),       // 28: github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassRequest
+	(*GetWorkloadClassResponse)(nil),      // 29: github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassResponse
+	(*ListUserRoleClassesRequest)(nil),    // 30: github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest
+	(*ListUserRoleClassesResponse)(nil),   // 31: github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesResponse
+	(*GetUserRoleClassRequest)(nil),       // 32: github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassRequest
+	(*GetUserRoleClassResponse)(nil),      // 33: github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassResponse
+	nil,                                   // 34: github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry
+	nil,                                   // 35: github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry
+	nil,                                   // 36: github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest.LabelsEntry
+	nil,                                   // 37: github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry
+	nil,                                   // 38: github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry
+	nil,                                   // 39: github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry
+	nil,                                   // 40: github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry
+	(*v1alpha1.AlgorithmList)(nil),        // 41: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList
+	(*v1alpha1.Algorithm)(nil),            // 42: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm
+	(*v1alpha1.MLFrameworkList)(nil),      // 43: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList
+	(*v1alpha1.MLFramework)(nil),          // 44: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework
+	(*v1alpha1.CloudList)(nil),            // 45: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList
+	(*v1alpha1.Cloud)(nil),                // 46: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud
+	(*v1alpha1.PublicDatasetList)(nil),    // 47: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList
+	(*v1alpha1.PublicDataset)(nil),        // 48: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset
+	(*v1alpha1.PretrainedModelList)(nil),  // 49: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList
+	(*v1alpha1.PretrainedModel)(nil),      // 50: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel
+	(*v1alpha1.WorkloadClassList)(nil),    // 51: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList
+	(*v1alpha1.WorkloadClass)(nil),        // 52: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass
+	(*v1alpha1.UserRoleClassList)(nil),    // 53: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList
+	(*v1alpha1.UserRoleClass)(nil),        // 54: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass
 }
-var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_depIdxs = []int32{
-	34, // 0: github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry
-	41, // 1: github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmList
-	42, // 2: github.com.metaprov.modeldapi.services.catalog.v1.GetAlgorithmResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm
-	35, // 3: github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry
-	43, // 4: github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList
-	44, // 5: github.com.metaprov.modeldapi.services.catalog.v1.GetMLFrameworkResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework
-	36, // 6: github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsRequest.LabelsEntry
-	45, // 7: github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudList
-	46, // 8: github.com.metaprov.modeldapi.services.catalog.v1.GetCloudResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Cloud
-	37, // 9: github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry
-	47, // 10: github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetList
-	48, // 11: github.com.metaprov.modeldapi.services.catalog.v1.GetPublicDatasetResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset
-	38, // 12: github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry
-	49, // 13: github.com.metaprov.modeldapi.services.catalog.v1.ListPretrainedModelsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelList
-	50, // 14: github.com.metaprov.modeldapi.services.catalog.v1.GetPretrainedModelResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel
-	39, // 15: github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry
-	51, // 16: github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassList
-	52, // 17: github.com.metaprov.modeldapi.services.catalog.v1.GetWorkloadClassResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClass
-	40, // 18: github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry
-	53, // 19: github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClassList
-	54, // 20: github.com.metaprov.modeldapi.services.catalog.v1.GetUserRoleClassResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass
-	0,  // 21: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListAlgorithm:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsRequest
-	2,  // 22: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetAlgorithm:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetAlgorithmRequest
-	4,  // 23: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListMLFrameworks:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksRequest
-	6,  // 24: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetMLFramework:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetMLFrameworkRequest
-	8,  // 25: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListClouds:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsRequest
-	10, // 26: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetCloud:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetCloudRequest
-	26, // 27: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListWorkloadClasses:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesRequest
-	28, // 28: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetWorkloadClass:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetWorkloadClassRequest
-	30, // 29: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListUserRoleClasses:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesRequest
-	32, // 30: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetUserRoleClass:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetUserRoleClassRequest
-	12, // 31: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListPublicDataset:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsRequest
-	14, // 32: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetPublicDataset:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetPublicDatasetRequest
-	16, // 33: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.DownloadPublicDataset:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.DownloadPublicDatasetRequest
-	18, // 34: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.PreviewPublicDataset:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.PreviewPublicDatasetRequest
-	20, // 35: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ApplyPublicDatasetCR:input_type -> github.com.metaprov.modeldapi.services.catalog.v1.ApplyPublicDatasetCRRequest
-	1,  // 36: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListAlgorithm:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListAlgorithmsResponse
-	3,  // 37: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetAlgorithm:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetAlgorithmResponse
-	5,  // 38: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListMLFrameworks:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListMLFrameworksResponse
-	7,  // 39: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetMLFramework:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetMLFrameworkResponse
-	9,  // 40: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListClouds:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListCloudsResponse
-	11, // 41: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetCloud:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetCloudResponse
-	27, // 42: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListWorkloadClasses:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListWorkloadClassesResponse
-	29, // 43: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetWorkloadClass:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetWorkloadClassResponse
-	31, // 44: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListUserRoleClasses:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListUserRoleClassesResponse
-	33, // 45: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetUserRoleClass:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetUserRoleClassResponse
-	13, // 46: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ListPublicDataset:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ListPublicDatasetsResponse
-	15, // 47: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.GetPublicDataset:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.GetPublicDatasetResponse
-	17, // 48: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.DownloadPublicDataset:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.DownloadPublicDatasetResponse
-	19, // 49: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.PreviewPublicDataset:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.PreviewPublicDatasetResponse
-	21, // 50: github.com.metaprov.modeldapi.services.catalog.v1.CatalogService.ApplyPublicDatasetCR:output_type -> github.com.metaprov.modeldapi.services.catalog.v1.ApplyPublicDatasetCRResponse
+var file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_depIdxs = []int32{
+	34, // 0: github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry
+	41, // 1: github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList
+	42, // 2: github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm
+	35, // 3: github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry
+	43, // 4: github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList
+	44, // 5: github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework
+	36, // 6: github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest.LabelsEntry
+	45, // 7: github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList
+	46, // 8: github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud
+	37, // 9: github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry
+	47, // 10: github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList
+	48, // 11: github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset
+	38, // 12: github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry
+	49, // 13: github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList
+	50, // 14: github.com.metaprov.modelaapi.services.catalog.v1.GetPretrainedModelResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel
+	39, // 15: github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry
+	51, // 16: github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList
+	52, // 17: github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass
+	40, // 18: github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry
+	53, // 19: github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList
+	54, // 20: github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass
+	0,  // 21: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListAlgorithm:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest
+	2,  // 22: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetAlgorithm:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmRequest
+	4,  // 23: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListMLFrameworks:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest
+	6,  // 24: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetMLFramework:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkRequest
+	8,  // 25: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListClouds:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest
+	10, // 26: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetCloud:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetCloudRequest
+	26, // 27: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListWorkloadClasses:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest
+	28, // 28: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetWorkloadClass:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassRequest
+	30, // 29: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListUserRoleClasses:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest
+	32, // 30: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetUserRoleClass:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassRequest
+	12, // 31: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListPublicDataset:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest
+	14, // 32: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetPublicDataset:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetRequest
+	16, // 33: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.DownloadPublicDataset:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetRequest
+	18, // 34: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.PreviewPublicDataset:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetRequest
+	20, // 35: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ApplyPublicDatasetCR:input_type -> github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRRequest
+	1,  // 36: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListAlgorithm:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse
+	3,  // 37: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetAlgorithm:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse
+	5,  // 38: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListMLFrameworks:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksResponse
+	7,  // 39: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetMLFramework:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse
+	9,  // 40: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListClouds:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsResponse
+	11, // 41: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetCloud:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse
+	27, // 42: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListWorkloadClasses:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesResponse
+	29, // 43: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetWorkloadClass:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassResponse
+	31, // 44: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListUserRoleClasses:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesResponse
+	33, // 45: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetUserRoleClass:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassResponse
+	13, // 46: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ListPublicDataset:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsResponse
+	15, // 47: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.GetPublicDataset:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
+	17, // 48: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.DownloadPublicDataset:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetResponse
+	19, // 49: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.PreviewPublicDataset:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetResponse
+	21, // 50: github.com.metaprov.modelaapi.services.catalog.v1.CatalogService.ApplyPublicDatasetCR:output_type -> github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRResponse
 	36, // [36:51] is the sub-list for method output_type
 	21, // [21:36] is the sub-list for method input_type
 	21, // [21:21] is the sub-list for extension type_name
@@ -2387,13 +2387,13 @@ var file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_depIdxs
 	0,  // [0:21] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init() }
-func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_init() }
+func file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlgorithmsRequest); i {
 			case 0:
 				return &v.state
@@ -2405,7 +2405,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlgorithmsResponse); i {
 			case 0:
 				return &v.state
@@ -2417,7 +2417,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlgorithmRequest); i {
 			case 0:
 				return &v.state
@@ -2429,7 +2429,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlgorithmResponse); i {
 			case 0:
 				return &v.state
@@ -2441,7 +2441,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListMLFrameworksRequest); i {
 			case 0:
 				return &v.state
@@ -2453,7 +2453,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListMLFrameworksResponse); i {
 			case 0:
 				return &v.state
@@ -2465,7 +2465,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetMLFrameworkRequest); i {
 			case 0:
 				return &v.state
@@ -2477,7 +2477,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetMLFrameworkResponse); i {
 			case 0:
 				return &v.state
@@ -2489,7 +2489,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCloudsRequest); i {
 			case 0:
 				return &v.state
@@ -2501,7 +2501,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListCloudsResponse); i {
 			case 0:
 				return &v.state
@@ -2513,7 +2513,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCloudRequest); i {
 			case 0:
 				return &v.state
@@ -2525,7 +2525,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCloudResponse); i {
 			case 0:
 				return &v.state
@@ -2537,7 +2537,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPublicDatasetsRequest); i {
 			case 0:
 				return &v.state
@@ -2549,7 +2549,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPublicDatasetsResponse); i {
 			case 0:
 				return &v.state
@@ -2561,7 +2561,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPublicDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -2573,7 +2573,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPublicDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -2585,7 +2585,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadPublicDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -2597,7 +2597,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadPublicDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -2609,7 +2609,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PreviewPublicDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -2621,7 +2621,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PreviewPublicDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -2633,7 +2633,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApplyPublicDatasetCRRequest); i {
 			case 0:
 				return &v.state
@@ -2645,7 +2645,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApplyPublicDatasetCRResponse); i {
 			case 0:
 				return &v.state
@@ -2657,7 +2657,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPretrainedModelsRequest); i {
 			case 0:
 				return &v.state
@@ -2669,7 +2669,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPretrainedModelsResponse); i {
 			case 0:
 				return &v.state
@@ -2681,7 +2681,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPretrainedModelRequest); i {
 			case 0:
 				return &v.state
@@ -2693,7 +2693,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPretrainedModelResponse); i {
 			case 0:
 				return &v.state
@@ -2705,7 +2705,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListWorkloadClassesRequest); i {
 			case 0:
 				return &v.state
@@ -2717,7 +2717,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListWorkloadClassesResponse); i {
 			case 0:
 				return &v.state
@@ -2729,7 +2729,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWorkloadClassRequest); i {
 			case 0:
 				return &v.state
@@ -2741,7 +2741,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetWorkloadClassResponse); i {
 			case 0:
 				return &v.state
@@ -2753,7 +2753,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListUserRoleClassesRequest); i {
 			case 0:
 				return &v.state
@@ -2765,7 +2765,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListUserRoleClassesResponse); i {
 			case 0:
 				return &v.state
@@ -2777,7 +2777,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserRoleClassRequest); i {
 			case 0:
 				return &v.state
@@ -2789,7 +2789,7 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetUserRoleClassResponse); i {
 			case 0:
 				return &v.state
@@ -2806,20 +2806,20 @@ func file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   41,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto = out.File
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_catalog_v1_catalog_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto = out.File
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_catalog_v1_catalog_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2861,7 +2861,7 @@ func NewCatalogServiceClient(cc grpc.ClientConnInterface) CatalogServiceClient {
 
 func (c *catalogServiceClient) ListAlgorithm(ctx context.Context, in *ListAlgorithmsRequest, opts ...grpc.CallOption) (*ListAlgorithmsResponse, error) {
 	out := new(ListAlgorithmsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2870,7 +2870,7 @@ func (c *catalogServiceClient) ListAlgorithm(ctx context.Context, in *ListAlgori
 
 func (c *catalogServiceClient) GetAlgorithm(ctx context.Context, in *GetAlgorithmRequest, opts ...grpc.CallOption) (*GetAlgorithmResponse, error) {
 	out := new(GetAlgorithmResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2879,7 +2879,7 @@ func (c *catalogServiceClient) GetAlgorithm(ctx context.Context, in *GetAlgorith
 
 func (c *catalogServiceClient) ListMLFrameworks(ctx context.Context, in *ListMLFrameworksRequest, opts ...grpc.CallOption) (*ListMLFrameworksResponse, error) {
 	out := new(ListMLFrameworksResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2888,7 +2888,7 @@ func (c *catalogServiceClient) ListMLFrameworks(ctx context.Context, in *ListMLF
 
 func (c *catalogServiceClient) GetMLFramework(ctx context.Context, in *GetMLFrameworkRequest, opts ...grpc.CallOption) (*GetMLFrameworkResponse, error) {
 	out := new(GetMLFrameworkResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2897,7 +2897,7 @@ func (c *catalogServiceClient) GetMLFramework(ctx context.Context, in *GetMLFram
 
 func (c *catalogServiceClient) ListClouds(ctx context.Context, in *ListCloudsRequest, opts ...grpc.CallOption) (*ListCloudsResponse, error) {
 	out := new(ListCloudsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2906,7 +2906,7 @@ func (c *catalogServiceClient) ListClouds(ctx context.Context, in *ListCloudsReq
 
 func (c *catalogServiceClient) GetCloud(ctx context.Context, in *GetCloudRequest, opts ...grpc.CallOption) (*GetCloudResponse, error) {
 	out := new(GetCloudResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2915,7 +2915,7 @@ func (c *catalogServiceClient) GetCloud(ctx context.Context, in *GetCloudRequest
 
 func (c *catalogServiceClient) ListWorkloadClasses(ctx context.Context, in *ListWorkloadClassesRequest, opts ...grpc.CallOption) (*ListWorkloadClassesResponse, error) {
 	out := new(ListWorkloadClassesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2924,7 +2924,7 @@ func (c *catalogServiceClient) ListWorkloadClasses(ctx context.Context, in *List
 
 func (c *catalogServiceClient) GetWorkloadClass(ctx context.Context, in *GetWorkloadClassRequest, opts ...grpc.CallOption) (*GetWorkloadClassResponse, error) {
 	out := new(GetWorkloadClassResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2933,7 +2933,7 @@ func (c *catalogServiceClient) GetWorkloadClass(ctx context.Context, in *GetWork
 
 func (c *catalogServiceClient) ListUserRoleClasses(ctx context.Context, in *ListUserRoleClassesRequest, opts ...grpc.CallOption) (*ListUserRoleClassesResponse, error) {
 	out := new(ListUserRoleClassesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListUserRoleClasses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2942,7 +2942,7 @@ func (c *catalogServiceClient) ListUserRoleClasses(ctx context.Context, in *List
 
 func (c *catalogServiceClient) GetUserRoleClass(ctx context.Context, in *GetUserRoleClassRequest, opts ...grpc.CallOption) (*GetUserRoleClassResponse, error) {
 	out := new(GetUserRoleClassResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetUserRoleClass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2951,7 +2951,7 @@ func (c *catalogServiceClient) GetUserRoleClass(ctx context.Context, in *GetUser
 
 func (c *catalogServiceClient) ListPublicDataset(ctx context.Context, in *ListPublicDatasetsRequest, opts ...grpc.CallOption) (*ListPublicDatasetsResponse, error) {
 	out := new(ListPublicDatasetsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2960,7 +2960,7 @@ func (c *catalogServiceClient) ListPublicDataset(ctx context.Context, in *ListPu
 
 func (c *catalogServiceClient) GetPublicDataset(ctx context.Context, in *GetPublicDatasetRequest, opts ...grpc.CallOption) (*GetPublicDatasetResponse, error) {
 	out := new(GetPublicDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2969,7 +2969,7 @@ func (c *catalogServiceClient) GetPublicDataset(ctx context.Context, in *GetPubl
 
 func (c *catalogServiceClient) DownloadPublicDataset(ctx context.Context, in *DownloadPublicDatasetRequest, opts ...grpc.CallOption) (*DownloadPublicDatasetResponse, error) {
 	out := new(DownloadPublicDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2978,7 +2978,7 @@ func (c *catalogServiceClient) DownloadPublicDataset(ctx context.Context, in *Do
 
 func (c *catalogServiceClient) PreviewPublicDataset(ctx context.Context, in *PreviewPublicDatasetRequest, opts ...grpc.CallOption) (*PreviewPublicDatasetResponse, error) {
 	out := new(PreviewPublicDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2987,7 +2987,7 @@ func (c *catalogServiceClient) PreviewPublicDataset(ctx context.Context, in *Pre
 
 func (c *catalogServiceClient) ApplyPublicDatasetCR(ctx context.Context, in *ApplyPublicDatasetCRRequest, opts ...grpc.CallOption) (*ApplyPublicDatasetCRResponse, error) {
 	out := new(ApplyPublicDatasetCRResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3077,7 +3077,7 @@ func _CatalogService_ListAlgorithm_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListAlgorithm",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListAlgorithm(ctx, req.(*ListAlgorithmsRequest))
@@ -3095,7 +3095,7 @@ func _CatalogService_GetAlgorithm_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetAlgorithm",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetAlgorithm(ctx, req.(*GetAlgorithmRequest))
@@ -3113,7 +3113,7 @@ func _CatalogService_ListMLFrameworks_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListMLFrameworks",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListMLFrameworks(ctx, req.(*ListMLFrameworksRequest))
@@ -3131,7 +3131,7 @@ func _CatalogService_GetMLFramework_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetMLFramework",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetMLFramework(ctx, req.(*GetMLFrameworkRequest))
@@ -3149,7 +3149,7 @@ func _CatalogService_ListClouds_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListClouds",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListClouds(ctx, req.(*ListCloudsRequest))
@@ -3167,7 +3167,7 @@ func _CatalogService_GetCloud_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetCloud",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetCloud(ctx, req.(*GetCloudRequest))
@@ -3185,7 +3185,7 @@ func _CatalogService_ListWorkloadClasses_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListWorkloadClasses",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListWorkloadClasses(ctx, req.(*ListWorkloadClassesRequest))
@@ -3203,7 +3203,7 @@ func _CatalogService_GetWorkloadClass_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetWorkloadClass",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetWorkloadClass(ctx, req.(*GetWorkloadClassRequest))
@@ -3221,7 +3221,7 @@ func _CatalogService_ListUserRoleClasses_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListUserRoleClasses",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListUserRoleClasses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListUserRoleClasses(ctx, req.(*ListUserRoleClassesRequest))
@@ -3239,7 +3239,7 @@ func _CatalogService_GetUserRoleClass_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetUserRoleClass",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetUserRoleClass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetUserRoleClass(ctx, req.(*GetUserRoleClassRequest))
@@ -3257,7 +3257,7 @@ func _CatalogService_ListPublicDataset_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ListPublicDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ListPublicDataset(ctx, req.(*ListPublicDatasetsRequest))
@@ -3275,7 +3275,7 @@ func _CatalogService_GetPublicDataset_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/GetPublicDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).GetPublicDataset(ctx, req.(*GetPublicDatasetRequest))
@@ -3293,7 +3293,7 @@ func _CatalogService_DownloadPublicDataset_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/DownloadPublicDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).DownloadPublicDataset(ctx, req.(*DownloadPublicDatasetRequest))
@@ -3311,7 +3311,7 @@ func _CatalogService_PreviewPublicDataset_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/PreviewPublicDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).PreviewPublicDataset(ctx, req.(*PreviewPublicDatasetRequest))
@@ -3329,7 +3329,7 @@ func _CatalogService_ApplyPublicDatasetCR_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR",
+		FullMethod: "/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CatalogServiceServer).ApplyPublicDatasetCR(ctx, req.(*ApplyPublicDatasetCRRequest))
@@ -3338,7 +3338,7 @@ func _CatalogService_ApplyPublicDatasetCR_Handler(srv interface{}, ctx context.C
 }
 
 var _CatalogService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.catalog.v1.CatalogService",
+	ServiceName: "github.com.metaprov.modelaapi.services.catalog.v1.CatalogService",
 	HandlerType: (*CatalogServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -3403,5 +3403,5 @@ var _CatalogService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/catalog/v1/catalog.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto",
 }

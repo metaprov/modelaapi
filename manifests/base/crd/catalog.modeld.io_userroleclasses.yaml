@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: userroleclasses.catalog.modeld.io
+  name: userroleclasses.catalog.modela.io
 spec:
-  group: catalog.modeld.io
+  group: catalog.modela.io
   names:
     categories:
     - catalog
-    - modeld
+    - modela
     - all
     kind: UserRoleClass
     listKind: UserRoleClassList

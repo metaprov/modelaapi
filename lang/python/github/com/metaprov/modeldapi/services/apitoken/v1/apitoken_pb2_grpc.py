@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.apitoken.v1 import apitoken_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2
+from github.com.metaprov.modelaapi.services.apitoken.v1 import apitoken_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2
 
 
 class ApiTokenServiceStub(object):
@@ -15,29 +15,29 @@ class ApiTokenServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListApiTokens = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/ListApiTokens',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/ListApiTokens',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.FromString,
                 )
         self.CreateApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/CreateApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/CreateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.FromString,
                 )
         self.GetApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/GetApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/GetApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.FromString,
                 )
         self.UpdateApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/UpdateApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/UpdateApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.FromString,
                 )
         self.DeleteApiToken = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/DeleteApiToken',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/DeleteApiToken',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_ApiTokenServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListApiTokens': grpc.unary_unary_rpc_method_handler(
                     servicer.ListApiTokens,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.SerializeToString,
             ),
             'CreateApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.SerializeToString,
             ),
             'GetApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.GetApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.SerializeToString,
             ),
             'UpdateApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.SerializeToString,
             ),
             'DeleteApiToken': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteApiToken,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class ApiTokenService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/ListApiTokens',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/ListApiTokens',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.ListApiTokensResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class ApiTokenService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/CreateApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/CreateApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.CreateApiTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class ApiTokenService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/GetApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/GetApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.GetApiTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class ApiTokenService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/UpdateApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/UpdateApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.UpdateApiTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class ApiTokenService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.apitoken.v1.ApiTokenService/DeleteApiToken',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/DeleteApiToken',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apitoken_dot_v1_dot_apitoken__pb2.DeleteApiTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

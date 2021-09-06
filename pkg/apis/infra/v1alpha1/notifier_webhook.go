@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
 	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -48,7 +48,7 @@ func (notifier *Notifier) validate() error {
 		return nil
 	}
 
-	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modeld.io", Kind: "Notifier"}, notifier.Name, allErrs)
+	return apierrors.NewInvalid(schema.GroupKind{Group: "infra.modela.io", Kind: "Notifier"}, notifier.Name, allErrs)
 }
 
 func (notifier *Notifier) validateMeta(fldPath *field.Path) field.ErrorList {

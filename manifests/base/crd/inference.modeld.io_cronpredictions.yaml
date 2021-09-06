@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: cronpredictions.inference.modeld.io
+  name: cronpredictions.inference.modela.io
 spec:
-  group: inference.modeld.io
+  group: inference.modela.io
   names:
     categories:
     - inference
-    - modeld
+    - modela
     kind: CronPrediction
     listKind: CronPredictionList
     plural: cronpredictions

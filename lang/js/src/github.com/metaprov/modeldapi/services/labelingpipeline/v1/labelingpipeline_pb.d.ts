@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListLabelingPipelineRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListLabelingPipelineRequest {
 }
 
 export class ListLabelingPipelineResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList): ListLabelingPipelineResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList): ListLabelingPipelineResponse;
   hasItems(): boolean;
   clearItems(): ListLabelingPipelineResponse;
 
@@ -42,13 +42,13 @@ export class ListLabelingPipelineResponse extends jspb.Message {
 
 export namespace ListLabelingPipelineResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList.AsObject,
   }
 }
 
 export class CreateLabelingPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): CreateLabelingPipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): CreateLabelingPipelineRequest;
   hasItem(): boolean;
   clearItem(): CreateLabelingPipelineRequest;
 
@@ -62,7 +62,7 @@ export class CreateLabelingPipelineRequest extends jspb.Message {
 
 export namespace CreateLabelingPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateLabelingPipelineResponse {
 }
 
 export class UpdateLabelingPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): UpdateLabelingPipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): UpdateLabelingPipelineRequest;
   hasItem(): boolean;
   clearItem(): UpdateLabelingPipelineRequest;
 
@@ -96,7 +96,7 @@ export class UpdateLabelingPipelineRequest extends jspb.Message {
 
 export namespace UpdateLabelingPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetLabelingPipelineRequest {
 }
 
 export class GetLabelingPipelineResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): GetLabelingPipelineResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): GetLabelingPipelineResponse;
   hasItem(): boolean;
   clearItem(): GetLabelingPipelineResponse;
 
@@ -155,7 +155,7 @@ export class GetLabelingPipelineResponse extends jspb.Message {
 
 export namespace GetLabelingPipelineResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
     yaml: string,
   }
 }

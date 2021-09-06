@@ -2,16 +2,16 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto
+// source: github.com/metaprov/modelaapi/services/publisherd/v1/publisherd.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1alpha12 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -49,7 +49,7 @@ type PublishNotebookRequest struct {
 func (x *PublishNotebookRequest) Reset() {
 	*x = PublishNotebookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -62,7 +62,7 @@ func (x *PublishNotebookRequest) String() string {
 func (*PublishNotebookRequest) ProtoMessage() {}
 
 func (x *PublishNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -75,7 +75,7 @@ func (x *PublishNotebookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishNotebookRequest.ProtoReflect.Descriptor instead.
 func (*PublishNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PublishNotebookRequest) GetNotebookName() string {
@@ -138,7 +138,7 @@ type PublishNotebookResponse struct {
 func (x *PublishNotebookResponse) Reset() {
 	*x = PublishNotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -151,7 +151,7 @@ func (x *PublishNotebookResponse) String() string {
 func (*PublishNotebookResponse) ProtoMessage() {}
 
 func (x *PublishNotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -164,7 +164,7 @@ func (x *PublishNotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishNotebookResponse.ProtoReflect.Descriptor instead.
 func (*PublishNotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PublishNotebookResponse) GetImageName() string {
@@ -200,7 +200,7 @@ type BakeModelRequest struct {
 func (x *BakeModelRequest) Reset() {
 	*x = BakeModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *BakeModelRequest) String() string {
 func (*BakeModelRequest) ProtoMessage() {}
 
 func (x *BakeModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *BakeModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BakeModelRequest.ProtoReflect.Descriptor instead.
 func (*BakeModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *BakeModelRequest) GetDataproduct() *v1alpha11.DataProduct {
@@ -352,7 +352,7 @@ type BakeModelResponse struct {
 func (x *BakeModelResponse) Reset() {
 	*x = BakeModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -365,7 +365,7 @@ func (x *BakeModelResponse) String() string {
 func (*BakeModelResponse) ProtoMessage() {}
 
 func (x *BakeModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -378,7 +378,7 @@ func (x *BakeModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BakeModelResponse.ProtoReflect.Descriptor instead.
 func (*BakeModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *BakeModelResponse) GetImageName() string {
@@ -407,7 +407,7 @@ type TarModelRequest struct {
 func (x *TarModelRequest) Reset() {
 	*x = TarModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -420,7 +420,7 @@ func (x *TarModelRequest) String() string {
 func (*TarModelRequest) ProtoMessage() {}
 
 func (x *TarModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -433,7 +433,7 @@ func (x *TarModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TarModelRequest.ProtoReflect.Descriptor instead.
 func (*TarModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TarModelRequest) GetDataproduct() *v1alpha11.DataProduct {
@@ -510,7 +510,7 @@ type TarModelResponse struct {
 func (x *TarModelResponse) Reset() {
 	*x = TarModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -523,7 +523,7 @@ func (x *TarModelResponse) String() string {
 func (*TarModelResponse) ProtoMessage() {}
 
 func (x *TarModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -536,7 +536,7 @@ func (x *TarModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TarModelResponse.ProtoReflect.Descriptor instead.
 func (*TarModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TarModelResponse) GetTarUri() string {
@@ -555,7 +555,7 @@ type ShutdownRequest struct {
 func (x *ShutdownRequest) Reset() {
 	*x = ShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -568,7 +568,7 @@ func (x *ShutdownRequest) String() string {
 func (*ShutdownRequest) ProtoMessage() {}
 
 func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -581,7 +581,7 @@ func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
 func (*ShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{6}
 }
 
 type ShutdownResponse struct {
@@ -593,7 +593,7 @@ type ShutdownResponse struct {
 func (x *ShutdownResponse) Reset() {
 	*x = ShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -606,7 +606,7 @@ func (x *ShutdownResponse) String() string {
 func (*ShutdownResponse) ProtoMessage() {}
 
 func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -619,12 +619,12 @@ func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
 func (*ShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP(), []int{7}
 }
 
-var File_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68,
@@ -892,72 +892,72 @@ var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescData = file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescData = file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_goTypes = []interface{}{
-	(*PublishNotebookRequest)(nil),       // 0: github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest
-	(*PublishNotebookResponse)(nil),      // 1: github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse
-	(*BakeModelRequest)(nil),             // 2: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest
-	(*BakeModelResponse)(nil),            // 3: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse
-	(*TarModelRequest)(nil),              // 4: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest
-	(*TarModelResponse)(nil),             // 5: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse
-	(*ShutdownRequest)(nil),              // 6: github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest
-	(*ShutdownResponse)(nil),             // 7: github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse
-	nil,                                  // 8: github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry
-	nil,                                  // 9: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry
-	nil,                                  // 10: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry
-	nil,                                  // 11: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry
-	(*v1alpha1.NotebookSpec)(nil),        // 12: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec
-	(*v1alpha11.DataProduct)(nil),        // 13: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	(*v1alpha11.DataProductVersion)(nil), // 14: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	(*v1alpha1.Model)(nil),               // 15: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1alpha1.Study)(nil),               // 16: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha11.DataSource)(nil),         // 17: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1alpha11.Dataset)(nil),            // 18: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	(*v1alpha12.VirtualBucket)(nil),      // 19: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha12.Connection)(nil),         // 20: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+var file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_goTypes = []interface{}{
+	(*PublishNotebookRequest)(nil),       // 0: github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest
+	(*PublishNotebookResponse)(nil),      // 1: github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookResponse
+	(*BakeModelRequest)(nil),             // 2: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest
+	(*BakeModelResponse)(nil),            // 3: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse
+	(*TarModelRequest)(nil),              // 4: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest
+	(*TarModelResponse)(nil),             // 5: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse
+	(*ShutdownRequest)(nil),              // 6: github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownRequest
+	(*ShutdownResponse)(nil),             // 7: github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownResponse
+	nil,                                  // 8: github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry
+	nil,                                  // 9: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry
+	nil,                                  // 10: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry
+	nil,                                  // 11: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry
+	(*v1alpha1.NotebookSpec)(nil),        // 12: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec
+	(*v1alpha11.DataProduct)(nil),        // 13: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	(*v1alpha11.DataProductVersion)(nil), // 14: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	(*v1alpha1.Model)(nil),               // 15: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	(*v1alpha1.Study)(nil),               // 16: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	(*v1alpha11.DataSource)(nil),         // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	(*v1alpha11.Dataset)(nil),            // 18: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	(*v1alpha12.VirtualBucket)(nil),      // 19: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha12.Connection)(nil),         // 20: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 }
-var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_depIdxs = []int32{
-	12, // 0: github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.notebookSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec
-	8,  // 1: github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.secret:type_name -> github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry
-	13, // 2: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataproduct:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	14, // 3: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataproductversion:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	15, // 4: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	16, // 5: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	17, // 6: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	18, // 7: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	19, // 8: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	20, // 9: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.cloudConn:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	9,  // 10: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.cloudSecret:type_name -> github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry
-	20, // 11: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dockerConnection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	10, // 12: github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.dockerRegistrySecret:type_name -> github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry
-	13, // 13: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.dataproduct:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	14, // 14: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.dataproductversion:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	15, // 15: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	16, // 16: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	17, // 17: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	18, // 18: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	19, // 19: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	20, // 20: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.cloudConn:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	11, // 21: github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.cloudSecret:type_name -> github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry
-	4,  // 22: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.PublishTar:input_type -> github.com.metaprov.modeldapi.services.publisherd.v1.TarModelRequest
-	2,  // 23: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.Bake:input_type -> github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelRequest
-	0,  // 24: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.PublishNotebook:input_type -> github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookRequest
-	6,  // 25: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.Shutdown:input_type -> github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownRequest
-	5,  // 26: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.PublishTar:output_type -> github.com.metaprov.modeldapi.services.publisherd.v1.TarModelResponse
-	3,  // 27: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.Bake:output_type -> github.com.metaprov.modeldapi.services.publisherd.v1.BakeModelResponse
-	1,  // 28: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.PublishNotebook:output_type -> github.com.metaprov.modeldapi.services.publisherd.v1.PublishNotebookResponse
-	7,  // 29: github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService.Shutdown:output_type -> github.com.metaprov.modeldapi.services.publisherd.v1.ShutdownResponse
+var file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_depIdxs = []int32{
+	12, // 0: github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.notebookSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec
+	8,  // 1: github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.secret:type_name -> github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry
+	13, // 2: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.dataproduct:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	14, // 3: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.dataproductversion:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	15, // 4: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	16, // 5: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	17, // 6: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	18, // 7: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	19, // 8: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	20, // 9: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.cloudConn:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	9,  // 10: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.cloudSecret:type_name -> github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry
+	20, // 11: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.dockerConnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	10, // 12: github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.dockerRegistrySecret:type_name -> github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry
+	13, // 13: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.dataproduct:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	14, // 14: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.dataproductversion:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	15, // 15: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	16, // 16: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	17, // 17: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	18, // 18: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	19, // 19: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	20, // 20: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.cloudConn:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	11, // 21: github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.cloudSecret:type_name -> github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry
+	4,  // 22: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.PublishTar:input_type -> github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest
+	2,  // 23: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.Bake:input_type -> github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest
+	0,  // 24: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.PublishNotebook:input_type -> github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest
+	6,  // 25: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.Shutdown:input_type -> github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownRequest
+	5,  // 26: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.PublishTar:output_type -> github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse
+	3,  // 27: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.Bake:output_type -> github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse
+	1,  // 28: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.PublishNotebook:output_type -> github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookResponse
+	7,  // 29: github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService.Shutdown:output_type -> github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownResponse
 	26, // [26:30] is the sub-list for method output_type
 	22, // [22:26] is the sub-list for method input_type
 	22, // [22:22] is the sub-list for extension type_name
@@ -965,13 +965,13 @@ var file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_d
 	0,  // [0:22] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_init() }
-func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_init() }
+func file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PublishNotebookRequest); i {
 			case 0:
 				return &v.state
@@ -983,7 +983,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PublishNotebookResponse); i {
 			case 0:
 				return &v.state
@@ -995,7 +995,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BakeModelRequest); i {
 			case 0:
 				return &v.state
@@ -1007,7 +1007,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BakeModelResponse); i {
 			case 0:
 				return &v.state
@@ -1019,7 +1019,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TarModelRequest); i {
 			case 0:
 				return &v.state
@@ -1031,7 +1031,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TarModelResponse); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1043,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -1055,7 +1055,7 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -1072,20 +1072,20 @@ func file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto = out.File
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_publisherd_v1_publisherd_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto = out.File
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1118,7 +1118,7 @@ func NewPublisherdServiceClient(cc grpc.ClientConnInterface) PublisherdServiceCl
 
 func (c *publisherdServiceClient) PublishTar(ctx context.Context, in *TarModelRequest, opts ...grpc.CallOption) (*TarModelResponse, error) {
 	out := new(TarModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1127,7 +1127,7 @@ func (c *publisherdServiceClient) PublishTar(ctx context.Context, in *TarModelRe
 
 func (c *publisherdServiceClient) Bake(ctx context.Context, in *BakeModelRequest, opts ...grpc.CallOption) (*BakeModelResponse, error) {
 	out := new(BakeModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Bake", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1136,7 +1136,7 @@ func (c *publisherdServiceClient) Bake(ctx context.Context, in *BakeModelRequest
 
 func (c *publisherdServiceClient) PublishNotebook(ctx context.Context, in *PublishNotebookRequest, opts ...grpc.CallOption) (*PublishNotebookResponse, error) {
 	out := new(PublishNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1145,7 +1145,7 @@ func (c *publisherdServiceClient) PublishNotebook(ctx context.Context, in *Publi
 
 func (c *publisherdServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1193,7 +1193,7 @@ func _PublisherdService_PublishTar_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishTar",
+		FullMethod: "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PublisherdServiceServer).PublishTar(ctx, req.(*TarModelRequest))
@@ -1211,7 +1211,7 @@ func _PublisherdService_Bake_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Bake",
+		FullMethod: "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PublisherdServiceServer).Bake(ctx, req.(*BakeModelRequest))
@@ -1229,7 +1229,7 @@ func _PublisherdService_PublishNotebook_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/PublishNotebook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PublisherdServiceServer).PublishNotebook(ctx, req.(*PublishNotebookRequest))
@@ -1247,7 +1247,7 @@ func _PublisherdService_Shutdown_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService/Shutdown",
+		FullMethod: "/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PublisherdServiceServer).Shutdown(ctx, req.(*ShutdownRequest))
@@ -1256,7 +1256,7 @@ func _PublisherdService_Shutdown_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _PublisherdService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.publisherd.v1.PublisherdService",
+	ServiceName: "github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService",
 	HandlerType: (*PublisherdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1277,5 +1277,5 @@ var _PublisherdService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/publisherd/v1/publisherd.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/publisherd/v1/publisherd.proto",
 }

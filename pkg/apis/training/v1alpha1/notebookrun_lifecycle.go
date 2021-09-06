@@ -10,8 +10,8 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
-	"github.com/metaprov/modeldapi/pkg/apis/training"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/training"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -58,7 +58,7 @@ func (run *NotebookRun) RemoveFinalizer() { util.RemoveFin(&run.ObjectMeta, trai
 //==============================================================================
 
 func (run *NotebookRun) RootFolderKey() string {
-	return fmt.Sprintf("modeld/notebooks/%s/runs/%s", *run.Spec.NotebookName, run.ObjectMeta.Name)
+	return fmt.Sprintf("modela/notebooks/%s/runs/%s", *run.Spec.NotebookName, run.ObjectMeta.Name)
 }
 
 //khai/labs/l1/studies/<s1>/models/<m1>/estimator.bin

@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -47,7 +47,7 @@ func (prediction *Prediction) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "inference.modeld.io", Kind: "Prediction"},
+		schema.GroupKind{Group: "inference.modela.io", Kind: "Prediction"},
 		prediction.Name, allErrs)
 }
 

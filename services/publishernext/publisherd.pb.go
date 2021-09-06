@@ -9,9 +9,9 @@ package publishernext
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1alpha12 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -582,32 +582,32 @@ func file_services_publishernext_publisherd_proto_rawDescGZIP() []byte {
 
 var file_services_publishernext_publisherd_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_services_publishernext_publisherd_proto_goTypes = []interface{}{
-	(*PublishModelRequest)(nil),             // 0: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest
-	(*PublishModelResponse)(nil),            // 1: github.com.metaprov.modeldapi.services.publishernext.PublishModelResponse
-	nil,                                     // 2: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.ImageRegistrySecretEntry
-	nil,                                     // 3: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.CloudSecretEntry
-	(*v1alpha1.DataProductSpec)(nil),        // 4: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec
-	(*v1alpha1.DataProductVersionSpec)(nil), // 5: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec
-	(*v1alpha11.ModelSpec)(nil),             // 6: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec
-	(*v1alpha11.StudySpec)(nil),             // 7: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec
-	(*v1alpha1.DataSourceSpec)(nil),         // 8: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec
-	(*v1alpha1.DatasetSpec)(nil),            // 9: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec
-	(*v1alpha12.VirtualBucketSpec)(nil),     // 10: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec
-	(*v1alpha12.ConnectionSpec)(nil),        // 11: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec
+	(*PublishModelRequest)(nil),             // 0: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest
+	(*PublishModelResponse)(nil),            // 1: github.com.metaprov.modelaapi.services.publishernext.PublishModelResponse
+	nil,                                     // 2: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.ImageRegistrySecretEntry
+	nil,                                     // 3: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.CloudSecretEntry
+	(*v1alpha1.DataProductSpec)(nil),        // 4: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec
+	(*v1alpha1.DataProductVersionSpec)(nil), // 5: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionSpec
+	(*v1alpha11.ModelSpec)(nil),             // 6: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec
+	(*v1alpha11.StudySpec)(nil),             // 7: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec
+	(*v1alpha1.DataSourceSpec)(nil),         // 8: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec
+	(*v1alpha1.DatasetSpec)(nil),            // 9: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec
+	(*v1alpha12.VirtualBucketSpec)(nil),     // 10: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec
+	(*v1alpha12.ConnectionSpec)(nil),        // 11: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec
 }
 var file_services_publishernext_publisherd_proto_depIdxs = []int32{
-	4,  // 0: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.dataproductSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductSpec
-	5,  // 1: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.dataproductversionSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionSpec
-	6,  // 2: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.modelSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelSpec
-	7,  // 3: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.studySpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudySpec
-	8,  // 4: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.datasourceSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceSpec
-	9,  // 5: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.datasetSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetSpec
-	2,  // 6: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.imageRegistrySecret:type_name -> github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.ImageRegistrySecretEntry
-	10, // 7: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.bucketSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec
-	11, // 8: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.cloudConnectionSpec:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ConnectionSpec
-	3,  // 9: github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.cloudSecret:type_name -> github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest.CloudSecretEntry
-	0,  // 10: github.com.metaprov.modeldapi.services.publishernext.PublisherdService.PublishModel:input_type -> github.com.metaprov.modeldapi.services.publishernext.PublishModelRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.publishernext.PublisherdService.PublishModel:output_type -> github.com.metaprov.modeldapi.services.publishernext.PublishModelResponse
+	4,  // 0: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.dataproductSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec
+	5,  // 1: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.dataproductversionSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionSpec
+	6,  // 2: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.modelSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec
+	7,  // 3: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.studySpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec
+	8,  // 4: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.datasourceSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec
+	9,  // 5: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.datasetSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec
+	2,  // 6: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.imageRegistrySecret:type_name -> github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.ImageRegistrySecretEntry
+	10, // 7: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.bucketSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec
+	11, // 8: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.cloudConnectionSpec:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec
+	3,  // 9: github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.cloudSecret:type_name -> github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest.CloudSecretEntry
+	0,  // 10: github.com.metaprov.modelaapi.services.publishernext.PublisherdService.PublishModel:input_type -> github.com.metaprov.modelaapi.services.publishernext.PublishModelRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.publishernext.PublisherdService.PublishModel:output_type -> github.com.metaprov.modelaapi.services.publishernext.PublishModelResponse
 	11, // [11:12] is the sub-list for method output_type
 	10, // [10:11] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
@@ -691,7 +691,7 @@ func NewPublisherdServiceClient(cc grpc.ClientConnInterface) PublisherdServiceCl
 
 func (c *publisherdServiceClient) PublishModel(ctx context.Context, in *PublishModelRequest, opts ...grpc.CallOption) (*PublishModelResponse, error) {
 	out := new(PublishModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.publishernext.PublisherdService/PublishModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.publishernext.PublisherdService/PublishModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -725,7 +725,7 @@ func _PublisherdService_PublishModel_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.publishernext.PublisherdService/PublishModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.publishernext.PublisherdService/PublishModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PublisherdServiceServer).PublishModel(ctx, req.(*PublishModelRequest))
@@ -734,7 +734,7 @@ func _PublisherdService_PublishModel_Handler(srv interface{}, ctx context.Contex
 }
 
 var _PublisherdService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.publishernext.PublisherdService",
+	ServiceName: "github.com.metaprov.modelaapi.services.publishernext.PublisherdService",
 	HandlerType: (*PublisherdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

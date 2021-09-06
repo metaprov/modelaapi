@@ -12,7 +12,7 @@ import (
 // +kubebuilder:printcolumn:name="vCpu",type="string",JSONPath=".spec.vcpu"
 // +kubebuilder:printcolumn:name="Memory",type="string",JSONPath=".spec.mem"
 // +kubebuilder:printcolumn:name="Gpu",type="integer",JSONPath=".spec.gpu"
-// +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modeld,all}
+// +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 type WorkloadClass struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

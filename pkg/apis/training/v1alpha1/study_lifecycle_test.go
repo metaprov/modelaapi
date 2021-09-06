@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"github.com/stretchr/testify/assert"
 )
 

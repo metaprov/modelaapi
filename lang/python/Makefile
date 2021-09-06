@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 
 # Set important Paths
-PROJECT := modeld
+PROJECT := modela
 LOCALPATH := $(CURDIR)/$(PROJECT)
 
 # Export targets not associated with files

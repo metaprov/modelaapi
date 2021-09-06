@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.objectstored.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.objectstored.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb from '../../../../../../github.com/metaprov/modeldapi/services/objectstored/v1/objectstored_pb';
+import * as github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb from '../../../../../../github.com/metaprov/modelaapi/services/objectstored/v1/objectstored_pb';
 
 
 export class ObjectstoreServiceClient {
@@ -36,32 +36,32 @@ export class ObjectstoreServiceClient {
   }
 
   methodInfoIngest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
-    (request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
+    (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
   );
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   ingest(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
+          '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Ingest',
         request,
         metadata || {},
         this.methodInfoIngest,
@@ -69,39 +69,39 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest',
+      '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Ingest',
     request,
     metadata || {},
     this.methodInfoIngest);
   }
 
   methodInfoArchive = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
-    (request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
+    (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
   );
 
   archive(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   archive(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   archive(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
+          '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Archive',
         request,
         metadata || {},
         this.methodInfoArchive,
@@ -109,39 +109,39 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive',
+      '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Archive',
     request,
     metadata || {},
     this.methodInfoArchive);
   }
 
   methodInfoRecover = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
-    (request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
+    (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse.deserializeBinary
   );
 
   recover(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   recover(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   recover(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
+          '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Recover',
         request,
         metadata || {},
         this.methodInfoRecover,
@@ -149,39 +149,39 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover',
+      '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Recover',
     request,
     metadata || {},
     this.methodInfoRecover);
   }
 
   methodInfoExistInVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse,
-    (request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse,
+    (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse.deserializeBinary
   );
 
   existInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse>;
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse>;
 
   existInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse>;
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse>;
 
   existInVirtualBucket(
-    request: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
+    request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+          '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
         request,
         metadata || {},
         this.methodInfoExistInVirtualBucket,
@@ -189,7 +189,7 @@ export class ObjectstoreServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+      '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
     request,
     metadata || {},
     this.methodInfoExistInVirtualBucket);

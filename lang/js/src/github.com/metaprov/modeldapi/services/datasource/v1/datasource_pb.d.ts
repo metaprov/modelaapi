@@ -1,9 +1,9 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListDataSourceRequest extends jspb.Message {
@@ -29,8 +29,8 @@ export namespace ListDataSourceRequest {
 }
 
 export class ListDataSourceResponse extends jspb.Message {
-  getList(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList | undefined;
-  setList(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList): ListDataSourceResponse;
+  getList(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList | undefined;
+  setList(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList): ListDataSourceResponse;
   hasList(): boolean;
   clearList(): ListDataSourceResponse;
 
@@ -44,7 +44,7 @@ export class ListDataSourceResponse extends jspb.Message {
 
 export namespace ListDataSourceResponse {
   export type AsObject = {
-    list?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.AsObject,
+    list?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.AsObject,
   }
 }
 
@@ -71,8 +71,8 @@ export namespace GetDataSourceRequest {
 }
 
 export class GetDataSourceResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetDataSourceResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): GetDataSourceResponse;
   hasItem(): boolean;
   clearItem(): GetDataSourceResponse;
 
@@ -89,14 +89,14 @@ export class GetDataSourceResponse extends jspb.Message {
 
 export namespace GetDataSourceResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     yaml: string,
   }
 }
 
 export class UpdateDataSourceRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): UpdateDataSourceRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): UpdateDataSourceRequest;
   hasItem(): boolean;
   clearItem(): UpdateDataSourceRequest;
 
@@ -110,7 +110,7 @@ export class UpdateDataSourceRequest extends jspb.Message {
 
 export namespace UpdateDataSourceRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
   }
 }
 
@@ -129,8 +129,8 @@ export namespace UpdateDataSourceResponse {
 }
 
 export class CreateDataSourceRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateDataSourceRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): CreateDataSourceRequest;
   hasItem(): boolean;
   clearItem(): CreateDataSourceRequest;
 
@@ -144,7 +144,7 @@ export class CreateDataSourceRequest extends jspb.Message {
 
 export namespace CreateDataSourceRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
   }
 }
 
@@ -205,13 +205,13 @@ export class InferSchemaRequest extends jspb.Message {
   getName(): string;
   setName(value: string): InferSchemaRequest;
 
-  getFlatfile(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
-  setFlatfile(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): InferSchemaRequest;
+  getFlatfile(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
+  setFlatfile(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): InferSchemaRequest;
   hasFlatfile(): boolean;
   clearFlatfile(): InferSchemaRequest;
 
-  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
   hasLocation(): boolean;
   clearLocation(): InferSchemaRequest;
 
@@ -227,16 +227,16 @@ export namespace InferSchemaRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    flatfile?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
-    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
 export class InferSchemaResponse extends jspb.Message {
-  getColumnsList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile>;
-  setColumnsList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile>): InferSchemaResponse;
+  getColumnsList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile>;
+  setColumnsList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile>): InferSchemaResponse;
   clearColumnsList(): InferSchemaResponse;
-  addColumns(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile;
+  addColumns(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InferSchemaResponse.AsObject;
@@ -248,18 +248,18 @@ export class InferSchemaResponse extends jspb.Message {
 
 export namespace InferSchemaResponse {
   export type AsObject = {
-    columnsList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile.AsObject>,
+    columnsList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.AsObject>,
   }
 }
 
 export class GetTableViewRequest extends jspb.Message {
-  getFlatfilespec(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
-  setFlatfilespec(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): GetTableViewRequest;
+  getFlatfilespec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
+  setFlatfilespec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): GetTableViewRequest;
   hasFlatfilespec(): boolean;
   clearFlatfilespec(): GetTableViewRequest;
 
-  getLocation(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setLocation(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): GetTableViewRequest;
   hasLocation(): boolean;
   clearLocation(): GetTableViewRequest;
 
@@ -273,14 +273,14 @@ export class GetTableViewRequest extends jspb.Message {
 
 export namespace GetTableViewRequest {
   export type AsObject = {
-    flatfilespec?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
-    location?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    flatfilespec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 
 export class GetTableViewResponse extends jspb.Message {
-  getTable(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
-  setTable(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): GetTableViewResponse;
+  getTable(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTable(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): GetTableViewResponse;
   hasTable(): boolean;
   clearTable(): GetTableViewResponse;
 
@@ -294,7 +294,7 @@ export class GetTableViewResponse extends jspb.Message {
 
 export namespace GetTableViewResponse {
   export type AsObject = {
-    table?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+    table?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
   }
 }
 

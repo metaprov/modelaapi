@@ -18,7 +18,7 @@ graft tests
 prune tests/fixtures
 prune tests/actual_images
 
-graft modeld
+graft modela
 
 
 global-exclude __pycache__

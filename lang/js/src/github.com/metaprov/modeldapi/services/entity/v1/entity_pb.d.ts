@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListEntitiesRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListEntitiesRequest {
 }
 
 export class ListEntitiesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntityList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntityList): ListEntitiesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList): ListEntitiesResponse;
   hasItems(): boolean;
   clearItems(): ListEntitiesResponse;
 
@@ -42,13 +42,13 @@ export class ListEntitiesResponse extends jspb.Message {
 
 export namespace ListEntitiesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.AsObject,
   }
 }
 
 export class CreateEntityRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
   hasItem(): boolean;
   clearItem(): CreateEntityRequest;
 
@@ -62,7 +62,7 @@ export class CreateEntityRequest extends jspb.Message {
 
 export namespace CreateEntityRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateEntityResponse {
 }
 
 export class UpdateEntityRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): UpdateEntityRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): UpdateEntityRequest;
   hasItem(): boolean;
   clearItem(): UpdateEntityRequest;
 
@@ -96,7 +96,7 @@ export class UpdateEntityRequest extends jspb.Message {
 
 export namespace UpdateEntityRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetEntityRequest {
 }
 
 export class GetEntityResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity): GetEntityResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): GetEntityResponse;
   hasItem(): boolean;
   clearItem(): GetEntityResponse;
 
@@ -155,7 +155,7 @@ export class GetEntityResponse extends jspb.Message {
 
 export namespace GetEntityResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
     yaml: string,
   }
 }

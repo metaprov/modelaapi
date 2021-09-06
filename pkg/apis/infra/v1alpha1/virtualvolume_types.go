@@ -38,7 +38,7 @@ type VirtualVolumeCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modeld,all}
+// +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modela,all}
 // VirtualVolume represent a volume api object
 type VirtualVolume struct {
 	metav1.TypeMeta   `json:",inline"`

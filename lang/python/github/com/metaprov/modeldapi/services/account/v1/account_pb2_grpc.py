@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.account.v1 import account_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2
+from github.com.metaprov.modelaapi.services.account.v1 import account_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2
 
 
 class AccountServiceStub(object):
@@ -15,64 +15,64 @@ class AccountServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListAccounts = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.FromString,
                 )
         self.CreateAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.FromString,
                 )
         self.GetAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.FromString,
                 )
         self.UpdateAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.FromString,
                 )
         self.DeleteAccount = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.FromString,
                 )
         self.GetAccountNamespaces = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.FromString,
                 )
         self.Login = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.FromString,
                 )
         self.Logout = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
                 )
         self.ChangePassword = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.FromString,
                 )
         self.ResetPassword = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
                 )
         self.UploadAvatar = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
                 )
         self.DownloadAvatar = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
+                '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
                 )
 
 
@@ -156,67 +156,67 @@ def add_AccountServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccounts,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.SerializeToString,
             ),
             'CreateAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.SerializeToString,
             ),
             'GetAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.SerializeToString,
             ),
             'UpdateAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.SerializeToString,
             ),
             'DeleteAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccount,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.SerializeToString,
             ),
             'GetAccountNamespaces': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccountNamespaces,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.SerializeToString,
             ),
             'Login': grpc.unary_unary_rpc_method_handler(
                     servicer.Login,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.SerializeToString,
             ),
             'Logout': grpc.unary_unary_rpc_method_handler(
                     servicer.Logout,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.SerializeToString,
             ),
             'ChangePassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ChangePassword,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.SerializeToString,
             ),
             'ResetPassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetPassword,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.SerializeToString,
             ),
             'UploadAvatar': grpc.unary_unary_rpc_method_handler(
                     servicer.UploadAvatar,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.SerializeToString,
             ),
             'DownloadAvatar': grpc.unary_unary_rpc_method_handler(
                     servicer.DownloadAvatar,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.account.v1.AccountService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.account.v1.AccountService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -235,9 +235,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ListAccounts',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ListAccountsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -252,9 +252,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/CreateAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.CreateAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -269,9 +269,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -286,9 +286,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UpdateAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UpdateAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -303,9 +303,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DeleteAccount',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DeleteAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -320,9 +320,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/GetAccountNamespaces',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.GetAccountNamespacesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -337,9 +337,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Login',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLoginResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -354,9 +354,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/Logout',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.AccountLogoutRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.LogoutResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -371,9 +371,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ChangePassword',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ChangePasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -388,9 +388,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/ResetPassword',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.ResetPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -405,9 +405,9 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/UploadAvatar',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.UploadAvatarReponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -422,8 +422,8 @@ class AccountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.account.v1.AccountService/DownloadAvatar',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_account_dot_v1_dot_account__pb2.DownloadAvatarReponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

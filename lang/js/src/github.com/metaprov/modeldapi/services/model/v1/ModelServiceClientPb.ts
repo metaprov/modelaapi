@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.model.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.model.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_model_v1_model_pb from '../../../../../../github.com/metaprov/modeldapi/services/model/v1/model_pb';
+import * as github_com_metaprov_modelaapi_services_model_v1_model_pb from '../../../../../../github.com/metaprov/modelaapi/services/model/v1/model_pb';
 
 
 export class ModelServiceClient {
@@ -36,32 +36,32 @@ export class ModelServiceClient {
   }
 
   methodInfoListModels = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse.deserializeBinary
   );
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse>;
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse>;
 
   listModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.ListModelsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.ListModelsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/ListModels',
         request,
         metadata || {},
         this.methodInfoListModels,
@@ -69,39 +69,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/ListModels',
     request,
     metadata || {},
     this.methodInfoListModels);
   }
 
   methodInfoCreateModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse.deserializeBinary
   );
 
   createModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse>;
 
   createModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse>;
 
   createModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModel',
         request,
         metadata || {},
         this.methodInfoCreateModel,
@@ -109,39 +109,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModel',
     request,
     metadata || {},
     this.methodInfoCreateModel);
   }
 
   methodInfoGetModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse.deserializeBinary
   );
 
   getModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse>;
 
   getModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse>;
 
   getModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModel',
         request,
         metadata || {},
         this.methodInfoGetModel,
@@ -149,39 +149,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModel',
     request,
     metadata || {},
     this.methodInfoGetModel);
   }
 
   methodInfoUpdateModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse.deserializeBinary
   );
 
   updateModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse>;
 
   updateModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse>;
 
   updateModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.UpdateModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.UpdateModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/UpdateModel',
         request,
         metadata || {},
         this.methodInfoUpdateModel,
@@ -189,39 +189,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/UpdateModel',
     request,
     metadata || {},
     this.methodInfoUpdateModel);
   }
 
   methodInfoDeleteModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse.deserializeBinary
   );
 
   deleteModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse>;
 
   deleteModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse>;
 
   deleteModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeleteModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeleteModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeleteModel',
         request,
         metadata || {},
         this.methodInfoDeleteModel,
@@ -229,39 +229,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeleteModel',
     request,
     metadata || {},
     this.methodInfoDeleteModel);
   }
 
   methodInfoDeployModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse.deserializeBinary
   );
 
   deployModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse>;
 
   deployModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse>;
 
   deployModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DeployModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DeployModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeployModel',
         request,
         metadata || {},
         this.methodInfoDeployModel,
@@ -269,39 +269,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeployModel',
     request,
     metadata || {},
     this.methodInfoDeployModel);
   }
 
   methodInfoPublishModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse.deserializeBinary
   );
 
   publishModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse>;
 
   publishModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse>;
 
   publishModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.PublishModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PublishModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PublishModel',
         request,
         metadata || {},
         this.methodInfoPublishModel,
@@ -309,39 +309,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PublishModel',
     request,
     metadata || {},
     this.methodInfoPublishModel);
   }
 
   methodInfoCreateModelProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse.deserializeBinary
   );
 
   createModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse>;
 
   createModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse>;
 
   createModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CreateModelProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CreateModelProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModelProfile',
         request,
         metadata || {},
         this.methodInfoCreateModelProfile,
@@ -349,39 +349,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModelProfile',
     request,
     metadata || {},
     this.methodInfoCreateModelProfile);
   }
 
   methodInfoGetModelProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse.deserializeBinary
   );
 
   getModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse>;
 
   getModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse>;
 
   getModelProfile(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile',
         request,
         metadata || {},
         this.methodInfoGetModelProfile,
@@ -389,39 +389,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile',
     request,
     metadata || {},
     this.methodInfoGetModelProfile);
   }
 
   methodInfoGetModelMisclass = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse.deserializeBinary
   );
 
   getModelMisclass(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse>;
 
   getModelMisclass(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse>;
 
   getModelMisclass(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetMisclassResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetMisclassResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass',
         request,
         metadata || {},
         this.methodInfoGetModelMisclass,
@@ -429,39 +429,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass',
     request,
     metadata || {},
     this.methodInfoGetModelMisclass);
   }
 
   methodInfoGetModelLogs = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse.deserializeBinary
   );
 
   getModelLogs(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse>;
 
   getModelLogs(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse>;
 
   getModelLogs(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.GetModelLogsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.GetModelLogsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelLogs',
         request,
         metadata || {},
         this.methodInfoGetModelLogs,
@@ -469,39 +469,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelLogs',
     request,
     metadata || {},
     this.methodInfoGetModelLogs);
   }
 
   methodInfoAbortModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse.deserializeBinary
   );
 
   abortModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse>;
 
   abortModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse>;
 
   abortModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.AbortModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.AbortModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/AbortModel',
         request,
         metadata || {},
         this.methodInfoAbortModel,
@@ -509,39 +509,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/AbortModel',
     request,
     metadata || {},
     this.methodInfoAbortModel);
   }
 
   methodInfoPauseModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse.deserializeBinary
   );
 
   pauseModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse>;
 
   pauseModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse>;
 
   pauseModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.PauseModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.PauseModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PauseModel',
         request,
         metadata || {},
         this.methodInfoPauseModel,
@@ -549,39 +549,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/PauseModel',
     request,
     metadata || {},
     this.methodInfoPauseModel);
   }
 
   methodInfoResumeModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse.deserializeBinary
   );
 
   resumeModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse>;
 
   resumeModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse>;
 
   resumeModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.ResumeModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.ResumeModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/ResumeModel',
         request,
         metadata || {},
         this.methodInfoResumeModel,
@@ -589,39 +589,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/ResumeModel',
     request,
     metadata || {},
     this.methodInfoResumeModel);
   }
 
   methodInfoCompareModels = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse.deserializeBinary
   );
 
   compareModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse>;
 
   compareModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse>;
 
   compareModels(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompareModelsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompareModelsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompareModels',
         request,
         metadata || {},
         this.methodInfoCompareModels,
@@ -629,39 +629,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompareModels',
     request,
     metadata || {},
     this.methodInfoCompareModels);
   }
 
   methodInfoCompileModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse.deserializeBinary
   );
 
   compileModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse>;
 
   compileModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse>;
 
   compileModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.CompileModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.CompileModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompileModel',
         request,
         metadata || {},
         this.methodInfoCompileModel,
@@ -669,39 +669,39 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompileModel',
     request,
     metadata || {},
     this.methodInfoCompileModel);
   }
 
   methodInfoDownloadModel = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse,
-    (request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest) => {
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse.deserializeBinary
   );
 
   downloadModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse>;
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse>;
 
   downloadModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse>;
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse>;
 
   downloadModel(
-    request: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelRequest,
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_model_v1_model_pb.DownloadModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.DownloadModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DownloadModel',
         request,
         metadata || {},
         this.methodInfoDownloadModel,
@@ -709,7 +709,7 @@ export class ModelServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel',
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/DownloadModel',
     request,
     metadata || {},
     this.methodInfoDownloadModel);

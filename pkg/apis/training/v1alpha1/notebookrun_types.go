@@ -57,7 +57,7 @@ type NotebookRunCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=notebookruns,singular=notebookrun,shortName=nbr,categories={training,modeld,all}
+// +kubebuilder:resource:path=notebookruns,singular=notebookrun,shortName=nbr,categories={training,modela,all}
 // NotebookRun represent a single execution of a notebook with a specific env variables
 type NotebookRun struct {
 	metav1.TypeMeta   `json:",inline"`

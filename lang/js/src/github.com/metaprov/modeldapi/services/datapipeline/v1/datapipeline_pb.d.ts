@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListDataPipelinesRequest extends jspb.Message {
@@ -35,8 +35,8 @@ export namespace ListDataPipelinesRequest {
 }
 
 export class ListDataPipelinesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList): ListDataPipelinesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList): ListDataPipelinesResponse;
   hasItems(): boolean;
   clearItems(): ListDataPipelinesResponse;
 
@@ -50,13 +50,13 @@ export class ListDataPipelinesResponse extends jspb.Message {
 
 export namespace ListDataPipelinesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList.AsObject,
   }
 }
 
 export class CreateDataPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): CreateDataPipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): CreateDataPipelineRequest;
   hasItem(): boolean;
   clearItem(): CreateDataPipelineRequest;
 
@@ -70,7 +70,7 @@ export class CreateDataPipelineRequest extends jspb.Message {
 
 export namespace CreateDataPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
   }
 }
 
@@ -89,8 +89,8 @@ export namespace CreateDataPipelineResponse {
 }
 
 export class UpdateDataPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): UpdateDataPipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): UpdateDataPipelineRequest;
   hasItem(): boolean;
   clearItem(): UpdateDataPipelineRequest;
 
@@ -104,7 +104,7 @@ export class UpdateDataPipelineRequest extends jspb.Message {
 
 export namespace UpdateDataPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
   }
 }
 
@@ -145,8 +145,8 @@ export namespace GetDataPipelineRequest {
 }
 
 export class GetDataPipelineResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): GetDataPipelineResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): GetDataPipelineResponse;
   hasItem(): boolean;
   clearItem(): GetDataPipelineResponse;
 
@@ -163,7 +163,7 @@ export class GetDataPipelineResponse extends jspb.Message {
 
 export namespace GetDataPipelineResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
     yaml: string,
   }
 }
@@ -191,8 +191,8 @@ export namespace RunDataPipelineRequest {
 }
 
 export class RunDataPipelineResponse extends jspb.Message {
-  getPipeline(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setPipeline(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): RunDataPipelineResponse;
+  getPipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setPipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): RunDataPipelineResponse;
   hasPipeline(): boolean;
   clearPipeline(): RunDataPipelineResponse;
 
@@ -209,7 +209,7 @@ export class RunDataPipelineResponse extends jspb.Message {
 
 export namespace RunDataPipelineResponse {
   export type AsObject = {
-    pipeline?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    pipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
     yaml: string,
   }
 }

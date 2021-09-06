@@ -16,7 +16,7 @@ import (
 )
 
 func (pr *ModelPipelineRun) Default() {
-	pr.Status.Folder = "modeld/live/tenants/default-tenant/dataproducts/" + pr.Namespace +
+	pr.Status.Folder = "modela/live/tenants/default-tenant/dataproducts/" + pr.Namespace +
 		"/dataproductversions/" +
 		*pr.Spec.VersionName +
 		"/pipelines/" + *pr.Spec.PipelineName + "/pipelineruns/" + pr.Name
@@ -48,7 +48,7 @@ func (run *ModelPipelineRun) validateBucket() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "ModelPipelineRun"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "ModelPipelineRun"},
 		run.Name, allErrs)
 }
 

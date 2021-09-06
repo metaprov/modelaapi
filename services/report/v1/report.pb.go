@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/report/v1/report.proto
+// source: github.com/metaprov/modelaapi/services/report/v1/report.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListReportsRequest struct {
 func (x *ListReportsRequest) Reset() {
 	*x = ListReportsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListReportsRequest) String() string {
 func (*ListReportsRequest) ProtoMessage() {}
 
 func (x *ListReportsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListReportsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListReportsRequest.ProtoReflect.Descriptor instead.
 func (*ListReportsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListReportsRequest) GetNamespace() string {
@@ -105,7 +105,7 @@ type ListReportsResponse struct {
 func (x *ListReportsResponse) Reset() {
 	*x = ListReportsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -118,7 +118,7 @@ func (x *ListReportsResponse) String() string {
 func (*ListReportsResponse) ProtoMessage() {}
 
 func (x *ListReportsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -131,7 +131,7 @@ func (x *ListReportsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListReportsResponse.ProtoReflect.Descriptor instead.
 func (*ListReportsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListReportsResponse) GetItems() *v1alpha1.ReportList {
@@ -152,7 +152,7 @@ type CreateReportRequest struct {
 func (x *CreateReportRequest) Reset() {
 	*x = CreateReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -165,7 +165,7 @@ func (x *CreateReportRequest) String() string {
 func (*CreateReportRequest) ProtoMessage() {}
 
 func (x *CreateReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -178,7 +178,7 @@ func (x *CreateReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateReportRequest) GetItem() *v1alpha1.Report {
@@ -197,7 +197,7 @@ type CreateReportResponse struct {
 func (x *CreateReportResponse) Reset() {
 	*x = CreateReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -210,7 +210,7 @@ func (x *CreateReportResponse) String() string {
 func (*CreateReportResponse) ProtoMessage() {}
 
 func (x *CreateReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -223,7 +223,7 @@ func (x *CreateReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReportResponse.ProtoReflect.Descriptor instead.
 func (*CreateReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateReportRequest struct {
@@ -237,7 +237,7 @@ type UpdateReportRequest struct {
 func (x *UpdateReportRequest) Reset() {
 	*x = UpdateReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -250,7 +250,7 @@ func (x *UpdateReportRequest) String() string {
 func (*UpdateReportRequest) ProtoMessage() {}
 
 func (x *UpdateReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -263,7 +263,7 @@ func (x *UpdateReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateReportRequest.ProtoReflect.Descriptor instead.
 func (*UpdateReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateReportRequest) GetItem() *v1alpha1.Report {
@@ -282,7 +282,7 @@ type UpdateReportResponse struct {
 func (x *UpdateReportResponse) Reset() {
 	*x = UpdateReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -295,7 +295,7 @@ func (x *UpdateReportResponse) String() string {
 func (*UpdateReportResponse) ProtoMessage() {}
 
 func (x *UpdateReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *UpdateReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateReportResponse.ProtoReflect.Descriptor instead.
 func (*UpdateReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{5}
 }
 
 type GetReportRequest struct {
@@ -323,7 +323,7 @@ type GetReportRequest struct {
 func (x *GetReportRequest) Reset() {
 	*x = GetReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -336,7 +336,7 @@ func (x *GetReportRequest) String() string {
 func (*GetReportRequest) ProtoMessage() {}
 
 func (x *GetReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -349,7 +349,7 @@ func (x *GetReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReportRequest.ProtoReflect.Descriptor instead.
 func (*GetReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetReportRequest) GetNamespace() string {
@@ -378,7 +378,7 @@ type GetReportResponse struct {
 func (x *GetReportResponse) Reset() {
 	*x = GetReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +391,7 @@ func (x *GetReportResponse) String() string {
 func (*GetReportResponse) ProtoMessage() {}
 
 func (x *GetReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *GetReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReportResponse.ProtoReflect.Descriptor instead.
 func (*GetReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetReportResponse) GetItem() *v1alpha1.Report {
@@ -433,7 +433,7 @@ type DeleteReportRequest struct {
 func (x *DeleteReportRequest) Reset() {
 	*x = DeleteReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *DeleteReportRequest) String() string {
 func (*DeleteReportRequest) ProtoMessage() {}
 
 func (x *DeleteReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *DeleteReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteReportRequest.ProtoReflect.Descriptor instead.
 func (*DeleteReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteReportRequest) GetNamespace() string {
@@ -485,7 +485,7 @@ type DeleteReportResponse struct {
 func (x *DeleteReportResponse) Reset() {
 	*x = DeleteReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -498,7 +498,7 @@ func (x *DeleteReportResponse) String() string {
 func (*DeleteReportResponse) ProtoMessage() {}
 
 func (x *DeleteReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +511,7 @@ func (x *DeleteReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteReportResponse.ProtoReflect.Descriptor instead.
 func (*DeleteReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{9}
 }
 
 type DownloadReportRequest struct {
@@ -526,7 +526,7 @@ type DownloadReportRequest struct {
 func (x *DownloadReportRequest) Reset() {
 	*x = DownloadReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *DownloadReportRequest) String() string {
 func (*DownloadReportRequest) ProtoMessage() {}
 
 func (x *DownloadReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *DownloadReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadReportRequest.ProtoReflect.Descriptor instead.
 func (*DownloadReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *DownloadReportRequest) GetNamespace() string {
@@ -581,7 +581,7 @@ type DownloadReportResponse struct {
 func (x *DownloadReportResponse) Reset() {
 	*x = DownloadReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -594,7 +594,7 @@ func (x *DownloadReportResponse) String() string {
 func (*DownloadReportResponse) ProtoMessage() {}
 
 func (x *DownloadReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -607,7 +607,7 @@ func (x *DownloadReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadReportResponse.ProtoReflect.Descriptor instead.
 func (*DownloadReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DownloadReportResponse) GetRaw() []byte {
@@ -617,9 +617,9 @@ func (x *DownloadReportResponse) GetRaw() []byte {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_report_v1_report_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_report_v1_report_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x2f,
@@ -780,53 +780,53 @@ var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescData = file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescData = file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_goTypes = []interface{}{
-	(*ListReportsRequest)(nil),     // 0: github.com.metaprov.modeldapi.services.report.v1.ListReportsRequest
-	(*ListReportsResponse)(nil),    // 1: github.com.metaprov.modeldapi.services.report.v1.ListReportsResponse
-	(*CreateReportRequest)(nil),    // 2: github.com.metaprov.modeldapi.services.report.v1.CreateReportRequest
-	(*CreateReportResponse)(nil),   // 3: github.com.metaprov.modeldapi.services.report.v1.CreateReportResponse
-	(*UpdateReportRequest)(nil),    // 4: github.com.metaprov.modeldapi.services.report.v1.UpdateReportRequest
-	(*UpdateReportResponse)(nil),   // 5: github.com.metaprov.modeldapi.services.report.v1.UpdateReportResponse
-	(*GetReportRequest)(nil),       // 6: github.com.metaprov.modeldapi.services.report.v1.GetReportRequest
-	(*GetReportResponse)(nil),      // 7: github.com.metaprov.modeldapi.services.report.v1.GetReportResponse
-	(*DeleteReportRequest)(nil),    // 8: github.com.metaprov.modeldapi.services.report.v1.DeleteReportRequest
-	(*DeleteReportResponse)(nil),   // 9: github.com.metaprov.modeldapi.services.report.v1.DeleteReportResponse
-	(*DownloadReportRequest)(nil),  // 10: github.com.metaprov.modeldapi.services.report.v1.DownloadReportRequest
-	(*DownloadReportResponse)(nil), // 11: github.com.metaprov.modeldapi.services.report.v1.DownloadReportResponse
-	nil,                            // 12: github.com.metaprov.modeldapi.services.report.v1.ListReportsRequest.LabelsEntry
-	(*v1alpha1.ReportList)(nil),    // 13: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportList
-	(*v1alpha1.Report)(nil),        // 14: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
+var file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_github_com_metaprov_modelaapi_services_report_v1_report_proto_goTypes = []interface{}{
+	(*ListReportsRequest)(nil),     // 0: github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest
+	(*ListReportsResponse)(nil),    // 1: github.com.metaprov.modelaapi.services.report.v1.ListReportsResponse
+	(*CreateReportRequest)(nil),    // 2: github.com.metaprov.modelaapi.services.report.v1.CreateReportRequest
+	(*CreateReportResponse)(nil),   // 3: github.com.metaprov.modelaapi.services.report.v1.CreateReportResponse
+	(*UpdateReportRequest)(nil),    // 4: github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest
+	(*UpdateReportResponse)(nil),   // 5: github.com.metaprov.modelaapi.services.report.v1.UpdateReportResponse
+	(*GetReportRequest)(nil),       // 6: github.com.metaprov.modelaapi.services.report.v1.GetReportRequest
+	(*GetReportResponse)(nil),      // 7: github.com.metaprov.modelaapi.services.report.v1.GetReportResponse
+	(*DeleteReportRequest)(nil),    // 8: github.com.metaprov.modelaapi.services.report.v1.DeleteReportRequest
+	(*DeleteReportResponse)(nil),   // 9: github.com.metaprov.modelaapi.services.report.v1.DeleteReportResponse
+	(*DownloadReportRequest)(nil),  // 10: github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest
+	(*DownloadReportResponse)(nil), // 11: github.com.metaprov.modelaapi.services.report.v1.DownloadReportResponse
+	nil,                            // 12: github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest.LabelsEntry
+	(*v1alpha1.ReportList)(nil),    // 13: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList
+	(*v1alpha1.Report)(nil),        // 14: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
 }
-var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_depIdxs = []int32{
-	12, // 0: github.com.metaprov.modeldapi.services.report.v1.ListReportsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.report.v1.ListReportsRequest.LabelsEntry
-	13, // 1: github.com.metaprov.modeldapi.services.report.v1.ListReportsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ReportList
-	14, // 2: github.com.metaprov.modeldapi.services.report.v1.CreateReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	14, // 3: github.com.metaprov.modeldapi.services.report.v1.UpdateReportRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	14, // 4: github.com.metaprov.modeldapi.services.report.v1.GetReportResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	0,  // 5: github.com.metaprov.modeldapi.services.report.v1.ReportService.ListReports:input_type -> github.com.metaprov.modeldapi.services.report.v1.ListReportsRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.report.v1.ReportService.CreateReport:input_type -> github.com.metaprov.modeldapi.services.report.v1.CreateReportRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.report.v1.ReportService.GetReport:input_type -> github.com.metaprov.modeldapi.services.report.v1.GetReportRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.report.v1.ReportService.UpdateReport:input_type -> github.com.metaprov.modeldapi.services.report.v1.UpdateReportRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.report.v1.ReportService.DeleteReport:input_type -> github.com.metaprov.modeldapi.services.report.v1.DeleteReportRequest
-	10, // 10: github.com.metaprov.modeldapi.services.report.v1.ReportService.Download:input_type -> github.com.metaprov.modeldapi.services.report.v1.DownloadReportRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.report.v1.ReportService.ListReports:output_type -> github.com.metaprov.modeldapi.services.report.v1.ListReportsResponse
-	3,  // 12: github.com.metaprov.modeldapi.services.report.v1.ReportService.CreateReport:output_type -> github.com.metaprov.modeldapi.services.report.v1.CreateReportResponse
-	7,  // 13: github.com.metaprov.modeldapi.services.report.v1.ReportService.GetReport:output_type -> github.com.metaprov.modeldapi.services.report.v1.GetReportResponse
-	5,  // 14: github.com.metaprov.modeldapi.services.report.v1.ReportService.UpdateReport:output_type -> github.com.metaprov.modeldapi.services.report.v1.UpdateReportResponse
-	9,  // 15: github.com.metaprov.modeldapi.services.report.v1.ReportService.DeleteReport:output_type -> github.com.metaprov.modeldapi.services.report.v1.DeleteReportResponse
-	11, // 16: github.com.metaprov.modeldapi.services.report.v1.ReportService.Download:output_type -> github.com.metaprov.modeldapi.services.report.v1.DownloadReportResponse
+var file_github_com_metaprov_modelaapi_services_report_v1_report_proto_depIdxs = []int32{
+	12, // 0: github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest.LabelsEntry
+	13, // 1: github.com.metaprov.modelaapi.services.report.v1.ListReportsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList
+	14, // 2: github.com.metaprov.modelaapi.services.report.v1.CreateReportRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	14, // 3: github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	14, // 4: github.com.metaprov.modelaapi.services.report.v1.GetReportResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	0,  // 5: github.com.metaprov.modelaapi.services.report.v1.ReportService.ListReports:input_type -> github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.report.v1.ReportService.CreateReport:input_type -> github.com.metaprov.modelaapi.services.report.v1.CreateReportRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.report.v1.ReportService.GetReport:input_type -> github.com.metaprov.modelaapi.services.report.v1.GetReportRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.report.v1.ReportService.UpdateReport:input_type -> github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.report.v1.ReportService.DeleteReport:input_type -> github.com.metaprov.modelaapi.services.report.v1.DeleteReportRequest
+	10, // 10: github.com.metaprov.modelaapi.services.report.v1.ReportService.Download:input_type -> github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.report.v1.ReportService.ListReports:output_type -> github.com.metaprov.modelaapi.services.report.v1.ListReportsResponse
+	3,  // 12: github.com.metaprov.modelaapi.services.report.v1.ReportService.CreateReport:output_type -> github.com.metaprov.modelaapi.services.report.v1.CreateReportResponse
+	7,  // 13: github.com.metaprov.modelaapi.services.report.v1.ReportService.GetReport:output_type -> github.com.metaprov.modelaapi.services.report.v1.GetReportResponse
+	5,  // 14: github.com.metaprov.modelaapi.services.report.v1.ReportService.UpdateReport:output_type -> github.com.metaprov.modelaapi.services.report.v1.UpdateReportResponse
+	9,  // 15: github.com.metaprov.modelaapi.services.report.v1.ReportService.DeleteReport:output_type -> github.com.metaprov.modelaapi.services.report.v1.DeleteReportResponse
+	11, // 16: github.com.metaprov.modelaapi.services.report.v1.ReportService.Download:output_type -> github.com.metaprov.modelaapi.services.report.v1.DownloadReportResponse
 	11, // [11:17] is the sub-list for method output_type
 	5,  // [5:11] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -834,13 +834,13 @@ var file_github_com_metaprov_modeldapi_services_report_v1_report_proto_depIdxs =
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() }
-func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_report_v1_report_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_report_v1_report_proto_init() }
+func file_github_com_metaprov_modelaapi_services_report_v1_report_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_report_v1_report_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListReportsRequest); i {
 			case 0:
 				return &v.state
@@ -852,7 +852,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListReportsResponse); i {
 			case 0:
 				return &v.state
@@ -864,7 +864,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateReportRequest); i {
 			case 0:
 				return &v.state
@@ -876,7 +876,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateReportResponse); i {
 			case 0:
 				return &v.state
@@ -888,7 +888,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateReportRequest); i {
 			case 0:
 				return &v.state
@@ -900,7 +900,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateReportResponse); i {
 			case 0:
 				return &v.state
@@ -912,7 +912,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReportRequest); i {
 			case 0:
 				return &v.state
@@ -924,7 +924,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReportResponse); i {
 			case 0:
 				return &v.state
@@ -936,7 +936,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteReportRequest); i {
 			case 0:
 				return &v.state
@@ -948,7 +948,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteReportResponse); i {
 			case 0:
 				return &v.state
@@ -960,7 +960,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadReportRequest); i {
 			case 0:
 				return &v.state
@@ -972,7 +972,7 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadReportResponse); i {
 			case 0:
 				return &v.state
@@ -989,20 +989,20 @@ func file_github_com_metaprov_modeldapi_services_report_v1_report_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_report_v1_report_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_report_v1_report_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_report_v1_report_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_report_v1_report_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_report_v1_report_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_report_v1_report_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_report_v1_report_proto = out.File
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_report_v1_report_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_report_v1_report_proto = out.File
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_report_v1_report_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1035,7 +1035,7 @@ func NewReportServiceClient(cc grpc.ClientConnInterface) ReportServiceClient {
 
 func (c *reportServiceClient) ListReports(ctx context.Context, in *ListReportsRequest, opts ...grpc.CallOption) (*ListReportsResponse, error) {
 	out := new(ListReportsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1044,7 +1044,7 @@ func (c *reportServiceClient) ListReports(ctx context.Context, in *ListReportsRe
 
 func (c *reportServiceClient) CreateReport(ctx context.Context, in *CreateReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1053,7 +1053,7 @@ func (c *reportServiceClient) CreateReport(ctx context.Context, in *CreateReport
 
 func (c *reportServiceClient) GetReport(ctx context.Context, in *GetReportRequest, opts ...grpc.CallOption) (*GetReportResponse, error) {
 	out := new(GetReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1062,7 +1062,7 @@ func (c *reportServiceClient) GetReport(ctx context.Context, in *GetReportReques
 
 func (c *reportServiceClient) UpdateReport(ctx context.Context, in *UpdateReportRequest, opts ...grpc.CallOption) (*UpdateReportResponse, error) {
 	out := new(UpdateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1071,7 +1071,7 @@ func (c *reportServiceClient) UpdateReport(ctx context.Context, in *UpdateReport
 
 func (c *reportServiceClient) DeleteReport(ctx context.Context, in *DeleteReportRequest, opts ...grpc.CallOption) (*DeleteReportResponse, error) {
 	out := new(DeleteReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1080,7 +1080,7 @@ func (c *reportServiceClient) DeleteReport(ctx context.Context, in *DeleteReport
 
 func (c *reportServiceClient) Download(ctx context.Context, in *DownloadReportRequest, opts ...grpc.CallOption) (*DownloadReportResponse, error) {
 	out := new(DownloadReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1134,7 +1134,7 @@ func _ReportService_ListReports_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/ListReports",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/ListReports",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).ListReports(ctx, req.(*ListReportsRequest))
@@ -1152,7 +1152,7 @@ func _ReportService_CreateReport_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/CreateReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/CreateReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).CreateReport(ctx, req.(*CreateReportRequest))
@@ -1170,7 +1170,7 @@ func _ReportService_GetReport_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/GetReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/GetReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).GetReport(ctx, req.(*GetReportRequest))
@@ -1188,7 +1188,7 @@ func _ReportService_UpdateReport_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/UpdateReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/UpdateReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).UpdateReport(ctx, req.(*UpdateReportRequest))
@@ -1206,7 +1206,7 @@ func _ReportService_DeleteReport_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/DeleteReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/DeleteReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).DeleteReport(ctx, req.(*DeleteReportRequest))
@@ -1224,7 +1224,7 @@ func _ReportService_Download_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.report.v1.ReportService/Download",
+		FullMethod: "/github.com.metaprov.modelaapi.services.report.v1.ReportService/Download",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReportServiceServer).Download(ctx, req.(*DownloadReportRequest))
@@ -1233,7 +1233,7 @@ func _ReportService_Download_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 var _ReportService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.report.v1.ReportService",
+	ServiceName: "github.com.metaprov.modelaapi.services.report.v1.ReportService",
 	HandlerType: (*ReportServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1262,5 +1262,5 @@ var _ReportService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/report/v1/report.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/report/v1/report.proto",
 }

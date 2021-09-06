@@ -1,5 +1,5 @@
 package inference
 
 const (
-	GroupName = "inference.modeld.io"
+	GroupName = "inference.modela.io"
 )

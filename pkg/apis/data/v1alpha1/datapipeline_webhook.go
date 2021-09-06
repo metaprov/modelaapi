@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/apis/common"
+	"github.com/metaprov/modelaapi/pkg/apis/common"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -44,7 +44,7 @@ func (wr *DataPipeline) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modeld.io", Kind: "DataPipeline"},
+		schema.GroupKind{Group: "data.modela.io", Kind: "DataPipeline"},
 		wr.Name, allErrs)
 }
 

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.predictionstore.v1 import predictionstore_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2
+from github.com.metaprov.modelaapi.services.predictionstore.v1 import predictionstore_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2
 
 
 class PredictionStoreServiceStub(object):
@@ -15,9 +15,9 @@ class PredictionStoreServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Ingest = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService/Ingest',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
                 )
 
 
@@ -37,12 +37,12 @@ def add_PredictionStoreServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ingest': grpc.unary_unary_rpc_method_handler(
                     servicer.Ingest,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -61,8 +61,8 @@ class PredictionStoreService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictionstore.v1.PredictionStoreService/Ingest',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService/Ingest',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionsIngestRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictionstore_dot_v1_dot_predictionstore__pb2.PredictionIngestResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/common/v1/common.proto
+// source: github.com/metaprov/modelaapi/services/common/v1/common.proto
 
 package v1
 
@@ -67,11 +67,11 @@ func (x NamespaceInfo_NamespaceType) String() string {
 }
 
 func (NamespaceInfo_NamespaceType) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_enumTypes[0].Descriptor()
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_enumTypes[0].Descriptor()
 }
 
 func (NamespaceInfo_NamespaceType) Type() protoreflect.EnumType {
-	return &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_enumTypes[0]
+	return &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_enumTypes[0]
 }
 
 func (x NamespaceInfo_NamespaceType) Number() protoreflect.EnumNumber {
@@ -80,7 +80,7 @@ func (x NamespaceInfo_NamespaceType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NamespaceInfo_NamespaceType.Descriptor instead.
 func (NamespaceInfo_NamespaceType) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{8, 0}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{8, 0}
 }
 
 type DatasetProfile struct {
@@ -101,7 +101,7 @@ type DatasetProfile struct {
 func (x *DatasetProfile) Reset() {
 	*x = DatasetProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -114,7 +114,7 @@ func (x *DatasetProfile) String() string {
 func (*DatasetProfile) ProtoMessage() {}
 
 func (x *DatasetProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -127,7 +127,7 @@ func (x *DatasetProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DatasetProfile.ProtoReflect.Descriptor instead.
 func (*DatasetProfile) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *DatasetProfile) GetCols() int32 {
@@ -194,7 +194,7 @@ type ModelProfile struct {
 func (x *ModelProfile) Reset() {
 	*x = ModelProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -207,7 +207,7 @@ func (x *ModelProfile) String() string {
 func (*ModelProfile) ProtoMessage() {}
 
 func (x *ModelProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -220,7 +220,7 @@ func (x *ModelProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelProfile.ProtoReflect.Descriptor instead.
 func (*ModelProfile) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ModelProfile) GetName() string {
@@ -252,7 +252,7 @@ type ForecastProfile struct {
 func (x *ForecastProfile) Reset() {
 	*x = ForecastProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -265,7 +265,7 @@ func (x *ForecastProfile) String() string {
 func (*ForecastProfile) ProtoMessage() {}
 
 func (x *ForecastProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -278,7 +278,7 @@ func (x *ForecastProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForecastProfile.ProtoReflect.Descriptor instead.
 func (*ForecastProfile) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ForecastProfile) GetName() string {
@@ -310,7 +310,7 @@ type StudyProfile struct {
 func (x *StudyProfile) Reset() {
 	*x = StudyProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -323,7 +323,7 @@ func (x *StudyProfile) String() string {
 func (*StudyProfile) ProtoMessage() {}
 
 func (x *StudyProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -336,7 +336,7 @@ func (x *StudyProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StudyProfile.ProtoReflect.Descriptor instead.
 func (*StudyProfile) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *StudyProfile) GetPlots() []*Plot {
@@ -372,7 +372,7 @@ type Plot struct {
 func (x *Plot) Reset() {
 	*x = Plot{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -385,7 +385,7 @@ func (x *Plot) String() string {
 func (*Plot) ProtoMessage() {}
 
 func (x *Plot) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -398,7 +398,7 @@ func (x *Plot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Plot.ProtoReflect.Descriptor instead.
 func (*Plot) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Plot) GetName() string {
@@ -476,7 +476,7 @@ type ColumnProfile struct {
 func (x *ColumnProfile) Reset() {
 	*x = ColumnProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -489,7 +489,7 @@ func (x *ColumnProfile) String() string {
 func (*ColumnProfile) ProtoMessage() {}
 
 func (x *ColumnProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -502,7 +502,7 @@ func (x *ColumnProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ColumnProfile.ProtoReflect.Descriptor instead.
 func (*ColumnProfile) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ColumnProfile) GetName() string {
@@ -713,7 +713,7 @@ type HistogramValue struct {
 func (x *HistogramValue) Reset() {
 	*x = HistogramValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -726,7 +726,7 @@ func (x *HistogramValue) String() string {
 func (*HistogramValue) ProtoMessage() {}
 
 func (x *HistogramValue) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -739,7 +739,7 @@ func (x *HistogramValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HistogramValue.ProtoReflect.Descriptor instead.
 func (*HistogramValue) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *HistogramValue) GetName() string {
@@ -767,7 +767,7 @@ type Histogram struct {
 func (x *Histogram) Reset() {
 	*x = Histogram{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -780,7 +780,7 @@ func (x *Histogram) String() string {
 func (*Histogram) ProtoMessage() {}
 
 func (x *Histogram) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -793,7 +793,7 @@ func (x *Histogram) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Histogram.ProtoReflect.Descriptor instead.
 func (*Histogram) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Histogram) GetValues() []*HistogramValue {
@@ -808,7 +808,7 @@ type NamespaceInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type         NamespaceInfo_NamespaceType `protobuf:"varint,1,opt,name=type,proto3,enum=github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo_NamespaceType" json:"type,omitempty"`
+	Type         NamespaceInfo_NamespaceType `protobuf:"varint,1,opt,name=type,proto3,enum=github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo_NamespaceType" json:"type,omitempty"`
 	Name         string                      `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	Accounts     int32                       `protobuf:"varint,3,opt,name=accounts,proto3" json:"accounts,omitempty"`
 	Buckets      int32                       `protobuf:"varint,4,opt,name=buckets,proto3" json:"buckets,omitempty"`
@@ -823,7 +823,7 @@ type NamespaceInfo struct {
 func (x *NamespaceInfo) Reset() {
 	*x = NamespaceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -836,7 +836,7 @@ func (x *NamespaceInfo) String() string {
 func (*NamespaceInfo) ProtoMessage() {}
 
 func (x *NamespaceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -849,7 +849,7 @@ func (x *NamespaceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NamespaceInfo.ProtoReflect.Descriptor instead.
 func (*NamespaceInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *NamespaceInfo) GetType() NamespaceInfo_NamespaceType {
@@ -935,7 +935,7 @@ type TableView struct {
 func (x *TableView) Reset() {
 	*x = TableView{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -948,7 +948,7 @@ func (x *TableView) String() string {
 func (*TableView) ProtoMessage() {}
 
 func (x *TableView) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -961,7 +961,7 @@ func (x *TableView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableView.ProtoReflect.Descriptor instead.
 func (*TableView) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *TableView) GetCols() []string {
@@ -996,7 +996,7 @@ type TableViewRow struct {
 func (x *TableViewRow) Reset() {
 	*x = TableViewRow{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *TableViewRow) String() string {
 func (*TableViewRow) ProtoMessage() {}
 
 func (x *TableViewRow) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *TableViewRow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TableViewRow.ProtoReflect.Descriptor instead.
 func (*TableViewRow) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *TableViewRow) GetValues() []string {
@@ -1032,9 +1032,9 @@ func (x *TableViewRow) GetValues() []string {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_common_v1_common_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_common_v1_common_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f,
@@ -1202,46 +1202,46 @@ var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescData = file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescData = file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_goTypes = []interface{}{
-	(NamespaceInfo_NamespaceType)(0), // 0: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo.NamespaceType
-	(*DatasetProfile)(nil),           // 1: github.com.metaprov.modeldapi.services.common.v1.DatasetProfile
-	(*ModelProfile)(nil),             // 2: github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	(*ForecastProfile)(nil),          // 3: github.com.metaprov.modeldapi.services.common.v1.ForecastProfile
-	(*StudyProfile)(nil),             // 4: github.com.metaprov.modeldapi.services.common.v1.StudyProfile
-	(*Plot)(nil),                     // 5: github.com.metaprov.modeldapi.services.common.v1.Plot
-	(*ColumnProfile)(nil),            // 6: github.com.metaprov.modeldapi.services.common.v1.ColumnProfile
-	(*HistogramValue)(nil),           // 7: github.com.metaprov.modeldapi.services.common.v1.HistogramValue
-	(*Histogram)(nil),                // 8: github.com.metaprov.modeldapi.services.common.v1.Histogram
-	(*NamespaceInfo)(nil),            // 9: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	(*TableView)(nil),                // 10: github.com.metaprov.modeldapi.services.common.v1.TableView
-	(*TableViewRow)(nil),             // 11: github.com.metaprov.modeldapi.services.common.v1.TableViewRow
+var file_github_com_metaprov_modelaapi_services_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_common_v1_common_proto_goTypes = []interface{}{
+	(NamespaceInfo_NamespaceType)(0), // 0: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType
+	(*DatasetProfile)(nil),           // 1: github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	(*ModelProfile)(nil),             // 2: github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	(*ForecastProfile)(nil),          // 3: github.com.metaprov.modelaapi.services.common.v1.ForecastProfile
+	(*StudyProfile)(nil),             // 4: github.com.metaprov.modelaapi.services.common.v1.StudyProfile
+	(*Plot)(nil),                     // 5: github.com.metaprov.modelaapi.services.common.v1.Plot
+	(*ColumnProfile)(nil),            // 6: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	(*HistogramValue)(nil),           // 7: github.com.metaprov.modelaapi.services.common.v1.HistogramValue
+	(*Histogram)(nil),                // 8: github.com.metaprov.modelaapi.services.common.v1.Histogram
+	(*NamespaceInfo)(nil),            // 9: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	(*TableView)(nil),                // 10: github.com.metaprov.modelaapi.services.common.v1.TableView
+	(*TableViewRow)(nil),             // 11: github.com.metaprov.modelaapi.services.common.v1.TableViewRow
 }
-var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_depIdxs = []int32{
-	5,  // 0: github.com.metaprov.modeldapi.services.common.v1.DatasetProfile.plots:type_name -> github.com.metaprov.modeldapi.services.common.v1.Plot
-	6,  // 1: github.com.metaprov.modeldapi.services.common.v1.DatasetProfile.columns:type_name -> github.com.metaprov.modeldapi.services.common.v1.ColumnProfile
-	10, // 2: github.com.metaprov.modeldapi.services.common.v1.DatasetProfile.table:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	5,  // 3: github.com.metaprov.modeldapi.services.common.v1.ModelProfile.plots:type_name -> github.com.metaprov.modeldapi.services.common.v1.Plot
-	5,  // 4: github.com.metaprov.modeldapi.services.common.v1.ForecastProfile.plots:type_name -> github.com.metaprov.modeldapi.services.common.v1.Plot
-	5,  // 5: github.com.metaprov.modeldapi.services.common.v1.StudyProfile.plots:type_name -> github.com.metaprov.modeldapi.services.common.v1.Plot
-	2,  // 6: github.com.metaprov.modeldapi.services.common.v1.StudyProfile.models:type_name -> github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	8,  // 7: github.com.metaprov.modeldapi.services.common.v1.ColumnProfile.histogram:type_name -> github.com.metaprov.modeldapi.services.common.v1.Histogram
-	7,  // 8: github.com.metaprov.modeldapi.services.common.v1.Histogram.values:type_name -> github.com.metaprov.modeldapi.services.common.v1.HistogramValue
-	0,  // 9: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo.type:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo.NamespaceType
-	11, // 10: github.com.metaprov.modeldapi.services.common.v1.TableView.rows:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableViewRow
-	6,  // 11: github.com.metaprov.modeldapi.services.common.v1.TableView.profiles:type_name -> github.com.metaprov.modeldapi.services.common.v1.ColumnProfile
+var file_github_com_metaprov_modelaapi_services_common_v1_common_proto_depIdxs = []int32{
+	5,  // 0: github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.plots:type_name -> github.com.metaprov.modelaapi.services.common.v1.Plot
+	6,  // 1: github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.columns:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	10, // 2: github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	5,  // 3: github.com.metaprov.modelaapi.services.common.v1.ModelProfile.plots:type_name -> github.com.metaprov.modelaapi.services.common.v1.Plot
+	5,  // 4: github.com.metaprov.modelaapi.services.common.v1.ForecastProfile.plots:type_name -> github.com.metaprov.modelaapi.services.common.v1.Plot
+	5,  // 5: github.com.metaprov.modelaapi.services.common.v1.StudyProfile.plots:type_name -> github.com.metaprov.modelaapi.services.common.v1.Plot
+	2,  // 6: github.com.metaprov.modelaapi.services.common.v1.StudyProfile.models:type_name -> github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	8,  // 7: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.histogram:type_name -> github.com.metaprov.modelaapi.services.common.v1.Histogram
+	7,  // 8: github.com.metaprov.modelaapi.services.common.v1.Histogram.values:type_name -> github.com.metaprov.modelaapi.services.common.v1.HistogramValue
+	0,  // 9: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.type:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType
+	11, // 10: github.com.metaprov.modelaapi.services.common.v1.TableView.rows:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableViewRow
+	6,  // 11: github.com.metaprov.modelaapi.services.common.v1.TableView.profiles:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
@@ -1249,13 +1249,13 @@ var file_github_com_metaprov_modeldapi_services_common_v1_common_proto_depIdxs =
 	0,  // [0:12] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() }
-func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_common_v1_common_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_common_v1_common_proto_init() }
+func file_github_com_metaprov_modelaapi_services_common_v1_common_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_common_v1_common_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DatasetProfile); i {
 			case 0:
 				return &v.state
@@ -1267,7 +1267,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelProfile); i {
 			case 0:
 				return &v.state
@@ -1279,7 +1279,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ForecastProfile); i {
 			case 0:
 				return &v.state
@@ -1291,7 +1291,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StudyProfile); i {
 			case 0:
 				return &v.state
@@ -1303,7 +1303,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Plot); i {
 			case 0:
 				return &v.state
@@ -1315,7 +1315,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ColumnProfile); i {
 			case 0:
 				return &v.state
@@ -1327,7 +1327,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HistogramValue); i {
 			case 0:
 				return &v.state
@@ -1339,7 +1339,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Histogram); i {
 			case 0:
 				return &v.state
@@ -1351,7 +1351,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NamespaceInfo); i {
 			case 0:
 				return &v.state
@@ -1363,7 +1363,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TableView); i {
 			case 0:
 				return &v.state
@@ -1375,7 +1375,7 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TableViewRow); i {
 			case 0:
 				return &v.state
@@ -1392,19 +1392,19 @@ func file_github_com_metaprov_modeldapi_services_common_v1_common_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDesc,
 			NumEnums:      1,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_common_v1_common_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_common_v1_common_proto_depIdxs,
-		EnumInfos:         file_github_com_metaprov_modeldapi_services_common_v1_common_proto_enumTypes,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_common_v1_common_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_common_v1_common_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_common_v1_common_proto_depIdxs,
+		EnumInfos:         file_github_com_metaprov_modelaapi_services_common_v1_common_proto_enumTypes,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_common_v1_common_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_common_v1_common_proto = out.File
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_common_v1_common_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_common_v1_common_proto = out.File
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_common_v1_common_proto_depIdxs = nil
 }

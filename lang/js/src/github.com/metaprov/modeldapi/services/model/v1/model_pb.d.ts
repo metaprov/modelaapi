@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class CreateModelProfileResponse extends jspb.Message {
@@ -94,8 +94,8 @@ export namespace GetModelProfileRequest {
 }
 
 export class GetModelProfileResponse extends jspb.Message {
-  getProfile(): github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile | undefined;
-  setProfile(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile): GetModelProfileResponse;
+  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile | undefined;
+  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile): GetModelProfileResponse;
   hasProfile(): boolean;
   clearProfile(): GetModelProfileResponse;
 
@@ -109,7 +109,7 @@ export class GetModelProfileResponse extends jspb.Message {
 
 export namespace GetModelProfileResponse {
   export type AsObject = {
-    profile?: github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile.AsObject,
+    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile.AsObject,
   }
 }
 
@@ -154,8 +154,8 @@ export namespace GetModelLogsRequest {
 }
 
 export class CreateModelRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): CreateModelRequest;
   hasItem(): boolean;
   clearItem(): CreateModelRequest;
 
@@ -169,7 +169,7 @@ export class CreateModelRequest extends jspb.Message {
 
 export namespace CreateModelRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 
@@ -188,8 +188,8 @@ export namespace CreateModelResponse {
 }
 
 export class UpdateModelRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): UpdateModelRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): UpdateModelRequest;
   hasItem(): boolean;
   clearItem(): UpdateModelRequest;
 
@@ -203,7 +203,7 @@ export class UpdateModelRequest extends jspb.Message {
 
 export namespace UpdateModelRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
   }
 }
 
@@ -222,8 +222,8 @@ export namespace UpdateModelResponse {
 }
 
 export class GetModelResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model): GetModelResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): GetModelResponse;
   hasItem(): boolean;
   clearItem(): GetModelResponse;
 
@@ -240,7 +240,7 @@ export class GetModelResponse extends jspb.Message {
 
 export namespace GetModelResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     yaml: string,
   }
 }
@@ -386,10 +386,10 @@ export class CompareModelsResponse extends jspb.Message {
   clearNamesList(): CompareModelsResponse;
   addNames(value: string, index?: number): CompareModelsResponse;
 
-  getProfilesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile>;
-  setProfilesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile>): CompareModelsResponse;
+  getProfilesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile>;
+  setProfilesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile>): CompareModelsResponse;
   clearProfilesList(): CompareModelsResponse;
-  addProfiles(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile;
+  addProfiles(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CompareModelsResponse.AsObject;
@@ -403,7 +403,7 @@ export namespace CompareModelsResponse {
   export type AsObject = {
     namespace: string,
     namesList: Array<string>,
-    profilesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile.AsObject>,
+    profilesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile.AsObject>,
   }
 }
 
@@ -556,8 +556,8 @@ export namespace ListModelsRequest {
 }
 
 export class ListModelsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelList): ListModelsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList): ListModelsResponse;
   hasItems(): boolean;
   clearItems(): ListModelsResponse;
 
@@ -571,7 +571,7 @@ export class ListModelsResponse extends jspb.Message {
 
 export namespace ListModelsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelList.AsObject,
   }
 }
 
@@ -684,8 +684,8 @@ export namespace GetMisclassRequest {
 }
 
 export class GetMisclassResponse extends jspb.Message {
-  getTable(): github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView | undefined;
-  setTable(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView): GetMisclassResponse;
+  getTable(): github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView | undefined;
+  setTable(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView): GetMisclassResponse;
   hasTable(): boolean;
   clearTable(): GetMisclassResponse;
 
@@ -699,7 +699,7 @@ export class GetMisclassResponse extends jspb.Message {
 
 export namespace GetMisclassResponse {
   export type AsObject = {
-    table?: github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.AsObject,
+    table?: github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.AsObject,
   }
 }
 

@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
 export class ListCronPredictionsRequest extends jspb.Message {
@@ -31,8 +31,8 @@ export namespace ListCronPredictionsRequest {
 }
 
 export class ListCronPredictionsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList): ListCronPredictionsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList): ListCronPredictionsResponse;
   hasItems(): boolean;
   clearItems(): ListCronPredictionsResponse;
 
@@ -46,7 +46,7 @@ export class ListCronPredictionsResponse extends jspb.Message {
 
 export namespace ListCronPredictionsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList.AsObject,
   }
 }
 
@@ -65,8 +65,8 @@ export namespace CreateCronPredictionResponse {
 }
 
 export class CreateCronPredictionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): CreateCronPredictionRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): CreateCronPredictionRequest;
   hasItem(): boolean;
   clearItem(): CreateCronPredictionRequest;
 
@@ -80,13 +80,13 @@ export class CreateCronPredictionRequest extends jspb.Message {
 
 export namespace CreateCronPredictionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
   }
 }
 
 export class UpdateCronPredictionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): UpdateCronPredictionRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): UpdateCronPredictionRequest;
   hasItem(): boolean;
   clearItem(): UpdateCronPredictionRequest;
 
@@ -100,7 +100,7 @@ export class UpdateCronPredictionRequest extends jspb.Message {
 
 export namespace UpdateCronPredictionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
   }
 }
 
@@ -141,8 +141,8 @@ export namespace GetCronPredictionRequest {
 }
 
 export class GetCronPredictionResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): GetCronPredictionResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): GetCronPredictionResponse;
   hasItem(): boolean;
   clearItem(): GetCronPredictionResponse;
 
@@ -159,7 +159,7 @@ export class GetCronPredictionResponse extends jspb.Message {
 
 export namespace GetCronPredictionResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
     yaml: string,
   }
 }
@@ -273,8 +273,8 @@ export namespace ResumeCronPredictionResponse {
 }
 
 export class RunCronPredictionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): RunCronPredictionRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction): RunCronPredictionRequest;
   hasItem(): boolean;
   clearItem(): RunCronPredictionRequest;
 
@@ -288,7 +288,7 @@ export class RunCronPredictionRequest extends jspb.Message {
 
 export namespace RunCronPredictionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.AsObject,
   }
 }
 

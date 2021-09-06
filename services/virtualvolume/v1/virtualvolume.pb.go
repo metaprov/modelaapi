@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/virtualvolume/v1/virtualvolume.proto
+// source: github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	_ "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	_ "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListVirtualVolumesRequest struct {
 func (x *ListVirtualVolumesRequest) Reset() {
 	*x = ListVirtualVolumesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListVirtualVolumesRequest) String() string {
 func (*ListVirtualVolumesRequest) ProtoMessage() {}
 
 func (x *ListVirtualVolumesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListVirtualVolumesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualVolumesRequest.ProtoReflect.Descriptor instead.
 func (*ListVirtualVolumesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListVirtualVolumesRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListVirtualVolumesResponse struct {
 func (x *ListVirtualVolumesResponse) Reset() {
 	*x = ListVirtualVolumesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListVirtualVolumesResponse) String() string {
 func (*ListVirtualVolumesResponse) ProtoMessage() {}
 
 func (x *ListVirtualVolumesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListVirtualVolumesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVirtualVolumesResponse.ProtoReflect.Descriptor instead.
 func (*ListVirtualVolumesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListVirtualVolumesResponse) GetItems() *v1alpha1.VirtualVolumeList {
@@ -143,7 +143,7 @@ type VirtualVolumeResponse struct {
 func (x *VirtualVolumeResponse) Reset() {
 	*x = VirtualVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *VirtualVolumeResponse) String() string {
 func (*VirtualVolumeResponse) ProtoMessage() {}
 
 func (x *VirtualVolumeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *VirtualVolumeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VirtualVolumeResponse.ProtoReflect.Descriptor instead.
 func (*VirtualVolumeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateVirtualVolumeRequest struct {
@@ -183,7 +183,7 @@ type CreateVirtualVolumeRequest struct {
 func (x *CreateVirtualVolumeRequest) Reset() {
 	*x = CreateVirtualVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateVirtualVolumeRequest) String() string {
 func (*CreateVirtualVolumeRequest) ProtoMessage() {}
 
 func (x *CreateVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualVolumeRequest.ProtoReflect.Descriptor instead.
 func (*CreateVirtualVolumeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateVirtualVolumeRequest) GetItem() *v1alpha1.VirtualVolume {
@@ -228,7 +228,7 @@ type CreateVirtualVolumeResponse struct {
 func (x *CreateVirtualVolumeResponse) Reset() {
 	*x = CreateVirtualVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *CreateVirtualVolumeResponse) String() string {
 func (*CreateVirtualVolumeResponse) ProtoMessage() {}
 
 func (x *CreateVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *CreateVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVirtualVolumeResponse.ProtoReflect.Descriptor instead.
 func (*CreateVirtualVolumeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateVirtualVolumeRequest struct {
@@ -268,7 +268,7 @@ type UpdateVirtualVolumeRequest struct {
 func (x *UpdateVirtualVolumeRequest) Reset() {
 	*x = UpdateVirtualVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *UpdateVirtualVolumeRequest) String() string {
 func (*UpdateVirtualVolumeRequest) ProtoMessage() {}
 
 func (x *UpdateVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *UpdateVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualVolumeRequest.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualVolumeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateVirtualVolumeRequest) GetItem() *v1alpha1.VirtualVolume {
@@ -313,7 +313,7 @@ type UpdateVirtualVolumeResponse struct {
 func (x *UpdateVirtualVolumeResponse) Reset() {
 	*x = UpdateVirtualVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -326,7 +326,7 @@ func (x *UpdateVirtualVolumeResponse) String() string {
 func (*UpdateVirtualVolumeResponse) ProtoMessage() {}
 
 func (x *UpdateVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -339,7 +339,7 @@ func (x *UpdateVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateVirtualVolumeResponse.ProtoReflect.Descriptor instead.
 func (*UpdateVirtualVolumeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{6}
 }
 
 type GetVirtualVolumeRequest struct {
@@ -354,7 +354,7 @@ type GetVirtualVolumeRequest struct {
 func (x *GetVirtualVolumeRequest) Reset() {
 	*x = GetVirtualVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +367,7 @@ func (x *GetVirtualVolumeRequest) String() string {
 func (*GetVirtualVolumeRequest) ProtoMessage() {}
 
 func (x *GetVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *GetVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualVolumeRequest.ProtoReflect.Descriptor instead.
 func (*GetVirtualVolumeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetVirtualVolumeRequest) GetNamespace() string {
@@ -409,7 +409,7 @@ type GetVirtualVolumeResponse struct {
 func (x *GetVirtualVolumeResponse) Reset() {
 	*x = GetVirtualVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetVirtualVolumeResponse) String() string {
 func (*GetVirtualVolumeResponse) ProtoMessage() {}
 
 func (x *GetVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVirtualVolumeResponse.ProtoReflect.Descriptor instead.
 func (*GetVirtualVolumeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetVirtualVolumeResponse) GetItem() *v1alpha1.VirtualVolume {
@@ -464,7 +464,7 @@ type DeleteVirtualVolumeRequest struct {
 func (x *DeleteVirtualVolumeRequest) Reset() {
 	*x = DeleteVirtualVolumeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -477,7 +477,7 @@ func (x *DeleteVirtualVolumeRequest) String() string {
 func (*DeleteVirtualVolumeRequest) ProtoMessage() {}
 
 func (x *DeleteVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +490,7 @@ func (x *DeleteVirtualVolumeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualVolumeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualVolumeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteVirtualVolumeRequest) GetNamespace() string {
@@ -516,7 +516,7 @@ type DeleteVirtualVolumeResponse struct {
 func (x *DeleteVirtualVolumeResponse) Reset() {
 	*x = DeleteVirtualVolumeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *DeleteVirtualVolumeResponse) String() string {
 func (*DeleteVirtualVolumeResponse) ProtoMessage() {}
 
 func (x *DeleteVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,12 +542,12 @@ func (x *DeleteVirtualVolumeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVirtualVolumeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteVirtualVolumeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP(), []int{10}
 }
 
-var File_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc = []byte{
 	0x0a, 0x4b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x76, 0x69, 0x72, 0x74, 0x75, 0x61, 0x6c,
@@ -711,50 +711,50 @@ var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_p
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData = file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData = file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_goTypes = []interface{}{
-	(*ListVirtualVolumesRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest
-	(*ListVirtualVolumesResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesResponse
-	(*VirtualVolumeResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeResponse
-	(*CreateVirtualVolumeRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.virtualvolume.v1.CreateVirtualVolumeRequest
-	(*CreateVirtualVolumeResponse)(nil), // 4: github.com.metaprov.modeldapi.services.virtualvolume.v1.CreateVirtualVolumeResponse
-	(*UpdateVirtualVolumeRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest
-	(*UpdateVirtualVolumeResponse)(nil), // 6: github.com.metaprov.modeldapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse
-	(*GetVirtualVolumeRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.virtualvolume.v1.GetVirtualVolumeRequest
-	(*GetVirtualVolumeResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.virtualvolume.v1.GetVirtualVolumeResponse
-	(*DeleteVirtualVolumeRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest
-	(*DeleteVirtualVolumeResponse)(nil), // 10: github.com.metaprov.modeldapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse
-	nil,                                 // 11: github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry
-	(*v1alpha1.VirtualVolumeList)(nil),  // 12: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeList
-	(*v1alpha1.VirtualVolume)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
+var file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_goTypes = []interface{}{
+	(*ListVirtualVolumesRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest
+	(*ListVirtualVolumesResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse
+	(*VirtualVolumeResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeResponse
+	(*CreateVirtualVolumeRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest
+	(*CreateVirtualVolumeResponse)(nil), // 4: github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeResponse
+	(*UpdateVirtualVolumeRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest
+	(*UpdateVirtualVolumeResponse)(nil), // 6: github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse
+	(*GetVirtualVolumeRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRequest
+	(*GetVirtualVolumeResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse
+	(*DeleteVirtualVolumeRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest
+	(*DeleteVirtualVolumeResponse)(nil), // 10: github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse
+	nil,                                 // 11: github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry
+	(*v1alpha1.VirtualVolumeList)(nil),  // 12: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList
+	(*v1alpha1.VirtualVolume)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume
 }
-var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs = []int32{
-	11, // 0: github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry
-	12, // 1: github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolumeList
-	13, // 2: github.com.metaprov.modeldapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
-	13, // 3: github.com.metaprov.modeldapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
-	13, // 4: github.com.metaprov.modeldapi.services.virtualvolume.v1.GetVirtualVolumeResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume
-	0,  // 5: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.ListVirtualVolumes:input_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.CreateVirtualVolume:input_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.CreateVirtualVolumeRequest
-	7,  // 7: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.GetVirtualVolume:input_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.GetVirtualVolumeRequest
-	5,  // 8: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.UpdateVirtualVolume:input_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest
-	9,  // 9: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.DeleteVirtualVolume:input_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.ListVirtualVolumes:output_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.ListVirtualVolumesResponse
-	4,  // 11: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.CreateVirtualVolume:output_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.CreateVirtualVolumeResponse
-	8,  // 12: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.GetVirtualVolume:output_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.GetVirtualVolumeResponse
-	6,  // 13: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.UpdateVirtualVolume:output_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse
-	10, // 14: github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService.DeleteVirtualVolume:output_type -> github.com.metaprov.modeldapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse
+var file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs = []int32{
+	11, // 0: github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest.LabelsEntry
+	12, // 1: github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList
+	13, // 2: github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume
+	13, // 3: github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume
+	13, // 4: github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume
+	0,  // 5: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.ListVirtualVolumes:input_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.CreateVirtualVolume:input_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest
+	7,  // 7: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.GetVirtualVolume:input_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRequest
+	5,  // 8: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.UpdateVirtualVolume:input_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeRequest
+	9,  // 9: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.DeleteVirtualVolume:input_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.ListVirtualVolumes:output_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse
+	4,  // 11: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.CreateVirtualVolume:output_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeResponse
+	8,  // 12: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.GetVirtualVolume:output_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse
+	6,  // 13: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.UpdateVirtualVolume:output_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.UpdateVirtualVolumeResponse
+	10, // 14: github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService.DeleteVirtualVolume:output_type -> github.com.metaprov.modelaapi.services.virtualvolume.v1.DeleteVirtualVolumeResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -762,13 +762,13 @@ var file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_p
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_init() }
-func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_init() }
+func file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualVolumesRequest); i {
 			case 0:
 				return &v.state
@@ -780,7 +780,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListVirtualVolumesResponse); i {
 			case 0:
 				return &v.state
@@ -792,7 +792,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VirtualVolumeResponse); i {
 			case 0:
 				return &v.state
@@ -804,7 +804,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualVolumeRequest); i {
 			case 0:
 				return &v.state
@@ -816,7 +816,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateVirtualVolumeResponse); i {
 			case 0:
 				return &v.state
@@ -828,7 +828,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualVolumeRequest); i {
 			case 0:
 				return &v.state
@@ -840,7 +840,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateVirtualVolumeResponse); i {
 			case 0:
 				return &v.state
@@ -852,7 +852,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualVolumeRequest); i {
 			case 0:
 				return &v.state
@@ -864,7 +864,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVirtualVolumeResponse); i {
 			case 0:
 				return &v.state
@@ -876,7 +876,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualVolumeRequest); i {
 			case 0:
 				return &v.state
@@ -888,7 +888,7 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteVirtualVolumeResponse); i {
 			case 0:
 				return &v.state
@@ -905,20 +905,20 @@ func file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto = out.File
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto = out.File
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_virtualvolume_v1_virtualvolume_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -950,7 +950,7 @@ func NewVirtualVolumeServiceClient(cc grpc.ClientConnInterface) VirtualVolumeSer
 
 func (c *virtualVolumeServiceClient) ListVirtualVolumes(ctx context.Context, in *ListVirtualVolumesRequest, opts ...grpc.CallOption) (*ListVirtualVolumesResponse, error) {
 	out := new(ListVirtualVolumesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -959,7 +959,7 @@ func (c *virtualVolumeServiceClient) ListVirtualVolumes(ctx context.Context, in 
 
 func (c *virtualVolumeServiceClient) CreateVirtualVolume(ctx context.Context, in *CreateVirtualVolumeRequest, opts ...grpc.CallOption) (*CreateVirtualVolumeResponse, error) {
 	out := new(CreateVirtualVolumeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -968,7 +968,7 @@ func (c *virtualVolumeServiceClient) CreateVirtualVolume(ctx context.Context, in
 
 func (c *virtualVolumeServiceClient) GetVirtualVolume(ctx context.Context, in *GetVirtualVolumeRequest, opts ...grpc.CallOption) (*GetVirtualVolumeResponse, error) {
 	out := new(GetVirtualVolumeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -977,7 +977,7 @@ func (c *virtualVolumeServiceClient) GetVirtualVolume(ctx context.Context, in *G
 
 func (c *virtualVolumeServiceClient) UpdateVirtualVolume(ctx context.Context, in *UpdateVirtualVolumeRequest, opts ...grpc.CallOption) (*UpdateVirtualVolumeResponse, error) {
 	out := new(UpdateVirtualVolumeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -986,7 +986,7 @@ func (c *virtualVolumeServiceClient) UpdateVirtualVolume(ctx context.Context, in
 
 func (c *virtualVolumeServiceClient) DeleteVirtualVolume(ctx context.Context, in *DeleteVirtualVolumeRequest, opts ...grpc.CallOption) (*DeleteVirtualVolumeResponse, error) {
 	out := new(DeleteVirtualVolumeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1036,7 +1036,7 @@ func _VirtualVolumeService_ListVirtualVolumes_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/ListVirtualVolumes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualVolumeServiceServer).ListVirtualVolumes(ctx, req.(*ListVirtualVolumesRequest))
@@ -1054,7 +1054,7 @@ func _VirtualVolumeService_CreateVirtualVolume_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/CreateVirtualVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualVolumeServiceServer).CreateVirtualVolume(ctx, req.(*CreateVirtualVolumeRequest))
@@ -1072,7 +1072,7 @@ func _VirtualVolumeService_GetVirtualVolume_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/GetVirtualVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualVolumeServiceServer).GetVirtualVolume(ctx, req.(*GetVirtualVolumeRequest))
@@ -1090,7 +1090,7 @@ func _VirtualVolumeService_UpdateVirtualVolume_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/UpdateVirtualVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualVolumeServiceServer).UpdateVirtualVolume(ctx, req.(*UpdateVirtualVolumeRequest))
@@ -1108,7 +1108,7 @@ func _VirtualVolumeService_DeleteVirtualVolume_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume",
+		FullMethod: "/github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService/DeleteVirtualVolume",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(VirtualVolumeServiceServer).DeleteVirtualVolume(ctx, req.(*DeleteVirtualVolumeRequest))
@@ -1117,7 +1117,7 @@ func _VirtualVolumeService_DeleteVirtualVolume_Handler(srv interface{}, ctx cont
 }
 
 var _VirtualVolumeService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.virtualvolume.v1.VirtualVolumeService",
+	ServiceName: "github.com.metaprov.modelaapi.services.virtualvolume.v1.VirtualVolumeService",
 	HandlerType: (*VirtualVolumeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1142,5 +1142,5 @@ var _VirtualVolumeService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/virtualvolume/v1/virtualvolume.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto",
 }

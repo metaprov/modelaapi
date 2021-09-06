@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
-import * as github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -454,10 +454,10 @@ export class MonitorSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): MonitorSpec;
 
-  getValidationsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
-  setValidationsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
+  getValidationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>;
+  setValidationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation>): MonitorSpec;
   clearValidationsList(): MonitorSpec;
-  addValidations(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
+  addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
@@ -473,7 +473,7 @@ export namespace MonitorSpec {
     sampleprecent: number,
     schedule: string,
     notifiername: string,
-    validationsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
+    validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
   }
 }
 
@@ -483,10 +483,10 @@ export class MonitorStatus extends jspb.Message {
   hasLastprediction(): boolean;
   clearLastprediction(): MonitorStatus;
 
-  getValidationresultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
-  setValidationresultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): MonitorStatus;
+  getValidationresultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>;
+  setValidationresultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult>): MonitorStatus;
   clearValidationresultsList(): MonitorStatus;
-  addValidationresults(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
+  addValidationresults(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorStatus.AsObject;
@@ -499,7 +499,7 @@ export class MonitorStatus extends jspb.Message {
 export namespace MonitorStatus {
   export type AsObject = {
     lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    validationresultsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
+    validationresultsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidationResult.AsObject>,
   }
 }
 
@@ -654,13 +654,13 @@ export class PredictionSpec extends jspb.Message {
   getDatasetname(): string;
   setDatasetname(value: string): PredictionSpec;
 
-  getInput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
-  setInput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
+  getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): PredictionSpec;
   hasInput(): boolean;
   clearInput(): PredictionSpec;
 
-  getOutput(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
-  setOutput(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
+  getOutput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec | undefined;
+  setOutput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec): PredictionSpec;
   hasOutput(): boolean;
   clearOutput(): PredictionSpec;
 
@@ -698,8 +698,8 @@ export namespace PredictionSpec {
     predictorname: string,
     labeled: boolean,
     datasetname: string,
-    input?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    output?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
+    input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
+    output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,
     owner: string,
     workloadclassname: string,
@@ -723,10 +723,10 @@ export class PredictionStatus extends jspb.Message {
   getPhase(): string;
   setPhase(value: string): PredictionStatus;
 
-  getResultsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
-  setResultsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): PredictionStatus;
+  getResultsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setResultsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): PredictionStatus;
   clearResultsList(): PredictionStatus;
-  addResults(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+  addResults(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PredictionStatus;
@@ -752,7 +752,7 @@ export namespace PredictionStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
-    resultsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    resultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     observedgeneration: number,
     rows: number,
     conditionsList: Array<PredictionCondition.AsObject>,
@@ -943,10 +943,10 @@ export class PredictorSpec extends jspb.Message {
   hasTemplate(): boolean;
   clearTemplate(): PredictorSpec;
 
-  getModelsList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
-  setModelsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
+  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>;
+  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec>): PredictorSpec;
   clearModelsList(): PredictorSpec;
-  addModels(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
+  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec;
 
   getProgressive(): ProgressiveSpec | undefined;
   setProgressive(value?: ProgressiveSpec): PredictorSpec;
@@ -1024,7 +1024,7 @@ export namespace PredictorSpec {
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     template?: k8s_io_api_core_v1_generated_pb.PodTemplate.AsObject,
-    modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
+    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
     artifactsfolder: string,
     port: number,
@@ -1046,10 +1046,10 @@ export namespace PredictorSpec {
 }
 
 export class PredictorStatus extends jspb.Message {
-  getModelstatusList(): Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>;
-  setModelstatusList(value: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>): PredictorStatus;
+  getModelstatusList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>;
+  setModelstatusList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus>): PredictorStatus;
   clearModelstatusList(): PredictorStatus;
-  addModelstatus(value?: github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
+  addModelstatus(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus;
 
   getMonitorlastattemptat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
   setMonitorlastattemptat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): PredictorStatus;
@@ -1109,7 +1109,7 @@ export class PredictorStatus extends jspb.Message {
 
 export namespace PredictorStatus {
   export type AsObject = {
-    modelstatusList: Array<github_com_metaprov_modeldapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
+    modelstatusList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentStatus.AsObject>,
     monitorlastattemptat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
     monitorlastscore: number,
     monitorlastlatency: number,

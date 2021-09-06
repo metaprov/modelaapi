@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListVirtualVolumesRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListVirtualVolumesRequest {
 }
 
 export class ListVirtualVolumesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList): ListVirtualVolumesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList): ListVirtualVolumesResponse;
   hasItems(): boolean;
   clearItems(): ListVirtualVolumesResponse;
 
@@ -43,7 +43,7 @@ export class ListVirtualVolumesResponse extends jspb.Message {
 
 export namespace ListVirtualVolumesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace VirtualVolumeResponse {
 }
 
 export class CreateVirtualVolumeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): CreateVirtualVolumeRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): CreateVirtualVolumeRequest;
   hasItem(): boolean;
   clearItem(): CreateVirtualVolumeRequest;
 
@@ -77,7 +77,7 @@ export class CreateVirtualVolumeRequest extends jspb.Message {
 
 export namespace CreateVirtualVolumeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
   }
 }
 
@@ -96,8 +96,8 @@ export namespace CreateVirtualVolumeResponse {
 }
 
 export class UpdateVirtualVolumeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): UpdateVirtualVolumeRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): UpdateVirtualVolumeRequest;
   hasItem(): boolean;
   clearItem(): UpdateVirtualVolumeRequest;
 
@@ -111,7 +111,7 @@ export class UpdateVirtualVolumeRequest extends jspb.Message {
 
 export namespace UpdateVirtualVolumeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
   }
 }
 
@@ -152,8 +152,8 @@ export namespace GetVirtualVolumeRequest {
 }
 
 export class GetVirtualVolumeResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): GetVirtualVolumeResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume): GetVirtualVolumeResponse;
   hasItem(): boolean;
   clearItem(): GetVirtualVolumeResponse;
 
@@ -170,7 +170,7 @@ export class GetVirtualVolumeResponse extends jspb.Message {
 
 export namespace GetVirtualVolumeResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.AsObject,
     yaml: string,
   }
 }

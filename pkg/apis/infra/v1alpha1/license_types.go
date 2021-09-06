@@ -53,7 +53,7 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="Max Users",type="string",JSONPath=".spec.maxUsers",description=""
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=licenses,singular=license,categories={infra,modeld}
+// +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
 // License is an abstraction that represent the cluster wide license
 // as obtained from Modeld. The license is store inside a a secret
 type License struct {

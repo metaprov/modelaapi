@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto
+// source: github.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -46,7 +46,7 @@ type CreateFeatureRequest struct {
 func (x *CreateFeatureRequest) Reset() {
 	*x = CreateFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -59,7 +59,7 @@ func (x *CreateFeatureRequest) String() string {
 func (*CreateFeatureRequest) ProtoMessage() {}
 
 func (x *CreateFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -72,7 +72,7 @@ func (x *CreateFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureRequest.ProtoReflect.Descriptor instead.
 func (*CreateFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateFeatureRequest) GetName() string {
@@ -119,7 +119,7 @@ type CreateFeatureResponse struct {
 func (x *CreateFeatureResponse) Reset() {
 	*x = CreateFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -132,7 +132,7 @@ func (x *CreateFeatureResponse) String() string {
 func (*CreateFeatureResponse) ProtoMessage() {}
 
 func (x *CreateFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -145,7 +145,7 @@ func (x *CreateFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeatureResponse.ProtoReflect.Descriptor instead.
 func (*CreateFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{1}
 }
 
 type DeleteFeatureRequest struct {
@@ -160,7 +160,7 @@ type DeleteFeatureRequest struct {
 func (x *DeleteFeatureRequest) Reset() {
 	*x = DeleteFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -173,7 +173,7 @@ func (x *DeleteFeatureRequest) String() string {
 func (*DeleteFeatureRequest) ProtoMessage() {}
 
 func (x *DeleteFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -186,7 +186,7 @@ func (x *DeleteFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DeleteFeatureRequest) GetName() string {
@@ -212,7 +212,7 @@ type DeleteFeatureResponse struct {
 func (x *DeleteFeatureResponse) Reset() {
 	*x = DeleteFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -225,7 +225,7 @@ func (x *DeleteFeatureResponse) String() string {
 func (*DeleteFeatureResponse) ProtoMessage() {}
 
 func (x *DeleteFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -238,7 +238,7 @@ func (x *DeleteFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeatureResponse.ProtoReflect.Descriptor instead.
 func (*DeleteFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{3}
 }
 
 type ListFeaturesRequest struct {
@@ -252,7 +252,7 @@ type ListFeaturesRequest struct {
 func (x *ListFeaturesRequest) Reset() {
 	*x = ListFeaturesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -265,7 +265,7 @@ func (x *ListFeaturesRequest) String() string {
 func (*ListFeaturesRequest) ProtoMessage() {}
 
 func (x *ListFeaturesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -278,7 +278,7 @@ func (x *ListFeaturesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturesRequest.ProtoReflect.Descriptor instead.
 func (*ListFeaturesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListFeaturesRequest) GetNs() string {
@@ -299,7 +299,7 @@ type ListFeaturesResponse struct {
 func (x *ListFeaturesResponse) Reset() {
 	*x = ListFeaturesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -312,7 +312,7 @@ func (x *ListFeaturesResponse) String() string {
 func (*ListFeaturesResponse) ProtoMessage() {}
 
 func (x *ListFeaturesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -325,7 +325,7 @@ func (x *ListFeaturesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturesResponse.ProtoReflect.Descriptor instead.
 func (*ListFeaturesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ListFeaturesResponse) GetItems() *v1alpha11.FeatureList {
@@ -348,7 +348,7 @@ type GetFeatureRequest struct {
 func (x *GetFeatureRequest) Reset() {
 	*x = GetFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -361,7 +361,7 @@ func (x *GetFeatureRequest) String() string {
 func (*GetFeatureRequest) ProtoMessage() {}
 
 func (x *GetFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -374,7 +374,7 @@ func (x *GetFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureRequest.ProtoReflect.Descriptor instead.
 func (*GetFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetFeatureRequest) GetName() string {
@@ -409,7 +409,7 @@ type GetFeatureResponse struct {
 func (x *GetFeatureResponse) Reset() {
 	*x = GetFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetFeatureResponse) String() string {
 func (*GetFeatureResponse) ProtoMessage() {}
 
 func (x *GetFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeatureResponse.ProtoReflect.Descriptor instead.
 func (*GetFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetFeatureResponse) GetItem() *v1alpha11.Feature {
@@ -457,7 +457,7 @@ type EnrichRequest struct {
 func (x *EnrichRequest) Reset() {
 	*x = EnrichRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -470,7 +470,7 @@ func (x *EnrichRequest) String() string {
 func (*EnrichRequest) ProtoMessage() {}
 
 func (x *EnrichRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -483,7 +483,7 @@ func (x *EnrichRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnrichRequest.ProtoReflect.Descriptor instead.
 func (*EnrichRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *EnrichRequest) GetId() string {
@@ -512,7 +512,7 @@ type EnrichResponse struct {
 func (x *EnrichResponse) Reset() {
 	*x = EnrichResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -525,7 +525,7 @@ func (x *EnrichResponse) String() string {
 func (*EnrichResponse) ProtoMessage() {}
 
 func (x *EnrichResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -538,7 +538,7 @@ func (x *EnrichResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnrichResponse.ProtoReflect.Descriptor instead.
 func (*EnrichResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *EnrichResponse) GetId() string {
@@ -568,7 +568,7 @@ type UpdateFeatureRequest struct {
 func (x *UpdateFeatureRequest) Reset() {
 	*x = UpdateFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -581,7 +581,7 @@ func (x *UpdateFeatureRequest) String() string {
 func (*UpdateFeatureRequest) ProtoMessage() {}
 
 func (x *UpdateFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -594,7 +594,7 @@ func (x *UpdateFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateFeatureRequest) GetItem() *v1alpha11.Feature {
@@ -627,7 +627,7 @@ type UpdateFeatureResponse struct {
 func (x *UpdateFeatureResponse) Reset() {
 	*x = UpdateFeatureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -640,7 +640,7 @@ func (x *UpdateFeatureResponse) String() string {
 func (*UpdateFeatureResponse) ProtoMessage() {}
 
 func (x *UpdateFeatureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -653,12 +653,12 @@ func (x *UpdateFeatureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeatureResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFeatureResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP(), []int{11}
 }
 
-var File_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc = []byte{
 	0x0a, 0x57, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x66,
@@ -844,58 +844,58 @@ var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefea
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData = file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData = file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
-var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes = []interface{}{
-	(*CreateFeatureRequest)(nil),  // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
-	(*CreateFeatureResponse)(nil), // 1: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
-	(*DeleteFeatureRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
-	(*DeleteFeatureResponse)(nil), // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
-	(*ListFeaturesRequest)(nil),   // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
-	(*ListFeaturesResponse)(nil),  // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
-	(*GetFeatureRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
-	(*GetFeatureResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
-	(*EnrichRequest)(nil),         // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
-	(*EnrichResponse)(nil),        // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
-	(*UpdateFeatureRequest)(nil),  // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
-	(*UpdateFeatureResponse)(nil), // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
-	nil,                           // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
-	nil,                           // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
-	(*v1alpha1.Connection)(nil),   // 14: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	(*v1alpha11.FeatureList)(nil), // 15: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	(*v1alpha11.Feature)(nil),     // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
+var file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes = []interface{}{
+	(*CreateFeatureRequest)(nil),  // 0: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest
+	(*CreateFeatureResponse)(nil), // 1: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureResponse
+	(*DeleteFeatureRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
+	(*DeleteFeatureResponse)(nil), // 3: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
+	(*ListFeaturesRequest)(nil),   // 4: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesRequest
+	(*ListFeaturesResponse)(nil),  // 5: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse
+	(*GetFeatureRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest
+	(*GetFeatureResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse
+	(*EnrichRequest)(nil),         // 8: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichRequest
+	(*EnrichResponse)(nil),        // 9: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichResponse
+	(*UpdateFeatureRequest)(nil),  // 10: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
+	(*UpdateFeatureResponse)(nil), // 11: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
+	nil,                           // 12: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
+	nil,                           // 13: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
+	(*v1alpha1.Connection)(nil),   // 14: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	(*v1alpha11.FeatureList)(nil), // 15: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList
+	(*v1alpha11.Feature)(nil),     // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
 }
-var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	12, // 1: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
-	15, // 2: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList
-	16, // 3: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	16, // 4: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	16, // 5: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature
-	14, // 6: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	13, // 7: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
-	0,  // 8: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureRequest
-	2,  // 9: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
-	4,  // 10: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesRequest
-	6,  // 11: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureRequest
-	10, // 12: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
-	8,  // 13: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:input_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichRequest
-	1,  // 14: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.CreateFeatureResponse
-	3,  // 15: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
-	5,  // 16: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.ListFeaturesResponse
-	7,  // 17: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.GetFeatureResponse
-	11, // 18: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
-	9,  // 19: github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:output_type -> github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.EnrichResponse
+var file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	12, // 1: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.secret:type_name -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry
+	15, // 2: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList
+	16, // 3: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	16, // 4: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	16, // 5: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature
+	14, // 6: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	13, // 7: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.secret:type_name -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry
+	0,  // 8: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest
+	2,  // 9: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureRequest
+	4,  // 10: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesRequest
+	6,  // 11: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest
+	10, // 12: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest
+	8,  // 13: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:input_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichRequest
+	1,  // 14: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.CreateFeature:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureResponse
+	3,  // 15: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.DeleteFeature:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureResponse
+	5,  // 16: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.ListFeatures:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse
+	7,  // 17: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.GetFeature:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse
+	11, // 18: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.UpdateFeature:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureResponse
+	9,  // 19: github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService.Enrich:output_type -> github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichResponse
 	14, // [14:20] is the sub-list for method output_type
 	8,  // [8:14] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
@@ -904,14 +904,14 @@ var file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefea
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init()
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto != nil {
+func file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -923,7 +923,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -935,7 +935,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -947,7 +947,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -959,7 +959,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturesRequest); i {
 			case 0:
 				return &v.state
@@ -971,7 +971,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturesResponse); i {
 			case 0:
 				return &v.state
@@ -983,7 +983,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -995,7 +995,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -1007,7 +1007,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EnrichRequest); i {
 			case 0:
 				return &v.state
@@ -1019,7 +1019,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EnrichResponse); i {
 			case 0:
 				return &v.state
@@ -1031,7 +1031,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1043,7 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeatureResponse); i {
 			case 0:
 				return &v.state
@@ -1060,20 +1060,20 @@ func file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefe
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto = out.File
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto = out.File
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_onlinefeaturestored_v1_onlinefeaturestored_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1106,7 +1106,7 @@ func NewOnlineFeatureStoreServiceClient(cc grpc.ClientConnInterface) OnlineFeatu
 
 func (c *onlineFeatureStoreServiceClient) CreateFeature(ctx context.Context, in *CreateFeatureRequest, opts ...grpc.CallOption) (*CreateFeatureResponse, error) {
 	out := new(CreateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1115,7 +1115,7 @@ func (c *onlineFeatureStoreServiceClient) CreateFeature(ctx context.Context, in 
 
 func (c *onlineFeatureStoreServiceClient) DeleteFeature(ctx context.Context, in *DeleteFeatureRequest, opts ...grpc.CallOption) (*DeleteFeatureResponse, error) {
 	out := new(DeleteFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1124,7 +1124,7 @@ func (c *onlineFeatureStoreServiceClient) DeleteFeature(ctx context.Context, in 
 
 func (c *onlineFeatureStoreServiceClient) ListFeatures(ctx context.Context, in *ListFeaturesRequest, opts ...grpc.CallOption) (*ListFeaturesResponse, error) {
 	out := new(ListFeaturesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1133,7 +1133,7 @@ func (c *onlineFeatureStoreServiceClient) ListFeatures(ctx context.Context, in *
 
 func (c *onlineFeatureStoreServiceClient) GetFeature(ctx context.Context, in *GetFeatureRequest, opts ...grpc.CallOption) (*GetFeatureResponse, error) {
 	out := new(GetFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1142,7 +1142,7 @@ func (c *onlineFeatureStoreServiceClient) GetFeature(ctx context.Context, in *Ge
 
 func (c *onlineFeatureStoreServiceClient) UpdateFeature(ctx context.Context, in *UpdateFeatureRequest, opts ...grpc.CallOption) (*UpdateFeatureResponse, error) {
 	out := new(UpdateFeatureResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1151,7 +1151,7 @@ func (c *onlineFeatureStoreServiceClient) UpdateFeature(ctx context.Context, in 
 
 func (c *onlineFeatureStoreServiceClient) Enrich(ctx context.Context, in *EnrichRequest, opts ...grpc.CallOption) (*EnrichResponse, error) {
 	out := new(EnrichResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1205,7 +1205,7 @@ func _OnlineFeatureStoreService_CreateFeature_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/CreateFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).CreateFeature(ctx, req.(*CreateFeatureRequest))
@@ -1223,7 +1223,7 @@ func _OnlineFeatureStoreService_DeleteFeature_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/DeleteFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).DeleteFeature(ctx, req.(*DeleteFeatureRequest))
@@ -1241,7 +1241,7 @@ func _OnlineFeatureStoreService_ListFeatures_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/ListFeatures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).ListFeatures(ctx, req.(*ListFeaturesRequest))
@@ -1259,7 +1259,7 @@ func _OnlineFeatureStoreService_GetFeature_Handler(srv interface{}, ctx context.
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/GetFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).GetFeature(ctx, req.(*GetFeatureRequest))
@@ -1277,7 +1277,7 @@ func _OnlineFeatureStoreService_UpdateFeature_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/UpdateFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).UpdateFeature(ctx, req.(*UpdateFeatureRequest))
@@ -1295,7 +1295,7 @@ func _OnlineFeatureStoreService_Enrich_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich",
+		FullMethod: "/github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService/Enrich",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnlineFeatureStoreServiceServer).Enrich(ctx, req.(*EnrichRequest))
@@ -1304,7 +1304,7 @@ func _OnlineFeatureStoreService_Enrich_Handler(srv interface{}, ctx context.Cont
 }
 
 var _OnlineFeatureStoreService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService",
+	ServiceName: "github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.OnlineFeatureStoreService",
 	HandlerType: (*OnlineFeatureStoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1333,5 +1333,5 @@ var _OnlineFeatureStoreService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto",
 }

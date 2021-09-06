@@ -1,5 +1,5 @@
 package data
 
 const (
-	GroupName = "data.modeld.io"
+	GroupName = "data.modela.io"
 )

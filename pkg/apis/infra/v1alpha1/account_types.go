@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -58,7 +58,7 @@ type AccountCondition struct {
 // +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
 // +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modeld}
+// +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 type Account struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

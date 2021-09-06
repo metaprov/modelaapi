@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.dataset.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.dataset.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb from '../../../../../../github.com/metaprov/modeldapi/services/dataset/v1/dataset_pb';
+import * as github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb from '../../../../../../github.com/metaprov/modelaapi/services/dataset/v1/dataset_pb';
 
 
 export class DatasetServiceClient {
@@ -36,32 +36,32 @@ export class DatasetServiceClient {
   }
 
   methodInfoListDatasets = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse.deserializeBinary
   );
 
   listDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse>;
 
   listDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse>;
 
   listDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ListDatasets',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets',
         request,
         metadata || {},
         this.methodInfoListDatasets,
@@ -69,39 +69,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ListDatasets',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets',
     request,
     metadata || {},
     this.methodInfoListDatasets);
   }
 
   methodInfoGetDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse.deserializeBinary
   );
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse>;
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse>;
 
   getDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset',
         request,
         metadata || {},
         this.methodInfoGetDataset,
@@ -109,39 +109,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset',
     request,
     metadata || {},
     this.methodInfoGetDataset);
   }
 
   methodInfoCreateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse.deserializeBinary
   );
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse>;
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse>;
 
   createDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset',
         request,
         metadata || {},
         this.methodInfoCreateDataset,
@@ -149,39 +149,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset',
     request,
     metadata || {},
     this.methodInfoCreateDataset);
   }
 
   methodInfoUpdateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse.deserializeBinary
   );
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse>;
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse>;
 
   updateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UpdateDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset',
         request,
         metadata || {},
         this.methodInfoUpdateDataset,
@@ -189,39 +189,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UpdateDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset',
     request,
     metadata || {},
     this.methodInfoUpdateDataset);
   }
 
   methodInfoDeleteDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse.deserializeBinary
   );
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse>;
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse>;
 
   deleteDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DeleteDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset',
         request,
         metadata || {},
         this.methodInfoDeleteDataset,
@@ -229,39 +229,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DeleteDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset',
     request,
     metadata || {},
     this.methodInfoDeleteDataset);
   }
 
   methodInfoCompareDatasets = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse.deserializeBinary
   );
 
   compareDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
 
   compareDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
 
   compareDatasets(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CompareDatasets',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
         request,
         metadata || {},
         this.methodInfoCompareDatasets,
@@ -269,39 +269,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CompareDatasets',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
     request,
     metadata || {},
     this.methodInfoCompareDatasets);
   }
 
   methodInfoGetDatasetProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse.deserializeBinary
   );
 
   getDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse>;
 
   getDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse>;
 
   getDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatasetProfile',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile',
         request,
         metadata || {},
         this.methodInfoGetDatasetProfile,
@@ -309,39 +309,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatasetProfile',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile',
     request,
     metadata || {},
     this.methodInfoGetDatasetProfile);
   }
 
   methodInfoCreateDatasetProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse.deserializeBinary
   );
 
   createDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse>;
 
   createDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse>;
 
   createDatasetProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
         request,
         metadata || {},
         this.methodInfoCreateDatasetProfile,
@@ -349,39 +349,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
     request,
     metadata || {},
     this.methodInfoCreateDatasetProfile);
   }
 
   methodInfoCreateColumnProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse.deserializeBinary
   );
 
   createColumnProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse>;
 
   createColumnProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse>;
 
   createColumnProfile(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateColumnProfile',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile',
         request,
         metadata || {},
         this.methodInfoCreateColumnProfile,
@@ -389,39 +389,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/CreateColumnProfile',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile',
     request,
     metadata || {},
     this.methodInfoCreateColumnProfile);
   }
 
   methodInfoGenerateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse.deserializeBinary
   );
 
   generateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse>;
 
   generateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse>;
 
   generateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GenerateDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset',
         request,
         metadata || {},
         this.methodInfoGenerateDataset,
@@ -429,39 +429,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GenerateDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset',
     request,
     metadata || {},
     this.methodInfoGenerateDataset);
   }
 
   methodInfoValidateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse.deserializeBinary
   );
 
   validateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse>;
 
   validateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse>;
 
   validateDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ValidateDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset',
         request,
         metadata || {},
         this.methodInfoValidateDataset,
@@ -469,39 +469,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ValidateDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset',
     request,
     metadata || {},
     this.methodInfoValidateDataset);
   }
 
   methodInfoUploadChunk = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse.deserializeBinary
   );
 
   uploadChunk(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
 
   uploadChunk(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
 
   uploadChunk(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UploadChunk',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
         request,
         metadata || {},
         this.methodInfoUploadChunk,
@@ -509,39 +509,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/UploadChunk',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
     request,
     metadata || {},
     this.methodInfoUploadChunk);
   }
 
   methodInfoDownloadDataset = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse.deserializeBinary
   );
 
   downloadDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
 
   downloadDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
 
   downloadDataset(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset',
         request,
         metadata || {},
         this.methodInfoDownloadDataset,
@@ -549,39 +549,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/DownloadDataset',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset',
     request,
     metadata || {},
     this.methodInfoDownloadDataset);
   }
 
   methodInfoGetDatabases = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse.deserializeBinary
   );
 
   getDatabases(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse>;
 
   getDatabases(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse>;
 
   getDatabases(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatabases',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases',
         request,
         metadata || {},
         this.methodInfoGetDatabases,
@@ -589,39 +589,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetDatabases',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases',
     request,
     metadata || {},
     this.methodInfoGetDatabases);
   }
 
   methodInfoGetTables = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse.deserializeBinary
   );
 
   getTables(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse>;
 
   getTables(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse>;
 
   getTables(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetTables',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables',
         request,
         metadata || {},
         this.methodInfoGetTables,
@@ -629,39 +629,39 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/GetTables',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables',
     request,
     metadata || {},
     this.methodInfoGetTables);
   }
 
   methodInfoExecuteSql = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse,
-    (request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest) => {
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse,
+    (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse.deserializeBinary
   );
 
   executeSql(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse>;
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse>;
 
   executeSql(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse>;
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse>;
 
   executeSql(
-    request: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
+    request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ExecuteSql',
+          '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql',
         request,
         metadata || {},
         this.methodInfoExecuteSql,
@@ -669,7 +669,7 @@ export class DatasetServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.dataset.v1.DatasetService/ExecuteSql',
+      '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql',
     request,
     metadata || {},
     this.methodInfoExecuteSql);

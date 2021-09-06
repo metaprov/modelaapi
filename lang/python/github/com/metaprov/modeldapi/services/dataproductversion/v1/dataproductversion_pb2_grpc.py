@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.dataproductversion.v1 import dataproductversion_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2
+from github.com.metaprov.modelaapi.services.dataproductversion.v1 import dataproductversion_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2
 
 
 class DataProductVersionServiceStub(object):
@@ -15,29 +15,29 @@ class DataProductVersionServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataProductVersions = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.FromString,
                 )
         self.CreateDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.FromString,
                 )
         self.GetDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.FromString,
                 )
         self.UpdateDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.FromString,
                 )
         self.DeleteDataProductVersion = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_DataProductVersionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListDataProductVersions': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataProductVersions,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.SerializeToString,
             ),
             'CreateDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.SerializeToString,
             ),
             'GetDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.SerializeToString,
             ),
             'UpdateDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.SerializeToString,
             ),
             'DeleteDataProductVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataProductVersion,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class DataProductVersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.ListDataProductVersionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class DataProductVersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.CreateDataProductVersionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class DataProductVersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.GetDataProductVersionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class DataProductVersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.UpdateDataProductVersionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class DataProductVersionService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataproductversion_dot_v1_dot_dataproductversion__pb2.DeleteDataProductVersionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

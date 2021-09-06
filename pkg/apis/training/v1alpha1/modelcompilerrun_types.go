@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -49,7 +49,7 @@ type ModelCompilerRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=modelcompilerruns,shortName=mcr,singular=modelcompilerrun,categories={train,modeld,all}
+// +kubebuilder:resource:path=modelcompilerruns,shortName=mcr,singular=modelcompilerrun,categories={train,modela,all}
 // ModelCompilerRun represent a single compilation of a model into a target hardware.
 type ModelCompilerRun struct {
 	metav1.TypeMeta   `json:",inline"`

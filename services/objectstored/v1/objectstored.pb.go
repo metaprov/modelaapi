@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/objectstored/v1/objectstored.proto
+// source: github.com/metaprov/modelaapi/services/objectstored/v1/objectstored.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -41,7 +41,7 @@ type IngestResponse struct {
 func (x *IngestResponse) Reset() {
 	*x = IngestResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -54,7 +54,7 @@ func (x *IngestResponse) String() string {
 func (*IngestResponse) ProtoMessage() {}
 
 func (x *IngestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -67,7 +67,7 @@ func (x *IngestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngestResponse.ProtoReflect.Descriptor instead.
 func (*IngestResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *IngestResponse) GetLiveKey() string {
@@ -88,7 +88,7 @@ type ObjectResponse struct {
 func (x *ObjectResponse) Reset() {
 	*x = ObjectResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -101,7 +101,7 @@ func (x *ObjectResponse) String() string {
 func (*ObjectResponse) ProtoMessage() {}
 
 func (x *ObjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *ObjectResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ObjectResponse.ProtoReflect.Descriptor instead.
 func (*ObjectResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ObjectResponse) GetArchivePath() string {
@@ -139,7 +139,7 @@ type ObjectRequest struct {
 func (x *ObjectRequest) Reset() {
 	*x = ObjectRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -152,7 +152,7 @@ func (x *ObjectRequest) String() string {
 func (*ObjectRequest) ProtoMessage() {}
 
 func (x *ObjectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -165,7 +165,7 @@ func (x *ObjectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ObjectRequest.ProtoReflect.Descriptor instead.
 func (*ObjectRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ObjectRequest) GetBucket() *v1alpha1.VirtualBucket {
@@ -207,7 +207,7 @@ type ExistInVirtualBucketResponse struct {
 func (x *ExistInVirtualBucketResponse) Reset() {
 	*x = ExistInVirtualBucketResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -220,7 +220,7 @@ func (x *ExistInVirtualBucketResponse) String() string {
 func (*ExistInVirtualBucketResponse) ProtoMessage() {}
 
 func (x *ExistInVirtualBucketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +233,7 @@ func (x *ExistInVirtualBucketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExistInVirtualBucketResponse.ProtoReflect.Descriptor instead.
 func (*ExistInVirtualBucketResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ExistInVirtualBucketResponse) GetExist() bool {
@@ -243,9 +243,9 @@ func (x *ExistInVirtualBucketResponse) GetExist() bool {
 	return false
 }
 
-var File_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDesc = []byte{
 	0x0a, 0x49, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x73,
@@ -343,39 +343,39 @@ var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pro
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescData = file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescData = file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_goTypes = []interface{}{
-	(*IngestResponse)(nil),               // 0: github.com.metaprov.modeldapi.services.objectstored.v1.IngestResponse
-	(*ObjectResponse)(nil),               // 1: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse
-	(*ObjectRequest)(nil),                // 2: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest
-	(*ExistInVirtualBucketResponse)(nil), // 3: github.com.metaprov.modeldapi.services.objectstored.v1.ExistInVirtualBucketResponse
-	nil,                                  // 4: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.SecretEntry
-	(*v1alpha1.VirtualBucket)(nil),       // 5: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha1.Connection)(nil),          // 6: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
+var file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_goTypes = []interface{}{
+	(*IngestResponse)(nil),               // 0: github.com.metaprov.modelaapi.services.objectstored.v1.IngestResponse
+	(*ObjectResponse)(nil),               // 1: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectResponse
+	(*ObjectRequest)(nil),                // 2: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest
+	(*ExistInVirtualBucketResponse)(nil), // 3: github.com.metaprov.modelaapi.services.objectstored.v1.ExistInVirtualBucketResponse
+	nil,                                  // 4: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest.SecretEntry
+	(*v1alpha1.VirtualBucket)(nil),       // 5: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha1.Connection)(nil),          // 6: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 }
-var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_depIdxs = []int32{
-	5, // 0: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	6, // 1: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	4, // 2: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.secret:type_name -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest.SecretEntry
-	2, // 3: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Ingest:input_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest
-	2, // 4: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Archive:input_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest
-	2, // 5: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Recover:input_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest
-	2, // 6: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.ExistInVirtualBucket:input_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectRequest
-	1, // 7: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Ingest:output_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse
-	1, // 8: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Archive:output_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse
-	1, // 9: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.Recover:output_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ObjectResponse
-	3, // 10: github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService.ExistInVirtualBucket:output_type -> github.com.metaprov.modeldapi.services.objectstored.v1.ExistInVirtualBucketResponse
+var file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_depIdxs = []int32{
+	5, // 0: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	6, // 1: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	4, // 2: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest.secret:type_name -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest.SecretEntry
+	2, // 3: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Ingest:input_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest
+	2, // 4: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Archive:input_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest
+	2, // 5: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Recover:input_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest
+	2, // 6: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.ExistInVirtualBucket:input_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectRequest
+	1, // 7: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Ingest:output_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectResponse
+	1, // 8: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Archive:output_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectResponse
+	1, // 9: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.Recover:output_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ObjectResponse
+	3, // 10: github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService.ExistInVirtualBucket:output_type -> github.com.metaprov.modelaapi.services.objectstored.v1.ExistInVirtualBucketResponse
 	7, // [7:11] is the sub-list for method output_type
 	3, // [3:7] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -383,13 +383,13 @@ var file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pro
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_init() }
-func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_init() }
+func file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*IngestResponse); i {
 			case 0:
 				return &v.state
@@ -401,7 +401,7 @@ func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ObjectResponse); i {
 			case 0:
 				return &v.state
@@ -413,7 +413,7 @@ func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ObjectRequest); i {
 			case 0:
 				return &v.state
@@ -425,7 +425,7 @@ func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ExistInVirtualBucketResponse); i {
 			case 0:
 				return &v.state
@@ -442,20 +442,20 @@ func file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_pr
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto = out.File
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_objectstored_v1_objectstored_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto = out.File
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -491,7 +491,7 @@ func NewObjectstoreServiceClient(cc grpc.ClientConnInterface) ObjectstoreService
 
 func (c *objectstoreServiceClient) Ingest(ctx context.Context, in *ObjectRequest, opts ...grpc.CallOption) (*ObjectResponse, error) {
 	out := new(ObjectResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Ingest", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -500,7 +500,7 @@ func (c *objectstoreServiceClient) Ingest(ctx context.Context, in *ObjectRequest
 
 func (c *objectstoreServiceClient) Archive(ctx context.Context, in *ObjectRequest, opts ...grpc.CallOption) (*ObjectResponse, error) {
 	out := new(ObjectResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Archive", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -509,7 +509,7 @@ func (c *objectstoreServiceClient) Archive(ctx context.Context, in *ObjectReques
 
 func (c *objectstoreServiceClient) Recover(ctx context.Context, in *ObjectRequest, opts ...grpc.CallOption) (*ObjectResponse, error) {
 	out := new(ObjectResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Recover", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -518,7 +518,7 @@ func (c *objectstoreServiceClient) Recover(ctx context.Context, in *ObjectReques
 
 func (c *objectstoreServiceClient) ExistInVirtualBucket(ctx context.Context, in *ObjectRequest, opts ...grpc.CallOption) (*ExistInVirtualBucketResponse, error) {
 	out := new(ExistInVirtualBucketResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -569,7 +569,7 @@ func _ObjectstoreService_Ingest_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Ingest",
+		FullMethod: "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Ingest",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ObjectstoreServiceServer).Ingest(ctx, req.(*ObjectRequest))
@@ -587,7 +587,7 @@ func _ObjectstoreService_Archive_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Archive",
+		FullMethod: "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Archive",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ObjectstoreServiceServer).Archive(ctx, req.(*ObjectRequest))
@@ -605,7 +605,7 @@ func _ObjectstoreService_Recover_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/Recover",
+		FullMethod: "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Recover",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ObjectstoreServiceServer).Recover(ctx, req.(*ObjectRequest))
@@ -623,7 +623,7 @@ func _ObjectstoreService_ExistInVirtualBucket_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket",
+		FullMethod: "/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ObjectstoreServiceServer).ExistInVirtualBucket(ctx, req.(*ObjectRequest))
@@ -632,7 +632,7 @@ func _ObjectstoreService_ExistInVirtualBucket_Handler(srv interface{}, ctx conte
 }
 
 var _ObjectstoreService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.objectstored.v1.ObjectstoreService",
+	ServiceName: "github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService",
 	HandlerType: (*ObjectstoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -653,5 +653,5 @@ var _ObjectstoreService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/objectstored/v1/objectstored.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/objectstored/v1/objectstored.proto",
 }

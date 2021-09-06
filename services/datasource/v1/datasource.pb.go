@@ -2,16 +2,16 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/datasource/v1/datasource.proto
+// source: github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	_ "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	_ "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -45,7 +45,7 @@ type ListDataSourceRequest struct {
 func (x *ListDataSourceRequest) Reset() {
 	*x = ListDataSourceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -58,7 +58,7 @@ func (x *ListDataSourceRequest) String() string {
 func (*ListDataSourceRequest) ProtoMessage() {}
 
 func (x *ListDataSourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -71,7 +71,7 @@ func (x *ListDataSourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataSourceRequest.ProtoReflect.Descriptor instead.
 func (*ListDataSourceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListDataSourceRequest) GetNamespace() string {
@@ -99,7 +99,7 @@ type ListDataSourceResponse struct {
 func (x *ListDataSourceResponse) Reset() {
 	*x = ListDataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -112,7 +112,7 @@ func (x *ListDataSourceResponse) String() string {
 func (*ListDataSourceResponse) ProtoMessage() {}
 
 func (x *ListDataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -125,7 +125,7 @@ func (x *ListDataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDataSourceResponse.ProtoReflect.Descriptor instead.
 func (*ListDataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListDataSourceResponse) GetList() *v1alpha1.DataSourceList {
@@ -147,7 +147,7 @@ type GetDataSourceRequest struct {
 func (x *GetDataSourceRequest) Reset() {
 	*x = GetDataSourceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -160,7 +160,7 @@ func (x *GetDataSourceRequest) String() string {
 func (*GetDataSourceRequest) ProtoMessage() {}
 
 func (x *GetDataSourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -173,7 +173,7 @@ func (x *GetDataSourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataSourceRequest.ProtoReflect.Descriptor instead.
 func (*GetDataSourceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetDataSourceRequest) GetNamespace() string {
@@ -202,7 +202,7 @@ type GetDataSourceResponse struct {
 func (x *GetDataSourceResponse) Reset() {
 	*x = GetDataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -215,7 +215,7 @@ func (x *GetDataSourceResponse) String() string {
 func (*GetDataSourceResponse) ProtoMessage() {}
 
 func (x *GetDataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +228,7 @@ func (x *GetDataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDataSourceResponse.ProtoReflect.Descriptor instead.
 func (*GetDataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetDataSourceResponse) GetItem() *v1alpha1.DataSource {
@@ -256,7 +256,7 @@ type UpdateDataSourceRequest struct {
 func (x *UpdateDataSourceRequest) Reset() {
 	*x = UpdateDataSourceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -269,7 +269,7 @@ func (x *UpdateDataSourceRequest) String() string {
 func (*UpdateDataSourceRequest) ProtoMessage() {}
 
 func (x *UpdateDataSourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,7 +282,7 @@ func (x *UpdateDataSourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDataSourceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDataSourceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateDataSourceRequest) GetItem() *v1alpha1.DataSource {
@@ -301,7 +301,7 @@ type UpdateDataSourceResponse struct {
 func (x *UpdateDataSourceResponse) Reset() {
 	*x = UpdateDataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -314,7 +314,7 @@ func (x *UpdateDataSourceResponse) String() string {
 func (*UpdateDataSourceResponse) ProtoMessage() {}
 
 func (x *UpdateDataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -327,7 +327,7 @@ func (x *UpdateDataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDataSourceResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{5}
 }
 
 type CreateDataSourceRequest struct {
@@ -341,7 +341,7 @@ type CreateDataSourceRequest struct {
 func (x *CreateDataSourceRequest) Reset() {
 	*x = CreateDataSourceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -354,7 +354,7 @@ func (x *CreateDataSourceRequest) String() string {
 func (*CreateDataSourceRequest) ProtoMessage() {}
 
 func (x *CreateDataSourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +367,7 @@ func (x *CreateDataSourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataSourceRequest.ProtoReflect.Descriptor instead.
 func (*CreateDataSourceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CreateDataSourceRequest) GetItem() *v1alpha1.DataSource {
@@ -386,7 +386,7 @@ type CreateDataSourceResponse struct {
 func (x *CreateDataSourceResponse) Reset() {
 	*x = CreateDataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -399,7 +399,7 @@ func (x *CreateDataSourceResponse) String() string {
 func (*CreateDataSourceResponse) ProtoMessage() {}
 
 func (x *CreateDataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -412,7 +412,7 @@ func (x *CreateDataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDataSourceResponse.ProtoReflect.Descriptor instead.
 func (*CreateDataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{7}
 }
 
 type DeleteDataSourceRequest struct {
@@ -427,7 +427,7 @@ type DeleteDataSourceRequest struct {
 func (x *DeleteDataSourceRequest) Reset() {
 	*x = DeleteDataSourceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -440,7 +440,7 @@ func (x *DeleteDataSourceRequest) String() string {
 func (*DeleteDataSourceRequest) ProtoMessage() {}
 
 func (x *DeleteDataSourceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -453,7 +453,7 @@ func (x *DeleteDataSourceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDataSourceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDataSourceRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteDataSourceRequest) GetNamespace() string {
@@ -479,7 +479,7 @@ type DeleteDataSourceResponse struct {
 func (x *DeleteDataSourceResponse) Reset() {
 	*x = DeleteDataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -492,7 +492,7 @@ func (x *DeleteDataSourceResponse) String() string {
 func (*DeleteDataSourceResponse) ProtoMessage() {}
 
 func (x *DeleteDataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -505,7 +505,7 @@ func (x *DeleteDataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDataSourceResponse.ProtoReflect.Descriptor instead.
 func (*DeleteDataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{9}
 }
 
 type InferSchemaRequest struct {
@@ -522,7 +522,7 @@ type InferSchemaRequest struct {
 func (x *InferSchemaRequest) Reset() {
 	*x = InferSchemaRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -535,7 +535,7 @@ func (x *InferSchemaRequest) String() string {
 func (*InferSchemaRequest) ProtoMessage() {}
 
 func (x *InferSchemaRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -548,7 +548,7 @@ func (x *InferSchemaRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InferSchemaRequest.ProtoReflect.Descriptor instead.
 func (*InferSchemaRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *InferSchemaRequest) GetNamespace() string {
@@ -590,7 +590,7 @@ type InferSchemaResponse struct {
 func (x *InferSchemaResponse) Reset() {
 	*x = InferSchemaResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -603,7 +603,7 @@ func (x *InferSchemaResponse) String() string {
 func (*InferSchemaResponse) ProtoMessage() {}
 
 func (x *InferSchemaResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -616,7 +616,7 @@ func (x *InferSchemaResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InferSchemaResponse.ProtoReflect.Descriptor instead.
 func (*InferSchemaResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *InferSchemaResponse) GetColumns() []*v1.ColumnProfile {
@@ -638,7 +638,7 @@ type GetTableViewRequest struct {
 func (x *GetTableViewRequest) Reset() {
 	*x = GetTableViewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +651,7 @@ func (x *GetTableViewRequest) String() string {
 func (*GetTableViewRequest) ProtoMessage() {}
 
 func (x *GetTableViewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +664,7 @@ func (x *GetTableViewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTableViewRequest.ProtoReflect.Descriptor instead.
 func (*GetTableViewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetTableViewRequest) GetFlatfilespec() *v1alpha1.FlatFileSpec {
@@ -692,7 +692,7 @@ type GetTableViewResponse struct {
 func (x *GetTableViewResponse) Reset() {
 	*x = GetTableViewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -705,7 +705,7 @@ func (x *GetTableViewResponse) String() string {
 func (*GetTableViewResponse) ProtoMessage() {}
 
 func (x *GetTableViewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -718,7 +718,7 @@ func (x *GetTableViewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTableViewResponse.ProtoReflect.Descriptor instead.
 func (*GetTableViewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetTableViewResponse) GetTable() *v1.TableView {
@@ -728,9 +728,9 @@ func (x *GetTableViewResponse) GetTable() *v1.TableView {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDesc = []byte{
 	0x0a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75,
@@ -962,67 +962,67 @@ var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_r
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescData = file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescData = file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_goTypes = []interface{}{
-	(*ListDataSourceRequest)(nil),    // 0: github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
-	(*ListDataSourceResponse)(nil),   // 1: github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse
-	(*GetDataSourceRequest)(nil),     // 2: github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest
-	(*GetDataSourceResponse)(nil),    // 3: github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
-	(*UpdateDataSourceRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest
-	(*UpdateDataSourceResponse)(nil), // 5: github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse
-	(*CreateDataSourceRequest)(nil),  // 6: github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest
-	(*CreateDataSourceResponse)(nil), // 7: github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse
-	(*DeleteDataSourceRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest
-	(*DeleteDataSourceResponse)(nil), // 9: github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse
-	(*InferSchemaRequest)(nil),       // 10: github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest
-	(*InferSchemaResponse)(nil),      // 11: github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse
-	(*GetTableViewRequest)(nil),      // 12: github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest
-	(*GetTableViewResponse)(nil),     // 13: github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse
-	nil,                              // 14: github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry
-	(*v1alpha1.DataSourceList)(nil),  // 15: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList
-	(*v1alpha1.DataSource)(nil),      // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1alpha1.FlatFileSpec)(nil),    // 17: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	(*v1alpha1.DataLocation)(nil),    // 18: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	(*v1.ColumnProfile)(nil),         // 19: github.com.metaprov.modeldapi.services.common.v1.ColumnProfile
-	(*v1.TableView)(nil),             // 20: github.com.metaprov.modeldapi.services.common.v1.TableView
+var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_goTypes = []interface{}{
+	(*ListDataSourceRequest)(nil),    // 0: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest
+	(*ListDataSourceResponse)(nil),   // 1: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse
+	(*GetDataSourceRequest)(nil),     // 2: github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest
+	(*GetDataSourceResponse)(nil),    // 3: github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
+	(*UpdateDataSourceRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest
+	(*UpdateDataSourceResponse)(nil), // 5: github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse
+	(*CreateDataSourceRequest)(nil),  // 6: github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest
+	(*CreateDataSourceResponse)(nil), // 7: github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse
+	(*DeleteDataSourceRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest
+	(*DeleteDataSourceResponse)(nil), // 9: github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse
+	(*InferSchemaRequest)(nil),       // 10: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest
+	(*InferSchemaResponse)(nil),      // 11: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse
+	(*GetTableViewRequest)(nil),      // 12: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest
+	(*GetTableViewResponse)(nil),     // 13: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse
+	nil,                              // 14: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry
+	(*v1alpha1.DataSourceList)(nil),  // 15: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList
+	(*v1alpha1.DataSource)(nil),      // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	(*v1alpha1.FlatFileSpec)(nil),    // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	(*v1alpha1.DataLocation)(nil),    // 18: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1.ColumnProfile)(nil),         // 19: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	(*v1.TableView)(nil),             // 20: github.com.metaprov.modelaapi.services.common.v1.TableView
 }
-var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.labels:type_name -> github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.list:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList
-	16, // 2: github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	16, // 3: github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	16, // 4: github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	17, // 5: github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.flatfile:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	18, // 6: github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.location:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	19, // 7: github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.columns:type_name -> github.com.metaprov.modeldapi.services.common.v1.ColumnProfile
-	17, // 8: github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	18, // 9: github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.location:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	20, // 10: github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.table:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	0,  // 11: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.ListDataSources:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
-	6,  // 12: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.CreateDataSource:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest
-	2,  // 13: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetDataSource:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest
-	4,  // 14: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.UpdateDataSource:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest
-	8,  // 15: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.DeleteDataSource:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest
-	10, // 16: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.InferSchema:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest
-	12, // 17: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetTableView:input_type -> github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest
-	1,  // 18: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.ListDataSources:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse
-	7,  // 19: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.CreateDataSource:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse
-	3,  // 20: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetDataSource:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
-	5,  // 21: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.UpdateDataSource:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse
-	9,  // 22: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.DeleteDataSource:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse
-	11, // 23: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.InferSchema:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse
-	13, // 24: github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService.GetTableView:output_type -> github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse
+var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.labels:type_name -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.list:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList
+	16, // 2: github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	16, // 3: github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	16, // 4: github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	17, // 5: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	18, // 6: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	19, // 7: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.columns:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	17, // 8: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	18, // 9: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	20, // 10: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	0,  // 11: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest
+	6,  // 12: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest
+	2,  // 13: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest
+	4,  // 14: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest
+	8,  // 15: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest
+	10, // 16: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest
+	12, // 17: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest
+	1,  // 18: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse
+	7,  // 19: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse
+	3,  // 20: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
+	5,  // 21: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse
+	9,  // 22: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse
+	11, // 23: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse
+	13, // 24: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse
 	18, // [18:25] is the sub-list for method output_type
 	11, // [11:18] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -1030,13 +1030,13 @@ var file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_d
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_init() }
-func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_init() }
+func file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDataSourceRequest); i {
 			case 0:
 				return &v.state
@@ -1048,7 +1048,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListDataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -1060,7 +1060,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDataSourceRequest); i {
 			case 0:
 				return &v.state
@@ -1072,7 +1072,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetDataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -1084,7 +1084,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateDataSourceRequest); i {
 			case 0:
 				return &v.state
@@ -1096,7 +1096,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateDataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -1108,7 +1108,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateDataSourceRequest); i {
 			case 0:
 				return &v.state
@@ -1120,7 +1120,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateDataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -1132,7 +1132,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteDataSourceRequest); i {
 			case 0:
 				return &v.state
@@ -1144,7 +1144,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteDataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -1156,7 +1156,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InferSchemaRequest); i {
 			case 0:
 				return &v.state
@@ -1168,7 +1168,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InferSchemaResponse); i {
 			case 0:
 				return &v.state
@@ -1180,7 +1180,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTableViewRequest); i {
 			case 0:
 				return &v.state
@@ -1192,7 +1192,7 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTableViewResponse); i {
 			case 0:
 				return &v.state
@@ -1209,20 +1209,20 @@ func file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto = out.File
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_datasource_v1_datasource_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto = out.File
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1257,7 +1257,7 @@ func NewDataSourceServiceClient(cc grpc.ClientConnInterface) DataSourceServiceCl
 
 func (c *dataSourceServiceClient) ListDataSources(ctx context.Context, in *ListDataSourceRequest, opts ...grpc.CallOption) (*ListDataSourceResponse, error) {
 	out := new(ListDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1266,7 +1266,7 @@ func (c *dataSourceServiceClient) ListDataSources(ctx context.Context, in *ListD
 
 func (c *dataSourceServiceClient) CreateDataSource(ctx context.Context, in *CreateDataSourceRequest, opts ...grpc.CallOption) (*CreateDataSourceResponse, error) {
 	out := new(CreateDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1275,7 +1275,7 @@ func (c *dataSourceServiceClient) CreateDataSource(ctx context.Context, in *Crea
 
 func (c *dataSourceServiceClient) GetDataSource(ctx context.Context, in *GetDataSourceRequest, opts ...grpc.CallOption) (*GetDataSourceResponse, error) {
 	out := new(GetDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1284,7 +1284,7 @@ func (c *dataSourceServiceClient) GetDataSource(ctx context.Context, in *GetData
 
 func (c *dataSourceServiceClient) UpdateDataSource(ctx context.Context, in *UpdateDataSourceRequest, opts ...grpc.CallOption) (*UpdateDataSourceResponse, error) {
 	out := new(UpdateDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1293,7 +1293,7 @@ func (c *dataSourceServiceClient) UpdateDataSource(ctx context.Context, in *Upda
 
 func (c *dataSourceServiceClient) DeleteDataSource(ctx context.Context, in *DeleteDataSourceRequest, opts ...grpc.CallOption) (*DeleteDataSourceResponse, error) {
 	out := new(DeleteDataSourceResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1302,7 +1302,7 @@ func (c *dataSourceServiceClient) DeleteDataSource(ctx context.Context, in *Dele
 
 func (c *dataSourceServiceClient) InferSchema(ctx context.Context, in *InferSchemaRequest, opts ...grpc.CallOption) (*InferSchemaResponse, error) {
 	out := new(InferSchemaResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1311,7 +1311,7 @@ func (c *dataSourceServiceClient) InferSchema(ctx context.Context, in *InferSche
 
 func (c *dataSourceServiceClient) GetTableView(ctx context.Context, in *GetTableViewRequest, opts ...grpc.CallOption) (*GetTableViewResponse, error) {
 	out := new(GetTableViewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1370,7 +1370,7 @@ func _DataSourceService_ListDataSources_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/ListDataSources",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/ListDataSources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).ListDataSources(ctx, req.(*ListDataSourceRequest))
@@ -1388,7 +1388,7 @@ func _DataSourceService_CreateDataSource_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/CreateDataSource",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/CreateDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).CreateDataSource(ctx, req.(*CreateDataSourceRequest))
@@ -1406,7 +1406,7 @@ func _DataSourceService_GetDataSource_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetDataSource",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).GetDataSource(ctx, req.(*GetDataSourceRequest))
@@ -1424,7 +1424,7 @@ func _DataSourceService_UpdateDataSource_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/UpdateDataSource",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/UpdateDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).UpdateDataSource(ctx, req.(*UpdateDataSourceRequest))
@@ -1442,7 +1442,7 @@ func _DataSourceService_DeleteDataSource_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/DeleteDataSource",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/DeleteDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).DeleteDataSource(ctx, req.(*DeleteDataSourceRequest))
@@ -1460,7 +1460,7 @@ func _DataSourceService_InferSchema_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/InferSchema",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/InferSchema",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).InferSchema(ctx, req.(*InferSchemaRequest))
@@ -1478,7 +1478,7 @@ func _DataSourceService_GetTableView_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService/GetTableView",
+		FullMethod: "/github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService/GetTableView",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataSourceServiceServer).GetTableView(ctx, req.(*GetTableViewRequest))
@@ -1487,7 +1487,7 @@ func _DataSourceService_GetTableView_Handler(srv interface{}, ctx context.Contex
 }
 
 var _DataSourceService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.datasource.v1.DataSourceService",
+	ServiceName: "github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService",
 	HandlerType: (*DataSourceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1520,5 +1520,5 @@ var _DataSourceService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/datasource/v1/datasource.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto",
 }

@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/validation/field"
@@ -31,7 +31,7 @@ func (r *ServingSite) Default() {
 		r.Spec.Description = util.StrPtr("")
 	}
 	if r.Spec.FDQN == nil {
-		r.Spec.FDQN = util.StrPtr(r.Name + ".modeld.io")
+		r.Spec.FDQN = util.StrPtr(r.Name + ".modela.io")
 	}
 }
 

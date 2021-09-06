@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.alert.v1 import alert_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2
+from github.com.metaprov.modelaapi.services.alert.v1 import alert_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2
 
 
 class AlertServiceStub(object):
@@ -15,29 +15,29 @@ class AlertServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListAlerts = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.FromString,
                 )
         self.CreateAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.FromString,
                 )
         self.GetAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.FromString,
                 )
         self.UpdateAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.FromString,
                 )
         self.DeleteAlert = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_AlertServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListAlerts': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAlerts,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.SerializeToString,
             ),
             'CreateAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.SerializeToString,
             ),
             'GetAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.SerializeToString,
             ),
             'UpdateAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.SerializeToString,
             ),
             'DeleteAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAlert,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.alert.v1.AlertService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.alert.v1.AlertService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class AlertService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.ListAlertsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class AlertService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.CreateAlertResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class AlertService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.GetAlertResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class AlertService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.UpdateAlertResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class AlertService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_alert_dot_v1_dot_alert__pb2.DeleteAlertResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

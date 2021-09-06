@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.servingsite.v1 import servingsite_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2
+from github.com.metaprov.modelaapi.services.servingsite.v1 import servingsite_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2
 
 
 class ServingSiteServiceStub(object):
@@ -15,29 +15,29 @@ class ServingSiteServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListServingSites = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/ListServingSites',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
                 )
         self.CreateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
                 )
         self.GetServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
                 )
         self.UpdateServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
                 )
         self.DeleteServingSite = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_ServingSiteServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListServingSites': grpc.unary_unary_rpc_method_handler(
                     servicer.ListServingSites,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.SerializeToString,
             ),
             'CreateServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.SerializeToString,
             ),
             'GetServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.GetServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.SerializeToString,
             ),
             'UpdateServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.SerializeToString,
             ),
             'DeleteServingSite': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteServingSite,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/ListServingSites',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/ListServingSites',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.ListServingSitesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.CreateServingSiteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/GetServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.GetServingSiteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.UpdateServingSiteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class ServingSiteService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_servingsite_dot_v1_dot_servingsite__pb2.DeleteServingSiteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

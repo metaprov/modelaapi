@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.trainerd.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.trainerd.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb from '../../../../../../github.com/metaprov/modeldapi/services/trainerd/v1/trainerd_pb';
+import * as github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb from '../../../../../../github.com/metaprov/modelaapi/services/trainerd/v1/trainerd_pb';
 
 
 export class TrainerdServiceClient {
@@ -36,32 +36,32 @@ export class TrainerdServiceClient {
   }
 
   methodInfoTrain = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
   );
 
   train(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
 
   train(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
 
   train(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Train',
         request,
         metadata || {},
         this.methodInfoTrain,
@@ -69,39 +69,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Train',
     request,
     metadata || {},
     this.methodInfoTrain);
   }
 
   methodInfoForecast = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse.deserializeBinary
   );
 
   forecast(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse>;
 
   forecast(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse>;
 
   forecast(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ForecastResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ForecastResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast',
         request,
         metadata || {},
         this.methodInfoForecast,
@@ -109,39 +109,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast',
     request,
     metadata || {},
     this.methodInfoForecast);
   }
 
   methodInfoTest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse.deserializeBinary
   );
 
   test(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
 
   test(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
 
   test(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Test',
         request,
         metadata || {},
         this.methodInfoTest,
@@ -149,39 +149,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Test',
     request,
     metadata || {},
     this.methodInfoTest);
   }
 
   methodInfoCompile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse.deserializeBinary
   );
 
   compile(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse>;
 
   compile(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse>;
 
   compile(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.CompileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.CompileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Compile',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Compile',
         request,
         metadata || {},
         this.methodInfoCompile,
@@ -189,39 +189,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Compile',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Compile',
     request,
     metadata || {},
     this.methodInfoCompile);
   }
 
   methodInfoTrainEnsemble = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse.deserializeBinary
   );
 
   trainEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
 
   trainEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse>;
 
   trainEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TrainResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
         request,
         metadata || {},
         this.methodInfoTrainEnsemble,
@@ -229,39 +229,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble',
     request,
     metadata || {},
     this.methodInfoTrainEnsemble);
   }
 
   methodInfoTestEnsemble = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse.deserializeBinary
   );
 
   testEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
 
   testEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse>;
 
   testEnsemble(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.TestResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.TestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
         request,
         metadata || {},
         this.methodInfoTestEnsemble,
@@ -269,39 +269,39 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble',
     request,
     metadata || {},
     this.methodInfoTestEnsemble);
   }
 
   methodInfoShutdown = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse,
-    (request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownRequest) => {
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse.deserializeBinary
   );
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse>;
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse>;
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse>;
 
   shutdown(
-    request: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_pb.ShutdownResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ShutdownResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Shutdown',
         request,
         metadata || {},
         this.methodInfoShutdown,
@@ -309,7 +309,7 @@ export class TrainerdServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown',
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Shutdown',
     request,
     metadata || {},
     this.methodInfoShutdown);

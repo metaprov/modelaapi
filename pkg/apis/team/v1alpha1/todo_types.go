@@ -45,7 +45,7 @@ type TodoCondition struct {
 // +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=todos,singular=todo,categories={infra,modeld}
+// +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
 type Todo struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -66,7 +66,7 @@ type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Task *string `json:"task,omitempty" protobuf:"bytes,1,opt,name=task"`
-	// The modeld entity that the task refer to.
+	// The modela entity that the task refer to.
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Required

@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListTaskCardsRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListTaskCardsRequest {
 }
 
 export class ListTaskCardsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList): ListTaskCardsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList): ListTaskCardsResponse;
   hasItems(): boolean;
   clearItems(): ListTaskCardsResponse;
 
@@ -43,7 +43,7 @@ export class ListTaskCardsResponse extends jspb.Message {
 
 export namespace ListTaskCardsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCardList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace TaskCardResponse {
 }
 
 export class CreateTaskCardRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): CreateTaskCardRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): CreateTaskCardRequest;
   hasItem(): boolean;
   clearItem(): CreateTaskCardRequest;
 
@@ -80,7 +80,7 @@ export class CreateTaskCardRequest extends jspb.Message {
 
 export namespace CreateTaskCardRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
     password: string,
   }
 }
@@ -100,8 +100,8 @@ export namespace CreateTaskCardResponse {
 }
 
 export class UpdateTaskCardRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): UpdateTaskCardRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): UpdateTaskCardRequest;
   hasItem(): boolean;
   clearItem(): UpdateTaskCardRequest;
 
@@ -115,7 +115,7 @@ export class UpdateTaskCardRequest extends jspb.Message {
 
 export namespace UpdateTaskCardRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
   }
 }
 
@@ -156,8 +156,8 @@ export namespace GetTaskCardRequest {
 }
 
 export class GetTaskCardResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): GetTaskCardResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard): GetTaskCardResponse;
   hasItem(): boolean;
   clearItem(): GetTaskCardResponse;
 
@@ -174,7 +174,7 @@ export class GetTaskCardResponse extends jspb.Message {
 
 export namespace GetTaskCardResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TaskCard.AsObject,
     yaml: string,
   }
 }
@@ -202,10 +202,10 @@ export namespace GetTaskCardNamespacesRequest {
 }
 
 export class GetTaskCardNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetTaskCardNamespacesResponse;
+  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetTaskCardNamespacesResponse;
   clearNamespacesList(): GetTaskCardNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetTaskCardNamespacesResponse.AsObject;
@@ -217,7 +217,7 @@ export class GetTaskCardNamespacesResponse extends jspb.Message {
 
 export namespace GetTaskCardNamespacesResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
+    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

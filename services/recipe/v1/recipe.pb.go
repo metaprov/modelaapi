@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto
+// source: github.com/metaprov/modelaapi/services/recipe/v1/recipe.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListRecipesRequest struct {
 func (x *ListRecipesRequest) Reset() {
 	*x = ListRecipesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListRecipesRequest) String() string {
 func (*ListRecipesRequest) ProtoMessage() {}
 
 func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesRequest.ProtoReflect.Descriptor instead.
 func (*ListRecipesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListRecipesRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListRecipesResponse struct {
 func (x *ListRecipesResponse) Reset() {
 	*x = ListRecipesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListRecipesResponse) String() string {
 func (*ListRecipesResponse) ProtoMessage() {}
 
 func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesResponse.ProtoReflect.Descriptor instead.
 func (*ListRecipesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListRecipesResponse) GetItems() *v1alpha1.RecipeList {
@@ -145,7 +145,7 @@ type CreateRecipeRequest struct {
 func (x *CreateRecipeRequest) Reset() {
 	*x = CreateRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -158,7 +158,7 @@ func (x *CreateRecipeRequest) String() string {
 func (*CreateRecipeRequest) ProtoMessage() {}
 
 func (x *CreateRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +171,7 @@ func (x *CreateRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRecipeRequest.ProtoReflect.Descriptor instead.
 func (*CreateRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateRecipeRequest) GetItem() *v1alpha1.Recipe {
@@ -190,7 +190,7 @@ type CreateRecipeResponse struct {
 func (x *CreateRecipeResponse) Reset() {
 	*x = CreateRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -203,7 +203,7 @@ func (x *CreateRecipeResponse) String() string {
 func (*CreateRecipeResponse) ProtoMessage() {}
 
 func (x *CreateRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *CreateRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRecipeResponse.ProtoReflect.Descriptor instead.
 func (*CreateRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateRecipeRequest struct {
@@ -230,7 +230,7 @@ type UpdateRecipeRequest struct {
 func (x *UpdateRecipeRequest) Reset() {
 	*x = UpdateRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -243,7 +243,7 @@ func (x *UpdateRecipeRequest) String() string {
 func (*UpdateRecipeRequest) ProtoMessage() {}
 
 func (x *UpdateRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +256,7 @@ func (x *UpdateRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRecipeRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateRecipeRequest) GetItem() *v1alpha1.Recipe {
@@ -275,7 +275,7 @@ type UpdateRecipeResponse struct {
 func (x *UpdateRecipeResponse) Reset() {
 	*x = UpdateRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -288,7 +288,7 @@ func (x *UpdateRecipeResponse) String() string {
 func (*UpdateRecipeResponse) ProtoMessage() {}
 
 func (x *UpdateRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -301,7 +301,7 @@ func (x *UpdateRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRecipeResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{5}
 }
 
 type GetRecipeRequest struct {
@@ -316,7 +316,7 @@ type GetRecipeRequest struct {
 func (x *GetRecipeRequest) Reset() {
 	*x = GetRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -329,7 +329,7 @@ func (x *GetRecipeRequest) String() string {
 func (*GetRecipeRequest) ProtoMessage() {}
 
 func (x *GetRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -342,7 +342,7 @@ func (x *GetRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecipeRequest.ProtoReflect.Descriptor instead.
 func (*GetRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetRecipeRequest) GetNamespace() string {
@@ -372,7 +372,7 @@ type ProfileRecipeRequest struct {
 func (x *ProfileRecipeRequest) Reset() {
 	*x = ProfileRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -385,7 +385,7 @@ func (x *ProfileRecipeRequest) String() string {
 func (*ProfileRecipeRequest) ProtoMessage() {}
 
 func (x *ProfileRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -398,7 +398,7 @@ func (x *ProfileRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProfileRecipeRequest.ProtoReflect.Descriptor instead.
 func (*ProfileRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ProfileRecipeRequest) GetNamespace() string {
@@ -433,7 +433,7 @@ type ProfileRecipeResponse struct {
 func (x *ProfileRecipeResponse) Reset() {
 	*x = ProfileRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *ProfileRecipeResponse) String() string {
 func (*ProfileRecipeResponse) ProtoMessage() {}
 
 func (x *ProfileRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *ProfileRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProfileRecipeResponse.ProtoReflect.Descriptor instead.
 func (*ProfileRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ProfileRecipeResponse) GetTable() *v1.TableView {
@@ -482,7 +482,7 @@ type RunRecipeRequest struct {
 func (x *RunRecipeRequest) Reset() {
 	*x = RunRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -495,7 +495,7 @@ func (x *RunRecipeRequest) String() string {
 func (*RunRecipeRequest) ProtoMessage() {}
 
 func (x *RunRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -508,7 +508,7 @@ func (x *RunRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunRecipeRequest.ProtoReflect.Descriptor instead.
 func (*RunRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *RunRecipeRequest) GetNamespace() string {
@@ -544,7 +544,7 @@ type RunRecipeResponse struct {
 func (x *RunRecipeResponse) Reset() {
 	*x = RunRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -557,7 +557,7 @@ func (x *RunRecipeResponse) String() string {
 func (*RunRecipeResponse) ProtoMessage() {}
 
 func (x *RunRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -570,7 +570,7 @@ func (x *RunRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunRecipeResponse.ProtoReflect.Descriptor instead.
 func (*RunRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *RunRecipeResponse) GetRecipe() *v1alpha1.Recipe {
@@ -599,7 +599,7 @@ type GetRecipeResponse struct {
 func (x *GetRecipeResponse) Reset() {
 	*x = GetRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -612,7 +612,7 @@ func (x *GetRecipeResponse) String() string {
 func (*GetRecipeResponse) ProtoMessage() {}
 
 func (x *GetRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -625,7 +625,7 @@ func (x *GetRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecipeResponse.ProtoReflect.Descriptor instead.
 func (*GetRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetRecipeResponse) GetItem() *v1alpha1.Recipe {
@@ -654,7 +654,7 @@ type DeleteRecipeRequest struct {
 func (x *DeleteRecipeRequest) Reset() {
 	*x = DeleteRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -667,7 +667,7 @@ func (x *DeleteRecipeRequest) String() string {
 func (*DeleteRecipeRequest) ProtoMessage() {}
 
 func (x *DeleteRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -680,7 +680,7 @@ func (x *DeleteRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRecipeRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteRecipeRequest) GetNamespace() string {
@@ -706,7 +706,7 @@ type DeleteRecipeResponse struct {
 func (x *DeleteRecipeResponse) Reset() {
 	*x = DeleteRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -719,7 +719,7 @@ func (x *DeleteRecipeResponse) String() string {
 func (*DeleteRecipeResponse) ProtoMessage() {}
 
 func (x *DeleteRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -732,12 +732,12 @@ func (x *DeleteRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRecipeResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP(), []int{13}
 }
 
-var File_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x63, 0x69, 0x70, 0x65, 0x2f,
@@ -934,63 +934,63 @@ var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescData = file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescData = file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_goTypes = []interface{}{
-	(*ListRecipesRequest)(nil),    // 0: github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest
-	(*ListRecipesResponse)(nil),   // 1: github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse
-	(*CreateRecipeRequest)(nil),   // 2: github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest
-	(*CreateRecipeResponse)(nil),  // 3: github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeResponse
-	(*UpdateRecipeRequest)(nil),   // 4: github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest
-	(*UpdateRecipeResponse)(nil),  // 5: github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeResponse
-	(*GetRecipeRequest)(nil),      // 6: github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest
-	(*ProfileRecipeRequest)(nil),  // 7: github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest
-	(*ProfileRecipeResponse)(nil), // 8: github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse
-	(*RunRecipeRequest)(nil),      // 9: github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest
-	(*RunRecipeResponse)(nil),     // 10: github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse
-	(*GetRecipeResponse)(nil),     // 11: github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse
-	(*DeleteRecipeRequest)(nil),   // 12: github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest
-	(*DeleteRecipeResponse)(nil),  // 13: github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeResponse
-	nil,                           // 14: github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry
-	(*v1alpha1.RecipeList)(nil),   // 15: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeList
-	(*v1alpha1.Recipe)(nil),       // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	(*v1alpha1.RecipeSpec)(nil),   // 17: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec
-	(*v1.TableView)(nil),          // 18: github.com.metaprov.modeldapi.services.common.v1.TableView
+var file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_goTypes = []interface{}{
+	(*ListRecipesRequest)(nil),    // 0: github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest
+	(*ListRecipesResponse)(nil),   // 1: github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesResponse
+	(*CreateRecipeRequest)(nil),   // 2: github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeRequest
+	(*CreateRecipeResponse)(nil),  // 3: github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeResponse
+	(*UpdateRecipeRequest)(nil),   // 4: github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeRequest
+	(*UpdateRecipeResponse)(nil),  // 5: github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeResponse
+	(*GetRecipeRequest)(nil),      // 6: github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeRequest
+	(*ProfileRecipeRequest)(nil),  // 7: github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeRequest
+	(*ProfileRecipeResponse)(nil), // 8: github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeResponse
+	(*RunRecipeRequest)(nil),      // 9: github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeRequest
+	(*RunRecipeResponse)(nil),     // 10: github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeResponse
+	(*GetRecipeResponse)(nil),     // 11: github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse
+	(*DeleteRecipeRequest)(nil),   // 12: github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeRequest
+	(*DeleteRecipeResponse)(nil),  // 13: github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeResponse
+	nil,                           // 14: github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.LabelsEntry
+	(*v1alpha1.RecipeList)(nil),   // 15: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList
+	(*v1alpha1.Recipe)(nil),       // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	(*v1alpha1.RecipeSpec)(nil),   // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec
+	(*v1.TableView)(nil),          // 18: github.com.metaprov.modelaapi.services.common.v1.TableView
 }
-var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeList
-	16, // 2: github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	16, // 3: github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	17, // 4: github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest.spec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec
-	18, // 5: github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse.table:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	17, // 6: github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest.spec:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeSpec
-	16, // 7: github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse.recipe:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	16, // 8: github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	0,  // 9: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ListRecipes:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesRequest
-	2,  // 10: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.CreateRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeRequest
-	6,  // 11: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.GetRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeRequest
-	9,  // 12: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.RunRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeRequest
-	7,  // 13: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ProfileRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeRequest
-	4,  // 14: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.UpdateRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeRequest
-	12, // 15: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.DeleteRecipe:input_type -> github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeRequest
-	1,  // 16: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ListRecipes:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.ListRecipesResponse
-	3,  // 17: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.CreateRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.CreateRecipeResponse
-	11, // 18: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.GetRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.GetRecipeResponse
-	10, // 19: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.RunRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.RunRecipeResponse
-	8,  // 20: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.ProfileRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.ProfileRecipeResponse
-	5,  // 21: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.UpdateRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.UpdateRecipeResponse
-	13, // 22: github.com.metaprov.modeldapi.services.recipe.v1.RecipeService.DeleteRecipe:output_type -> github.com.metaprov.modeldapi.services.recipe.v1.DeleteRecipeResponse
+var file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList
+	16, // 2: github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	16, // 3: github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	17, // 4: github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeRequest.spec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec
+	18, // 5: github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	17, // 6: github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeRequest.spec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec
+	16, // 7: github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeResponse.recipe:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	16, // 8: github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	0,  // 9: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.ListRecipes:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest
+	2,  // 10: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.CreateRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeRequest
+	6,  // 11: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.GetRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeRequest
+	9,  // 12: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.RunRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeRequest
+	7,  // 13: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.ProfileRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeRequest
+	4,  // 14: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.UpdateRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeRequest
+	12, // 15: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.DeleteRecipe:input_type -> github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeRequest
+	1,  // 16: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.ListRecipes:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesResponse
+	3,  // 17: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.CreateRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeResponse
+	11, // 18: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.GetRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse
+	10, // 19: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.RunRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeResponse
+	8,  // 20: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.ProfileRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeResponse
+	5,  // 21: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.UpdateRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeResponse
+	13, // 22: github.com.metaprov.modelaapi.services.recipe.v1.RecipeService.DeleteRecipe:output_type -> github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeResponse
 	16, // [16:23] is the sub-list for method output_type
 	9,  // [9:16] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -998,13 +998,13 @@ var file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_depIdxs =
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() }
-func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_init() }
+func file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListRecipesRequest); i {
 			case 0:
 				return &v.state
@@ -1016,7 +1016,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListRecipesResponse); i {
 			case 0:
 				return &v.state
@@ -1028,7 +1028,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1040,7 +1040,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1052,7 +1052,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1064,7 +1064,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1076,7 +1076,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1088,7 +1088,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProfileRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1100,7 +1100,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProfileRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1112,7 +1112,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1124,7 +1124,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1136,7 +1136,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1148,7 +1148,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -1160,7 +1160,7 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -1177,20 +1177,20 @@ func file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto = out.File
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_recipe_v1_recipe_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto = out.File
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_recipe_v1_recipe_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1225,7 +1225,7 @@ func NewRecipeServiceClient(cc grpc.ClientConnInterface) RecipeServiceClient {
 
 func (c *recipeServiceClient) ListRecipes(ctx context.Context, in *ListRecipesRequest, opts ...grpc.CallOption) (*ListRecipesResponse, error) {
 	out := new(ListRecipesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1234,7 +1234,7 @@ func (c *recipeServiceClient) ListRecipes(ctx context.Context, in *ListRecipesRe
 
 func (c *recipeServiceClient) CreateRecipe(ctx context.Context, in *CreateRecipeRequest, opts ...grpc.CallOption) (*CreateRecipeResponse, error) {
 	out := new(CreateRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1243,7 +1243,7 @@ func (c *recipeServiceClient) CreateRecipe(ctx context.Context, in *CreateRecipe
 
 func (c *recipeServiceClient) GetRecipe(ctx context.Context, in *GetRecipeRequest, opts ...grpc.CallOption) (*GetRecipeResponse, error) {
 	out := new(GetRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1252,7 +1252,7 @@ func (c *recipeServiceClient) GetRecipe(ctx context.Context, in *GetRecipeReques
 
 func (c *recipeServiceClient) RunRecipe(ctx context.Context, in *RunRecipeRequest, opts ...grpc.CallOption) (*RunRecipeResponse, error) {
 	out := new(RunRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1261,7 +1261,7 @@ func (c *recipeServiceClient) RunRecipe(ctx context.Context, in *RunRecipeReques
 
 func (c *recipeServiceClient) ProfileRecipe(ctx context.Context, in *ProfileRecipeRequest, opts ...grpc.CallOption) (*ProfileRecipeResponse, error) {
 	out := new(ProfileRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1270,7 +1270,7 @@ func (c *recipeServiceClient) ProfileRecipe(ctx context.Context, in *ProfileReci
 
 func (c *recipeServiceClient) UpdateRecipe(ctx context.Context, in *UpdateRecipeRequest, opts ...grpc.CallOption) (*UpdateRecipeResponse, error) {
 	out := new(UpdateRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1279,7 +1279,7 @@ func (c *recipeServiceClient) UpdateRecipe(ctx context.Context, in *UpdateRecipe
 
 func (c *recipeServiceClient) DeleteRecipe(ctx context.Context, in *DeleteRecipeRequest, opts ...grpc.CallOption) (*DeleteRecipeResponse, error) {
 	out := new(DeleteRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1338,7 +1338,7 @@ func _RecipeService_ListRecipes_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ListRecipes",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).ListRecipes(ctx, req.(*ListRecipesRequest))
@@ -1356,7 +1356,7 @@ func _RecipeService_CreateRecipe_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/CreateRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).CreateRecipe(ctx, req.(*CreateRecipeRequest))
@@ -1374,7 +1374,7 @@ func _RecipeService_GetRecipe_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/GetRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).GetRecipe(ctx, req.(*GetRecipeRequest))
@@ -1392,7 +1392,7 @@ func _RecipeService_RunRecipe_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/RunRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).RunRecipe(ctx, req.(*RunRecipeRequest))
@@ -1410,7 +1410,7 @@ func _RecipeService_ProfileRecipe_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/ProfileRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).ProfileRecipe(ctx, req.(*ProfileRecipeRequest))
@@ -1428,7 +1428,7 @@ func _RecipeService_UpdateRecipe_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/UpdateRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).UpdateRecipe(ctx, req.(*UpdateRecipeRequest))
@@ -1446,7 +1446,7 @@ func _RecipeService_DeleteRecipe_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.recipe.v1.RecipeService/DeleteRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RecipeServiceServer).DeleteRecipe(ctx, req.(*DeleteRecipeRequest))
@@ -1455,7 +1455,7 @@ func _RecipeService_DeleteRecipe_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _RecipeService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.recipe.v1.RecipeService",
+	ServiceName: "github.com.metaprov.modelaapi.services.recipe.v1.RecipeService",
 	HandlerType: (*RecipeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1488,5 +1488,5 @@ var _RecipeService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/recipe/v1/recipe.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/recipe/v1/recipe.proto",
 }

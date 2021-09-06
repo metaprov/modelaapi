@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -27,12 +27,12 @@ func (r *DataProduct) Default() {
 	}
 
 	if r.Spec.TenantRef == nil {
-		r.Spec.TenantRef = &v1.ObjectReference{Namespace: "modeld-system", Name: "default-tenant"}
+		r.Spec.TenantRef = &v1.ObjectReference{Namespace: "modela-system", Name: "default-tenant"}
 	}
 
 	// set the default folder, if non was given
 	if *r.Spec.DataLocation.Path == "" {
-		r.Spec.DataLocation.Path = util.StrPtr("modeld/live/tenants/" + r.Spec.TenantRef.Name + "/dataproducts/" + r.Name)
+		r.Spec.DataLocation.Path = util.StrPtr("modela/live/tenants/" + r.Spec.TenantRef.Name + "/dataproducts/" + r.Name)
 	}
 
 	r.Status.Conditions = make([]DataProductCondition, 0)
@@ -65,7 +65,7 @@ func (r *DataProduct) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modeld.io", Kind: "DataProduct"},
+		schema.GroupKind{Group: "data.modela.io", Kind: "DataProduct"},
 		r.Name, allErrs)
 }
 

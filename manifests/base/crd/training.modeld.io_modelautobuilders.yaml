@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: modelautobuilders.training.modeld.io
+  name: modelautobuilders.training.modela.io
 spec:
-  group: training.modeld.io
+  group: training.modela.io
   names:
     categories:
     - training
-    - modeld
+    - modela
     - all
     kind: ModelAutobuilder
     listKind: ModelAutobuilderList

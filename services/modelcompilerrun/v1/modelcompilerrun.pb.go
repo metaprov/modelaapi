@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/modelcompilerrun/v1/modelcompilerrun.proto
+// source: github.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListModelCompilerRunsRequest struct {
 func (x *ListModelCompilerRunsRequest) Reset() {
 	*x = ListModelCompilerRunsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListModelCompilerRunsRequest) String() string {
 func (*ListModelCompilerRunsRequest) ProtoMessage() {}
 
 func (x *ListModelCompilerRunsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListModelCompilerRunsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelCompilerRunsRequest.ProtoReflect.Descriptor instead.
 func (*ListModelCompilerRunsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListModelCompilerRunsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListModelCompilerRunsResponse struct {
 func (x *ListModelCompilerRunsResponse) Reset() {
 	*x = ListModelCompilerRunsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListModelCompilerRunsResponse) String() string {
 func (*ListModelCompilerRunsResponse) ProtoMessage() {}
 
 func (x *ListModelCompilerRunsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListModelCompilerRunsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelCompilerRunsResponse.ProtoReflect.Descriptor instead.
 func (*ListModelCompilerRunsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListModelCompilerRunsResponse) GetItems() *v1alpha1.ModelCompilerRunList {
@@ -142,7 +142,7 @@ type ModelCompilerRunResponse struct {
 func (x *ModelCompilerRunResponse) Reset() {
 	*x = ModelCompilerRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *ModelCompilerRunResponse) String() string {
 func (*ModelCompilerRunResponse) ProtoMessage() {}
 
 func (x *ModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *ModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelCompilerRunResponse.ProtoReflect.Descriptor instead.
 func (*ModelCompilerRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateModelCompilerRunRequest struct {
@@ -182,7 +182,7 @@ type CreateModelCompilerRunRequest struct {
 func (x *CreateModelCompilerRunRequest) Reset() {
 	*x = CreateModelCompilerRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -195,7 +195,7 @@ func (x *CreateModelCompilerRunRequest) String() string {
 func (*CreateModelCompilerRunRequest) ProtoMessage() {}
 
 func (x *CreateModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -208,7 +208,7 @@ func (x *CreateModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelCompilerRunRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelCompilerRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateModelCompilerRunRequest) GetItem() *v1alpha1.ModelCompilerRun {
@@ -227,7 +227,7 @@ type CreateModelCompilerRunResponse struct {
 func (x *CreateModelCompilerRunResponse) Reset() {
 	*x = CreateModelCompilerRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -240,7 +240,7 @@ func (x *CreateModelCompilerRunResponse) String() string {
 func (*CreateModelCompilerRunResponse) ProtoMessage() {}
 
 func (x *CreateModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -253,7 +253,7 @@ func (x *CreateModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelCompilerRunResponse.ProtoReflect.Descriptor instead.
 func (*CreateModelCompilerRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateModelCompilerRunRequest struct {
@@ -267,7 +267,7 @@ type UpdateModelCompilerRunRequest struct {
 func (x *UpdateModelCompilerRunRequest) Reset() {
 	*x = UpdateModelCompilerRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -280,7 +280,7 @@ func (x *UpdateModelCompilerRunRequest) String() string {
 func (*UpdateModelCompilerRunRequest) ProtoMessage() {}
 
 func (x *UpdateModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -293,7 +293,7 @@ func (x *UpdateModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelCompilerRunRequest.ProtoReflect.Descriptor instead.
 func (*UpdateModelCompilerRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateModelCompilerRunRequest) GetItem() *v1alpha1.ModelCompilerRun {
@@ -312,7 +312,7 @@ type UpdateModelCompilerRunResponse struct {
 func (x *UpdateModelCompilerRunResponse) Reset() {
 	*x = UpdateModelCompilerRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -325,7 +325,7 @@ func (x *UpdateModelCompilerRunResponse) String() string {
 func (*UpdateModelCompilerRunResponse) ProtoMessage() {}
 
 func (x *UpdateModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -338,7 +338,7 @@ func (x *UpdateModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelCompilerRunResponse.ProtoReflect.Descriptor instead.
 func (*UpdateModelCompilerRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{6}
 }
 
 type GetModelCompilerRunRequest struct {
@@ -353,7 +353,7 @@ type GetModelCompilerRunRequest struct {
 func (x *GetModelCompilerRunRequest) Reset() {
 	*x = GetModelCompilerRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -366,7 +366,7 @@ func (x *GetModelCompilerRunRequest) String() string {
 func (*GetModelCompilerRunRequest) ProtoMessage() {}
 
 func (x *GetModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +379,7 @@ func (x *GetModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelCompilerRunRequest.ProtoReflect.Descriptor instead.
 func (*GetModelCompilerRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetModelCompilerRunRequest) GetNamespace() string {
@@ -408,7 +408,7 @@ type GetModelCompilerRunResponse struct {
 func (x *GetModelCompilerRunResponse) Reset() {
 	*x = GetModelCompilerRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -421,7 +421,7 @@ func (x *GetModelCompilerRunResponse) String() string {
 func (*GetModelCompilerRunResponse) ProtoMessage() {}
 
 func (x *GetModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +434,7 @@ func (x *GetModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelCompilerRunResponse.ProtoReflect.Descriptor instead.
 func (*GetModelCompilerRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetModelCompilerRunResponse) GetItem() *v1alpha1.ModelCompilerRun {
@@ -463,7 +463,7 @@ type DeleteModelCompilerRunRequest struct {
 func (x *DeleteModelCompilerRunRequest) Reset() {
 	*x = DeleteModelCompilerRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -476,7 +476,7 @@ func (x *DeleteModelCompilerRunRequest) String() string {
 func (*DeleteModelCompilerRunRequest) ProtoMessage() {}
 
 func (x *DeleteModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -489,7 +489,7 @@ func (x *DeleteModelCompilerRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelCompilerRunRequest.ProtoReflect.Descriptor instead.
 func (*DeleteModelCompilerRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteModelCompilerRunRequest) GetNamespace() string {
@@ -515,7 +515,7 @@ type DeleteModelCompilerRunResponse struct {
 func (x *DeleteModelCompilerRunResponse) Reset() {
 	*x = DeleteModelCompilerRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -528,7 +528,7 @@ func (x *DeleteModelCompilerRunResponse) String() string {
 func (*DeleteModelCompilerRunResponse) ProtoMessage() {}
 
 func (x *DeleteModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -541,12 +541,12 @@ func (x *DeleteModelCompilerRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelCompilerRunResponse.ProtoReflect.Descriptor instead.
 func (*DeleteModelCompilerRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP(), []int{10}
 }
 
-var File_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc = []byte{
 	0x0a, 0x51, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x63, 0x6f,
@@ -722,50 +722,50 @@ var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompile
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData = file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData = file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes = []interface{}{
-	(*ListModelCompilerRunsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest
-	(*ListModelCompilerRunsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse
-	(*ModelCompilerRunResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunResponse
-	(*CreateModelCompilerRunRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest
-	(*CreateModelCompilerRunResponse)(nil), // 4: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse
-	(*UpdateModelCompilerRunRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest
-	(*UpdateModelCompilerRunResponse)(nil), // 6: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse
-	(*GetModelCompilerRunRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest
-	(*GetModelCompilerRunResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse
-	(*DeleteModelCompilerRunRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest
-	(*DeleteModelCompilerRunResponse)(nil), // 10: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse
-	nil,                                    // 11: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry
-	(*v1alpha1.ModelCompilerRunList)(nil),  // 12: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRunList
-	(*v1alpha1.ModelCompilerRun)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun
+var file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes = []interface{}{
+	(*ListModelCompilerRunsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest
+	(*ListModelCompilerRunsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse
+	(*ModelCompilerRunResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunResponse
+	(*CreateModelCompilerRunRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest
+	(*CreateModelCompilerRunResponse)(nil), // 4: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse
+	(*UpdateModelCompilerRunRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest
+	(*UpdateModelCompilerRunResponse)(nil), // 6: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse
+	(*GetModelCompilerRunRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest
+	(*GetModelCompilerRunResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse
+	(*DeleteModelCompilerRunRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest
+	(*DeleteModelCompilerRunResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse
+	nil,                                    // 11: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry
+	(*v1alpha1.ModelCompilerRunList)(nil),  // 12: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList
+	(*v1alpha1.ModelCompilerRun)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun
 }
-var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs = []int32{
-	11, // 0: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry
-	12, // 1: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRunList
-	13, // 2: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun
-	13, // 3: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun
-	13, // 4: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelCompilerRun
-	0,  // 5: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.ListModelCompilerRuns:input_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.CreateModelCompilerRun:input_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest
-	7,  // 7: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.GetModelCompilerRun:input_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest
-	5,  // 8: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.UpdateModelCompilerRun:input_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest
-	9,  // 9: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.DeleteModelCompilerRun:input_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.ListModelCompilerRuns:output_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse
-	4,  // 11: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.CreateModelCompilerRun:output_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse
-	8,  // 12: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.GetModelCompilerRun:output_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse
-	6,  // 13: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.UpdateModelCompilerRun:output_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse
-	10, // 14: github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService.DeleteModelCompilerRun:output_type -> github.com.metaprov.modeldapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse
+var file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs = []int32{
+	11, // 0: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry
+	12, // 1: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList
+	13, // 2: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun
+	13, // 3: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun
+	13, // 4: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun
+	0,  // 5: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.ListModelCompilerRuns:input_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.CreateModelCompilerRun:input_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest
+	7,  // 7: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.GetModelCompilerRun:input_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest
+	5,  // 8: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.UpdateModelCompilerRun:input_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest
+	9,  // 9: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.DeleteModelCompilerRun:input_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.ListModelCompilerRuns:output_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse
+	4,  // 11: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.CreateModelCompilerRun:output_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse
+	8,  // 12: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.GetModelCompilerRun:output_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse
+	6,  // 13: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.UpdateModelCompilerRun:output_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse
+	10, // 14: github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService.DeleteModelCompilerRun:output_type -> github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -774,14 +774,14 @@ var file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompile
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_init()
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto != nil {
+func file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelCompilerRunsRequest); i {
 			case 0:
 				return &v.state
@@ -793,7 +793,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelCompilerRunsResponse); i {
 			case 0:
 				return &v.state
@@ -805,7 +805,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelCompilerRunResponse); i {
 			case 0:
 				return &v.state
@@ -817,7 +817,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelCompilerRunRequest); i {
 			case 0:
 				return &v.state
@@ -829,7 +829,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelCompilerRunResponse); i {
 			case 0:
 				return &v.state
@@ -841,7 +841,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelCompilerRunRequest); i {
 			case 0:
 				return &v.state
@@ -853,7 +853,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelCompilerRunResponse); i {
 			case 0:
 				return &v.state
@@ -865,7 +865,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelCompilerRunRequest); i {
 			case 0:
 				return &v.state
@@ -877,7 +877,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelCompilerRunResponse); i {
 			case 0:
 				return &v.state
@@ -889,7 +889,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelCompilerRunRequest); i {
 			case 0:
 				return &v.state
@@ -901,7 +901,7 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelCompilerRunResponse); i {
 			case 0:
 				return &v.state
@@ -918,20 +918,20 @@ func file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompil
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto = out.File
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto = out.File
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -963,7 +963,7 @@ func NewModelCompilerRunServiceClient(cc grpc.ClientConnInterface) ModelCompiler
 
 func (c *modelCompilerRunServiceClient) ListModelCompilerRuns(ctx context.Context, in *ListModelCompilerRunsRequest, opts ...grpc.CallOption) (*ListModelCompilerRunsResponse, error) {
 	out := new(ListModelCompilerRunsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/ListModelCompilerRuns", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/ListModelCompilerRuns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -972,7 +972,7 @@ func (c *modelCompilerRunServiceClient) ListModelCompilerRuns(ctx context.Contex
 
 func (c *modelCompilerRunServiceClient) CreateModelCompilerRun(ctx context.Context, in *CreateModelCompilerRunRequest, opts ...grpc.CallOption) (*CreateModelCompilerRunResponse, error) {
 	out := new(CreateModelCompilerRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/CreateModelCompilerRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/CreateModelCompilerRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -981,7 +981,7 @@ func (c *modelCompilerRunServiceClient) CreateModelCompilerRun(ctx context.Conte
 
 func (c *modelCompilerRunServiceClient) GetModelCompilerRun(ctx context.Context, in *GetModelCompilerRunRequest, opts ...grpc.CallOption) (*GetModelCompilerRunResponse, error) {
 	out := new(GetModelCompilerRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/GetModelCompilerRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/GetModelCompilerRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -990,7 +990,7 @@ func (c *modelCompilerRunServiceClient) GetModelCompilerRun(ctx context.Context,
 
 func (c *modelCompilerRunServiceClient) UpdateModelCompilerRun(ctx context.Context, in *UpdateModelCompilerRunRequest, opts ...grpc.CallOption) (*UpdateModelCompilerRunResponse, error) {
 	out := new(UpdateModelCompilerRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/UpdateModelCompilerRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/UpdateModelCompilerRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -999,7 +999,7 @@ func (c *modelCompilerRunServiceClient) UpdateModelCompilerRun(ctx context.Conte
 
 func (c *modelCompilerRunServiceClient) DeleteModelCompilerRun(ctx context.Context, in *DeleteModelCompilerRunRequest, opts ...grpc.CallOption) (*DeleteModelCompilerRunResponse, error) {
 	out := new(DeleteModelCompilerRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/DeleteModelCompilerRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/DeleteModelCompilerRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1049,7 +1049,7 @@ func _ModelCompilerRunService_ListModelCompilerRuns_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/ListModelCompilerRuns",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/ListModelCompilerRuns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelCompilerRunServiceServer).ListModelCompilerRuns(ctx, req.(*ListModelCompilerRunsRequest))
@@ -1067,7 +1067,7 @@ func _ModelCompilerRunService_CreateModelCompilerRun_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/CreateModelCompilerRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/CreateModelCompilerRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelCompilerRunServiceServer).CreateModelCompilerRun(ctx, req.(*CreateModelCompilerRunRequest))
@@ -1085,7 +1085,7 @@ func _ModelCompilerRunService_GetModelCompilerRun_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/GetModelCompilerRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/GetModelCompilerRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelCompilerRunServiceServer).GetModelCompilerRun(ctx, req.(*GetModelCompilerRunRequest))
@@ -1103,7 +1103,7 @@ func _ModelCompilerRunService_UpdateModelCompilerRun_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/UpdateModelCompilerRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/UpdateModelCompilerRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelCompilerRunServiceServer).UpdateModelCompilerRun(ctx, req.(*UpdateModelCompilerRunRequest))
@@ -1121,7 +1121,7 @@ func _ModelCompilerRunService_DeleteModelCompilerRun_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService/DeleteModelCompilerRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/DeleteModelCompilerRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelCompilerRunServiceServer).DeleteModelCompilerRun(ctx, req.(*DeleteModelCompilerRunRequest))
@@ -1130,7 +1130,7 @@ func _ModelCompilerRunService_DeleteModelCompilerRun_Handler(srv interface{}, ct
 }
 
 var _ModelCompilerRunService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.modelcompilerrun.v1.ModelCompilerRunService",
+	ServiceName: "github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService",
 	HandlerType: (*ModelCompilerRunServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1155,5 +1155,5 @@ var _ModelCompilerRunService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/modelcompilerrun/v1/modelcompilerrun.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto",
 }

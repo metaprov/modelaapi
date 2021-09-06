@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.study.v1 import study_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2
+from github.com.metaprov.modelaapi.services.study.v1 import study_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2
 
 
 class StudyServiceStub(object):
@@ -15,54 +15,54 @@ class StudyServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListStudies = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.FromString,
                 )
         self.CreateStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.FromString,
                 )
         self.GetStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
                 )
         self.UpdateStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.FromString,
                 )
         self.DeleteStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.FromString,
                 )
         self.CreateStudyProfile = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.FromString,
                 )
         self.GetStudyProfile = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.FromString,
                 )
         self.AbortStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.FromString,
                 )
         self.PauseStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.FromString,
                 )
         self.ResumeStudy = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
                 )
 
 
@@ -134,57 +134,57 @@ def add_StudyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListStudies': grpc.unary_unary_rpc_method_handler(
                     servicer.ListStudies,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.SerializeToString,
             ),
             'CreateStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.SerializeToString,
             ),
             'GetStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.GetStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.SerializeToString,
             ),
             'UpdateStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.SerializeToString,
             ),
             'DeleteStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.SerializeToString,
             ),
             'CreateStudyProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateStudyProfile,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.SerializeToString,
             ),
             'GetStudyProfile': grpc.unary_unary_rpc_method_handler(
                     servicer.GetStudyProfile,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.SerializeToString,
             ),
             'AbortStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.AbortStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.SerializeToString,
             ),
             'PauseStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.SerializeToString,
             ),
             'ResumeStudy': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeStudy,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.study.v1.StudyService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.study.v1.StudyService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -203,9 +203,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ListStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -220,9 +220,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -237,9 +237,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -254,9 +254,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.UpdateStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -271,9 +271,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.DeleteStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -288,9 +288,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.CreateStudyProfileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -305,9 +305,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.GetStudyProfileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -322,9 +322,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.AbortStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -339,9 +339,9 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.PauseStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -356,8 +356,8 @@ class StudyService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_study_dot_v1_dot_study__pb2.ResumeStudyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

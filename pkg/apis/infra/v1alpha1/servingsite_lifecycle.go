@@ -10,8 +10,8 @@ import (
 	"fmt"
 
 	"github.com/dustin/go-humanize"
-	"github.com/metaprov/modeldapi/pkg/apis/infra"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/infra"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	nwv1beta1 "k8s.io/api/networking/v1beta1"

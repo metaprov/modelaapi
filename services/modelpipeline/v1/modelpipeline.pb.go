@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/modelpipeline/v1/modelpipeline.proto
+// source: github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListModelPipelinesRequest struct {
 func (x *ListModelPipelinesRequest) Reset() {
 	*x = ListModelPipelinesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListModelPipelinesRequest) String() string {
 func (*ListModelPipelinesRequest) ProtoMessage() {}
 
 func (x *ListModelPipelinesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListModelPipelinesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelPipelinesRequest.ProtoReflect.Descriptor instead.
 func (*ListModelPipelinesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListModelPipelinesRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListModelPipelinesResponse struct {
 func (x *ListModelPipelinesResponse) Reset() {
 	*x = ListModelPipelinesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListModelPipelinesResponse) String() string {
 func (*ListModelPipelinesResponse) ProtoMessage() {}
 
 func (x *ListModelPipelinesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListModelPipelinesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelPipelinesResponse.ProtoReflect.Descriptor instead.
 func (*ListModelPipelinesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListModelPipelinesResponse) GetItems() *v1alpha1.ModelPipelineList {
@@ -142,7 +142,7 @@ type ModelPipelineResponse struct {
 func (x *ModelPipelineResponse) Reset() {
 	*x = ModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *ModelPipelineResponse) String() string {
 func (*ModelPipelineResponse) ProtoMessage() {}
 
 func (x *ModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *ModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*ModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateModelPipelineRequest struct {
@@ -182,7 +182,7 @@ type CreateModelPipelineRequest struct {
 func (x *CreateModelPipelineRequest) Reset() {
 	*x = CreateModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -195,7 +195,7 @@ func (x *CreateModelPipelineRequest) String() string {
 func (*CreateModelPipelineRequest) ProtoMessage() {}
 
 func (x *CreateModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -208,7 +208,7 @@ func (x *CreateModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateModelPipelineRequest) GetItem() *v1alpha1.ModelPipeline {
@@ -227,7 +227,7 @@ type CreateModelPipelineResponse struct {
 func (x *CreateModelPipelineResponse) Reset() {
 	*x = CreateModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -240,7 +240,7 @@ func (x *CreateModelPipelineResponse) String() string {
 func (*CreateModelPipelineResponse) ProtoMessage() {}
 
 func (x *CreateModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -253,7 +253,7 @@ func (x *CreateModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*CreateModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateModelPipelineRequest struct {
@@ -267,7 +267,7 @@ type UpdateModelPipelineRequest struct {
 func (x *UpdateModelPipelineRequest) Reset() {
 	*x = UpdateModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -280,7 +280,7 @@ func (x *UpdateModelPipelineRequest) String() string {
 func (*UpdateModelPipelineRequest) ProtoMessage() {}
 
 func (x *UpdateModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -293,7 +293,7 @@ func (x *UpdateModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*UpdateModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateModelPipelineRequest) GetItem() *v1alpha1.ModelPipeline {
@@ -312,7 +312,7 @@ type UpdateModelPipelineResponse struct {
 func (x *UpdateModelPipelineResponse) Reset() {
 	*x = UpdateModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -325,7 +325,7 @@ func (x *UpdateModelPipelineResponse) String() string {
 func (*UpdateModelPipelineResponse) ProtoMessage() {}
 
 func (x *UpdateModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -338,7 +338,7 @@ func (x *UpdateModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*UpdateModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{6}
 }
 
 type GetModelPipelineRequest struct {
@@ -353,7 +353,7 @@ type GetModelPipelineRequest struct {
 func (x *GetModelPipelineRequest) Reset() {
 	*x = GetModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -366,7 +366,7 @@ func (x *GetModelPipelineRequest) String() string {
 func (*GetModelPipelineRequest) ProtoMessage() {}
 
 func (x *GetModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +379,7 @@ func (x *GetModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*GetModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetModelPipelineRequest) GetNamespace() string {
@@ -408,7 +408,7 @@ type GetModelPipelineResponse struct {
 func (x *GetModelPipelineResponse) Reset() {
 	*x = GetModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -421,7 +421,7 @@ func (x *GetModelPipelineResponse) String() string {
 func (*GetModelPipelineResponse) ProtoMessage() {}
 
 func (x *GetModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +434,7 @@ func (x *GetModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*GetModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetModelPipelineResponse) GetItem() *v1alpha1.ModelPipeline {
@@ -463,7 +463,7 @@ type DeleteModelPipelineRequest struct {
 func (x *DeleteModelPipelineRequest) Reset() {
 	*x = DeleteModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -476,7 +476,7 @@ func (x *DeleteModelPipelineRequest) String() string {
 func (*DeleteModelPipelineRequest) ProtoMessage() {}
 
 func (x *DeleteModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -489,7 +489,7 @@ func (x *DeleteModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*DeleteModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteModelPipelineRequest) GetNamespace() string {
@@ -515,7 +515,7 @@ type DeleteModelPipelineResponse struct {
 func (x *DeleteModelPipelineResponse) Reset() {
 	*x = DeleteModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -528,7 +528,7 @@ func (x *DeleteModelPipelineResponse) String() string {
 func (*DeleteModelPipelineResponse) ProtoMessage() {}
 
 func (x *DeleteModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -541,7 +541,7 @@ func (x *DeleteModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*DeleteModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{10}
 }
 
 type RunModelPipelineRequest struct {
@@ -555,7 +555,7 @@ type RunModelPipelineRequest struct {
 func (x *RunModelPipelineRequest) Reset() {
 	*x = RunModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -568,7 +568,7 @@ func (x *RunModelPipelineRequest) String() string {
 func (*RunModelPipelineRequest) ProtoMessage() {}
 
 func (x *RunModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -581,7 +581,7 @@ func (x *RunModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*RunModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *RunModelPipelineRequest) GetItem() *v1alpha1.ModelPipeline {
@@ -600,7 +600,7 @@ type RunModelPipelineResponse struct {
 func (x *RunModelPipelineResponse) Reset() {
 	*x = RunModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -613,7 +613,7 @@ func (x *RunModelPipelineResponse) String() string {
 func (*RunModelPipelineResponse) ProtoMessage() {}
 
 func (x *RunModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -626,7 +626,7 @@ func (x *RunModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*RunModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{12}
 }
 
 type PauseModelPipelineResponse struct {
@@ -638,7 +638,7 @@ type PauseModelPipelineResponse struct {
 func (x *PauseModelPipelineResponse) Reset() {
 	*x = PauseModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +651,7 @@ func (x *PauseModelPipelineResponse) String() string {
 func (*PauseModelPipelineResponse) ProtoMessage() {}
 
 func (x *PauseModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +664,7 @@ func (x *PauseModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*PauseModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{13}
 }
 
 type PauseModelPipelineRequest struct {
@@ -679,7 +679,7 @@ type PauseModelPipelineRequest struct {
 func (x *PauseModelPipelineRequest) Reset() {
 	*x = PauseModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -692,7 +692,7 @@ func (x *PauseModelPipelineRequest) String() string {
 func (*PauseModelPipelineRequest) ProtoMessage() {}
 
 func (x *PauseModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -705,7 +705,7 @@ func (x *PauseModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*PauseModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *PauseModelPipelineRequest) GetNamespace() string {
@@ -731,7 +731,7 @@ type ResumeModelPipelineResponse struct {
 func (x *ResumeModelPipelineResponse) Reset() {
 	*x = ResumeModelPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -744,7 +744,7 @@ func (x *ResumeModelPipelineResponse) String() string {
 func (*ResumeModelPipelineResponse) ProtoMessage() {}
 
 func (x *ResumeModelPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -757,7 +757,7 @@ func (x *ResumeModelPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeModelPipelineResponse.ProtoReflect.Descriptor instead.
 func (*ResumeModelPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{15}
 }
 
 type ResumeModelPipelineRequest struct {
@@ -772,7 +772,7 @@ type ResumeModelPipelineRequest struct {
 func (x *ResumeModelPipelineRequest) Reset() {
 	*x = ResumeModelPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -785,7 +785,7 @@ func (x *ResumeModelPipelineRequest) String() string {
 func (*ResumeModelPipelineRequest) ProtoMessage() {}
 
 func (x *ResumeModelPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -798,7 +798,7 @@ func (x *ResumeModelPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeModelPipelineRequest.ProtoReflect.Descriptor instead.
 func (*ResumeModelPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ResumeModelPipelineRequest) GetNamespace() string {
@@ -815,9 +815,9 @@ func (x *ResumeModelPipelineRequest) GetName() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc = []byte{
 	0x0a, 0x4b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x70, 0x69,
@@ -1050,63 +1050,63 @@ var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_p
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData = file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData = file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_goTypes = []interface{}{
-	(*ListModelPipelinesRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesRequest
-	(*ListModelPipelinesResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesResponse
-	(*ModelPipelineResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineResponse
-	(*CreateModelPipelineRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.modelpipeline.v1.CreateModelPipelineRequest
-	(*CreateModelPipelineResponse)(nil), // 4: github.com.metaprov.modeldapi.services.modelpipeline.v1.CreateModelPipelineResponse
-	(*UpdateModelPipelineRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.modelpipeline.v1.UpdateModelPipelineRequest
-	(*UpdateModelPipelineResponse)(nil), // 6: github.com.metaprov.modeldapi.services.modelpipeline.v1.UpdateModelPipelineResponse
-	(*GetModelPipelineRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.modelpipeline.v1.GetModelPipelineRequest
-	(*GetModelPipelineResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.modelpipeline.v1.GetModelPipelineResponse
-	(*DeleteModelPipelineRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.modelpipeline.v1.DeleteModelPipelineRequest
-	(*DeleteModelPipelineResponse)(nil), // 10: github.com.metaprov.modeldapi.services.modelpipeline.v1.DeleteModelPipelineResponse
-	(*RunModelPipelineRequest)(nil),     // 11: github.com.metaprov.modeldapi.services.modelpipeline.v1.RunModelPipelineRequest
-	(*RunModelPipelineResponse)(nil),    // 12: github.com.metaprov.modeldapi.services.modelpipeline.v1.RunModelPipelineResponse
-	(*PauseModelPipelineResponse)(nil),  // 13: github.com.metaprov.modeldapi.services.modelpipeline.v1.PauseModelPipelineResponse
-	(*PauseModelPipelineRequest)(nil),   // 14: github.com.metaprov.modeldapi.services.modelpipeline.v1.PauseModelPipelineRequest
-	(*ResumeModelPipelineResponse)(nil), // 15: github.com.metaprov.modeldapi.services.modelpipeline.v1.ResumeModelPipelineResponse
-	(*ResumeModelPipelineRequest)(nil),  // 16: github.com.metaprov.modeldapi.services.modelpipeline.v1.ResumeModelPipelineRequest
-	nil,                                 // 17: github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesRequest.LabelsEntry
-	(*v1alpha1.ModelPipelineList)(nil),  // 18: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineList
-	(*v1alpha1.ModelPipeline)(nil),      // 19: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
+var file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_goTypes = []interface{}{
+	(*ListModelPipelinesRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesRequest
+	(*ListModelPipelinesResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesResponse
+	(*ModelPipelineResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineResponse
+	(*CreateModelPipelineRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineRequest
+	(*CreateModelPipelineResponse)(nil), // 4: github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineResponse
+	(*UpdateModelPipelineRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineRequest
+	(*UpdateModelPipelineResponse)(nil), // 6: github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineResponse
+	(*GetModelPipelineRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineRequest
+	(*GetModelPipelineResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineResponse
+	(*DeleteModelPipelineRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modelpipeline.v1.DeleteModelPipelineRequest
+	(*DeleteModelPipelineResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modelpipeline.v1.DeleteModelPipelineResponse
+	(*RunModelPipelineRequest)(nil),     // 11: github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineRequest
+	(*RunModelPipelineResponse)(nil),    // 12: github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineResponse
+	(*PauseModelPipelineResponse)(nil),  // 13: github.com.metaprov.modelaapi.services.modelpipeline.v1.PauseModelPipelineResponse
+	(*PauseModelPipelineRequest)(nil),   // 14: github.com.metaprov.modelaapi.services.modelpipeline.v1.PauseModelPipelineRequest
+	(*ResumeModelPipelineResponse)(nil), // 15: github.com.metaprov.modelaapi.services.modelpipeline.v1.ResumeModelPipelineResponse
+	(*ResumeModelPipelineRequest)(nil),  // 16: github.com.metaprov.modelaapi.services.modelpipeline.v1.ResumeModelPipelineRequest
+	nil,                                 // 17: github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesRequest.LabelsEntry
+	(*v1alpha1.ModelPipelineList)(nil),  // 18: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList
+	(*v1alpha1.ModelPipeline)(nil),      // 19: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline
 }
-var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs = []int32{
-	17, // 0: github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesRequest.LabelsEntry
-	18, // 1: github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineList
-	19, // 2: github.com.metaprov.modeldapi.services.modelpipeline.v1.CreateModelPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	19, // 3: github.com.metaprov.modeldapi.services.modelpipeline.v1.UpdateModelPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	19, // 4: github.com.metaprov.modeldapi.services.modelpipeline.v1.GetModelPipelineResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	19, // 5: github.com.metaprov.modeldapi.services.modelpipeline.v1.RunModelPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline
-	0,  // 6: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.ListModelPipelines:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.CreateModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.CreateModelPipelineRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.GetModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.GetModelPipelineRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.UpdateModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.UpdateModelPipelineRequest
-	9,  // 10: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.DeleteModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.DeleteModelPipelineRequest
-	11, // 11: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.RunModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.RunModelPipelineRequest
-	14, // 12: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.PauseModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.PauseModelPipelineRequest
-	16, // 13: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.ResumeModelPipeline:input_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.ResumeModelPipelineRequest
-	1,  // 14: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.ListModelPipelines:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.ListModelPipelinesResponse
-	4,  // 15: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.CreateModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.CreateModelPipelineResponse
-	8,  // 16: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.GetModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.GetModelPipelineResponse
-	6,  // 17: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.UpdateModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.UpdateModelPipelineResponse
-	10, // 18: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.DeleteModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.DeleteModelPipelineResponse
-	12, // 19: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.RunModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.RunModelPipelineResponse
-	13, // 20: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.PauseModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.PauseModelPipelineResponse
-	15, // 21: github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService.ResumeModelPipeline:output_type -> github.com.metaprov.modeldapi.services.modelpipeline.v1.ResumeModelPipelineResponse
+var file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs = []int32{
+	17, // 0: github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesRequest.LabelsEntry
+	18, // 1: github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList
+	19, // 2: github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline
+	19, // 3: github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline
+	19, // 4: github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline
+	19, // 5: github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline
+	0,  // 6: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.ListModelPipelines:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.CreateModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.GetModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.UpdateModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineRequest
+	9,  // 10: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.DeleteModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.DeleteModelPipelineRequest
+	11, // 11: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.RunModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineRequest
+	14, // 12: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.PauseModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.PauseModelPipelineRequest
+	16, // 13: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.ResumeModelPipeline:input_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.ResumeModelPipelineRequest
+	1,  // 14: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.ListModelPipelines:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesResponse
+	4,  // 15: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.CreateModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineResponse
+	8,  // 16: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.GetModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.GetModelPipelineResponse
+	6,  // 17: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.UpdateModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineResponse
+	10, // 18: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.DeleteModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.DeleteModelPipelineResponse
+	12, // 19: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.RunModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.RunModelPipelineResponse
+	13, // 20: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.PauseModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.PauseModelPipelineResponse
+	15, // 21: github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService.ResumeModelPipeline:output_type -> github.com.metaprov.modelaapi.services.modelpipeline.v1.ResumeModelPipelineResponse
 	14, // [14:22] is the sub-list for method output_type
 	6,  // [6:14] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1114,13 +1114,13 @@ var file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_p
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_init() }
-func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_init() }
+func file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelPipelinesRequest); i {
 			case 0:
 				return &v.state
@@ -1132,7 +1132,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelPipelinesResponse); i {
 			case 0:
 				return &v.state
@@ -1144,7 +1144,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1156,7 +1156,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1168,7 +1168,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1180,7 +1180,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1192,7 +1192,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1204,7 +1204,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1216,7 +1216,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1228,7 +1228,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1240,7 +1240,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1252,7 +1252,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1264,7 +1264,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1276,7 +1276,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1288,7 +1288,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1300,7 +1300,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeModelPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1312,7 +1312,7 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeModelPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1329,20 +1329,20 @@ func file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto = out.File
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto = out.File
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1377,7 +1377,7 @@ func NewModelPipelineServiceClient(cc grpc.ClientConnInterface) ModelPipelineSer
 
 func (c *modelPipelineServiceClient) ListModelPipelines(ctx context.Context, in *ListModelPipelinesRequest, opts ...grpc.CallOption) (*ListModelPipelinesResponse, error) {
 	out := new(ListModelPipelinesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ListModelPipelines", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ListModelPipelines", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1386,7 +1386,7 @@ func (c *modelPipelineServiceClient) ListModelPipelines(ctx context.Context, in 
 
 func (c *modelPipelineServiceClient) CreateModelPipeline(ctx context.Context, in *CreateModelPipelineRequest, opts ...grpc.CallOption) (*CreateModelPipelineResponse, error) {
 	out := new(CreateModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/CreateModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/CreateModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1395,7 +1395,7 @@ func (c *modelPipelineServiceClient) CreateModelPipeline(ctx context.Context, in
 
 func (c *modelPipelineServiceClient) GetModelPipeline(ctx context.Context, in *GetModelPipelineRequest, opts ...grpc.CallOption) (*GetModelPipelineResponse, error) {
 	out := new(GetModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/GetModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/GetModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1404,7 +1404,7 @@ func (c *modelPipelineServiceClient) GetModelPipeline(ctx context.Context, in *G
 
 func (c *modelPipelineServiceClient) UpdateModelPipeline(ctx context.Context, in *UpdateModelPipelineRequest, opts ...grpc.CallOption) (*UpdateModelPipelineResponse, error) {
 	out := new(UpdateModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/UpdateModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/UpdateModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1413,7 +1413,7 @@ func (c *modelPipelineServiceClient) UpdateModelPipeline(ctx context.Context, in
 
 func (c *modelPipelineServiceClient) DeleteModelPipeline(ctx context.Context, in *DeleteModelPipelineRequest, opts ...grpc.CallOption) (*DeleteModelPipelineResponse, error) {
 	out := new(DeleteModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/DeleteModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/DeleteModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1422,7 +1422,7 @@ func (c *modelPipelineServiceClient) DeleteModelPipeline(ctx context.Context, in
 
 func (c *modelPipelineServiceClient) RunModelPipeline(ctx context.Context, in *RunModelPipelineRequest, opts ...grpc.CallOption) (*RunModelPipelineResponse, error) {
 	out := new(RunModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1431,7 +1431,7 @@ func (c *modelPipelineServiceClient) RunModelPipeline(ctx context.Context, in *R
 
 func (c *modelPipelineServiceClient) PauseModelPipeline(ctx context.Context, in *PauseModelPipelineRequest, opts ...grpc.CallOption) (*PauseModelPipelineResponse, error) {
 	out := new(PauseModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1440,7 +1440,7 @@ func (c *modelPipelineServiceClient) PauseModelPipeline(ctx context.Context, in 
 
 func (c *modelPipelineServiceClient) ResumeModelPipeline(ctx context.Context, in *ResumeModelPipelineRequest, opts ...grpc.CallOption) (*ResumeModelPipelineResponse, error) {
 	out := new(ResumeModelPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1502,7 +1502,7 @@ func _ModelPipelineService_ListModelPipelines_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ListModelPipelines",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ListModelPipelines",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).ListModelPipelines(ctx, req.(*ListModelPipelinesRequest))
@@ -1520,7 +1520,7 @@ func _ModelPipelineService_CreateModelPipeline_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/CreateModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/CreateModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).CreateModelPipeline(ctx, req.(*CreateModelPipelineRequest))
@@ -1538,7 +1538,7 @@ func _ModelPipelineService_GetModelPipeline_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/GetModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/GetModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).GetModelPipeline(ctx, req.(*GetModelPipelineRequest))
@@ -1556,7 +1556,7 @@ func _ModelPipelineService_UpdateModelPipeline_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/UpdateModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/UpdateModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).UpdateModelPipeline(ctx, req.(*UpdateModelPipelineRequest))
@@ -1574,7 +1574,7 @@ func _ModelPipelineService_DeleteModelPipeline_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/DeleteModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/DeleteModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).DeleteModelPipeline(ctx, req.(*DeleteModelPipelineRequest))
@@ -1592,7 +1592,7 @@ func _ModelPipelineService_RunModelPipeline_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).RunModelPipeline(ctx, req.(*RunModelPipelineRequest))
@@ -1610,7 +1610,7 @@ func _ModelPipelineService_PauseModelPipeline_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).PauseModelPipeline(ctx, req.(*PauseModelPipelineRequest))
@@ -1628,7 +1628,7 @@ func _ModelPipelineService_ResumeModelPipeline_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelPipelineServiceServer).ResumeModelPipeline(ctx, req.(*ResumeModelPipelineRequest))
@@ -1637,7 +1637,7 @@ func _ModelPipelineService_ResumeModelPipeline_Handler(srv interface{}, ctx cont
 }
 
 var _ModelPipelineService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.modelpipeline.v1.ModelPipelineService",
+	ServiceName: "github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService",
 	HandlerType: (*ModelPipelineServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1674,5 +1674,5 @@ var _ModelPipelineService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/modelpipeline/v1/modelpipeline.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/modelpipeline/v1/modelpipeline.proto",
 }

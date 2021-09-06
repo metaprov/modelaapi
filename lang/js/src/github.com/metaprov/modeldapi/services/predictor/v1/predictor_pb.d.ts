@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
 export class ListPredictorsRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListPredictorsRequest {
 }
 
 export class ListPredictorsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList): ListPredictorsResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList): ListPredictorsResponse;
   hasItems(): boolean;
   clearItems(): ListPredictorsResponse;
 
@@ -42,7 +42,7 @@ export class ListPredictorsResponse extends jspb.Message {
 
 export namespace ListPredictorsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList.AsObject,
   }
 }
 
@@ -61,8 +61,8 @@ export namespace CreatePredictorResponse {
 }
 
 export class CreatePredictorRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
   hasItem(): boolean;
   clearItem(): CreatePredictorRequest;
 
@@ -76,13 +76,13 @@ export class CreatePredictorRequest extends jspb.Message {
 
 export namespace CreatePredictorRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 }
 
 export class UpdatePredictorRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): UpdatePredictorRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): UpdatePredictorRequest;
   hasItem(): boolean;
   clearItem(): UpdatePredictorRequest;
 
@@ -96,7 +96,7 @@ export class UpdatePredictorRequest extends jspb.Message {
 
 export namespace UpdatePredictorRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetPredictorRequest {
 }
 
 export class GetPredictorResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): GetPredictorResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): GetPredictorResponse;
   hasItem(): boolean;
   clearItem(): GetPredictorResponse;
 
@@ -155,7 +155,7 @@ export class GetPredictorResponse extends jspb.Message {
 
 export namespace GetPredictorResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     yaml: string,
   }
 }

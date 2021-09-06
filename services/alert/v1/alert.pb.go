@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/alert/v1/alert.proto
+// source: github.com/metaprov/modelaapi/services/alert/v1/alert.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListAlertsRequest struct {
 func (x *ListAlertsRequest) Reset() {
 	*x = ListAlertsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListAlertsRequest) String() string {
 func (*ListAlertsRequest) ProtoMessage() {}
 
 func (x *ListAlertsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListAlertsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlertsRequest.ProtoReflect.Descriptor instead.
 func (*ListAlertsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListAlertsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListAlertsResponse struct {
 func (x *ListAlertsResponse) Reset() {
 	*x = ListAlertsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListAlertsResponse) String() string {
 func (*ListAlertsResponse) ProtoMessage() {}
 
 func (x *ListAlertsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListAlertsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlertsResponse.ProtoReflect.Descriptor instead.
 func (*ListAlertsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListAlertsResponse) GetItems() *v1alpha1.AlertList {
@@ -143,7 +143,7 @@ type AlertResponse struct {
 func (x *AlertResponse) Reset() {
 	*x = AlertResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *AlertResponse) String() string {
 func (*AlertResponse) ProtoMessage() {}
 
 func (x *AlertResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *AlertResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertResponse.ProtoReflect.Descriptor instead.
 func (*AlertResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateAlertRequest struct {
@@ -184,7 +184,7 @@ type CreateAlertRequest struct {
 func (x *CreateAlertRequest) Reset() {
 	*x = CreateAlertRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateAlertRequest) String() string {
 func (*CreateAlertRequest) ProtoMessage() {}
 
 func (x *CreateAlertRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateAlertRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAlertRequest.ProtoReflect.Descriptor instead.
 func (*CreateAlertRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAlertRequest) GetItem() *v1alpha1.Alert {
@@ -236,7 +236,7 @@ type CreateAlertResponse struct {
 func (x *CreateAlertResponse) Reset() {
 	*x = CreateAlertResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateAlertResponse) String() string {
 func (*CreateAlertResponse) ProtoMessage() {}
 
 func (x *CreateAlertResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateAlertResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAlertResponse.ProtoReflect.Descriptor instead.
 func (*CreateAlertResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateAlertRequest struct {
@@ -276,7 +276,7 @@ type UpdateAlertRequest struct {
 func (x *UpdateAlertRequest) Reset() {
 	*x = UpdateAlertRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateAlertRequest) String() string {
 func (*UpdateAlertRequest) ProtoMessage() {}
 
 func (x *UpdateAlertRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateAlertRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAlertRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAlertRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateAlertRequest) GetItem() *v1alpha1.Alert {
@@ -321,7 +321,7 @@ type UpdateAlertResponse struct {
 func (x *UpdateAlertResponse) Reset() {
 	*x = UpdateAlertResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateAlertResponse) String() string {
 func (*UpdateAlertResponse) ProtoMessage() {}
 
 func (x *UpdateAlertResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateAlertResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAlertResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAlertResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{6}
 }
 
 type GetAlertRequest struct {
@@ -362,7 +362,7 @@ type GetAlertRequest struct {
 func (x *GetAlertRequest) Reset() {
 	*x = GetAlertRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetAlertRequest) String() string {
 func (*GetAlertRequest) ProtoMessage() {}
 
 func (x *GetAlertRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetAlertRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlertRequest.ProtoReflect.Descriptor instead.
 func (*GetAlertRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetAlertRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetAlertResponse struct {
 func (x *GetAlertResponse) Reset() {
 	*x = GetAlertResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetAlertResponse) String() string {
 func (*GetAlertResponse) ProtoMessage() {}
 
 func (x *GetAlertResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetAlertResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlertResponse.ProtoReflect.Descriptor instead.
 func (*GetAlertResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetAlertResponse) GetItem() *v1alpha1.Alert {
@@ -472,7 +472,7 @@ type GetAlertNamespacesRequest struct {
 func (x *GetAlertNamespacesRequest) Reset() {
 	*x = GetAlertNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetAlertNamespacesRequest) String() string {
 func (*GetAlertNamespacesRequest) ProtoMessage() {}
 
 func (x *GetAlertNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetAlertNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlertNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetAlertNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetAlertNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetAlertNamespacesResponse struct {
 func (x *GetAlertNamespacesResponse) Reset() {
 	*x = GetAlertNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetAlertNamespacesResponse) String() string {
 func (*GetAlertNamespacesResponse) ProtoMessage() {}
 
 func (x *GetAlertNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetAlertNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlertNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetAlertNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetAlertNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteAlertRequest struct {
 func (x *DeleteAlertRequest) Reset() {
 	*x = DeleteAlertRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteAlertRequest) String() string {
 func (*DeleteAlertRequest) ProtoMessage() {}
 
 func (x *DeleteAlertRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteAlertRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAlertRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAlertRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteAlertRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteAlertResponse struct {
 func (x *DeleteAlertResponse) Reset() {
 	*x = DeleteAlertResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteAlertResponse) String() string {
 func (*DeleteAlertResponse) ProtoMessage() {}
 
 func (x *DeleteAlertResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteAlertResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAlertResponse.ProtoReflect.Descriptor instead.
 func (*DeleteAlertResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{12}
 }
 
 type AlertCreateResponse struct {
@@ -664,7 +664,7 @@ type AlertCreateResponse struct {
 func (x *AlertCreateResponse) Reset() {
 	*x = AlertCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *AlertCreateResponse) String() string {
 func (*AlertCreateResponse) ProtoMessage() {}
 
 func (x *AlertCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *AlertCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertCreateResponse.ProtoReflect.Descriptor instead.
 func (*AlertCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{13}
 }
 
 type LogoutResponse struct {
@@ -702,7 +702,7 @@ type LogoutResponse struct {
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -715,7 +715,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -728,7 +728,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{14}
 }
 
 type ResetPasswordResponse struct {
@@ -740,7 +740,7 @@ type ResetPasswordResponse struct {
 func (x *ResetPasswordResponse) Reset() {
 	*x = ResetPasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -753,7 +753,7 @@ func (x *ResetPasswordResponse) String() string {
 func (*ResetPasswordResponse) ProtoMessage() {}
 
 func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{15}
 }
 
 type AlertLoginRequest struct {
@@ -782,7 +782,7 @@ type AlertLoginRequest struct {
 func (x *AlertLoginRequest) Reset() {
 	*x = AlertLoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +795,7 @@ func (x *AlertLoginRequest) String() string {
 func (*AlertLoginRequest) ProtoMessage() {}
 
 func (x *AlertLoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +808,7 @@ func (x *AlertLoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertLoginRequest.ProtoReflect.Descriptor instead.
 func (*AlertLoginRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *AlertLoginRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type AlertLoginResponse struct {
 func (x *AlertLoginResponse) Reset() {
 	*x = AlertLoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *AlertLoginResponse) String() string {
 func (*AlertLoginResponse) ProtoMessage() {}
 
 func (x *AlertLoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *AlertLoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertLoginResponse.ProtoReflect.Descriptor instead.
 func (*AlertLoginResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AlertLoginResponse) GetToken() string {
@@ -891,7 +891,7 @@ type AlertGetByNameRequest struct {
 func (x *AlertGetByNameRequest) Reset() {
 	*x = AlertGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -904,7 +904,7 @@ func (x *AlertGetByNameRequest) String() string {
 func (*AlertGetByNameRequest) ProtoMessage() {}
 
 func (x *AlertGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *AlertGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*AlertGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *AlertGetByNameRequest) GetNamespace() string {
@@ -945,7 +945,7 @@ type AlertLogoutRequest struct {
 func (x *AlertLogoutRequest) Reset() {
 	*x = AlertLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +958,7 @@ func (x *AlertLogoutRequest) String() string {
 func (*AlertLogoutRequest) ProtoMessage() {}
 
 func (x *AlertLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +971,7 @@ func (x *AlertLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlertLogoutRequest.ProtoReflect.Descriptor instead.
 func (*AlertLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AlertLogoutRequest) GetToken() string {
@@ -996,7 +996,7 @@ type ChangePasswordRequest struct {
 func (x *ChangePasswordRequest) Reset() {
 	*x = ChangePasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *ChangePasswordRequest) String() string {
 func (*ChangePasswordRequest) ProtoMessage() {}
 
 func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
 func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ChangePasswordRequest) GetNamespace() string {
@@ -1069,7 +1069,7 @@ type ChangePasswordResponse struct {
 func (x *ChangePasswordResponse) Reset() {
 	*x = ChangePasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1082,7 +1082,7 @@ func (x *ChangePasswordResponse) String() string {
 func (*ChangePasswordResponse) ProtoMessage() {}
 
 func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1095,7 @@ func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordResponse.ProtoReflect.Descriptor instead.
 func (*ChangePasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{21}
 }
 
 type ResetPasswordRequest struct {
@@ -1112,7 +1112,7 @@ type ResetPasswordRequest struct {
 func (x *ResetPasswordRequest) Reset() {
 	*x = ResetPasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1125,7 +1125,7 @@ func (x *ResetPasswordRequest) String() string {
 func (*ResetPasswordRequest) ProtoMessage() {}
 
 func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1138,7 +1138,7 @@ func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
 func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ResetPasswordRequest) GetNamespace() string {
@@ -1178,7 +1178,7 @@ type ResetPasswordReponse struct {
 func (x *ResetPasswordReponse) Reset() {
 	*x = ResetPasswordReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1191,7 +1191,7 @@ func (x *ResetPasswordReponse) String() string {
 func (*ResetPasswordReponse) ProtoMessage() {}
 
 func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1204,12 +1204,12 @@ func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordReponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP(), []int{23}
 }
 
-var File_github_com_metaprov_modeldapi_services_alert_v1_alert_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_alert_v1_alert_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDesc = []byte{
 	0x0a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x2f, 0x76,
@@ -1407,65 +1407,65 @@ var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDesc = [
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescData = file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescData = file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
-var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_goTypes = []interface{}{
-	(*ListAlertsRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.alert.v1.ListAlertsRequest
-	(*ListAlertsResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.alert.v1.ListAlertsResponse
-	(*AlertResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.alert.v1.AlertResponse
-	(*CreateAlertRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.alert.v1.CreateAlertRequest
-	(*CreateAlertResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.alert.v1.CreateAlertResponse
-	(*UpdateAlertRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.alert.v1.UpdateAlertRequest
-	(*UpdateAlertResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.alert.v1.UpdateAlertResponse
-	(*GetAlertRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.alert.v1.GetAlertRequest
-	(*GetAlertResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.alert.v1.GetAlertResponse
-	(*GetAlertNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.alert.v1.GetAlertNamespacesRequest
-	(*GetAlertNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.alert.v1.GetAlertNamespacesResponse
-	(*DeleteAlertRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.alert.v1.DeleteAlertRequest
-	(*DeleteAlertResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.alert.v1.DeleteAlertResponse
-	(*AlertCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.alert.v1.AlertCreateResponse
-	(*LogoutResponse)(nil),             // 14: github.com.metaprov.modeldapi.services.alert.v1.LogoutResponse
-	(*ResetPasswordResponse)(nil),      // 15: github.com.metaprov.modeldapi.services.alert.v1.ResetPasswordResponse
-	(*AlertLoginRequest)(nil),          // 16: github.com.metaprov.modeldapi.services.alert.v1.AlertLoginRequest
-	(*AlertLoginResponse)(nil),         // 17: github.com.metaprov.modeldapi.services.alert.v1.AlertLoginResponse
-	(*AlertGetByNameRequest)(nil),      // 18: github.com.metaprov.modeldapi.services.alert.v1.AlertGetByNameRequest
-	(*AlertLogoutRequest)(nil),         // 19: github.com.metaprov.modeldapi.services.alert.v1.AlertLogoutRequest
-	(*ChangePasswordRequest)(nil),      // 20: github.com.metaprov.modeldapi.services.alert.v1.ChangePasswordRequest
-	(*ChangePasswordResponse)(nil),     // 21: github.com.metaprov.modeldapi.services.alert.v1.ChangePasswordResponse
-	(*ResetPasswordRequest)(nil),       // 22: github.com.metaprov.modeldapi.services.alert.v1.ResetPasswordRequest
-	(*ResetPasswordReponse)(nil),       // 23: github.com.metaprov.modeldapi.services.alert.v1.ResetPasswordReponse
-	nil,                                // 24: github.com.metaprov.modeldapi.services.alert.v1.ListAlertsRequest.LabelsEntry
-	(*v1alpha1.AlertList)(nil),         // 25: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertList
-	(*v1alpha1.Alert)(nil),             // 26: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert
-	(*v1.NamespaceInfo)(nil),           // 27: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_goTypes = []interface{}{
+	(*ListAlertsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest
+	(*ListAlertsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse
+	(*AlertResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.alert.v1.AlertResponse
+	(*CreateAlertRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest
+	(*CreateAlertResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse
+	(*UpdateAlertRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest
+	(*UpdateAlertResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse
+	(*GetAlertRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest
+	(*GetAlertResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse
+	(*GetAlertNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.alert.v1.GetAlertNamespacesRequest
+	(*GetAlertNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.alert.v1.GetAlertNamespacesResponse
+	(*DeleteAlertRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest
+	(*DeleteAlertResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse
+	(*AlertCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.alert.v1.AlertCreateResponse
+	(*LogoutResponse)(nil),             // 14: github.com.metaprov.modelaapi.services.alert.v1.LogoutResponse
+	(*ResetPasswordResponse)(nil),      // 15: github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordResponse
+	(*AlertLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest
+	(*AlertLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.alert.v1.AlertLoginResponse
+	(*AlertGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.alert.v1.AlertGetByNameRequest
+	(*AlertLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.alert.v1.AlertLogoutRequest
+	(*ChangePasswordRequest)(nil),      // 20: github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest
+	(*ChangePasswordResponse)(nil),     // 21: github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordResponse
+	(*ResetPasswordRequest)(nil),       // 22: github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest
+	(*ResetPasswordReponse)(nil),       // 23: github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordReponse
+	nil,                                // 24: github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry
+	(*v1alpha1.AlertList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList
+	(*v1alpha1.Alert)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert
+	(*v1.NamespaceInfo)(nil),           // 27: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_depIdxs = []int32{
-	24, // 0: github.com.metaprov.modeldapi.services.alert.v1.ListAlertsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.alert.v1.ListAlertsRequest.LabelsEntry
-	25, // 1: github.com.metaprov.modeldapi.services.alert.v1.ListAlertsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AlertList
-	26, // 2: github.com.metaprov.modeldapi.services.alert.v1.CreateAlertRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert
-	26, // 3: github.com.metaprov.modeldapi.services.alert.v1.UpdateAlertRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert
-	26, // 4: github.com.metaprov.modeldapi.services.alert.v1.GetAlertResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert
-	27, // 5: github.com.metaprov.modeldapi.services.alert.v1.GetAlertNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.alert.v1.AlertService.ListAlerts:input_type -> github.com.metaprov.modeldapi.services.alert.v1.ListAlertsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.alert.v1.AlertService.CreateAlert:input_type -> github.com.metaprov.modeldapi.services.alert.v1.CreateAlertRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.alert.v1.AlertService.GetAlert:input_type -> github.com.metaprov.modeldapi.services.alert.v1.GetAlertRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.alert.v1.AlertService.UpdateAlert:input_type -> github.com.metaprov.modeldapi.services.alert.v1.UpdateAlertRequest
-	11, // 10: github.com.metaprov.modeldapi.services.alert.v1.AlertService.DeleteAlert:input_type -> github.com.metaprov.modeldapi.services.alert.v1.DeleteAlertRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.alert.v1.AlertService.ListAlerts:output_type -> github.com.metaprov.modeldapi.services.alert.v1.ListAlertsResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.alert.v1.AlertService.CreateAlert:output_type -> github.com.metaprov.modeldapi.services.alert.v1.CreateAlertResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.alert.v1.AlertService.GetAlert:output_type -> github.com.metaprov.modeldapi.services.alert.v1.GetAlertResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.alert.v1.AlertService.UpdateAlert:output_type -> github.com.metaprov.modeldapi.services.alert.v1.UpdateAlertResponse
-	12, // 15: github.com.metaprov.modeldapi.services.alert.v1.AlertService.DeleteAlert:output_type -> github.com.metaprov.modeldapi.services.alert.v1.DeleteAlertResponse
+var file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_depIdxs = []int32{
+	24, // 0: github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry
+	25, // 1: github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList
+	26, // 2: github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert
+	26, // 3: github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert
+	26, // 4: github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert
+	27, // 5: github.com.metaprov.modelaapi.services.alert.v1.GetAlertNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.alert.v1.AlertService.ListAlerts:input_type -> github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.alert.v1.AlertService.CreateAlert:input_type -> github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.alert.v1.AlertService.GetAlert:input_type -> github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.alert.v1.AlertService.UpdateAlert:input_type -> github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest
+	11, // 10: github.com.metaprov.modelaapi.services.alert.v1.AlertService.DeleteAlert:input_type -> github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.alert.v1.AlertService.ListAlerts:output_type -> github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.alert.v1.AlertService.CreateAlert:output_type -> github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.alert.v1.AlertService.GetAlert:output_type -> github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.alert.v1.AlertService.UpdateAlert:output_type -> github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse
+	12, // 15: github.com.metaprov.modelaapi.services.alert.v1.AlertService.DeleteAlert:output_type -> github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1473,13 +1473,13 @@ var file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_depIdxs = [
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() }
-func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_alert_v1_alert_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_init() }
+func file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_alert_v1_alert_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlertsRequest); i {
 			case 0:
 				return &v.state
@@ -1491,7 +1491,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlertsResponse); i {
 			case 0:
 				return &v.state
@@ -1503,7 +1503,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertResponse); i {
 			case 0:
 				return &v.state
@@ -1515,7 +1515,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAlertRequest); i {
 			case 0:
 				return &v.state
@@ -1527,7 +1527,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateAlertResponse); i {
 			case 0:
 				return &v.state
@@ -1539,7 +1539,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAlertRequest); i {
 			case 0:
 				return &v.state
@@ -1551,7 +1551,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateAlertResponse); i {
 			case 0:
 				return &v.state
@@ -1563,7 +1563,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlertRequest); i {
 			case 0:
 				return &v.state
@@ -1575,7 +1575,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlertResponse); i {
 			case 0:
 				return &v.state
@@ -1587,7 +1587,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlertNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1599,7 +1599,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetAlertNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1611,7 +1611,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAlertRequest); i {
 			case 0:
 				return &v.state
@@ -1623,7 +1623,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteAlertResponse); i {
 			case 0:
 				return &v.state
@@ -1635,7 +1635,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1647,7 +1647,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogoutResponse); i {
 			case 0:
 				return &v.state
@@ -1659,7 +1659,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1671,7 +1671,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertLoginRequest); i {
 			case 0:
 				return &v.state
@@ -1683,7 +1683,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertLoginResponse); i {
 			case 0:
 				return &v.state
@@ -1695,7 +1695,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -1707,7 +1707,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -1719,7 +1719,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1731,7 +1731,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1743,7 +1743,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1755,7 +1755,7 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordReponse); i {
 			case 0:
 				return &v.state
@@ -1772,20 +1772,20 @@ func file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_alert_v1_alert_proto = out.File
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_alert_v1_alert_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_alert_v1_alert_proto = out.File
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_alert_v1_alert_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1817,7 +1817,7 @@ func NewAlertServiceClient(cc grpc.ClientConnInterface) AlertServiceClient {
 
 func (c *alertServiceClient) ListAlerts(ctx context.Context, in *ListAlertsRequest, opts ...grpc.CallOption) (*ListAlertsResponse, error) {
 	out := new(ListAlertsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1826,7 +1826,7 @@ func (c *alertServiceClient) ListAlerts(ctx context.Context, in *ListAlertsReque
 
 func (c *alertServiceClient) CreateAlert(ctx context.Context, in *CreateAlertRequest, opts ...grpc.CallOption) (*CreateAlertResponse, error) {
 	out := new(CreateAlertResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1835,7 +1835,7 @@ func (c *alertServiceClient) CreateAlert(ctx context.Context, in *CreateAlertReq
 
 func (c *alertServiceClient) GetAlert(ctx context.Context, in *GetAlertRequest, opts ...grpc.CallOption) (*GetAlertResponse, error) {
 	out := new(GetAlertResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1844,7 +1844,7 @@ func (c *alertServiceClient) GetAlert(ctx context.Context, in *GetAlertRequest, 
 
 func (c *alertServiceClient) UpdateAlert(ctx context.Context, in *UpdateAlertRequest, opts ...grpc.CallOption) (*UpdateAlertResponse, error) {
 	out := new(UpdateAlertResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1853,7 +1853,7 @@ func (c *alertServiceClient) UpdateAlert(ctx context.Context, in *UpdateAlertReq
 
 func (c *alertServiceClient) DeleteAlert(ctx context.Context, in *DeleteAlertRequest, opts ...grpc.CallOption) (*DeleteAlertResponse, error) {
 	out := new(DeleteAlertResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1903,7 +1903,7 @@ func _AlertService_ListAlerts_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts",
+		FullMethod: "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AlertServiceServer).ListAlerts(ctx, req.(*ListAlertsRequest))
@@ -1921,7 +1921,7 @@ func _AlertService_CreateAlert_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert",
+		FullMethod: "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AlertServiceServer).CreateAlert(ctx, req.(*CreateAlertRequest))
@@ -1939,7 +1939,7 @@ func _AlertService_GetAlert_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert",
+		FullMethod: "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AlertServiceServer).GetAlert(ctx, req.(*GetAlertRequest))
@@ -1957,7 +1957,7 @@ func _AlertService_UpdateAlert_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert",
+		FullMethod: "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AlertServiceServer).UpdateAlert(ctx, req.(*UpdateAlertRequest))
@@ -1975,7 +1975,7 @@ func _AlertService_DeleteAlert_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert",
+		FullMethod: "/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AlertServiceServer).DeleteAlert(ctx, req.(*DeleteAlertRequest))
@@ -1984,7 +1984,7 @@ func _AlertService_DeleteAlert_Handler(srv interface{}, ctx context.Context, dec
 }
 
 var _AlertService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.alert.v1.AlertService",
+	ServiceName: "github.com.metaprov.modelaapi.services.alert.v1.AlertService",
 	HandlerType: (*AlertServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2009,5 +2009,5 @@ var _AlertService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/alert/v1/alert.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/alert/v1/alert.proto",
 }

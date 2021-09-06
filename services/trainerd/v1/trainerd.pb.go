@@ -2,17 +2,17 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto
+// source: github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha13 "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
+	v1alpha13 "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1alpha12 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -53,7 +53,7 @@ type TrainRequest struct {
 func (x *TrainRequest) Reset() {
 	*x = TrainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -66,7 +66,7 @@ func (x *TrainRequest) String() string {
 func (*TrainRequest) ProtoMessage() {}
 
 func (x *TrainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -79,7 +79,7 @@ func (x *TrainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TrainRequest.ProtoReflect.Descriptor instead.
 func (*TrainRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TrainRequest) GetProduct() *v1alpha1.DataProduct {
@@ -170,7 +170,7 @@ type TrainResponse struct {
 func (x *TrainResponse) Reset() {
 	*x = TrainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -183,7 +183,7 @@ func (x *TrainResponse) String() string {
 func (*TrainResponse) ProtoMessage() {}
 
 func (x *TrainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -196,7 +196,7 @@ func (x *TrainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TrainResponse.ProtoReflect.Descriptor instead.
 func (*TrainResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *TrainResponse) GetResult() []*v1alpha13.Measurement {
@@ -274,7 +274,7 @@ type CompileRequest struct {
 func (x *CompileRequest) Reset() {
 	*x = CompileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *CompileRequest) String() string {
 func (*CompileRequest) ProtoMessage() {}
 
 func (x *CompileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *CompileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompileRequest.ProtoReflect.Descriptor instead.
 func (*CompileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CompileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -378,7 +378,7 @@ type CompileResponse struct {
 func (x *CompileResponse) Reset() {
 	*x = CompileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +391,7 @@ func (x *CompileResponse) String() string {
 func (*CompileResponse) ProtoMessage() {}
 
 func (x *CompileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *CompileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompileResponse.ProtoReflect.Descriptor instead.
 func (*CompileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CompileResponse) GetCompiledModelUri() string {
@@ -433,7 +433,7 @@ type TestRequest struct {
 func (x *TestRequest) Reset() {
 	*x = TestRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -446,7 +446,7 @@ func (x *TestRequest) String() string {
 func (*TestRequest) ProtoMessage() {}
 
 func (x *TestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -459,7 +459,7 @@ func (x *TestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestRequest.ProtoReflect.Descriptor instead.
 func (*TestRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TestRequest) GetProduct() *v1alpha1.DataProduct {
@@ -561,7 +561,7 @@ type TestResponse struct {
 func (x *TestResponse) Reset() {
 	*x = TestResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -574,7 +574,7 @@ func (x *TestResponse) String() string {
 func (*TestResponse) ProtoMessage() {}
 
 func (x *TestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -587,7 +587,7 @@ func (x *TestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestResponse.ProtoReflect.Descriptor instead.
 func (*TestResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TestResponse) GetTrainResult() []*v1alpha13.Measurement {
@@ -703,7 +703,7 @@ type TrainEnsembleRequest struct {
 func (x *TrainEnsembleRequest) Reset() {
 	*x = TrainEnsembleRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -716,7 +716,7 @@ func (x *TrainEnsembleRequest) String() string {
 func (*TrainEnsembleRequest) ProtoMessage() {}
 
 func (x *TrainEnsembleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -729,7 +729,7 @@ func (x *TrainEnsembleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TrainEnsembleRequest.ProtoReflect.Descriptor instead.
 func (*TrainEnsembleRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *TrainEnsembleRequest) GetProduct() *v1alpha1.DataProduct {
@@ -823,7 +823,7 @@ type TestEnsembleRequest struct {
 func (x *TestEnsembleRequest) Reset() {
 	*x = TestEnsembleRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -836,7 +836,7 @@ func (x *TestEnsembleRequest) String() string {
 func (*TestEnsembleRequest) ProtoMessage() {}
 
 func (x *TestEnsembleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -849,7 +849,7 @@ func (x *TestEnsembleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestEnsembleRequest.ProtoReflect.Descriptor instead.
 func (*TestEnsembleRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *TestEnsembleRequest) GetProduct() *v1alpha1.DataProduct {
@@ -941,7 +941,7 @@ type ForecastRequest struct {
 func (x *ForecastRequest) Reset() {
 	*x = ForecastRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -954,7 +954,7 @@ func (x *ForecastRequest) String() string {
 func (*ForecastRequest) ProtoMessage() {}
 
 func (x *ForecastRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -967,7 +967,7 @@ func (x *ForecastRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForecastRequest.ProtoReflect.Descriptor instead.
 func (*ForecastRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ForecastRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1045,7 +1045,7 @@ type ForecastResponse struct {
 func (x *ForecastResponse) Reset() {
 	*x = ForecastResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1058,7 +1058,7 @@ func (x *ForecastResponse) String() string {
 func (*ForecastResponse) ProtoMessage() {}
 
 func (x *ForecastResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1071,7 +1071,7 @@ func (x *ForecastResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForecastResponse.ProtoReflect.Descriptor instead.
 func (*ForecastResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ForecastResponse) GetForecastCloudUri() string {
@@ -1090,7 +1090,7 @@ type ShutdownRequest struct {
 func (x *ShutdownRequest) Reset() {
 	*x = ShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1103,7 +1103,7 @@ func (x *ShutdownRequest) String() string {
 func (*ShutdownRequest) ProtoMessage() {}
 
 func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1116,7 +1116,7 @@ func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
 func (*ShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{10}
 }
 
 type ShutdownResponse struct {
@@ -1128,7 +1128,7 @@ type ShutdownResponse struct {
 func (x *ShutdownResponse) Reset() {
 	*x = ShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1141,7 +1141,7 @@ func (x *ShutdownResponse) String() string {
 func (*ShutdownResponse) ProtoMessage() {}
 
 func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1154,12 +1154,12 @@ func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
 func (*ShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP(), []int{11}
 }
 
-var File_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDesc = []byte{
 	0x0a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x65, 0x72,
@@ -1740,129 +1740,129 @@ var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescData = file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescData = file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
-var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_goTypes = []interface{}{
-	(*TrainRequest)(nil),                // 0: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest
-	(*TrainResponse)(nil),               // 1: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse
-	(*CompileRequest)(nil),              // 2: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest
-	(*CompileResponse)(nil),             // 3: github.com.metaprov.modeldapi.services.trainerd.v1.CompileResponse
-	(*TestRequest)(nil),                 // 4: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest
-	(*TestResponse)(nil),                // 5: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse
-	(*TrainEnsembleRequest)(nil),        // 6: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest
-	(*TestEnsembleRequest)(nil),         // 7: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest
-	(*ForecastRequest)(nil),             // 8: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest
-	(*ForecastResponse)(nil),            // 9: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse
-	(*ShutdownRequest)(nil),             // 10: github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest
-	(*ShutdownResponse)(nil),            // 11: github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse
-	nil,                                 // 12: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry
-	nil,                                 // 13: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.PipFreezeEntry
-	nil,                                 // 14: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.FeaturesImportanceEntry
-	nil,                                 // 15: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.SecretEntry
-	nil,                                 // 16: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry
-	nil,                                 // 17: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.PipFreezeEntry
-	nil,                                 // 18: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.FeaturesImportanceEntry
-	nil,                                 // 19: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry
-	nil,                                 // 20: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry
-	nil,                                 // 21: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry
-	(*v1alpha1.DataProduct)(nil),        // 22: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	(*v1alpha1.DataProductVersion)(nil), // 23: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	(*v1alpha11.VirtualBucket)(nil),     // 24: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha12.Model)(nil),             // 25: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1alpha12.Study)(nil),             // 26: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha1.DataSource)(nil),         // 27: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1alpha1.Dataset)(nil),            // 28: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	(*v1alpha11.Connection)(nil),        // 29: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	(*v1alpha13.Measurement)(nil),       // 30: github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement
+var file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_goTypes = []interface{}{
+	(*TrainRequest)(nil),                // 0: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest
+	(*TrainResponse)(nil),               // 1: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse
+	(*CompileRequest)(nil),              // 2: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest
+	(*CompileResponse)(nil),             // 3: github.com.metaprov.modelaapi.services.trainerd.v1.CompileResponse
+	(*TestRequest)(nil),                 // 4: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest
+	(*TestResponse)(nil),                // 5: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse
+	(*TrainEnsembleRequest)(nil),        // 6: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest
+	(*TestEnsembleRequest)(nil),         // 7: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest
+	(*ForecastRequest)(nil),             // 8: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest
+	(*ForecastResponse)(nil),            // 9: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastResponse
+	(*ShutdownRequest)(nil),             // 10: github.com.metaprov.modelaapi.services.trainerd.v1.ShutdownRequest
+	(*ShutdownResponse)(nil),            // 11: github.com.metaprov.modelaapi.services.trainerd.v1.ShutdownResponse
+	nil,                                 // 12: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.SecretEntry
+	nil,                                 // 13: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.PipFreezeEntry
+	nil,                                 // 14: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.FeaturesImportanceEntry
+	nil,                                 // 15: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.SecretEntry
+	nil,                                 // 16: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.SecretEntry
+	nil,                                 // 17: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.PipFreezeEntry
+	nil,                                 // 18: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.FeaturesImportanceEntry
+	nil,                                 // 19: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry
+	nil,                                 // 20: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry
+	nil,                                 // 21: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.SecretEntry
+	(*v1alpha1.DataProduct)(nil),        // 22: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	(*v1alpha1.DataProductVersion)(nil), // 23: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	(*v1alpha11.VirtualBucket)(nil),     // 24: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha12.Model)(nil),             // 25: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	(*v1alpha12.Study)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	(*v1alpha1.DataSource)(nil),         // 27: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	(*v1alpha1.Dataset)(nil),            // 28: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	(*v1alpha11.Connection)(nil),        // 29: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	(*v1alpha13.Measurement)(nil),       // 30: github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement
 }
-var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_depIdxs = []int32{
-	22, // 0: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 1: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 2: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 3: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 4: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 5: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 6: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 7: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	12, // 8: github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest.SecretEntry
-	30, // 9: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement
-	13, // 10: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.pipFreeze:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.PipFreezeEntry
-	14, // 11: github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.featuresImportance:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse.FeaturesImportanceEntry
-	22, // 12: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 13: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 14: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 15: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 16: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 17: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 18: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 19: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	15, // 20: github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest.SecretEntry
-	22, // 21: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 22: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 23: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 24: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 25: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 26: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 27: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 28: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	16, // 29: github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest.SecretEntry
-	30, // 30: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.train_result:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement
-	30, // 31: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.test_result:type_name -> github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Measurement
-	17, // 32: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.pipFreeze:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.PipFreezeEntry
-	18, // 33: github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.featuresImportance:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse.FeaturesImportanceEntry
-	22, // 34: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 35: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 36: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 37: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.base:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	25, // 38: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 39: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 40: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 41: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 42: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	19, // 43: github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry
-	22, // 44: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 45: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 46: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 47: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.base:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	25, // 48: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 49: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 50: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 51: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 52: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	20, // 53: github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry
-	22, // 54: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	23, // 55: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	24, // 56: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	25, // 57: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	26, // 58: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	27, // 59: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	28, // 60: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	29, // 61: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	21, // 62: github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.secret:type_name -> github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest.SecretEntry
-	0,  // 63: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Train:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainRequest
-	8,  // 64: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Forecast:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.ForecastRequest
-	4,  // 65: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Test:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TestRequest
-	2,  // 66: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Compile:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.CompileRequest
-	6,  // 67: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TrainEnsemble:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainEnsembleRequest
-	7,  // 68: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TestEnsemble:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TestEnsembleRequest
-	10, // 69: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Shutdown:input_type -> github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownRequest
-	1,  // 70: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Train:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse
-	9,  // 71: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Forecast:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.ForecastResponse
-	5,  // 72: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Test:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse
-	3,  // 73: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Compile:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.CompileResponse
-	1,  // 74: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TrainEnsemble:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TrainResponse
-	5,  // 75: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.TestEnsemble:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.TestResponse
-	11, // 76: github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService.Shutdown:output_type -> github.com.metaprov.modeldapi.services.trainerd.v1.ShutdownResponse
+var file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_depIdxs = []int32{
+	22, // 0: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 1: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 2: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 3: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 4: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 5: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 6: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 7: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	12, // 8: github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest.SecretEntry
+	30, // 9: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement
+	13, // 10: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.pipFreeze:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.PipFreezeEntry
+	14, // 11: github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.featuresImportance:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse.FeaturesImportanceEntry
+	22, // 12: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 13: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 14: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 15: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 16: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 17: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 18: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 19: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	15, // 20: github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest.SecretEntry
+	22, // 21: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 22: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 23: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 24: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 25: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 26: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 27: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 28: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	16, // 29: github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest.SecretEntry
+	30, // 30: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.train_result:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement
+	30, // 31: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.test_result:type_name -> github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement
+	17, // 32: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.pipFreeze:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.PipFreezeEntry
+	18, // 33: github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.featuresImportance:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse.FeaturesImportanceEntry
+	22, // 34: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 35: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 36: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 37: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.base:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	25, // 38: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 39: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 40: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 41: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 42: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	19, // 43: github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest.SecretEntry
+	22, // 44: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 45: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 46: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 47: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.base:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	25, // 48: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 49: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 50: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 51: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 52: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	20, // 53: github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest.SecretEntry
+	22, // 54: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	23, // 55: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	24, // 56: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	25, // 57: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	26, // 58: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	27, // 59: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	28, // 60: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	29, // 61: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	21, // 62: github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.secret:type_name -> github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest.SecretEntry
+	0,  // 63: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Train:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainRequest
+	8,  // 64: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Forecast:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.ForecastRequest
+	4,  // 65: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Test:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TestRequest
+	2,  // 66: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Compile:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.CompileRequest
+	6,  // 67: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.TrainEnsemble:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainEnsembleRequest
+	7,  // 68: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.TestEnsemble:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TestEnsembleRequest
+	10, // 69: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Shutdown:input_type -> github.com.metaprov.modelaapi.services.trainerd.v1.ShutdownRequest
+	1,  // 70: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Train:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse
+	9,  // 71: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Forecast:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.ForecastResponse
+	5,  // 72: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Test:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse
+	3,  // 73: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Compile:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.CompileResponse
+	1,  // 74: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.TrainEnsemble:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TrainResponse
+	5,  // 75: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.TestEnsemble:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.TestResponse
+	11, // 76: github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService.Shutdown:output_type -> github.com.metaprov.modelaapi.services.trainerd.v1.ShutdownResponse
 	70, // [70:77] is the sub-list for method output_type
 	63, // [63:70] is the sub-list for method input_type
 	63, // [63:63] is the sub-list for extension type_name
@@ -1870,13 +1870,13 @@ var file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_depId
 	0,  // [0:63] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init() }
-func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_init() }
+func file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TrainRequest); i {
 			case 0:
 				return &v.state
@@ -1888,7 +1888,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TrainResponse); i {
 			case 0:
 				return &v.state
@@ -1900,7 +1900,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompileRequest); i {
 			case 0:
 				return &v.state
@@ -1912,7 +1912,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompileResponse); i {
 			case 0:
 				return &v.state
@@ -1924,7 +1924,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TestRequest); i {
 			case 0:
 				return &v.state
@@ -1936,7 +1936,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TestResponse); i {
 			case 0:
 				return &v.state
@@ -1948,7 +1948,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TrainEnsembleRequest); i {
 			case 0:
 				return &v.state
@@ -1960,7 +1960,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TestEnsembleRequest); i {
 			case 0:
 				return &v.state
@@ -1972,7 +1972,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ForecastRequest); i {
 			case 0:
 				return &v.state
@@ -1984,7 +1984,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ForecastResponse); i {
 			case 0:
 				return &v.state
@@ -1996,7 +1996,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -2008,7 +2008,7 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -2025,20 +2025,20 @@ func file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_init
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto = out.File
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_trainerd_v1_trainerd_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto = out.File
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2072,7 +2072,7 @@ func NewTrainerdServiceClient(cc grpc.ClientConnInterface) TrainerdServiceClient
 
 func (c *trainerdServiceClient) Train(ctx context.Context, in *TrainRequest, opts ...grpc.CallOption) (*TrainResponse, error) {
 	out := new(TrainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Train", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2081,7 +2081,7 @@ func (c *trainerdServiceClient) Train(ctx context.Context, in *TrainRequest, opt
 
 func (c *trainerdServiceClient) Forecast(ctx context.Context, in *ForecastRequest, opts ...grpc.CallOption) (*ForecastResponse, error) {
 	out := new(ForecastResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2090,7 +2090,7 @@ func (c *trainerdServiceClient) Forecast(ctx context.Context, in *ForecastReques
 
 func (c *trainerdServiceClient) Test(ctx context.Context, in *TestRequest, opts ...grpc.CallOption) (*TestResponse, error) {
 	out := new(TestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Test", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2099,7 +2099,7 @@ func (c *trainerdServiceClient) Test(ctx context.Context, in *TestRequest, opts 
 
 func (c *trainerdServiceClient) Compile(ctx context.Context, in *CompileRequest, opts ...grpc.CallOption) (*CompileResponse, error) {
 	out := new(CompileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Compile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Compile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2108,7 +2108,7 @@ func (c *trainerdServiceClient) Compile(ctx context.Context, in *CompileRequest,
 
 func (c *trainerdServiceClient) TrainEnsemble(ctx context.Context, in *TrainEnsembleRequest, opts ...grpc.CallOption) (*TrainResponse, error) {
 	out := new(TrainResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2117,7 +2117,7 @@ func (c *trainerdServiceClient) TrainEnsemble(ctx context.Context, in *TrainEnse
 
 func (c *trainerdServiceClient) TestEnsemble(ctx context.Context, in *TestEnsembleRequest, opts ...grpc.CallOption) (*TestResponse, error) {
 	out := new(TestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2126,7 +2126,7 @@ func (c *trainerdServiceClient) TestEnsemble(ctx context.Context, in *TestEnsemb
 
 func (c *trainerdServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2184,7 +2184,7 @@ func _TrainerdService_Train_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Train",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Train",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).Train(ctx, req.(*TrainRequest))
@@ -2202,7 +2202,7 @@ func _TrainerdService_Forecast_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Forecast",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).Forecast(ctx, req.(*ForecastRequest))
@@ -2220,7 +2220,7 @@ func _TrainerdService_Test_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Test",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Test",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).Test(ctx, req.(*TestRequest))
@@ -2238,7 +2238,7 @@ func _TrainerdService_Compile_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Compile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Compile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).Compile(ctx, req.(*CompileRequest))
@@ -2256,7 +2256,7 @@ func _TrainerdService_TrainEnsemble_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TrainEnsemble",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TrainEnsemble",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).TrainEnsemble(ctx, req.(*TrainEnsembleRequest))
@@ -2274,7 +2274,7 @@ func _TrainerdService_TestEnsemble_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/TestEnsemble",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/TestEnsemble",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).TestEnsemble(ctx, req.(*TestEnsembleRequest))
@@ -2292,7 +2292,7 @@ func _TrainerdService_Shutdown_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService/Shutdown",
+		FullMethod: "/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TrainerdServiceServer).Shutdown(ctx, req.(*ShutdownRequest))
@@ -2301,7 +2301,7 @@ func _TrainerdService_Shutdown_Handler(srv interface{}, ctx context.Context, dec
 }
 
 var _TrainerdService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.trainerd.v1.TrainerdService",
+	ServiceName: "github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService",
 	HandlerType: (*TrainerdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2334,5 +2334,5 @@ var _TrainerdService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/trainerd/v1/trainerd.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto",
 }

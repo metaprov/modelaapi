@@ -41,7 +41,7 @@ type ServingSiteCondition struct {
 // +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modeld}
+// +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 type ServingSite struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

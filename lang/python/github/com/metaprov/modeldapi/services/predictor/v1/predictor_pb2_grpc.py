@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.predictor.v1 import predictor_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2
+from github.com.metaprov.modelaapi.services.predictor.v1 import predictor_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2
 
 
 class PredictorServiceStub(object):
@@ -15,39 +15,39 @@ class PredictorServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListPredictors = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.FromString,
                 )
         self.CreatePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.FromString,
                 )
         self.GetPredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.FromString,
                 )
         self.UpdatePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
                 )
         self.RollBack = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
                 )
         self.DeletePredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.FromString,
                 )
         self.PredictOne = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.FromString,
                 )
 
 
@@ -101,42 +101,42 @@ def add_PredictorServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListPredictors': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPredictors,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.SerializeToString,
             ),
             'CreatePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.SerializeToString,
             ),
             'GetPredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.SerializeToString,
             ),
             'UpdatePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.SerializeToString,
             ),
             'RollBack': grpc.unary_unary_rpc_method_handler(
                     servicer.RollBack,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.SerializeToString,
             ),
             'DeletePredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.SerializeToString,
             ),
             'PredictOne': grpc.unary_unary_rpc_method_handler(
                     servicer.PredictOne,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.predictor.v1.PredictorService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.predictor.v1.PredictorService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -155,9 +155,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.ListPredictorsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -172,9 +172,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.CreatePredictorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -189,9 +189,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.GetPredictorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -206,9 +206,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.UpdatePredictorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -223,9 +223,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.RollbackResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -240,9 +240,9 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.DeletePredictorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -257,8 +257,8 @@ class PredictorService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_predictor_dot_v1_dot_predictor__pb2.PredictOneResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

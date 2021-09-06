@@ -1,5 +1,5 @@
 {
-  "name": "modeldapi",
+  "name": "modelaapi",
   "description": "Automatic machine learning for kubernetes",
   "version": "0.3.647",
   "dependencies": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/metaprov/modeldapi.git"
+    "url": "git+https://github.com/metaprov/modelaapi.git"
   },
   "keywords": [
     "automl",
@@ -27,9 +27,9 @@
   "author": "Tomer Sagi",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/metaprov/modeldapi/issues"
+    "url": "https://github.com/metaprov/modelaapi/issues"
   },
-  "homepage": "https://github.com/metaprov/modeldapi#readme",
+  "homepage": "https://github.com/metaprov/modelaapi#readme",
   "devDependencies": {
     "@types/debug": "4.1.5",
     "@types/express": "4.17.11",

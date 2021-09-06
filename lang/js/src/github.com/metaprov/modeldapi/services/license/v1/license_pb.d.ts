@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListLicensesRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListLicensesRequest {
 }
 
 export class ListLicensesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList): ListLicensesResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList): ListLicensesResponse;
   hasItems(): boolean;
   clearItems(): ListLicensesResponse;
 
@@ -43,7 +43,7 @@ export class ListLicensesResponse extends jspb.Message {
 
 export namespace ListLicensesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace LicenseResponse {
 }
 
 export class CreateLicenseRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): CreateLicenseRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): CreateLicenseRequest;
   hasItem(): boolean;
   clearItem(): CreateLicenseRequest;
 
@@ -77,7 +77,7 @@ export class CreateLicenseRequest extends jspb.Message {
 
 export namespace CreateLicenseRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
   }
 }
 
@@ -114,8 +114,8 @@ export namespace CreateLicenseResponse {
 }
 
 export class UpdateLicenseRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): UpdateLicenseRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): UpdateLicenseRequest;
   hasItem(): boolean;
   clearItem(): UpdateLicenseRequest;
 
@@ -129,7 +129,7 @@ export class UpdateLicenseRequest extends jspb.Message {
 
 export namespace UpdateLicenseRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
   }
 }
 
@@ -170,8 +170,8 @@ export namespace GetLicenseRequest {
 }
 
 export class GetLicenseResponse extends jspb.Message {
-  getLicense(): github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setLicense(value?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License): GetLicenseResponse;
+  getLicense(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setLicense(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): GetLicenseResponse;
   hasLicense(): boolean;
   clearLicense(): GetLicenseResponse;
 
@@ -188,7 +188,7 @@ export class GetLicenseResponse extends jspb.Message {
 
 export namespace GetLicenseResponse {
   export type AsObject = {
-    license?: github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
+    license?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
     yaml: string,
   }
 }
@@ -216,10 +216,10 @@ export namespace GetLicenseNamespacesRequest {
 }
 
 export class GetLicenseNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo>): GetLicenseNamespacesResponse;
+  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
+  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetLicenseNamespacesResponse;
   clearNamespacesList(): GetLicenseNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo;
+  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetLicenseNamespacesResponse.AsObject;
@@ -231,7 +231,7 @@ export class GetLicenseNamespacesResponse extends jspb.Message {
 
 export namespace GetLicenseNamespacesResponse {
   export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
+    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
   }
 }
 

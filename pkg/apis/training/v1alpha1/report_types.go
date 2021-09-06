@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -114,7 +114,7 @@ type ReportCondition struct {
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime"
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.endTime"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=reports,singular=report,categories={training,modeld,all}
+// +kubebuilder:resource:path=reports,singular=report,categories={training,modela,all}
 // ReportName represent a report object. A report is a pdf report which contain images and tables about another
 // object
 type Report struct {

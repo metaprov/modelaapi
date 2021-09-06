@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto
+// source: github.com/metaprov/modelaapi/services/runbook/v1/runbook.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListRunBooksRequest struct {
 func (x *ListRunBooksRequest) Reset() {
 	*x = ListRunBooksRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListRunBooksRequest) String() string {
 func (*ListRunBooksRequest) ProtoMessage() {}
 
 func (x *ListRunBooksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListRunBooksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRunBooksRequest.ProtoReflect.Descriptor instead.
 func (*ListRunBooksRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListRunBooksRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListRunBooksResponse struct {
 func (x *ListRunBooksResponse) Reset() {
 	*x = ListRunBooksResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListRunBooksResponse) String() string {
 func (*ListRunBooksResponse) ProtoMessage() {}
 
 func (x *ListRunBooksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListRunBooksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRunBooksResponse.ProtoReflect.Descriptor instead.
 func (*ListRunBooksResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListRunBooksResponse) GetItems() *v1alpha1.RunBookList {
@@ -144,7 +144,7 @@ type CreateRunBookRequest struct {
 func (x *CreateRunBookRequest) Reset() {
 	*x = CreateRunBookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateRunBookRequest) String() string {
 func (*CreateRunBookRequest) ProtoMessage() {}
 
 func (x *CreateRunBookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateRunBookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRunBookRequest.ProtoReflect.Descriptor instead.
 func (*CreateRunBookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateRunBookRequest) GetItem() *v1alpha1.RunBook {
@@ -189,7 +189,7 @@ type CreateRunBookResponse struct {
 func (x *CreateRunBookResponse) Reset() {
 	*x = CreateRunBookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateRunBookResponse) String() string {
 func (*CreateRunBookResponse) ProtoMessage() {}
 
 func (x *CreateRunBookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateRunBookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRunBookResponse.ProtoReflect.Descriptor instead.
 func (*CreateRunBookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateRunBookRequest struct {
@@ -229,7 +229,7 @@ type UpdateRunBookRequest struct {
 func (x *UpdateRunBookRequest) Reset() {
 	*x = UpdateRunBookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateRunBookRequest) String() string {
 func (*UpdateRunBookRequest) ProtoMessage() {}
 
 func (x *UpdateRunBookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateRunBookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRunBookRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRunBookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateRunBookRequest) GetItem() *v1alpha1.RunBook {
@@ -274,7 +274,7 @@ type UpdateRunBookResponse struct {
 func (x *UpdateRunBookResponse) Reset() {
 	*x = UpdateRunBookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateRunBookResponse) String() string {
 func (*UpdateRunBookResponse) ProtoMessage() {}
 
 func (x *UpdateRunBookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateRunBookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRunBookResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRunBookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{5}
 }
 
 type GetRunBookRequest struct {
@@ -315,7 +315,7 @@ type GetRunBookRequest struct {
 func (x *GetRunBookRequest) Reset() {
 	*x = GetRunBookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetRunBookRequest) String() string {
 func (*GetRunBookRequest) ProtoMessage() {}
 
 func (x *GetRunBookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetRunBookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRunBookRequest.ProtoReflect.Descriptor instead.
 func (*GetRunBookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetRunBookRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetRunBookResponse struct {
 func (x *GetRunBookResponse) Reset() {
 	*x = GetRunBookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetRunBookResponse) String() string {
 func (*GetRunBookResponse) ProtoMessage() {}
 
 func (x *GetRunBookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetRunBookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRunBookResponse.ProtoReflect.Descriptor instead.
 func (*GetRunBookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetRunBookResponse) GetItem() *v1alpha1.RunBook {
@@ -425,7 +425,7 @@ type DeleteRunBookRequest struct {
 func (x *DeleteRunBookRequest) Reset() {
 	*x = DeleteRunBookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteRunBookRequest) String() string {
 func (*DeleteRunBookRequest) ProtoMessage() {}
 
 func (x *DeleteRunBookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteRunBookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRunBookRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRunBookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteRunBookRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteRunBookResponse struct {
 func (x *DeleteRunBookResponse) Reset() {
 	*x = DeleteRunBookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteRunBookResponse) String() string {
 func (*DeleteRunBookResponse) ProtoMessage() {}
 
 func (x *DeleteRunBookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteRunBookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRunBookResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRunBookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDesc = []byte{
 	0x0a, 0x3f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x72, 0x75, 0x6e, 0x62, 0x6f, 0x6f, 0x6b,
@@ -646,49 +646,49 @@ var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDesc
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescData = file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescData = file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_goTypes = []interface{}{
-	(*ListRunBooksRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest
-	(*ListRunBooksResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse
-	(*CreateRunBookRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest
-	(*CreateRunBookResponse)(nil), // 3: github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse
-	(*UpdateRunBookRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest
-	(*UpdateRunBookResponse)(nil), // 5: github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse
-	(*GetRunBookRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest
-	(*GetRunBookResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse
-	(*DeleteRunBookRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest
-	(*DeleteRunBookResponse)(nil), // 9: github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse
-	nil,                           // 10: github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry
-	(*v1alpha1.RunBookList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList
-	(*v1alpha1.RunBook)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
+var file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_goTypes = []interface{}{
+	(*ListRunBooksRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksRequest
+	(*ListRunBooksResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse
+	(*CreateRunBookRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest
+	(*CreateRunBookResponse)(nil), // 3: github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookResponse
+	(*UpdateRunBookRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.runbook.v1.UpdateRunBookRequest
+	(*UpdateRunBookResponse)(nil), // 5: github.com.metaprov.modelaapi.services.runbook.v1.UpdateRunBookResponse
+	(*GetRunBookRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookRequest
+	(*GetRunBookResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse
+	(*DeleteRunBookRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.runbook.v1.DeleteRunBookRequest
+	(*DeleteRunBookResponse)(nil), // 9: github.com.metaprov.modelaapi.services.runbook.v1.DeleteRunBookResponse
+	nil,                           // 10: github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry
+	(*v1alpha1.RunBookList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList
+	(*v1alpha1.RunBook)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook
 }
-var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.labels:type_name -> github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList
-	12, // 2: github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
-	12, // 3: github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
-	12, // 4: github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook
-	0,  // 5: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.ListRunBooks:input_type -> github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.CreateRunBook:input_type -> github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.GetRunBook:input_type -> github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.UpdateRunBook:input_type -> github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.DeleteRunBook:input_type -> github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.ListRunBooks:output_type -> github.com.metaprov.modeldapi.services.runbook.v1.ListRunBooksResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.CreateRunBook:output_type -> github.com.metaprov.modeldapi.services.runbook.v1.CreateRunBookResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.GetRunBook:output_type -> github.com.metaprov.modeldapi.services.runbook.v1.GetRunBookResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.UpdateRunBook:output_type -> github.com.metaprov.modeldapi.services.runbook.v1.UpdateRunBookResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.runbook.v1.RunBookService.DeleteRunBook:output_type -> github.com.metaprov.modeldapi.services.runbook.v1.DeleteRunBookResponse
+var file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksRequest.labels:type_name -> github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList
+	12, // 2: github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook
+	12, // 3: github.com.metaprov.modelaapi.services.runbook.v1.UpdateRunBookRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook
+	12, // 4: github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook
+	0,  // 5: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.ListRunBooks:input_type -> github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.CreateRunBook:input_type -> github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.GetRunBook:input_type -> github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.UpdateRunBook:input_type -> github.com.metaprov.modelaapi.services.runbook.v1.UpdateRunBookRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.DeleteRunBook:input_type -> github.com.metaprov.modelaapi.services.runbook.v1.DeleteRunBookRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.ListRunBooks:output_type -> github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.CreateRunBook:output_type -> github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.GetRunBook:output_type -> github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.UpdateRunBook:output_type -> github.com.metaprov.modelaapi.services.runbook.v1.UpdateRunBookResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.runbook.v1.RunBookService.DeleteRunBook:output_type -> github.com.metaprov.modelaapi.services.runbook.v1.DeleteRunBookResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -696,13 +696,13 @@ var file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_depIdxs
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init() }
-func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_init() }
+func file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListRunBooksRequest); i {
 			case 0:
 				return &v.state
@@ -714,7 +714,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListRunBooksResponse); i {
 			case 0:
 				return &v.state
@@ -726,7 +726,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRunBookRequest); i {
 			case 0:
 				return &v.state
@@ -738,7 +738,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRunBookResponse); i {
 			case 0:
 				return &v.state
@@ -750,7 +750,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateRunBookRequest); i {
 			case 0:
 				return &v.state
@@ -762,7 +762,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateRunBookResponse); i {
 			case 0:
 				return &v.state
@@ -774,7 +774,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRunBookRequest); i {
 			case 0:
 				return &v.state
@@ -786,7 +786,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRunBookResponse); i {
 			case 0:
 				return &v.state
@@ -798,7 +798,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteRunBookRequest); i {
 			case 0:
 				return &v.state
@@ -810,7 +810,7 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteRunBookResponse); i {
 			case 0:
 				return &v.state
@@ -827,20 +827,20 @@ func file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_init()
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto = out.File
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_runbook_v1_runbook_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto = out.File
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_runbook_v1_runbook_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -872,7 +872,7 @@ func NewRunBookServiceClient(cc grpc.ClientConnInterface) RunBookServiceClient {
 
 func (c *runBookServiceClient) ListRunBooks(ctx context.Context, in *ListRunBooksRequest, opts ...grpc.CallOption) (*ListRunBooksResponse, error) {
 	out := new(ListRunBooksResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/ListRunBooks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -881,7 +881,7 @@ func (c *runBookServiceClient) ListRunBooks(ctx context.Context, in *ListRunBook
 
 func (c *runBookServiceClient) CreateRunBook(ctx context.Context, in *CreateRunBookRequest, opts ...grpc.CallOption) (*CreateRunBookResponse, error) {
 	out := new(CreateRunBookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/CreateRunBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -890,7 +890,7 @@ func (c *runBookServiceClient) CreateRunBook(ctx context.Context, in *CreateRunB
 
 func (c *runBookServiceClient) GetRunBook(ctx context.Context, in *GetRunBookRequest, opts ...grpc.CallOption) (*GetRunBookResponse, error) {
 	out := new(GetRunBookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/GetRunBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -899,7 +899,7 @@ func (c *runBookServiceClient) GetRunBook(ctx context.Context, in *GetRunBookReq
 
 func (c *runBookServiceClient) UpdateRunBook(ctx context.Context, in *UpdateRunBookRequest, opts ...grpc.CallOption) (*UpdateRunBookResponse, error) {
 	out := new(UpdateRunBookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/UpdateRunBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -908,7 +908,7 @@ func (c *runBookServiceClient) UpdateRunBook(ctx context.Context, in *UpdateRunB
 
 func (c *runBookServiceClient) DeleteRunBook(ctx context.Context, in *DeleteRunBookRequest, opts ...grpc.CallOption) (*DeleteRunBookResponse, error) {
 	out := new(DeleteRunBookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/DeleteRunBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -958,7 +958,7 @@ func _RunBookService_ListRunBooks_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/ListRunBooks",
+		FullMethod: "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/ListRunBooks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RunBookServiceServer).ListRunBooks(ctx, req.(*ListRunBooksRequest))
@@ -976,7 +976,7 @@ func _RunBookService_CreateRunBook_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/CreateRunBook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/CreateRunBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RunBookServiceServer).CreateRunBook(ctx, req.(*CreateRunBookRequest))
@@ -994,7 +994,7 @@ func _RunBookService_GetRunBook_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/GetRunBook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/GetRunBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RunBookServiceServer).GetRunBook(ctx, req.(*GetRunBookRequest))
@@ -1012,7 +1012,7 @@ func _RunBookService_UpdateRunBook_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/UpdateRunBook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/UpdateRunBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RunBookServiceServer).UpdateRunBook(ctx, req.(*UpdateRunBookRequest))
@@ -1030,7 +1030,7 @@ func _RunBookService_DeleteRunBook_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.runbook.v1.RunBookService/DeleteRunBook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/DeleteRunBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RunBookServiceServer).DeleteRunBook(ctx, req.(*DeleteRunBookRequest))
@@ -1039,7 +1039,7 @@ func _RunBookService_DeleteRunBook_Handler(srv interface{}, ctx context.Context,
 }
 
 var _RunBookService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.runbook.v1.RunBookService",
+	ServiceName: "github.com.metaprov.modelaapi.services.runbook.v1.RunBookService",
 	HandlerType: (*RunBookServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1064,5 +1064,5 @@ var _RunBookService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/runbook/v1/runbook.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/runbook/v1/runbook.proto",
 }

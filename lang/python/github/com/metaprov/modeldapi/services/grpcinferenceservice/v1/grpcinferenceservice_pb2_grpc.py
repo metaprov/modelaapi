@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.grpcinferenceservice.v1 import grpcinferenceservice_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2
+from github.com.metaprov.modelaapi.services.grpcinferenceservice.v1 import grpcinferenceservice_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2
 
 
 class GRPCInferenceServiceStub(object):
@@ -18,49 +18,49 @@ class GRPCInferenceServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ServerLive = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.FromString,
                 )
         self.ServerReady = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.FromString,
                 )
         self.ModelReady = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.FromString,
                 )
         self.ServerMetadata = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.FromString,
                 )
         self.ModelMetadata = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.FromString,
                 )
         self.ModelInfer = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.FromString,
                 )
         self.GetPredictor = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.FromString,
                 )
         self.GetModel = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.FromString,
                 )
         self.Predict = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
                 )
 
 
@@ -120,7 +120,7 @@ class GRPCInferenceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetPredictor(self, request, context):
-        """Extention to the api specific to modeld
+        """Extention to the api specific to modela
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -143,52 +143,52 @@ def add_GRPCInferenceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ServerLive': grpc.unary_unary_rpc_method_handler(
                     servicer.ServerLive,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.SerializeToString,
             ),
             'ServerReady': grpc.unary_unary_rpc_method_handler(
                     servicer.ServerReady,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.SerializeToString,
             ),
             'ModelReady': grpc.unary_unary_rpc_method_handler(
                     servicer.ModelReady,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.SerializeToString,
             ),
             'ServerMetadata': grpc.unary_unary_rpc_method_handler(
                     servicer.ServerMetadata,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.SerializeToString,
             ),
             'ModelMetadata': grpc.unary_unary_rpc_method_handler(
                     servicer.ModelMetadata,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.SerializeToString,
             ),
             'ModelInfer': grpc.unary_unary_rpc_method_handler(
                     servicer.ModelInfer,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.SerializeToString,
             ),
             'GetPredictor': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPredictor,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.SerializeToString,
             ),
             'GetModel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetModel,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.SerializeToString,
             ),
             'Predict': grpc.unary_unary_rpc_method_handler(
                     servicer.Predict,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -210,9 +210,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerLiveResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -227,9 +227,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerReadyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -244,9 +244,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelReadyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -261,9 +261,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ServerMetadataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -278,9 +278,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelMetadataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -295,9 +295,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.ModelInferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -312,9 +312,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetPredictorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -329,9 +329,9 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.GetModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -346,8 +346,8 @@ class GRPCInferenceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_grpcinferenceservice_dot_v1_dot_grpcinferenceservice__pb2.PredictResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

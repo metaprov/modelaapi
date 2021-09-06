@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: featurepipelines.data.modeld.io
+  name: featurepipelines.data.modela.io
 spec:
-  group: data.modeld.io
+  group: data.modela.io
   names:
     categories:
     - data
-    - modeld
+    - modela
     kind: FeaturePipeline
     listKind: FeaturePipelineList
     plural: featurepipelines

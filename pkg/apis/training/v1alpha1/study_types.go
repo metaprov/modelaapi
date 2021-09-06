@@ -1,8 +1,8 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1"
-	data "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -122,7 +122,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modeld}
+// +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
 // Study represent a search for the best machine learning model using automl.
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -236,7 +236,7 @@ type ModelSearchSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	RetainTop *int32 `json:"retainTop,omitempty" protobuf:"varint,9,opt,name=retainTop"`
-	// RetainFor measure the time in minutes for modeld trained. Default is 60 min (1 H).
+	// RetainFor measure the time in minutes for modela trained. Default is 60 min (1 H).
 	// +kubebuilder:default:=60
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400

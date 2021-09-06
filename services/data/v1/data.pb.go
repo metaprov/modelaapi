@@ -2,18 +2,18 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/data/v1/data.proto
+// source: github.com/metaprov/modelaapi/services/data/v1/data.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
-	v1alpha13 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
-	v1alpha11 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1alpha12 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	v1alpha13 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1alpha12 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -50,7 +50,7 @@ type DsReadFileRequest struct {
 func (x *DsReadFileRequest) Reset() {
 	*x = DsReadFileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -63,7 +63,7 @@ func (x *DsReadFileRequest) String() string {
 func (*DsReadFileRequest) ProtoMessage() {}
 
 func (x *DsReadFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -76,7 +76,7 @@ func (x *DsReadFileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsReadFileRequest.ProtoReflect.Descriptor instead.
 func (*DsReadFileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *DsReadFileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -129,7 +129,7 @@ type DsReadFeatureRequest struct {
 func (x *DsReadFeatureRequest) Reset() {
 	*x = DsReadFeatureRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -142,7 +142,7 @@ func (x *DsReadFeatureRequest) String() string {
 func (*DsReadFeatureRequest) ProtoMessage() {}
 
 func (x *DsReadFeatureRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -155,7 +155,7 @@ func (x *DsReadFeatureRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsReadFeatureRequest.ProtoReflect.Descriptor instead.
 func (*DsReadFeatureRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *DsReadFeatureRequest) GetProduct() *v1alpha1.DataProduct {
@@ -209,7 +209,7 @@ type DsWriteFileRequest struct {
 func (x *DsWriteFileRequest) Reset() {
 	*x = DsWriteFileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -222,7 +222,7 @@ func (x *DsWriteFileRequest) String() string {
 func (*DsWriteFileRequest) ProtoMessage() {}
 
 func (x *DsWriteFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -235,7 +235,7 @@ func (x *DsWriteFileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsWriteFileRequest.ProtoReflect.Descriptor instead.
 func (*DsWriteFileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DsWriteFileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -293,7 +293,7 @@ type DsReadAudioRequest struct {
 func (x *DsReadAudioRequest) Reset() {
 	*x = DsReadAudioRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -306,7 +306,7 @@ func (x *DsReadAudioRequest) String() string {
 func (*DsReadAudioRequest) ProtoMessage() {}
 
 func (x *DsReadAudioRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,7 +319,7 @@ func (x *DsReadAudioRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsReadAudioRequest.ProtoReflect.Descriptor instead.
 func (*DsReadAudioRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DsReadAudioRequest) GetBucket() *v1alpha11.VirtualBucket {
@@ -358,7 +358,7 @@ type DsReadTextCorpusRequest struct {
 func (x *DsReadTextCorpusRequest) Reset() {
 	*x = DsReadTextCorpusRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -371,7 +371,7 @@ func (x *DsReadTextCorpusRequest) String() string {
 func (*DsReadTextCorpusRequest) ProtoMessage() {}
 
 func (x *DsReadTextCorpusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -384,7 +384,7 @@ func (x *DsReadTextCorpusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsReadTextCorpusRequest.ProtoReflect.Descriptor instead.
 func (*DsReadTextCorpusRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DsReadTextCorpusRequest) GetProduct() *v1alpha1.DataProduct {
@@ -438,7 +438,7 @@ type DsReadFromStoreResponse struct {
 func (x *DsReadFromStoreResponse) Reset() {
 	*x = DsReadFromStoreResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -451,7 +451,7 @@ func (x *DsReadFromStoreResponse) String() string {
 func (*DsReadFromStoreResponse) ProtoMessage() {}
 
 func (x *DsReadFromStoreResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -464,7 +464,7 @@ func (x *DsReadFromStoreResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsReadFromStoreResponse.ProtoReflect.Descriptor instead.
 func (*DsReadFromStoreResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DsReadFromStoreResponse) GetProduct() *v1alpha1.DataProduct {
@@ -520,7 +520,7 @@ type DsRunDataPipelineRequest struct {
 func (x *DsRunDataPipelineRequest) Reset() {
 	*x = DsRunDataPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -533,7 +533,7 @@ func (x *DsRunDataPipelineRequest) String() string {
 func (*DsRunDataPipelineRequest) ProtoMessage() {}
 
 func (x *DsRunDataPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -546,7 +546,7 @@ func (x *DsRunDataPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsRunDataPipelineRequest.ProtoReflect.Descriptor instead.
 func (*DsRunDataPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DsRunDataPipelineRequest) GetPipeline() *v1alpha1.DataPipeline {
@@ -567,7 +567,7 @@ type DsRunDataPipelineResponse struct {
 func (x *DsRunDataPipelineResponse) Reset() {
 	*x = DsRunDataPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -580,7 +580,7 @@ func (x *DsRunDataPipelineResponse) String() string {
 func (*DsRunDataPipelineResponse) ProtoMessage() {}
 
 func (x *DsRunDataPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -593,7 +593,7 @@ func (x *DsRunDataPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsRunDataPipelineResponse.ProtoReflect.Descriptor instead.
 func (*DsRunDataPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DsRunDataPipelineResponse) GetResult() *v1alpha1.Dataset {
@@ -622,7 +622,7 @@ type DsRunRecipeRequest struct {
 func (x *DsRunRecipeRequest) Reset() {
 	*x = DsRunRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -635,7 +635,7 @@ func (x *DsRunRecipeRequest) String() string {
 func (*DsRunRecipeRequest) ProtoMessage() {}
 
 func (x *DsRunRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -648,7 +648,7 @@ func (x *DsRunRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsRunRecipeRequest.ProtoReflect.Descriptor instead.
 func (*DsRunRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DsRunRecipeRequest) GetProduct() *v1alpha1.DataProduct {
@@ -725,7 +725,7 @@ type DsRunRecipeResponse struct {
 func (x *DsRunRecipeResponse) Reset() {
 	*x = DsRunRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -738,7 +738,7 @@ func (x *DsRunRecipeResponse) String() string {
 func (*DsRunRecipeResponse) ProtoMessage() {}
 
 func (x *DsRunRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -751,7 +751,7 @@ func (x *DsRunRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsRunRecipeResponse.ProtoReflect.Descriptor instead.
 func (*DsRunRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DsRunRecipeResponse) GetResult() *v1alpha1.Recipe {
@@ -779,7 +779,7 @@ type DsCreateRecipeProfileRequest struct {
 func (x *DsCreateRecipeProfileRequest) Reset() {
 	*x = DsCreateRecipeProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -792,7 +792,7 @@ func (x *DsCreateRecipeProfileRequest) String() string {
 func (*DsCreateRecipeProfileRequest) ProtoMessage() {}
 
 func (x *DsCreateRecipeProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -805,7 +805,7 @@ func (x *DsCreateRecipeProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateRecipeProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateRecipeProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *DsCreateRecipeProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -875,7 +875,7 @@ type DsCreateRecipeProfileResponse struct {
 func (x *DsCreateRecipeProfileResponse) Reset() {
 	*x = DsCreateRecipeProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -888,7 +888,7 @@ func (x *DsCreateRecipeProfileResponse) String() string {
 func (*DsCreateRecipeProfileResponse) ProtoMessage() {}
 
 func (x *DsCreateRecipeProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -901,7 +901,7 @@ func (x *DsCreateRecipeProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateRecipeProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateRecipeProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DsCreateRecipeProfileResponse) GetResult() *v1.TableView {
@@ -920,7 +920,7 @@ type DataSourceResponse struct {
 func (x *DataSourceResponse) Reset() {
 	*x = DataSourceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -933,7 +933,7 @@ func (x *DataSourceResponse) String() string {
 func (*DataSourceResponse) ProtoMessage() {}
 
 func (x *DataSourceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -946,7 +946,7 @@ func (x *DataSourceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DataSourceResponse.ProtoReflect.Descriptor instead.
 func (*DataSourceResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{12}
 }
 
 type DatasetResponse struct {
@@ -958,7 +958,7 @@ type DatasetResponse struct {
 func (x *DatasetResponse) Reset() {
 	*x = DatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -971,7 +971,7 @@ func (x *DatasetResponse) String() string {
 func (*DatasetResponse) ProtoMessage() {}
 
 func (x *DatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -984,7 +984,7 @@ func (x *DatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DatasetResponse.ProtoReflect.Descriptor instead.
 func (*DatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{13}
 }
 
 // Create dataset profile
@@ -1005,7 +1005,7 @@ type DsCreateDatasetProfileRequest struct {
 func (x *DsCreateDatasetProfileRequest) Reset() {
 	*x = DsCreateDatasetProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1018,7 +1018,7 @@ func (x *DsCreateDatasetProfileRequest) String() string {
 func (*DsCreateDatasetProfileRequest) ProtoMessage() {}
 
 func (x *DsCreateDatasetProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1031,7 +1031,7 @@ func (x *DsCreateDatasetProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateDatasetProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateDatasetProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DsCreateDatasetProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1095,7 +1095,7 @@ type DsCreateDatasetProfileResponse struct {
 func (x *DsCreateDatasetProfileResponse) Reset() {
 	*x = DsCreateDatasetProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1108,7 +1108,7 @@ func (x *DsCreateDatasetProfileResponse) String() string {
 func (*DsCreateDatasetProfileResponse) ProtoMessage() {}
 
 func (x *DsCreateDatasetProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1121,7 +1121,7 @@ func (x *DsCreateDatasetProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateDatasetProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateDatasetProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *DsCreateDatasetProfileResponse) GetUri() string {
@@ -1157,7 +1157,7 @@ type DsCreateModelProfileRequest struct {
 func (x *DsCreateModelProfileRequest) Reset() {
 	*x = DsCreateModelProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1170,7 +1170,7 @@ func (x *DsCreateModelProfileRequest) String() string {
 func (*DsCreateModelProfileRequest) ProtoMessage() {}
 
 func (x *DsCreateModelProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1183,7 +1183,7 @@ func (x *DsCreateModelProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateModelProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateModelProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DsCreateModelProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1260,7 +1260,7 @@ type DsCreateModelProfileResponse struct {
 func (x *DsCreateModelProfileResponse) Reset() {
 	*x = DsCreateModelProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1273,7 +1273,7 @@ func (x *DsCreateModelProfileResponse) String() string {
 func (*DsCreateModelProfileResponse) ProtoMessage() {}
 
 func (x *DsCreateModelProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1286,7 +1286,7 @@ func (x *DsCreateModelProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateModelProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateModelProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DsCreateModelProfileResponse) GetUri() string {
@@ -1316,7 +1316,7 @@ type DsCreateForecastPartitionFilesRequest struct {
 func (x *DsCreateForecastPartitionFilesRequest) Reset() {
 	*x = DsCreateForecastPartitionFilesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1329,7 +1329,7 @@ func (x *DsCreateForecastPartitionFilesRequest) String() string {
 func (*DsCreateForecastPartitionFilesRequest) ProtoMessage() {}
 
 func (x *DsCreateForecastPartitionFilesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1342,7 +1342,7 @@ func (x *DsCreateForecastPartitionFilesRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use DsCreateForecastPartitionFilesRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateForecastPartitionFilesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *DsCreateForecastPartitionFilesRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1426,7 +1426,7 @@ type DsCreateForecastPartitionFilesResponse struct {
 func (x *DsCreateForecastPartitionFilesResponse) Reset() {
 	*x = DsCreateForecastPartitionFilesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1439,7 +1439,7 @@ func (x *DsCreateForecastPartitionFilesResponse) String() string {
 func (*DsCreateForecastPartitionFilesResponse) ProtoMessage() {}
 
 func (x *DsCreateForecastPartitionFilesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1452,7 +1452,7 @@ func (x *DsCreateForecastPartitionFilesResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use DsCreateForecastPartitionFilesResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateForecastPartitionFilesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *DsCreateForecastPartitionFilesResponse) GetPartitions() []*PartitionValues {
@@ -1475,7 +1475,7 @@ type PartitionValues struct {
 func (x *PartitionValues) Reset() {
 	*x = PartitionValues{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1488,7 +1488,7 @@ func (x *PartitionValues) String() string {
 func (*PartitionValues) ProtoMessage() {}
 
 func (x *PartitionValues) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1501,7 +1501,7 @@ func (x *PartitionValues) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PartitionValues.ProtoReflect.Descriptor instead.
 func (*PartitionValues) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *PartitionValues) GetName() string {
@@ -1538,7 +1538,7 @@ type DsMergeForecastFileRequest struct {
 func (x *DsMergeForecastFileRequest) Reset() {
 	*x = DsMergeForecastFileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1551,7 +1551,7 @@ func (x *DsMergeForecastFileRequest) String() string {
 func (*DsMergeForecastFileRequest) ProtoMessage() {}
 
 func (x *DsMergeForecastFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1564,7 +1564,7 @@ func (x *DsMergeForecastFileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsMergeForecastFileRequest.ProtoReflect.Descriptor instead.
 func (*DsMergeForecastFileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *DsMergeForecastFileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1641,7 +1641,7 @@ type DsMergeForecastFileResponse struct {
 func (x *DsMergeForecastFileResponse) Reset() {
 	*x = DsMergeForecastFileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1654,7 +1654,7 @@ func (x *DsMergeForecastFileResponse) String() string {
 func (*DsMergeForecastFileResponse) ProtoMessage() {}
 
 func (x *DsMergeForecastFileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1667,7 +1667,7 @@ func (x *DsMergeForecastFileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsMergeForecastFileResponse.ProtoReflect.Descriptor instead.
 func (*DsMergeForecastFileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DsMergeForecastFileResponse) GetUri() string {
@@ -1696,7 +1696,7 @@ type DsCreateStudyProfileRequest struct {
 func (x *DsCreateStudyProfileRequest) Reset() {
 	*x = DsCreateStudyProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1709,7 +1709,7 @@ func (x *DsCreateStudyProfileRequest) String() string {
 func (*DsCreateStudyProfileRequest) ProtoMessage() {}
 
 func (x *DsCreateStudyProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1722,7 +1722,7 @@ func (x *DsCreateStudyProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateStudyProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateStudyProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *DsCreateStudyProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1799,7 +1799,7 @@ type DsCreateStudyProfileResponse struct {
 func (x *DsCreateStudyProfileResponse) Reset() {
 	*x = DsCreateStudyProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1812,7 +1812,7 @@ func (x *DsCreateStudyProfileResponse) String() string {
 func (*DsCreateStudyProfileResponse) ProtoMessage() {}
 
 func (x *DsCreateStudyProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1825,7 +1825,7 @@ func (x *DsCreateStudyProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateStudyProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateStudyProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *DsCreateStudyProfileResponse) GetUri() string {
@@ -1853,7 +1853,7 @@ type DsValidateDatasetRequest struct {
 func (x *DsValidateDatasetRequest) Reset() {
 	*x = DsValidateDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1866,7 +1866,7 @@ func (x *DsValidateDatasetRequest) String() string {
 func (*DsValidateDatasetRequest) ProtoMessage() {}
 
 func (x *DsValidateDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1879,7 +1879,7 @@ func (x *DsValidateDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsValidateDatasetRequest.ProtoReflect.Descriptor instead.
 func (*DsValidateDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *DsValidateDatasetRequest) GetProduct() *v1alpha1.DataProduct {
@@ -1942,7 +1942,7 @@ type DsValidateDatasetResponse struct {
 func (x *DsValidateDatasetResponse) Reset() {
 	*x = DsValidateDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1955,7 +1955,7 @@ func (x *DsValidateDatasetResponse) String() string {
 func (*DsValidateDatasetResponse) ProtoMessage() {}
 
 func (x *DsValidateDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1968,7 +1968,7 @@ func (x *DsValidateDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsValidateDatasetResponse.ProtoReflect.Descriptor instead.
 func (*DsValidateDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *DsValidateDatasetResponse) GetResult() []*v1alpha1.DataValidationResult {
@@ -1995,7 +1995,7 @@ type DsGenerateDatasetRequest struct {
 func (x *DsGenerateDatasetRequest) Reset() {
 	*x = DsGenerateDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[27]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2008,7 +2008,7 @@ func (x *DsGenerateDatasetRequest) String() string {
 func (*DsGenerateDatasetRequest) ProtoMessage() {}
 
 func (x *DsGenerateDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[27]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2021,7 +2021,7 @@ func (x *DsGenerateDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGenerateDatasetRequest.ProtoReflect.Descriptor instead.
 func (*DsGenerateDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{27}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *DsGenerateDatasetRequest) GetProduct() *v1alpha1.DataProduct {
@@ -2084,7 +2084,7 @@ type DsGenerateDatasetResponse struct {
 func (x *DsGenerateDatasetResponse) Reset() {
 	*x = DsGenerateDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[28]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2097,7 +2097,7 @@ func (x *DsGenerateDatasetResponse) String() string {
 func (*DsGenerateDatasetResponse) ProtoMessage() {}
 
 func (x *DsGenerateDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[28]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2110,7 +2110,7 @@ func (x *DsGenerateDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGenerateDatasetResponse.ProtoReflect.Descriptor instead.
 func (*DsGenerateDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{28}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *DsGenerateDatasetResponse) GetKey() string {
@@ -2138,7 +2138,7 @@ type DsSplitDatasetRequest struct {
 func (x *DsSplitDatasetRequest) Reset() {
 	*x = DsSplitDatasetRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[29]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2151,7 +2151,7 @@ func (x *DsSplitDatasetRequest) String() string {
 func (*DsSplitDatasetRequest) ProtoMessage() {}
 
 func (x *DsSplitDatasetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[29]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2164,7 +2164,7 @@ func (x *DsSplitDatasetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSplitDatasetRequest.ProtoReflect.Descriptor instead.
 func (*DsSplitDatasetRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{29}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *DsSplitDatasetRequest) GetProduct() *v1alpha1.DataProduct {
@@ -2241,7 +2241,7 @@ type DsSplitDatasetToRungsRequest struct {
 func (x *DsSplitDatasetToRungsRequest) Reset() {
 	*x = DsSplitDatasetToRungsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[30]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2254,7 +2254,7 @@ func (x *DsSplitDatasetToRungsRequest) String() string {
 func (*DsSplitDatasetToRungsRequest) ProtoMessage() {}
 
 func (x *DsSplitDatasetToRungsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[30]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2267,7 +2267,7 @@ func (x *DsSplitDatasetToRungsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSplitDatasetToRungsRequest.ProtoReflect.Descriptor instead.
 func (*DsSplitDatasetToRungsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{30}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *DsSplitDatasetToRungsRequest) GetProduct() *v1alpha1.DataProduct {
@@ -2335,7 +2335,7 @@ type DsSplitDatasetToRungsResponse struct {
 func (x *DsSplitDatasetToRungsResponse) Reset() {
 	*x = DsSplitDatasetToRungsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[31]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2348,7 +2348,7 @@ func (x *DsSplitDatasetToRungsResponse) String() string {
 func (*DsSplitDatasetToRungsResponse) ProtoMessage() {}
 
 func (x *DsSplitDatasetToRungsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[31]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2361,7 +2361,7 @@ func (x *DsSplitDatasetToRungsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSplitDatasetToRungsResponse.ProtoReflect.Descriptor instead.
 func (*DsSplitDatasetToRungsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{31}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{31}
 }
 
 type DsSplitDatasetResponse struct {
@@ -2377,7 +2377,7 @@ type DsSplitDatasetResponse struct {
 func (x *DsSplitDatasetResponse) Reset() {
 	*x = DsSplitDatasetResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[32]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2390,7 +2390,7 @@ func (x *DsSplitDatasetResponse) String() string {
 func (*DsSplitDatasetResponse) ProtoMessage() {}
 
 func (x *DsSplitDatasetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[32]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2403,7 +2403,7 @@ func (x *DsSplitDatasetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSplitDatasetResponse.ProtoReflect.Descriptor instead.
 func (*DsSplitDatasetResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{32}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *DsSplitDatasetResponse) GetTraining() int32 {
@@ -2447,7 +2447,7 @@ type DsCreateColumnProfileRequest struct {
 func (x *DsCreateColumnProfileRequest) Reset() {
 	*x = DsCreateColumnProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[33]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2460,7 +2460,7 @@ func (x *DsCreateColumnProfileRequest) String() string {
 func (*DsCreateColumnProfileRequest) ProtoMessage() {}
 
 func (x *DsCreateColumnProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[33]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2473,7 +2473,7 @@ func (x *DsCreateColumnProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateColumnProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsCreateColumnProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{33}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *DsCreateColumnProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -2551,7 +2551,7 @@ type DsCreateColumnProfileResponse struct {
 func (x *DsCreateColumnProfileResponse) Reset() {
 	*x = DsCreateColumnProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[34]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2564,7 +2564,7 @@ func (x *DsCreateColumnProfileResponse) String() string {
 func (*DsCreateColumnProfileResponse) ProtoMessage() {}
 
 func (x *DsCreateColumnProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[34]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2577,7 +2577,7 @@ func (x *DsCreateColumnProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsCreateColumnProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsCreateColumnProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{34}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *DsCreateColumnProfileResponse) GetName() string {
@@ -2612,7 +2612,7 @@ type DsDatasetProfileRequest struct {
 func (x *DsDatasetProfileRequest) Reset() {
 	*x = DsDatasetProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[35]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2625,7 +2625,7 @@ func (x *DsDatasetProfileRequest) String() string {
 func (*DsDatasetProfileRequest) ProtoMessage() {}
 
 func (x *DsDatasetProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[35]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2638,7 +2638,7 @@ func (x *DsDatasetProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsDatasetProfileRequest.ProtoReflect.Descriptor instead.
 func (*DsDatasetProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{35}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *DsDatasetProfileRequest) GetProduct() *v1alpha1.DataProduct {
@@ -2708,7 +2708,7 @@ type DsDatasetProfileResponse struct {
 func (x *DsDatasetProfileResponse) Reset() {
 	*x = DsDatasetProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[36]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2721,7 +2721,7 @@ func (x *DsDatasetProfileResponse) String() string {
 func (*DsDatasetProfileResponse) ProtoMessage() {}
 
 func (x *DsDatasetProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[36]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2734,7 +2734,7 @@ func (x *DsDatasetProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsDatasetProfileResponse.ProtoReflect.Descriptor instead.
 func (*DsDatasetProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{36}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *DsDatasetProfileResponse) GetProfile() *v1.DatasetProfile {
@@ -2759,7 +2759,7 @@ type DsInferSchemaRequest struct {
 func (x *DsInferSchemaRequest) Reset() {
 	*x = DsInferSchemaRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[37]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2772,7 +2772,7 @@ func (x *DsInferSchemaRequest) String() string {
 func (*DsInferSchemaRequest) ProtoMessage() {}
 
 func (x *DsInferSchemaRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[37]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2785,7 +2785,7 @@ func (x *DsInferSchemaRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsInferSchemaRequest.ProtoReflect.Descriptor instead.
 func (*DsInferSchemaRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{37}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *DsInferSchemaRequest) GetBucket() *v1alpha11.VirtualBucket {
@@ -2834,7 +2834,7 @@ type DsInferSchemaResponse struct {
 func (x *DsInferSchemaResponse) Reset() {
 	*x = DsInferSchemaResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[38]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2847,7 +2847,7 @@ func (x *DsInferSchemaResponse) String() string {
 func (*DsInferSchemaResponse) ProtoMessage() {}
 
 func (x *DsInferSchemaResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[38]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2860,7 +2860,7 @@ func (x *DsInferSchemaResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsInferSchemaResponse.ProtoReflect.Descriptor instead.
 func (*DsInferSchemaResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{38}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *DsInferSchemaResponse) GetProfile() *v1.DatasetProfile {
@@ -2885,7 +2885,7 @@ type DsGetTableViewRequest struct {
 func (x *DsGetTableViewRequest) Reset() {
 	*x = DsGetTableViewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[39]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2898,7 +2898,7 @@ func (x *DsGetTableViewRequest) String() string {
 func (*DsGetTableViewRequest) ProtoMessage() {}
 
 func (x *DsGetTableViewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[39]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2911,7 +2911,7 @@ func (x *DsGetTableViewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetTableViewRequest.ProtoReflect.Descriptor instead.
 func (*DsGetTableViewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{39}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *DsGetTableViewRequest) GetBucket() *v1alpha11.VirtualBucket {
@@ -2960,7 +2960,7 @@ type DsGetTableViewResponse struct {
 func (x *DsGetTableViewResponse) Reset() {
 	*x = DsGetTableViewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[40]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2973,7 +2973,7 @@ func (x *DsGetTableViewResponse) String() string {
 func (*DsGetTableViewResponse) ProtoMessage() {}
 
 func (x *DsGetTableViewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[40]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2986,7 +2986,7 @@ func (x *DsGetTableViewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetTableViewResponse.ProtoReflect.Descriptor instead.
 func (*DsGetTableViewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{40}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *DsGetTableViewResponse) GetTableview() *v1.TableView {
@@ -3010,7 +3010,7 @@ type DsGetMisclassTableViewRequest struct {
 func (x *DsGetMisclassTableViewRequest) Reset() {
 	*x = DsGetMisclassTableViewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[41]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3023,7 +3023,7 @@ func (x *DsGetMisclassTableViewRequest) String() string {
 func (*DsGetMisclassTableViewRequest) ProtoMessage() {}
 
 func (x *DsGetMisclassTableViewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[41]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3036,7 +3036,7 @@ func (x *DsGetMisclassTableViewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetMisclassTableViewRequest.ProtoReflect.Descriptor instead.
 func (*DsGetMisclassTableViewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{41}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *DsGetMisclassTableViewRequest) GetBucket() *v1alpha11.VirtualBucket {
@@ -3078,7 +3078,7 @@ type DsGetMisclassTableViewResponse struct {
 func (x *DsGetMisclassTableViewResponse) Reset() {
 	*x = DsGetMisclassTableViewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[42]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3091,7 +3091,7 @@ func (x *DsGetMisclassTableViewResponse) String() string {
 func (*DsGetMisclassTableViewResponse) ProtoMessage() {}
 
 func (x *DsGetMisclassTableViewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[42]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3104,7 +3104,7 @@ func (x *DsGetMisclassTableViewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetMisclassTableViewResponse.ProtoReflect.Descriptor instead.
 func (*DsGetMisclassTableViewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{42}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *DsGetMisclassTableViewResponse) GetTableview() *v1.TableView {
@@ -3134,7 +3134,7 @@ type CreateModelReportRequest struct {
 func (x *CreateModelReportRequest) Reset() {
 	*x = CreateModelReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[43]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3147,7 +3147,7 @@ func (x *CreateModelReportRequest) String() string {
 func (*CreateModelReportRequest) ProtoMessage() {}
 
 func (x *CreateModelReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[43]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3160,7 +3160,7 @@ func (x *CreateModelReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{43}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *CreateModelReportRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3253,7 +3253,7 @@ type CreateForecastReportRequest struct {
 func (x *CreateForecastReportRequest) Reset() {
 	*x = CreateForecastReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[44]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3266,7 +3266,7 @@ func (x *CreateForecastReportRequest) String() string {
 func (*CreateForecastReportRequest) ProtoMessage() {}
 
 func (x *CreateForecastReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[44]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3279,7 +3279,7 @@ func (x *CreateForecastReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateForecastReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateForecastReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{44}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *CreateForecastReportRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3368,7 +3368,7 @@ type CreateSummaryReportRequest struct {
 func (x *CreateSummaryReportRequest) Reset() {
 	*x = CreateSummaryReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[45]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3381,7 +3381,7 @@ func (x *CreateSummaryReportRequest) String() string {
 func (*CreateSummaryReportRequest) ProtoMessage() {}
 
 func (x *CreateSummaryReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[45]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3394,7 +3394,7 @@ func (x *CreateSummaryReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSummaryReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateSummaryReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{45}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *CreateSummaryReportRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3450,7 +3450,7 @@ type CreateReportResponse struct {
 func (x *CreateReportResponse) Reset() {
 	*x = CreateReportResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[46]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3463,7 +3463,7 @@ func (x *CreateReportResponse) String() string {
 func (*CreateReportResponse) ProtoMessage() {}
 
 func (x *CreateReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[46]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3476,7 +3476,7 @@ func (x *CreateReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReportResponse.ProtoReflect.Descriptor instead.
 func (*CreateReportResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{46}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *CreateReportResponse) GetPdf() []byte {
@@ -3504,7 +3504,7 @@ type CreateDatasetReportRequest struct {
 func (x *CreateDatasetReportRequest) Reset() {
 	*x = CreateDatasetReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[47]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3517,7 +3517,7 @@ func (x *CreateDatasetReportRequest) String() string {
 func (*CreateDatasetReportRequest) ProtoMessage() {}
 
 func (x *CreateDatasetReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[47]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3530,7 +3530,7 @@ func (x *CreateDatasetReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDatasetReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateDatasetReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{47}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *CreateDatasetReportRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3609,7 +3609,7 @@ type CreateStudyReportRequest struct {
 func (x *CreateStudyReportRequest) Reset() {
 	*x = CreateStudyReportRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[48]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3622,7 +3622,7 @@ func (x *CreateStudyReportRequest) String() string {
 func (*CreateStudyReportRequest) ProtoMessage() {}
 
 func (x *CreateStudyReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[48]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3635,7 +3635,7 @@ func (x *CreateStudyReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateStudyReportRequest.ProtoReflect.Descriptor instead.
 func (*CreateStudyReportRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{48}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *CreateStudyReportRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3724,7 +3724,7 @@ type AskModelRequest struct {
 func (x *AskModelRequest) Reset() {
 	*x = AskModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[49]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3737,7 +3737,7 @@ func (x *AskModelRequest) String() string {
 func (*AskModelRequest) ProtoMessage() {}
 
 func (x *AskModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[49]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3750,7 +3750,7 @@ func (x *AskModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AskModelRequest.ProtoReflect.Descriptor instead.
 func (*AskModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{49}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *AskModelRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3806,7 +3806,7 @@ type AskModelResponse struct {
 func (x *AskModelResponse) Reset() {
 	*x = AskModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[50]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3819,7 +3819,7 @@ func (x *AskModelResponse) String() string {
 func (*AskModelResponse) ProtoMessage() {}
 
 func (x *AskModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[50]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3832,7 +3832,7 @@ func (x *AskModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AskModelResponse.ProtoReflect.Descriptor instead.
 func (*AskModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{50}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *AskModelResponse) GetModel() *v1alpha12.Model {
@@ -3858,7 +3858,7 @@ type TellModelRequest struct {
 func (x *TellModelRequest) Reset() {
 	*x = TellModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[51]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3871,7 +3871,7 @@ func (x *TellModelRequest) String() string {
 func (*TellModelRequest) ProtoMessage() {}
 
 func (x *TellModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[51]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3884,7 +3884,7 @@ func (x *TellModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TellModelRequest.ProtoReflect.Descriptor instead.
 func (*TellModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{51}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *TellModelRequest) GetProduct() *v1alpha1.DataProduct {
@@ -3938,7 +3938,7 @@ type TellModelResponse struct {
 func (x *TellModelResponse) Reset() {
 	*x = TellModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[52]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3951,7 +3951,7 @@ func (x *TellModelResponse) String() string {
 func (*TellModelResponse) ProtoMessage() {}
 
 func (x *TellModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[52]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3964,7 +3964,7 @@ func (x *TellModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TellModelResponse.ProtoReflect.Descriptor instead.
 func (*TellModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{52}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{52}
 }
 
 type DsShutdownRequest struct {
@@ -3976,7 +3976,7 @@ type DsShutdownRequest struct {
 func (x *DsShutdownRequest) Reset() {
 	*x = DsShutdownRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[53]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3989,7 +3989,7 @@ func (x *DsShutdownRequest) String() string {
 func (*DsShutdownRequest) ProtoMessage() {}
 
 func (x *DsShutdownRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[53]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4002,7 +4002,7 @@ func (x *DsShutdownRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsShutdownRequest.ProtoReflect.Descriptor instead.
 func (*DsShutdownRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{53}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{53}
 }
 
 type DsShutdownResponse struct {
@@ -4014,7 +4014,7 @@ type DsShutdownResponse struct {
 func (x *DsShutdownResponse) Reset() {
 	*x = DsShutdownResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[54]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4027,7 +4027,7 @@ func (x *DsShutdownResponse) String() string {
 func (*DsShutdownResponse) ProtoMessage() {}
 
 func (x *DsShutdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[54]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4040,7 +4040,7 @@ func (x *DsShutdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsShutdownResponse.ProtoReflect.Descriptor instead.
 func (*DsShutdownResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{54}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{54}
 }
 
 type ValidateModelRequest struct {
@@ -4063,7 +4063,7 @@ type ValidateModelRequest struct {
 func (x *ValidateModelRequest) Reset() {
 	*x = ValidateModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[55]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4076,7 +4076,7 @@ func (x *ValidateModelRequest) String() string {
 func (*ValidateModelRequest) ProtoMessage() {}
 
 func (x *ValidateModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[55]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4089,7 +4089,7 @@ func (x *ValidateModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateModelRequest.ProtoReflect.Descriptor instead.
 func (*ValidateModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{55}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *ValidateModelRequest) GetProduct() *v1alpha1.DataProduct {
@@ -4173,7 +4173,7 @@ type ValidateModelResponse struct {
 func (x *ValidateModelResponse) Reset() {
 	*x = ValidateModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[56]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4186,7 +4186,7 @@ func (x *ValidateModelResponse) String() string {
 func (*ValidateModelResponse) ProtoMessage() {}
 
 func (x *ValidateModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[56]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4199,7 +4199,7 @@ func (x *ValidateModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateModelResponse.ProtoReflect.Descriptor instead.
 func (*ValidateModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{56}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *ValidateModelResponse) GetResult() []*v1alpha12.ModelValidationResult {
@@ -4222,7 +4222,7 @@ type DsTestConnectionRequest struct {
 func (x *DsTestConnectionRequest) Reset() {
 	*x = DsTestConnectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[57]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4235,7 +4235,7 @@ func (x *DsTestConnectionRequest) String() string {
 func (*DsTestConnectionRequest) ProtoMessage() {}
 
 func (x *DsTestConnectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[57]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4248,7 +4248,7 @@ func (x *DsTestConnectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsTestConnectionRequest.ProtoReflect.Descriptor instead.
 func (*DsTestConnectionRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{57}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *DsTestConnectionRequest) GetConnection() *v1alpha11.Connection {
@@ -4284,7 +4284,7 @@ type DsTestConnectionResponse struct {
 func (x *DsTestConnectionResponse) Reset() {
 	*x = DsTestConnectionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[58]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4297,7 +4297,7 @@ func (x *DsTestConnectionResponse) String() string {
 func (*DsTestConnectionResponse) ProtoMessage() {}
 
 func (x *DsTestConnectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[58]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4310,7 +4310,7 @@ func (x *DsTestConnectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsTestConnectionResponse.ProtoReflect.Descriptor instead.
 func (*DsTestConnectionResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{58}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *DsTestConnectionResponse) GetStatus() bool {
@@ -4345,7 +4345,7 @@ type DsStudyEndedRequest struct {
 func (x *DsStudyEndedRequest) Reset() {
 	*x = DsStudyEndedRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[59]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[59]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4358,7 +4358,7 @@ func (x *DsStudyEndedRequest) String() string {
 func (*DsStudyEndedRequest) ProtoMessage() {}
 
 func (x *DsStudyEndedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[59]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[59]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4371,7 +4371,7 @@ func (x *DsStudyEndedRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsStudyEndedRequest.ProtoReflect.Descriptor instead.
 func (*DsStudyEndedRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{59}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *DsStudyEndedRequest) GetProduct() *v1alpha1.DataProduct {
@@ -4439,7 +4439,7 @@ type DsStudyEndedResponse struct {
 func (x *DsStudyEndedResponse) Reset() {
 	*x = DsStudyEndedResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[60]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[60]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4452,7 +4452,7 @@ func (x *DsStudyEndedResponse) String() string {
 func (*DsStudyEndedResponse) ProtoMessage() {}
 
 func (x *DsStudyEndedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[60]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[60]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4465,7 +4465,7 @@ func (x *DsStudyEndedResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsStudyEndedResponse.ProtoReflect.Descriptor instead.
 func (*DsStudyEndedResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{60}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{60}
 }
 
 type SaveOptimizerDBRequest struct {
@@ -4486,7 +4486,7 @@ type SaveOptimizerDBRequest struct {
 func (x *SaveOptimizerDBRequest) Reset() {
 	*x = SaveOptimizerDBRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[61]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[61]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4499,7 +4499,7 @@ func (x *SaveOptimizerDBRequest) String() string {
 func (*SaveOptimizerDBRequest) ProtoMessage() {}
 
 func (x *SaveOptimizerDBRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[61]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[61]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4512,7 +4512,7 @@ func (x *SaveOptimizerDBRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SaveOptimizerDBRequest.ProtoReflect.Descriptor instead.
 func (*SaveOptimizerDBRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{61}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *SaveOptimizerDBRequest) GetProduct() *v1alpha1.DataProduct {
@@ -4580,7 +4580,7 @@ type SaveOptimizerDBResponse struct {
 func (x *SaveOptimizerDBResponse) Reset() {
 	*x = SaveOptimizerDBResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[62]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[62]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4593,7 +4593,7 @@ func (x *SaveOptimizerDBResponse) String() string {
 func (*SaveOptimizerDBResponse) ProtoMessage() {}
 
 func (x *SaveOptimizerDBResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[62]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[62]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4606,7 +4606,7 @@ func (x *SaveOptimizerDBResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SaveOptimizerDBResponse.ProtoReflect.Descriptor instead.
 func (*SaveOptimizerDBResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{62}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{62}
 }
 
 type DsGetDatabasesRequest struct {
@@ -4621,7 +4621,7 @@ type DsGetDatabasesRequest struct {
 func (x *DsGetDatabasesRequest) Reset() {
 	*x = DsGetDatabasesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[63]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[63]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4634,7 +4634,7 @@ func (x *DsGetDatabasesRequest) String() string {
 func (*DsGetDatabasesRequest) ProtoMessage() {}
 
 func (x *DsGetDatabasesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[63]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[63]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4647,7 +4647,7 @@ func (x *DsGetDatabasesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetDatabasesRequest.ProtoReflect.Descriptor instead.
 func (*DsGetDatabasesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{63}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *DsGetDatabasesRequest) GetConnection() *v1alpha11.Connection {
@@ -4675,7 +4675,7 @@ type DsGetDatabasesResponse struct {
 func (x *DsGetDatabasesResponse) Reset() {
 	*x = DsGetDatabasesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[64]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[64]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4688,7 +4688,7 @@ func (x *DsGetDatabasesResponse) String() string {
 func (*DsGetDatabasesResponse) ProtoMessage() {}
 
 func (x *DsGetDatabasesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[64]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[64]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4701,7 +4701,7 @@ func (x *DsGetDatabasesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetDatabasesResponse.ProtoReflect.Descriptor instead.
 func (*DsGetDatabasesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{64}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *DsGetDatabasesResponse) GetDatabases() []string {
@@ -4724,7 +4724,7 @@ type DsGetTablesRequest struct {
 func (x *DsGetTablesRequest) Reset() {
 	*x = DsGetTablesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[65]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[65]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4737,7 +4737,7 @@ func (x *DsGetTablesRequest) String() string {
 func (*DsGetTablesRequest) ProtoMessage() {}
 
 func (x *DsGetTablesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[65]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[65]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4750,7 +4750,7 @@ func (x *DsGetTablesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetTablesRequest.ProtoReflect.Descriptor instead.
 func (*DsGetTablesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{65}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *DsGetTablesRequest) GetConnection() *v1alpha11.Connection {
@@ -4785,7 +4785,7 @@ type DsGetTablesResponse struct {
 func (x *DsGetTablesResponse) Reset() {
 	*x = DsGetTablesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[66]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[66]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4798,7 +4798,7 @@ func (x *DsGetTablesResponse) String() string {
 func (*DsGetTablesResponse) ProtoMessage() {}
 
 func (x *DsGetTablesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[66]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[66]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4811,7 +4811,7 @@ func (x *DsGetTablesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsGetTablesResponse.ProtoReflect.Descriptor instead.
 func (*DsGetTablesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{66}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *DsGetTablesResponse) GetTables() []string {
@@ -4835,7 +4835,7 @@ type DsExecuteSqlRequest struct {
 func (x *DsExecuteSqlRequest) Reset() {
 	*x = DsExecuteSqlRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[67]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[67]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4848,7 +4848,7 @@ func (x *DsExecuteSqlRequest) String() string {
 func (*DsExecuteSqlRequest) ProtoMessage() {}
 
 func (x *DsExecuteSqlRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[67]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[67]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4861,7 +4861,7 @@ func (x *DsExecuteSqlRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsExecuteSqlRequest.ProtoReflect.Descriptor instead.
 func (*DsExecuteSqlRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{67}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *DsExecuteSqlRequest) GetConnection() *v1alpha11.Connection {
@@ -4903,7 +4903,7 @@ type DsExecuteSqlResponse struct {
 func (x *DsExecuteSqlResponse) Reset() {
 	*x = DsExecuteSqlResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[68]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[68]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4916,7 +4916,7 @@ func (x *DsExecuteSqlResponse) String() string {
 func (*DsExecuteSqlResponse) ProtoMessage() {}
 
 func (x *DsExecuteSqlResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[68]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[68]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4929,7 +4929,7 @@ func (x *DsExecuteSqlResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsExecuteSqlResponse.ProtoReflect.Descriptor instead.
 func (*DsExecuteSqlResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{68}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *DsExecuteSqlResponse) GetTableview() *v1.TableView {
@@ -4959,7 +4959,7 @@ type DsSnapshotRequest struct {
 func (x *DsSnapshotRequest) Reset() {
 	*x = DsSnapshotRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[69]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[69]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4972,7 +4972,7 @@ func (x *DsSnapshotRequest) String() string {
 func (*DsSnapshotRequest) ProtoMessage() {}
 
 func (x *DsSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[69]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[69]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4985,7 +4985,7 @@ func (x *DsSnapshotRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*DsSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{69}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *DsSnapshotRequest) GetProduct() *v1alpha1.DataProduct {
@@ -5067,7 +5067,7 @@ type DsSnapshotResponse struct {
 func (x *DsSnapshotResponse) Reset() {
 	*x = DsSnapshotResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[70]
+		mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[70]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5080,7 +5080,7 @@ func (x *DsSnapshotResponse) String() string {
 func (*DsSnapshotResponse) ProtoMessage() {}
 
 func (x *DsSnapshotResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[70]
+	mi := &file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[70]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5093,12 +5093,12 @@ func (x *DsSnapshotResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DsSnapshotResponse.ProtoReflect.Descriptor instead.
 func (*DsSnapshotResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP(), []int{70}
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP(), []int{70}
 }
 
-var File_github_com_metaprov_modeldapi_services_data_v1_data_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_data_v1_data_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc = []byte{
 	0x0a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x2f, 0x76, 0x31,
@@ -7379,482 +7379,482 @@ var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDesc = []b
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescData = file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescData = file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes = make([]protoimpl.MessageInfo, 107)
-var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_goTypes = []interface{}{
-	(*DsReadFileRequest)(nil),                      // 0: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest
-	(*DsReadFeatureRequest)(nil),                   // 1: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest
-	(*DsWriteFileRequest)(nil),                     // 2: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest
-	(*DsReadAudioRequest)(nil),                     // 3: github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest
-	(*DsReadTextCorpusRequest)(nil),                // 4: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest
-	(*DsReadFromStoreResponse)(nil),                // 5: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse
-	(*DsRunDataPipelineRequest)(nil),               // 6: github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineRequest
-	(*DsRunDataPipelineResponse)(nil),              // 7: github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineResponse
-	(*DsRunRecipeRequest)(nil),                     // 8: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest
-	(*DsRunRecipeResponse)(nil),                    // 9: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeResponse
-	(*DsCreateRecipeProfileRequest)(nil),           // 10: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest
-	(*DsCreateRecipeProfileResponse)(nil),          // 11: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileResponse
-	(*DataSourceResponse)(nil),                     // 12: github.com.metaprov.modeldapi.services.data.v1.DataSourceResponse
-	(*DatasetResponse)(nil),                        // 13: github.com.metaprov.modeldapi.services.data.v1.DatasetResponse
-	(*DsCreateDatasetProfileRequest)(nil),          // 14: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest
-	(*DsCreateDatasetProfileResponse)(nil),         // 15: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileResponse
-	(*DsCreateModelProfileRequest)(nil),            // 16: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest
-	(*DsCreateModelProfileResponse)(nil),           // 17: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileResponse
-	(*DsCreateForecastPartitionFilesRequest)(nil),  // 18: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest
-	(*DsCreateForecastPartitionFilesResponse)(nil), // 19: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesResponse
-	(*PartitionValues)(nil),                        // 20: github.com.metaprov.modeldapi.services.data.v1.PartitionValues
-	(*DsMergeForecastFileRequest)(nil),             // 21: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest
-	(*DsMergeForecastFileResponse)(nil),            // 22: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileResponse
-	(*DsCreateStudyProfileRequest)(nil),            // 23: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest
-	(*DsCreateStudyProfileResponse)(nil),           // 24: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileResponse
-	(*DsValidateDatasetRequest)(nil),               // 25: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest
-	(*DsValidateDatasetResponse)(nil),              // 26: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse
-	(*DsGenerateDatasetRequest)(nil),               // 27: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest
-	(*DsGenerateDatasetResponse)(nil),              // 28: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetResponse
-	(*DsSplitDatasetRequest)(nil),                  // 29: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest
-	(*DsSplitDatasetToRungsRequest)(nil),           // 30: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest
-	(*DsSplitDatasetToRungsResponse)(nil),          // 31: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsResponse
-	(*DsSplitDatasetResponse)(nil),                 // 32: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse
-	(*DsCreateColumnProfileRequest)(nil),           // 33: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest
-	(*DsCreateColumnProfileResponse)(nil),          // 34: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileResponse
-	(*DsDatasetProfileRequest)(nil),                // 35: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest
-	(*DsDatasetProfileResponse)(nil),               // 36: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileResponse
-	(*DsInferSchemaRequest)(nil),                   // 37: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest
-	(*DsInferSchemaResponse)(nil),                  // 38: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaResponse
-	(*DsGetTableViewRequest)(nil),                  // 39: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest
-	(*DsGetTableViewResponse)(nil),                 // 40: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewResponse
-	(*DsGetMisclassTableViewRequest)(nil),          // 41: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest
-	(*DsGetMisclassTableViewResponse)(nil),         // 42: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewResponse
-	(*CreateModelReportRequest)(nil),               // 43: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest
-	(*CreateForecastReportRequest)(nil),            // 44: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest
-	(*CreateSummaryReportRequest)(nil),             // 45: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest
-	(*CreateReportResponse)(nil),                   // 46: github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	(*CreateDatasetReportRequest)(nil),             // 47: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest
-	(*CreateStudyReportRequest)(nil),               // 48: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest
-	(*AskModelRequest)(nil),                        // 49: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest
-	(*AskModelResponse)(nil),                       // 50: github.com.metaprov.modeldapi.services.data.v1.AskModelResponse
-	(*TellModelRequest)(nil),                       // 51: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest
-	(*TellModelResponse)(nil),                      // 52: github.com.metaprov.modeldapi.services.data.v1.TellModelResponse
-	(*DsShutdownRequest)(nil),                      // 53: github.com.metaprov.modeldapi.services.data.v1.DsShutdownRequest
-	(*DsShutdownResponse)(nil),                     // 54: github.com.metaprov.modeldapi.services.data.v1.DsShutdownResponse
-	(*ValidateModelRequest)(nil),                   // 55: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest
-	(*ValidateModelResponse)(nil),                  // 56: github.com.metaprov.modeldapi.services.data.v1.ValidateModelResponse
-	(*DsTestConnectionRequest)(nil),                // 57: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest
-	(*DsTestConnectionResponse)(nil),               // 58: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionResponse
-	(*DsStudyEndedRequest)(nil),                    // 59: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest
-	(*DsStudyEndedResponse)(nil),                   // 60: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedResponse
-	(*SaveOptimizerDBRequest)(nil),                 // 61: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest
-	(*SaveOptimizerDBResponse)(nil),                // 62: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBResponse
-	(*DsGetDatabasesRequest)(nil),                  // 63: github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest
-	(*DsGetDatabasesResponse)(nil),                 // 64: github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesResponse
-	(*DsGetTablesRequest)(nil),                     // 65: github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest
-	(*DsGetTablesResponse)(nil),                    // 66: github.com.metaprov.modeldapi.services.data.v1.DsGetTablesResponse
-	(*DsExecuteSqlRequest)(nil),                    // 67: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest
-	(*DsExecuteSqlResponse)(nil),                   // 68: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlResponse
-	(*DsSnapshotRequest)(nil),                      // 69: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest
-	(*DsSnapshotResponse)(nil),                     // 70: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotResponse
-	nil,                                            // 71: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.SecretEntry
-	nil,                                            // 72: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.SecretEntry
-	nil,                                            // 73: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.SecretEntry
-	nil,                                            // 74: github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.SecretEntry
-	nil,                                            // 75: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry
-	nil,                                            // 76: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.SecretEntry
-	nil,                                            // 77: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.SecretEntry
-	nil,                                            // 78: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry
-	nil,                                            // 79: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry
-	nil,                                            // 80: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry
-	nil,                                            // 81: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry
-	nil,                                            // 82: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry
-	nil,                                            // 83: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry
-	nil,                                            // 84: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.SecretEntry
-	nil,                                            // 85: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry
-	nil,                                            // 86: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.SecretEntry
-	nil,                                            // 87: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry
-	nil,                                            // 88: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry
-	nil,                                            // 89: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.SecretEntry
-	nil,                                            // 90: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.SecretEntry
-	nil,                                            // 91: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.SecretEntry
-	nil,                                            // 92: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
-	nil,                                            // 93: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.SecretEntry
-	nil,                                            // 94: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.SecretEntry
-	nil,                                            // 95: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
-	nil,                                            // 96: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
-	nil,                                            // 97: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.SecretEntry
-	nil,                                            // 98: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.SecretEntry
-	nil,                                            // 99: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest.SecretEntry
-	nil,                                            // 100: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.SecretEntry
-	nil,                                            // 101: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
-	nil,                                            // 102: github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
-	nil,                                            // 103: github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest.SecretEntry
-	nil,                                            // 104: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
-	nil,                                            // 105: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
-	nil,                                            // 106: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
-	(*v1alpha1.DataProduct)(nil),                   // 107: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	(*v1alpha1.DataProductVersion)(nil),            // 108: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	(*v1alpha11.Connection)(nil),                   // 109: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	(*v1alpha11.VirtualBucket)(nil),                // 110: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	(*v1alpha1.Dataset)(nil),                       // 111: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	(*v1alpha1.DataPipeline)(nil),                  // 112: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline
-	(*v1alpha1.DataSource)(nil),                    // 113: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1alpha1.Recipe)(nil),                        // 114: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	(*v1alpha1.RecipeRun)(nil),                     // 115: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
-	(*v1.TableView)(nil),                           // 116: github.com.metaprov.modeldapi.services.common.v1.TableView
-	(*v1.DatasetProfile)(nil),                      // 117: github.com.metaprov.modeldapi.services.common.v1.DatasetProfile
-	(*v1alpha12.Study)(nil),                        // 118: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	(*v1alpha12.Model)(nil),                        // 119: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1alpha12.ForecastObj)(nil),                  // 120: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj
-	(*v1alpha1.DataValidationResult)(nil),          // 121: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult
-	(*v1.Plot)(nil),                                // 122: github.com.metaprov.modeldapi.services.common.v1.Plot
-	(*v1alpha1.FlatFileSpec)(nil),                  // 123: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	(*v1alpha1.DataLocation)(nil),                  // 124: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	(*v1alpha12.Report)(nil),                       // 125: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	(*v1alpha12.ModelList)(nil),                    // 126: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList
-	(*v1alpha13.Predictor)(nil),                    // 127: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	(*v1alpha12.ModelValidationResult)(nil),        // 128: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult
+var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes = make([]protoimpl.MessageInfo, 107)
+var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_goTypes = []interface{}{
+	(*DsReadFileRequest)(nil),                      // 0: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest
+	(*DsReadFeatureRequest)(nil),                   // 1: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest
+	(*DsWriteFileRequest)(nil),                     // 2: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest
+	(*DsReadAudioRequest)(nil),                     // 3: github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest
+	(*DsReadTextCorpusRequest)(nil),                // 4: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest
+	(*DsReadFromStoreResponse)(nil),                // 5: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	(*DsRunDataPipelineRequest)(nil),               // 6: github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest
+	(*DsRunDataPipelineResponse)(nil),              // 7: github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse
+	(*DsRunRecipeRequest)(nil),                     // 8: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest
+	(*DsRunRecipeResponse)(nil),                    // 9: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse
+	(*DsCreateRecipeProfileRequest)(nil),           // 10: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest
+	(*DsCreateRecipeProfileResponse)(nil),          // 11: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse
+	(*DataSourceResponse)(nil),                     // 12: github.com.metaprov.modelaapi.services.data.v1.DataSourceResponse
+	(*DatasetResponse)(nil),                        // 13: github.com.metaprov.modelaapi.services.data.v1.DatasetResponse
+	(*DsCreateDatasetProfileRequest)(nil),          // 14: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest
+	(*DsCreateDatasetProfileResponse)(nil),         // 15: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse
+	(*DsCreateModelProfileRequest)(nil),            // 16: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest
+	(*DsCreateModelProfileResponse)(nil),           // 17: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse
+	(*DsCreateForecastPartitionFilesRequest)(nil),  // 18: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest
+	(*DsCreateForecastPartitionFilesResponse)(nil), // 19: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesResponse
+	(*PartitionValues)(nil),                        // 20: github.com.metaprov.modelaapi.services.data.v1.PartitionValues
+	(*DsMergeForecastFileRequest)(nil),             // 21: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest
+	(*DsMergeForecastFileResponse)(nil),            // 22: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse
+	(*DsCreateStudyProfileRequest)(nil),            // 23: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest
+	(*DsCreateStudyProfileResponse)(nil),           // 24: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse
+	(*DsValidateDatasetRequest)(nil),               // 25: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest
+	(*DsValidateDatasetResponse)(nil),              // 26: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse
+	(*DsGenerateDatasetRequest)(nil),               // 27: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest
+	(*DsGenerateDatasetResponse)(nil),              // 28: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse
+	(*DsSplitDatasetRequest)(nil),                  // 29: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest
+	(*DsSplitDatasetToRungsRequest)(nil),           // 30: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest
+	(*DsSplitDatasetToRungsResponse)(nil),          // 31: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse
+	(*DsSplitDatasetResponse)(nil),                 // 32: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse
+	(*DsCreateColumnProfileRequest)(nil),           // 33: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest
+	(*DsCreateColumnProfileResponse)(nil),          // 34: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse
+	(*DsDatasetProfileRequest)(nil),                // 35: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest
+	(*DsDatasetProfileResponse)(nil),               // 36: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileResponse
+	(*DsInferSchemaRequest)(nil),                   // 37: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest
+	(*DsInferSchemaResponse)(nil),                  // 38: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse
+	(*DsGetTableViewRequest)(nil),                  // 39: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest
+	(*DsGetTableViewResponse)(nil),                 // 40: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse
+	(*DsGetMisclassTableViewRequest)(nil),          // 41: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest
+	(*DsGetMisclassTableViewResponse)(nil),         // 42: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse
+	(*CreateModelReportRequest)(nil),               // 43: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest
+	(*CreateForecastReportRequest)(nil),            // 44: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
+	(*CreateSummaryReportRequest)(nil),             // 45: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest
+	(*CreateReportResponse)(nil),                   // 46: github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	(*CreateDatasetReportRequest)(nil),             // 47: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest
+	(*CreateStudyReportRequest)(nil),               // 48: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest
+	(*AskModelRequest)(nil),                        // 49: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest
+	(*AskModelResponse)(nil),                       // 50: github.com.metaprov.modelaapi.services.data.v1.AskModelResponse
+	(*TellModelRequest)(nil),                       // 51: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest
+	(*TellModelResponse)(nil),                      // 52: github.com.metaprov.modelaapi.services.data.v1.TellModelResponse
+	(*DsShutdownRequest)(nil),                      // 53: github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest
+	(*DsShutdownResponse)(nil),                     // 54: github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse
+	(*ValidateModelRequest)(nil),                   // 55: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest
+	(*ValidateModelResponse)(nil),                  // 56: github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse
+	(*DsTestConnectionRequest)(nil),                // 57: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest
+	(*DsTestConnectionResponse)(nil),               // 58: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse
+	(*DsStudyEndedRequest)(nil),                    // 59: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest
+	(*DsStudyEndedResponse)(nil),                   // 60: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse
+	(*SaveOptimizerDBRequest)(nil),                 // 61: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest
+	(*SaveOptimizerDBResponse)(nil),                // 62: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse
+	(*DsGetDatabasesRequest)(nil),                  // 63: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest
+	(*DsGetDatabasesResponse)(nil),                 // 64: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse
+	(*DsGetTablesRequest)(nil),                     // 65: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest
+	(*DsGetTablesResponse)(nil),                    // 66: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse
+	(*DsExecuteSqlRequest)(nil),                    // 67: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest
+	(*DsExecuteSqlResponse)(nil),                   // 68: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse
+	(*DsSnapshotRequest)(nil),                      // 69: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest
+	(*DsSnapshotResponse)(nil),                     // 70: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse
+	nil,                                            // 71: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.SecretEntry
+	nil,                                            // 72: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.SecretEntry
+	nil,                                            // 73: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.SecretEntry
+	nil,                                            // 74: github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.SecretEntry
+	nil,                                            // 75: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry
+	nil,                                            // 76: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.SecretEntry
+	nil,                                            // 77: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretEntry
+	nil,                                            // 78: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry
+	nil,                                            // 79: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry
+	nil,                                            // 80: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry
+	nil,                                            // 81: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry
+	nil,                                            // 82: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry
+	nil,                                            // 83: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry
+	nil,                                            // 84: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.SecretEntry
+	nil,                                            // 85: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry
+	nil,                                            // 86: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.SecretEntry
+	nil,                                            // 87: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry
+	nil,                                            // 88: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry
+	nil,                                            // 89: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.SecretEntry
+	nil,                                            // 90: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry
+	nil,                                            // 91: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry
+	nil,                                            // 92: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
+	nil,                                            // 93: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry
+	nil,                                            // 94: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry
+	nil,                                            // 95: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
+	nil,                                            // 96: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
+	nil,                                            // 97: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry
+	nil,                                            // 98: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.SecretEntry
+	nil,                                            // 99: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry
+	nil,                                            // 100: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry
+	nil,                                            // 101: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
+	nil,                                            // 102: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
+	nil,                                            // 103: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry
+	nil,                                            // 104: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
+	nil,                                            // 105: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
+	nil,                                            // 106: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
+	(*v1alpha1.DataProduct)(nil),                   // 107: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	(*v1alpha1.DataProductVersion)(nil),            // 108: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	(*v1alpha11.Connection)(nil),                   // 109: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	(*v1alpha11.VirtualBucket)(nil),                // 110: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	(*v1alpha1.Dataset)(nil),                       // 111: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	(*v1alpha1.DataPipeline)(nil),                  // 112: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline
+	(*v1alpha1.DataSource)(nil),                    // 113: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	(*v1alpha1.Recipe)(nil),                        // 114: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	(*v1alpha1.RecipeRun)(nil),                     // 115: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun
+	(*v1.TableView)(nil),                           // 116: github.com.metaprov.modelaapi.services.common.v1.TableView
+	(*v1.DatasetProfile)(nil),                      // 117: github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	(*v1alpha12.Study)(nil),                        // 118: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	(*v1alpha12.Model)(nil),                        // 119: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	(*v1alpha12.ForecastObj)(nil),                  // 120: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj
+	(*v1alpha1.DataValidationResult)(nil),          // 121: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult
+	(*v1.Plot)(nil),                                // 122: github.com.metaprov.modelaapi.services.common.v1.Plot
+	(*v1alpha1.FlatFileSpec)(nil),                  // 123: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	(*v1alpha1.DataLocation)(nil),                  // 124: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1alpha12.Report)(nil),                       // 125: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	(*v1alpha12.ModelList)(nil),                    // 126: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
+	(*v1alpha13.Predictor)(nil),                    // 127: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	(*v1alpha12.ModelValidationResult)(nil),        // 128: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult
 }
-var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_depIdxs = []int32{
-	107, // 0: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 1: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	109, // 2: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 3: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	71,  // 4: github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest.SecretEntry
-	107, // 5: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 6: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	110, // 7: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 8: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	72,  // 9: github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest.SecretEntry
-	107, // 10: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 11: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	111, // 12: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.content:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	110, // 13: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 14: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	73,  // 15: github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest.SecretEntry
-	110, // 16: github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 17: github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	74,  // 18: github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest.SecretEntry
-	107, // 19: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 20: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	110, // 21: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 22: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	75,  // 23: github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry
-	107, // 24: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 25: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	111, // 26: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	110, // 27: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 28: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	76,  // 29: github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse.SecretEntry
-	112, // 30: github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineRequest.pipeline:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline
-	111, // 31: github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	107, // 32: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 33: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 34: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 35: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 36: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 37: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	77,  // 38: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.SecretEntry
-	114, // 39: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.recipe:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	115, // 40: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest.reciperun:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun
-	114, // 41: github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	107, // 42: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 43: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 44: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 45: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 46: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 47: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	78,  // 48: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry
-	114, // 49: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest.recipe:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe
-	116, // 50: github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileResponse.result:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	107, // 51: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 52: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 53: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 54: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 55: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 56: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	79,  // 57: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry
-	117, // 58: github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileResponse.profile:type_name -> github.com.metaprov.modeldapi.services.common.v1.DatasetProfile
-	107, // 59: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 60: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 61: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 62: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 63: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	119, // 64: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	109, // 65: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 66: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	80,  // 67: github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry
-	107, // 68: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 69: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 70: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 71: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 72: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	119, // 73: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	109, // 74: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 75: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	81,  // 76: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry
-	120, // 77: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest.forecasts:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ForecastObj
-	20,  // 78: github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesResponse.partitions:type_name -> github.com.metaprov.modeldapi.services.data.v1.PartitionValues
-	107, // 79: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 80: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 81: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 82: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 83: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	119, // 84: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	109, // 85: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 86: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	82,  // 87: github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry
-	107, // 88: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 89: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 90: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	118, // 91: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	111, // 92: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 93: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 94: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	119, // 95: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.models:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	83,  // 96: github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry
-	107, // 97: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 98: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 99: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 100: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 101: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 102: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	84,  // 103: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest.SecretEntry
-	121, // 104: github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataValidationResult
-	107, // 105: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 106: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 107: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	109, // 108: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 109: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	85,  // 110: github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry
-	107, // 111: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 112: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	110, // 113: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	113, // 114: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 115: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 116: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	109, // 117: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	86,  // 118: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest.SecretEntry
-	107, // 119: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 120: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	110, // 121: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	113, // 122: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 123: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 124: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	87,  // 125: github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry
-	107, // 126: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 127: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 128: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 129: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	110, // 130: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 131: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	88,  // 132: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry
-	122, // 133: github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileResponse.plot:type_name -> github.com.metaprov.modeldapi.services.common.v1.Plot
-	107, // 134: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 135: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 136: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 137: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	110, // 138: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 139: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	89,  // 140: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileRequest.SecretEntry
-	117, // 141: github.com.metaprov.modeldapi.services.data.v1.DsDatasetProfileResponse.profile:type_name -> github.com.metaprov.modeldapi.services.common.v1.DatasetProfile
-	110, // 142: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	123, // 143: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.flatfile:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	124, // 144: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.location:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	109, // 145: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	90,  // 146: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest.SecretEntry
-	117, // 147: github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaResponse.profile:type_name -> github.com.metaprov.modeldapi.services.common.v1.DatasetProfile
-	110, // 148: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	123, // 149: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	124, // 150: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.location:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation
-	109, // 151: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	91,  // 152: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest.SecretEntry
-	116, // 153: github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewResponse.tableview:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	110, // 154: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 155: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	92,  // 156: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
-	116, // 157: github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewResponse.tableview:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	107, // 158: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 159: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	118, // 160: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	111, // 161: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	113, // 162: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	119, // 163: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	109, // 164: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	93,  // 165: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.SecretEntry
-	110, // 166: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	125, // 167: github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest.report:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	107, // 168: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 169: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	118, // 170: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	111, // 171: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	113, // 172: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	119, // 173: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.forecast:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	109, // 174: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	94,  // 175: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.SecretEntry
-	110, // 176: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	125, // 177: github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest.report:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	107, // 178: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 179: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	109, // 180: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	95,  // 181: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
-	110, // 182: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	125, // 183: github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest.report:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	107, // 184: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 185: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 186: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 187: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 188: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 189: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	96,  // 190: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
-	125, // 191: github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest.report:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	107, // 192: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 193: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	118, // 194: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	111, // 195: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	113, // 196: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	126, // 197: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.models:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList
-	110, // 198: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	109, // 199: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	97,  // 200: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.SecretEntry
-	125, // 201: github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest.report:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report
-	107, // 202: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 203: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	118, // 204: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	113, // 205: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 206: github.com.metaprov.modeldapi.services.data.v1.AskModelRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	119, // 207: github.com.metaprov.modeldapi.services.data.v1.AskModelResponse.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	107, // 208: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 209: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	118, // 210: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	113, // 211: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 212: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	119, // 213: github.com.metaprov.modeldapi.services.data.v1.TellModelRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	107, // 214: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 215: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 216: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 217: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 218: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	119, // 219: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.model:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	127, // 220: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.predictor:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	109, // 221: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 222: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	98,  // 223: github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest.SecretEntry
-	128, // 224: github.com.metaprov.modeldapi.services.data.v1.ValidateModelResponse.result:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelValidationResult
-	109, // 225: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 226: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	99,  // 227: github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest.SecretEntry
-	107, // 228: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 229: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 230: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 231: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 232: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	109, // 233: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 234: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	100, // 235: github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest.SecretEntry
-	107, // 236: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 237: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 238: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 239: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	118, // 240: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.study:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study
-	109, // 241: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	110, // 242: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	101, // 243: github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
-	109, // 244: github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	102, // 245: github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
-	109, // 246: github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	103, // 247: github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest.SecretEntry
-	109, // 248: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.connection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	104, // 249: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.secret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
-	116, // 250: github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlResponse.tableview:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	107, // 251: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.product:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct
-	108, // 252: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.version:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion
-	113, // 253: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.datasource:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 254: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.dataset:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset
-	109, // 255: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.dbconnection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	105, // 256: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.dbsecret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
-	109, // 257: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.storageconnection:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection
-	106, // 258: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.storagesecret:type_name -> github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
-	110, // 259: github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest.bucket:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	0,   // 260: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadFile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFileRequest
-	1,   // 261: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadFeature:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFeatureRequest
-	3,   // 262: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadAudio:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadAudioRequest
-	6,   // 263: github.com.metaprov.modeldapi.services.data.v1.DataService.RunDataPipeline:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineRequest
-	8,   // 264: github.com.metaprov.modeldapi.services.data.v1.DataService.RunRecipe:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeRequest
-	2,   // 265: github.com.metaprov.modeldapi.services.data.v1.DataService.WriteFile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsWriteFileRequest
-	25,  // 266: github.com.metaprov.modeldapi.services.data.v1.DataService.ValidateDataset:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetRequest
-	27,  // 267: github.com.metaprov.modeldapi.services.data.v1.DataService.GenerateDataset:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetRequest
-	29,  // 268: github.com.metaprov.modeldapi.services.data.v1.DataService.SplitDataset:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetRequest
-	33,  // 269: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateColumnProfile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileRequest
-	37,  // 270: github.com.metaprov.modeldapi.services.data.v1.DataService.InferSchema:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaRequest
-	39,  // 271: github.com.metaprov.modeldapi.services.data.v1.DataService.GetTableView:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewRequest
-	41,  // 272: github.com.metaprov.modeldapi.services.data.v1.DataService.GetMisclassTableView:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewRequest
-	30,  // 273: github.com.metaprov.modeldapi.services.data.v1.DataService.SplitDatasetToRungs:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsRequest
-	14,  // 274: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateDatasetProfile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileRequest
-	16,  // 275: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateModelProfile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileRequest
-	23,  // 276: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateStudyProfile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileRequest
-	10,  // 277: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateRecipeProfile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileRequest
-	43,  // 278: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateModelReport:input_type -> github.com.metaprov.modeldapi.services.data.v1.CreateModelReportRequest
-	48,  // 279: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateStudyReport:input_type -> github.com.metaprov.modeldapi.services.data.v1.CreateStudyReportRequest
-	47,  // 280: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateDatasetReport:input_type -> github.com.metaprov.modeldapi.services.data.v1.CreateDatasetReportRequest
-	44,  // 281: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateForecastReport:input_type -> github.com.metaprov.modeldapi.services.data.v1.CreateForecastReportRequest
-	45,  // 282: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateSummaryReport:input_type -> github.com.metaprov.modeldapi.services.data.v1.CreateSummaryReportRequest
-	49,  // 283: github.com.metaprov.modeldapi.services.data.v1.DataService.AskModel:input_type -> github.com.metaprov.modeldapi.services.data.v1.AskModelRequest
-	51,  // 284: github.com.metaprov.modeldapi.services.data.v1.DataService.TellModel:input_type -> github.com.metaprov.modeldapi.services.data.v1.TellModelRequest
-	18,  // 285: github.com.metaprov.modeldapi.services.data.v1.DataService.PartitionForecastFile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesRequest
-	21,  // 286: github.com.metaprov.modeldapi.services.data.v1.DataService.MergeForecastFile:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileRequest
-	55,  // 287: github.com.metaprov.modeldapi.services.data.v1.DataService.ValidateModel:input_type -> github.com.metaprov.modeldapi.services.data.v1.ValidateModelRequest
-	57,  // 288: github.com.metaprov.modeldapi.services.data.v1.DataService.DsTestConnection:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionRequest
-	53,  // 289: github.com.metaprov.modeldapi.services.data.v1.DataService.ShutDown:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsShutdownRequest
-	59,  // 290: github.com.metaprov.modeldapi.services.data.v1.DataService.StudyEnded:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedRequest
-	61,  // 291: github.com.metaprov.modeldapi.services.data.v1.DataService.SaveOptimizerDB:input_type -> github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBRequest
-	63,  // 292: github.com.metaprov.modeldapi.services.data.v1.DataService.GetDatabases:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesRequest
-	65,  // 293: github.com.metaprov.modeldapi.services.data.v1.DataService.GetTables:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetTablesRequest
-	67,  // 294: github.com.metaprov.modeldapi.services.data.v1.DataService.ExecuteSql:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlRequest
-	69,  // 295: github.com.metaprov.modeldapi.services.data.v1.DataService.Snapshot:input_type -> github.com.metaprov.modeldapi.services.data.v1.DsSnapshotRequest
-	5,   // 296: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadFile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse
-	5,   // 297: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadFeature:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse
-	5,   // 298: github.com.metaprov.modeldapi.services.data.v1.DataService.ReadAudio:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse
-	7,   // 299: github.com.metaprov.modeldapi.services.data.v1.DataService.RunDataPipeline:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsRunDataPipelineResponse
-	9,   // 300: github.com.metaprov.modeldapi.services.data.v1.DataService.RunRecipe:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsRunRecipeResponse
-	5,   // 301: github.com.metaprov.modeldapi.services.data.v1.DataService.WriteFile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsReadFromStoreResponse
-	26,  // 302: github.com.metaprov.modeldapi.services.data.v1.DataService.ValidateDataset:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsValidateDatasetResponse
-	28,  // 303: github.com.metaprov.modeldapi.services.data.v1.DataService.GenerateDataset:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsGenerateDatasetResponse
-	32,  // 304: github.com.metaprov.modeldapi.services.data.v1.DataService.SplitDataset:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetResponse
-	34,  // 305: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateColumnProfile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateColumnProfileResponse
-	38,  // 306: github.com.metaprov.modeldapi.services.data.v1.DataService.InferSchema:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsInferSchemaResponse
-	40,  // 307: github.com.metaprov.modeldapi.services.data.v1.DataService.GetTableView:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetTableViewResponse
-	42,  // 308: github.com.metaprov.modeldapi.services.data.v1.DataService.GetMisclassTableView:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetMisclassTableViewResponse
-	31,  // 309: github.com.metaprov.modeldapi.services.data.v1.DataService.SplitDatasetToRungs:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsSplitDatasetToRungsResponse
-	15,  // 310: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateDatasetProfile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateDatasetProfileResponse
-	17,  // 311: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateModelProfile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateModelProfileResponse
-	24,  // 312: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateStudyProfile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateStudyProfileResponse
-	11,  // 313: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateRecipeProfile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateRecipeProfileResponse
-	46,  // 314: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateModelReport:output_type -> github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	46,  // 315: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateStudyReport:output_type -> github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	46,  // 316: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateDatasetReport:output_type -> github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	46,  // 317: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateForecastReport:output_type -> github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	46,  // 318: github.com.metaprov.modeldapi.services.data.v1.DataService.CreateSummaryReport:output_type -> github.com.metaprov.modeldapi.services.data.v1.CreateReportResponse
-	50,  // 319: github.com.metaprov.modeldapi.services.data.v1.DataService.AskModel:output_type -> github.com.metaprov.modeldapi.services.data.v1.AskModelResponse
-	52,  // 320: github.com.metaprov.modeldapi.services.data.v1.DataService.TellModel:output_type -> github.com.metaprov.modeldapi.services.data.v1.TellModelResponse
-	19,  // 321: github.com.metaprov.modeldapi.services.data.v1.DataService.PartitionForecastFile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsCreateForecastPartitionFilesResponse
-	22,  // 322: github.com.metaprov.modeldapi.services.data.v1.DataService.MergeForecastFile:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsMergeForecastFileResponse
-	56,  // 323: github.com.metaprov.modeldapi.services.data.v1.DataService.ValidateModel:output_type -> github.com.metaprov.modeldapi.services.data.v1.ValidateModelResponse
-	58,  // 324: github.com.metaprov.modeldapi.services.data.v1.DataService.DsTestConnection:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsTestConnectionResponse
-	54,  // 325: github.com.metaprov.modeldapi.services.data.v1.DataService.ShutDown:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsShutdownResponse
-	60,  // 326: github.com.metaprov.modeldapi.services.data.v1.DataService.StudyEnded:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsStudyEndedResponse
-	62,  // 327: github.com.metaprov.modeldapi.services.data.v1.DataService.SaveOptimizerDB:output_type -> github.com.metaprov.modeldapi.services.data.v1.SaveOptimizerDBResponse
-	64,  // 328: github.com.metaprov.modeldapi.services.data.v1.DataService.GetDatabases:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetDatabasesResponse
-	66,  // 329: github.com.metaprov.modeldapi.services.data.v1.DataService.GetTables:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsGetTablesResponse
-	68,  // 330: github.com.metaprov.modeldapi.services.data.v1.DataService.ExecuteSql:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsExecuteSqlResponse
-	70,  // 331: github.com.metaprov.modeldapi.services.data.v1.DataService.Snapshot:output_type -> github.com.metaprov.modeldapi.services.data.v1.DsSnapshotResponse
+var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_depIdxs = []int32{
+	107, // 0: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 1: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	109, // 2: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 3: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	71,  // 4: github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest.SecretEntry
+	107, // 5: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 6: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	110, // 7: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 8: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	72,  // 9: github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest.SecretEntry
+	107, // 10: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 11: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	111, // 12: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.content:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	110, // 13: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 14: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	73,  // 15: github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest.SecretEntry
+	110, // 16: github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 17: github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	74,  // 18: github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest.SecretEntry
+	107, // 19: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 20: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	110, // 21: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 22: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	75,  // 23: github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsReadTextCorpusRequest.SecretEntry
+	107, // 24: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 25: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	111, // 26: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	110, // 27: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 28: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	76,  // 29: github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse.SecretEntry
+	112, // 30: github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest.pipeline:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline
+	111, // 31: github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	107, // 32: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 33: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 34: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 35: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 36: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 37: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	77,  // 38: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.SecretEntry
+	114, // 39: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.recipe:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	115, // 40: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest.reciperun:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun
+	114, // 41: github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	107, // 42: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 43: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 44: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 45: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 46: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 47: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	78,  // 48: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.SecretEntry
+	114, // 49: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest.recipe:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe
+	116, // 50: github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse.result:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	107, // 51: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 52: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 53: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 54: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 55: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 56: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	79,  // 57: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest.SecretEntry
+	117, // 58: github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	107, // 59: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 60: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 61: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 62: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 63: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	119, // 64: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 65: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 66: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	80,  // 67: github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest.SecretEntry
+	107, // 68: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 69: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 70: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 71: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 72: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	119, // 73: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 74: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 75: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	81,  // 76: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.SecretEntry
+	120, // 77: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest.forecasts:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj
+	20,  // 78: github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesResponse.partitions:type_name -> github.com.metaprov.modelaapi.services.data.v1.PartitionValues
+	107, // 79: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 80: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 81: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 82: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 83: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	119, // 84: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 85: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 86: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	82,  // 87: github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest.SecretEntry
+	107, // 88: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 89: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 90: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	118, // 91: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 92: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 93: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 94: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	119, // 95: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.models:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	83,  // 96: github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest.SecretEntry
+	107, // 97: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 98: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 99: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 100: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 101: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 102: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	84,  // 103: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest.SecretEntry
+	121, // 104: github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult
+	107, // 105: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 106: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 107: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	109, // 108: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 109: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	85,  // 110: github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest.SecretEntry
+	107, // 111: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 112: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	110, // 113: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	113, // 114: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 115: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 116: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	109, // 117: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	86,  // 118: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest.SecretEntry
+	107, // 119: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 120: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	110, // 121: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	113, // 122: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 123: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 124: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	87,  // 125: github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest.SecretEntry
+	107, // 126: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 127: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 128: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 129: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	110, // 130: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 131: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	88,  // 132: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest.SecretEntry
+	122, // 133: github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse.plot:type_name -> github.com.metaprov.modelaapi.services.common.v1.Plot
+	107, // 134: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 135: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 136: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 137: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	110, // 138: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 139: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	89,  // 140: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.SecretEntry
+	117, // 141: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	110, // 142: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	123, // 143: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	124, // 144: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	109, // 145: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	90,  // 146: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry
+	117, // 147: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	110, // 148: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	123, // 149: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	124, // 150: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	109, // 151: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	91,  // 152: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry
+	116, // 153: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	110, // 154: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 155: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	92,  // 156: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
+	116, // 157: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	107, // 158: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 159: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	118, // 160: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 161: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	113, // 162: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	119, // 163: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 164: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	93,  // 165: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry
+	110, // 166: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	125, // 167: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	107, // 168: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 169: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	118, // 170: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 171: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	113, // 172: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	119, // 173: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.forecast:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 174: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	94,  // 175: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry
+	110, // 176: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	125, // 177: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	107, // 178: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 179: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	109, // 180: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	95,  // 181: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
+	110, // 182: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	125, // 183: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	107, // 184: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 185: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 186: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 187: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 188: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 189: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	96,  // 190: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
+	125, // 191: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	107, // 192: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 193: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	118, // 194: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 195: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	113, // 196: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	126, // 197: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.models:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
+	110, // 198: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	109, // 199: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	97,  // 200: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry
+	125, // 201: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	107, // 202: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 203: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	118, // 204: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	113, // 205: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 206: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	119, // 207: github.com.metaprov.modelaapi.services.data.v1.AskModelResponse.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	107, // 208: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 209: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	118, // 210: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	113, // 211: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 212: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	119, // 213: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	107, // 214: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 215: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 216: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 217: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 218: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	119, // 219: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	127, // 220: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.predictor:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	109, // 221: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 222: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	98,  // 223: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.SecretEntry
+	128, // 224: github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult
+	109, // 225: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 226: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	99,  // 227: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry
+	107, // 228: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 229: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 230: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 231: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 232: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	109, // 233: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 234: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	100, // 235: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry
+	107, // 236: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 237: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 238: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 239: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	118, // 240: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	109, // 241: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	110, // 242: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	101, // 243: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
+	109, // 244: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	102, // 245: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
+	109, // 246: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	103, // 247: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry
+	109, // 248: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	104, // 249: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
+	116, // 250: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	107, // 251: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	108, // 252: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	113, // 253: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 254: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	109, // 255: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	105, // 256: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbsecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
+	109, // 257: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storageconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	106, // 258: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storagesecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
+	110, // 259: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	0,   // 260: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest
+	1,   // 261: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest
+	3,   // 262: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest
+	6,   // 263: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest
+	8,   // 264: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest
+	2,   // 265: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest
+	25,  // 266: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest
+	27,  // 267: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest
+	29,  // 268: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest
+	33,  // 269: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest
+	37,  // 270: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest
+	39,  // 271: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest
+	41,  // 272: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest
+	30,  // 273: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest
+	14,  // 274: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest
+	16,  // 275: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest
+	23,  // 276: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest
+	10,  // 277: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest
+	43,  // 278: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest
+	48,  // 279: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest
+	47,  // 280: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest
+	44,  // 281: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
+	45,  // 282: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest
+	49,  // 283: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelRequest
+	51,  // 284: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelRequest
+	18,  // 285: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest
+	21,  // 286: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest
+	55,  // 287: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest
+	57,  // 288: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest
+	53,  // 289: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest
+	59,  // 290: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest
+	61,  // 291: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:input_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest
+	63,  // 292: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest
+	65,  // 293: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest
+	67,  // 294: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest
+	69,  // 295: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest
+	5,   // 296: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	5,   // 297: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	5,   // 298: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	7,   // 299: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse
+	9,   // 300: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse
+	5,   // 301: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	26,  // 302: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse
+	28,  // 303: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse
+	32,  // 304: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse
+	34,  // 305: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse
+	38,  // 306: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse
+	40,  // 307: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse
+	42,  // 308: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse
+	31,  // 309: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse
+	15,  // 310: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse
+	17,  // 311: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse
+	24,  // 312: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse
+	11,  // 313: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse
+	46,  // 314: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 315: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 316: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 317: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 318: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	50,  // 319: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelResponse
+	52,  // 320: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelResponse
+	19,  // 321: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesResponse
+	22,  // 322: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse
+	56,  // 323: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse
+	58,  // 324: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse
+	54,  // 325: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse
+	60,  // 326: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse
+	62,  // 327: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:output_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse
+	64,  // 328: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse
+	66,  // 329: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse
+	68,  // 330: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse
+	70,  // 331: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse
 	296, // [296:332] is the sub-list for method output_type
 	260, // [260:296] is the sub-list for method input_type
 	260, // [260:260] is the sub-list for extension type_name
@@ -7862,13 +7862,13 @@ var file_github_com_metaprov_modeldapi_services_data_v1_data_proto_depIdxs = []i
 	0,   // [0:260] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() }
-func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_data_v1_data_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_data_v1_data_proto_init() }
+func file_github_com_metaprov_modelaapi_services_data_v1_data_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_data_v1_data_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsReadFileRequest); i {
 			case 0:
 				return &v.state
@@ -7880,7 +7880,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsReadFeatureRequest); i {
 			case 0:
 				return &v.state
@@ -7892,7 +7892,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsWriteFileRequest); i {
 			case 0:
 				return &v.state
@@ -7904,7 +7904,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsReadAudioRequest); i {
 			case 0:
 				return &v.state
@@ -7916,7 +7916,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsReadTextCorpusRequest); i {
 			case 0:
 				return &v.state
@@ -7928,7 +7928,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsReadFromStoreResponse); i {
 			case 0:
 				return &v.state
@@ -7940,7 +7940,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsRunDataPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -7952,7 +7952,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsRunDataPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -7964,7 +7964,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsRunRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -7976,7 +7976,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsRunRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -7988,7 +7988,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateRecipeProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8000,7 +8000,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateRecipeProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8012,7 +8012,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DataSourceResponse); i {
 			case 0:
 				return &v.state
@@ -8024,7 +8024,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DatasetResponse); i {
 			case 0:
 				return &v.state
@@ -8036,7 +8036,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateDatasetProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8048,7 +8048,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateDatasetProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8060,7 +8060,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateModelProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8072,7 +8072,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateModelProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8084,7 +8084,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateForecastPartitionFilesRequest); i {
 			case 0:
 				return &v.state
@@ -8096,7 +8096,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateForecastPartitionFilesResponse); i {
 			case 0:
 				return &v.state
@@ -8108,7 +8108,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PartitionValues); i {
 			case 0:
 				return &v.state
@@ -8120,7 +8120,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsMergeForecastFileRequest); i {
 			case 0:
 				return &v.state
@@ -8132,7 +8132,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsMergeForecastFileResponse); i {
 			case 0:
 				return &v.state
@@ -8144,7 +8144,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateStudyProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8156,7 +8156,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateStudyProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8168,7 +8168,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsValidateDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -8180,7 +8180,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsValidateDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -8192,7 +8192,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGenerateDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -8204,7 +8204,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGenerateDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -8216,7 +8216,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSplitDatasetRequest); i {
 			case 0:
 				return &v.state
@@ -8228,7 +8228,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSplitDatasetToRungsRequest); i {
 			case 0:
 				return &v.state
@@ -8240,7 +8240,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSplitDatasetToRungsResponse); i {
 			case 0:
 				return &v.state
@@ -8252,7 +8252,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSplitDatasetResponse); i {
 			case 0:
 				return &v.state
@@ -8264,7 +8264,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateColumnProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8276,7 +8276,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsCreateColumnProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8288,7 +8288,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsDatasetProfileRequest); i {
 			case 0:
 				return &v.state
@@ -8300,7 +8300,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsDatasetProfileResponse); i {
 			case 0:
 				return &v.state
@@ -8312,7 +8312,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsInferSchemaRequest); i {
 			case 0:
 				return &v.state
@@ -8324,7 +8324,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsInferSchemaResponse); i {
 			case 0:
 				return &v.state
@@ -8336,7 +8336,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetTableViewRequest); i {
 			case 0:
 				return &v.state
@@ -8348,7 +8348,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetTableViewResponse); i {
 			case 0:
 				return &v.state
@@ -8360,7 +8360,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetMisclassTableViewRequest); i {
 			case 0:
 				return &v.state
@@ -8372,7 +8372,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetMisclassTableViewResponse); i {
 			case 0:
 				return &v.state
@@ -8384,7 +8384,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelReportRequest); i {
 			case 0:
 				return &v.state
@@ -8396,7 +8396,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateForecastReportRequest); i {
 			case 0:
 				return &v.state
@@ -8408,7 +8408,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateSummaryReportRequest); i {
 			case 0:
 				return &v.state
@@ -8420,7 +8420,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateReportResponse); i {
 			case 0:
 				return &v.state
@@ -8432,7 +8432,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateDatasetReportRequest); i {
 			case 0:
 				return &v.state
@@ -8444,7 +8444,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateStudyReportRequest); i {
 			case 0:
 				return &v.state
@@ -8456,7 +8456,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AskModelRequest); i {
 			case 0:
 				return &v.state
@@ -8468,7 +8468,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AskModelResponse); i {
 			case 0:
 				return &v.state
@@ -8480,7 +8480,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TellModelRequest); i {
 			case 0:
 				return &v.state
@@ -8492,7 +8492,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TellModelResponse); i {
 			case 0:
 				return &v.state
@@ -8504,7 +8504,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsShutdownRequest); i {
 			case 0:
 				return &v.state
@@ -8516,7 +8516,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsShutdownResponse); i {
 			case 0:
 				return &v.state
@@ -8528,7 +8528,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ValidateModelRequest); i {
 			case 0:
 				return &v.state
@@ -8540,7 +8540,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ValidateModelResponse); i {
 			case 0:
 				return &v.state
@@ -8552,7 +8552,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsTestConnectionRequest); i {
 			case 0:
 				return &v.state
@@ -8564,7 +8564,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsTestConnectionResponse); i {
 			case 0:
 				return &v.state
@@ -8576,7 +8576,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsStudyEndedRequest); i {
 			case 0:
 				return &v.state
@@ -8588,7 +8588,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsStudyEndedResponse); i {
 			case 0:
 				return &v.state
@@ -8600,7 +8600,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SaveOptimizerDBRequest); i {
 			case 0:
 				return &v.state
@@ -8612,7 +8612,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SaveOptimizerDBResponse); i {
 			case 0:
 				return &v.state
@@ -8624,7 +8624,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetDatabasesRequest); i {
 			case 0:
 				return &v.state
@@ -8636,7 +8636,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetDatabasesResponse); i {
 			case 0:
 				return &v.state
@@ -8648,7 +8648,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetTablesRequest); i {
 			case 0:
 				return &v.state
@@ -8660,7 +8660,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsGetTablesResponse); i {
 			case 0:
 				return &v.state
@@ -8672,7 +8672,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsExecuteSqlRequest); i {
 			case 0:
 				return &v.state
@@ -8684,7 +8684,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsExecuteSqlResponse); i {
 			case 0:
 				return &v.state
@@ -8696,7 +8696,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSnapshotRequest); i {
 			case 0:
 				return &v.state
@@ -8708,7 +8708,7 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DsSnapshotResponse); i {
 			case 0:
 				return &v.state
@@ -8725,20 +8725,20 @@ func file_github_com_metaprov_modeldapi_services_data_v1_data_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   107,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_data_v1_data_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_data_v1_data_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_data_v1_data_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_data_v1_data_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_data_v1_data_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_data_v1_data_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_data_v1_data_proto = out.File
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_data_v1_data_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_data_v1_data_proto = out.File
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_data_v1_data_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -8825,7 +8825,7 @@ func NewDataServiceClient(cc grpc.ClientConnInterface) DataServiceClient {
 
 func (c *dataServiceClient) ReadFile(ctx context.Context, in *DsReadFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
 	out := new(DsReadFromStoreResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8834,7 +8834,7 @@ func (c *dataServiceClient) ReadFile(ctx context.Context, in *DsReadFileRequest,
 
 func (c *dataServiceClient) ReadFeature(ctx context.Context, in *DsReadFeatureRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
 	out := new(DsReadFromStoreResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFeature", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadFeature", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8843,7 +8843,7 @@ func (c *dataServiceClient) ReadFeature(ctx context.Context, in *DsReadFeatureRe
 
 func (c *dataServiceClient) ReadAudio(ctx context.Context, in *DsReadAudioRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
 	out := new(DsReadFromStoreResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadAudio", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadAudio", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8852,7 +8852,7 @@ func (c *dataServiceClient) ReadAudio(ctx context.Context, in *DsReadAudioReques
 
 func (c *dataServiceClient) RunDataPipeline(ctx context.Context, in *DsRunDataPipelineRequest, opts ...grpc.CallOption) (*DsRunDataPipelineResponse, error) {
 	out := new(DsRunDataPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/RunDataPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8861,7 +8861,7 @@ func (c *dataServiceClient) RunDataPipeline(ctx context.Context, in *DsRunDataPi
 
 func (c *dataServiceClient) RunRecipe(ctx context.Context, in *DsRunRecipeRequest, opts ...grpc.CallOption) (*DsRunRecipeResponse, error) {
 	out := new(DsRunRecipeResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/RunRecipe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunRecipe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8870,7 +8870,7 @@ func (c *dataServiceClient) RunRecipe(ctx context.Context, in *DsRunRecipeReques
 
 func (c *dataServiceClient) WriteFile(ctx context.Context, in *DsWriteFileRequest, opts ...grpc.CallOption) (*DsReadFromStoreResponse, error) {
 	out := new(DsReadFromStoreResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/WriteFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8879,7 +8879,7 @@ func (c *dataServiceClient) WriteFile(ctx context.Context, in *DsWriteFileReques
 
 func (c *dataServiceClient) ValidateDataset(ctx context.Context, in *DsValidateDatasetRequest, opts ...grpc.CallOption) (*DsValidateDatasetResponse, error) {
 	out := new(DsValidateDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8888,7 +8888,7 @@ func (c *dataServiceClient) ValidateDataset(ctx context.Context, in *DsValidateD
 
 func (c *dataServiceClient) GenerateDataset(ctx context.Context, in *DsGenerateDatasetRequest, opts ...grpc.CallOption) (*DsGenerateDatasetResponse, error) {
 	out := new(DsGenerateDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/GenerateDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8897,7 +8897,7 @@ func (c *dataServiceClient) GenerateDataset(ctx context.Context, in *DsGenerateD
 
 func (c *dataServiceClient) SplitDataset(ctx context.Context, in *DsSplitDatasetRequest, opts ...grpc.CallOption) (*DsSplitDatasetResponse, error) {
 	out := new(DsSplitDatasetResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8906,7 +8906,7 @@ func (c *dataServiceClient) SplitDataset(ctx context.Context, in *DsSplitDataset
 
 func (c *dataServiceClient) CreateColumnProfile(ctx context.Context, in *DsCreateColumnProfileRequest, opts ...grpc.CallOption) (*DsCreateColumnProfileResponse, error) {
 	out := new(DsCreateColumnProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateColumnProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8915,7 +8915,7 @@ func (c *dataServiceClient) CreateColumnProfile(ctx context.Context, in *DsCreat
 
 func (c *dataServiceClient) InferSchema(ctx context.Context, in *DsInferSchemaRequest, opts ...grpc.CallOption) (*DsInferSchemaResponse, error) {
 	out := new(DsInferSchemaResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/InferSchema", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/InferSchema", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8924,7 +8924,7 @@ func (c *dataServiceClient) InferSchema(ctx context.Context, in *DsInferSchemaRe
 
 func (c *dataServiceClient) GetTableView(ctx context.Context, in *DsGetTableViewRequest, opts ...grpc.CallOption) (*DsGetTableViewResponse, error) {
 	out := new(DsGetTableViewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTableView", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTableView", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8933,7 +8933,7 @@ func (c *dataServiceClient) GetTableView(ctx context.Context, in *DsGetTableView
 
 func (c *dataServiceClient) GetMisclassTableView(ctx context.Context, in *DsGetMisclassTableViewRequest, opts ...grpc.CallOption) (*DsGetMisclassTableViewResponse, error) {
 	out := new(DsGetMisclassTableViewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetMisclassTableView", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8942,7 +8942,7 @@ func (c *dataServiceClient) GetMisclassTableView(ctx context.Context, in *DsGetM
 
 func (c *dataServiceClient) SplitDatasetToRungs(ctx context.Context, in *DsSplitDatasetToRungsRequest, opts ...grpc.CallOption) (*DsSplitDatasetToRungsResponse, error) {
 	out := new(DsSplitDatasetToRungsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDatasetToRungs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDatasetToRungs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8951,7 +8951,7 @@ func (c *dataServiceClient) SplitDatasetToRungs(ctx context.Context, in *DsSplit
 
 func (c *dataServiceClient) CreateDatasetProfile(ctx context.Context, in *DsCreateDatasetProfileRequest, opts ...grpc.CallOption) (*DsCreateDatasetProfileResponse, error) {
 	out := new(DsCreateDatasetProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateDatasetProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8960,7 +8960,7 @@ func (c *dataServiceClient) CreateDatasetProfile(ctx context.Context, in *DsCrea
 
 func (c *dataServiceClient) CreateModelProfile(ctx context.Context, in *DsCreateModelProfileRequest, opts ...grpc.CallOption) (*DsCreateModelProfileResponse, error) {
 	out := new(DsCreateModelProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateModelProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8969,7 +8969,7 @@ func (c *dataServiceClient) CreateModelProfile(ctx context.Context, in *DsCreate
 
 func (c *dataServiceClient) CreateStudyProfile(ctx context.Context, in *DsCreateStudyProfileRequest, opts ...grpc.CallOption) (*DsCreateStudyProfileResponse, error) {
 	out := new(DsCreateStudyProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateStudyProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8978,7 +8978,7 @@ func (c *dataServiceClient) CreateStudyProfile(ctx context.Context, in *DsCreate
 
 func (c *dataServiceClient) CreateRecipeProfile(ctx context.Context, in *DsCreateRecipeProfileRequest, opts ...grpc.CallOption) (*DsCreateRecipeProfileResponse, error) {
 	out := new(DsCreateRecipeProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateRecipeProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateRecipeProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8987,7 +8987,7 @@ func (c *dataServiceClient) CreateRecipeProfile(ctx context.Context, in *DsCreat
 
 func (c *dataServiceClient) CreateModelReport(ctx context.Context, in *CreateModelReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateModelReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8996,7 +8996,7 @@ func (c *dataServiceClient) CreateModelReport(ctx context.Context, in *CreateMod
 
 func (c *dataServiceClient) CreateStudyReport(ctx context.Context, in *CreateStudyReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateStudyReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9005,7 +9005,7 @@ func (c *dataServiceClient) CreateStudyReport(ctx context.Context, in *CreateStu
 
 func (c *dataServiceClient) CreateDatasetReport(ctx context.Context, in *CreateDatasetReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateDatasetReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9014,7 +9014,7 @@ func (c *dataServiceClient) CreateDatasetReport(ctx context.Context, in *CreateD
 
 func (c *dataServiceClient) CreateForecastReport(ctx context.Context, in *CreateForecastReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateForecastReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateForecastReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9023,7 +9023,7 @@ func (c *dataServiceClient) CreateForecastReport(ctx context.Context, in *Create
 
 func (c *dataServiceClient) CreateSummaryReport(ctx context.Context, in *CreateSummaryReportRequest, opts ...grpc.CallOption) (*CreateReportResponse, error) {
 	out := new(CreateReportResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateSummaryReport", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9032,7 +9032,7 @@ func (c *dataServiceClient) CreateSummaryReport(ctx context.Context, in *CreateS
 
 func (c *dataServiceClient) AskModel(ctx context.Context, in *AskModelRequest, opts ...grpc.CallOption) (*AskModelResponse, error) {
 	out := new(AskModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/AskModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9041,7 +9041,7 @@ func (c *dataServiceClient) AskModel(ctx context.Context, in *AskModelRequest, o
 
 func (c *dataServiceClient) TellModel(ctx context.Context, in *TellModelRequest, opts ...grpc.CallOption) (*TellModelResponse, error) {
 	out := new(TellModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/TellModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9050,7 +9050,7 @@ func (c *dataServiceClient) TellModel(ctx context.Context, in *TellModelRequest,
 
 func (c *dataServiceClient) PartitionForecastFile(ctx context.Context, in *DsCreateForecastPartitionFilesRequest, opts ...grpc.CallOption) (*DsCreateForecastPartitionFilesResponse, error) {
 	out := new(DsCreateForecastPartitionFilesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/PartitionForecastFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/PartitionForecastFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9059,7 +9059,7 @@ func (c *dataServiceClient) PartitionForecastFile(ctx context.Context, in *DsCre
 
 func (c *dataServiceClient) MergeForecastFile(ctx context.Context, in *DsMergeForecastFileRequest, opts ...grpc.CallOption) (*DsMergeForecastFileResponse, error) {
 	out := new(DsMergeForecastFileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/MergeForecastFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/MergeForecastFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9068,7 +9068,7 @@ func (c *dataServiceClient) MergeForecastFile(ctx context.Context, in *DsMergeFo
 
 func (c *dataServiceClient) ValidateModel(ctx context.Context, in *ValidateModelRequest, opts ...grpc.CallOption) (*ValidateModelResponse, error) {
 	out := new(ValidateModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9077,7 +9077,7 @@ func (c *dataServiceClient) ValidateModel(ctx context.Context, in *ValidateModel
 
 func (c *dataServiceClient) DsTestConnection(ctx context.Context, in *DsTestConnectionRequest, opts ...grpc.CallOption) (*DsTestConnectionResponse, error) {
 	out := new(DsTestConnectionResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/DsTestConnection", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/DsTestConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9086,7 +9086,7 @@ func (c *dataServiceClient) DsTestConnection(ctx context.Context, in *DsTestConn
 
 func (c *dataServiceClient) ShutDown(ctx context.Context, in *DsShutdownRequest, opts ...grpc.CallOption) (*DsShutdownResponse, error) {
 	out := new(DsShutdownResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ShutDown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ShutDown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9095,7 +9095,7 @@ func (c *dataServiceClient) ShutDown(ctx context.Context, in *DsShutdownRequest,
 
 func (c *dataServiceClient) StudyEnded(ctx context.Context, in *DsStudyEndedRequest, opts ...grpc.CallOption) (*DsStudyEndedResponse, error) {
 	out := new(DsStudyEndedResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/StudyEnded", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/StudyEnded", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9104,7 +9104,7 @@ func (c *dataServiceClient) StudyEnded(ctx context.Context, in *DsStudyEndedRequ
 
 func (c *dataServiceClient) SaveOptimizerDB(ctx context.Context, in *SaveOptimizerDBRequest, opts ...grpc.CallOption) (*SaveOptimizerDBResponse, error) {
 	out := new(SaveOptimizerDBResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/SaveOptimizerDB", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveOptimizerDB", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9113,7 +9113,7 @@ func (c *dataServiceClient) SaveOptimizerDB(ctx context.Context, in *SaveOptimiz
 
 func (c *dataServiceClient) GetDatabases(ctx context.Context, in *DsGetDatabasesRequest, opts ...grpc.CallOption) (*DsGetDatabasesResponse, error) {
 	out := new(DsGetDatabasesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetDatabases", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9122,7 +9122,7 @@ func (c *dataServiceClient) GetDatabases(ctx context.Context, in *DsGetDatabases
 
 func (c *dataServiceClient) GetTables(ctx context.Context, in *DsGetTablesRequest, opts ...grpc.CallOption) (*DsGetTablesResponse, error) {
 	out := new(DsGetTablesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTables", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9131,7 +9131,7 @@ func (c *dataServiceClient) GetTables(ctx context.Context, in *DsGetTablesReques
 
 func (c *dataServiceClient) ExecuteSql(ctx context.Context, in *DsExecuteSqlRequest, opts ...grpc.CallOption) (*DsExecuteSqlResponse, error) {
 	out := new(DsExecuteSqlResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/ExecuteSql", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9140,7 +9140,7 @@ func (c *dataServiceClient) ExecuteSql(ctx context.Context, in *DsExecuteSqlRequ
 
 func (c *dataServiceClient) Snapshot(ctx context.Context, in *DsSnapshotRequest, opts ...grpc.CallOption) (*DsSnapshotResponse, error) {
 	out := new(DsSnapshotResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.data.v1.DataService/Snapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -9338,7 +9338,7 @@ func _DataService_ReadFile_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ReadFile(ctx, req.(*DsReadFileRequest))
@@ -9356,7 +9356,7 @@ func _DataService_ReadFeature_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadFeature",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadFeature",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ReadFeature(ctx, req.(*DsReadFeatureRequest))
@@ -9374,7 +9374,7 @@ func _DataService_ReadAudio_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ReadAudio",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ReadAudio",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ReadAudio(ctx, req.(*DsReadAudioRequest))
@@ -9392,7 +9392,7 @@ func _DataService_RunDataPipeline_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/RunDataPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunDataPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).RunDataPipeline(ctx, req.(*DsRunDataPipelineRequest))
@@ -9410,7 +9410,7 @@ func _DataService_RunRecipe_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/RunRecipe",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/RunRecipe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).RunRecipe(ctx, req.(*DsRunRecipeRequest))
@@ -9428,7 +9428,7 @@ func _DataService_WriteFile_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/WriteFile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/WriteFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).WriteFile(ctx, req.(*DsWriteFileRequest))
@@ -9446,7 +9446,7 @@ func _DataService_ValidateDataset_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ValidateDataset(ctx, req.(*DsValidateDatasetRequest))
@@ -9464,7 +9464,7 @@ func _DataService_GenerateDataset_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/GenerateDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GenerateDataset(ctx, req.(*DsGenerateDatasetRequest))
@@ -9482,7 +9482,7 @@ func _DataService_SplitDataset_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDataset",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).SplitDataset(ctx, req.(*DsSplitDatasetRequest))
@@ -9500,7 +9500,7 @@ func _DataService_CreateColumnProfile_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateColumnProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateColumnProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateColumnProfile(ctx, req.(*DsCreateColumnProfileRequest))
@@ -9518,7 +9518,7 @@ func _DataService_InferSchema_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/InferSchema",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/InferSchema",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).InferSchema(ctx, req.(*DsInferSchemaRequest))
@@ -9536,7 +9536,7 @@ func _DataService_GetTableView_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTableView",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTableView",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GetTableView(ctx, req.(*DsGetTableViewRequest))
@@ -9554,7 +9554,7 @@ func _DataService_GetMisclassTableView_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetMisclassTableView",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetMisclassTableView",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GetMisclassTableView(ctx, req.(*DsGetMisclassTableViewRequest))
@@ -9572,7 +9572,7 @@ func _DataService_SplitDatasetToRungs_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/SplitDatasetToRungs",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/SplitDatasetToRungs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).SplitDatasetToRungs(ctx, req.(*DsSplitDatasetToRungsRequest))
@@ -9590,7 +9590,7 @@ func _DataService_CreateDatasetProfile_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateDatasetProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateDatasetProfile(ctx, req.(*DsCreateDatasetProfileRequest))
@@ -9608,7 +9608,7 @@ func _DataService_CreateModelProfile_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateModelProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateModelProfile(ctx, req.(*DsCreateModelProfileRequest))
@@ -9626,7 +9626,7 @@ func _DataService_CreateStudyProfile_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateStudyProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateStudyProfile(ctx, req.(*DsCreateStudyProfileRequest))
@@ -9644,7 +9644,7 @@ func _DataService_CreateRecipeProfile_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateRecipeProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateRecipeProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateRecipeProfile(ctx, req.(*DsCreateRecipeProfileRequest))
@@ -9662,7 +9662,7 @@ func _DataService_CreateModelReport_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateModelReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateModelReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateModelReport(ctx, req.(*CreateModelReportRequest))
@@ -9680,7 +9680,7 @@ func _DataService_CreateStudyReport_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateStudyReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateStudyReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateStudyReport(ctx, req.(*CreateStudyReportRequest))
@@ -9698,7 +9698,7 @@ func _DataService_CreateDatasetReport_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateDatasetReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateDatasetReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateDatasetReport(ctx, req.(*CreateDatasetReportRequest))
@@ -9716,7 +9716,7 @@ func _DataService_CreateForecastReport_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateForecastReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateForecastReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateForecastReport(ctx, req.(*CreateForecastReportRequest))
@@ -9734,7 +9734,7 @@ func _DataService_CreateSummaryReport_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/CreateSummaryReport",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/CreateSummaryReport",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).CreateSummaryReport(ctx, req.(*CreateSummaryReportRequest))
@@ -9752,7 +9752,7 @@ func _DataService_AskModel_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/AskModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/AskModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).AskModel(ctx, req.(*AskModelRequest))
@@ -9770,7 +9770,7 @@ func _DataService_TellModel_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/TellModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/TellModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).TellModel(ctx, req.(*TellModelRequest))
@@ -9788,7 +9788,7 @@ func _DataService_PartitionForecastFile_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/PartitionForecastFile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/PartitionForecastFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).PartitionForecastFile(ctx, req.(*DsCreateForecastPartitionFilesRequest))
@@ -9806,7 +9806,7 @@ func _DataService_MergeForecastFile_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/MergeForecastFile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/MergeForecastFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).MergeForecastFile(ctx, req.(*DsMergeForecastFileRequest))
@@ -9824,7 +9824,7 @@ func _DataService_ValidateModel_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ValidateModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ValidateModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ValidateModel(ctx, req.(*ValidateModelRequest))
@@ -9842,7 +9842,7 @@ func _DataService_DsTestConnection_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/DsTestConnection",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/DsTestConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).DsTestConnection(ctx, req.(*DsTestConnectionRequest))
@@ -9860,7 +9860,7 @@ func _DataService_ShutDown_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ShutDown",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ShutDown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ShutDown(ctx, req.(*DsShutdownRequest))
@@ -9878,7 +9878,7 @@ func _DataService_StudyEnded_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/StudyEnded",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/StudyEnded",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).StudyEnded(ctx, req.(*DsStudyEndedRequest))
@@ -9896,7 +9896,7 @@ func _DataService_SaveOptimizerDB_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/SaveOptimizerDB",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/SaveOptimizerDB",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).SaveOptimizerDB(ctx, req.(*SaveOptimizerDBRequest))
@@ -9914,7 +9914,7 @@ func _DataService_GetDatabases_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetDatabases",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetDatabases",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GetDatabases(ctx, req.(*DsGetDatabasesRequest))
@@ -9932,7 +9932,7 @@ func _DataService_GetTables_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/GetTables",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/GetTables",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).GetTables(ctx, req.(*DsGetTablesRequest))
@@ -9950,7 +9950,7 @@ func _DataService_ExecuteSql_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/ExecuteSql",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/ExecuteSql",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).ExecuteSql(ctx, req.(*DsExecuteSqlRequest))
@@ -9968,7 +9968,7 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.data.v1.DataService/Snapshot",
+		FullMethod: "/github.com.metaprov.modelaapi.services.data.v1.DataService/Snapshot",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).Snapshot(ctx, req.(*DsSnapshotRequest))
@@ -9977,7 +9977,7 @@ func _DataService_Snapshot_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _DataService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.data.v1.DataService",
+	ServiceName: "github.com.metaprov.modelaapi.services.data.v1.DataService",
 	HandlerType: (*DataServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -10126,5 +10126,5 @@ var _DataService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/data/v1/data.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/data/v1/data.proto",
 }

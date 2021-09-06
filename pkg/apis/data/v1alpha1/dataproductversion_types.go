@@ -41,7 +41,7 @@ type DataProductVersionCondition struct {
 // +kubebuilder:printcolumn:name="Entity",type="string",JSONPath=".spec.productRef.name",description=""
 // +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modeld,all}
+// +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
 // DataProductVersion represent a version of the data product. A version is usually created when a new
 // data was gathered for the same product.
 type DataProductVersion struct {

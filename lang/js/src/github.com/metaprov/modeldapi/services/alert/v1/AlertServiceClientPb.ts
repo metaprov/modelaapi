@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.alert.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.alert.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_alert_v1_alert_pb from '../../../../../../github.com/metaprov/modeldapi/services/alert/v1/alert_pb';
+import * as github_com_metaprov_modelaapi_services_alert_v1_alert_pb from '../../../../../../github.com/metaprov/modelaapi/services/alert/v1/alert_pb';
 
 
 export class AlertServiceClient {
@@ -36,32 +36,32 @@ export class AlertServiceClient {
   }
 
   methodInfoListAlerts = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse,
-    (request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsRequest) => {
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse,
+    (request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse.deserializeBinary
   );
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse>;
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse>;
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse>;
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse>;
 
   listAlerts(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.ListAlertsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.ListAlertsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts',
+          '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts',
         request,
         metadata || {},
         this.methodInfoListAlerts,
@@ -69,39 +69,39 @@ export class AlertServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/ListAlerts',
+      '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/ListAlerts',
     request,
     metadata || {},
     this.methodInfoListAlerts);
   }
 
   methodInfoCreateAlert = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse,
-    (request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertRequest) => {
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse,
+    (request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse.deserializeBinary
   );
 
   createAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse>;
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse>;
 
   createAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse>;
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse>;
 
   createAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.CreateAlertResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.CreateAlertResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert',
+          '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert',
         request,
         metadata || {},
         this.methodInfoCreateAlert,
@@ -109,39 +109,39 @@ export class AlertServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/CreateAlert',
+      '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/CreateAlert',
     request,
     metadata || {},
     this.methodInfoCreateAlert);
   }
 
   methodInfoGetAlert = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse,
-    (request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertRequest) => {
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse,
+    (request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse.deserializeBinary
   );
 
   getAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse>;
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse>;
 
   getAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse>;
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse>;
 
   getAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.GetAlertResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.GetAlertResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert',
+          '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert',
         request,
         metadata || {},
         this.methodInfoGetAlert,
@@ -149,39 +149,39 @@ export class AlertServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/GetAlert',
+      '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/GetAlert',
     request,
     metadata || {},
     this.methodInfoGetAlert);
   }
 
   methodInfoUpdateAlert = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse,
-    (request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertRequest) => {
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse,
+    (request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse.deserializeBinary
   );
 
   updateAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse>;
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse>;
 
   updateAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse>;
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse>;
 
   updateAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.UpdateAlertResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.UpdateAlertResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert',
+          '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert',
         request,
         metadata || {},
         this.methodInfoUpdateAlert,
@@ -189,39 +189,39 @@ export class AlertServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/UpdateAlert',
+      '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/UpdateAlert',
     request,
     metadata || {},
     this.methodInfoUpdateAlert);
   }
 
   methodInfoDeleteAlert = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse,
-    (request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertRequest) => {
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse,
+    (request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse.deserializeBinary
   );
 
   deleteAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse>;
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse>;
 
   deleteAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse>;
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse>;
 
   deleteAlert(
-    request: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertRequest,
+    request: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_alert_v1_alert_pb.DeleteAlertResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_alert_v1_alert_pb.DeleteAlertResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert',
+          '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert',
         request,
         metadata || {},
         this.methodInfoDeleteAlert,
@@ -229,7 +229,7 @@ export class AlertServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.alert.v1.AlertService/DeleteAlert',
+      '/github.com.metaprov.modelaapi.services.alert.v1.AlertService/DeleteAlert',
     request,
     metadata || {},
     this.methodInfoDeleteAlert);

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/review/v1/review.proto
+// source: github.com/metaprov/modelaapi/services/review/v1/review.proto
 
 package v1
 
@@ -10,7 +10,7 @@ import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/golang/protobuf/ptypes/empty"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -45,7 +45,7 @@ type GetReviewRequest struct {
 func (x *GetReviewRequest) Reset() {
 	*x = GetReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -58,7 +58,7 @@ func (x *GetReviewRequest) String() string {
 func (*GetReviewRequest) ProtoMessage() {}
 
 func (x *GetReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -71,7 +71,7 @@ func (x *GetReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReviewRequest.ProtoReflect.Descriptor instead.
 func (*GetReviewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetReviewRequest) GetNamespace() string {
@@ -107,7 +107,7 @@ type GetReviewResponse struct {
 func (x *GetReviewResponse) Reset() {
 	*x = GetReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -120,7 +120,7 @@ func (x *GetReviewResponse) String() string {
 func (*GetReviewResponse) ProtoMessage() {}
 
 func (x *GetReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -133,7 +133,7 @@ func (x *GetReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReviewResponse.ProtoReflect.Descriptor instead.
 func (*GetReviewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetReviewResponse) GetItem() *v1alpha1.Review {
@@ -161,7 +161,7 @@ type CreateReviewRequest struct {
 func (x *CreateReviewRequest) Reset() {
 	*x = CreateReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -174,7 +174,7 @@ func (x *CreateReviewRequest) String() string {
 func (*CreateReviewRequest) ProtoMessage() {}
 
 func (x *CreateReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +187,7 @@ func (x *CreateReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReviewRequest.ProtoReflect.Descriptor instead.
 func (*CreateReviewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateReviewRequest) GetItem() *v1alpha1.Review {
@@ -206,7 +206,7 @@ type CreateReviewResponse struct {
 func (x *CreateReviewResponse) Reset() {
 	*x = CreateReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -219,7 +219,7 @@ func (x *CreateReviewResponse) String() string {
 func (*CreateReviewResponse) ProtoMessage() {}
 
 func (x *CreateReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -232,7 +232,7 @@ func (x *CreateReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateReviewResponse.ProtoReflect.Descriptor instead.
 func (*CreateReviewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateReviewRequest struct {
@@ -246,7 +246,7 @@ type UpdateReviewRequest struct {
 func (x *UpdateReviewRequest) Reset() {
 	*x = UpdateReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -259,7 +259,7 @@ func (x *UpdateReviewRequest) String() string {
 func (*UpdateReviewRequest) ProtoMessage() {}
 
 func (x *UpdateReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +272,7 @@ func (x *UpdateReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateReviewRequest.ProtoReflect.Descriptor instead.
 func (*UpdateReviewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateReviewRequest) GetItem() *v1alpha1.Review {
@@ -291,7 +291,7 @@ type UpdateReviewResponse struct {
 func (x *UpdateReviewResponse) Reset() {
 	*x = UpdateReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -304,7 +304,7 @@ func (x *UpdateReviewResponse) String() string {
 func (*UpdateReviewResponse) ProtoMessage() {}
 
 func (x *UpdateReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -317,7 +317,7 @@ func (x *UpdateReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateReviewResponse.ProtoReflect.Descriptor instead.
 func (*UpdateReviewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{5}
 }
 
 type DeleteReviewRequest struct {
@@ -333,7 +333,7 @@ type DeleteReviewRequest struct {
 func (x *DeleteReviewRequest) Reset() {
 	*x = DeleteReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -346,7 +346,7 @@ func (x *DeleteReviewRequest) String() string {
 func (*DeleteReviewRequest) ProtoMessage() {}
 
 func (x *DeleteReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -359,7 +359,7 @@ func (x *DeleteReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteReviewRequest.ProtoReflect.Descriptor instead.
 func (*DeleteReviewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeleteReviewRequest) GetNamespace() string {
@@ -392,7 +392,7 @@ type DeleteReviewResponse struct {
 func (x *DeleteReviewResponse) Reset() {
 	*x = DeleteReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -405,7 +405,7 @@ func (x *DeleteReviewResponse) String() string {
 func (*DeleteReviewResponse) ProtoMessage() {}
 
 func (x *DeleteReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -418,7 +418,7 @@ func (x *DeleteReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteReviewResponse.ProtoReflect.Descriptor instead.
 func (*DeleteReviewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{7}
 }
 
 type ListReviewRequest struct {
@@ -435,7 +435,7 @@ type ListReviewRequest struct {
 func (x *ListReviewRequest) Reset() {
 	*x = ListReviewRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -448,7 +448,7 @@ func (x *ListReviewRequest) String() string {
 func (*ListReviewRequest) ProtoMessage() {}
 
 func (x *ListReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -461,7 +461,7 @@ func (x *ListReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListReviewRequest.ProtoReflect.Descriptor instead.
 func (*ListReviewRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListReviewRequest) GetNamespace() string {
@@ -504,7 +504,7 @@ type ListReviewResponse struct {
 func (x *ListReviewResponse) Reset() {
 	*x = ListReviewResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -517,7 +517,7 @@ func (x *ListReviewResponse) String() string {
 func (*ListReviewResponse) ProtoMessage() {}
 
 func (x *ListReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -530,7 +530,7 @@ func (x *ListReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListReviewResponse.ProtoReflect.Descriptor instead.
 func (*ListReviewResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListReviewResponse) GetItems() *v1alpha1.ReviewList {
@@ -547,9 +547,9 @@ func (x *ListReviewResponse) GetNextPageToken() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_review_v1_review_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_review_v1_review_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x2f,
@@ -720,53 +720,53 @@ var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescData = file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescData = file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_goTypes = []interface{}{
-	(*GetReviewRequest)(nil),     // 0: github.com.metaprov.modeldapi.services.review.v1.GetReviewRequest
-	(*GetReviewResponse)(nil),    // 1: github.com.metaprov.modeldapi.services.review.v1.GetReviewResponse
-	(*CreateReviewRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.review.v1.CreateReviewRequest
-	(*CreateReviewResponse)(nil), // 3: github.com.metaprov.modeldapi.services.review.v1.CreateReviewResponse
-	(*UpdateReviewRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.review.v1.UpdateReviewRequest
-	(*UpdateReviewResponse)(nil), // 5: github.com.metaprov.modeldapi.services.review.v1.UpdateReviewResponse
-	(*DeleteReviewRequest)(nil),  // 6: github.com.metaprov.modeldapi.services.review.v1.DeleteReviewRequest
-	(*DeleteReviewResponse)(nil), // 7: github.com.metaprov.modeldapi.services.review.v1.DeleteReviewResponse
-	(*ListReviewRequest)(nil),    // 8: github.com.metaprov.modeldapi.services.review.v1.ListReviewRequest
-	(*ListReviewResponse)(nil),   // 9: github.com.metaprov.modeldapi.services.review.v1.ListReviewResponse
-	nil,                          // 10: github.com.metaprov.modeldapi.services.review.v1.GetReviewRequest.LabelsEntry
-	nil,                          // 11: github.com.metaprov.modeldapi.services.review.v1.DeleteReviewRequest.LabelsEntry
-	nil,                          // 12: github.com.metaprov.modeldapi.services.review.v1.ListReviewRequest.LabelsEntry
-	(*v1alpha1.Review)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review
-	(*v1alpha1.ReviewList)(nil),  // 14: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList
+var file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_github_com_metaprov_modelaapi_services_review_v1_review_proto_goTypes = []interface{}{
+	(*GetReviewRequest)(nil),     // 0: github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest
+	(*GetReviewResponse)(nil),    // 1: github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse
+	(*CreateReviewRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest
+	(*CreateReviewResponse)(nil), // 3: github.com.metaprov.modelaapi.services.review.v1.CreateReviewResponse
+	(*UpdateReviewRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest
+	(*UpdateReviewResponse)(nil), // 5: github.com.metaprov.modelaapi.services.review.v1.UpdateReviewResponse
+	(*DeleteReviewRequest)(nil),  // 6: github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest
+	(*DeleteReviewResponse)(nil), // 7: github.com.metaprov.modelaapi.services.review.v1.DeleteReviewResponse
+	(*ListReviewRequest)(nil),    // 8: github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest
+	(*ListReviewResponse)(nil),   // 9: github.com.metaprov.modelaapi.services.review.v1.ListReviewResponse
+	nil,                          // 10: github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest.LabelsEntry
+	nil,                          // 11: github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest.LabelsEntry
+	nil,                          // 12: github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest.LabelsEntry
+	(*v1alpha1.Review)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review
+	(*v1alpha1.ReviewList)(nil),  // 14: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList
 }
-var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.review.v1.GetReviewRequest.labels:type_name -> github.com.metaprov.modeldapi.services.review.v1.GetReviewRequest.LabelsEntry
-	13, // 1: github.com.metaprov.modeldapi.services.review.v1.GetReviewResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review
-	13, // 2: github.com.metaprov.modeldapi.services.review.v1.CreateReviewRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review
-	13, // 3: github.com.metaprov.modeldapi.services.review.v1.UpdateReviewRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review
-	11, // 4: github.com.metaprov.modeldapi.services.review.v1.DeleteReviewRequest.labels:type_name -> github.com.metaprov.modeldapi.services.review.v1.DeleteReviewRequest.LabelsEntry
-	12, // 5: github.com.metaprov.modeldapi.services.review.v1.ListReviewRequest.labels:type_name -> github.com.metaprov.modeldapi.services.review.v1.ListReviewRequest.LabelsEntry
-	14, // 6: github.com.metaprov.modeldapi.services.review.v1.ListReviewResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList
-	8,  // 7: github.com.metaprov.modeldapi.services.review.v1.ReviewService.ListReviews:input_type -> github.com.metaprov.modeldapi.services.review.v1.ListReviewRequest
-	2,  // 8: github.com.metaprov.modeldapi.services.review.v1.ReviewService.CreateReview:input_type -> github.com.metaprov.modeldapi.services.review.v1.CreateReviewRequest
-	0,  // 9: github.com.metaprov.modeldapi.services.review.v1.ReviewService.GetReview:input_type -> github.com.metaprov.modeldapi.services.review.v1.GetReviewRequest
-	4,  // 10: github.com.metaprov.modeldapi.services.review.v1.ReviewService.UpdateReview:input_type -> github.com.metaprov.modeldapi.services.review.v1.UpdateReviewRequest
-	6,  // 11: github.com.metaprov.modeldapi.services.review.v1.ReviewService.DeleteReview:input_type -> github.com.metaprov.modeldapi.services.review.v1.DeleteReviewRequest
-	9,  // 12: github.com.metaprov.modeldapi.services.review.v1.ReviewService.ListReviews:output_type -> github.com.metaprov.modeldapi.services.review.v1.ListReviewResponse
-	3,  // 13: github.com.metaprov.modeldapi.services.review.v1.ReviewService.CreateReview:output_type -> github.com.metaprov.modeldapi.services.review.v1.CreateReviewResponse
-	1,  // 14: github.com.metaprov.modeldapi.services.review.v1.ReviewService.GetReview:output_type -> github.com.metaprov.modeldapi.services.review.v1.GetReviewResponse
-	5,  // 15: github.com.metaprov.modeldapi.services.review.v1.ReviewService.UpdateReview:output_type -> github.com.metaprov.modeldapi.services.review.v1.UpdateReviewResponse
-	7,  // 16: github.com.metaprov.modeldapi.services.review.v1.ReviewService.DeleteReview:output_type -> github.com.metaprov.modeldapi.services.review.v1.DeleteReviewResponse
+var file_github_com_metaprov_modelaapi_services_review_v1_review_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest.labels:type_name -> github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest.LabelsEntry
+	13, // 1: github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review
+	13, // 2: github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review
+	13, // 3: github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review
+	11, // 4: github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest.labels:type_name -> github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest.LabelsEntry
+	12, // 5: github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest.labels:type_name -> github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest.LabelsEntry
+	14, // 6: github.com.metaprov.modelaapi.services.review.v1.ListReviewResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList
+	8,  // 7: github.com.metaprov.modelaapi.services.review.v1.ReviewService.ListReviews:input_type -> github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest
+	2,  // 8: github.com.metaprov.modelaapi.services.review.v1.ReviewService.CreateReview:input_type -> github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest
+	0,  // 9: github.com.metaprov.modelaapi.services.review.v1.ReviewService.GetReview:input_type -> github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest
+	4,  // 10: github.com.metaprov.modelaapi.services.review.v1.ReviewService.UpdateReview:input_type -> github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest
+	6,  // 11: github.com.metaprov.modelaapi.services.review.v1.ReviewService.DeleteReview:input_type -> github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest
+	9,  // 12: github.com.metaprov.modelaapi.services.review.v1.ReviewService.ListReviews:output_type -> github.com.metaprov.modelaapi.services.review.v1.ListReviewResponse
+	3,  // 13: github.com.metaprov.modelaapi.services.review.v1.ReviewService.CreateReview:output_type -> github.com.metaprov.modelaapi.services.review.v1.CreateReviewResponse
+	1,  // 14: github.com.metaprov.modelaapi.services.review.v1.ReviewService.GetReview:output_type -> github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse
+	5,  // 15: github.com.metaprov.modelaapi.services.review.v1.ReviewService.UpdateReview:output_type -> github.com.metaprov.modelaapi.services.review.v1.UpdateReviewResponse
+	7,  // 16: github.com.metaprov.modelaapi.services.review.v1.ReviewService.DeleteReview:output_type -> github.com.metaprov.modelaapi.services.review.v1.DeleteReviewResponse
 	12, // [12:17] is the sub-list for method output_type
 	7,  // [7:12] is the sub-list for method input_type
 	7,  // [7:7] is the sub-list for extension type_name
@@ -774,13 +774,13 @@ var file_github_com_metaprov_modeldapi_services_review_v1_review_proto_depIdxs =
 	0,  // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() }
-func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_review_v1_review_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_review_v1_review_proto_init() }
+func file_github_com_metaprov_modelaapi_services_review_v1_review_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_review_v1_review_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReviewRequest); i {
 			case 0:
 				return &v.state
@@ -792,7 +792,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReviewResponse); i {
 			case 0:
 				return &v.state
@@ -804,7 +804,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateReviewRequest); i {
 			case 0:
 				return &v.state
@@ -816,7 +816,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateReviewResponse); i {
 			case 0:
 				return &v.state
@@ -828,7 +828,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateReviewRequest); i {
 			case 0:
 				return &v.state
@@ -840,7 +840,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateReviewResponse); i {
 			case 0:
 				return &v.state
@@ -852,7 +852,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteReviewRequest); i {
 			case 0:
 				return &v.state
@@ -864,7 +864,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteReviewResponse); i {
 			case 0:
 				return &v.state
@@ -876,7 +876,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListReviewRequest); i {
 			case 0:
 				return &v.state
@@ -888,7 +888,7 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListReviewResponse); i {
 			case 0:
 				return &v.state
@@ -905,20 +905,20 @@ func file_github_com_metaprov_modeldapi_services_review_v1_review_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_review_v1_review_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_review_v1_review_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_review_v1_review_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_review_v1_review_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_review_v1_review_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_review_v1_review_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_review_v1_review_proto = out.File
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_review_v1_review_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_review_v1_review_proto = out.File
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_review_v1_review_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -950,7 +950,7 @@ func NewReviewServiceClient(cc grpc.ClientConnInterface) ReviewServiceClient {
 
 func (c *reviewServiceClient) ListReviews(ctx context.Context, in *ListReviewRequest, opts ...grpc.CallOption) (*ListReviewResponse, error) {
 	out := new(ListReviewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/ListReviews", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/ListReviews", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -959,7 +959,7 @@ func (c *reviewServiceClient) ListReviews(ctx context.Context, in *ListReviewReq
 
 func (c *reviewServiceClient) CreateReview(ctx context.Context, in *CreateReviewRequest, opts ...grpc.CallOption) (*CreateReviewResponse, error) {
 	out := new(CreateReviewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/CreateReview", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/CreateReview", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -968,7 +968,7 @@ func (c *reviewServiceClient) CreateReview(ctx context.Context, in *CreateReview
 
 func (c *reviewServiceClient) GetReview(ctx context.Context, in *GetReviewRequest, opts ...grpc.CallOption) (*GetReviewResponse, error) {
 	out := new(GetReviewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/GetReview", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/GetReview", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -977,7 +977,7 @@ func (c *reviewServiceClient) GetReview(ctx context.Context, in *GetReviewReques
 
 func (c *reviewServiceClient) UpdateReview(ctx context.Context, in *UpdateReviewRequest, opts ...grpc.CallOption) (*UpdateReviewResponse, error) {
 	out := new(UpdateReviewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/UpdateReview", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/UpdateReview", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -986,7 +986,7 @@ func (c *reviewServiceClient) UpdateReview(ctx context.Context, in *UpdateReview
 
 func (c *reviewServiceClient) DeleteReview(ctx context.Context, in *DeleteReviewRequest, opts ...grpc.CallOption) (*DeleteReviewResponse, error) {
 	out := new(DeleteReviewResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/DeleteReview", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/DeleteReview", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1036,7 +1036,7 @@ func _ReviewService_ListReviews_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/ListReviews",
+		FullMethod: "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/ListReviews",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).ListReviews(ctx, req.(*ListReviewRequest))
@@ -1054,7 +1054,7 @@ func _ReviewService_CreateReview_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/CreateReview",
+		FullMethod: "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/CreateReview",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).CreateReview(ctx, req.(*CreateReviewRequest))
@@ -1072,7 +1072,7 @@ func _ReviewService_GetReview_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/GetReview",
+		FullMethod: "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/GetReview",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).GetReview(ctx, req.(*GetReviewRequest))
@@ -1090,7 +1090,7 @@ func _ReviewService_UpdateReview_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/UpdateReview",
+		FullMethod: "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/UpdateReview",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).UpdateReview(ctx, req.(*UpdateReviewRequest))
@@ -1108,7 +1108,7 @@ func _ReviewService_DeleteReview_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.review.v1.ReviewService/DeleteReview",
+		FullMethod: "/github.com.metaprov.modelaapi.services.review.v1.ReviewService/DeleteReview",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ReviewServiceServer).DeleteReview(ctx, req.(*DeleteReviewRequest))
@@ -1117,7 +1117,7 @@ func _ReviewService_DeleteReview_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _ReviewService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.review.v1.ReviewService",
+	ServiceName: "github.com.metaprov.modelaapi.services.review.v1.ReviewService",
 	HandlerType: (*ReviewServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1142,5 +1142,5 @@ var _ReviewService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/review/v1/review.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/review/v1/review.proto",
 }

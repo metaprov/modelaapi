@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/featurepipelinerun/v1/featurepipelinerun.proto
+// source: github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListFeaturePipelineRunRequest struct {
 func (x *ListFeaturePipelineRunRequest) Reset() {
 	*x = ListFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListFeaturePipelineRunRequest) String() string {
 func (*ListFeaturePipelineRunRequest) ProtoMessage() {}
 
 func (x *ListFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
 func (*ListFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListFeaturePipelineRunRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListFeaturePipelineRunResponse struct {
 func (x *ListFeaturePipelineRunResponse) Reset() {
 	*x = ListFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListFeaturePipelineRunResponse) String() string {
 func (*ListFeaturePipelineRunResponse) ProtoMessage() {}
 
 func (x *ListFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
 func (*ListFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListFeaturePipelineRunResponse) GetItems() *v1alpha1.FeaturePipelineRunList {
@@ -144,7 +144,7 @@ type CreateFeaturePipelineRunRequest struct {
 func (x *CreateFeaturePipelineRunRequest) Reset() {
 	*x = CreateFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateFeaturePipelineRunRequest) String() string {
 func (*CreateFeaturePipelineRunRequest) ProtoMessage() {}
 
 func (x *CreateFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
 func (*CreateFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateFeaturePipelineRunRequest) GetItem() *v1alpha1.FeaturePipelineRun {
@@ -189,7 +189,7 @@ type CreateFeaturePipelineRunResponse struct {
 func (x *CreateFeaturePipelineRunResponse) Reset() {
 	*x = CreateFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateFeaturePipelineRunResponse) String() string {
 func (*CreateFeaturePipelineRunResponse) ProtoMessage() {}
 
 func (x *CreateFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
 func (*CreateFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateFeaturePipelineRunRequest struct {
@@ -229,7 +229,7 @@ type UpdateFeaturePipelineRunRequest struct {
 func (x *UpdateFeaturePipelineRunRequest) Reset() {
 	*x = UpdateFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateFeaturePipelineRunRequest) String() string {
 func (*UpdateFeaturePipelineRunRequest) ProtoMessage() {}
 
 func (x *UpdateFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateFeaturePipelineRunRequest) GetItem() *v1alpha1.FeaturePipelineRun {
@@ -274,7 +274,7 @@ type UpdateFeaturePipelineRunResponse struct {
 func (x *UpdateFeaturePipelineRunResponse) Reset() {
 	*x = UpdateFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateFeaturePipelineRunResponse) String() string {
 func (*UpdateFeaturePipelineRunResponse) ProtoMessage() {}
 
 func (x *UpdateFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
 func (*UpdateFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{5}
 }
 
 type GetFeaturePipelineRunRequest struct {
@@ -315,7 +315,7 @@ type GetFeaturePipelineRunRequest struct {
 func (x *GetFeaturePipelineRunRequest) Reset() {
 	*x = GetFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetFeaturePipelineRunRequest) String() string {
 func (*GetFeaturePipelineRunRequest) ProtoMessage() {}
 
 func (x *GetFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
 func (*GetFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetFeaturePipelineRunRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetFeaturePipelineRunResponse struct {
 func (x *GetFeaturePipelineRunResponse) Reset() {
 	*x = GetFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetFeaturePipelineRunResponse) String() string {
 func (*GetFeaturePipelineRunResponse) ProtoMessage() {}
 
 func (x *GetFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
 func (*GetFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetFeaturePipelineRunResponse) GetItem() *v1alpha1.FeaturePipelineRun {
@@ -425,7 +425,7 @@ type DeleteFeaturePipelineRunRequest struct {
 func (x *DeleteFeaturePipelineRunRequest) Reset() {
 	*x = DeleteFeaturePipelineRunRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteFeaturePipelineRunRequest) String() string {
 func (*DeleteFeaturePipelineRunRequest) ProtoMessage() {}
 
 func (x *DeleteFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteFeaturePipelineRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeaturePipelineRunRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFeaturePipelineRunRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteFeaturePipelineRunRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteFeaturePipelineRunResponse struct {
 func (x *DeleteFeaturePipelineRunResponse) Reset() {
 	*x = DeleteFeaturePipelineRunResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteFeaturePipelineRunResponse) String() string {
 func (*DeleteFeaturePipelineRunResponse) ProtoMessage() {}
 
 func (x *DeleteFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteFeaturePipelineRunResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFeaturePipelineRunResponse.ProtoReflect.Descriptor instead.
 func (*DeleteFeaturePipelineRunResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc = []byte{
 	0x0a, 0x55, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x66, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
@@ -680,49 +680,49 @@ var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepip
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData = file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData = file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes = []interface{}{
-	(*ListFeaturePipelineRunRequest)(nil),    // 0: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest
-	(*ListFeaturePipelineRunResponse)(nil),   // 1: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse
-	(*CreateFeaturePipelineRunRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest
-	(*CreateFeaturePipelineRunResponse)(nil), // 3: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunResponse
-	(*UpdateFeaturePipelineRunRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest
-	(*UpdateFeaturePipelineRunResponse)(nil), // 5: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunResponse
-	(*GetFeaturePipelineRunRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.GetFeaturePipelineRunRequest
-	(*GetFeaturePipelineRunResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse
-	(*DeleteFeaturePipelineRunRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunRequest
-	(*DeleteFeaturePipelineRunResponse)(nil), // 9: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunResponse
-	nil,                                      // 10: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.LabelsEntry
-	(*v1alpha1.FeaturePipelineRunList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList
-	(*v1alpha1.FeaturePipelineRun)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+var file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes = []interface{}{
+	(*ListFeaturePipelineRunRequest)(nil),    // 0: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest
+	(*ListFeaturePipelineRunResponse)(nil),   // 1: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse
+	(*CreateFeaturePipelineRunRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest
+	(*CreateFeaturePipelineRunResponse)(nil), // 3: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunResponse
+	(*UpdateFeaturePipelineRunRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest
+	(*UpdateFeaturePipelineRunResponse)(nil), // 5: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunResponse
+	(*GetFeaturePipelineRunRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.GetFeaturePipelineRunRequest
+	(*GetFeaturePipelineRunResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse
+	(*DeleteFeaturePipelineRunRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunRequest
+	(*DeleteFeaturePipelineRunResponse)(nil), // 9: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunResponse
+	nil,                                      // 10: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.LabelsEntry
+	(*v1alpha1.FeaturePipelineRunList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList
+	(*v1alpha1.FeaturePipelineRun)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
 }
-var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.labels:type_name -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList
-	12, // 2: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
-	12, // 3: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
-	12, // 4: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
-	0,  // 5: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.ListFeaturePipelineRuns:input_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.CreateFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.GetFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.GetFeaturePipelineRunRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.UpdateFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.DeleteFeaturePipelineRun:input_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.ListFeaturePipelineRuns:output_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.CreateFeaturePipelineRun:output_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.GetFeaturePipelineRun:output_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.UpdateFeaturePipelineRun:output_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService.DeleteFeaturePipelineRun:output_type -> github.com.metaprov.modeldapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunResponse
+var file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.labels:type_name -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList
+	12, // 2: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+	12, // 3: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+	12, // 4: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun
+	0,  // 5: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.ListFeaturePipelineRuns:input_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.CreateFeaturePipelineRun:input_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.GetFeaturePipelineRun:input_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.GetFeaturePipelineRunRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.UpdateFeaturePipelineRun:input_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.DeleteFeaturePipelineRun:input_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.ListFeaturePipelineRuns:output_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.CreateFeaturePipelineRun:output_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.GetFeaturePipelineRun:output_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.GetFeaturePipelineRunResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.UpdateFeaturePipelineRun:output_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.UpdateFeaturePipelineRunResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService.DeleteFeaturePipelineRun:output_type -> github.com.metaprov.modelaapi.services.featurepipelinerun.v1.DeleteFeaturePipelineRunResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -731,14 +731,14 @@ var file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepip
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_init()
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto != nil {
+func file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
@@ -750,7 +750,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
@@ -762,7 +762,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
@@ -774,7 +774,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
@@ -786,7 +786,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
@@ -798,7 +798,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
@@ -810,7 +810,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
@@ -822,7 +822,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
@@ -834,7 +834,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeaturePipelineRunRequest); i {
 			case 0:
 				return &v.state
@@ -846,7 +846,7 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteFeaturePipelineRunResponse); i {
 			case 0:
 				return &v.state
@@ -863,20 +863,20 @@ func file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepi
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto = out.File
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto = out.File
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -908,7 +908,7 @@ func NewFeaturePipelineRunServiceClient(cc grpc.ClientConnInterface) FeaturePipe
 
 func (c *featurePipelineRunServiceClient) ListFeaturePipelineRuns(ctx context.Context, in *ListFeaturePipelineRunRequest, opts ...grpc.CallOption) (*ListFeaturePipelineRunResponse, error) {
 	out := new(ListFeaturePipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -917,7 +917,7 @@ func (c *featurePipelineRunServiceClient) ListFeaturePipelineRuns(ctx context.Co
 
 func (c *featurePipelineRunServiceClient) CreateFeaturePipelineRun(ctx context.Context, in *CreateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*CreateFeaturePipelineRunResponse, error) {
 	out := new(CreateFeaturePipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -926,7 +926,7 @@ func (c *featurePipelineRunServiceClient) CreateFeaturePipelineRun(ctx context.C
 
 func (c *featurePipelineRunServiceClient) GetFeaturePipelineRun(ctx context.Context, in *GetFeaturePipelineRunRequest, opts ...grpc.CallOption) (*GetFeaturePipelineRunResponse, error) {
 	out := new(GetFeaturePipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -935,7 +935,7 @@ func (c *featurePipelineRunServiceClient) GetFeaturePipelineRun(ctx context.Cont
 
 func (c *featurePipelineRunServiceClient) UpdateFeaturePipelineRun(ctx context.Context, in *UpdateFeaturePipelineRunRequest, opts ...grpc.CallOption) (*UpdateFeaturePipelineRunResponse, error) {
 	out := new(UpdateFeaturePipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -944,7 +944,7 @@ func (c *featurePipelineRunServiceClient) UpdateFeaturePipelineRun(ctx context.C
 
 func (c *featurePipelineRunServiceClient) DeleteFeaturePipelineRun(ctx context.Context, in *DeleteFeaturePipelineRunRequest, opts ...grpc.CallOption) (*DeleteFeaturePipelineRunResponse, error) {
 	out := new(DeleteFeaturePipelineRunResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -994,7 +994,7 @@ func _FeaturePipelineRunService_ListFeaturePipelineRuns_Handler(srv interface{},
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeaturePipelineRunServiceServer).ListFeaturePipelineRuns(ctx, req.(*ListFeaturePipelineRunRequest))
@@ -1012,7 +1012,7 @@ func _FeaturePipelineRunService_CreateFeaturePipelineRun_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeaturePipelineRunServiceServer).CreateFeaturePipelineRun(ctx, req.(*CreateFeaturePipelineRunRequest))
@@ -1030,7 +1030,7 @@ func _FeaturePipelineRunService_GetFeaturePipelineRun_Handler(srv interface{}, c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeaturePipelineRunServiceServer).GetFeaturePipelineRun(ctx, req.(*GetFeaturePipelineRunRequest))
@@ -1048,7 +1048,7 @@ func _FeaturePipelineRunService_UpdateFeaturePipelineRun_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeaturePipelineRunServiceServer).UpdateFeaturePipelineRun(ctx, req.(*UpdateFeaturePipelineRunRequest))
@@ -1066,7 +1066,7 @@ func _FeaturePipelineRunService_DeleteFeaturePipelineRun_Handler(srv interface{}
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun",
+		FullMethod: "/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(FeaturePipelineRunServiceServer).DeleteFeaturePipelineRun(ctx, req.(*DeleteFeaturePipelineRunRequest))
@@ -1075,7 +1075,7 @@ func _FeaturePipelineRunService_DeleteFeaturePipelineRun_Handler(srv interface{}
 }
 
 var _FeaturePipelineRunService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService",
+	ServiceName: "github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService",
 	HandlerType: (*FeaturePipelineRunServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1100,5 +1100,5 @@ var _FeaturePipelineRunService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/featurepipelinerun/v1/featurepipelinerun.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun.proto",
 }

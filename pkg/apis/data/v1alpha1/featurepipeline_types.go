@@ -44,7 +44,7 @@ type FeaturePipelineCondition struct {
 // +kubebuilder:printcolumn:name="Schedule",type="string",JSONPath=".spec.schedule",description=""
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modeld}
+// +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
 // +kubebuilder:subresource:status
 type FeaturePipeline struct {
 	metav1.TypeMeta   `json:",inline"`

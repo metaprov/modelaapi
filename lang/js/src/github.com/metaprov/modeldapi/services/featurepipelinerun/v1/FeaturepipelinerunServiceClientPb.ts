@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.featurepipelinerun.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.featurepipelinerun.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb from '../../../../../../github.com/metaprov/modeldapi/services/featurepipelinerun/v1/featurepipelinerun_pb';
+import * as github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb from '../../../../../../github.com/metaprov/modelaapi/services/featurepipelinerun/v1/featurepipelinerun_pb';
 
 
 export class FeaturePipelineRunServiceClient {
@@ -36,32 +36,32 @@ export class FeaturePipelineRunServiceClient {
   }
 
   methodInfoListFeaturePipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse.deserializeBinary
   );
 
   listFeaturePipelineRuns(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse>;
 
   listFeaturePipelineRuns(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse>;
 
   listFeaturePipelineRuns(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.ListFeaturePipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
+          '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
         request,
         metadata || {},
         this.methodInfoListFeaturePipelineRuns,
@@ -69,39 +69,39 @@ export class FeaturePipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
+      '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/ListFeaturePipelineRuns',
     request,
     metadata || {},
     this.methodInfoListFeaturePipelineRuns);
   }
 
   methodInfoCreateFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse.deserializeBinary
   );
 
   createFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse>;
 
   createFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse>;
 
   createFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.CreateFeaturePipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
+          '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
         request,
         metadata || {},
         this.methodInfoCreateFeaturePipelineRun,
@@ -109,39 +109,39 @@ export class FeaturePipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
+      '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/CreateFeaturePipelineRun',
     request,
     metadata || {},
     this.methodInfoCreateFeaturePipelineRun);
   }
 
   methodInfoGetFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse.deserializeBinary
   );
 
   getFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse>;
 
   getFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse>;
 
   getFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.GetFeaturePipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
+          '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
         request,
         metadata || {},
         this.methodInfoGetFeaturePipelineRun,
@@ -149,39 +149,39 @@ export class FeaturePipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
+      '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/GetFeaturePipelineRun',
     request,
     metadata || {},
     this.methodInfoGetFeaturePipelineRun);
   }
 
   methodInfoUpdateFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse.deserializeBinary
   );
 
   updateFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse>;
 
   updateFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse>;
 
   updateFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.UpdateFeaturePipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
+          '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
         request,
         metadata || {},
         this.methodInfoUpdateFeaturePipelineRun,
@@ -189,39 +189,39 @@ export class FeaturePipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
+      '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/UpdateFeaturePipelineRun',
     request,
     metadata || {},
     this.methodInfoUpdateFeaturePipelineRun);
   }
 
   methodInfoDeleteFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse,
-    (request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest) => {
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse,
+    (request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse.deserializeBinary
   );
 
   deleteFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse>;
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse>;
 
   deleteFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse>;
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse>;
 
   deleteFeaturePipelineRun(
-    request: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
+    request: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_featurepipelinerun_v1_featurepipelinerun_pb.DeleteFeaturePipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
+          '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
         request,
         metadata || {},
         this.methodInfoDeleteFeaturePipelineRun,
@@ -229,7 +229,7 @@ export class FeaturePipelineRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
+      '/github.com.metaprov.modelaapi.services.featurepipelinerun.v1.FeaturePipelineRunService/DeleteFeaturePipelineRun',
     request,
     metadata || {},
     this.methodInfoDeleteFeaturePipelineRun);

@@ -1,4 +1,4 @@
-// source: github.com/metaprov/modeldapi/services/datasource/v1/datasource.proto
+// source: github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -17,26 +17,26 @@ var global = Function('return this')();
 
 var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb.js');
-goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb);
-var github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated_pb.js');
-goog.object.extend(proto, github_com_metaprov_modeldapi_pkg_apis_infra_v1alpha1_generated_pb);
-var github_com_metaprov_modeldapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb.js');
-goog.object.extend(proto, github_com_metaprov_modeldapi_services_common_v1_common_pb);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse', null, global);
+var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_services_common_v1_common_pb = require('../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_services_common_v1_common_pb);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -47,16 +47,16 @@ goog.exportSymbol('proto.github.com.metaprov.modeldapi.services.datasource.v1.Up
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -68,16 +68,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -89,16 +89,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -110,16 +110,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -131,16 +131,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -152,16 +152,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -173,16 +173,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -194,16 +194,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -215,16 +215,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -236,16 +236,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -257,16 +257,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -278,16 +278,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -299,16 +299,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -320,16 +320,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.displayName = 'proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse';
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse';
 }
 
 
@@ -347,8 +347,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -357,11 +357,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
@@ -378,23 +378,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -424,9 +424,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -434,11 +434,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -458,16 +458,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -478,7 +478,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
@@ -487,9 +487,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRequest.prototype.clearLabelsMap = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
 
@@ -510,8 +510,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -520,13 +520,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    list: (f = msg.getList()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.toObject(includeInstance, f)
+    list: (f = msg.getList()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -540,23 +540,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -564,8 +564,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.deserializeBinaryFromReader);
       msg.setList(value);
       break;
     default:
@@ -581,9 +581,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -591,47 +591,47 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getList();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.getList = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.getList = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.setList = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.setList = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.clearList = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.clearList = function() {
   return this.setList(undefined);
 };
 
@@ -640,7 +640,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceRespons
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.ListDataSourceResponse.prototype.hasList = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.hasList = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -661,8 +661,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -671,11 +671,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -692,23 +692,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -736,9 +736,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -746,11 +746,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -773,16 +773,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -791,16 +791,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -821,8 +821,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -831,13 +831,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -852,23 +852,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -876,8 +876,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     case 2:
@@ -897,9 +897,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -907,18 +907,18 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
   f = message.getYaml();
@@ -932,29 +932,29 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -963,7 +963,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -972,16 +972,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse
  * optional string yaml = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.getYaml = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.getYaml = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetDataSourceResponse.prototype.setYaml = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse.prototype.setYaml = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1002,8 +1002,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1012,13 +1012,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1032,23 +1032,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1056,8 +1056,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -1073,9 +1073,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1083,47 +1083,47 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -1132,7 +1132,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1153,8 +1153,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1163,11 +1163,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRespo
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1183,23 +1183,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRespo
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1219,9 +1219,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRespo
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1229,11 +1229,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceRespo
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.UpdateDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1254,8 +1254,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1264,13 +1264,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1284,23 +1284,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1308,8 +1308,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -1325,9 +1325,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1335,47 +1335,47 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -1384,7 +1384,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1405,8 +1405,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1415,11 +1415,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRespo
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1435,23 +1435,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRespo
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1471,9 +1471,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRespo
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1481,11 +1481,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceRespo
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.CreateDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1506,8 +1506,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1516,11 +1516,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -1537,23 +1537,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1581,9 +1581,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1591,11 +1591,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1618,16 +1618,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1636,16 +1636,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceReque
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1666,8 +1666,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -1676,11 +1676,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRespo
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -1696,23 +1696,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRespo
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1732,9 +1732,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRespo
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1742,11 +1742,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceRespo
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.DeleteDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -1767,8 +1767,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -1777,16 +1777,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
+    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1800,23 +1800,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.to
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1832,13 +1832,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.de
       msg.setName(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
     default:
@@ -1854,9 +1854,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.de
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1864,11 +1864,11 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -1889,7 +1889,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.se
     writer.writeMessage(
       3,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
@@ -1897,7 +1897,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.se
     writer.writeMessage(
       4,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
@@ -1907,16 +1907,16 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.se
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1925,44 +1925,44 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 3;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getFlatfile = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 3));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getFlatfile = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 3));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setFlatfile = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setFlatfile = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.clearFlatfile = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.clearFlatfile = function() {
   return this.setFlatfile(undefined);
 };
 
@@ -1971,35 +1971,35 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.hasFlatfile = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasFlatfile = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 4));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 4));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.setLocation = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setLocation = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.clearLocation = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.clearLocation = function() {
   return this.setLocation(undefined);
 };
 
@@ -2008,7 +2008,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.prototype.hasLocation = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -2019,7 +2019,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaRequest.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.repeatedFields_ = [1];
 
 
 
@@ -2036,8 +2036,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2046,14 +2046,14 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
-    github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile.toObject, includeInstance)
+    github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2067,23 +2067,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2091,8 +2091,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile;
-      reader.readMessage(value,github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile;
+      reader.readMessage(value,github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.deserializeBinaryFromReader);
       msg.addColumns(value);
       break;
     default:
@@ -2108,9 +2108,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2118,57 +2118,57 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getColumnsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated github.com.metaprov.modeldapi.services.common.v1.ColumnProfile columns = 1;
- * @return {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile>}
+ * repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile columns = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.getColumnsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.ColumnProfile, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_services_common_v1_common_pb.ColumnProfile, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile>} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.setColumnsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.setColumnsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile}
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.addColumns = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modeldapi.services.common.v1.ColumnProfile, opt_index);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.InferSchemaResponse.prototype.clearColumnsList = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.prototype.clearColumnsList = function() {
   return this.setColumnsList([]);
 };
 
@@ -2189,8 +2189,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2199,14 +2199,14 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flatfilespec: (f = msg.getFlatfilespec()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
+    flatfilespec: (f = msg.getFlatfilespec()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2220,23 +2220,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.t
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2244,13 +2244,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
       msg.setFlatfilespec(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
       break;
     default:
@@ -2266,9 +2266,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.d
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2276,18 +2276,18 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFlatfilespec();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
@@ -2295,36 +2295,36 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.s
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfilespec = 1;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfilespec = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.getFlatfilespec = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getFlatfilespec = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setFlatfilespec = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setFlatfilespec = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.clearFlatfilespec = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.clearFlatfilespec = function() {
   return this.setFlatfilespec(undefined);
 };
 
@@ -2333,35 +2333,35 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.hasFlatfilespec = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.hasFlatfilespec = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
- * @return {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 2));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getLocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.setLocation = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setLocation = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.clearLocation = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.clearLocation = function() {
   return this.setLocation(undefined);
 };
 
@@ -2370,7 +2370,7 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewRequest.prototype.hasLocation = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.hasLocation = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -2391,8 +2391,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2401,13 +2401,13 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    table: (f = msg.getTable()) && github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.toObject(includeInstance, f)
+    table: (f = msg.getTable()) && github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2421,23 +2421,23 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse;
-  return proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse;
+  return proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2445,8 +2445,8 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView;
-      reader.readMessage(value,github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView;
+      reader.readMessage(value,github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.deserializeBinaryFromReader);
       msg.setTable(value);
       break;
     default:
@@ -2462,9 +2462,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2472,47 +2472,47 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTable();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modeldapi.services.common.v1.TableView table = 1;
- * @return {?proto.github.com.metaprov.modeldapi.services.common.v1.TableView}
+ * optional github.com.metaprov.modelaapi.services.common.v1.TableView table = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.getTable = function() {
-  return /** @type{?proto.github.com.metaprov.modeldapi.services.common.v1.TableView} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modeldapi_services_common_v1_common_pb.TableView, 1));
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.getTable = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.common.v1.TableView} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_services_common_v1_common_pb.TableView, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modeldapi.services.common.v1.TableView|undefined} value
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.services.common.v1.TableView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse} returns this
 */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.setTable = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.setTable = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse} returns this
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.clearTable = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.clearTable = function() {
   return this.setTable(undefined);
 };
 
@@ -2521,9 +2521,9 @@ proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modeldapi.services.datasource.v1.GetTableViewResponse.prototype.hasTable = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.prototype.hasTable = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
-goog.object.extend(exports, proto.github.com.metaprov.modeldapi.services.datasource.v1);
+goog.object.extend(exports, proto.github.com.metaprov.modelaapi.services.datasource.v1);

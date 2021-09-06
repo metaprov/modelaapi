@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: todos.team.modeld.io
+  name: todos.team.modela.io
 spec:
-  group: team.modeld.io
+  group: team.modela.io
   names:
     categories:
     - infra
-    - modeld
+    - modela
     kind: Todo
     listKind: TodoList
     plural: todos
@@ -69,7 +69,7 @@ spec:
                 format: date-time
                 type: string
               entityRef:
-                description: The modeld entity that the task refer to.
+                description: The modela entity that the task refer to.
                 properties:
                   apiVersion:
                     description: API version of the referent.

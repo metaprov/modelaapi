@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/entity/v1/entity.proto
+// source: github.com/metaprov/modelaapi/services/entity/v1/entity.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListEntitiesRequest struct {
 func (x *ListEntitiesRequest) Reset() {
 	*x = ListEntitiesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListEntitiesRequest) String() string {
 func (*ListEntitiesRequest) ProtoMessage() {}
 
 func (x *ListEntitiesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListEntitiesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesRequest.ProtoReflect.Descriptor instead.
 func (*ListEntitiesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListEntitiesRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListEntitiesResponse struct {
 func (x *ListEntitiesResponse) Reset() {
 	*x = ListEntitiesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListEntitiesResponse) String() string {
 func (*ListEntitiesResponse) ProtoMessage() {}
 
 func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesResponse.ProtoReflect.Descriptor instead.
 func (*ListEntitiesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListEntitiesResponse) GetItems() *v1alpha1.EntityList {
@@ -144,7 +144,7 @@ type CreateEntityRequest struct {
 func (x *CreateEntityRequest) Reset() {
 	*x = CreateEntityRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateEntityRequest) String() string {
 func (*CreateEntityRequest) ProtoMessage() {}
 
 func (x *CreateEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEntityRequest.ProtoReflect.Descriptor instead.
 func (*CreateEntityRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateEntityRequest) GetItem() *v1alpha1.Entity {
@@ -189,7 +189,7 @@ type CreateEntityResponse struct {
 func (x *CreateEntityResponse) Reset() {
 	*x = CreateEntityResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateEntityResponse) String() string {
 func (*CreateEntityResponse) ProtoMessage() {}
 
 func (x *CreateEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEntityResponse.ProtoReflect.Descriptor instead.
 func (*CreateEntityResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateEntityRequest struct {
@@ -229,7 +229,7 @@ type UpdateEntityRequest struct {
 func (x *UpdateEntityRequest) Reset() {
 	*x = UpdateEntityRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateEntityRequest) String() string {
 func (*UpdateEntityRequest) ProtoMessage() {}
 
 func (x *UpdateEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateEntityRequest.ProtoReflect.Descriptor instead.
 func (*UpdateEntityRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateEntityRequest) GetItem() *v1alpha1.Entity {
@@ -274,7 +274,7 @@ type UpdateEntityResponse struct {
 func (x *UpdateEntityResponse) Reset() {
 	*x = UpdateEntityResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateEntityResponse) String() string {
 func (*UpdateEntityResponse) ProtoMessage() {}
 
 func (x *UpdateEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateEntityResponse.ProtoReflect.Descriptor instead.
 func (*UpdateEntityResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{5}
 }
 
 type GetEntityRequest struct {
@@ -315,7 +315,7 @@ type GetEntityRequest struct {
 func (x *GetEntityRequest) Reset() {
 	*x = GetEntityRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetEntityRequest) String() string {
 func (*GetEntityRequest) ProtoMessage() {}
 
 func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityRequest.ProtoReflect.Descriptor instead.
 func (*GetEntityRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetEntityRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetEntityResponse struct {
 func (x *GetEntityResponse) Reset() {
 	*x = GetEntityResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetEntityResponse) String() string {
 func (*GetEntityResponse) ProtoMessage() {}
 
 func (x *GetEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityResponse.ProtoReflect.Descriptor instead.
 func (*GetEntityResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetEntityResponse) GetItem() *v1alpha1.Entity {
@@ -425,7 +425,7 @@ type DeleteEntityRequest struct {
 func (x *DeleteEntityRequest) Reset() {
 	*x = DeleteEntityRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteEntityRequest) String() string {
 func (*DeleteEntityRequest) ProtoMessage() {}
 
 func (x *DeleteEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEntityRequest.ProtoReflect.Descriptor instead.
 func (*DeleteEntityRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteEntityRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteEntityResponse struct {
 func (x *DeleteEntityResponse) Reset() {
 	*x = DeleteEntityResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteEntityResponse) String() string {
 func (*DeleteEntityResponse) ProtoMessage() {}
 
 func (x *DeleteEntityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,12 +503,12 @@ func (x *DeleteEntityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteEntityResponse.ProtoReflect.Descriptor instead.
 func (*DeleteEntityResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP(), []int{9}
 }
 
-var File_github_com_metaprov_modeldapi_services_entity_v1_entity_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_entity_v1_entity_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDesc = []byte{
 	0x0a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x2f,
@@ -642,49 +642,49 @@ var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDesc =
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescData = file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescData = file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_goTypes = []interface{}{
-	(*ListEntitiesRequest)(nil),  // 0: github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest
-	(*ListEntitiesResponse)(nil), // 1: github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse
-	(*CreateEntityRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest
-	(*CreateEntityResponse)(nil), // 3: github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse
-	(*UpdateEntityRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest
-	(*UpdateEntityResponse)(nil), // 5: github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse
-	(*GetEntityRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest
-	(*GetEntityResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse
-	(*DeleteEntityRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest
-	(*DeleteEntityResponse)(nil), // 9: github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse
-	nil,                          // 10: github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry
-	(*v1alpha1.EntityList)(nil),  // 11: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList
-	(*v1alpha1.Entity)(nil),      // 12: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
+var file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_goTypes = []interface{}{
+	(*ListEntitiesRequest)(nil),  // 0: github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest
+	(*ListEntitiesResponse)(nil), // 1: github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse
+	(*CreateEntityRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest
+	(*CreateEntityResponse)(nil), // 3: github.com.metaprov.modelaapi.services.entity.v1.CreateEntityResponse
+	(*UpdateEntityRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest
+	(*UpdateEntityResponse)(nil), // 5: github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityResponse
+	(*GetEntityRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.entity.v1.GetEntityRequest
+	(*GetEntityResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.entity.v1.GetEntityResponse
+	(*DeleteEntityRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityRequest
+	(*DeleteEntityResponse)(nil), // 9: github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityResponse
+	nil,                          // 10: github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest.LabelsEntry
+	(*v1alpha1.EntityList)(nil),  // 11: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList
+	(*v1alpha1.Entity)(nil),      // 12: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity
 }
-var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_depIdxs = []int32{
-	10, // 0: github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.labels:type_name -> github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest.LabelsEntry
-	11, // 1: github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.EntityList
-	12, // 2: github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
-	12, // 3: github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
-	12, // 4: github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity
-	0,  // 5: github.com.metaprov.modeldapi.services.entity.v1.EntityService.ListEntities:input_type -> github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.entity.v1.EntityService.CreateEntity:input_type -> github.com.metaprov.modeldapi.services.entity.v1.CreateEntityRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.entity.v1.EntityService.GetEntity:input_type -> github.com.metaprov.modeldapi.services.entity.v1.GetEntityRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.entity.v1.EntityService.UpdateEntity:input_type -> github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.entity.v1.EntityService.DeleteEntity:input_type -> github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.entity.v1.EntityService.ListEntities:output_type -> github.com.metaprov.modeldapi.services.entity.v1.ListEntitiesResponse
-	3,  // 11: github.com.metaprov.modeldapi.services.entity.v1.EntityService.CreateEntity:output_type -> github.com.metaprov.modeldapi.services.entity.v1.CreateEntityResponse
-	7,  // 12: github.com.metaprov.modeldapi.services.entity.v1.EntityService.GetEntity:output_type -> github.com.metaprov.modeldapi.services.entity.v1.GetEntityResponse
-	5,  // 13: github.com.metaprov.modeldapi.services.entity.v1.EntityService.UpdateEntity:output_type -> github.com.metaprov.modeldapi.services.entity.v1.UpdateEntityResponse
-	9,  // 14: github.com.metaprov.modeldapi.services.entity.v1.EntityService.DeleteEntity:output_type -> github.com.metaprov.modeldapi.services.entity.v1.DeleteEntityResponse
+var file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_depIdxs = []int32{
+	10, // 0: github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest.labels:type_name -> github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest.LabelsEntry
+	11, // 1: github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList
+	12, // 2: github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity
+	12, // 3: github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity
+	12, // 4: github.com.metaprov.modelaapi.services.entity.v1.GetEntityResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity
+	0,  // 5: github.com.metaprov.modelaapi.services.entity.v1.EntityService.ListEntities:input_type -> github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.entity.v1.EntityService.CreateEntity:input_type -> github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.entity.v1.EntityService.GetEntity:input_type -> github.com.metaprov.modelaapi.services.entity.v1.GetEntityRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.entity.v1.EntityService.UpdateEntity:input_type -> github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.entity.v1.EntityService.DeleteEntity:input_type -> github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.entity.v1.EntityService.ListEntities:output_type -> github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse
+	3,  // 11: github.com.metaprov.modelaapi.services.entity.v1.EntityService.CreateEntity:output_type -> github.com.metaprov.modelaapi.services.entity.v1.CreateEntityResponse
+	7,  // 12: github.com.metaprov.modelaapi.services.entity.v1.EntityService.GetEntity:output_type -> github.com.metaprov.modelaapi.services.entity.v1.GetEntityResponse
+	5,  // 13: github.com.metaprov.modelaapi.services.entity.v1.EntityService.UpdateEntity:output_type -> github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityResponse
+	9,  // 14: github.com.metaprov.modelaapi.services.entity.v1.EntityService.DeleteEntity:output_type -> github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -692,13 +692,13 @@ var file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_depIdxs =
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() }
-func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_entity_v1_entity_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_init() }
+func file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_entity_v1_entity_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListEntitiesRequest); i {
 			case 0:
 				return &v.state
@@ -710,7 +710,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListEntitiesResponse); i {
 			case 0:
 				return &v.state
@@ -722,7 +722,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateEntityRequest); i {
 			case 0:
 				return &v.state
@@ -734,7 +734,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateEntityResponse); i {
 			case 0:
 				return &v.state
@@ -746,7 +746,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateEntityRequest); i {
 			case 0:
 				return &v.state
@@ -758,7 +758,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateEntityResponse); i {
 			case 0:
 				return &v.state
@@ -770,7 +770,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetEntityRequest); i {
 			case 0:
 				return &v.state
@@ -782,7 +782,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetEntityResponse); i {
 			case 0:
 				return &v.state
@@ -794,7 +794,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteEntityRequest); i {
 			case 0:
 				return &v.state
@@ -806,7 +806,7 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteEntityResponse); i {
 			case 0:
 				return &v.state
@@ -823,20 +823,20 @@ func file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_entity_v1_entity_proto = out.File
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_entity_v1_entity_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_entity_v1_entity_proto = out.File
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_entity_v1_entity_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -868,7 +868,7 @@ func NewEntityServiceClient(cc grpc.ClientConnInterface) EntityServiceClient {
 
 func (c *entityServiceClient) ListEntities(ctx context.Context, in *ListEntitiesRequest, opts ...grpc.CallOption) (*ListEntitiesResponse, error) {
 	out := new(ListEntitiesResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/ListEntities", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -877,7 +877,7 @@ func (c *entityServiceClient) ListEntities(ctx context.Context, in *ListEntities
 
 func (c *entityServiceClient) CreateEntity(ctx context.Context, in *CreateEntityRequest, opts ...grpc.CallOption) (*CreateEntityResponse, error) {
 	out := new(CreateEntityResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/CreateEntity", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -886,7 +886,7 @@ func (c *entityServiceClient) CreateEntity(ctx context.Context, in *CreateEntity
 
 func (c *entityServiceClient) GetEntity(ctx context.Context, in *GetEntityRequest, opts ...grpc.CallOption) (*GetEntityResponse, error) {
 	out := new(GetEntityResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/GetEntity", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -895,7 +895,7 @@ func (c *entityServiceClient) GetEntity(ctx context.Context, in *GetEntityReques
 
 func (c *entityServiceClient) UpdateEntity(ctx context.Context, in *UpdateEntityRequest, opts ...grpc.CallOption) (*UpdateEntityResponse, error) {
 	out := new(UpdateEntityResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/UpdateEntity", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -904,7 +904,7 @@ func (c *entityServiceClient) UpdateEntity(ctx context.Context, in *UpdateEntity
 
 func (c *entityServiceClient) DeleteEntity(ctx context.Context, in *DeleteEntityRequest, opts ...grpc.CallOption) (*DeleteEntityResponse, error) {
 	out := new(DeleteEntityResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/DeleteEntity", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -954,7 +954,7 @@ func _EntityService_ListEntities_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/ListEntities",
+		FullMethod: "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/ListEntities",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EntityServiceServer).ListEntities(ctx, req.(*ListEntitiesRequest))
@@ -972,7 +972,7 @@ func _EntityService_CreateEntity_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/CreateEntity",
+		FullMethod: "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/CreateEntity",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EntityServiceServer).CreateEntity(ctx, req.(*CreateEntityRequest))
@@ -990,7 +990,7 @@ func _EntityService_GetEntity_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/GetEntity",
+		FullMethod: "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/GetEntity",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EntityServiceServer).GetEntity(ctx, req.(*GetEntityRequest))
@@ -1008,7 +1008,7 @@ func _EntityService_UpdateEntity_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/UpdateEntity",
+		FullMethod: "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/UpdateEntity",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EntityServiceServer).UpdateEntity(ctx, req.(*UpdateEntityRequest))
@@ -1026,7 +1026,7 @@ func _EntityService_DeleteEntity_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.entity.v1.EntityService/DeleteEntity",
+		FullMethod: "/github.com.metaprov.modelaapi.services.entity.v1.EntityService/DeleteEntity",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(EntityServiceServer).DeleteEntity(ctx, req.(*DeleteEntityRequest))
@@ -1035,7 +1035,7 @@ func _EntityService_DeleteEntity_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _EntityService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.entity.v1.EntityService",
+	ServiceName: "github.com.metaprov.modelaapi.services.entity.v1.EntityService",
 	HandlerType: (*EntityServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1060,5 +1060,5 @@ var _EntityService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/entity/v1/entity.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/entity/v1/entity.proto",
 }

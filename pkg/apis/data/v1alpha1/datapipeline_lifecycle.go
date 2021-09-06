@@ -9,8 +9,8 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modeldapi/pkg/apis/data"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/data"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"

@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/lab/v1/lab.proto
+// source: github.com/metaprov/modelaapi/services/lab/v1/lab.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListLabsRequest struct {
 func (x *ListLabsRequest) Reset() {
 	*x = ListLabsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListLabsRequest) String() string {
 func (*ListLabsRequest) ProtoMessage() {}
 
 func (x *ListLabsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListLabsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabsRequest.ProtoReflect.Descriptor instead.
 func (*ListLabsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListLabsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListLabsResponse struct {
 func (x *ListLabsResponse) Reset() {
 	*x = ListLabsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListLabsResponse) String() string {
 func (*ListLabsResponse) ProtoMessage() {}
 
 func (x *ListLabsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListLabsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabsResponse.ProtoReflect.Descriptor instead.
 func (*ListLabsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListLabsResponse) GetItems() *v1alpha1.LabList {
@@ -143,7 +143,7 @@ type LabResponse struct {
 func (x *LabResponse) Reset() {
 	*x = LabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *LabResponse) String() string {
 func (*LabResponse) ProtoMessage() {}
 
 func (x *LabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *LabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LabResponse.ProtoReflect.Descriptor instead.
 func (*LabResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateLabRequest struct {
@@ -183,7 +183,7 @@ type CreateLabRequest struct {
 func (x *CreateLabRequest) Reset() {
 	*x = CreateLabRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateLabRequest) String() string {
 func (*CreateLabRequest) ProtoMessage() {}
 
 func (x *CreateLabRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateLabRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabRequest.ProtoReflect.Descriptor instead.
 func (*CreateLabRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateLabRequest) GetItem() *v1alpha1.Lab {
@@ -228,7 +228,7 @@ type CreateLabResponse struct {
 func (x *CreateLabResponse) Reset() {
 	*x = CreateLabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *CreateLabResponse) String() string {
 func (*CreateLabResponse) ProtoMessage() {}
 
 func (x *CreateLabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *CreateLabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabResponse.ProtoReflect.Descriptor instead.
 func (*CreateLabResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateLabRequest struct {
@@ -268,7 +268,7 @@ type UpdateLabRequest struct {
 func (x *UpdateLabRequest) Reset() {
 	*x = UpdateLabRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *UpdateLabRequest) String() string {
 func (*UpdateLabRequest) ProtoMessage() {}
 
 func (x *UpdateLabRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *UpdateLabRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabRequest.ProtoReflect.Descriptor instead.
 func (*UpdateLabRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateLabRequest) GetItem() *v1alpha1.Lab {
@@ -313,7 +313,7 @@ type UpdateLabResponse struct {
 func (x *UpdateLabResponse) Reset() {
 	*x = UpdateLabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -326,7 +326,7 @@ func (x *UpdateLabResponse) String() string {
 func (*UpdateLabResponse) ProtoMessage() {}
 
 func (x *UpdateLabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -339,7 +339,7 @@ func (x *UpdateLabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabResponse.ProtoReflect.Descriptor instead.
 func (*UpdateLabResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{6}
 }
 
 type GetLabRequest struct {
@@ -354,7 +354,7 @@ type GetLabRequest struct {
 func (x *GetLabRequest) Reset() {
 	*x = GetLabRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +367,7 @@ func (x *GetLabRequest) String() string {
 func (*GetLabRequest) ProtoMessage() {}
 
 func (x *GetLabRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *GetLabRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabRequest.ProtoReflect.Descriptor instead.
 func (*GetLabRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetLabRequest) GetNamespace() string {
@@ -409,7 +409,7 @@ type GetLabResponse struct {
 func (x *GetLabResponse) Reset() {
 	*x = GetLabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetLabResponse) String() string {
 func (*GetLabResponse) ProtoMessage() {}
 
 func (x *GetLabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetLabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabResponse.ProtoReflect.Descriptor instead.
 func (*GetLabResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetLabResponse) GetItem() *v1alpha1.Lab {
@@ -464,7 +464,7 @@ type GetLabNamespacesRequest struct {
 func (x *GetLabNamespacesRequest) Reset() {
 	*x = GetLabNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -477,7 +477,7 @@ func (x *GetLabNamespacesRequest) String() string {
 func (*GetLabNamespacesRequest) ProtoMessage() {}
 
 func (x *GetLabNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +490,7 @@ func (x *GetLabNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetLabNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetLabNamespacesRequest) GetNamespace() string {
@@ -518,7 +518,7 @@ type GetLabNamespacesResponse struct {
 func (x *GetLabNamespacesResponse) Reset() {
 	*x = GetLabNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -531,7 +531,7 @@ func (x *GetLabNamespacesResponse) String() string {
 func (*GetLabNamespacesResponse) ProtoMessage() {}
 
 func (x *GetLabNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -544,7 +544,7 @@ func (x *GetLabNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetLabNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetLabNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -566,7 +566,7 @@ type DeleteLabRequest struct {
 func (x *DeleteLabRequest) Reset() {
 	*x = DeleteLabRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -579,7 +579,7 @@ func (x *DeleteLabRequest) String() string {
 func (*DeleteLabRequest) ProtoMessage() {}
 
 func (x *DeleteLabRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -592,7 +592,7 @@ func (x *DeleteLabRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLabRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteLabRequest) GetNamespace() string {
@@ -618,7 +618,7 @@ type DeleteLabResponse struct {
 func (x *DeleteLabResponse) Reset() {
 	*x = DeleteLabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -631,7 +631,7 @@ func (x *DeleteLabResponse) String() string {
 func (*DeleteLabResponse) ProtoMessage() {}
 
 func (x *DeleteLabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -644,12 +644,12 @@ func (x *DeleteLabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLabResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP(), []int{12}
 }
 
-var File_github_com_metaprov_modeldapi_services_lab_v1_lab_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_lab_v1_lab_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDesc = []byte{
 	0x0a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6c, 0x61, 0x62, 0x2f, 0x76, 0x31, 0x2f,
@@ -794,54 +794,54 @@ var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDesc = []byt
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescData = file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescData = file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
-var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_goTypes = []interface{}{
-	(*ListLabsRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest
-	(*ListLabsResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.lab.v1.ListLabsResponse
-	(*LabResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.lab.v1.LabResponse
-	(*CreateLabRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest
-	(*CreateLabResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.lab.v1.CreateLabResponse
-	(*UpdateLabRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest
-	(*UpdateLabResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.lab.v1.UpdateLabResponse
-	(*GetLabRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.lab.v1.GetLabRequest
-	(*GetLabResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.lab.v1.GetLabResponse
-	(*GetLabNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.lab.v1.GetLabNamespacesRequest
-	(*GetLabNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.lab.v1.GetLabNamespacesResponse
-	(*DeleteLabRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.lab.v1.DeleteLabRequest
-	(*DeleteLabResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.lab.v1.DeleteLabResponse
-	nil,                              // 13: github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest.LabelsEntry
-	(*v1alpha1.LabList)(nil),         // 14: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList
-	(*v1alpha1.Lab)(nil),             // 15: github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	(*v1.NamespaceInfo)(nil),         // 16: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_goTypes = []interface{}{
+	(*ListLabsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest
+	(*ListLabsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse
+	(*LabResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.lab.v1.LabResponse
+	(*CreateLabRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest
+	(*CreateLabResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.lab.v1.CreateLabResponse
+	(*UpdateLabRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest
+	(*UpdateLabResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.lab.v1.UpdateLabResponse
+	(*GetLabRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest
+	(*GetLabResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse
+	(*GetLabNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesRequest
+	(*GetLabNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesResponse
+	(*DeleteLabRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest
+	(*DeleteLabResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.lab.v1.DeleteLabResponse
+	nil,                              // 13: github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry
+	(*v1alpha1.LabList)(nil),         // 14: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList
+	(*v1alpha1.Lab)(nil),             // 15: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab
+	(*v1.NamespaceInfo)(nil),         // 16: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_depIdxs = []int32{
-	13, // 0: github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest.LabelsEntry
-	14, // 1: github.com.metaprov.modeldapi.services.lab.v1.ListLabsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList
-	15, // 2: github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	15, // 3: github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	15, // 4: github.com.metaprov.modeldapi.services.lab.v1.GetLabResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab
-	16, // 5: github.com.metaprov.modeldapi.services.lab.v1.GetLabNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.lab.v1.LabService.ListLabs:input_type -> github.com.metaprov.modeldapi.services.lab.v1.ListLabsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.lab.v1.LabService.CreateLab:input_type -> github.com.metaprov.modeldapi.services.lab.v1.CreateLabRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.lab.v1.LabService.GetLab:input_type -> github.com.metaprov.modeldapi.services.lab.v1.GetLabRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.lab.v1.LabService.UpdateLab:input_type -> github.com.metaprov.modeldapi.services.lab.v1.UpdateLabRequest
-	11, // 10: github.com.metaprov.modeldapi.services.lab.v1.LabService.DeleteLab:input_type -> github.com.metaprov.modeldapi.services.lab.v1.DeleteLabRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.lab.v1.LabService.ListLabs:output_type -> github.com.metaprov.modeldapi.services.lab.v1.ListLabsResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.lab.v1.LabService.CreateLab:output_type -> github.com.metaprov.modeldapi.services.lab.v1.CreateLabResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.lab.v1.LabService.GetLab:output_type -> github.com.metaprov.modeldapi.services.lab.v1.GetLabResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.lab.v1.LabService.UpdateLab:output_type -> github.com.metaprov.modeldapi.services.lab.v1.UpdateLabResponse
-	12, // 15: github.com.metaprov.modeldapi.services.lab.v1.LabService.DeleteLab:output_type -> github.com.metaprov.modeldapi.services.lab.v1.DeleteLabResponse
+var file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_depIdxs = []int32{
+	13, // 0: github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest.LabelsEntry
+	14, // 1: github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList
+	15, // 2: github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab
+	15, // 3: github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab
+	15, // 4: github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab
+	16, // 5: github.com.metaprov.modelaapi.services.lab.v1.GetLabNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.lab.v1.LabService.ListLabs:input_type -> github.com.metaprov.modelaapi.services.lab.v1.ListLabsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.lab.v1.LabService.CreateLab:input_type -> github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.lab.v1.LabService.GetLab:input_type -> github.com.metaprov.modelaapi.services.lab.v1.GetLabRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.lab.v1.LabService.UpdateLab:input_type -> github.com.metaprov.modelaapi.services.lab.v1.UpdateLabRequest
+	11, // 10: github.com.metaprov.modelaapi.services.lab.v1.LabService.DeleteLab:input_type -> github.com.metaprov.modelaapi.services.lab.v1.DeleteLabRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.lab.v1.LabService.ListLabs:output_type -> github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.lab.v1.LabService.CreateLab:output_type -> github.com.metaprov.modelaapi.services.lab.v1.CreateLabResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.lab.v1.LabService.GetLab:output_type -> github.com.metaprov.modelaapi.services.lab.v1.GetLabResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.lab.v1.LabService.UpdateLab:output_type -> github.com.metaprov.modelaapi.services.lab.v1.UpdateLabResponse
+	12, // 15: github.com.metaprov.modelaapi.services.lab.v1.LabService.DeleteLab:output_type -> github.com.metaprov.modelaapi.services.lab.v1.DeleteLabResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -849,13 +849,13 @@ var file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_depIdxs = []int
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() }
-func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_lab_v1_lab_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_init() }
+func file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_lab_v1_lab_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabsRequest); i {
 			case 0:
 				return &v.state
@@ -867,7 +867,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabsResponse); i {
 			case 0:
 				return &v.state
@@ -879,7 +879,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LabResponse); i {
 			case 0:
 				return &v.state
@@ -891,7 +891,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabRequest); i {
 			case 0:
 				return &v.state
@@ -903,7 +903,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabResponse); i {
 			case 0:
 				return &v.state
@@ -915,7 +915,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabRequest); i {
 			case 0:
 				return &v.state
@@ -927,7 +927,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabResponse); i {
 			case 0:
 				return &v.state
@@ -939,7 +939,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabRequest); i {
 			case 0:
 				return &v.state
@@ -951,7 +951,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabResponse); i {
 			case 0:
 				return &v.state
@@ -963,7 +963,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -975,7 +975,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -987,7 +987,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabRequest); i {
 			case 0:
 				return &v.state
@@ -999,7 +999,7 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabResponse); i {
 			case 0:
 				return &v.state
@@ -1016,20 +1016,20 @@ func file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_lab_v1_lab_proto = out.File
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_lab_v1_lab_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_lab_v1_lab_proto = out.File
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_lab_v1_lab_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1061,7 +1061,7 @@ func NewLabServiceClient(cc grpc.ClientConnInterface) LabServiceClient {
 
 func (c *labServiceClient) ListLabs(ctx context.Context, in *ListLabsRequest, opts ...grpc.CallOption) (*ListLabsResponse, error) {
 	out := new(ListLabsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.lab.v1.LabService/ListLabs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1070,7 +1070,7 @@ func (c *labServiceClient) ListLabs(ctx context.Context, in *ListLabsRequest, op
 
 func (c *labServiceClient) CreateLab(ctx context.Context, in *CreateLabRequest, opts ...grpc.CallOption) (*CreateLabResponse, error) {
 	out := new(CreateLabResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.lab.v1.LabService/CreateLab", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1079,7 +1079,7 @@ func (c *labServiceClient) CreateLab(ctx context.Context, in *CreateLabRequest, 
 
 func (c *labServiceClient) GetLab(ctx context.Context, in *GetLabRequest, opts ...grpc.CallOption) (*GetLabResponse, error) {
 	out := new(GetLabResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.lab.v1.LabService/GetLab", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1088,7 +1088,7 @@ func (c *labServiceClient) GetLab(ctx context.Context, in *GetLabRequest, opts .
 
 func (c *labServiceClient) UpdateLab(ctx context.Context, in *UpdateLabRequest, opts ...grpc.CallOption) (*UpdateLabResponse, error) {
 	out := new(UpdateLabResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.lab.v1.LabService/UpdateLab", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1097,7 +1097,7 @@ func (c *labServiceClient) UpdateLab(ctx context.Context, in *UpdateLabRequest, 
 
 func (c *labServiceClient) DeleteLab(ctx context.Context, in *DeleteLabRequest, opts ...grpc.CallOption) (*DeleteLabResponse, error) {
 	out := new(DeleteLabResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.lab.v1.LabService/DeleteLab", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1147,7 +1147,7 @@ func _LabService_ListLabs_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.lab.v1.LabService/ListLabs",
+		FullMethod: "/github.com.metaprov.modelaapi.services.lab.v1.LabService/ListLabs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabServiceServer).ListLabs(ctx, req.(*ListLabsRequest))
@@ -1165,7 +1165,7 @@ func _LabService_CreateLab_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.lab.v1.LabService/CreateLab",
+		FullMethod: "/github.com.metaprov.modelaapi.services.lab.v1.LabService/CreateLab",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabServiceServer).CreateLab(ctx, req.(*CreateLabRequest))
@@ -1183,7 +1183,7 @@ func _LabService_GetLab_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.lab.v1.LabService/GetLab",
+		FullMethod: "/github.com.metaprov.modelaapi.services.lab.v1.LabService/GetLab",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabServiceServer).GetLab(ctx, req.(*GetLabRequest))
@@ -1201,7 +1201,7 @@ func _LabService_UpdateLab_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.lab.v1.LabService/UpdateLab",
+		FullMethod: "/github.com.metaprov.modelaapi.services.lab.v1.LabService/UpdateLab",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabServiceServer).UpdateLab(ctx, req.(*UpdateLabRequest))
@@ -1219,7 +1219,7 @@ func _LabService_DeleteLab_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.lab.v1.LabService/DeleteLab",
+		FullMethod: "/github.com.metaprov.modelaapi.services.lab.v1.LabService/DeleteLab",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabServiceServer).DeleteLab(ctx, req.(*DeleteLabRequest))
@@ -1228,7 +1228,7 @@ func _LabService_DeleteLab_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _LabService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.lab.v1.LabService",
+	ServiceName: "github.com.metaprov.modelaapi.services.lab.v1.LabService",
 	HandlerType: (*LabServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1253,5 +1253,5 @@ var _LabService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/lab/v1/lab.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/lab/v1/lab.proto",
 }

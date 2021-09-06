@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -39,7 +39,7 @@ func (entity *Entity) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modeld.io", Kind: "Entity"},
+		schema.GroupKind{Group: "data.modela.io", Kind: "Entity"},
 		entity.Name, allErrs)
 }
 

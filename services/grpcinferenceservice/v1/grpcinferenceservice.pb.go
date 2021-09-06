@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto
+// source: github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto
 
 package v1
 
@@ -41,7 +41,7 @@ type ServerLiveRequest struct {
 func (x *ServerLiveRequest) Reset() {
 	*x = ServerLiveRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -54,7 +54,7 @@ func (x *ServerLiveRequest) String() string {
 func (*ServerLiveRequest) ProtoMessage() {}
 
 func (x *ServerLiveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -67,7 +67,7 @@ func (x *ServerLiveRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerLiveRequest.ProtoReflect.Descriptor instead.
 func (*ServerLiveRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{0}
 }
 
 type ServerLiveResponse struct {
@@ -82,7 +82,7 @@ type ServerLiveResponse struct {
 func (x *ServerLiveResponse) Reset() {
 	*x = ServerLiveResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -95,7 +95,7 @@ func (x *ServerLiveResponse) String() string {
 func (*ServerLiveResponse) ProtoMessage() {}
 
 func (x *ServerLiveResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +108,7 @@ func (x *ServerLiveResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerLiveResponse.ProtoReflect.Descriptor instead.
 func (*ServerLiveResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ServerLiveResponse) GetLive() bool {
@@ -127,7 +127,7 @@ type ServerReadyRequest struct {
 func (x *ServerReadyRequest) Reset() {
 	*x = ServerReadyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -140,7 +140,7 @@ func (x *ServerReadyRequest) String() string {
 func (*ServerReadyRequest) ProtoMessage() {}
 
 func (x *ServerReadyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -153,7 +153,7 @@ func (x *ServerReadyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerReadyRequest.ProtoReflect.Descriptor instead.
 func (*ServerReadyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{2}
 }
 
 type ServerReadyResponse struct {
@@ -168,7 +168,7 @@ type ServerReadyResponse struct {
 func (x *ServerReadyResponse) Reset() {
 	*x = ServerReadyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -181,7 +181,7 @@ func (x *ServerReadyResponse) String() string {
 func (*ServerReadyResponse) ProtoMessage() {}
 
 func (x *ServerReadyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -194,7 +194,7 @@ func (x *ServerReadyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerReadyResponse.ProtoReflect.Descriptor instead.
 func (*ServerReadyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ServerReadyResponse) GetReady() bool {
@@ -219,7 +219,7 @@ type ModelReadyRequest struct {
 func (x *ModelReadyRequest) Reset() {
 	*x = ModelReadyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -232,7 +232,7 @@ func (x *ModelReadyRequest) String() string {
 func (*ModelReadyRequest) ProtoMessage() {}
 
 func (x *ModelReadyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -245,7 +245,7 @@ func (x *ModelReadyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelReadyRequest.ProtoReflect.Descriptor instead.
 func (*ModelReadyRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ModelReadyRequest) GetName() string {
@@ -274,7 +274,7 @@ type ModelReadyResponse struct {
 func (x *ModelReadyResponse) Reset() {
 	*x = ModelReadyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *ModelReadyResponse) String() string {
 func (*ModelReadyResponse) ProtoMessage() {}
 
 func (x *ModelReadyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *ModelReadyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelReadyResponse.ProtoReflect.Descriptor instead.
 func (*ModelReadyResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ModelReadyResponse) GetReady() bool {
@@ -319,7 +319,7 @@ type ServerMetadataRequest struct {
 func (x *ServerMetadataRequest) Reset() {
 	*x = ServerMetadataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -332,7 +332,7 @@ func (x *ServerMetadataRequest) String() string {
 func (*ServerMetadataRequest) ProtoMessage() {}
 
 func (x *ServerMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +345,7 @@ func (x *ServerMetadataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerMetadataRequest.ProtoReflect.Descriptor instead.
 func (*ServerMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{6}
 }
 
 type ServerMetadataResponse struct {
@@ -364,7 +364,7 @@ type ServerMetadataResponse struct {
 func (x *ServerMetadataResponse) Reset() {
 	*x = ServerMetadataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -377,7 +377,7 @@ func (x *ServerMetadataResponse) String() string {
 func (*ServerMetadataResponse) ProtoMessage() {}
 
 func (x *ServerMetadataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -390,7 +390,7 @@ func (x *ServerMetadataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerMetadataResponse.ProtoReflect.Descriptor instead.
 func (*ServerMetadataResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ServerMetadataResponse) GetName() string {
@@ -429,7 +429,7 @@ type ModelMetadataRequest struct {
 func (x *ModelMetadataRequest) Reset() {
 	*x = ModelMetadataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -442,7 +442,7 @@ func (x *ModelMetadataRequest) String() string {
 func (*ModelMetadataRequest) ProtoMessage() {}
 
 func (x *ModelMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -455,7 +455,7 @@ func (x *ModelMetadataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMetadataRequest.ProtoReflect.Descriptor instead.
 func (*ModelMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ModelMetadataRequest) GetName() string {
@@ -492,7 +492,7 @@ type ModelMetadataResponse struct {
 func (x *ModelMetadataResponse) Reset() {
 	*x = ModelMetadataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -505,7 +505,7 @@ func (x *ModelMetadataResponse) String() string {
 func (*ModelMetadataResponse) ProtoMessage() {}
 
 func (x *ModelMetadataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -518,7 +518,7 @@ func (x *ModelMetadataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelMetadataResponse.ProtoReflect.Descriptor instead.
 func (*ModelMetadataResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ModelMetadataResponse) GetName() string {
@@ -596,7 +596,7 @@ type ModelInferRequest struct {
 func (x *ModelInferRequest) Reset() {
 	*x = ModelInferRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -609,7 +609,7 @@ func (x *ModelInferRequest) String() string {
 func (*ModelInferRequest) ProtoMessage() {}
 
 func (x *ModelInferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -622,7 +622,7 @@ func (x *ModelInferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelInferRequest.ProtoReflect.Descriptor instead.
 func (*ModelInferRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ModelInferRequest) GetModelName() string {
@@ -709,7 +709,7 @@ type ModelInferResponse struct {
 func (x *ModelInferResponse) Reset() {
 	*x = ModelInferResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -722,7 +722,7 @@ func (x *ModelInferResponse) String() string {
 func (*ModelInferResponse) ProtoMessage() {}
 
 func (x *ModelInferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -735,7 +735,7 @@ func (x *ModelInferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelInferResponse.ProtoReflect.Descriptor instead.
 func (*ModelInferResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ModelInferResponse) GetModelName() string {
@@ -802,7 +802,7 @@ type InferParameter struct {
 func (x *InferParameter) Reset() {
 	*x = InferParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -815,7 +815,7 @@ func (x *InferParameter) String() string {
 func (*InferParameter) ProtoMessage() {}
 
 func (x *InferParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -828,7 +828,7 @@ func (x *InferParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InferParameter.ProtoReflect.Descriptor instead.
 func (*InferParameter) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{12}
 }
 
 func (m *InferParameter) GetParameterChoice() isInferParameter_ParameterChoice {
@@ -931,7 +931,7 @@ type InferTensorContents struct {
 func (x *InferTensorContents) Reset() {
 	*x = InferTensorContents{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -944,7 +944,7 @@ func (x *InferTensorContents) String() string {
 func (*InferTensorContents) ProtoMessage() {}
 
 func (x *InferTensorContents) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -957,7 +957,7 @@ func (x *InferTensorContents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InferTensorContents.ProtoReflect.Descriptor instead.
 func (*InferTensorContents) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *InferTensorContents) GetBoolContents() []bool {
@@ -1030,7 +1030,7 @@ type PredictorInfo struct {
 func (x *PredictorInfo) Reset() {
 	*x = PredictorInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1043,7 +1043,7 @@ func (x *PredictorInfo) String() string {
 func (*PredictorInfo) ProtoMessage() {}
 
 func (x *PredictorInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1056,7 +1056,7 @@ func (x *PredictorInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictorInfo.ProtoReflect.Descriptor instead.
 func (*PredictorInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *PredictorInfo) GetName() string {
@@ -1113,7 +1113,7 @@ type ModelInfo struct {
 func (x *ModelInfo) Reset() {
 	*x = ModelInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1126,7 +1126,7 @@ func (x *ModelInfo) String() string {
 func (*ModelInfo) ProtoMessage() {}
 
 func (x *ModelInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1139,7 +1139,7 @@ func (x *ModelInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModelInfo.ProtoReflect.Descriptor instead.
 func (*ModelInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ModelInfo) GetName() string {
@@ -1266,7 +1266,7 @@ type SchemaInfo struct {
 func (x *SchemaInfo) Reset() {
 	*x = SchemaInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1279,7 +1279,7 @@ func (x *SchemaInfo) String() string {
 func (*SchemaInfo) ProtoMessage() {}
 
 func (x *SchemaInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1292,7 +1292,7 @@ func (x *SchemaInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SchemaInfo.ProtoReflect.Descriptor instead.
 func (*SchemaInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *SchemaInfo) GetColumns() []*ColumnInfo {
@@ -1319,7 +1319,7 @@ type ColumnInfo struct {
 func (x *ColumnInfo) Reset() {
 	*x = ColumnInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1332,7 +1332,7 @@ func (x *ColumnInfo) String() string {
 func (*ColumnInfo) ProtoMessage() {}
 
 func (x *ColumnInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1345,7 +1345,7 @@ func (x *ColumnInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ColumnInfo.ProtoReflect.Descriptor instead.
 func (*ColumnInfo) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ColumnInfo) GetName() string {
@@ -1402,7 +1402,7 @@ type GetPredictorRequest struct {
 func (x *GetPredictorRequest) Reset() {
 	*x = GetPredictorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1415,7 +1415,7 @@ func (x *GetPredictorRequest) String() string {
 func (*GetPredictorRequest) ProtoMessage() {}
 
 func (x *GetPredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1428,7 +1428,7 @@ func (x *GetPredictorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictorRequest.ProtoReflect.Descriptor instead.
 func (*GetPredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetPredictorRequest) GetName() string {
@@ -1449,7 +1449,7 @@ type GetPredictorResponse struct {
 func (x *GetPredictorResponse) Reset() {
 	*x = GetPredictorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1462,7 +1462,7 @@ func (x *GetPredictorResponse) String() string {
 func (*GetPredictorResponse) ProtoMessage() {}
 
 func (x *GetPredictorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1475,7 +1475,7 @@ func (x *GetPredictorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictorResponse.ProtoReflect.Descriptor instead.
 func (*GetPredictorResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetPredictorResponse) GetItem() *PredictorInfo {
@@ -1497,7 +1497,7 @@ type GetModelRequest struct {
 func (x *GetModelRequest) Reset() {
 	*x = GetModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1510,7 +1510,7 @@ func (x *GetModelRequest) String() string {
 func (*GetModelRequest) ProtoMessage() {}
 
 func (x *GetModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1523,7 +1523,7 @@ func (x *GetModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelRequest.ProtoReflect.Descriptor instead.
 func (*GetModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetModelRequest) GetPredictorName() string {
@@ -1551,7 +1551,7 @@ type GetModelResponse struct {
 func (x *GetModelResponse) Reset() {
 	*x = GetModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1564,7 +1564,7 @@ func (x *GetModelResponse) String() string {
 func (*GetModelResponse) ProtoMessage() {}
 
 func (x *GetModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1577,7 +1577,7 @@ func (x *GetModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelResponse.ProtoReflect.Descriptor instead.
 func (*GetModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetModelResponse) GetItem() *ModelInfo {
@@ -1604,7 +1604,7 @@ type PredictRequest struct {
 func (x *PredictRequest) Reset() {
 	*x = PredictRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1617,7 +1617,7 @@ func (x *PredictRequest) String() string {
 func (*PredictRequest) ProtoMessage() {}
 
 func (x *PredictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1630,7 +1630,7 @@ func (x *PredictRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictRequest.ProtoReflect.Descriptor instead.
 func (*PredictRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *PredictRequest) GetName() string {
@@ -1694,7 +1694,7 @@ type PredictResponse struct {
 func (x *PredictResponse) Reset() {
 	*x = PredictResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1707,7 +1707,7 @@ func (x *PredictResponse) String() string {
 func (*PredictResponse) ProtoMessage() {}
 
 func (x *PredictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1720,7 +1720,7 @@ func (x *PredictResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictResponse.ProtoReflect.Descriptor instead.
 func (*PredictResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *PredictResponse) GetItems() []*PredictResultLineItem {
@@ -1755,7 +1755,7 @@ type PredictResultLineItem struct {
 func (x *PredictResultLineItem) Reset() {
 	*x = PredictResultLineItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1768,7 +1768,7 @@ func (x *PredictResultLineItem) String() string {
 func (*PredictResultLineItem) ProtoMessage() {}
 
 func (x *PredictResultLineItem) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1781,7 +1781,7 @@ func (x *PredictResultLineItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictResultLineItem.ProtoReflect.Descriptor instead.
 func (*PredictResultLineItem) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *PredictResultLineItem) GetSuccess() bool {
@@ -1853,7 +1853,7 @@ type ProbabilityValue struct {
 func (x *ProbabilityValue) Reset() {
 	*x = ProbabilityValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1866,7 +1866,7 @@ func (x *ProbabilityValue) String() string {
 func (*ProbabilityValue) ProtoMessage() {}
 
 func (x *ProbabilityValue) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1879,7 +1879,7 @@ func (x *ProbabilityValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProbabilityValue.ProtoReflect.Descriptor instead.
 func (*ProbabilityValue) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ProbabilityValue) GetLabel() string {
@@ -1908,7 +1908,7 @@ type ShapValue struct {
 func (x *ShapValue) Reset() {
 	*x = ShapValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1921,7 +1921,7 @@ func (x *ShapValue) String() string {
 func (*ShapValue) ProtoMessage() {}
 
 func (x *ShapValue) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1934,7 +1934,7 @@ func (x *ShapValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShapValue.ProtoReflect.Descriptor instead.
 func (*ShapValue) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ShapValue) GetFeature() string {
@@ -1969,7 +1969,7 @@ type ModelMetadataResponse_TensorMetadata struct {
 func (x *ModelMetadataResponse_TensorMetadata) Reset() {
 	*x = ModelMetadataResponse_TensorMetadata{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1982,7 +1982,7 @@ func (x *ModelMetadataResponse_TensorMetadata) String() string {
 func (*ModelMetadataResponse_TensorMetadata) ProtoMessage() {}
 
 func (x *ModelMetadataResponse_TensorMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1995,7 +1995,7 @@ func (x *ModelMetadataResponse_TensorMetadata) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ModelMetadataResponse_TensorMetadata.ProtoReflect.Descriptor instead.
 func (*ModelMetadataResponse_TensorMetadata) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{9, 0}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{9, 0}
 }
 
 func (x *ModelMetadataResponse_TensorMetadata) GetName() string {
@@ -2042,7 +2042,7 @@ type ModelInferRequest_InferInputTensor struct {
 func (x *ModelInferRequest_InferInputTensor) Reset() {
 	*x = ModelInferRequest_InferInputTensor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2055,7 +2055,7 @@ func (x *ModelInferRequest_InferInputTensor) String() string {
 func (*ModelInferRequest_InferInputTensor) ProtoMessage() {}
 
 func (x *ModelInferRequest_InferInputTensor) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2068,7 +2068,7 @@ func (x *ModelInferRequest_InferInputTensor) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ModelInferRequest_InferInputTensor.ProtoReflect.Descriptor instead.
 func (*ModelInferRequest_InferInputTensor) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10, 0}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10, 0}
 }
 
 func (x *ModelInferRequest_InferInputTensor) GetName() string {
@@ -2121,7 +2121,7 @@ type ModelInferRequest_InferRequestedOutputTensor struct {
 func (x *ModelInferRequest_InferRequestedOutputTensor) Reset() {
 	*x = ModelInferRequest_InferRequestedOutputTensor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2134,7 +2134,7 @@ func (x *ModelInferRequest_InferRequestedOutputTensor) String() string {
 func (*ModelInferRequest_InferRequestedOutputTensor) ProtoMessage() {}
 
 func (x *ModelInferRequest_InferRequestedOutputTensor) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2147,7 +2147,7 @@ func (x *ModelInferRequest_InferRequestedOutputTensor) ProtoReflect() protorefle
 
 // Deprecated: Use ModelInferRequest_InferRequestedOutputTensor.ProtoReflect.Descriptor instead.
 func (*ModelInferRequest_InferRequestedOutputTensor) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10, 1}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{10, 1}
 }
 
 func (x *ModelInferRequest_InferRequestedOutputTensor) GetName() string {
@@ -2187,7 +2187,7 @@ type ModelInferResponse_InferOutputTensor struct {
 func (x *ModelInferResponse_InferOutputTensor) Reset() {
 	*x = ModelInferResponse_InferOutputTensor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33]
+		mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2200,7 +2200,7 @@ func (x *ModelInferResponse_InferOutputTensor) String() string {
 func (*ModelInferResponse_InferOutputTensor) ProtoMessage() {}
 
 func (x *ModelInferResponse_InferOutputTensor) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33]
+	mi := &file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2213,7 +2213,7 @@ func (x *ModelInferResponse_InferOutputTensor) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ModelInferResponse_InferOutputTensor.ProtoReflect.Descriptor instead.
 func (*ModelInferResponse_InferOutputTensor) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{11, 0}
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP(), []int{11, 0}
 }
 
 func (x *ModelInferResponse_InferOutputTensor) GetName() string {
@@ -2251,9 +2251,9 @@ func (x *ModelInferResponse_InferOutputTensor) GetContents() *InferTensorContent
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc = []byte{
 	0x0a, 0x59, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x67, 0x72, 0x70, 0x63, 0x69, 0x6e, 0x66,
@@ -2814,102 +2814,102 @@ var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinfe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData = file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData = file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
-var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes = []interface{}{
-	(*ServerLiveRequest)(nil),                            // 0: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerLiveRequest
-	(*ServerLiveResponse)(nil),                           // 1: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerLiveResponse
-	(*ServerReadyRequest)(nil),                           // 2: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerReadyRequest
-	(*ServerReadyResponse)(nil),                          // 3: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerReadyResponse
-	(*ModelReadyRequest)(nil),                            // 4: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelReadyRequest
-	(*ModelReadyResponse)(nil),                           // 5: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelReadyResponse
-	(*ServerMetadataRequest)(nil),                        // 6: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerMetadataRequest
-	(*ServerMetadataResponse)(nil),                       // 7: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerMetadataResponse
-	(*ModelMetadataRequest)(nil),                         // 8: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataRequest
-	(*ModelMetadataResponse)(nil),                        // 9: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse
-	(*ModelInferRequest)(nil),                            // 10: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest
-	(*ModelInferResponse)(nil),                           // 11: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse
-	(*InferParameter)(nil),                               // 12: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	(*InferTensorContents)(nil),                          // 13: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferTensorContents
-	(*PredictorInfo)(nil),                                // 14: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictorInfo
-	(*ModelInfo)(nil),                                    // 15: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInfo
-	(*SchemaInfo)(nil),                                   // 16: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.SchemaInfo
-	(*ColumnInfo)(nil),                                   // 17: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo
-	(*GetPredictorRequest)(nil),                          // 18: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetPredictorRequest
-	(*GetPredictorResponse)(nil),                         // 19: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetPredictorResponse
-	(*GetModelRequest)(nil),                              // 20: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelRequest
-	(*GetModelResponse)(nil),                             // 21: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelResponse
-	(*PredictRequest)(nil),                               // 22: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest
-	(*PredictResponse)(nil),                              // 23: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse
-	(*PredictResultLineItem)(nil),                        // 24: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem
-	(*ProbabilityValue)(nil),                             // 25: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ProbabilityValue
-	(*ShapValue)(nil),                                    // 26: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ShapValue
-	(*ModelMetadataResponse_TensorMetadata)(nil),         // 27: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
-	(*ModelInferRequest_InferInputTensor)(nil),           // 28: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor
-	(*ModelInferRequest_InferRequestedOutputTensor)(nil), // 29: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor
-	nil, // 30: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry
-	nil, // 31: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry
-	nil, // 32: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry
-	(*ModelInferResponse_InferOutputTensor)(nil), // 33: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor
-	nil, // 34: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry
-	nil, // 35: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry
-	nil, // 36: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry
+var file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
+var file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes = []interface{}{
+	(*ServerLiveRequest)(nil),                            // 0: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveRequest
+	(*ServerLiveResponse)(nil),                           // 1: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveResponse
+	(*ServerReadyRequest)(nil),                           // 2: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyRequest
+	(*ServerReadyResponse)(nil),                          // 3: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyResponse
+	(*ModelReadyRequest)(nil),                            // 4: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyRequest
+	(*ModelReadyResponse)(nil),                           // 5: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyResponse
+	(*ServerMetadataRequest)(nil),                        // 6: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataRequest
+	(*ServerMetadataResponse)(nil),                       // 7: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataResponse
+	(*ModelMetadataRequest)(nil),                         // 8: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataRequest
+	(*ModelMetadataResponse)(nil),                        // 9: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse
+	(*ModelInferRequest)(nil),                            // 10: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest
+	(*ModelInferResponse)(nil),                           // 11: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse
+	(*InferParameter)(nil),                               // 12: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	(*InferTensorContents)(nil),                          // 13: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents
+	(*PredictorInfo)(nil),                                // 14: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo
+	(*ModelInfo)(nil),                                    // 15: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo
+	(*SchemaInfo)(nil),                                   // 16: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo
+	(*ColumnInfo)(nil),                                   // 17: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo
+	(*GetPredictorRequest)(nil),                          // 18: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest
+	(*GetPredictorResponse)(nil),                         // 19: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorResponse
+	(*GetModelRequest)(nil),                              // 20: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest
+	(*GetModelResponse)(nil),                             // 21: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelResponse
+	(*PredictRequest)(nil),                               // 22: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest
+	(*PredictResponse)(nil),                              // 23: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse
+	(*PredictResultLineItem)(nil),                        // 24: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem
+	(*ProbabilityValue)(nil),                             // 25: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ProbabilityValue
+	(*ShapValue)(nil),                                    // 26: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue
+	(*ModelMetadataResponse_TensorMetadata)(nil),         // 27: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
+	(*ModelInferRequest_InferInputTensor)(nil),           // 28: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor
+	(*ModelInferRequest_InferRequestedOutputTensor)(nil), // 29: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor
+	nil, // 30: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry
+	nil, // 31: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry
+	nil, // 32: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry
+	(*ModelInferResponse_InferOutputTensor)(nil), // 33: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor
+	nil, // 34: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry
+	nil, // 35: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry
+	nil, // 36: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry
 }
-var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs = []int32{
-	27, // 0: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse.inputs:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
-	27, // 1: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse.outputs:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
-	30, // 2: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.parameters:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry
-	28, // 3: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.inputs:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor
-	29, // 4: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.outputs:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor
-	34, // 5: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.parameters:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry
-	33, // 6: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.outputs:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor
-	15, // 7: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictorInfo.models:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInfo
-	16, // 8: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictorInfo.schema:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.SchemaInfo
-	17, // 9: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.SchemaInfo.columns:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ColumnInfo
-	14, // 10: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetPredictorResponse.item:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictorInfo
-	15, // 11: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelResponse.item:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInfo
-	24, // 12: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.items:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem
-	36, // 13: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.scores:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry
-	25, // 14: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.probabilities:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ProbabilityValue
-	26, // 15: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResultLineItem.shapValues:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ShapValue
-	31, // 16: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.parameters:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry
-	13, // 17: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.contents:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferTensorContents
-	32, // 18: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.parameters:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry
-	12, // 19: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry.value:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	12, // 20: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	12, // 21: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	35, // 22: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.parameters:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry
-	13, // 23: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.contents:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferTensorContents
-	12, // 24: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry.value:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	12, // 25: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.InferParameter
-	0,  // 26: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerLive:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerLiveRequest
-	2,  // 27: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerReady:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerReadyRequest
-	4,  // 28: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelReady:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelReadyRequest
-	6,  // 29: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerMetadata:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerMetadataRequest
-	8,  // 30: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelMetadata:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataRequest
-	10, // 31: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelInfer:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferRequest
-	18, // 32: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetPredictor:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetPredictorRequest
-	20, // 33: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetModel:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelRequest
-	22, // 34: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.Predict:input_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictRequest
-	1,  // 35: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerLive:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerLiveResponse
-	3,  // 36: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerReady:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerReadyResponse
-	5,  // 37: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelReady:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelReadyResponse
-	7,  // 38: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerMetadata:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ServerMetadataResponse
-	9,  // 39: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelMetadata:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelMetadataResponse
-	11, // 40: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelInfer:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.ModelInferResponse
-	19, // 41: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetPredictor:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetPredictorResponse
-	21, // 42: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetModel:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GetModelResponse
-	23, // 43: github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService.Predict:output_type -> github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.PredictResponse
+var file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs = []int32{
+	27, // 0: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.inputs:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
+	27, // 1: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.outputs:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata
+	30, // 2: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.parameters:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry
+	28, // 3: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.inputs:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor
+	29, // 4: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.outputs:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor
+	34, // 5: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.parameters:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry
+	33, // 6: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.outputs:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor
+	15, // 7: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.models:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo
+	16, // 8: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.schema:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo
+	17, // 9: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo.columns:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo
+	14, // 10: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorResponse.item:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo
+	15, // 11: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelResponse.item:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo
+	24, // 12: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.items:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem
+	36, // 13: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.scores:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry
+	25, // 14: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem.probabilities:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ProbabilityValue
+	26, // 15: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem.shapValues:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue
+	31, // 16: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.parameters:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry
+	13, // 17: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.contents:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents
+	32, // 18: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.parameters:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry
+	12, // 19: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry.value:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	12, // 20: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	12, // 21: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	35, // 22: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.parameters:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry
+	13, // 23: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.contents:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents
+	12, // 24: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry.value:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	12, // 25: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry.value:type_name -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter
+	0,  // 26: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerLive:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveRequest
+	2,  // 27: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerReady:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyRequest
+	4,  // 28: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelReady:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyRequest
+	6,  // 29: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerMetadata:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataRequest
+	8,  // 30: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelMetadata:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataRequest
+	10, // 31: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelInfer:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest
+	18, // 32: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetPredictor:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest
+	20, // 33: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetModel:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest
+	22, // 34: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.Predict:input_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest
+	1,  // 35: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerLive:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveResponse
+	3,  // 36: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerReady:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyResponse
+	5,  // 37: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelReady:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyResponse
+	7,  // 38: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ServerMetadata:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataResponse
+	9,  // 39: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelMetadata:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse
+	11, // 40: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.ModelInfer:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse
+	19, // 41: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetPredictor:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorResponse
+	21, // 42: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.GetModel:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelResponse
+	23, // 43: github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService.Predict:output_type -> github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse
 	35, // [35:44] is the sub-list for method output_type
 	26, // [26:35] is the sub-list for method input_type
 	26, // [26:26] is the sub-list for extension type_name
@@ -2918,14 +2918,14 @@ var file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinfe
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_init()
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto != nil {
+func file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerLiveRequest); i {
 			case 0:
 				return &v.state
@@ -2937,7 +2937,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerLiveResponse); i {
 			case 0:
 				return &v.state
@@ -2949,7 +2949,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerReadyRequest); i {
 			case 0:
 				return &v.state
@@ -2961,7 +2961,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerReadyResponse); i {
 			case 0:
 				return &v.state
@@ -2973,7 +2973,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelReadyRequest); i {
 			case 0:
 				return &v.state
@@ -2985,7 +2985,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelReadyResponse); i {
 			case 0:
 				return &v.state
@@ -2997,7 +2997,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerMetadataRequest); i {
 			case 0:
 				return &v.state
@@ -3009,7 +3009,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServerMetadataResponse); i {
 			case 0:
 				return &v.state
@@ -3021,7 +3021,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelMetadataRequest); i {
 			case 0:
 				return &v.state
@@ -3033,7 +3033,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelMetadataResponse); i {
 			case 0:
 				return &v.state
@@ -3045,7 +3045,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInferRequest); i {
 			case 0:
 				return &v.state
@@ -3057,7 +3057,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInferResponse); i {
 			case 0:
 				return &v.state
@@ -3069,7 +3069,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InferParameter); i {
 			case 0:
 				return &v.state
@@ -3081,7 +3081,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InferTensorContents); i {
 			case 0:
 				return &v.state
@@ -3093,7 +3093,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictorInfo); i {
 			case 0:
 				return &v.state
@@ -3105,7 +3105,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInfo); i {
 			case 0:
 				return &v.state
@@ -3117,7 +3117,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SchemaInfo); i {
 			case 0:
 				return &v.state
@@ -3129,7 +3129,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ColumnInfo); i {
 			case 0:
 				return &v.state
@@ -3141,7 +3141,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPredictorRequest); i {
 			case 0:
 				return &v.state
@@ -3153,7 +3153,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPredictorResponse); i {
 			case 0:
 				return &v.state
@@ -3165,7 +3165,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelRequest); i {
 			case 0:
 				return &v.state
@@ -3177,7 +3177,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelResponse); i {
 			case 0:
 				return &v.state
@@ -3189,7 +3189,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictRequest); i {
 			case 0:
 				return &v.state
@@ -3201,7 +3201,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictResponse); i {
 			case 0:
 				return &v.state
@@ -3213,7 +3213,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictResultLineItem); i {
 			case 0:
 				return &v.state
@@ -3225,7 +3225,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProbabilityValue); i {
 			case 0:
 				return &v.state
@@ -3237,7 +3237,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ShapValue); i {
 			case 0:
 				return &v.state
@@ -3249,7 +3249,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelMetadataResponse_TensorMetadata); i {
 			case 0:
 				return &v.state
@@ -3261,7 +3261,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInferRequest_InferInputTensor); i {
 			case 0:
 				return &v.state
@@ -3273,7 +3273,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInferRequest_InferRequestedOutputTensor); i {
 			case 0:
 				return &v.state
@@ -3285,7 +3285,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModelInferResponse_InferOutputTensor); i {
 			case 0:
 				return &v.state
@@ -3298,7 +3298,7 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 			}
 		}
 	}
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12].OneofWrappers = []interface{}{
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes[12].OneofWrappers = []interface{}{
 		(*InferParameter_BoolParam)(nil),
 		(*InferParameter_Int64Param)(nil),
 		(*InferParameter_StringParam)(nil),
@@ -3307,20 +3307,20 @@ func file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinf
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   37,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto = out.File
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto = out.File
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -3354,7 +3354,7 @@ type GRPCInferenceServiceClient interface {
 	// indicated by the google.rpc.Status returned for the request. The OK code
 	// indicates success and other codes indicate failure.
 	ModelInfer(ctx context.Context, in *ModelInferRequest, opts ...grpc.CallOption) (*ModelInferResponse, error)
-	// Extention to the api specific to modeld
+	// Extention to the api specific to modela
 	GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*GetPredictorResponse, error)
 	GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*GetModelResponse, error)
 	Predict(ctx context.Context, in *PredictRequest, opts ...grpc.CallOption) (*PredictResponse, error)
@@ -3370,7 +3370,7 @@ func NewGRPCInferenceServiceClient(cc grpc.ClientConnInterface) GRPCInferenceSer
 
 func (c *gRPCInferenceServiceClient) ServerLive(ctx context.Context, in *ServerLiveRequest, opts ...grpc.CallOption) (*ServerLiveResponse, error) {
 	out := new(ServerLiveResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3379,7 +3379,7 @@ func (c *gRPCInferenceServiceClient) ServerLive(ctx context.Context, in *ServerL
 
 func (c *gRPCInferenceServiceClient) ServerReady(ctx context.Context, in *ServerReadyRequest, opts ...grpc.CallOption) (*ServerReadyResponse, error) {
 	out := new(ServerReadyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3388,7 +3388,7 @@ func (c *gRPCInferenceServiceClient) ServerReady(ctx context.Context, in *Server
 
 func (c *gRPCInferenceServiceClient) ModelReady(ctx context.Context, in *ModelReadyRequest, opts ...grpc.CallOption) (*ModelReadyResponse, error) {
 	out := new(ModelReadyResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3397,7 +3397,7 @@ func (c *gRPCInferenceServiceClient) ModelReady(ctx context.Context, in *ModelRe
 
 func (c *gRPCInferenceServiceClient) ServerMetadata(ctx context.Context, in *ServerMetadataRequest, opts ...grpc.CallOption) (*ServerMetadataResponse, error) {
 	out := new(ServerMetadataResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3406,7 +3406,7 @@ func (c *gRPCInferenceServiceClient) ServerMetadata(ctx context.Context, in *Ser
 
 func (c *gRPCInferenceServiceClient) ModelMetadata(ctx context.Context, in *ModelMetadataRequest, opts ...grpc.CallOption) (*ModelMetadataResponse, error) {
 	out := new(ModelMetadataResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3415,7 +3415,7 @@ func (c *gRPCInferenceServiceClient) ModelMetadata(ctx context.Context, in *Mode
 
 func (c *gRPCInferenceServiceClient) ModelInfer(ctx context.Context, in *ModelInferRequest, opts ...grpc.CallOption) (*ModelInferResponse, error) {
 	out := new(ModelInferResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3424,7 +3424,7 @@ func (c *gRPCInferenceServiceClient) ModelInfer(ctx context.Context, in *ModelIn
 
 func (c *gRPCInferenceServiceClient) GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*GetPredictorResponse, error) {
 	out := new(GetPredictorResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3433,7 +3433,7 @@ func (c *gRPCInferenceServiceClient) GetPredictor(ctx context.Context, in *GetPr
 
 func (c *gRPCInferenceServiceClient) GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*GetModelResponse, error) {
 	out := new(GetModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3442,7 +3442,7 @@ func (c *gRPCInferenceServiceClient) GetModel(ctx context.Context, in *GetModelR
 
 func (c *gRPCInferenceServiceClient) Predict(ctx context.Context, in *PredictRequest, opts ...grpc.CallOption) (*PredictResponse, error) {
 	out := new(PredictResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3470,7 +3470,7 @@ type GRPCInferenceServiceServer interface {
 	// indicated by the google.rpc.Status returned for the request. The OK code
 	// indicates success and other codes indicate failure.
 	ModelInfer(context.Context, *ModelInferRequest) (*ModelInferResponse, error)
-	// Extention to the api specific to modeld
+	// Extention to the api specific to modela
 	GetPredictor(context.Context, *GetPredictorRequest) (*GetPredictorResponse, error)
 	GetModel(context.Context, *GetModelRequest) (*GetModelResponse, error)
 	Predict(context.Context, *PredictRequest) (*PredictResponse, error)
@@ -3522,7 +3522,7 @@ func _GRPCInferenceService_ServerLive_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ServerLive(ctx, req.(*ServerLiveRequest))
@@ -3540,7 +3540,7 @@ func _GRPCInferenceService_ServerReady_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ServerReady(ctx, req.(*ServerReadyRequest))
@@ -3558,7 +3558,7 @@ func _GRPCInferenceService_ModelReady_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ModelReady(ctx, req.(*ModelReadyRequest))
@@ -3576,7 +3576,7 @@ func _GRPCInferenceService_ServerMetadata_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ServerMetadata(ctx, req.(*ServerMetadataRequest))
@@ -3594,7 +3594,7 @@ func _GRPCInferenceService_ModelMetadata_Handler(srv interface{}, ctx context.Co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ModelMetadata(ctx, req.(*ModelMetadataRequest))
@@ -3612,7 +3612,7 @@ func _GRPCInferenceService_ModelInfer_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).ModelInfer(ctx, req.(*ModelInferRequest))
@@ -3630,7 +3630,7 @@ func _GRPCInferenceService_GetPredictor_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).GetPredictor(ctx, req.(*GetPredictorRequest))
@@ -3648,7 +3648,7 @@ func _GRPCInferenceService_GetModel_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).GetModel(ctx, req.(*GetModelRequest))
@@ -3666,7 +3666,7 @@ func _GRPCInferenceService_Predict_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict",
+		FullMethod: "/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GRPCInferenceServiceServer).Predict(ctx, req.(*PredictRequest))
@@ -3675,7 +3675,7 @@ func _GRPCInferenceService_Predict_Handler(srv interface{}, ctx context.Context,
 }
 
 var _GRPCInferenceService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.grpcinferenceservice.v1.GRPCInferenceService",
+	ServiceName: "github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService",
 	HandlerType: (*GRPCInferenceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -3716,5 +3716,5 @@ var _GRPCInferenceService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto",
 }

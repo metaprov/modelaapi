@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class ListNotebooksRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListNotebooksRequest {
 }
 
 export class ListNotebooksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList): ListNotebooksResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList): ListNotebooksResponse;
   hasItems(): boolean;
   clearItems(): ListNotebooksResponse;
 
@@ -43,7 +43,7 @@ export class ListNotebooksResponse extends jspb.Message {
 
 export namespace ListNotebooksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.AsObject,
   }
 }
 
@@ -62,8 +62,8 @@ export namespace NotebookResponse {
 }
 
 export class CreateNotebookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): CreateNotebookRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): CreateNotebookRequest;
   hasItem(): boolean;
   clearItem(): CreateNotebookRequest;
 
@@ -77,7 +77,7 @@ export class CreateNotebookRequest extends jspb.Message {
 
 export namespace CreateNotebookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
   }
 }
 
@@ -96,8 +96,8 @@ export namespace CreateNotebookResponse {
 }
 
 export class UpdateNotebookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): UpdateNotebookRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): UpdateNotebookRequest;
   hasItem(): boolean;
   clearItem(): UpdateNotebookRequest;
 
@@ -111,7 +111,7 @@ export class UpdateNotebookRequest extends jspb.Message {
 
 export namespace UpdateNotebookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
   }
 }
 
@@ -152,8 +152,8 @@ export namespace GetNotebookRequest {
 }
 
 export class GetNotebookResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): GetNotebookResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): GetNotebookResponse;
   hasItem(): boolean;
   clearItem(): GetNotebookResponse;
 
@@ -170,7 +170,7 @@ export class GetNotebookResponse extends jspb.Message {
 
 export namespace GetNotebookResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
     yaml: string,
   }
 }

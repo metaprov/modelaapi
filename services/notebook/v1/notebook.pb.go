@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/notebook/v1/notebook.proto
+// source: github.com/metaprov/modelaapi/services/notebook/v1/notebook.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
-	_ "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
+	_ "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListNotebooksRequest struct {
 func (x *ListNotebooksRequest) Reset() {
 	*x = ListNotebooksRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListNotebooksRequest) String() string {
 func (*ListNotebooksRequest) ProtoMessage() {}
 
 func (x *ListNotebooksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListNotebooksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNotebooksRequest.ProtoReflect.Descriptor instead.
 func (*ListNotebooksRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListNotebooksRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListNotebooksResponse struct {
 func (x *ListNotebooksResponse) Reset() {
 	*x = ListNotebooksResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListNotebooksResponse) String() string {
 func (*ListNotebooksResponse) ProtoMessage() {}
 
 func (x *ListNotebooksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListNotebooksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListNotebooksResponse.ProtoReflect.Descriptor instead.
 func (*ListNotebooksResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListNotebooksResponse) GetItems() *v1alpha1.NotebookList {
@@ -143,7 +143,7 @@ type NotebookResponse struct {
 func (x *NotebookResponse) Reset() {
 	*x = NotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *NotebookResponse) String() string {
 func (*NotebookResponse) ProtoMessage() {}
 
 func (x *NotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *NotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotebookResponse.ProtoReflect.Descriptor instead.
 func (*NotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateNotebookRequest struct {
@@ -183,7 +183,7 @@ type CreateNotebookRequest struct {
 func (x *CreateNotebookRequest) Reset() {
 	*x = CreateNotebookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +196,7 @@ func (x *CreateNotebookRequest) String() string {
 func (*CreateNotebookRequest) ProtoMessage() {}
 
 func (x *CreateNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +209,7 @@ func (x *CreateNotebookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNotebookRequest.ProtoReflect.Descriptor instead.
 func (*CreateNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateNotebookRequest) GetItem() *v1alpha1.Notebook {
@@ -228,7 +228,7 @@ type CreateNotebookResponse struct {
 func (x *CreateNotebookResponse) Reset() {
 	*x = CreateNotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -241,7 +241,7 @@ func (x *CreateNotebookResponse) String() string {
 func (*CreateNotebookResponse) ProtoMessage() {}
 
 func (x *CreateNotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -254,7 +254,7 @@ func (x *CreateNotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNotebookResponse.ProtoReflect.Descriptor instead.
 func (*CreateNotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateNotebookRequest struct {
@@ -268,7 +268,7 @@ type UpdateNotebookRequest struct {
 func (x *UpdateNotebookRequest) Reset() {
 	*x = UpdateNotebookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *UpdateNotebookRequest) String() string {
 func (*UpdateNotebookRequest) ProtoMessage() {}
 
 func (x *UpdateNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *UpdateNotebookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotebookRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateNotebookRequest) GetItem() *v1alpha1.Notebook {
@@ -313,7 +313,7 @@ type UpdateNotebookResponse struct {
 func (x *UpdateNotebookResponse) Reset() {
 	*x = UpdateNotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -326,7 +326,7 @@ func (x *UpdateNotebookResponse) String() string {
 func (*UpdateNotebookResponse) ProtoMessage() {}
 
 func (x *UpdateNotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -339,7 +339,7 @@ func (x *UpdateNotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateNotebookResponse.ProtoReflect.Descriptor instead.
 func (*UpdateNotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{6}
 }
 
 type GetNotebookRequest struct {
@@ -354,7 +354,7 @@ type GetNotebookRequest struct {
 func (x *GetNotebookRequest) Reset() {
 	*x = GetNotebookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -367,7 +367,7 @@ func (x *GetNotebookRequest) String() string {
 func (*GetNotebookRequest) ProtoMessage() {}
 
 func (x *GetNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +380,7 @@ func (x *GetNotebookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotebookRequest.ProtoReflect.Descriptor instead.
 func (*GetNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetNotebookRequest) GetNamespace() string {
@@ -409,7 +409,7 @@ type GetNotebookResponse struct {
 func (x *GetNotebookResponse) Reset() {
 	*x = GetNotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetNotebookResponse) String() string {
 func (*GetNotebookResponse) ProtoMessage() {}
 
 func (x *GetNotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetNotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotebookResponse.ProtoReflect.Descriptor instead.
 func (*GetNotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetNotebookResponse) GetItem() *v1alpha1.Notebook {
@@ -464,7 +464,7 @@ type DeleteNotebookRequest struct {
 func (x *DeleteNotebookRequest) Reset() {
 	*x = DeleteNotebookRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -477,7 +477,7 @@ func (x *DeleteNotebookRequest) String() string {
 func (*DeleteNotebookRequest) ProtoMessage() {}
 
 func (x *DeleteNotebookRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +490,7 @@ func (x *DeleteNotebookRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNotebookRequest.ProtoReflect.Descriptor instead.
 func (*DeleteNotebookRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteNotebookRequest) GetNamespace() string {
@@ -516,7 +516,7 @@ type DeleteNotebookResponse struct {
 func (x *DeleteNotebookResponse) Reset() {
 	*x = DeleteNotebookResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -529,7 +529,7 @@ func (x *DeleteNotebookResponse) String() string {
 func (*DeleteNotebookResponse) ProtoMessage() {}
 
 func (x *DeleteNotebookResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,12 +542,12 @@ func (x *DeleteNotebookResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNotebookResponse.ProtoReflect.Descriptor instead.
 func (*DeleteNotebookResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP(), []int{10}
 }
 
-var File_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDesc = []byte{
 	0x0a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6e, 0x6f, 0x74, 0x65, 0x62, 0x6f, 0x6f,
@@ -700,50 +700,50 @@ var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescData = file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescData = file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
-var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_goTypes = []interface{}{
-	(*ListNotebooksRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest
-	(*ListNotebooksResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksResponse
-	(*NotebookResponse)(nil),       // 2: github.com.metaprov.modeldapi.services.notebook.v1.NotebookResponse
-	(*CreateNotebookRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest
-	(*CreateNotebookResponse)(nil), // 4: github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookResponse
-	(*UpdateNotebookRequest)(nil),  // 5: github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest
-	(*UpdateNotebookResponse)(nil), // 6: github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookResponse
-	(*GetNotebookRequest)(nil),     // 7: github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookRequest
-	(*GetNotebookResponse)(nil),    // 8: github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookResponse
-	(*DeleteNotebookRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookRequest
-	(*DeleteNotebookResponse)(nil), // 10: github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookResponse
-	nil,                            // 11: github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry
-	(*v1alpha1.NotebookList)(nil),  // 12: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookList
-	(*v1alpha1.Notebook)(nil),      // 13: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
+var file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_goTypes = []interface{}{
+	(*ListNotebooksRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksRequest
+	(*ListNotebooksResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse
+	(*NotebookResponse)(nil),       // 2: github.com.metaprov.modelaapi.services.notebook.v1.NotebookResponse
+	(*CreateNotebookRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest
+	(*CreateNotebookResponse)(nil), // 4: github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookResponse
+	(*UpdateNotebookRequest)(nil),  // 5: github.com.metaprov.modelaapi.services.notebook.v1.UpdateNotebookRequest
+	(*UpdateNotebookResponse)(nil), // 6: github.com.metaprov.modelaapi.services.notebook.v1.UpdateNotebookResponse
+	(*GetNotebookRequest)(nil),     // 7: github.com.metaprov.modelaapi.services.notebook.v1.GetNotebookRequest
+	(*GetNotebookResponse)(nil),    // 8: github.com.metaprov.modelaapi.services.notebook.v1.GetNotebookResponse
+	(*DeleteNotebookRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.notebook.v1.DeleteNotebookRequest
+	(*DeleteNotebookResponse)(nil), // 10: github.com.metaprov.modelaapi.services.notebook.v1.DeleteNotebookResponse
+	nil,                            // 11: github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry
+	(*v1alpha1.NotebookList)(nil),  // 12: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList
+	(*v1alpha1.Notebook)(nil),      // 13: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook
 }
-var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_depIdxs = []int32{
-	11, // 0: github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest.labels:type_name -> github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry
-	12, // 1: github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookList
-	13, // 2: github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
-	13, // 3: github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
-	13, // 4: github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook
-	0,  // 5: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.ListNotebooks:input_type -> github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksRequest
-	3,  // 6: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.CreateNotebook:input_type -> github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookRequest
-	7,  // 7: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.GetNotebook:input_type -> github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookRequest
-	5,  // 8: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.UpdateNotebook:input_type -> github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookRequest
-	9,  // 9: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.DeleteNotebook:input_type -> github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookRequest
-	1,  // 10: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.ListNotebooks:output_type -> github.com.metaprov.modeldapi.services.notebook.v1.ListNotebooksResponse
-	4,  // 11: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.CreateNotebook:output_type -> github.com.metaprov.modeldapi.services.notebook.v1.CreateNotebookResponse
-	8,  // 12: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.GetNotebook:output_type -> github.com.metaprov.modeldapi.services.notebook.v1.GetNotebookResponse
-	6,  // 13: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.UpdateNotebook:output_type -> github.com.metaprov.modeldapi.services.notebook.v1.UpdateNotebookResponse
-	10, // 14: github.com.metaprov.modeldapi.services.notebook.v1.NotebookService.DeleteNotebook:output_type -> github.com.metaprov.modeldapi.services.notebook.v1.DeleteNotebookResponse
+var file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_depIdxs = []int32{
+	11, // 0: github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksRequest.labels:type_name -> github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksRequest.LabelsEntry
+	12, // 1: github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList
+	13, // 2: github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook
+	13, // 3: github.com.metaprov.modelaapi.services.notebook.v1.UpdateNotebookRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook
+	13, // 4: github.com.metaprov.modelaapi.services.notebook.v1.GetNotebookResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook
+	0,  // 5: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.ListNotebooks:input_type -> github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksRequest
+	3,  // 6: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.CreateNotebook:input_type -> github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest
+	7,  // 7: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.GetNotebook:input_type -> github.com.metaprov.modelaapi.services.notebook.v1.GetNotebookRequest
+	5,  // 8: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.UpdateNotebook:input_type -> github.com.metaprov.modelaapi.services.notebook.v1.UpdateNotebookRequest
+	9,  // 9: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.DeleteNotebook:input_type -> github.com.metaprov.modelaapi.services.notebook.v1.DeleteNotebookRequest
+	1,  // 10: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.ListNotebooks:output_type -> github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse
+	4,  // 11: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.CreateNotebook:output_type -> github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookResponse
+	8,  // 12: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.GetNotebook:output_type -> github.com.metaprov.modelaapi.services.notebook.v1.GetNotebookResponse
+	6,  // 13: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.UpdateNotebook:output_type -> github.com.metaprov.modelaapi.services.notebook.v1.UpdateNotebookResponse
+	10, // 14: github.com.metaprov.modelaapi.services.notebook.v1.NotebookService.DeleteNotebook:output_type -> github.com.metaprov.modelaapi.services.notebook.v1.DeleteNotebookResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -751,13 +751,13 @@ var file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_depId
 	0,  // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init() }
-func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_init() }
+func file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListNotebooksRequest); i {
 			case 0:
 				return &v.state
@@ -769,7 +769,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListNotebooksResponse); i {
 			case 0:
 				return &v.state
@@ -781,7 +781,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NotebookResponse); i {
 			case 0:
 				return &v.state
@@ -793,7 +793,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateNotebookRequest); i {
 			case 0:
 				return &v.state
@@ -805,7 +805,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateNotebookResponse); i {
 			case 0:
 				return &v.state
@@ -817,7 +817,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateNotebookRequest); i {
 			case 0:
 				return &v.state
@@ -829,7 +829,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateNotebookResponse); i {
 			case 0:
 				return &v.state
@@ -841,7 +841,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNotebookRequest); i {
 			case 0:
 				return &v.state
@@ -853,7 +853,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNotebookResponse); i {
 			case 0:
 				return &v.state
@@ -865,7 +865,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteNotebookRequest); i {
 			case 0:
 				return &v.state
@@ -877,7 +877,7 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteNotebookResponse); i {
 			case 0:
 				return &v.state
@@ -894,20 +894,20 @@ func file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_init
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto = out.File
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_notebook_v1_notebook_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto = out.File
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_notebook_v1_notebook_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -939,7 +939,7 @@ func NewNotebookServiceClient(cc grpc.ClientConnInterface) NotebookServiceClient
 
 func (c *notebookServiceClient) ListNotebooks(ctx context.Context, in *ListNotebooksRequest, opts ...grpc.CallOption) (*ListNotebooksResponse, error) {
 	out := new(ListNotebooksResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/ListNotebooks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -948,7 +948,7 @@ func (c *notebookServiceClient) ListNotebooks(ctx context.Context, in *ListNoteb
 
 func (c *notebookServiceClient) CreateNotebook(ctx context.Context, in *CreateNotebookRequest, opts ...grpc.CallOption) (*CreateNotebookResponse, error) {
 	out := new(CreateNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/CreateNotebook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -957,7 +957,7 @@ func (c *notebookServiceClient) CreateNotebook(ctx context.Context, in *CreateNo
 
 func (c *notebookServiceClient) GetNotebook(ctx context.Context, in *GetNotebookRequest, opts ...grpc.CallOption) (*GetNotebookResponse, error) {
 	out := new(GetNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/GetNotebook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -966,7 +966,7 @@ func (c *notebookServiceClient) GetNotebook(ctx context.Context, in *GetNotebook
 
 func (c *notebookServiceClient) UpdateNotebook(ctx context.Context, in *UpdateNotebookRequest, opts ...grpc.CallOption) (*UpdateNotebookResponse, error) {
 	out := new(UpdateNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/UpdateNotebook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -975,7 +975,7 @@ func (c *notebookServiceClient) UpdateNotebook(ctx context.Context, in *UpdateNo
 
 func (c *notebookServiceClient) DeleteNotebook(ctx context.Context, in *DeleteNotebookRequest, opts ...grpc.CallOption) (*DeleteNotebookResponse, error) {
 	out := new(DeleteNotebookResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/DeleteNotebook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1025,7 +1025,7 @@ func _NotebookService_ListNotebooks_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/ListNotebooks",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/ListNotebooks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotebookServiceServer).ListNotebooks(ctx, req.(*ListNotebooksRequest))
@@ -1043,7 +1043,7 @@ func _NotebookService_CreateNotebook_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/CreateNotebook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/CreateNotebook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotebookServiceServer).CreateNotebook(ctx, req.(*CreateNotebookRequest))
@@ -1061,7 +1061,7 @@ func _NotebookService_GetNotebook_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/GetNotebook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/GetNotebook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotebookServiceServer).GetNotebook(ctx, req.(*GetNotebookRequest))
@@ -1079,7 +1079,7 @@ func _NotebookService_UpdateNotebook_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/UpdateNotebook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/UpdateNotebook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotebookServiceServer).UpdateNotebook(ctx, req.(*UpdateNotebookRequest))
@@ -1097,7 +1097,7 @@ func _NotebookService_DeleteNotebook_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.notebook.v1.NotebookService/DeleteNotebook",
+		FullMethod: "/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/DeleteNotebook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(NotebookServiceServer).DeleteNotebook(ctx, req.(*DeleteNotebookRequest))
@@ -1106,7 +1106,7 @@ func _NotebookService_DeleteNotebook_Handler(srv interface{}, ctx context.Contex
 }
 
 var _NotebookService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.notebook.v1.NotebookService",
+	ServiceName: "github.com.metaprov.modelaapi.services.notebook.v1.NotebookService",
 	HandlerType: (*NotebookServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1131,5 +1131,5 @@ var _NotebookService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/notebook/v1/notebook.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/notebook/v1/notebook.proto",
 }

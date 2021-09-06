@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: modelpipelineruns.training.modeld.io
+  name: modelpipelineruns.training.modela.io
 spec:
-  group: training.modeld.io
+  group: training.modela.io
   names:
     categories:
     - train
-    - modeld
+    - modela
     - all
     kind: ModelPipelineRun
     listKind: ModelPipelineRunList

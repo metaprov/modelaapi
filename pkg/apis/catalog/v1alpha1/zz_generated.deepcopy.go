@@ -2,7 +2,7 @@
 
 /**
 *
-* Copyright (C) 2017 modeld authors
+* Copyright (C) 2017 modela authors
 * For license information, see LICENSE.txt
  */
 

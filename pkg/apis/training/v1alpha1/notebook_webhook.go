@@ -38,7 +38,7 @@ func (notebook *Notebook) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "training.modeld.io", Kind: "Notebook"},
+		schema.GroupKind{Group: "training.modela.io", Kind: "Notebook"},
 		notebook.Name, allErrs)
 }
 

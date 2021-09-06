@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto
+// source: github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListPredictorsRequest struct {
 func (x *ListPredictorsRequest) Reset() {
 	*x = ListPredictorsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListPredictorsRequest) String() string {
 func (*ListPredictorsRequest) ProtoMessage() {}
 
 func (x *ListPredictorsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListPredictorsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPredictorsRequest.ProtoReflect.Descriptor instead.
 func (*ListPredictorsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListPredictorsRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListPredictorsResponse struct {
 func (x *ListPredictorsResponse) Reset() {
 	*x = ListPredictorsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListPredictorsResponse) String() string {
 func (*ListPredictorsResponse) ProtoMessage() {}
 
 func (x *ListPredictorsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListPredictorsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListPredictorsResponse.ProtoReflect.Descriptor instead.
 func (*ListPredictorsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListPredictorsResponse) GetItems() *v1alpha1.PredictorList {
@@ -142,7 +142,7 @@ type CreatePredictorResponse struct {
 func (x *CreatePredictorResponse) Reset() {
 	*x = CreatePredictorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *CreatePredictorResponse) String() string {
 func (*CreatePredictorResponse) ProtoMessage() {}
 
 func (x *CreatePredictorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *CreatePredictorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePredictorResponse.ProtoReflect.Descriptor instead.
 func (*CreatePredictorResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{2}
 }
 
 type CreatePredictorRequest struct {
@@ -182,7 +182,7 @@ type CreatePredictorRequest struct {
 func (x *CreatePredictorRequest) Reset() {
 	*x = CreatePredictorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -195,7 +195,7 @@ func (x *CreatePredictorRequest) String() string {
 func (*CreatePredictorRequest) ProtoMessage() {}
 
 func (x *CreatePredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -208,7 +208,7 @@ func (x *CreatePredictorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePredictorRequest.ProtoReflect.Descriptor instead.
 func (*CreatePredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreatePredictorRequest) GetItem() *v1alpha1.Predictor {
@@ -229,7 +229,7 @@ type UpdatePredictorRequest struct {
 func (x *UpdatePredictorRequest) Reset() {
 	*x = UpdatePredictorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdatePredictorRequest) String() string {
 func (*UpdatePredictorRequest) ProtoMessage() {}
 
 func (x *UpdatePredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdatePredictorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePredictorRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdatePredictorRequest) GetItem() *v1alpha1.Predictor {
@@ -274,7 +274,7 @@ type UpdatePredictorResponse struct {
 func (x *UpdatePredictorResponse) Reset() {
 	*x = UpdatePredictorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdatePredictorResponse) String() string {
 func (*UpdatePredictorResponse) ProtoMessage() {}
 
 func (x *UpdatePredictorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdatePredictorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePredictorResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePredictorResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{5}
 }
 
 type GetPredictorRequest struct {
@@ -315,7 +315,7 @@ type GetPredictorRequest struct {
 func (x *GetPredictorRequest) Reset() {
 	*x = GetPredictorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetPredictorRequest) String() string {
 func (*GetPredictorRequest) ProtoMessage() {}
 
 func (x *GetPredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetPredictorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictorRequest.ProtoReflect.Descriptor instead.
 func (*GetPredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetPredictorRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetPredictorResponse struct {
 func (x *GetPredictorResponse) Reset() {
 	*x = GetPredictorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetPredictorResponse) String() string {
 func (*GetPredictorResponse) ProtoMessage() {}
 
 func (x *GetPredictorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetPredictorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPredictorResponse.ProtoReflect.Descriptor instead.
 func (*GetPredictorResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetPredictorResponse) GetItem() *v1alpha1.Predictor {
@@ -425,7 +425,7 @@ type DeletePredictorRequest struct {
 func (x *DeletePredictorRequest) Reset() {
 	*x = DeletePredictorRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeletePredictorRequest) String() string {
 func (*DeletePredictorRequest) ProtoMessage() {}
 
 func (x *DeletePredictorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeletePredictorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePredictorRequest.ProtoReflect.Descriptor instead.
 func (*DeletePredictorRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeletePredictorRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeletePredictorResponse struct {
 func (x *DeletePredictorResponse) Reset() {
 	*x = DeletePredictorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeletePredictorResponse) String() string {
 func (*DeletePredictorResponse) ProtoMessage() {}
 
 func (x *DeletePredictorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,7 +503,7 @@ func (x *DeletePredictorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePredictorResponse.ProtoReflect.Descriptor instead.
 func (*DeletePredictorResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{9}
 }
 
 type RollbackRequest struct {
@@ -519,7 +519,7 @@ type RollbackRequest struct {
 func (x *RollbackRequest) Reset() {
 	*x = RollbackRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -532,7 +532,7 @@ func (x *RollbackRequest) String() string {
 func (*RollbackRequest) ProtoMessage() {}
 
 func (x *RollbackRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -545,7 +545,7 @@ func (x *RollbackRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RollbackRequest.ProtoReflect.Descriptor instead.
 func (*RollbackRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *RollbackRequest) GetNamespace() string {
@@ -578,7 +578,7 @@ type RollbackResponse struct {
 func (x *RollbackResponse) Reset() {
 	*x = RollbackResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -591,7 +591,7 @@ func (x *RollbackResponse) String() string {
 func (*RollbackResponse) ProtoMessage() {}
 
 func (x *RollbackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -604,7 +604,7 @@ func (x *RollbackResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RollbackResponse.ProtoReflect.Descriptor instead.
 func (*RollbackResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{11}
 }
 
 type PredictOneRequest struct {
@@ -621,7 +621,7 @@ type PredictOneRequest struct {
 func (x *PredictOneRequest) Reset() {
 	*x = PredictOneRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -634,7 +634,7 @@ func (x *PredictOneRequest) String() string {
 func (*PredictOneRequest) ProtoMessage() {}
 
 func (x *PredictOneRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -647,7 +647,7 @@ func (x *PredictOneRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictOneRequest.ProtoReflect.Descriptor instead.
 func (*PredictOneRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *PredictOneRequest) GetNamespace() string {
@@ -693,7 +693,7 @@ type PredictOneResponse struct {
 func (x *PredictOneResponse) Reset() {
 	*x = PredictOneResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -706,7 +706,7 @@ func (x *PredictOneResponse) String() string {
 func (*PredictOneResponse) ProtoMessage() {}
 
 func (x *PredictOneResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -719,7 +719,7 @@ func (x *PredictOneResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PredictOneResponse.ProtoReflect.Descriptor instead.
 func (*PredictOneResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *PredictOneResponse) GetNamespace() string {
@@ -757,9 +757,9 @@ func (x *PredictOneResponse) GetProba() map[string]float32 {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDesc = []byte{
 	0x0a, 0x43, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74,
@@ -965,59 +965,59 @@ var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_raw
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescData = file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescData = file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
-var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_goTypes = []interface{}{
-	(*ListPredictorsRequest)(nil),   // 0: github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest
-	(*ListPredictorsResponse)(nil),  // 1: github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsResponse
-	(*CreatePredictorResponse)(nil), // 2: github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorResponse
-	(*CreatePredictorRequest)(nil),  // 3: github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest
-	(*UpdatePredictorRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest
-	(*UpdatePredictorResponse)(nil), // 5: github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorResponse
-	(*GetPredictorRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorRequest
-	(*GetPredictorResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorResponse
-	(*DeletePredictorRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorRequest
-	(*DeletePredictorResponse)(nil), // 9: github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorResponse
-	(*RollbackRequest)(nil),         // 10: github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest
-	(*RollbackResponse)(nil),        // 11: github.com.metaprov.modeldapi.services.predictor.v1.RollbackResponse
-	(*PredictOneRequest)(nil),       // 12: github.com.metaprov.modeldapi.services.predictor.v1.PredictOneRequest
-	(*PredictOneResponse)(nil),      // 13: github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse
-	nil,                             // 14: github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry
-	nil,                             // 15: github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse.ProbaEntry
-	(*v1alpha1.PredictorList)(nil),  // 16: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList
-	(*v1alpha1.Predictor)(nil),      // 17: github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
+var file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
+var file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_goTypes = []interface{}{
+	(*ListPredictorsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsRequest
+	(*ListPredictorsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsResponse
+	(*CreatePredictorResponse)(nil), // 2: github.com.metaprov.modelaapi.services.predictor.v1.CreatePredictorResponse
+	(*CreatePredictorRequest)(nil),  // 3: github.com.metaprov.modelaapi.services.predictor.v1.CreatePredictorRequest
+	(*UpdatePredictorRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.predictor.v1.UpdatePredictorRequest
+	(*UpdatePredictorResponse)(nil), // 5: github.com.metaprov.modelaapi.services.predictor.v1.UpdatePredictorResponse
+	(*GetPredictorRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorRequest
+	(*GetPredictorResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse
+	(*DeletePredictorRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.predictor.v1.DeletePredictorRequest
+	(*DeletePredictorResponse)(nil), // 9: github.com.metaprov.modelaapi.services.predictor.v1.DeletePredictorResponse
+	(*RollbackRequest)(nil),         // 10: github.com.metaprov.modelaapi.services.predictor.v1.RollbackRequest
+	(*RollbackResponse)(nil),        // 11: github.com.metaprov.modelaapi.services.predictor.v1.RollbackResponse
+	(*PredictOneRequest)(nil),       // 12: github.com.metaprov.modelaapi.services.predictor.v1.PredictOneRequest
+	(*PredictOneResponse)(nil),      // 13: github.com.metaprov.modelaapi.services.predictor.v1.PredictOneResponse
+	nil,                             // 14: github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry
+	nil,                             // 15: github.com.metaprov.modelaapi.services.predictor.v1.PredictOneResponse.ProbaEntry
+	(*v1alpha1.PredictorList)(nil),  // 16: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList
+	(*v1alpha1.Predictor)(nil),      // 17: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
 }
-var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry
-	16, // 1: github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictorList
-	17, // 2: github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	17, // 3: github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	17, // 4: github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor
-	15, // 5: github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse.proba:type_name -> github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse.ProbaEntry
-	0,  // 6: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.ListPredictors:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.CreatePredictor:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorRequest
-	6,  // 8: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.GetPredictor:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorRequest
-	4,  // 9: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.UpdatePredictor:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorRequest
-	10, // 10: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.RollBack:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.RollbackRequest
-	8,  // 11: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.DeletePredictor:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorRequest
-	12, // 12: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.PredictOne:input_type -> github.com.metaprov.modeldapi.services.predictor.v1.PredictOneRequest
-	1,  // 13: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.ListPredictors:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.ListPredictorsResponse
-	2,  // 14: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.CreatePredictor:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.CreatePredictorResponse
-	7,  // 15: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.GetPredictor:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.GetPredictorResponse
-	5,  // 16: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.UpdatePredictor:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.UpdatePredictorResponse
-	11, // 17: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.RollBack:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.RollbackResponse
-	9,  // 18: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.DeletePredictor:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.DeletePredictorResponse
-	13, // 19: github.com.metaprov.modeldapi.services.predictor.v1.PredictorService.PredictOne:output_type -> github.com.metaprov.modeldapi.services.predictor.v1.PredictOneResponse
+var file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsRequest.LabelsEntry
+	16, // 1: github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList
+	17, // 2: github.com.metaprov.modelaapi.services.predictor.v1.CreatePredictorRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	17, // 3: github.com.metaprov.modelaapi.services.predictor.v1.UpdatePredictorRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	17, // 4: github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	15, // 5: github.com.metaprov.modelaapi.services.predictor.v1.PredictOneResponse.proba:type_name -> github.com.metaprov.modelaapi.services.predictor.v1.PredictOneResponse.ProbaEntry
+	0,  // 6: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.ListPredictors:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.CreatePredictor:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.CreatePredictorRequest
+	6,  // 8: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.GetPredictor:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorRequest
+	4,  // 9: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.UpdatePredictor:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.UpdatePredictorRequest
+	10, // 10: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.RollBack:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.RollbackRequest
+	8,  // 11: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.DeletePredictor:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.DeletePredictorRequest
+	12, // 12: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.PredictOne:input_type -> github.com.metaprov.modelaapi.services.predictor.v1.PredictOneRequest
+	1,  // 13: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.ListPredictors:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.ListPredictorsResponse
+	2,  // 14: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.CreatePredictor:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.CreatePredictorResponse
+	7,  // 15: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.GetPredictor:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.GetPredictorResponse
+	5,  // 16: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.UpdatePredictor:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.UpdatePredictorResponse
+	11, // 17: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.RollBack:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.RollbackResponse
+	9,  // 18: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.DeletePredictor:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.DeletePredictorResponse
+	13, // 19: github.com.metaprov.modelaapi.services.predictor.v1.PredictorService.PredictOne:output_type -> github.com.metaprov.modelaapi.services.predictor.v1.PredictOneResponse
 	13, // [13:20] is the sub-list for method output_type
 	6,  // [6:13] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1025,13 +1025,13 @@ var file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_dep
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_init() }
-func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_init() }
+func file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPredictorsRequest); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1043,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListPredictorsResponse); i {
 			case 0:
 				return &v.state
@@ -1055,7 +1055,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePredictorResponse); i {
 			case 0:
 				return &v.state
@@ -1067,7 +1067,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreatePredictorRequest); i {
 			case 0:
 				return &v.state
@@ -1079,7 +1079,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdatePredictorRequest); i {
 			case 0:
 				return &v.state
@@ -1091,7 +1091,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdatePredictorResponse); i {
 			case 0:
 				return &v.state
@@ -1103,7 +1103,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPredictorRequest); i {
 			case 0:
 				return &v.state
@@ -1115,7 +1115,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetPredictorResponse); i {
 			case 0:
 				return &v.state
@@ -1127,7 +1127,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeletePredictorRequest); i {
 			case 0:
 				return &v.state
@@ -1139,7 +1139,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeletePredictorResponse); i {
 			case 0:
 				return &v.state
@@ -1151,7 +1151,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RollbackRequest); i {
 			case 0:
 				return &v.state
@@ -1163,7 +1163,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RollbackResponse); i {
 			case 0:
 				return &v.state
@@ -1175,7 +1175,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictOneRequest); i {
 			case 0:
 				return &v.state
@@ -1187,7 +1187,7 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PredictOneResponse); i {
 			case 0:
 				return &v.state
@@ -1204,20 +1204,20 @@ func file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_in
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   16,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto = out.File
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_predictor_v1_predictor_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto = out.File
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_predictor_v1_predictor_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1251,7 +1251,7 @@ func NewPredictorServiceClient(cc grpc.ClientConnInterface) PredictorServiceClie
 
 func (c *predictorServiceClient) ListPredictors(ctx context.Context, in *ListPredictorsRequest, opts ...grpc.CallOption) (*ListPredictorsResponse, error) {
 	out := new(ListPredictorsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1260,7 +1260,7 @@ func (c *predictorServiceClient) ListPredictors(ctx context.Context, in *ListPre
 
 func (c *predictorServiceClient) CreatePredictor(ctx context.Context, in *CreatePredictorRequest, opts ...grpc.CallOption) (*CreatePredictorResponse, error) {
 	out := new(CreatePredictorResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1269,7 +1269,7 @@ func (c *predictorServiceClient) CreatePredictor(ctx context.Context, in *Create
 
 func (c *predictorServiceClient) GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*GetPredictorResponse, error) {
 	out := new(GetPredictorResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1278,7 +1278,7 @@ func (c *predictorServiceClient) GetPredictor(ctx context.Context, in *GetPredic
 
 func (c *predictorServiceClient) UpdatePredictor(ctx context.Context, in *UpdatePredictorRequest, opts ...grpc.CallOption) (*UpdatePredictorResponse, error) {
 	out := new(UpdatePredictorResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1287,7 +1287,7 @@ func (c *predictorServiceClient) UpdatePredictor(ctx context.Context, in *Update
 
 func (c *predictorServiceClient) RollBack(ctx context.Context, in *RollbackRequest, opts ...grpc.CallOption) (*RollbackResponse, error) {
 	out := new(RollbackResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1296,7 +1296,7 @@ func (c *predictorServiceClient) RollBack(ctx context.Context, in *RollbackReque
 
 func (c *predictorServiceClient) DeletePredictor(ctx context.Context, in *DeletePredictorRequest, opts ...grpc.CallOption) (*DeletePredictorResponse, error) {
 	out := new(DeletePredictorResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1305,7 +1305,7 @@ func (c *predictorServiceClient) DeletePredictor(ctx context.Context, in *Delete
 
 func (c *predictorServiceClient) PredictOne(ctx context.Context, in *PredictOneRequest, opts ...grpc.CallOption) (*PredictOneResponse, error) {
 	out := new(PredictOneResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1363,7 +1363,7 @@ func _PredictorService_ListPredictors_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/ListPredictors",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).ListPredictors(ctx, req.(*ListPredictorsRequest))
@@ -1381,7 +1381,7 @@ func _PredictorService_CreatePredictor_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/CreatePredictor",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).CreatePredictor(ctx, req.(*CreatePredictorRequest))
@@ -1399,7 +1399,7 @@ func _PredictorService_GetPredictor_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/GetPredictor",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).GetPredictor(ctx, req.(*GetPredictorRequest))
@@ -1417,7 +1417,7 @@ func _PredictorService_UpdatePredictor_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/UpdatePredictor",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).UpdatePredictor(ctx, req.(*UpdatePredictorRequest))
@@ -1435,7 +1435,7 @@ func _PredictorService_RollBack_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/RollBack",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).RollBack(ctx, req.(*RollbackRequest))
@@ -1453,7 +1453,7 @@ func _PredictorService_DeletePredictor_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/DeletePredictor",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).DeletePredictor(ctx, req.(*DeletePredictorRequest))
@@ -1471,7 +1471,7 @@ func _PredictorService_PredictOne_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.predictor.v1.PredictorService/PredictOne",
+		FullMethod: "/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PredictorServiceServer).PredictOne(ctx, req.(*PredictOneRequest))
@@ -1480,7 +1480,7 @@ func _PredictorService_PredictOne_Handler(srv interface{}, ctx context.Context, 
 }
 
 var _PredictorService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.predictor.v1.PredictorService",
+	ServiceName: "github.com.metaprov.modelaapi.services.predictor.v1.PredictorService",
 	HandlerType: (*PredictorServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1513,5 +1513,5 @@ var _PredictorService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/predictor/v1/predictor.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto",
 }

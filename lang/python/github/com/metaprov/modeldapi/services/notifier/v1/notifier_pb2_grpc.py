@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modeldapi.services.notifier.v1 import notifier_pb2 as github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2
+from github.com.metaprov.modelaapi.services.notifier.v1 import notifier_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2
 
 
 class NotifierServiceStub(object):
@@ -15,29 +15,29 @@ class NotifierServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListNotifiers = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/ListNotifiers',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.FromString,
                 )
         self.CreateNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/CreateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.FromString,
                 )
         self.GetNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/GetNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.FromString,
                 )
         self.UpdateNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/UpdateNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.FromString,
                 )
         self.DeleteNotifier = channel.unary_unary(
-                '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier',
-                request_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.FromString,
+                '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/DeleteNotifier',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.FromString,
                 )
 
 
@@ -79,32 +79,32 @@ def add_NotifierServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListNotifiers': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNotifiers,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.SerializeToString,
             ),
             'CreateNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.SerializeToString,
             ),
             'GetNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.SerializeToString,
             ),
             'UpdateNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.SerializeToString,
             ),
             'DeleteNotifier': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteNotifier,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modeldapi.services.notifier.v1.NotifierService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.notifier.v1.NotifierService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -123,9 +123,9 @@ class NotifierService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/ListNotifiers',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/ListNotifiers',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.ListNotifiersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -140,9 +140,9 @@ class NotifierService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/CreateNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/CreateNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.CreateNotifierResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,9 +157,9 @@ class NotifierService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/GetNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/GetNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.GetNotifierResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,9 +174,9 @@ class NotifierService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/UpdateNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/UpdateNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.UpdateNotifierResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class NotifierService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modeldapi.services.notifier.v1.NotifierService/DeleteNotifier',
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modeldapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/DeleteNotifier',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_notifier_dot_v1_dot_notifier__pb2.DeleteNotifierResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

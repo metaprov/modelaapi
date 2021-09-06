@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/model/v1/model.proto
+// source: github.com/metaprov/modelaapi/services/model/v1/model.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type CreateModelProfileResponse struct {
 func (x *CreateModelProfileResponse) Reset() {
 	*x = CreateModelProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *CreateModelProfileResponse) String() string {
 func (*CreateModelProfileResponse) ProtoMessage() {}
 
 func (x *CreateModelProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *CreateModelProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelProfileResponse.ProtoReflect.Descriptor instead.
 func (*CreateModelProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateModelProfileResponse) GetUri() string {
@@ -91,7 +91,7 @@ type CreateModelProfileRequest struct {
 func (x *CreateModelProfileRequest) Reset() {
 	*x = CreateModelProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -104,7 +104,7 @@ func (x *CreateModelProfileRequest) String() string {
 func (*CreateModelProfileRequest) ProtoMessage() {}
 
 func (x *CreateModelProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -117,7 +117,7 @@ func (x *CreateModelProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelProfileRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateModelProfileRequest) GetNamespace() string {
@@ -146,7 +146,7 @@ type ListModelProfileRequest struct {
 func (x *ListModelProfileRequest) Reset() {
 	*x = ListModelProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -159,7 +159,7 @@ func (x *ListModelProfileRequest) String() string {
 func (*ListModelProfileRequest) ProtoMessage() {}
 
 func (x *ListModelProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,7 +172,7 @@ func (x *ListModelProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelProfileRequest.ProtoReflect.Descriptor instead.
 func (*ListModelProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ListModelProfileRequest) GetNamespace() string {
@@ -202,7 +202,7 @@ type GetModelProfileRequest struct {
 func (x *GetModelProfileRequest) Reset() {
 	*x = GetModelProfileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -215,7 +215,7 @@ func (x *GetModelProfileRequest) String() string {
 func (*GetModelProfileRequest) ProtoMessage() {}
 
 func (x *GetModelProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +228,7 @@ func (x *GetModelProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelProfileRequest.ProtoReflect.Descriptor instead.
 func (*GetModelProfileRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetModelProfileRequest) GetNamespace() string {
@@ -263,7 +263,7 @@ type GetModelProfileResponse struct {
 func (x *GetModelProfileResponse) Reset() {
 	*x = GetModelProfileResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -276,7 +276,7 @@ func (x *GetModelProfileResponse) String() string {
 func (*GetModelProfileResponse) ProtoMessage() {}
 
 func (x *GetModelProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -289,7 +289,7 @@ func (x *GetModelProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelProfileResponse.ProtoReflect.Descriptor instead.
 func (*GetModelProfileResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetModelProfileResponse) GetProfile() *v1.ModelProfile {
@@ -310,7 +310,7 @@ type GetModelLogsResponse struct {
 func (x *GetModelLogsResponse) Reset() {
 	*x = GetModelLogsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -323,7 +323,7 @@ func (x *GetModelLogsResponse) String() string {
 func (*GetModelLogsResponse) ProtoMessage() {}
 
 func (x *GetModelLogsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -336,7 +336,7 @@ func (x *GetModelLogsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelLogsResponse.ProtoReflect.Descriptor instead.
 func (*GetModelLogsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetModelLogsResponse) GetLogs() map[string]string {
@@ -358,7 +358,7 @@ type GetModelLogsRequest struct {
 func (x *GetModelLogsRequest) Reset() {
 	*x = GetModelLogsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -371,7 +371,7 @@ func (x *GetModelLogsRequest) String() string {
 func (*GetModelLogsRequest) ProtoMessage() {}
 
 func (x *GetModelLogsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -384,7 +384,7 @@ func (x *GetModelLogsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelLogsRequest.ProtoReflect.Descriptor instead.
 func (*GetModelLogsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetModelLogsRequest) GetNamespace() string {
@@ -412,7 +412,7 @@ type CreateModelRequest struct {
 func (x *CreateModelRequest) Reset() {
 	*x = CreateModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -425,7 +425,7 @@ func (x *CreateModelRequest) String() string {
 func (*CreateModelRequest) ProtoMessage() {}
 
 func (x *CreateModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -438,7 +438,7 @@ func (x *CreateModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelRequest.ProtoReflect.Descriptor instead.
 func (*CreateModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *CreateModelRequest) GetItem() *v1alpha1.Model {
@@ -457,7 +457,7 @@ type CreateModelResponse struct {
 func (x *CreateModelResponse) Reset() {
 	*x = CreateModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -470,7 +470,7 @@ func (x *CreateModelResponse) String() string {
 func (*CreateModelResponse) ProtoMessage() {}
 
 func (x *CreateModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -483,7 +483,7 @@ func (x *CreateModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModelResponse.ProtoReflect.Descriptor instead.
 func (*CreateModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{8}
 }
 
 type UpdateModelRequest struct {
@@ -497,7 +497,7 @@ type UpdateModelRequest struct {
 func (x *UpdateModelRequest) Reset() {
 	*x = UpdateModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -510,7 +510,7 @@ func (x *UpdateModelRequest) String() string {
 func (*UpdateModelRequest) ProtoMessage() {}
 
 func (x *UpdateModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -523,7 +523,7 @@ func (x *UpdateModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelRequest.ProtoReflect.Descriptor instead.
 func (*UpdateModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *UpdateModelRequest) GetItem() *v1alpha1.Model {
@@ -542,7 +542,7 @@ type UpdateModelResponse struct {
 func (x *UpdateModelResponse) Reset() {
 	*x = UpdateModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -555,7 +555,7 @@ func (x *UpdateModelResponse) String() string {
 func (*UpdateModelResponse) ProtoMessage() {}
 
 func (x *UpdateModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -568,7 +568,7 @@ func (x *UpdateModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelResponse.ProtoReflect.Descriptor instead.
 func (*UpdateModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{10}
 }
 
 type GetModelResponse struct {
@@ -583,7 +583,7 @@ type GetModelResponse struct {
 func (x *GetModelResponse) Reset() {
 	*x = GetModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -596,7 +596,7 @@ func (x *GetModelResponse) String() string {
 func (*GetModelResponse) ProtoMessage() {}
 
 func (x *GetModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -609,7 +609,7 @@ func (x *GetModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelResponse.ProtoReflect.Descriptor instead.
 func (*GetModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetModelResponse) GetItem() *v1alpha1.Model {
@@ -638,7 +638,7 @@ type AbortModelRequest struct {
 func (x *AbortModelRequest) Reset() {
 	*x = AbortModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -651,7 +651,7 @@ func (x *AbortModelRequest) String() string {
 func (*AbortModelRequest) ProtoMessage() {}
 
 func (x *AbortModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +664,7 @@ func (x *AbortModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AbortModelRequest.ProtoReflect.Descriptor instead.
 func (*AbortModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *AbortModelRequest) GetNamespace() string {
@@ -690,7 +690,7 @@ type AbortModelResponse struct {
 func (x *AbortModelResponse) Reset() {
 	*x = AbortModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -703,7 +703,7 @@ func (x *AbortModelResponse) String() string {
 func (*AbortModelResponse) ProtoMessage() {}
 
 func (x *AbortModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -716,7 +716,7 @@ func (x *AbortModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AbortModelResponse.ProtoReflect.Descriptor instead.
 func (*AbortModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{13}
 }
 
 type PauseModelRequest struct {
@@ -731,7 +731,7 @@ type PauseModelRequest struct {
 func (x *PauseModelRequest) Reset() {
 	*x = PauseModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -744,7 +744,7 @@ func (x *PauseModelRequest) String() string {
 func (*PauseModelRequest) ProtoMessage() {}
 
 func (x *PauseModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -757,7 +757,7 @@ func (x *PauseModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseModelRequest.ProtoReflect.Descriptor instead.
 func (*PauseModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *PauseModelRequest) GetNamespace() string {
@@ -783,7 +783,7 @@ type PauseModelResponse struct {
 func (x *PauseModelResponse) Reset() {
 	*x = PauseModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -796,7 +796,7 @@ func (x *PauseModelResponse) String() string {
 func (*PauseModelResponse) ProtoMessage() {}
 
 func (x *PauseModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -809,7 +809,7 @@ func (x *PauseModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseModelResponse.ProtoReflect.Descriptor instead.
 func (*PauseModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{15}
 }
 
 type ResumeModelRequest struct {
@@ -824,7 +824,7 @@ type ResumeModelRequest struct {
 func (x *ResumeModelRequest) Reset() {
 	*x = ResumeModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -837,7 +837,7 @@ func (x *ResumeModelRequest) String() string {
 func (*ResumeModelRequest) ProtoMessage() {}
 
 func (x *ResumeModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -850,7 +850,7 @@ func (x *ResumeModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeModelRequest.ProtoReflect.Descriptor instead.
 func (*ResumeModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ResumeModelRequest) GetNamespace() string {
@@ -876,7 +876,7 @@ type ResumeModelResponse struct {
 func (x *ResumeModelResponse) Reset() {
 	*x = ResumeModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -889,7 +889,7 @@ func (x *ResumeModelResponse) String() string {
 func (*ResumeModelResponse) ProtoMessage() {}
 
 func (x *ResumeModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -902,7 +902,7 @@ func (x *ResumeModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeModelResponse.ProtoReflect.Descriptor instead.
 func (*ResumeModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{17}
 }
 
 type CompareModelsRequest struct {
@@ -917,7 +917,7 @@ type CompareModelsRequest struct {
 func (x *CompareModelsRequest) Reset() {
 	*x = CompareModelsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -930,7 +930,7 @@ func (x *CompareModelsRequest) String() string {
 func (*CompareModelsRequest) ProtoMessage() {}
 
 func (x *CompareModelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -943,7 +943,7 @@ func (x *CompareModelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareModelsRequest.ProtoReflect.Descriptor instead.
 func (*CompareModelsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *CompareModelsRequest) GetNamespace() string {
@@ -973,7 +973,7 @@ type CompareModelsResponse struct {
 func (x *CompareModelsResponse) Reset() {
 	*x = CompareModelsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -986,7 +986,7 @@ func (x *CompareModelsResponse) String() string {
 func (*CompareModelsResponse) ProtoMessage() {}
 
 func (x *CompareModelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -999,7 +999,7 @@ func (x *CompareModelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareModelsResponse.ProtoReflect.Descriptor instead.
 func (*CompareModelsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CompareModelsResponse) GetNamespace() string {
@@ -1037,7 +1037,7 @@ type CompileModelRequest struct {
 func (x *CompileModelRequest) Reset() {
 	*x = CompileModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1050,7 +1050,7 @@ func (x *CompileModelRequest) String() string {
 func (*CompileModelRequest) ProtoMessage() {}
 
 func (x *CompileModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1063,7 +1063,7 @@ func (x *CompileModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompileModelRequest.ProtoReflect.Descriptor instead.
 func (*CompileModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CompileModelRequest) GetNamespace() string {
@@ -1106,7 +1106,7 @@ type CompileModelResponse struct {
 func (x *CompileModelResponse) Reset() {
 	*x = CompileModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1119,7 +1119,7 @@ func (x *CompileModelResponse) String() string {
 func (*CompileModelResponse) ProtoMessage() {}
 
 func (x *CompileModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1132,7 +1132,7 @@ func (x *CompileModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompileModelResponse.ProtoReflect.Descriptor instead.
 func (*CompileModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *CompileModelResponse) GetNamespace() string {
@@ -1165,7 +1165,7 @@ type DeployModelRequest struct {
 func (x *DeployModelRequest) Reset() {
 	*x = DeployModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1178,7 +1178,7 @@ func (x *DeployModelRequest) String() string {
 func (*DeployModelRequest) ProtoMessage() {}
 
 func (x *DeployModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1191,7 +1191,7 @@ func (x *DeployModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeployModelRequest.ProtoReflect.Descriptor instead.
 func (*DeployModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DeployModelRequest) GetNamespace() string {
@@ -1248,7 +1248,7 @@ type PublishModelRequest struct {
 func (x *PublishModelRequest) Reset() {
 	*x = PublishModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1261,7 +1261,7 @@ func (x *PublishModelRequest) String() string {
 func (*PublishModelRequest) ProtoMessage() {}
 
 func (x *PublishModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1274,7 +1274,7 @@ func (x *PublishModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishModelRequest.ProtoReflect.Descriptor instead.
 func (*PublishModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *PublishModelRequest) GetNamespace() string {
@@ -1300,7 +1300,7 @@ type DeployModelResponse struct {
 func (x *DeployModelResponse) Reset() {
 	*x = DeployModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[24]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1313,7 +1313,7 @@ func (x *DeployModelResponse) String() string {
 func (*DeployModelResponse) ProtoMessage() {}
 
 func (x *DeployModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[24]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1326,7 +1326,7 @@ func (x *DeployModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeployModelResponse.ProtoReflect.Descriptor instead.
 func (*DeployModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{24}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{24}
 }
 
 type ListModelsRequest struct {
@@ -1341,7 +1341,7 @@ type ListModelsRequest struct {
 func (x *ListModelsRequest) Reset() {
 	*x = ListModelsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[25]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1354,7 +1354,7 @@ func (x *ListModelsRequest) String() string {
 func (*ListModelsRequest) ProtoMessage() {}
 
 func (x *ListModelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[25]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1367,7 +1367,7 @@ func (x *ListModelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelsRequest.ProtoReflect.Descriptor instead.
 func (*ListModelsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{25}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ListModelsRequest) GetNamespace() string {
@@ -1395,7 +1395,7 @@ type ListModelsResponse struct {
 func (x *ListModelsResponse) Reset() {
 	*x = ListModelsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[26]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1408,7 +1408,7 @@ func (x *ListModelsResponse) String() string {
 func (*ListModelsResponse) ProtoMessage() {}
 
 func (x *ListModelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[26]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1421,7 +1421,7 @@ func (x *ListModelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModelsResponse.ProtoReflect.Descriptor instead.
 func (*ListModelsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{26}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ListModelsResponse) GetItems() *v1alpha1.ModelList {
@@ -1443,7 +1443,7 @@ type GetModelRequest struct {
 func (x *GetModelRequest) Reset() {
 	*x = GetModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[27]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1456,7 +1456,7 @@ func (x *GetModelRequest) String() string {
 func (*GetModelRequest) ProtoMessage() {}
 
 func (x *GetModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[27]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1469,7 +1469,7 @@ func (x *GetModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModelRequest.ProtoReflect.Descriptor instead.
 func (*GetModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{27}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetModelRequest) GetNamespace() string {
@@ -1495,7 +1495,7 @@ type UpdateModelResult struct {
 func (x *UpdateModelResult) Reset() {
 	*x = UpdateModelResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[28]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1508,7 +1508,7 @@ func (x *UpdateModelResult) String() string {
 func (*UpdateModelResult) ProtoMessage() {}
 
 func (x *UpdateModelResult) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[28]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1521,7 +1521,7 @@ func (x *UpdateModelResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModelResult.ProtoReflect.Descriptor instead.
 func (*UpdateModelResult) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{28}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{28}
 }
 
 type DeleteModelRequest struct {
@@ -1536,7 +1536,7 @@ type DeleteModelRequest struct {
 func (x *DeleteModelRequest) Reset() {
 	*x = DeleteModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[29]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1549,7 +1549,7 @@ func (x *DeleteModelRequest) String() string {
 func (*DeleteModelRequest) ProtoMessage() {}
 
 func (x *DeleteModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[29]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1562,7 +1562,7 @@ func (x *DeleteModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelRequest.ProtoReflect.Descriptor instead.
 func (*DeleteModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{29}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *DeleteModelRequest) GetNamespace() string {
@@ -1588,7 +1588,7 @@ type DeleteModelResponse struct {
 func (x *DeleteModelResponse) Reset() {
 	*x = DeleteModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[30]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1601,7 +1601,7 @@ func (x *DeleteModelResponse) String() string {
 func (*DeleteModelResponse) ProtoMessage() {}
 
 func (x *DeleteModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[30]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1614,7 +1614,7 @@ func (x *DeleteModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModelResponse.ProtoReflect.Descriptor instead.
 func (*DeleteModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{30}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{30}
 }
 
 type PublishModelResponse struct {
@@ -1626,7 +1626,7 @@ type PublishModelResponse struct {
 func (x *PublishModelResponse) Reset() {
 	*x = PublishModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[31]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1639,7 +1639,7 @@ func (x *PublishModelResponse) String() string {
 func (*PublishModelResponse) ProtoMessage() {}
 
 func (x *PublishModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[31]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1652,7 +1652,7 @@ func (x *PublishModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishModelResponse.ProtoReflect.Descriptor instead.
 func (*PublishModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{31}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{31}
 }
 
 type GetMisclassRequest struct {
@@ -1667,7 +1667,7 @@ type GetMisclassRequest struct {
 func (x *GetMisclassRequest) Reset() {
 	*x = GetMisclassRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[32]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1680,7 +1680,7 @@ func (x *GetMisclassRequest) String() string {
 func (*GetMisclassRequest) ProtoMessage() {}
 
 func (x *GetMisclassRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[32]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1693,7 +1693,7 @@ func (x *GetMisclassRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMisclassRequest.ProtoReflect.Descriptor instead.
 func (*GetMisclassRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{32}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *GetMisclassRequest) GetNamespace() string {
@@ -1721,7 +1721,7 @@ type GetMisclassResponse struct {
 func (x *GetMisclassResponse) Reset() {
 	*x = GetMisclassResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[33]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1734,7 +1734,7 @@ func (x *GetMisclassResponse) String() string {
 func (*GetMisclassResponse) ProtoMessage() {}
 
 func (x *GetMisclassResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[33]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1747,7 +1747,7 @@ func (x *GetMisclassResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMisclassResponse.ProtoReflect.Descriptor instead.
 func (*GetMisclassResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{33}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *GetMisclassResponse) GetTable() *v1.TableView {
@@ -1769,7 +1769,7 @@ type DownloadModelRequest struct {
 func (x *DownloadModelRequest) Reset() {
 	*x = DownloadModelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[34]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1782,7 +1782,7 @@ func (x *DownloadModelRequest) String() string {
 func (*DownloadModelRequest) ProtoMessage() {}
 
 func (x *DownloadModelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[34]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1795,7 +1795,7 @@ func (x *DownloadModelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadModelRequest.ProtoReflect.Descriptor instead.
 func (*DownloadModelRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{34}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *DownloadModelRequest) GetNamespace() string {
@@ -1824,7 +1824,7 @@ type DownloadModelResponse struct {
 func (x *DownloadModelResponse) Reset() {
 	*x = DownloadModelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[35]
+		mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1837,7 +1837,7 @@ func (x *DownloadModelResponse) String() string {
 func (*DownloadModelResponse) ProtoMessage() {}
 
 func (x *DownloadModelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[35]
+	mi := &file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1850,7 +1850,7 @@ func (x *DownloadModelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadModelResponse.ProtoReflect.Descriptor instead.
 func (*DownloadModelResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP(), []int{35}
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *DownloadModelResponse) GetRaw() []byte {
@@ -1860,9 +1860,9 @@ func (x *DownloadModelResponse) GetRaw() []byte {
 	return nil
 }
 
-var File_github_com_metaprov_modeldapi_services_model_v1_model_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_model_v1_model_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDesc = []byte{
 	0x0a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x76,
@@ -2289,106 +2289,106 @@ var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDesc = [
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescData = file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescData = file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
-var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_goTypes = []interface{}{
-	(*CreateModelProfileResponse)(nil), // 0: github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileResponse
-	(*CreateModelProfileRequest)(nil),  // 1: github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileRequest
-	(*ListModelProfileRequest)(nil),    // 2: github.com.metaprov.modeldapi.services.model.v1.ListModelProfileRequest
-	(*GetModelProfileRequest)(nil),     // 3: github.com.metaprov.modeldapi.services.model.v1.GetModelProfileRequest
-	(*GetModelProfileResponse)(nil),    // 4: github.com.metaprov.modeldapi.services.model.v1.GetModelProfileResponse
-	(*GetModelLogsResponse)(nil),       // 5: github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse
-	(*GetModelLogsRequest)(nil),        // 6: github.com.metaprov.modeldapi.services.model.v1.GetModelLogsRequest
-	(*CreateModelRequest)(nil),         // 7: github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest
-	(*CreateModelResponse)(nil),        // 8: github.com.metaprov.modeldapi.services.model.v1.CreateModelResponse
-	(*UpdateModelRequest)(nil),         // 9: github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest
-	(*UpdateModelResponse)(nil),        // 10: github.com.metaprov.modeldapi.services.model.v1.UpdateModelResponse
-	(*GetModelResponse)(nil),           // 11: github.com.metaprov.modeldapi.services.model.v1.GetModelResponse
-	(*AbortModelRequest)(nil),          // 12: github.com.metaprov.modeldapi.services.model.v1.AbortModelRequest
-	(*AbortModelResponse)(nil),         // 13: github.com.metaprov.modeldapi.services.model.v1.AbortModelResponse
-	(*PauseModelRequest)(nil),          // 14: github.com.metaprov.modeldapi.services.model.v1.PauseModelRequest
-	(*PauseModelResponse)(nil),         // 15: github.com.metaprov.modeldapi.services.model.v1.PauseModelResponse
-	(*ResumeModelRequest)(nil),         // 16: github.com.metaprov.modeldapi.services.model.v1.ResumeModelRequest
-	(*ResumeModelResponse)(nil),        // 17: github.com.metaprov.modeldapi.services.model.v1.ResumeModelResponse
-	(*CompareModelsRequest)(nil),       // 18: github.com.metaprov.modeldapi.services.model.v1.CompareModelsRequest
-	(*CompareModelsResponse)(nil),      // 19: github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse
-	(*CompileModelRequest)(nil),        // 20: github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest
-	(*CompileModelResponse)(nil),       // 21: github.com.metaprov.modeldapi.services.model.v1.CompileModelResponse
-	(*DeployModelRequest)(nil),         // 22: github.com.metaprov.modeldapi.services.model.v1.DeployModelRequest
-	(*PublishModelRequest)(nil),        // 23: github.com.metaprov.modeldapi.services.model.v1.PublishModelRequest
-	(*DeployModelResponse)(nil),        // 24: github.com.metaprov.modeldapi.services.model.v1.DeployModelResponse
-	(*ListModelsRequest)(nil),          // 25: github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest
-	(*ListModelsResponse)(nil),         // 26: github.com.metaprov.modeldapi.services.model.v1.ListModelsResponse
-	(*GetModelRequest)(nil),            // 27: github.com.metaprov.modeldapi.services.model.v1.GetModelRequest
-	(*UpdateModelResult)(nil),          // 28: github.com.metaprov.modeldapi.services.model.v1.UpdateModelResult
-	(*DeleteModelRequest)(nil),         // 29: github.com.metaprov.modeldapi.services.model.v1.DeleteModelRequest
-	(*DeleteModelResponse)(nil),        // 30: github.com.metaprov.modeldapi.services.model.v1.DeleteModelResponse
-	(*PublishModelResponse)(nil),       // 31: github.com.metaprov.modeldapi.services.model.v1.PublishModelResponse
-	(*GetMisclassRequest)(nil),         // 32: github.com.metaprov.modeldapi.services.model.v1.GetMisclassRequest
-	(*GetMisclassResponse)(nil),        // 33: github.com.metaprov.modeldapi.services.model.v1.GetMisclassResponse
-	(*DownloadModelRequest)(nil),       // 34: github.com.metaprov.modeldapi.services.model.v1.DownloadModelRequest
-	(*DownloadModelResponse)(nil),      // 35: github.com.metaprov.modeldapi.services.model.v1.DownloadModelResponse
-	nil,                                // 36: github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse.LogsEntry
-	nil,                                // 37: github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest.LabelsEntry
-	(*v1.ModelProfile)(nil),            // 38: github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	(*v1alpha1.Model)(nil),             // 39: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	(*v1alpha1.ModelList)(nil),         // 40: github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList
-	(*v1.TableView)(nil),               // 41: github.com.metaprov.modeldapi.services.common.v1.TableView
+var file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
+var file_github_com_metaprov_modelaapi_services_model_v1_model_proto_goTypes = []interface{}{
+	(*CreateModelProfileResponse)(nil), // 0: github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileResponse
+	(*CreateModelProfileRequest)(nil),  // 1: github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileRequest
+	(*ListModelProfileRequest)(nil),    // 2: github.com.metaprov.modelaapi.services.model.v1.ListModelProfileRequest
+	(*GetModelProfileRequest)(nil),     // 3: github.com.metaprov.modelaapi.services.model.v1.GetModelProfileRequest
+	(*GetModelProfileResponse)(nil),    // 4: github.com.metaprov.modelaapi.services.model.v1.GetModelProfileResponse
+	(*GetModelLogsResponse)(nil),       // 5: github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse
+	(*GetModelLogsRequest)(nil),        // 6: github.com.metaprov.modelaapi.services.model.v1.GetModelLogsRequest
+	(*CreateModelRequest)(nil),         // 7: github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest
+	(*CreateModelResponse)(nil),        // 8: github.com.metaprov.modelaapi.services.model.v1.CreateModelResponse
+	(*UpdateModelRequest)(nil),         // 9: github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest
+	(*UpdateModelResponse)(nil),        // 10: github.com.metaprov.modelaapi.services.model.v1.UpdateModelResponse
+	(*GetModelResponse)(nil),           // 11: github.com.metaprov.modelaapi.services.model.v1.GetModelResponse
+	(*AbortModelRequest)(nil),          // 12: github.com.metaprov.modelaapi.services.model.v1.AbortModelRequest
+	(*AbortModelResponse)(nil),         // 13: github.com.metaprov.modelaapi.services.model.v1.AbortModelResponse
+	(*PauseModelRequest)(nil),          // 14: github.com.metaprov.modelaapi.services.model.v1.PauseModelRequest
+	(*PauseModelResponse)(nil),         // 15: github.com.metaprov.modelaapi.services.model.v1.PauseModelResponse
+	(*ResumeModelRequest)(nil),         // 16: github.com.metaprov.modelaapi.services.model.v1.ResumeModelRequest
+	(*ResumeModelResponse)(nil),        // 17: github.com.metaprov.modelaapi.services.model.v1.ResumeModelResponse
+	(*CompareModelsRequest)(nil),       // 18: github.com.metaprov.modelaapi.services.model.v1.CompareModelsRequest
+	(*CompareModelsResponse)(nil),      // 19: github.com.metaprov.modelaapi.services.model.v1.CompareModelsResponse
+	(*CompileModelRequest)(nil),        // 20: github.com.metaprov.modelaapi.services.model.v1.CompileModelRequest
+	(*CompileModelResponse)(nil),       // 21: github.com.metaprov.modelaapi.services.model.v1.CompileModelResponse
+	(*DeployModelRequest)(nil),         // 22: github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest
+	(*PublishModelRequest)(nil),        // 23: github.com.metaprov.modelaapi.services.model.v1.PublishModelRequest
+	(*DeployModelResponse)(nil),        // 24: github.com.metaprov.modelaapi.services.model.v1.DeployModelResponse
+	(*ListModelsRequest)(nil),          // 25: github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest
+	(*ListModelsResponse)(nil),         // 26: github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse
+	(*GetModelRequest)(nil),            // 27: github.com.metaprov.modelaapi.services.model.v1.GetModelRequest
+	(*UpdateModelResult)(nil),          // 28: github.com.metaprov.modelaapi.services.model.v1.UpdateModelResult
+	(*DeleteModelRequest)(nil),         // 29: github.com.metaprov.modelaapi.services.model.v1.DeleteModelRequest
+	(*DeleteModelResponse)(nil),        // 30: github.com.metaprov.modelaapi.services.model.v1.DeleteModelResponse
+	(*PublishModelResponse)(nil),       // 31: github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse
+	(*GetMisclassRequest)(nil),         // 32: github.com.metaprov.modelaapi.services.model.v1.GetMisclassRequest
+	(*GetMisclassResponse)(nil),        // 33: github.com.metaprov.modelaapi.services.model.v1.GetMisclassResponse
+	(*DownloadModelRequest)(nil),       // 34: github.com.metaprov.modelaapi.services.model.v1.DownloadModelRequest
+	(*DownloadModelResponse)(nil),      // 35: github.com.metaprov.modelaapi.services.model.v1.DownloadModelResponse
+	nil,                                // 36: github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse.LogsEntry
+	nil,                                // 37: github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.LabelsEntry
+	(*v1.ModelProfile)(nil),            // 38: github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	(*v1alpha1.Model)(nil),             // 39: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	(*v1alpha1.ModelList)(nil),         // 40: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
+	(*v1.TableView)(nil),               // 41: github.com.metaprov.modelaapi.services.common.v1.TableView
 }
-var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_depIdxs = []int32{
-	38, // 0: github.com.metaprov.modeldapi.services.model.v1.GetModelProfileResponse.profile:type_name -> github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	36, // 1: github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse.logs:type_name -> github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse.LogsEntry
-	39, // 2: github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	39, // 3: github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	39, // 4: github.com.metaprov.modeldapi.services.model.v1.GetModelResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model
-	38, // 5: github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse.profiles:type_name -> github.com.metaprov.modeldapi.services.common.v1.ModelProfile
-	37, // 6: github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest.labels:type_name -> github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest.LabelsEntry
-	40, // 7: github.com.metaprov.modeldapi.services.model.v1.ListModelsResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelList
-	41, // 8: github.com.metaprov.modeldapi.services.model.v1.GetMisclassResponse.table:type_name -> github.com.metaprov.modeldapi.services.common.v1.TableView
-	25, // 9: github.com.metaprov.modeldapi.services.model.v1.ModelService.ListModels:input_type -> github.com.metaprov.modeldapi.services.model.v1.ListModelsRequest
-	7,  // 10: github.com.metaprov.modeldapi.services.model.v1.ModelService.CreateModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.CreateModelRequest
-	27, // 11: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelRequest
-	9,  // 12: github.com.metaprov.modeldapi.services.model.v1.ModelService.UpdateModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.UpdateModelRequest
-	29, // 13: github.com.metaprov.modeldapi.services.model.v1.ModelService.DeleteModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.DeleteModelRequest
-	22, // 14: github.com.metaprov.modeldapi.services.model.v1.ModelService.DeployModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.DeployModelRequest
-	23, // 15: github.com.metaprov.modeldapi.services.model.v1.ModelService.PublishModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.PublishModelRequest
-	1,  // 16: github.com.metaprov.modeldapi.services.model.v1.ModelService.CreateModelProfile:input_type -> github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileRequest
-	3,  // 17: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelProfile:input_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelProfileRequest
-	32, // 18: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelMisclass:input_type -> github.com.metaprov.modeldapi.services.model.v1.GetMisclassRequest
-	6,  // 19: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelLogs:input_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelLogsRequest
-	12, // 20: github.com.metaprov.modeldapi.services.model.v1.ModelService.AbortModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.AbortModelRequest
-	14, // 21: github.com.metaprov.modeldapi.services.model.v1.ModelService.PauseModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.PauseModelRequest
-	16, // 22: github.com.metaprov.modeldapi.services.model.v1.ModelService.ResumeModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.ResumeModelRequest
-	18, // 23: github.com.metaprov.modeldapi.services.model.v1.ModelService.CompareModels:input_type -> github.com.metaprov.modeldapi.services.model.v1.CompareModelsRequest
-	20, // 24: github.com.metaprov.modeldapi.services.model.v1.ModelService.CompileModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.CompileModelRequest
-	34, // 25: github.com.metaprov.modeldapi.services.model.v1.ModelService.DownloadModel:input_type -> github.com.metaprov.modeldapi.services.model.v1.DownloadModelRequest
-	26, // 26: github.com.metaprov.modeldapi.services.model.v1.ModelService.ListModels:output_type -> github.com.metaprov.modeldapi.services.model.v1.ListModelsResponse
-	8,  // 27: github.com.metaprov.modeldapi.services.model.v1.ModelService.CreateModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.CreateModelResponse
-	11, // 28: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelResponse
-	10, // 29: github.com.metaprov.modeldapi.services.model.v1.ModelService.UpdateModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.UpdateModelResponse
-	30, // 30: github.com.metaprov.modeldapi.services.model.v1.ModelService.DeleteModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.DeleteModelResponse
-	24, // 31: github.com.metaprov.modeldapi.services.model.v1.ModelService.DeployModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.DeployModelResponse
-	31, // 32: github.com.metaprov.modeldapi.services.model.v1.ModelService.PublishModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.PublishModelResponse
-	0,  // 33: github.com.metaprov.modeldapi.services.model.v1.ModelService.CreateModelProfile:output_type -> github.com.metaprov.modeldapi.services.model.v1.CreateModelProfileResponse
-	4,  // 34: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelProfile:output_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelProfileResponse
-	33, // 35: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelMisclass:output_type -> github.com.metaprov.modeldapi.services.model.v1.GetMisclassResponse
-	5,  // 36: github.com.metaprov.modeldapi.services.model.v1.ModelService.GetModelLogs:output_type -> github.com.metaprov.modeldapi.services.model.v1.GetModelLogsResponse
-	13, // 37: github.com.metaprov.modeldapi.services.model.v1.ModelService.AbortModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.AbortModelResponse
-	15, // 38: github.com.metaprov.modeldapi.services.model.v1.ModelService.PauseModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.PauseModelResponse
-	17, // 39: github.com.metaprov.modeldapi.services.model.v1.ModelService.ResumeModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.ResumeModelResponse
-	19, // 40: github.com.metaprov.modeldapi.services.model.v1.ModelService.CompareModels:output_type -> github.com.metaprov.modeldapi.services.model.v1.CompareModelsResponse
-	21, // 41: github.com.metaprov.modeldapi.services.model.v1.ModelService.CompileModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.CompileModelResponse
-	35, // 42: github.com.metaprov.modeldapi.services.model.v1.ModelService.DownloadModel:output_type -> github.com.metaprov.modeldapi.services.model.v1.DownloadModelResponse
+var file_github_com_metaprov_modelaapi_services_model_v1_model_proto_depIdxs = []int32{
+	38, // 0: github.com.metaprov.modelaapi.services.model.v1.GetModelProfileResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	36, // 1: github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse.logs:type_name -> github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse.LogsEntry
+	39, // 2: github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	39, // 3: github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	39, // 4: github.com.metaprov.modelaapi.services.model.v1.GetModelResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	38, // 5: github.com.metaprov.modelaapi.services.model.v1.CompareModelsResponse.profiles:type_name -> github.com.metaprov.modelaapi.services.common.v1.ModelProfile
+	37, // 6: github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.LabelsEntry
+	40, // 7: github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
+	41, // 8: github.com.metaprov.modelaapi.services.model.v1.GetMisclassResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	25, // 9: github.com.metaprov.modelaapi.services.model.v1.ModelService.ListModels:input_type -> github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest
+	7,  // 10: github.com.metaprov.modelaapi.services.model.v1.ModelService.CreateModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest
+	27, // 11: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelRequest
+	9,  // 12: github.com.metaprov.modelaapi.services.model.v1.ModelService.UpdateModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest
+	29, // 13: github.com.metaprov.modelaapi.services.model.v1.ModelService.DeleteModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.DeleteModelRequest
+	22, // 14: github.com.metaprov.modelaapi.services.model.v1.ModelService.DeployModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest
+	23, // 15: github.com.metaprov.modelaapi.services.model.v1.ModelService.PublishModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.PublishModelRequest
+	1,  // 16: github.com.metaprov.modelaapi.services.model.v1.ModelService.CreateModelProfile:input_type -> github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileRequest
+	3,  // 17: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelProfile:input_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelProfileRequest
+	32, // 18: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelMisclass:input_type -> github.com.metaprov.modelaapi.services.model.v1.GetMisclassRequest
+	6,  // 19: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelLogs:input_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelLogsRequest
+	12, // 20: github.com.metaprov.modelaapi.services.model.v1.ModelService.AbortModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.AbortModelRequest
+	14, // 21: github.com.metaprov.modelaapi.services.model.v1.ModelService.PauseModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.PauseModelRequest
+	16, // 22: github.com.metaprov.modelaapi.services.model.v1.ModelService.ResumeModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.ResumeModelRequest
+	18, // 23: github.com.metaprov.modelaapi.services.model.v1.ModelService.CompareModels:input_type -> github.com.metaprov.modelaapi.services.model.v1.CompareModelsRequest
+	20, // 24: github.com.metaprov.modelaapi.services.model.v1.ModelService.CompileModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.CompileModelRequest
+	34, // 25: github.com.metaprov.modelaapi.services.model.v1.ModelService.DownloadModel:input_type -> github.com.metaprov.modelaapi.services.model.v1.DownloadModelRequest
+	26, // 26: github.com.metaprov.modelaapi.services.model.v1.ModelService.ListModels:output_type -> github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse
+	8,  // 27: github.com.metaprov.modelaapi.services.model.v1.ModelService.CreateModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.CreateModelResponse
+	11, // 28: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelResponse
+	10, // 29: github.com.metaprov.modelaapi.services.model.v1.ModelService.UpdateModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.UpdateModelResponse
+	30, // 30: github.com.metaprov.modelaapi.services.model.v1.ModelService.DeleteModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.DeleteModelResponse
+	24, // 31: github.com.metaprov.modelaapi.services.model.v1.ModelService.DeployModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.DeployModelResponse
+	31, // 32: github.com.metaprov.modelaapi.services.model.v1.ModelService.PublishModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse
+	0,  // 33: github.com.metaprov.modelaapi.services.model.v1.ModelService.CreateModelProfile:output_type -> github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileResponse
+	4,  // 34: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelProfile:output_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelProfileResponse
+	33, // 35: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelMisclass:output_type -> github.com.metaprov.modelaapi.services.model.v1.GetMisclassResponse
+	5,  // 36: github.com.metaprov.modelaapi.services.model.v1.ModelService.GetModelLogs:output_type -> github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse
+	13, // 37: github.com.metaprov.modelaapi.services.model.v1.ModelService.AbortModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.AbortModelResponse
+	15, // 38: github.com.metaprov.modelaapi.services.model.v1.ModelService.PauseModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.PauseModelResponse
+	17, // 39: github.com.metaprov.modelaapi.services.model.v1.ModelService.ResumeModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.ResumeModelResponse
+	19, // 40: github.com.metaprov.modelaapi.services.model.v1.ModelService.CompareModels:output_type -> github.com.metaprov.modelaapi.services.model.v1.CompareModelsResponse
+	21, // 41: github.com.metaprov.modelaapi.services.model.v1.ModelService.CompileModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.CompileModelResponse
+	35, // 42: github.com.metaprov.modelaapi.services.model.v1.ModelService.DownloadModel:output_type -> github.com.metaprov.modelaapi.services.model.v1.DownloadModelResponse
 	26, // [26:43] is the sub-list for method output_type
 	9,  // [9:26] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -2396,13 +2396,13 @@ var file_github_com_metaprov_modeldapi_services_model_v1_model_proto_depIdxs = [
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() }
-func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_model_v1_model_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_model_v1_model_proto_init() }
+func file_github_com_metaprov_modelaapi_services_model_v1_model_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_model_v1_model_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelProfileResponse); i {
 			case 0:
 				return &v.state
@@ -2414,7 +2414,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelProfileRequest); i {
 			case 0:
 				return &v.state
@@ -2426,7 +2426,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelProfileRequest); i {
 			case 0:
 				return &v.state
@@ -2438,7 +2438,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelProfileRequest); i {
 			case 0:
 				return &v.state
@@ -2450,7 +2450,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelProfileResponse); i {
 			case 0:
 				return &v.state
@@ -2462,7 +2462,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelLogsResponse); i {
 			case 0:
 				return &v.state
@@ -2474,7 +2474,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelLogsRequest); i {
 			case 0:
 				return &v.state
@@ -2486,7 +2486,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelRequest); i {
 			case 0:
 				return &v.state
@@ -2498,7 +2498,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModelResponse); i {
 			case 0:
 				return &v.state
@@ -2510,7 +2510,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelRequest); i {
 			case 0:
 				return &v.state
@@ -2522,7 +2522,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelResponse); i {
 			case 0:
 				return &v.state
@@ -2534,7 +2534,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelResponse); i {
 			case 0:
 				return &v.state
@@ -2546,7 +2546,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AbortModelRequest); i {
 			case 0:
 				return &v.state
@@ -2558,7 +2558,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AbortModelResponse); i {
 			case 0:
 				return &v.state
@@ -2570,7 +2570,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseModelRequest); i {
 			case 0:
 				return &v.state
@@ -2582,7 +2582,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseModelResponse); i {
 			case 0:
 				return &v.state
@@ -2594,7 +2594,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeModelRequest); i {
 			case 0:
 				return &v.state
@@ -2606,7 +2606,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeModelResponse); i {
 			case 0:
 				return &v.state
@@ -2618,7 +2618,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompareModelsRequest); i {
 			case 0:
 				return &v.state
@@ -2630,7 +2630,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompareModelsResponse); i {
 			case 0:
 				return &v.state
@@ -2642,7 +2642,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompileModelRequest); i {
 			case 0:
 				return &v.state
@@ -2654,7 +2654,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CompileModelResponse); i {
 			case 0:
 				return &v.state
@@ -2666,7 +2666,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeployModelRequest); i {
 			case 0:
 				return &v.state
@@ -2678,7 +2678,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PublishModelRequest); i {
 			case 0:
 				return &v.state
@@ -2690,7 +2690,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeployModelResponse); i {
 			case 0:
 				return &v.state
@@ -2702,7 +2702,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelsRequest); i {
 			case 0:
 				return &v.state
@@ -2714,7 +2714,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModelsResponse); i {
 			case 0:
 				return &v.state
@@ -2726,7 +2726,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModelRequest); i {
 			case 0:
 				return &v.state
@@ -2738,7 +2738,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModelResult); i {
 			case 0:
 				return &v.state
@@ -2750,7 +2750,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelRequest); i {
 			case 0:
 				return &v.state
@@ -2762,7 +2762,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModelResponse); i {
 			case 0:
 				return &v.state
@@ -2774,7 +2774,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PublishModelResponse); i {
 			case 0:
 				return &v.state
@@ -2786,7 +2786,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetMisclassRequest); i {
 			case 0:
 				return &v.state
@@ -2798,7 +2798,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetMisclassResponse); i {
 			case 0:
 				return &v.state
@@ -2810,7 +2810,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadModelRequest); i {
 			case 0:
 				return &v.state
@@ -2822,7 +2822,7 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DownloadModelResponse); i {
 			case 0:
 				return &v.state
@@ -2839,20 +2839,20 @@ func file_github_com_metaprov_modeldapi_services_model_v1_model_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   38,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_model_v1_model_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_model_v1_model_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_model_v1_model_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_model_v1_model_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_model_v1_model_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_model_v1_model_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_model_v1_model_proto = out.File
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_model_v1_model_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_model_v1_model_proto = out.File
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_model_v1_model_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2896,7 +2896,7 @@ func NewModelServiceClient(cc grpc.ClientConnInterface) ModelServiceClient {
 
 func (c *modelServiceClient) ListModels(ctx context.Context, in *ListModelsRequest, opts ...grpc.CallOption) (*ListModelsResponse, error) {
 	out := new(ListModelsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/ListModels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2905,7 +2905,7 @@ func (c *modelServiceClient) ListModels(ctx context.Context, in *ListModelsReque
 
 func (c *modelServiceClient) CreateModel(ctx context.Context, in *CreateModelRequest, opts ...grpc.CallOption) (*CreateModelResponse, error) {
 	out := new(CreateModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2914,7 +2914,7 @@ func (c *modelServiceClient) CreateModel(ctx context.Context, in *CreateModelReq
 
 func (c *modelServiceClient) GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*GetModelResponse, error) {
 	out := new(GetModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2923,7 +2923,7 @@ func (c *modelServiceClient) GetModel(ctx context.Context, in *GetModelRequest, 
 
 func (c *modelServiceClient) UpdateModel(ctx context.Context, in *UpdateModelRequest, opts ...grpc.CallOption) (*UpdateModelResponse, error) {
 	out := new(UpdateModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/UpdateModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2932,7 +2932,7 @@ func (c *modelServiceClient) UpdateModel(ctx context.Context, in *UpdateModelReq
 
 func (c *modelServiceClient) DeleteModel(ctx context.Context, in *DeleteModelRequest, opts ...grpc.CallOption) (*DeleteModelResponse, error) {
 	out := new(DeleteModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeleteModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2941,7 +2941,7 @@ func (c *modelServiceClient) DeleteModel(ctx context.Context, in *DeleteModelReq
 
 func (c *modelServiceClient) DeployModel(ctx context.Context, in *DeployModelRequest, opts ...grpc.CallOption) (*DeployModelResponse, error) {
 	out := new(DeployModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeployModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2950,7 +2950,7 @@ func (c *modelServiceClient) DeployModel(ctx context.Context, in *DeployModelReq
 
 func (c *modelServiceClient) PublishModel(ctx context.Context, in *PublishModelRequest, opts ...grpc.CallOption) (*PublishModelResponse, error) {
 	out := new(PublishModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PublishModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2959,7 +2959,7 @@ func (c *modelServiceClient) PublishModel(ctx context.Context, in *PublishModelR
 
 func (c *modelServiceClient) CreateModelProfile(ctx context.Context, in *CreateModelProfileRequest, opts ...grpc.CallOption) (*CreateModelProfileResponse, error) {
 	out := new(CreateModelProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModelProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2968,7 +2968,7 @@ func (c *modelServiceClient) CreateModelProfile(ctx context.Context, in *CreateM
 
 func (c *modelServiceClient) GetModelProfile(ctx context.Context, in *GetModelProfileRequest, opts ...grpc.CallOption) (*GetModelProfileResponse, error) {
 	out := new(GetModelProfileResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2977,7 +2977,7 @@ func (c *modelServiceClient) GetModelProfile(ctx context.Context, in *GetModelPr
 
 func (c *modelServiceClient) GetModelMisclass(ctx context.Context, in *GetMisclassRequest, opts ...grpc.CallOption) (*GetMisclassResponse, error) {
 	out := new(GetMisclassResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2986,7 +2986,7 @@ func (c *modelServiceClient) GetModelMisclass(ctx context.Context, in *GetMiscla
 
 func (c *modelServiceClient) GetModelLogs(ctx context.Context, in *GetModelLogsRequest, opts ...grpc.CallOption) (*GetModelLogsResponse, error) {
 	out := new(GetModelLogsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelLogs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2995,7 +2995,7 @@ func (c *modelServiceClient) GetModelLogs(ctx context.Context, in *GetModelLogsR
 
 func (c *modelServiceClient) AbortModel(ctx context.Context, in *AbortModelRequest, opts ...grpc.CallOption) (*AbortModelResponse, error) {
 	out := new(AbortModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/AbortModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3004,7 +3004,7 @@ func (c *modelServiceClient) AbortModel(ctx context.Context, in *AbortModelReque
 
 func (c *modelServiceClient) PauseModel(ctx context.Context, in *PauseModelRequest, opts ...grpc.CallOption) (*PauseModelResponse, error) {
 	out := new(PauseModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PauseModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3013,7 +3013,7 @@ func (c *modelServiceClient) PauseModel(ctx context.Context, in *PauseModelReque
 
 func (c *modelServiceClient) ResumeModel(ctx context.Context, in *ResumeModelRequest, opts ...grpc.CallOption) (*ResumeModelResponse, error) {
 	out := new(ResumeModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/ResumeModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3022,7 +3022,7 @@ func (c *modelServiceClient) ResumeModel(ctx context.Context, in *ResumeModelReq
 
 func (c *modelServiceClient) CompareModels(ctx context.Context, in *CompareModelsRequest, opts ...grpc.CallOption) (*CompareModelsResponse, error) {
 	out := new(CompareModelsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompareModels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3031,7 +3031,7 @@ func (c *modelServiceClient) CompareModels(ctx context.Context, in *CompareModel
 
 func (c *modelServiceClient) CompileModel(ctx context.Context, in *CompileModelRequest, opts ...grpc.CallOption) (*CompileModelResponse, error) {
 	out := new(CompileModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompileModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3040,7 +3040,7 @@ func (c *modelServiceClient) CompileModel(ctx context.Context, in *CompileModelR
 
 func (c *modelServiceClient) DownloadModel(ctx context.Context, in *DownloadModelRequest, opts ...grpc.CallOption) (*DownloadModelResponse, error) {
 	out := new(DownloadModelResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DownloadModel", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3138,7 +3138,7 @@ func _ModelService_ListModels_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/ListModels",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/ListModels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).ListModels(ctx, req.(*ListModelsRequest))
@@ -3156,7 +3156,7 @@ func _ModelService_CreateModel_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).CreateModel(ctx, req.(*CreateModelRequest))
@@ -3174,7 +3174,7 @@ func _ModelService_GetModel_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).GetModel(ctx, req.(*GetModelRequest))
@@ -3192,7 +3192,7 @@ func _ModelService_UpdateModel_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/UpdateModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/UpdateModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).UpdateModel(ctx, req.(*UpdateModelRequest))
@@ -3210,7 +3210,7 @@ func _ModelService_DeleteModel_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeleteModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeleteModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).DeleteModel(ctx, req.(*DeleteModelRequest))
@@ -3228,7 +3228,7 @@ func _ModelService_DeployModel_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DeployModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DeployModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).DeployModel(ctx, req.(*DeployModelRequest))
@@ -3246,7 +3246,7 @@ func _ModelService_PublishModel_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/PublishModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PublishModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).PublishModel(ctx, req.(*PublishModelRequest))
@@ -3264,7 +3264,7 @@ func _ModelService_CreateModelProfile_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CreateModelProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CreateModelProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).CreateModelProfile(ctx, req.(*CreateModelProfileRequest))
@@ -3282,7 +3282,7 @@ func _ModelService_GetModelProfile_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelProfile",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelProfile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).GetModelProfile(ctx, req.(*GetModelProfileRequest))
@@ -3300,7 +3300,7 @@ func _ModelService_GetModelMisclass_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelMisclass",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelMisclass",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).GetModelMisclass(ctx, req.(*GetMisclassRequest))
@@ -3318,7 +3318,7 @@ func _ModelService_GetModelLogs_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/GetModelLogs",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/GetModelLogs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).GetModelLogs(ctx, req.(*GetModelLogsRequest))
@@ -3336,7 +3336,7 @@ func _ModelService_AbortModel_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/AbortModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/AbortModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).AbortModel(ctx, req.(*AbortModelRequest))
@@ -3354,7 +3354,7 @@ func _ModelService_PauseModel_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/PauseModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/PauseModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).PauseModel(ctx, req.(*PauseModelRequest))
@@ -3372,7 +3372,7 @@ func _ModelService_ResumeModel_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/ResumeModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/ResumeModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).ResumeModel(ctx, req.(*ResumeModelRequest))
@@ -3390,7 +3390,7 @@ func _ModelService_CompareModels_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompareModels",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompareModels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).CompareModels(ctx, req.(*CompareModelsRequest))
@@ -3408,7 +3408,7 @@ func _ModelService_CompileModel_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/CompileModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/CompileModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).CompileModel(ctx, req.(*CompileModelRequest))
@@ -3426,7 +3426,7 @@ func _ModelService_DownloadModel_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.model.v1.ModelService/DownloadModel",
+		FullMethod: "/github.com.metaprov.modelaapi.services.model.v1.ModelService/DownloadModel",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModelServiceServer).DownloadModel(ctx, req.(*DownloadModelRequest))
@@ -3435,7 +3435,7 @@ func _ModelService_DownloadModel_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _ModelService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.model.v1.ModelService",
+	ServiceName: "github.com.metaprov.modelaapi.services.model.v1.ModelService",
 	HandlerType: (*ModelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -3508,5 +3508,5 @@ var _ModelService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/model/v1/model.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/model/v1/model.proto",
 }

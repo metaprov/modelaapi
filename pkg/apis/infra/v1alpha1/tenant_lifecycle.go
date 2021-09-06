@@ -9,8 +9,8 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/metaprov/modeldapi/pkg/apis/infra"
-	"github.com/metaprov/modeldapi/pkg/util"
+	"github.com/metaprov/modelaapi/pkg/apis/infra"
+	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -117,7 +117,7 @@ func (r *Tenant) SetupWebhookWithManager(mgr ctrl.Manager) error {
 func (tenant *Tenant) Populate(name string) {
 	tenant.ObjectMeta = metav1.ObjectMeta{
 		Name:      name,
-		Namespace: "modeld-system",
+		Namespace: "modela-system",
 	}
 	tenant.Spec = TenantSpec{
 		DefaultLabRef:         nil,

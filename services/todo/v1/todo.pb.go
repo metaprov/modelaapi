@@ -2,15 +2,15 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/todo/v1/todo.proto
+// source: github.com/metaprov/modelaapi/services/todo/v1/todo.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1"
-	v1 "github.com/metaprov/modeldapi/services/common/v1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1"
+	v1 "github.com/metaprov/modelaapi/services/common/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -44,7 +44,7 @@ type ListTodosRequest struct {
 func (x *ListTodosRequest) Reset() {
 	*x = ListTodosRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListTodosRequest) String() string {
 func (*ListTodosRequest) ProtoMessage() {}
 
 func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTodosRequest.ProtoReflect.Descriptor instead.
 func (*ListTodosRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListTodosRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListTodosResponse struct {
 func (x *ListTodosResponse) Reset() {
 	*x = ListTodosResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListTodosResponse) String() string {
 func (*ListTodosResponse) ProtoMessage() {}
 
 func (x *ListTodosResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListTodosResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTodosResponse.ProtoReflect.Descriptor instead.
 func (*ListTodosResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListTodosResponse) GetItems() *v1alpha1.TodoList {
@@ -143,7 +143,7 @@ type TodoResponse struct {
 func (x *TodoResponse) Reset() {
 	*x = TodoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *TodoResponse) String() string {
 func (*TodoResponse) ProtoMessage() {}
 
 func (x *TodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *TodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TodoResponse.ProtoReflect.Descriptor instead.
 func (*TodoResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateTodoRequest struct {
@@ -184,7 +184,7 @@ type CreateTodoRequest struct {
 func (x *CreateTodoRequest) Reset() {
 	*x = CreateTodoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateTodoRequest) String() string {
 func (*CreateTodoRequest) ProtoMessage() {}
 
 func (x *CreateTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTodoRequest.ProtoReflect.Descriptor instead.
 func (*CreateTodoRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateTodoRequest) GetItem() *v1alpha1.Todo {
@@ -236,7 +236,7 @@ type CreateTodoResponse struct {
 func (x *CreateTodoResponse) Reset() {
 	*x = CreateTodoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateTodoResponse) String() string {
 func (*CreateTodoResponse) ProtoMessage() {}
 
 func (x *CreateTodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateTodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTodoResponse.ProtoReflect.Descriptor instead.
 func (*CreateTodoResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateTodoRequest struct {
@@ -276,7 +276,7 @@ type UpdateTodoRequest struct {
 func (x *UpdateTodoRequest) Reset() {
 	*x = UpdateTodoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateTodoRequest) String() string {
 func (*UpdateTodoRequest) ProtoMessage() {}
 
 func (x *UpdateTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTodoRequest.ProtoReflect.Descriptor instead.
 func (*UpdateTodoRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateTodoRequest) GetItem() *v1alpha1.Todo {
@@ -321,7 +321,7 @@ type UpdateTodoResponse struct {
 func (x *UpdateTodoResponse) Reset() {
 	*x = UpdateTodoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateTodoResponse) String() string {
 func (*UpdateTodoResponse) ProtoMessage() {}
 
 func (x *UpdateTodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateTodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTodoResponse.ProtoReflect.Descriptor instead.
 func (*UpdateTodoResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{6}
 }
 
 type GetTodoRequest struct {
@@ -362,7 +362,7 @@ type GetTodoRequest struct {
 func (x *GetTodoRequest) Reset() {
 	*x = GetTodoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetTodoRequest) String() string {
 func (*GetTodoRequest) ProtoMessage() {}
 
 func (x *GetTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodoRequest.ProtoReflect.Descriptor instead.
 func (*GetTodoRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetTodoRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetTodoResponse struct {
 func (x *GetTodoResponse) Reset() {
 	*x = GetTodoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetTodoResponse) String() string {
 func (*GetTodoResponse) ProtoMessage() {}
 
 func (x *GetTodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetTodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodoResponse.ProtoReflect.Descriptor instead.
 func (*GetTodoResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetTodoResponse) GetItem() *v1alpha1.Todo {
@@ -472,7 +472,7 @@ type GetTodoNamespacesRequest struct {
 func (x *GetTodoNamespacesRequest) Reset() {
 	*x = GetTodoNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetTodoNamespacesRequest) String() string {
 func (*GetTodoNamespacesRequest) ProtoMessage() {}
 
 func (x *GetTodoNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetTodoNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodoNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetTodoNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetTodoNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetTodoNamespacesResponse struct {
 func (x *GetTodoNamespacesResponse) Reset() {
 	*x = GetTodoNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetTodoNamespacesResponse) String() string {
 func (*GetTodoNamespacesResponse) ProtoMessage() {}
 
 func (x *GetTodoNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetTodoNamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTodoNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetTodoNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetTodoNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteTodoRequest struct {
 func (x *DeleteTodoRequest) Reset() {
 	*x = DeleteTodoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteTodoRequest) String() string {
 func (*DeleteTodoRequest) ProtoMessage() {}
 
 func (x *DeleteTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteTodoRequest.ProtoReflect.Descriptor instead.
 func (*DeleteTodoRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteTodoRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteTodoResponse struct {
 func (x *DeleteTodoResponse) Reset() {
 	*x = DeleteTodoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteTodoResponse) String() string {
 func (*DeleteTodoResponse) ProtoMessage() {}
 
 func (x *DeleteTodoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteTodoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteTodoResponse.ProtoReflect.Descriptor instead.
 func (*DeleteTodoResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{12}
 }
 
 type TodoCreateResponse struct {
@@ -664,7 +664,7 @@ type TodoCreateResponse struct {
 func (x *TodoCreateResponse) Reset() {
 	*x = TodoCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *TodoCreateResponse) String() string {
 func (*TodoCreateResponse) ProtoMessage() {}
 
 func (x *TodoCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *TodoCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TodoCreateResponse.ProtoReflect.Descriptor instead.
 func (*TodoCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{13}
 }
 
 type TodoGetByNameRequest struct {
@@ -705,7 +705,7 @@ type TodoGetByNameRequest struct {
 func (x *TodoGetByNameRequest) Reset() {
 	*x = TodoGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -718,7 +718,7 @@ func (x *TodoGetByNameRequest) String() string {
 func (*TodoGetByNameRequest) ProtoMessage() {}
 
 func (x *TodoGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -731,7 +731,7 @@ func (x *TodoGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TodoGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*TodoGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *TodoGetByNameRequest) GetNamespace() string {
@@ -759,7 +759,7 @@ type TodoLogoutRequest struct {
 func (x *TodoLogoutRequest) Reset() {
 	*x = TodoLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -772,7 +772,7 @@ func (x *TodoLogoutRequest) String() string {
 func (*TodoLogoutRequest) ProtoMessage() {}
 
 func (x *TodoLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -785,7 +785,7 @@ func (x *TodoLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TodoLogoutRequest.ProtoReflect.Descriptor instead.
 func (*TodoLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *TodoLogoutRequest) GetToken() string {
@@ -795,9 +795,9 @@ func (x *TodoLogoutRequest) GetToken() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_todo_v1_todo_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_todo_v1_todo_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDesc = []byte{
 	0x0a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x74, 0x6f, 0x64, 0x6f, 0x2f, 0x76, 0x31,
@@ -958,57 +958,57 @@ var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDesc = []b
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescData = file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescData = file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
-var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_goTypes = []interface{}{
-	(*ListTodosRequest)(nil),          // 0: github.com.metaprov.modeldapi.services.todo.v1.ListTodosRequest
-	(*ListTodosResponse)(nil),         // 1: github.com.metaprov.modeldapi.services.todo.v1.ListTodosResponse
-	(*TodoResponse)(nil),              // 2: github.com.metaprov.modeldapi.services.todo.v1.TodoResponse
-	(*CreateTodoRequest)(nil),         // 3: github.com.metaprov.modeldapi.services.todo.v1.CreateTodoRequest
-	(*CreateTodoResponse)(nil),        // 4: github.com.metaprov.modeldapi.services.todo.v1.CreateTodoResponse
-	(*UpdateTodoRequest)(nil),         // 5: github.com.metaprov.modeldapi.services.todo.v1.UpdateTodoRequest
-	(*UpdateTodoResponse)(nil),        // 6: github.com.metaprov.modeldapi.services.todo.v1.UpdateTodoResponse
-	(*GetTodoRequest)(nil),            // 7: github.com.metaprov.modeldapi.services.todo.v1.GetTodoRequest
-	(*GetTodoResponse)(nil),           // 8: github.com.metaprov.modeldapi.services.todo.v1.GetTodoResponse
-	(*GetTodoNamespacesRequest)(nil),  // 9: github.com.metaprov.modeldapi.services.todo.v1.GetTodoNamespacesRequest
-	(*GetTodoNamespacesResponse)(nil), // 10: github.com.metaprov.modeldapi.services.todo.v1.GetTodoNamespacesResponse
-	(*DeleteTodoRequest)(nil),         // 11: github.com.metaprov.modeldapi.services.todo.v1.DeleteTodoRequest
-	(*DeleteTodoResponse)(nil),        // 12: github.com.metaprov.modeldapi.services.todo.v1.DeleteTodoResponse
-	(*TodoCreateResponse)(nil),        // 13: github.com.metaprov.modeldapi.services.todo.v1.TodoCreateResponse
-	(*TodoGetByNameRequest)(nil),      // 14: github.com.metaprov.modeldapi.services.todo.v1.TodoGetByNameRequest
-	(*TodoLogoutRequest)(nil),         // 15: github.com.metaprov.modeldapi.services.todo.v1.TodoLogoutRequest
-	nil,                               // 16: github.com.metaprov.modeldapi.services.todo.v1.ListTodosRequest.LabelsEntry
-	(*v1alpha1.TodoList)(nil),         // 17: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList
-	(*v1alpha1.Todo)(nil),             // 18: github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo
-	(*v1.NamespaceInfo)(nil),          // 19: github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
+var file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_goTypes = []interface{}{
+	(*ListTodosRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest
+	(*ListTodosResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse
+	(*TodoResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.todo.v1.TodoResponse
+	(*CreateTodoRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest
+	(*CreateTodoResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.todo.v1.CreateTodoResponse
+	(*UpdateTodoRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest
+	(*UpdateTodoResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoResponse
+	(*GetTodoRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.todo.v1.GetTodoRequest
+	(*GetTodoResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse
+	(*GetTodoNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesRequest
+	(*GetTodoNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesResponse
+	(*DeleteTodoRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoRequest
+	(*DeleteTodoResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoResponse
+	(*TodoCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.todo.v1.TodoCreateResponse
+	(*TodoGetByNameRequest)(nil),      // 14: github.com.metaprov.modelaapi.services.todo.v1.TodoGetByNameRequest
+	(*TodoLogoutRequest)(nil),         // 15: github.com.metaprov.modelaapi.services.todo.v1.TodoLogoutRequest
+	nil,                               // 16: github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest.LabelsEntry
+	(*v1alpha1.TodoList)(nil),         // 17: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList
+	(*v1alpha1.Todo)(nil),             // 18: github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo
+	(*v1.NamespaceInfo)(nil),          // 19: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_depIdxs = []int32{
-	16, // 0: github.com.metaprov.modeldapi.services.todo.v1.ListTodosRequest.labels:type_name -> github.com.metaprov.modeldapi.services.todo.v1.ListTodosRequest.LabelsEntry
-	17, // 1: github.com.metaprov.modeldapi.services.todo.v1.ListTodosResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList
-	18, // 2: github.com.metaprov.modeldapi.services.todo.v1.CreateTodoRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo
-	18, // 3: github.com.metaprov.modeldapi.services.todo.v1.UpdateTodoRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo
-	18, // 4: github.com.metaprov.modeldapi.services.todo.v1.GetTodoResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo
-	19, // 5: github.com.metaprov.modeldapi.services.todo.v1.GetTodoNamespacesResponse.namespaces:type_name -> github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modeldapi.services.todo.v1.TodoService.ListTodos:input_type -> github.com.metaprov.modeldapi.services.todo.v1.ListTodosRequest
-	3,  // 7: github.com.metaprov.modeldapi.services.todo.v1.TodoService.CreateTodo:input_type -> github.com.metaprov.modeldapi.services.todo.v1.CreateTodoRequest
-	7,  // 8: github.com.metaprov.modeldapi.services.todo.v1.TodoService.GetTodo:input_type -> github.com.metaprov.modeldapi.services.todo.v1.GetTodoRequest
-	5,  // 9: github.com.metaprov.modeldapi.services.todo.v1.TodoService.UpdateTodo:input_type -> github.com.metaprov.modeldapi.services.todo.v1.UpdateTodoRequest
-	11, // 10: github.com.metaprov.modeldapi.services.todo.v1.TodoService.DeleteTodo:input_type -> github.com.metaprov.modeldapi.services.todo.v1.DeleteTodoRequest
-	1,  // 11: github.com.metaprov.modeldapi.services.todo.v1.TodoService.ListTodos:output_type -> github.com.metaprov.modeldapi.services.todo.v1.ListTodosResponse
-	4,  // 12: github.com.metaprov.modeldapi.services.todo.v1.TodoService.CreateTodo:output_type -> github.com.metaprov.modeldapi.services.todo.v1.CreateTodoResponse
-	8,  // 13: github.com.metaprov.modeldapi.services.todo.v1.TodoService.GetTodo:output_type -> github.com.metaprov.modeldapi.services.todo.v1.GetTodoResponse
-	6,  // 14: github.com.metaprov.modeldapi.services.todo.v1.TodoService.UpdateTodo:output_type -> github.com.metaprov.modeldapi.services.todo.v1.UpdateTodoResponse
-	12, // 15: github.com.metaprov.modeldapi.services.todo.v1.TodoService.DeleteTodo:output_type -> github.com.metaprov.modeldapi.services.todo.v1.DeleteTodoResponse
+var file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_depIdxs = []int32{
+	16, // 0: github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest.labels:type_name -> github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest.LabelsEntry
+	17, // 1: github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList
+	18, // 2: github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo
+	18, // 3: github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo
+	18, // 4: github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo
+	19, // 5: github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.todo.v1.TodoService.ListTodos:input_type -> github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.todo.v1.TodoService.CreateTodo:input_type -> github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.todo.v1.TodoService.GetTodo:input_type -> github.com.metaprov.modelaapi.services.todo.v1.GetTodoRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.todo.v1.TodoService.UpdateTodo:input_type -> github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest
+	11, // 10: github.com.metaprov.modelaapi.services.todo.v1.TodoService.DeleteTodo:input_type -> github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.todo.v1.TodoService.ListTodos:output_type -> github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.todo.v1.TodoService.CreateTodo:output_type -> github.com.metaprov.modelaapi.services.todo.v1.CreateTodoResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.todo.v1.TodoService.GetTodo:output_type -> github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.todo.v1.TodoService.UpdateTodo:output_type -> github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoResponse
+	12, // 15: github.com.metaprov.modelaapi.services.todo.v1.TodoService.DeleteTodo:output_type -> github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1016,13 +1016,13 @@ var file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_depIdxs = []i
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() }
-func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_todo_v1_todo_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_init() }
+func file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_todo_v1_todo_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListTodosRequest); i {
 			case 0:
 				return &v.state
@@ -1034,7 +1034,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListTodosResponse); i {
 			case 0:
 				return &v.state
@@ -1046,7 +1046,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TodoResponse); i {
 			case 0:
 				return &v.state
@@ -1058,7 +1058,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateTodoRequest); i {
 			case 0:
 				return &v.state
@@ -1070,7 +1070,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateTodoResponse); i {
 			case 0:
 				return &v.state
@@ -1082,7 +1082,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateTodoRequest); i {
 			case 0:
 				return &v.state
@@ -1094,7 +1094,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateTodoResponse); i {
 			case 0:
 				return &v.state
@@ -1106,7 +1106,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTodoRequest); i {
 			case 0:
 				return &v.state
@@ -1118,7 +1118,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTodoResponse); i {
 			case 0:
 				return &v.state
@@ -1130,7 +1130,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTodoNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1142,7 +1142,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetTodoNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1154,7 +1154,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteTodoRequest); i {
 			case 0:
 				return &v.state
@@ -1166,7 +1166,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteTodoResponse); i {
 			case 0:
 				return &v.state
@@ -1178,7 +1178,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TodoCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1190,7 +1190,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TodoGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -1202,7 +1202,7 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TodoLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -1219,20 +1219,20 @@ func file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_todo_v1_todo_proto = out.File
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_todo_v1_todo_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_todo_v1_todo_proto = out.File
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_todo_v1_todo_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1264,7 +1264,7 @@ func NewTodoServiceClient(cc grpc.ClientConnInterface) TodoServiceClient {
 
 func (c *todoServiceClient) ListTodos(ctx context.Context, in *ListTodosRequest, opts ...grpc.CallOption) (*ListTodosResponse, error) {
 	out := new(ListTodosResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/ListTodos", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/ListTodos", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1273,7 +1273,7 @@ func (c *todoServiceClient) ListTodos(ctx context.Context, in *ListTodosRequest,
 
 func (c *todoServiceClient) CreateTodo(ctx context.Context, in *CreateTodoRequest, opts ...grpc.CallOption) (*CreateTodoResponse, error) {
 	out := new(CreateTodoResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/CreateTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/CreateTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1282,7 +1282,7 @@ func (c *todoServiceClient) CreateTodo(ctx context.Context, in *CreateTodoReques
 
 func (c *todoServiceClient) GetTodo(ctx context.Context, in *GetTodoRequest, opts ...grpc.CallOption) (*GetTodoResponse, error) {
 	out := new(GetTodoResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/GetTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/GetTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1291,7 +1291,7 @@ func (c *todoServiceClient) GetTodo(ctx context.Context, in *GetTodoRequest, opt
 
 func (c *todoServiceClient) UpdateTodo(ctx context.Context, in *UpdateTodoRequest, opts ...grpc.CallOption) (*UpdateTodoResponse, error) {
 	out := new(UpdateTodoResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/UpdateTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/UpdateTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1300,7 +1300,7 @@ func (c *todoServiceClient) UpdateTodo(ctx context.Context, in *UpdateTodoReques
 
 func (c *todoServiceClient) DeleteTodo(ctx context.Context, in *DeleteTodoRequest, opts ...grpc.CallOption) (*DeleteTodoResponse, error) {
 	out := new(DeleteTodoResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/DeleteTodo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/DeleteTodo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1350,7 +1350,7 @@ func _TodoService_ListTodos_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/ListTodos",
+		FullMethod: "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/ListTodos",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoServiceServer).ListTodos(ctx, req.(*ListTodosRequest))
@@ -1368,7 +1368,7 @@ func _TodoService_CreateTodo_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/CreateTodo",
+		FullMethod: "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/CreateTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoServiceServer).CreateTodo(ctx, req.(*CreateTodoRequest))
@@ -1386,7 +1386,7 @@ func _TodoService_GetTodo_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/GetTodo",
+		FullMethod: "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/GetTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoServiceServer).GetTodo(ctx, req.(*GetTodoRequest))
@@ -1404,7 +1404,7 @@ func _TodoService_UpdateTodo_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/UpdateTodo",
+		FullMethod: "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/UpdateTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoServiceServer).UpdateTodo(ctx, req.(*UpdateTodoRequest))
@@ -1422,7 +1422,7 @@ func _TodoService_DeleteTodo_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.todo.v1.TodoService/DeleteTodo",
+		FullMethod: "/github.com.metaprov.modelaapi.services.todo.v1.TodoService/DeleteTodo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TodoServiceServer).DeleteTodo(ctx, req.(*DeleteTodoRequest))
@@ -1431,7 +1431,7 @@ func _TodoService_DeleteTodo_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 var _TodoService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.todo.v1.TodoService",
+	ServiceName: "github.com.metaprov.modelaapi.services.todo.v1.TodoService",
 	HandlerType: (*TodoServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1456,5 +1456,5 @@ var _TodoService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/todo/v1/todo.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/todo/v1/todo.proto",
 }

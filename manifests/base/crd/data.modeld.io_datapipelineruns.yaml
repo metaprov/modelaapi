@@ -6,13 +6,13 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.0
   creationTimestamp: null
-  name: datapipelineruns.data.modeld.io
+  name: datapipelineruns.data.modela.io
 spec:
-  group: data.modeld.io
+  group: data.modela.io
   names:
     categories:
     - data
-    - modeld
+    - modela
     - all
     kind: DataPipelineRun
     listKind: DataPipelineRunList

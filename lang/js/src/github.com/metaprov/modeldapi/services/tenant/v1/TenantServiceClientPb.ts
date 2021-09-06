@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.tenant.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.tenant.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb from '../../../../../../github.com/metaprov/modeldapi/services/tenant/v1/tenant_pb';
+import * as github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb from '../../../../../../github.com/metaprov/modelaapi/services/tenant/v1/tenant_pb';
 
 
 export class TenantServiceClient {
@@ -36,32 +36,32 @@ export class TenantServiceClient {
   }
 
   methodInfoListTenants = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse,
-    (request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsRequest) => {
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse.deserializeBinary
   );
 
   listTenants(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse>;
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse>;
 
   listTenants(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse>;
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse>;
 
   listTenants(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants',
         request,
         metadata || {},
         this.methodInfoListTenants,
@@ -69,39 +69,39 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/ListTenants',
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants',
     request,
     metadata || {},
     this.methodInfoListTenants);
   }
 
   methodInfoCreateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse,
-    (request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantRequest) => {
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse.deserializeBinary
   );
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse>;
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse>;
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse>;
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse>;
 
   createTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant',
         request,
         metadata || {},
         this.methodInfoCreateTenant,
@@ -109,39 +109,39 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/CreateTenant',
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant',
     request,
     metadata || {},
     this.methodInfoCreateTenant);
   }
 
   methodInfoGetTenant = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse,
-    (request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantRequest) => {
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse.deserializeBinary
   );
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse>;
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse>;
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse>;
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse>;
 
   getTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/GetTenant',
         request,
         metadata || {},
         this.methodInfoGetTenant,
@@ -149,39 +149,39 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/GetTenant',
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/GetTenant',
     request,
     metadata || {},
     this.methodInfoGetTenant);
   }
 
   methodInfoUpdateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse,
-    (request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantRequest) => {
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse.deserializeBinary
   );
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse>;
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse>;
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse>;
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse>;
 
   updateTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/UpdateTenant',
         request,
         metadata || {},
         this.methodInfoUpdateTenant,
@@ -189,39 +189,39 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/UpdateTenant',
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/UpdateTenant',
     request,
     metadata || {},
     this.methodInfoUpdateTenant);
   }
 
   methodInfoDeleteTenant = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse,
-    (request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantRequest) => {
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse,
+    (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse.deserializeBinary
   );
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse>;
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse>;
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse>;
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse>;
 
   deleteTenant(
-    request: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
+    request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
+          '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/DeleteTenant',
         request,
         metadata || {},
         this.methodInfoDeleteTenant,
@@ -229,7 +229,7 @@ export class TenantServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.tenant.v1.TenantService/DeleteTenant',
+      '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/DeleteTenant',
     request,
     metadata || {},
     this.methodInfoDeleteTenant);

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modeldapi.services.study.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.study.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modeldapi_services_study_v1_study_pb from '../../../../../../github.com/metaprov/modeldapi/services/study/v1/study_pb';
+import * as github_com_metaprov_modelaapi_services_study_v1_study_pb from '../../../../../../github.com/metaprov/modelaapi/services/study/v1/study_pb';
 
 
 export class StudyServiceClient {
@@ -36,32 +36,32 @@ export class StudyServiceClient {
   }
 
   methodInfoListStudies = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse.deserializeBinary
   );
 
   listStudies(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse>;
 
   listStudies(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse>;
 
   listStudies(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.ListStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies',
         request,
         metadata || {},
         this.methodInfoListStudies,
@@ -69,39 +69,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ListStudies',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies',
     request,
     metadata || {},
     this.methodInfoListStudies);
   }
 
   methodInfoCreateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse.deserializeBinary
   );
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse>;
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse>;
 
   createStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy',
         request,
         metadata || {},
         this.methodInfoCreateStudy,
@@ -109,39 +109,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy',
     request,
     metadata || {},
     this.methodInfoCreateStudy);
   }
 
   methodInfoGetStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse.deserializeBinary
   );
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse>;
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse>;
 
   getStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
         request,
         metadata || {},
         this.methodInfoGetStudy,
@@ -149,39 +149,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
     request,
     metadata || {},
     this.methodInfoGetStudy);
   }
 
   methodInfoUpdateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse.deserializeBinary
   );
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse>;
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse>;
 
   updateStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.UpdateStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
         request,
         metadata || {},
         this.methodInfoUpdateStudy,
@@ -189,39 +189,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/UpdateStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
     request,
     metadata || {},
     this.methodInfoUpdateStudy);
   }
 
   methodInfoDeleteStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse.deserializeBinary
   );
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse>;
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse>;
 
   deleteStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.DeleteStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy',
         request,
         metadata || {},
         this.methodInfoDeleteStudy,
@@ -229,39 +229,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/DeleteStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy',
     request,
     metadata || {},
     this.methodInfoDeleteStudy);
   }
 
   methodInfoCreateStudyProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse.deserializeBinary
   );
 
   createStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
 
   createStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
 
   createStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
         request,
         metadata || {},
         this.methodInfoCreateStudyProfile,
@@ -269,39 +269,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/CreateStudyProfile',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
     request,
     metadata || {},
     this.methodInfoCreateStudyProfile);
   }
 
   methodInfoGetStudyProfile = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse.deserializeBinary
   );
 
   getStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse>;
 
   getStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse>;
 
   getStudyProfile(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.GetStudyProfileResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
         request,
         metadata || {},
         this.methodInfoGetStudyProfile,
@@ -309,39 +309,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/GetStudyProfile',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
     request,
     metadata || {},
     this.methodInfoGetStudyProfile);
   }
 
   methodInfoAbortStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse.deserializeBinary
   );
 
   abortStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse>;
 
   abortStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse>;
 
   abortStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.AbortStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy',
         request,
         metadata || {},
         this.methodInfoAbortStudy,
@@ -349,39 +349,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/AbortStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy',
     request,
     metadata || {},
     this.methodInfoAbortStudy);
   }
 
   methodInfoPauseStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse.deserializeBinary
   );
 
   pauseStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse>;
 
   pauseStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse>;
 
   pauseStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.PauseStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy',
         request,
         metadata || {},
         this.methodInfoPauseStudy,
@@ -389,39 +389,39 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/PauseStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy',
     request,
     metadata || {},
     this.methodInfoPauseStudy);
   }
 
   methodInfoResumeStudy = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse,
-    (request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyRequest) => {
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse,
+    (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse.deserializeBinary
   );
 
   resumeStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse>;
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse>;
 
   resumeStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse>;
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse>;
 
   resumeStudy(
-    request: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyRequest,
+    request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modeldapi_services_study_v1_study_pb.ResumeStudyResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
+          '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
         request,
         metadata || {},
         this.methodInfoResumeStudy,
@@ -429,7 +429,7 @@ export class StudyServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modeldapi.services.study.v1.StudyService/ResumeStudy',
+      '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
     request,
     metadata || {},
     this.methodInfoResumeStudy);

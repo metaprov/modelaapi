@@ -2,14 +2,14 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modeldapi/services/labelingpipeline/v1/labelingpipeline.proto
+// source: github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto
 
 package v1
 
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
-	v1alpha1 "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -43,7 +43,7 @@ type ListLabelingPipelineRequest struct {
 func (x *ListLabelingPipelineRequest) Reset() {
 	*x = ListLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -56,7 +56,7 @@ func (x *ListLabelingPipelineRequest) String() string {
 func (*ListLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *ListLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *ListLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*ListLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListLabelingPipelineRequest) GetNamespace() string {
@@ -97,7 +97,7 @@ type ListLabelingPipelineResponse struct {
 func (x *ListLabelingPipelineResponse) Reset() {
 	*x = ListLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -110,7 +110,7 @@ func (x *ListLabelingPipelineResponse) String() string {
 func (*ListLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *ListLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *ListLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*ListLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListLabelingPipelineResponse) GetItems() *v1alpha1.LabelingPipelineList {
@@ -144,7 +144,7 @@ type CreateLabelingPipelineRequest struct {
 func (x *CreateLabelingPipelineRequest) Reset() {
 	*x = CreateLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +157,7 @@ func (x *CreateLabelingPipelineRequest) String() string {
 func (*CreateLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *CreateLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *CreateLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*CreateLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateLabelingPipelineRequest) GetItem() *v1alpha1.LabelingPipeline {
@@ -189,7 +189,7 @@ type CreateLabelingPipelineResponse struct {
 func (x *CreateLabelingPipelineResponse) Reset() {
 	*x = CreateLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +202,7 @@ func (x *CreateLabelingPipelineResponse) String() string {
 func (*CreateLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *CreateLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +215,7 @@ func (x *CreateLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*CreateLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{3}
 }
 
 type UpdateLabelingPipelineRequest struct {
@@ -229,7 +229,7 @@ type UpdateLabelingPipelineRequest struct {
 func (x *UpdateLabelingPipelineRequest) Reset() {
 	*x = UpdateLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +242,7 @@ func (x *UpdateLabelingPipelineRequest) String() string {
 func (*UpdateLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *UpdateLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +255,7 @@ func (x *UpdateLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*UpdateLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateLabelingPipelineRequest) GetItem() *v1alpha1.LabelingPipeline {
@@ -274,7 +274,7 @@ type UpdateLabelingPipelineResponse struct {
 func (x *UpdateLabelingPipelineResponse) Reset() {
 	*x = UpdateLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -287,7 +287,7 @@ func (x *UpdateLabelingPipelineResponse) String() string {
 func (*UpdateLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *UpdateLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -300,7 +300,7 @@ func (x *UpdateLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*UpdateLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{5}
 }
 
 type GetLabelingPipelineRequest struct {
@@ -315,7 +315,7 @@ type GetLabelingPipelineRequest struct {
 func (x *GetLabelingPipelineRequest) Reset() {
 	*x = GetLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetLabelingPipelineRequest) String() string {
 func (*GetLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *GetLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*GetLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetLabelingPipelineRequest) GetNamespace() string {
@@ -370,7 +370,7 @@ type GetLabelingPipelineResponse struct {
 func (x *GetLabelingPipelineResponse) Reset() {
 	*x = GetLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -383,7 +383,7 @@ func (x *GetLabelingPipelineResponse) String() string {
 func (*GetLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *GetLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *GetLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*GetLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetLabelingPipelineResponse) GetItem() *v1alpha1.LabelingPipeline {
@@ -425,7 +425,7 @@ type DeleteLabelingPipelineRequest struct {
 func (x *DeleteLabelingPipelineRequest) Reset() {
 	*x = DeleteLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *DeleteLabelingPipelineRequest) String() string {
 func (*DeleteLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *DeleteLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *DeleteLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteLabelingPipelineRequest) GetNamespace() string {
@@ -477,7 +477,7 @@ type DeleteLabelingPipelineResponse struct {
 func (x *DeleteLabelingPipelineResponse) Reset() {
 	*x = DeleteLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -490,7 +490,7 @@ func (x *DeleteLabelingPipelineResponse) String() string {
 func (*DeleteLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *DeleteLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -503,7 +503,7 @@ func (x *DeleteLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{9}
 }
 
 type PauseLabelingPipelineResponse struct {
@@ -515,7 +515,7 @@ type PauseLabelingPipelineResponse struct {
 func (x *PauseLabelingPipelineResponse) Reset() {
 	*x = PauseLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -528,7 +528,7 @@ func (x *PauseLabelingPipelineResponse) String() string {
 func (*PauseLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *PauseLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -541,7 +541,7 @@ func (x *PauseLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*PauseLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{10}
 }
 
 type PauseLabelingPipelineRequest struct {
@@ -556,7 +556,7 @@ type PauseLabelingPipelineRequest struct {
 func (x *PauseLabelingPipelineRequest) Reset() {
 	*x = PauseLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -569,7 +569,7 @@ func (x *PauseLabelingPipelineRequest) String() string {
 func (*PauseLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *PauseLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -582,7 +582,7 @@ func (x *PauseLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PauseLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*PauseLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *PauseLabelingPipelineRequest) GetNamespace() string {
@@ -608,7 +608,7 @@ type ResumeLabelingPipelineResponse struct {
 func (x *ResumeLabelingPipelineResponse) Reset() {
 	*x = ResumeLabelingPipelineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -621,7 +621,7 @@ func (x *ResumeLabelingPipelineResponse) String() string {
 func (*ResumeLabelingPipelineResponse) ProtoMessage() {}
 
 func (x *ResumeLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -634,7 +634,7 @@ func (x *ResumeLabelingPipelineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeLabelingPipelineResponse.ProtoReflect.Descriptor instead.
 func (*ResumeLabelingPipelineResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{12}
 }
 
 type ResumeLabelingPipelineRequest struct {
@@ -649,7 +649,7 @@ type ResumeLabelingPipelineRequest struct {
 func (x *ResumeLabelingPipelineRequest) Reset() {
 	*x = ResumeLabelingPipelineRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -662,7 +662,7 @@ func (x *ResumeLabelingPipelineRequest) String() string {
 func (*ResumeLabelingPipelineRequest) ProtoMessage() {}
 
 func (x *ResumeLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -675,7 +675,7 @@ func (x *ResumeLabelingPipelineRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResumeLabelingPipelineRequest.ProtoReflect.Descriptor instead.
 func (*ResumeLabelingPipelineRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ResumeLabelingPipelineRequest) GetNamespace() string {
@@ -692,9 +692,9 @@ func (x *ResumeLabelingPipelineRequest) GetName() string {
 	return ""
 }
 
-var File_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc = []byte{
 	0x0a, 0x51, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
 	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x69, 0x6e,
@@ -907,57 +907,57 @@ var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipe
 }
 
 var (
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData = file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData = file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc
 )
 
-func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDescData
 }
 
-var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes = []interface{}{
-	(*ListLabelingPipelineRequest)(nil),    // 0: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest
-	(*ListLabelingPipelineResponse)(nil),   // 1: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineResponse
-	(*CreateLabelingPipelineRequest)(nil),  // 2: github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest
-	(*CreateLabelingPipelineResponse)(nil), // 3: github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse
-	(*UpdateLabelingPipelineRequest)(nil),  // 4: github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest
-	(*UpdateLabelingPipelineResponse)(nil), // 5: github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse
-	(*GetLabelingPipelineRequest)(nil),     // 6: github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineRequest
-	(*GetLabelingPipelineResponse)(nil),    // 7: github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineResponse
-	(*DeleteLabelingPipelineRequest)(nil),  // 8: github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest
-	(*DeleteLabelingPipelineResponse)(nil), // 9: github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse
-	(*PauseLabelingPipelineResponse)(nil),  // 10: github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse
-	(*PauseLabelingPipelineRequest)(nil),   // 11: github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest
-	(*ResumeLabelingPipelineResponse)(nil), // 12: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse
-	(*ResumeLabelingPipelineRequest)(nil),  // 13: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest
-	nil,                                    // 14: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry
-	(*v1alpha1.LabelingPipelineList)(nil),  // 15: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineList
-	(*v1alpha1.LabelingPipeline)(nil),      // 16: github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
+var file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes = []interface{}{
+	(*ListLabelingPipelineRequest)(nil),    // 0: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineRequest
+	(*ListLabelingPipelineResponse)(nil),   // 1: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineResponse
+	(*CreateLabelingPipelineRequest)(nil),  // 2: github.com.metaprov.modelaapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest
+	(*CreateLabelingPipelineResponse)(nil), // 3: github.com.metaprov.modelaapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse
+	(*UpdateLabelingPipelineRequest)(nil),  // 4: github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest
+	(*UpdateLabelingPipelineResponse)(nil), // 5: github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse
+	(*GetLabelingPipelineRequest)(nil),     // 6: github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineRequest
+	(*GetLabelingPipelineResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse
+	(*DeleteLabelingPipelineRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest
+	(*DeleteLabelingPipelineResponse)(nil), // 9: github.com.metaprov.modelaapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse
+	(*PauseLabelingPipelineResponse)(nil),  // 10: github.com.metaprov.modelaapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse
+	(*PauseLabelingPipelineRequest)(nil),   // 11: github.com.metaprov.modelaapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest
+	(*ResumeLabelingPipelineResponse)(nil), // 12: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse
+	(*ResumeLabelingPipelineRequest)(nil),  // 13: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest
+	nil,                                    // 14: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry
+	(*v1alpha1.LabelingPipelineList)(nil),  // 15: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineList
+	(*v1alpha1.LabelingPipeline)(nil),      // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline
 }
-var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs = []int32{
-	14, // 0: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.labels:type_name -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry
-	15, // 1: github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineResponse.items:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineList
-	16, // 2: github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
-	16, // 3: github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
-	16, // 4: github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.item:type_name -> github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline
-	0,  // 5: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.ListLabelingPipelines:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineRequest
-	2,  // 6: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.CreateLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest
-	6,  // 7: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.GetLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineRequest
-	4,  // 8: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.UpdateLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest
-	8,  // 9: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.DeleteLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest
-	11, // 10: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.PauseLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest
-	13, // 11: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.ResumeLabelingPipeline:input_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest
-	1,  // 12: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.ListLabelingPipelines:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.ListLabelingPipelineResponse
-	3,  // 13: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.CreateLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse
-	7,  // 14: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.GetLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.GetLabelingPipelineResponse
-	5,  // 15: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.UpdateLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse
-	9,  // 16: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.DeleteLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse
-	10, // 17: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.PauseLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse
-	12, // 18: github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService.ResumeLabelingPipeline:output_type -> github.com.metaprov.modeldapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse
+var file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs = []int32{
+	14, // 0: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.labels:type_name -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineRequest.LabelsEntry
+	15, // 1: github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineList
+	16, // 2: github.com.metaprov.modelaapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline
+	16, // 3: github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline
+	16, // 4: github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline
+	0,  // 5: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.ListLabelingPipelines:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineRequest
+	2,  // 6: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.CreateLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.CreateLabelingPipelineRequest
+	6,  // 7: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.GetLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineRequest
+	4,  // 8: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.UpdateLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineRequest
+	8,  // 9: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.DeleteLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.DeleteLabelingPipelineRequest
+	11, // 10: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.PauseLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.PauseLabelingPipelineRequest
+	13, // 11: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.ResumeLabelingPipeline:input_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.ResumeLabelingPipelineRequest
+	1,  // 12: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.ListLabelingPipelines:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.ListLabelingPipelineResponse
+	3,  // 13: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.CreateLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.CreateLabelingPipelineResponse
+	7,  // 14: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.GetLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.GetLabelingPipelineResponse
+	5,  // 15: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.UpdateLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.UpdateLabelingPipelineResponse
+	9,  // 16: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.DeleteLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.DeleteLabelingPipelineResponse
+	10, // 17: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.PauseLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.PauseLabelingPipelineResponse
+	12, // 18: github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService.ResumeLabelingPipeline:output_type -> github.com.metaprov.modelaapi.services.labelingpipeline.v1.ResumeLabelingPipelineResponse
 	12, // [12:19] is the sub-list for method output_type
 	5,  // [5:12] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -966,14 +966,14 @@ var file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipe
 }
 
 func init() {
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_init()
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_init()
 }
-func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_init() {
-	if File_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto != nil {
+func file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -985,7 +985,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -997,7 +997,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1009,7 +1009,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1021,7 +1021,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1033,7 +1033,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1045,7 +1045,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1057,7 +1057,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1069,7 +1069,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1081,7 +1081,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1093,7 +1093,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1105,7 +1105,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PauseLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1117,7 +1117,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeLabelingPipelineResponse); i {
 			case 0:
 				return &v.state
@@ -1129,7 +1129,7 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 				return nil
 			}
 		}
-		file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResumeLabelingPipelineRequest); i {
 			case 0:
 				return &v.state
@@ -1146,20 +1146,20 @@ func file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpip
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto = out.File
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc = nil
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes = nil
-	file_github_com_metaprov_modeldapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto = out.File
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1193,7 +1193,7 @@ func NewLabelingPipelineServiceClient(cc grpc.ClientConnInterface) LabelingPipel
 
 func (c *labelingPipelineServiceClient) ListLabelingPipelines(ctx context.Context, in *ListLabelingPipelineRequest, opts ...grpc.CallOption) (*ListLabelingPipelineResponse, error) {
 	out := new(ListLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1202,7 +1202,7 @@ func (c *labelingPipelineServiceClient) ListLabelingPipelines(ctx context.Contex
 
 func (c *labelingPipelineServiceClient) CreateLabelingPipeline(ctx context.Context, in *CreateLabelingPipelineRequest, opts ...grpc.CallOption) (*CreateLabelingPipelineResponse, error) {
 	out := new(CreateLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1211,7 +1211,7 @@ func (c *labelingPipelineServiceClient) CreateLabelingPipeline(ctx context.Conte
 
 func (c *labelingPipelineServiceClient) GetLabelingPipeline(ctx context.Context, in *GetLabelingPipelineRequest, opts ...grpc.CallOption) (*GetLabelingPipelineResponse, error) {
 	out := new(GetLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1220,7 +1220,7 @@ func (c *labelingPipelineServiceClient) GetLabelingPipeline(ctx context.Context,
 
 func (c *labelingPipelineServiceClient) UpdateLabelingPipeline(ctx context.Context, in *UpdateLabelingPipelineRequest, opts ...grpc.CallOption) (*UpdateLabelingPipelineResponse, error) {
 	out := new(UpdateLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1229,7 +1229,7 @@ func (c *labelingPipelineServiceClient) UpdateLabelingPipeline(ctx context.Conte
 
 func (c *labelingPipelineServiceClient) DeleteLabelingPipeline(ctx context.Context, in *DeleteLabelingPipelineRequest, opts ...grpc.CallOption) (*DeleteLabelingPipelineResponse, error) {
 	out := new(DeleteLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1238,7 +1238,7 @@ func (c *labelingPipelineServiceClient) DeleteLabelingPipeline(ctx context.Conte
 
 func (c *labelingPipelineServiceClient) PauseLabelingPipeline(ctx context.Context, in *PauseLabelingPipelineRequest, opts ...grpc.CallOption) (*PauseLabelingPipelineResponse, error) {
 	out := new(PauseLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1247,7 +1247,7 @@ func (c *labelingPipelineServiceClient) PauseLabelingPipeline(ctx context.Contex
 
 func (c *labelingPipelineServiceClient) ResumeLabelingPipeline(ctx context.Context, in *ResumeLabelingPipelineRequest, opts ...grpc.CallOption) (*ResumeLabelingPipelineResponse, error) {
 	out := new(ResumeLabelingPipelineResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1305,7 +1305,7 @@ func _LabelingPipelineService_ListLabelingPipelines_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).ListLabelingPipelines(ctx, req.(*ListLabelingPipelineRequest))
@@ -1323,7 +1323,7 @@ func _LabelingPipelineService_CreateLabelingPipeline_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).CreateLabelingPipeline(ctx, req.(*CreateLabelingPipelineRequest))
@@ -1341,7 +1341,7 @@ func _LabelingPipelineService_GetLabelingPipeline_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).GetLabelingPipeline(ctx, req.(*GetLabelingPipelineRequest))
@@ -1359,7 +1359,7 @@ func _LabelingPipelineService_UpdateLabelingPipeline_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).UpdateLabelingPipeline(ctx, req.(*UpdateLabelingPipelineRequest))
@@ -1377,7 +1377,7 @@ func _LabelingPipelineService_DeleteLabelingPipeline_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).DeleteLabelingPipeline(ctx, req.(*DeleteLabelingPipelineRequest))
@@ -1395,7 +1395,7 @@ func _LabelingPipelineService_PauseLabelingPipeline_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).PauseLabelingPipeline(ctx, req.(*PauseLabelingPipelineRequest))
@@ -1413,7 +1413,7 @@ func _LabelingPipelineService_ResumeLabelingPipeline_Handler(srv interface{}, ct
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline",
+		FullMethod: "/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LabelingPipelineServiceServer).ResumeLabelingPipeline(ctx, req.(*ResumeLabelingPipelineRequest))
@@ -1422,7 +1422,7 @@ func _LabelingPipelineService_ResumeLabelingPipeline_Handler(srv interface{}, ct
 }
 
 var _LabelingPipelineService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modeldapi.services.labelingpipeline.v1.LabelingPipelineService",
+	ServiceName: "github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService",
 	HandlerType: (*LabelingPipelineServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1455,5 +1455,5 @@ var _LabelingPipelineService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modeldapi/services/labelingpipeline/v1/labelingpipeline.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/labelingpipeline/v1/labelingpipeline.proto",
 }

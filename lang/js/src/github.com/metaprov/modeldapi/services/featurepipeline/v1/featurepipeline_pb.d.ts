@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
 export class ListFeaturePipelineRequest extends jspb.Message {
@@ -27,8 +27,8 @@ export namespace ListFeaturePipelineRequest {
 }
 
 export class ListFeaturePipelineResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList): ListFeaturePipelineResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList): ListFeaturePipelineResponse;
   hasItems(): boolean;
   clearItems(): ListFeaturePipelineResponse;
 
@@ -42,13 +42,13 @@ export class ListFeaturePipelineResponse extends jspb.Message {
 
 export namespace ListFeaturePipelineResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList.AsObject,
   }
 }
 
 export class CreateFeaturePipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): CreateFeaturePipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): CreateFeaturePipelineRequest;
   hasItem(): boolean;
   clearItem(): CreateFeaturePipelineRequest;
 
@@ -62,7 +62,7 @@ export class CreateFeaturePipelineRequest extends jspb.Message {
 
 export namespace CreateFeaturePipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
   }
 }
 
@@ -81,8 +81,8 @@ export namespace CreateFeaturePipelineResponse {
 }
 
 export class UpdateFeaturePipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): UpdateFeaturePipelineRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): UpdateFeaturePipelineRequest;
   hasItem(): boolean;
   clearItem(): UpdateFeaturePipelineRequest;
 
@@ -96,7 +96,7 @@ export class UpdateFeaturePipelineRequest extends jspb.Message {
 
 export namespace UpdateFeaturePipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
   }
 }
 
@@ -137,8 +137,8 @@ export namespace GetFeaturePipelineRequest {
 }
 
 export class GetFeaturePipelineResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): GetFeaturePipelineResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): GetFeaturePipelineResponse;
   hasItem(): boolean;
   clearItem(): GetFeaturePipelineResponse;
 
@@ -155,7 +155,7 @@ export class GetFeaturePipelineResponse extends jspb.Message {
 
 export namespace GetFeaturePipelineResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
     yaml: string,
   }
 }

@@ -1,8 +1,8 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated_pb';
-import * as github_com_metaprov_modeldapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modeldapi/services/common/v1/common_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
 
 
 export class GetStudyRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace GetStudyRequest {
 }
 
 export class GetStudyResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): GetStudyResponse;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): GetStudyResponse;
   hasItem(): boolean;
   clearItem(): GetStudyResponse;
 
@@ -46,7 +46,7 @@ export class GetStudyResponse extends jspb.Message {
 
 export namespace GetStudyResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     yaml: string,
   }
 }
@@ -74,8 +74,8 @@ export namespace ListStudyRequest {
 }
 
 export class ListStudyResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
-  setItems(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
   hasItems(): boolean;
   clearItems(): ListStudyResponse;
 
@@ -89,13 +89,13 @@ export class ListStudyResponse extends jspb.Message {
 
 export namespace ListStudyResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
+    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
   }
 }
 
 export class CreateStudyRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): CreateStudyRequest;
   hasItem(): boolean;
   clearItem(): CreateStudyRequest;
 
@@ -109,7 +109,7 @@ export class CreateStudyRequest extends jspb.Message {
 
 export namespace CreateStudyRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
 
@@ -128,8 +128,8 @@ export namespace CreateStudyResponse {
 }
 
 export class UpdateStudyRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study): UpdateStudyRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): UpdateStudyRequest;
   hasItem(): boolean;
   clearItem(): UpdateStudyRequest;
 
@@ -143,7 +143,7 @@ export class UpdateStudyRequest extends jspb.Message {
 
 export namespace UpdateStudyRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
   }
 }
 
@@ -154,10 +154,10 @@ export class CreateStudyProfileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): CreateStudyProfileRequest;
 
-  getModelsList(): Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
-  setModelsList(value: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model>): CreateStudyProfileRequest;
+  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): CreateStudyProfileRequest;
   clearModelsList(): CreateStudyProfileRequest;
-  addModels(value?: github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateStudyProfileRequest.AsObject;
@@ -171,7 +171,7 @@ export namespace CreateStudyProfileRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    modelsList: Array<github_com_metaprov_modeldapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 
@@ -228,15 +228,15 @@ export namespace GetStudyProfileRequest {
 }
 
 export class GetStudyProfileResponse extends jspb.Message {
-  getProfile(): github_com_metaprov_modeldapi_services_common_v1_common_pb.StudyProfile | undefined;
-  setProfile(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.StudyProfile): GetStudyProfileResponse;
+  getProfile(): github_com_metaprov_modelaapi_services_common_v1_common_pb.StudyProfile | undefined;
+  setProfile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.StudyProfile): GetStudyProfileResponse;
   hasProfile(): boolean;
   clearProfile(): GetStudyProfileResponse;
 
-  getModelsprofileList(): Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile>;
-  setModelsprofileList(value: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile>): GetStudyProfileResponse;
+  getModelsprofileList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile>;
+  setModelsprofileList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile>): GetStudyProfileResponse;
   clearModelsprofileList(): GetStudyProfileResponse;
-  addModelsprofile(value?: github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile, index?: number): github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile;
+  addModelsprofile(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetStudyProfileResponse.AsObject;
@@ -248,8 +248,8 @@ export class GetStudyProfileResponse extends jspb.Message {
 
 export namespace GetStudyProfileResponse {
   export type AsObject = {
-    profile?: github_com_metaprov_modeldapi_services_common_v1_common_pb.StudyProfile.AsObject,
-    modelsprofileList: Array<github_com_metaprov_modeldapi_services_common_v1_common_pb.ModelProfile.AsObject>,
+    profile?: github_com_metaprov_modelaapi_services_common_v1_common_pb.StudyProfile.AsObject,
+    modelsprofileList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.ModelProfile.AsObject>,
   }
 }
 

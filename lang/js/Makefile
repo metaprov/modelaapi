@@ -2,7 +2,7 @@
 SHELL := /bin/bash
 
 # Set important Paths
-PROJECT := modeldapi
+PROJECT := modelaapi
 LOCALPATH := $(CURDIR)/$(PROJECT)
 
 # Export targets not associated with files
